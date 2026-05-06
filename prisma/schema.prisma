@@ -1,13 +1,150 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../app/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  passwordHash  String
+  role          String   @default("admin")
+  createdAt     DateTime @default(now())
+}
+
+model Lead {
+  id                  String   @id @default(cuid())
+  firstName           String
+  lastName            String
+  businessName        String
+  phone               String
+  email               String
+  hasMcaDebt          Boolean
+  debtAmountBucket    String?
+  source              String   @default("homepage")
+  status              String   @default("new")
+  utmSource           String?
+  utmMedium           String?
+  utmCampaign         String?
+  utmContent          String?
+  utmTerm             String?
+  gclid               String?
+  fbclid              String?
+  eliClickid          String?
+  ip                  String?
+  userAgent           String?
+  integrationStatus   Json?
+  createdAt           DateTime @default(now())
+  contractReview      ContractReview?
+
+  @@index([createdAt])
+  @@index([source])
+  @@index([status])
+}
+
+model ContractReview {
+  id                String   @id @default(cuid())
+  leadId            String?  @unique
+  lead              Lead?    @relation(fields: [leadId], references: [id])
+  contractText      String
+  contractFilename  String
+  aiSummary         Json
+  effectiveApr      Float?
+  totalPayback      Float?
+  redFlags          Json?
+  emailCaptured     String?
+  createdAt         DateTime @default(now())
+}
+
+model Page {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  templateType    String
+  title           String
+  heroHeadline    String
+  heroSubline     String?
+  content         Json
+  phoneOverride   String?
+  mobileCta       String   @default("form")
+  skipPreQual     Boolean  @default(false)
+  published       Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String?
+  contentMd   String
+  heroImage   String?
+  author      String   @default("TerraDebt Team")
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Vertical {
+  id         String   @id @default(cuid())
+  slug       String   @unique
+  name       String
+  headline   String
+  subline    String?
+  stats      Json?
+  painPoints Json?
+  proof      Json?
+  faq        Json?
+  published  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model StatePage {
+  id         String   @id @default(cuid())
+  stateCode  String   @unique
+  stateName  String
+  content    Json
+  published  Boolean  @default(false)
+  updatedAt  DateTime @updatedAt
+}
+
+model CaseStudy {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  industry     String
+  debtAmount   Float
+  savingsPct   Float
+  months       Int
+  storyMd      String
+  heroImage    String?
+  published    Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Visitor {
+  id           String   @id @default(cuid())
+  eliClickid   String   @unique
+  ip           String?
+  userAgent    String?
+  utmSource    String?
+  utmMedium    String?
+  utmCampaign  String?
+  utmContent   String?
+  utmTerm      String?
+  gclid        String?
+  fbclid       String?
+  firstSeen    DateTime @default(now())
+  lastSeen     DateTime @default(now())
+  pageViews    Int      @default(1)
+}
+
+model Setting {
+  key   String @id
+  value Json
 }
