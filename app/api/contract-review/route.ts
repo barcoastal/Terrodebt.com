@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { extractPdfText } from "@/lib/contract-extract";
+import { analyzeContract } from "@/lib/contract-analyze";
+import { db } from "@/lib/db";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -19,8 +21,23 @@ export async function POST(req: NextRequest) {
     if (text.length < 200) {
       return NextResponse.json({ ok: false, error: "could not extract text from PDF" }, { status: 400 });
     }
-    return NextResponse.json({ ok: true, text, filename: file.name });
+
+    const analysis = await analyzeContract(text);
+
+    const review = await db.contractReview.create({
+      data: {
+        contractText: text,
+        contractFilename: file.name,
+        aiSummary: analysis as unknown as object,
+        effectiveApr: analysis.effectiveApr,
+        totalPayback: analysis.totalPayback,
+        redFlags: analysis.redFlags as unknown as object,
+      },
+    });
+
+    return NextResponse.json({ ok: true, reviewId: review.id, analysis });
   } catch (e) {
+    console.error("contract-review failed", e);
     return NextResponse.json({ ok: false, error: e instanceof Error ? e.message : "unknown" }, { status: 500 });
   }
 }
