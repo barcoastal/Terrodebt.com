@@ -9,7 +9,7 @@ export function SiteHeader() {
           <Image src="/logos/terradebt-lockup.svg" alt="TerraDebt" width={170} height={26} priority />
         </Link>
         <nav className="hidden md:flex gap-6 text-sm text-slate">
-          <Link href="/programs" className="hover:text-electric transition no-underline">Programs</Link>
+          <Link href="/services/mca-debt-relief" className="hover:text-electric transition no-underline">Services</Link>
           <Link href="/industries" className="hover:text-electric transition no-underline">Industries</Link>
           <Link href="/contract-review" className="hover:text-electric transition no-underline">Contract Review</Link>
           <Link href="/case-studies" className="hover:text-electric transition no-underline">Case Studies</Link>

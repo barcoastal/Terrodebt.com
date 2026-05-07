@@ -11,8 +11,9 @@ export function SiteFooter() {
           <Link href="/brand" className="block mt-3 text-xs text-muted hover:text-slate">Brand &amp; design system →</Link>
         </div>
         <div>
-          <div className="font-medium mb-2">Programs</div>
+          <div className="font-medium mb-2">Services</div>
           <ul className="space-y-1 text-muted">
+            <li><Link href="/services/mca-debt-relief">MCA Debt Relief</Link></li>
             <li><Link href="/programs/settlement">Settlement</Link></li>
             <li><Link href="/programs/restructure">Restructure</Link></li>
             <li><Link href="/programs/reverse-consolidation-defense">Reverse Consolidation Defense</Link></li>
