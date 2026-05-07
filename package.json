@@ -2,9 +2,12 @@
   "name": "terradebt",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma migrate deploy && next build",
+    "build": "prisma generate && prisma db push --skip-generate --accept-data-loss && next build",
     "start": "next start -p $PORT",
     "lint": "eslint",
     "db:push": "prisma db push",
