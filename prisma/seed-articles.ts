@@ -67,7 +67,7 @@ The cleanest path through stacked MCAs almost always runs through the contracts 
 
 ## What to do next
 
-If you have been pitched a reverse consolidation, get the full numbers in front of you before signing anything. Run the new total payback against the existing total payback. Compare against a settlement scenario at 50 percent. The picture clarifies fast. Upload your contracts to our free contract review tool. We pull every clause, calculate the effective APR, and tell you which path fits before you commit.`,
+If you have been pitched a reverse consolidation, get the full numbers in front of you before signing anything. Run the new total payback against the existing total payback. Compare against a settlement scenario at 50 percent. The picture clarifies fast. Run our free calculators to see your real effective APR and stack burden. From there, we can talk through which path fits before you commit.`,
   },
   {
     slug: "mca-settlement-vs-restructure",
@@ -127,7 +127,7 @@ Reconciliation is more powerful pre-default than post-default. Lenders are more 
 
 ## What to do next
 
-The choice between settlement and restructure is rarely obvious from inside a stacked-MCA situation. Pull every contract. Document 90 days of bank statements. Check for any confession of judgment language and any pending legal filings. Then schedule a free assessment with a relief firm that handles both paths. The right firm tells you which path fits before you sign, with the math worked out side by side. Upload your contracts to our review tool to start.`,
+The choice between settlement and restructure is rarely obvious from inside a stacked-MCA situation. Pull every contract. Document 90 days of bank statements. Check for any confession of judgment language and any pending legal filings. Then schedule a free assessment with a relief firm that handles both paths. The right firm tells you which path fits before you sign, with the math worked out side by side. Run our free calculators to get your stack numbers in one view, then book the assessment.`,
   },
   {
     slug: "how-to-read-your-mca-contract",
@@ -199,7 +199,7 @@ Stacking covenants are particularly important if you are considering taking anot
 
 ## What to do next
 
-Read your contracts in this order: definitions, purchase price and purchased amount, specified percentage, reconciliation, COJ, personal guarantee, events of default. Mark every clause you find. If a clause is missing or unclear, that is itself useful information. Upload your contracts to our free review tool. We extract every clause, calculate the effective APR, and flag the items that matter for your situation. The first read costs nothing and clarifies what is actually in front of you.`,
+Read your contracts in this order: definitions, purchase price and purchased amount, specified percentage, reconciliation, COJ, personal guarantee, events of default. Mark every clause you find. If a clause is missing or unclear, that is itself useful information. Then run our free calculators to translate your numbers into an effective APR and a stack health score. The math is on the table before any consultation.`,
   },
   {
     slug: "effective-apr-explained",
@@ -419,7 +419,7 @@ The right way to pause MCA debits is technical, documented, and coordinated. The
 
 ## What to do next
 
-If you are considering pausing MCA debits, do not block the bank yet. Pull your contracts, document 60 to 90 days of bank statements, and have a credible firm draft the reconciliation requests with you. Upload your contracts to our review tool to start the audit. The first week of a properly designed pause sets up the entire program. Doing it correctly the first time is materially cheaper than fixing a self-induced default later.`,
+If you are considering pausing MCA debits, do not block the bank yet. Pull your contracts, document 60 to 90 days of bank statements, and have a credible firm draft the reconciliation requests with you. Run our free calculators to quantify your stack burden first. The first week of a properly designed pause sets up the entire program. Doing it correctly the first time is materially cheaper than fixing a self-induced default later.`,
   },
   {
     slug: "how-mca-debt-relief-actually-works",
@@ -501,7 +501,7 @@ Total program cost is the settlement amounts plus the program fee. Compared agai
 
 ## What to do next
 
-If you have stacked MCAs and have not started a relief program, the first step is the audit. Pull every contract, document 90 days of bank statements, and have a credible firm review the stack before you take any action. The audit costs nothing in our case and tells you which path fits before you sign. Upload your contracts to our review tool to start.`,
+If you have stacked MCAs and have not started a relief program, the first step is the audit. Pull every contract, document 90 days of bank statements, and have a credible firm review the stack before you take any action. The audit costs nothing in our case and tells you which path fits before you sign. Run our free calculators first to get your numbers in one view, then book the assessment.`,
   },
   {
     slug: "signs-your-mca-relief-firm-is-a-scam",
@@ -584,7 +584,7 @@ The vetting process should feel mutual. The right relief partner expects to be i
 
 ## What to do next
 
-If you are evaluating relief firms, run them through this list before signing anything. Ask the questions in writing where possible. Compare two or three firms before making a decision. The cost of vetting is a few days. The cost of a bad firm is the program itself, plus the time you lose recovering from the damage. Schedule a free assessment with us if you want a baseline comparison. We give every merchant a free AI contract review on day one, walk you through fee structure during the consultation, and can produce case studies that match your situation.`,
+If you are evaluating relief firms, run them through this list before signing anything. Ask the questions in writing where possible. Compare two or three firms before making a decision. The cost of vetting is a few days. The cost of a bad firm is the program itself, plus the time you lose recovering from the damage. Schedule a free assessment with us if you want a baseline comparison. We give every merchant free calculators on day one, walk you through fee structure during the consultation, and can produce case studies that match your situation.`,
   },
   {
     slug: "ucc-liens-and-account-freezes",
@@ -656,7 +656,7 @@ The separation should be set up early. Setting it up after a freeze hits is ofte
 
 ## What to do next
 
-If your account has been frozen, stop reading and call. The first 24 hours are the most important window in MCA defense, and the work has to start with counsel engagement. If you have stacked MCAs and have not yet been frozen, the right move is engaging a relief firm before the freeze hits. Pre-freeze engagement is dramatically more effective than post-freeze defense, and the toolkit available pre-freeze is broader. Upload your contracts to our review tool to start.`,
+If your account has been frozen, stop reading and call. The first 24 hours are the most important window in MCA defense, and the work has to start with counsel engagement. If you have stacked MCAs and have not yet been frozen, the right move is engaging a relief firm before the freeze hits. Pre-freeze engagement is dramatically more effective than post-freeze defense, and the toolkit available pre-freeze is broader. Run our free calculators to clarify your stack and book the assessment.`,
   },
   {
     slug: "how-to-handle-stacked-mcas",
@@ -790,7 +790,7 @@ The decision between restructure and consolidation is contract by contract. Some
 
 ## What to do next
 
-Before signing any consolidation product, run the math test. Pull every existing contract and calculate the remaining payback. Compare that against the proposed new instrument's total payback over its term. If the new total is higher, the consolidation is not relief. Upload your contracts to our review tool and we will run the comparison for you, including against settlement and restructure paths.`,
+Before signing any consolidation product, run the math test. Pull every existing contract and calculate the remaining payback. Compare that against the proposed new instrument's total payback over its term. If the new total is higher, the consolidation is not relief. Run our free calculators to surface the comparison, then book the assessment for a side-by-side review against settlement and restructure paths.`,
   },
   {
     slug: "mca-restructure-timeline",
@@ -879,7 +879,7 @@ The trade-off is total dollars. Settlement reduces the balance owed by 35 to 50 
 
 ## What to do next
 
-If you are evaluating a restructure program, the first step is the audit. Pull every contract and have a credible firm assess which path fits each one. Restructure works for some contracts and not others, and the mix is what determines the program structure. Upload your contracts to our review tool to start.`,
+If you are evaluating a restructure program, the first step is the audit. Pull every contract and have a credible firm assess which path fits each one. Restructure works for some contracts and not others, and the mix is what determines the program structure. Run our free calculators to baseline your stack, then book the assessment.`,
   },
   {
     slug: "can-i-keep-operating-during-an-mca-program",
@@ -1386,7 +1386,7 @@ If you have stopped paying an MCA without a coordinated workout, the right move 
 
 - Clear fee structure explained during your consultation, not vague "percentage of savings, depends" language.
 - No upfront retainer above a small audit fee, with the deliverable for that audit defined.
-- Free initial assessment that includes contract review.
+- Free initial assessment that includes a walk-through of every contract.
 - Real attorney coordination, not just claims of "legal team."
 - Documented anonymized case studies with industry, debt size, and outcome.
 - Transparent program timeline.
@@ -1479,7 +1479,7 @@ Ask the firm directly: have you done programs like mine? The answer should inclu
 
 ## What to do next
 
-Run any firm you are evaluating through this checklist before signing. Compare two or three firms before deciding. The cost of vetting is a few days. The cost of a bad firm is the program itself, plus the time you lose recovering. Schedule a free assessment with us if you want a baseline comparison. We give every merchant a free AI contract review on day one, walk through the fee structure during your consultation, coordinate state-licensed attorneys in all 50 states, and can produce case studies that match your situation.`,
+Run any firm you are evaluating through this checklist before signing. Compare two or three firms before deciding. The cost of vetting is a few days. The cost of a bad firm is the program itself, plus the time you lose recovering. Schedule a free assessment with us if you want a baseline comparison. We give every merchant free calculators on day one, walk through the fee structure during your consultation, coordinate state-licensed attorneys in all 50 states, and can produce case studies that match your situation.`,
   },
   {
     slug: "life-after-mca-debt",

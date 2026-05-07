@@ -6,7 +6,7 @@ import { Reveal } from "@/components/site/Reveal";
 
 export const metadata: Metadata = {
   title: "MCA Debt Relief Services",
-  description: "TerraDebt's MCA debt relief services: restructure, settle, or defend stacked merchant cash advances. Free assessment, free AI contract review, attorney coordination in all 50 states.",
+  description: "TerraDebt's MCA debt relief services: restructure, settle, or defend stacked merchant cash advances. Free assessment, free calculators, attorney coordination in all 50 states.",
 };
 
 export default function McaDebtReliefServices() {
@@ -26,14 +26,14 @@ export default function McaDebtReliefServices() {
               Don&apos;t let stacked MCAs run your <span className="text-electric">cash flow</span>.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
-              We restructure, settle, or defend merchant cash advance debt with programs scoped to your specific situation. Free assessment, free AI contract review, and licensed counsel in all 50 states.
+              We restructure, settle, or defend merchant cash advance debt with programs scoped to your specific situation. Free assessment, free calculators, and licensed counsel in all 50 states.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="#assessment" className="bg-slate text-white px-5 py-3 rounded-xl text-sm font-medium no-underline hover:bg-slate-soft transition inline-flex items-center gap-2">
                 Get free assessment <span aria-hidden>→</span>
               </Link>
-              <Link href="/contract-review" className="bg-white text-slate border border-border px-5 py-3 rounded-xl text-sm font-medium no-underline hover:border-electric transition">
-                Try the AI contract review
+              <Link href="/tools" className="bg-white text-slate border border-border px-5 py-3 rounded-xl text-sm font-medium no-underline hover:border-electric transition">
+                Run the free calculators
               </Link>
             </div>
           </Reveal>
@@ -143,11 +143,11 @@ export default function McaDebtReliefServices() {
               <div className="md:col-span-3">
                 <span className="font-mono text-xs uppercase tracking-wider text-muted">Why merchants choose us</span>
                 <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">A relief firm built around the merchant, not the close.</h2>
-                <p className="mt-4 text-lg text-muted leading-relaxed">Most relief firms quote you a percentage of savings without explaining how their program actually works. We give you the AI contract review for free, walk you through the math during your assessment, and only build a program that fits your specific situation. We coordinate licensed attorneys in your state when legal defense is needed, instead of pretending we are one.</p>
+                <p className="mt-4 text-lg text-muted leading-relaxed">Most relief firms quote you a percentage of savings without explaining how their program actually works. We give you free calculators that surface effective APR and stack burden, walk you through the math during your assessment, and only build a program that fits your specific situation. We coordinate licensed attorneys in your state when legal defense is needed, instead of pretending we are one.</p>
                 <ul className="mt-6 grid grid-cols-2 gap-3 text-sm">
                   {[
                     "Free 60-second assessment",
-                    "Free AI contract review",
+                    "Free MCA calculators",
                     "Pre-default and post-default programs",
                     "Counsel in 50 states",
                   ].map((b) => (

@@ -115,11 +115,11 @@ export default function BrandPage() {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-white border border-border rounded-xl p-6">
             <div className="text-xs uppercase tracking-wide text-muted font-medium">Hero</div>
-            <p className="mt-3 text-slate">Resolve stacked MCAs with a tailored program. Free assessment. Free AI contract review. Programs scoped to your specific situation.</p>
+            <p className="mt-3 text-slate">Resolve stacked MCAs with a tailored program. Free assessment. Free calculators. Programs scoped to your specific situation.</p>
           </div>
           <div className="bg-white border border-border rounded-xl p-6">
             <div className="text-xs uppercase tracking-wide text-muted font-medium">Outreach email</div>
-            <p className="mt-3 text-slate">Bar, quick note. The contract you uploaded shows a 132% effective APR with a COJ clause. The settlement program would resolve the balance for around $X over 11 months. If you want to talk it through, I have time tomorrow at 2:30 ET.</p>
+            <p className="mt-3 text-slate">Bar, quick note. Based on the numbers you ran in the calculator, your stack is at a 132% weighted APR with a COJ clause in two of the contracts. The settlement program would resolve the balance for around $X over 11 months. If you want to talk it through, I have time tomorrow at 2:30 ET.</p>
           </div>
           <div className="bg-white border border-border rounded-xl p-6">
             <div className="text-xs uppercase tracking-wide text-muted font-medium">Disclosure</div>

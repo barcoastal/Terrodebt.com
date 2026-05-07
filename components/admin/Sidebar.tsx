@@ -4,7 +4,6 @@ import { LogoutButton } from "./LogoutButton";
 const ITEMS = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/leads", label: "Leads" },
-  { href: "/admin/contract-reviews", label: "Contract Reviews" },
   { href: "/admin/pages", label: "Landing Pages" },
   { href: "/admin/articles", label: "Articles" },
   { href: "/admin/verticals", label: "Verticals" },

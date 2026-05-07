@@ -7,7 +7,7 @@ const FAQ = [
   },
   {
     q: "How does the fee structure work?",
-    a: "The initial assessment is free, and the AI contract review tool is free with no email required. Program fees depend on your debt size, lender mix, and which path fits your situation. We walk through the full fee structure during your consultation, before you sign anything.",
+    a: "The initial assessment is free, and the calculators are free with no email required. Program fees depend on your debt size, lender mix, and which path fits your situation. We walk through the full fee structure during your consultation, before you sign anything.",
   },
   {
     q: "Will this hurt my credit?",
@@ -23,7 +23,7 @@ const FAQ = [
   },
   {
     q: "How is TerraDebt different from settlement firms?",
-    a: "Most settlement firms lean on a single tactic and pitch before they listen. We start with a free AI contract review, scope a program to your specific situation across four distinct paths, and coordinate state-licensed attorneys in all 50 states when legal defense is needed.",
+    a: "Most settlement firms lean on a single tactic and pitch before they listen. We start with free calculators that surface your real numbers, scope a program to your specific situation across four distinct paths, and coordinate state-licensed attorneys in all 50 states when legal defense is needed.",
   },
 ];
 

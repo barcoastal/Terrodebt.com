@@ -1,6 +1,6 @@
 const VALUES = [
   { label: "Free assessment", sub: "60-second qualifier" },
-  { label: "Free AI tool", sub: "Effective APR in 30 seconds" },
+  { label: "Free calculators", sub: "Effective APR + stack analysis" },
   { label: "Pre-default", sub: "Programs before lawsuits land" },
   { label: "50-state coverage", sub: "Coordinated counsel" },
 ];

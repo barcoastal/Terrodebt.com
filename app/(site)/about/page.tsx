@@ -32,7 +32,7 @@ export default function About() {
           <div className="md:col-span-2 space-y-4 text-slate leading-relaxed">
             <p>Most owners we talk to did not stack four MCAs because they wanted to. They stacked because diesel costs spiked, an employee left, a piece of equipment broke, or a client paid 90 days late. And once the daily debits started, every new MCA looked like the only option.</p>
             <p>The relief category that exists to help these owners is mostly stuck in 2018. It charges retainers up front, hides its fee in legal hours, scares owners with worst-case language, and pitches before it listens. The brands that do publish reviews are the ones with the loudest PR machines, not necessarily the best outcomes.</p>
-            <p>TerraDebt was built around a different default. We give merchants a free AI contract review on day one. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.</p>
+            <p>TerraDebt was built around a different default. We give merchants free calculators on day one so the math is clear before any consultation. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.</p>
           </div>
         </div>
       </section>
@@ -43,9 +43,9 @@ export default function About() {
           <h2 className="mt-3 text-3xl font-bold tracking-tight">Four things that set us apart.</h2>
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {[
-              { n: "01", title: "Free contract review, day one.", body: "Every merchant gets the AI contract review for free, no email required. You see the effective APR, the red flags, and the options before any consultation. We do not gate the math behind a sales call." },
+              { n: "01", title: "Free calculators, day one.", body: "Every merchant gets free calculators with no email required. You see your effective APR, your daily debit burden, and a program fit before any consultation. We do not gate the math behind a sales call." },
               { n: "02", title: "Pre-default, not just post-lawsuit.", body: "Most relief firms only engage once an owner is sued or has frozen accounts. We work with owners who are still current on stacked MCAs. The earlier we engage, the more options stay on the table." },
-              { n: "03", title: "Free AI contract review.", body: "Upload any MCA contract to our tool and we extract the effective APR, total payback, red flags, and your options in 30 seconds. No email gate. No sales call. Just the numbers." },
+              { n: "03", title: "Honest math, not a sales pitch.", body: "Run our APR calculator, stack calculator, and health check before any conversation. The numbers are on your side of the table from the start, not gated behind a discovery call." },
               { n: "04", title: "Real attorneys, real states.", body: "When legal defense is needed, we coordinate licensed counsel in the merchant's state, not a generic referral. We are not pretending to be a law firm. We work with them." },
             ].map((p) => (
               <div key={p.n} className="surface-card p-6">

@@ -16,12 +16,12 @@ export function Hero() {
             Resolve stacked MCAs with a <span className="text-electric">tailored program</span>.
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted max-w-xl leading-relaxed">
-            Settlement, restructure, or legal defense, coordinated end to end. Free assessment to find your fit, free AI contract review on day one.
+            Settlement, restructure, or legal defense, coordinated end to end. Free assessment to find your fit, free calculators to clarify your numbers.
           </p>
           <AggregateCounter />
           <ul className="mt-8 grid grid-cols-2 gap-3 text-sm">
             <Bullet>Free 60-second assessment</Bullet>
-            <Bullet>Free AI contract review</Bullet>
+            <Bullet>Free MCA calculators</Bullet>
             <Bullet>Pre-default and post-default programs</Bullet>
             <Bullet>Counsel in all 50 states</Bullet>
           </ul>

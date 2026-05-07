@@ -4,7 +4,7 @@ import Image from "next/image";
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-white">
-      <div className="mx-auto max-w-content px-6 py-12 grid gap-8 md:grid-cols-4 text-sm">
+      <div className="mx-auto max-w-content px-6 py-12 grid gap-8 md:grid-cols-5 text-sm">
         <div>
           <Image src="/logos/terradebt-wordmark.svg" alt="TerraDebt" width={140} height={28} className="mb-3" />
           <p className="text-muted">Resolve stacked MCAs with a tailored program.</p>
@@ -18,6 +18,15 @@ export function SiteFooter() {
             <li><Link href="/programs/restructure">Restructure</Link></li>
             <li><Link href="/programs/reverse-consolidation-defense">Reverse Consolidation Defense</Link></li>
             <li><Link href="/programs/legal-defense">Legal Defense</Link></li>
+          </ul>
+        </div>
+        <div>
+          <div className="font-medium mb-2">Tools</div>
+          <ul className="space-y-1 text-muted">
+            <li><Link href="/tools">All free tools</Link></li>
+            <li><Link href="/tools/apr-calculator">Effective APR Calculator</Link></li>
+            <li><Link href="/tools/stack-calculator">Stacked MCA Calculator</Link></li>
+            <li><Link href="/tools/health-check">MCA Health Check</Link></li>
           </ul>
         </div>
         <div>

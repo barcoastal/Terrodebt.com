@@ -12,7 +12,7 @@ The site renders a live version of this system at `/brand` for designers and eng
 
 ### Positioning
 
-The modern MCA debt relief brand. We work with stacked MCAs before default, give every merchant a free AI contract review, and coordinate state-licensed attorneys in all 50 states. We are built for fit, not for the cheapest pitch.
+The modern MCA debt relief brand. We work with stacked MCAs before default, give every merchant free calculators that surface effective APR and stack burden, and coordinate state-licensed attorneys in all 50 states. We are built for fit, not for the cheapest pitch.
 
 ### Mission
 
@@ -20,14 +20,14 @@ Restore cash flow and dignity to small business owners crushed by stacked mercha
 
 ### Vision
 
-Every owner with MCA debt gets a clear, AI-augmented assessment before they make their next move.
+Every owner with MCA debt gets a clear, math-first assessment before they make their next move.
 
 ### Values
 
-- **Honest math up front.** We give every merchant a free AI contract review with their effective APR before any pitch.
+- **Honest math up front.** We give every merchant free calculators that surface effective APR and stack burden before any pitch.
 - **Action, not theatrics.** No fake media badges, no inflated dollar counters, no scare-tactic copy.
 - **Pre-default first.** We earn the right to talk to merchants before they get sued, not after.
-- **Tools over talk.** A free AI contract review is more useful than a sales call. We lead with the tool.
+- **Tools over talk.** Free calculators are more useful than a sales pitch. We lead with the math.
 - **Relentless craft.** The category looks like 2018. We don't.
 
 ### Tagline
@@ -184,7 +184,7 @@ We speak like a smart, slightly impatient operator who's seen the inside of bad 
 ### Tone shift by context
 
 - **Marketing pages**: confident, specific, generous with proof. "Here's the math. Here's the program. Here's what it costs."
-- **AI Contract Review tool**: clinical, neutral, fact-first. "Effective APR: 132.5%. Red flag: COJ clause present. Option: pursue restructure under our flat-fee program."
+- **Calculators (/tools)**: clinical, neutral, fact-first. "Effective APR: 132.5%. Daily debit: $1,200. Stack health: critical. Likely program fit: settlement with legal coordination."
 - **Admin / internal copy**: terse, command-oriented. "Lead created", "Webhook failed", "Regenerate from template".
 - **Legal / disclosure**: precise, deflationary, honest. "Outcomes vary." "We are not a law firm." "We do not guarantee specific savings."
 
@@ -227,10 +227,10 @@ We speak like a smart, slightly impatient operator who's seen the inside of bad 
 ### Sample voice
 
 **Hero**:
-> Resolve stacked MCAs with a tailored program. Free assessment. Free AI contract review. Programs scoped to your specific situation.
+> Resolve stacked MCAs with a tailored program. Free assessment. Free calculators. Programs scoped to your specific situation.
 
 **Email**:
-> Bar, quick note. The contract you uploaded shows a 132% effective APR with a COJ clause. The settlement program would resolve the balance for around $X over 11 months. If you want to talk it through, I have time tomorrow at 2:30 ET.
+> Bar, quick note. Based on the numbers you ran in the calculator, your stack is at a 132% weighted APR with a COJ clause in two of the contracts. The settlement program would resolve the balance for around $X over 11 months. If you want to talk it through, I have time tomorrow at 2:30 ET.
 
 **Disclosure**:
 > We are not a law firm. We coordinate licensed attorneys in your state when legal defense is required. We do not guarantee specific savings or outcomes. Results depend on lender mix, contract terms, and your business cash flow.
@@ -411,4 +411,5 @@ Style: geometric, single weight, electric or slate fill. No gradients. No charac
 ## 12. Changelog
 
 - **1.0**, 2026-05-05: Initial brand book. Established positioning, logo system (lockup, wordmark, icon, monogram, favicon variants), color palette (slate + electric + 3 neutrals), Inter typography, voice & tone, component library reference, imagery direction.
-- **1.1**, 2026-05-05: Removed false fee-transparency claims (TerraDebt has upfront fees and does not publish program fees pre-consultation). Removed false "as featured in" media badge references. Repositioned tagline to "Resolve stacked MCAs with a tailored program." Voice still anchors on direct, specific, confident, calm. The free AI Contract Review tool remains a real, defensible differentiator.
+- **1.1**, 2026-05-05: Removed false fee-transparency claims (TerraDebt has upfront fees and does not publish program fees pre-consultation). Removed false "as featured in" media badge references. Repositioned tagline to "Resolve stacked MCAs with a tailored program." Voice still anchors on direct, specific, confident, calm.
+- **1.2**, 2026-05-05: Removed AI Contract Review tool (not a real product). Added free calculators (Effective APR, Stacked MCA, Health Check) at /tools.

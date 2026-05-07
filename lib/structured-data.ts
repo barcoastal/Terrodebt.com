@@ -4,7 +4,7 @@ export const ORG_LD = {
   "name": "TerraDebt",
   "url": "https://terradebt.com",
   "logo": "https://terradebt.com/logo.png",
-  "description": "Resolve stacked MCAs with a tailored program. Free assessment, free AI contract review, and licensed counsel in all 50 states.",
+  "description": "Resolve stacked MCAs with a tailored program. Free assessment, free calculators, and licensed counsel in all 50 states.",
   "areaServed": { "@type": "Country", "name": "United States" },
   "serviceType": ["MCA Settlement", "MCA Restructure", "Reverse Consolidation Defense", "MCA Legal Defense"],
   "telephone": "1-800-TERRA-00",

@@ -10,9 +10,9 @@ const TESTIMONIALS = [
   { name: "Maya K.", role: "Owner, neighborhood Italian restaurant", body: "I had stopped opening the lender emails. They explained the math, paused the debits, and built a single payment plan I could actually run my kitchen against." },
   { name: "Tony D.", role: "GC, residential remodels", body: "They knew what a progress payment cycle looks like and built a program around it. Other firms wanted me on a settlement track that would have killed my bonding capacity." },
   { name: "Dr. Adel M.", role: "Independent dental practice", body: "Two equipment loans on top of two MCAs. They unwound a reverse consolidation I never should have signed and got me back to even in 13 months." },
-  { name: "Priya S.", role: "Boutique retail, 2 locations", body: "I had a pile of contracts I didn't fully understand. Their AI tool walked me through each one, then their team built a single restructure that finally made sense for our seasonality." },
+  { name: "Priya S.", role: "Boutique retail, 2 locations", body: "I had a pile of contracts I didn't fully understand. Their calculators showed me what each one actually cost, then their team built a single restructure that finally made sense for our seasonality." },
   { name: "Marc L.", role: "Ecommerce, supplements", body: "Ad spend cycle was getting eaten by daily debits. Settled three MCAs in 8 months at 44 cents. We are scaling again without stacking new advances." },
-  { name: "Renata V.", role: "Independent salon owner", body: "They walked me through every contract before any pitch. The free AI tool was a game changer for getting clarity. I felt informed the whole way through." },
+  { name: "Renata V.", role: "Independent salon owner", body: "They walked me through every contract before any pitch. The free calculators were a real help for getting clarity. I felt informed the whole way through." },
   { name: "Carlos H.", role: "Auto repair, 4 bays", body: "Got hit with a COJ in New York while I'm operating in Florida. They had counsel in both states on the call within 36 hours." },
 ];
 

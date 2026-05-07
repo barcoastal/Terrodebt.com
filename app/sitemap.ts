@@ -9,8 +9,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const staticPaths = [
     "", "/about", "/contact", "/trust", "/privacy", "/terms", "/disclosure",
-    "/calculator", "/contract-review", "/articles", "/case-studies", "/industries", "/programs",
+    "/calculator", "/articles", "/case-studies", "/industries", "/programs",
     "/services/mca-debt-relief",
+    "/tools", "/tools/apr-calculator", "/tools/stack-calculator", "/tools/health-check",
     "/programs/settlement", "/programs/restructure", "/programs/reverse-consolidation-defense", "/programs/legal-defense",
   ];
   const staticUrls = staticPaths.map((p) => ({ url: `${BASE}${p}`, lastModified: now, changeFrequency: "weekly" as const, priority: p === "" ? 1.0 : 0.8 }));

@@ -28,7 +28,7 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
           <option value="">All sources</option>
           <option value="homepage">homepage</option>
           <option value="calculator">calculator</option>
-          <option value="ai-contract-review">ai-contract-review</option>
+          <option value="tools">tools</option>
           <option value="contact">contact</option>
         </select>
         <select name="status" defaultValue={sp.status ?? ""} className="border border-border rounded-md px-3 py-2">

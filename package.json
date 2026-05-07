@@ -15,14 +15,12 @@
     "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.95.0",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "google-ads-api": "^23.0.0",
     "iron-session": "^8.0.4",
     "motion": "^12.38.0",
     "next": "16.2.4",
-    "pdf-parse": "^1.1.1",
     "pg": "^8.20.0",
     "prisma": "^7.8.0",
     "react": "19.2.4",
@@ -36,7 +34,6 @@
     "@tailwindcss/typography": "^0.5.19",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20.19.39",
-    "@types/pdf-parse": "^1.1.5",
     "@types/pg": "^8.20.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",

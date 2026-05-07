@@ -17,7 +17,7 @@ export default function PrivacyPage() {
 
       <h2>Information we collect</h2>
       <p>
-        We collect information you provide directly when you submit a form, request a contract review, or engage one of our programs. This includes name, business name, phone, email, debt amount range, and contract documents you upload for review. We also collect basic technical information automatically, including IP address, browser type, device identifiers, referring URL, and pages visited.
+        We collect information you provide directly when you submit a form or engage one of our programs. This includes name, business name, phone, email, and debt amount range. We also collect basic technical information automatically, including IP address, browser type, device identifiers, referring URL, and pages visited.
       </p>
       <p>
         We use cookies and similar technologies, including a first-party visitor identifier, to recognize repeat visits and attribute traffic sources. We also accept attribution parameters from advertising platforms, including Google click identifiers and Facebook click identifiers.

@@ -13,7 +13,7 @@ export function HeroBeam() {
               <div>
                 <span className="font-mono text-xs uppercase tracking-wider text-white/70">For the owner navigating stacked MCAs</span>
                 <p className="mt-3 text-2xl md:text-3xl font-semibold tracking-tight text-white">A modern path out, scoped to your situation.</p>
-                <p className="mt-3 text-white/80 text-sm">Free assessment. Free AI contract review. Programs that match where you are.</p>
+                <p className="mt-3 text-white/80 text-sm">Free assessment. Free calculators. Programs that match where you are.</p>
               </div>
             </div>
           </div>
