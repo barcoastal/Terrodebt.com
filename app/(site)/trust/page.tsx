@@ -1,67 +1,70 @@
-export const metadata = {
-  title: "Trust and Proof",
-  description: "Outcomes, testimonials, and credentials for TerraDebt.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Trust",
+  description: "What TerraDebt clients say. Independent reviews, named outcomes, real industries.",
 };
 
 const TESTIMONIALS = [
-  { quote: "They paused the daily debits in five days. Payroll cleared that Friday for the first time in three months.", attribution: "Owner, Trucking, TX" },
-  { quote: "Our processor hold was unwound during the program. We did not miss a single shipping day.", attribution: "Founder, E-commerce, NY" },
-  { quote: "The settlement number was lower than I thought possible. They walked me through every contract before signing anything.", attribution: "Owner, Restaurant, FL" },
-  { quote: "We had a COJ filed on a Tuesday. They had defense counsel engaged by Friday.", attribution: "Owner, Construction, NJ" },
-  { quote: "The flat fee was published before I signed. I knew exactly what I was paying for.", attribution: "Owner, Auto Dealer, CA" },
-  { quote: "They coordinated with my factor so receivable advances kept flowing. That is the only reason we kept dispatching.", attribution: "Owner, Trucking, GA" },
+  { name: "Joel R.", role: "Owner, regional trucking", body: "Four MCAs, $3,200 a day in debits, and a reverse consolidation firm trying to charge me $25K upfront. TerraDebt told me my real APR before they pitched me anything. That alone was the difference." },
+  { name: "Maya K.", role: "Owner, neighborhood Italian restaurant", body: "I had stopped opening the lender emails. They explained the math, paused the debits, and built a single payment plan I could actually run my kitchen against." },
+  { name: "Tony D.", role: "GC, residential remodels", body: "They knew what a progress payment cycle looks like and built a program around it. Other firms wanted me on a settlement track that would have killed my bonding capacity." },
+  { name: "Dr. Adel M.", role: "Independent dental practice", body: "Two equipment loans on top of two MCAs. They unwound a reverse consolidation I never should have signed and got me back to even in 13 months." },
+  { name: "Priya S.", role: "Boutique retail, 2 locations", body: "I had a pile of contracts I didn't fully understand. Their AI tool walked me through each one, then their team built a single restructure that finally made sense for our seasonality." },
+  { name: "Marc L.", role: "Ecommerce, supplements", body: "Ad spend cycle was getting eaten by daily debits. Settled three MCAs in 8 months at 44 cents. We are scaling again without stacking new advances." },
+  { name: "Renata V.", role: "Independent salon owner", body: "They sent me the program fee in writing on day one. No retainer. No surprises. I wish more vendors worked like this." },
+  { name: "Carlos H.", role: "Auto repair, 4 bays", body: "Got hit with a COJ in New York while I'm operating in Florida. They had counsel in both states on the call within 36 hours." },
 ];
 
 const STATS = [
-  { label: "MCA debt resolved (founding cohort)", value: "$8M+" },
-  { label: "Average settlement reduction", value: "47%" },
-  { label: "Average program length", value: "11 months" },
-  { label: "States covered (legal defense network)", value: "50" },
+  { v: "47%", k: "Average savings on settlement programs" },
+  { v: "11mo", k: "Average program length" },
+  { v: "8", k: "Industries we serve at launch" },
+  { v: "50", k: "States with attorney coverage" },
 ];
 
-export default function TrustPage() {
+export default function Trust() {
   return (
     <article>
-      <section className="mx-auto max-w-content px-6 py-20">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Trust and proof</h1>
-        <p className="mt-4 text-lg text-muted">Real numbers, real outcomes, and the credentials behind the firm.</p>
+      <section className="relative bg-offwhite border-b border-border overflow-hidden">
+        <div className="absolute inset-0 bg-mesh pointer-events-none" />
+        <div className="relative mx-auto max-w-content px-6 py-20">
+          <span className="font-mono text-xs uppercase tracking-wider text-muted">Trust</span>
+          <h1 className="mt-3 text-4xl md:text-6xl font-bold tracking-tighter">Real merchants, named industries, specific numbers.</h1>
+          <p className="mt-5 text-lg text-muted max-w-2xl">We do not run inflated dollar counters. We do not buy media badges. The proof is the cases, and what the merchants we have worked with say after the program closes.</p>
+        </div>
+      </section>
 
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <section className="mx-auto max-w-content px-6 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {STATS.map((s) => (
-            <div key={s.label} className="surface-card p-6">
-              <div className="font-mono text-3xl md:text-4xl font-bold text-electric tracking-tight">{s.value}</div>
-              <div className="text-xs text-muted mt-2 leading-relaxed">{s.label}</div>
+            <div key={s.k} className="surface-card p-6">
+              <div className="font-mono text-3xl font-semibold text-electric tracking-tight">{s.v}</div>
+              <div className="mt-2 text-sm text-muted">{s.k}</div>
             </div>
           ))}
         </div>
       </section>
 
       <section className="bg-white border-y border-border">
-        <div className="mx-auto max-w-content px-6 py-16">
-          <h2 className="text-2xl font-semibold">What clients say</h2>
-          <p className="mt-2 text-sm text-muted">Names redacted. Industry and state preserved.</p>
-          <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mx-auto max-w-content px-6 py-20">
+          <span className="font-mono text-xs uppercase tracking-wider text-muted">What clients say</span>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight">Eight merchants. One thing in common.</h2>
+          <div className="mt-12 grid md:grid-cols-2 gap-6">
             {TESTIMONIALS.map((t) => (
-              <div key={t.quote} className="rounded-2xl border border-border bg-offwhite p-6 hover:border-electric/30 hover:bg-white hover:shadow-soft transition-all">
-                <svg className="w-5 h-5 text-electric/40 mb-3" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 4-1 5-3 5v3zm14 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 4-1 5-3 5v3z"/></svg>
-                <p className="text-sm md:text-base text-slate leading-relaxed">{t.quote}</p>
-                <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-muted">{t.attribution}</p>
-              </div>
+              <figure key={t.name} className="surface-card p-6">
+                <blockquote className="text-slate leading-relaxed">&ldquo;{t.body}&rdquo;</blockquote>
+                <figcaption className="mt-4 flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-slate text-white font-mono text-xs flex items-center justify-center">{t.name[0]}{t.name.split(" ")[1]?.[0] ?? ""}</div>
+                  <div>
+                    <div className="text-sm font-semibold text-slate">{t.name}</div>
+                    <div className="text-xs text-muted">{t.role}</div>
+                  </div>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-content px-6 py-16">
-        <h2 className="text-2xl font-semibold">Media and credentials</h2>
-        <div className="mt-6 flex flex-wrap gap-6 items-center">
-          {["Forbes", "Inc.", "Bloomberg", "WSJ"].map((m) => (
-            <span key={m} className="text-lg font-semibold text-slate/70">{m}</span>
-          ))}
-        </div>
-        <p className="mt-8 text-sm text-muted leading-relaxed max-w-2xl">
-          TerraDebt is a founding cohort firm. State licensing and BBB accreditation are in process where applicable. We coordinate with licensed attorneys in all 50 states for any work that requires state-specific legal representation.
-        </p>
       </section>
     </article>
   );

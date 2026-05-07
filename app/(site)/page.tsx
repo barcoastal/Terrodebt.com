@@ -1,7 +1,8 @@
 import { Hero } from "@/components/site/Hero";
 import { TrustStrip } from "@/components/site/TrustStrip";
-import { HowItWorks } from "@/components/site/HowItWorks";
-import { VerticalGrid } from "@/components/site/VerticalGrid";
+import { HeroBeam } from "@/components/site/HeroBeam";
+import { Process } from "@/components/site/Process";
+import { IndustriesShowcase } from "@/components/site/IndustriesShowcase";
 import { CaseStudyCarousel } from "@/components/site/CaseStudyCarousel";
 import { FounderSection } from "@/components/site/FounderSection";
 import { Faq } from "@/components/site/Faq";
@@ -11,8 +12,9 @@ export default function Home() {
     <>
       <Hero />
       <TrustStrip />
-      <HowItWorks />
-      <VerticalGrid />
+      <HeroBeam />
+      <Process />
+      <IndustriesShowcase />
       <CaseStudyCarousel />
       <FounderSection />
       <Faq />

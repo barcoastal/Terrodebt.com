@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
 import { LeadForm } from "@/components/lead/LeadForm";
 
@@ -21,9 +22,14 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
       <section className="relative bg-offwhite border-b border-border overflow-hidden">
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
         <div className="relative mx-auto max-w-content px-6 pt-20 pb-20 grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tighter">{v.headline}</h1>
-            <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed">{v.subline}</p>
+          <div className="space-y-6">
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden surface-card-elevated">
+              <Image src={`/images/industry-${slug}.png`} alt={v.name} fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">{v.headline}</h1>
+              <p className="mt-4 text-lg text-muted">{v.subline}</p>
+            </div>
           </div>
           <LeadForm source={`vertical-${slug}`} />
         </div>
