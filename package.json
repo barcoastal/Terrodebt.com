@@ -20,6 +20,7 @@
     "@prisma/client": "^7.8.0",
     "google-ads-api": "^23.0.0",
     "iron-session": "^8.0.4",
+    "motion": "^12.38.0",
     "next": "16.2.4",
     "pdf-parse": "^1.1.1",
     "pg": "^8.20.0",
