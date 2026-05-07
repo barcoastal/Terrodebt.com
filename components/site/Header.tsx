@@ -8,10 +8,11 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center no-underline" aria-label="TerraDebt home">
           <Image src="/logos/terradebt-lockup.svg" alt="TerraDebt" width={170} height={26} priority />
         </Link>
-        <nav className="hidden md:flex gap-7 text-sm text-slate">
-          <Link href="/programs/settlement" className="hover:text-electric transition no-underline">Settlement</Link>
-          <Link href="/programs/restructure" className="hover:text-electric transition no-underline">Restructure</Link>
+        <nav className="hidden md:flex gap-6 text-sm text-slate">
+          <Link href="/programs" className="hover:text-electric transition no-underline">Programs</Link>
+          <Link href="/industries" className="hover:text-electric transition no-underline">Industries</Link>
           <Link href="/contract-review" className="hover:text-electric transition no-underline">Contract Review</Link>
+          <Link href="/case-studies" className="hover:text-electric transition no-underline">Case Studies</Link>
           <Link href="/articles" className="hover:text-electric transition no-underline">Articles</Link>
           <Link href="/about" className="hover:text-electric transition no-underline">About</Link>
         </nav>
