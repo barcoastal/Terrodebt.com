@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-label="TerraDebt">
+  <title>TerraDebt</title>
+  <text x="0" y="48" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="700" font-size="48" letter-spacing="-1.6" fill="#1E293B">terradebt</text>
+  <circle cx="296" cy="44" r="6" fill="#2563EB"/>
+</svg>

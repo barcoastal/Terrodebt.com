@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TerraDebt">
+  <title>TerraDebt</title>
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <path d="M14 20 H50 V28 H37 V50 H27 V28 H14 Z" fill="#1E293B"/>
+  <circle cx="46" cy="46" r="5" fill="#2563EB"/>
+</svg>
