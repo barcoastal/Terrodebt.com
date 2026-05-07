@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Ship terradebt.com — a 100-page MCA debt relief brand site with multi-step lead capture, AI contract review tool, and a lightweight admin CMS — to production on Railway in ~4 weeks.
+**Goal:** Ship terradebt.com, a 100-page MCA debt relief brand site with multi-step lead capture, AI contract review tool, and a lightweight admin CMS, to production on Railway in ~4 weeks.
 
 **Architecture:** Single Next.js 16 app (App Router) backed by Postgres via Prisma. Server Components for content pages, Server Actions for form submissions, route handlers for the AI tool and webhooks. Tailwind for styling. Cookie-based admin auth. Programmatic page generation for vertical/state pages. Visitor tracking via middleware-set cookies + DB writes.
 
@@ -25,7 +25,7 @@
 
 ---
 
-# Phase 1 — Foundation
+# Phase 1, Foundation
 
 ## Task 1: Initialize Next.js + Prisma + Tailwind, deploy empty app to Railway
 
@@ -284,7 +284,7 @@ Move `app/page.tsx` to `app/(site)/page.tsx`. For now, render a simple placehold
 npm run dev
 ```
 
-Open http://localhost:3000 — header + footer + Inter font should render with slate text, electric blue CTA button.
+Open http://localhost:3000, header + footer + Inter font should render with slate text, electric blue CTA button.
 
 - [ ] **Step 7: Commit**
 
@@ -663,7 +663,7 @@ import { VisitorTracker } from "@/components/site/VisitorTracker";
 npm run dev
 ```
 
-Open http://localhost:3000/?utm_source=test&gclid=abc123 — check `Visitor` table in Prisma Studio, confirm row created with utmSource=test, gclid=abc123.
+Open http://localhost:3000/?utm_source=test&gclid=abc123, check `Visitor` table in Prisma Studio, confirm row created with utmSource=test, gclid=abc123.
 
 - [ ] **Step 6: Commit**
 
@@ -749,7 +749,7 @@ async function main() {
     await db.setting.upsert({ where: { key }, update: {}, create: { key, value } });
   }
 
-  // States — published shells, content filled in Phase 3
+  // States, published shells, content filled in Phase 3
   for (const s of STATES) {
     await db.statePage.upsert({
       where: { stateCode: s.code },
@@ -758,7 +758,7 @@ async function main() {
     });
   }
 
-  // Verticals — published shells
+  // Verticals, published shells
   for (const v of VERTICALS) {
     await db.vertical.upsert({
       where: { slug: v.slug },
@@ -813,7 +813,7 @@ git commit -m "feat: seed states, verticals, settings, admin user"
 
 ---
 
-# Phase 2 — Lead capture & integrations
+# Phase 2, Lead capture & integrations
 
 ## Task 6: Multi-step form component
 
@@ -918,7 +918,7 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
   if (done) {
     return (
       <div className="rounded-xl border border-border bg-white p-8 text-center">
-        <h3 className="text-xl font-semibold">Thanks — we'll call you within 1 business hour.</h3>
+        <h3 className="text-xl font-semibold">Thanks, we'll call you within 1 business hour.</h3>
         <p className="text-muted mt-2">Watch for a call from a {data.firstName ? "TerraDebt advisor" : "TerraDebt advisor"}. If you'd rather book a time, call us at 1-800-TERRA-00.</p>
       </div>
     );
@@ -1228,8 +1228,8 @@ export async function notifySlack(lead: Lead): Promise<IntegrationResult> {
 *Has MCA debt:* ${lead.hasMcaDebt ? "Yes" : "No"}
 *Debt:* ${lead.debtAmountBucket ?? "n/a"}
 *Source:* ${lead.source}
-*UTM:* ${lead.utmSource ?? "—"} / ${lead.utmCampaign ?? "—"}
-*gclid:* ${lead.gclid ?? "—"}`;
+*UTM:* ${lead.utmSource ?? ","} / ${lead.utmCampaign ?? ","}
+*gclid:* ${lead.gclid ?? ","}`;
 
   try {
     const res = await fetch(url, {
@@ -1612,7 +1612,7 @@ Verify deploy succeeds and form works on production URL.
 
 ---
 
-# Phase 3 — Marketing surfaces
+# Phase 3, Marketing surfaces
 
 ## Task 13: Homepage (final)
 
@@ -1655,7 +1655,7 @@ export function Hero() {
         <div>
           <span className="inline-block bg-electric/10 text-electric text-xs font-medium px-3 py-1 rounded-full">Transparent flat fee</span>
           <h1 className="mt-4 text-4xl md:text-5xl font-bold text-slate leading-tight">MCA debt relief, with a published flat fee.</h1>
-          <p className="mt-4 text-lg text-muted max-w-xl">No upfront fees. No monthly retainers. We tell you the number before you sign anything — and we work with stacked MCAs, even before you default.</p>
+          <p className="mt-4 text-lg text-muted max-w-xl">No upfront fees. No monthly retainers. We tell you the number before you sign anything, and we work with stacked MCAs, even before you default.</p>
           <AggregateCounter />
           <ul className="mt-6 space-y-2 text-sm text-slate">
             <li>✓ Flat fee, published</li>
@@ -1681,7 +1681,7 @@ import { db } from "@/lib/db";
 export async function AggregateCounter() {
   const setting = await db.setting.findUnique({ where: { key: "aggregate_resolved_dollars" } });
   const value = (setting?.value as number) ?? 0;
-  if (!value) return <p className="mt-4 text-sm text-muted">Founding cohort. We resolve real cases — quietly, while we build the brand.</p>;
+  if (!value) return <p className="mt-4 text-sm text-muted">Founding cohort. We resolve real cases, quietly, while we build the brand.</p>;
   const formatted = `$${(value / 1_000_000).toFixed(1)}M+`;
   return <p className="mt-4 text-sm font-medium text-slate">{formatted} in MCA debt resolved for our clients.</p>;
 }
@@ -1768,7 +1768,7 @@ export const PROGRAMS: Record<ProgramKey, {
   "restructure": {
     title: "MCA Restructure",
     headline: "Restructure your MCAs into one manageable monthly payment.",
-    subline: "We renegotiate terms with each lender so your payments fit your actual cash flow — without settling.",
+    subline: "We renegotiate terms with each lender so your payments fit your actual cash flow, without settling.",
     whoFor: ["Current but stretched on stacked MCAs", "Want to preserve lender relationships", "Total debt $25K-$1M"],
     mechanism: [
       "Aggregate all MCA contracts and effective APRs",
@@ -1860,7 +1860,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
       <section className="bg-white border-y border-border">
         <div className="mx-auto max-w-content px-6 py-12">
           <h2 className="text-2xl font-semibold">Recent example</h2>
-          <p className="mt-4 text-slate">${(p.example.debt / 1000).toFixed(0)}K resolved over {p.example.months} months — saved ${(p.example.saved / 1000).toFixed(0)}K ({Math.round((p.example.saved / p.example.debt) * 100)}%).</p>
+          <p className="mt-4 text-slate">${(p.example.debt / 1000).toFixed(0)}K resolved over {p.example.months} months, saved ${(p.example.saved / 1000).toFixed(0)}K ({Math.round((p.example.saved / p.example.debt) * 100)}%).</p>
         </div>
       </section>
     </article>
@@ -1910,16 +1910,16 @@ export const VERTICAL_CONTENT: VerticalContent[] = [
     slug: "trucking",
     name: "Trucking",
     headline: "MCA Relief for Trucking Companies",
-    subline: "From owner-operators to small fleets — we know how factoring stacks on top of MCAs and how to unwind both.",
+    subline: "From owner-operators to small fleets, we know how factoring stacks on top of MCAs and how to unwind both.",
     pains: ["Daily MCA debits eating into fuel and driver pay", "Factoring company holding back invoices", "Equipment financing on top of MCAs"],
     stats: [{ label: "Avg savings", value: "47%" }, { label: "Avg timeline", value: "9-14 months" }, { label: "Trucking clients served", value: "growing" }],
     faq: [
-      { q: "Will my CDL be at risk?", a: "No. MCA debt is business debt — your CDL is personal licensure and is not affected by debt resolution." },
+      { q: "Will my CDL be at risk?", a: "No. MCA debt is business debt, your CDL is personal licensure and is not affected by debt resolution." },
       { q: "Can I keep operating during the program?", a: "Yes. Our restructure and settlement programs are designed to keep your business operating, not shut it down." },
     ],
   },
   // ... 7 more verticals (restaurants, construction, healthcare, retail, ecommerce, salons, auto)
-  // Same shape — fill in with vertical-specific copy. Each one ~80 LOC of content.
+  // Same shape, fill in with vertical-specific copy. Each one ~80 LOC of content.
 ];
 ```
 
@@ -1973,7 +1973,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
       </section>
       <section className="bg-white border-y border-border">
         <div className="mx-auto max-w-content px-6 py-16">
-          <h2 className="text-2xl font-semibold">FAQ — {v.name}</h2>
+          <h2 className="text-2xl font-semibold">FAQ, {v.name}</h2>
           <dl className="mt-4 space-y-4">{v.faq.map((f) => (
             <div key={f.q}>
               <dt className="font-medium text-slate">{f.q}</dt>
@@ -2011,7 +2011,7 @@ const db = new PrismaClient();
 
 const STUDIES = [
   { slug: "trucking-425k", industry: "Trucking", debtAmount: 425000, savingsPct: 42, months: 11, storyMd: "## The situation\n...\n\n## What we did\n...\n\n## Outcome\n..." },
-  // ... 9 more — fill in with realistic detail. Match the spec §9: industry / debt / % / months / 200-400-word story
+  // ... 9 more, fill in with realistic detail. Match the spec §9: industry / debt / % / months / 200-400-word story
 ];
 
 async function main() {
@@ -2112,8 +2112,8 @@ const db = new PrismaClient();
 
 const ARTICLES = [
   { slug: "what-is-reverse-consolidation", title: "What is reverse consolidation, and why it usually backfires", excerpt: "Reverse consolidation looks like relief but often grows your total debt.", contentMd: "## TL;DR\n..." },
-  { slug: "mca-settlement-vs-restructure", title: "MCA settlement vs restructure: which is right for your business", excerpt: "Two different paths to MCA debt relief — here's how to choose.", contentMd: "..." },
-  { slug: "how-to-read-your-mca-contract", title: "How to read your MCA contract: a line-by-line guide", excerpt: "What to look for in the fine print before you sign — or before you settle.", contentMd: "..." },
+  { slug: "mca-settlement-vs-restructure", title: "MCA settlement vs restructure: which is right for your business", excerpt: "Two different paths to MCA debt relief, here's how to choose.", contentMd: "..." },
+  { slug: "how-to-read-your-mca-contract", title: "How to read your MCA contract: a line-by-line guide", excerpt: "What to look for in the fine print before you sign, or before you settle.", contentMd: "..." },
   { slug: "effective-apr-explained", title: "Effective APR on MCAs explained (and why it's not what they tell you)", excerpt: "MCAs are sold as factor rates. Here's how to convert to a real APR.", contentMd: "..." },
   { slug: "coj-defense-basics", title: "Confession of Judgment defense: what to do in the first 72 hours", excerpt: "If a COJ is filed, time matters. Here's the playbook.", contentMd: "..." },
   // ... 15 more (full list in spec §5: BOFU-tuned topics, 800-1500 words each)
@@ -2131,7 +2131,7 @@ async function main() {
 main().catch(console.error).finally(() => db.$disconnect());
 ```
 
-> **Content note:** real article body content is generated separately (Bar can dispatch a content agent to write all 20 — TerraDebt has its own Anthropic key per the no-cross-project-keys rule). Plan ships with placeholder seeds; full content delivered before launch.
+> **Content note:** real article body content is generated separately (Bar can dispatch a content agent to write all 20, TerraDebt has its own Anthropic key per the no-cross-project-keys rule). Plan ships with placeholder seeds; full content delivered before launch.
 
 - [ ] **Step 2: Index page**
 
@@ -2346,7 +2346,7 @@ git commit -m "feat: 50 programmatic state defense pages"
 
 ---
 
-## Task 19: Static meta pages — about, contact, trust, privacy, terms, disclosure
+## Task 19: Static meta pages, about, contact, trust, privacy, terms, disclosure
 
 **Files:**
 - Create: `app/(site)/about/page.tsx`, `app/(site)/contact/page.tsx`, `app/(site)/trust/page.tsx`, `app/(site)/privacy/page.tsx`, `app/(site)/terms/page.tsx`, `app/(site)/disclosure/page.tsx`
@@ -2364,7 +2364,7 @@ export default function About() {
       <h2>Mission</h2>
       <p>... [Bar to provide founder text]</p>
       <h2>Founder</h2>
-      <p>Placeholder — founder bio + photo.</p>
+      <p>Placeholder, founder bio + photo.</p>
     </article>
   );
 }
@@ -2372,13 +2372,13 @@ export default function About() {
 
 - [ ] **Step 2-6: Contact, Trust, Privacy, Terms, Disclosure**
 
-Repeat the same pattern. Privacy/Terms/Disclosure use standard MCA-relief boilerplate (Bar can adapt from Coastal Debt's existing legal pages — content should be reviewed by counsel before launch).
+Repeat the same pattern. Privacy/Terms/Disclosure use standard MCA-relief boilerplate (Bar can adapt from Coastal Debt's existing legal pages, content should be reviewed by counsel before launch).
 
 - [ ] **Step 7: Commit**
 
 ```bash
 git add app/\(site\)/about app/\(site\)/contact app/\(site\)/trust app/\(site\)/privacy app/\(site\)/terms app/\(site\)/disclosure
-git commit -m "feat: meta pages — about, contact, trust, privacy, terms, disclosure"
+git commit -m "feat: meta pages, about, contact, trust, privacy, terms, disclosure"
 ```
 
 ---
@@ -2527,7 +2527,7 @@ git commit -m "feat: dynamic sitemap.xml and robots.txt"
 
 ---
 
-# Phase 4 — AI Contract Review tool
+# Phase 4, AI Contract Review tool
 
 ## Task 22: PDF upload + text extraction
 
@@ -2636,7 +2636,7 @@ export type ContractAnalysis = {
   options: string[];
 };
 
-const SYSTEM = `You are an expert MCA contract analyst. Given a merchant cash advance contract, extract specific financial terms and identify red flags. Return JSON only — no prose.
+const SYSTEM = `You are an expert MCA contract analyst. Given a merchant cash advance contract, extract specific financial terms and identify red flags. Return JSON only, no prose.
 
 Always include:
 - summary: 1-2 sentence plain-English summary of the deal
@@ -2787,12 +2787,12 @@ export function ResultCard({ a }: { a: ContractAnalysis }) {
       <p className="mt-2 text-muted">{a.summary}</p>
 
       <dl className="grid grid-cols-2 gap-4 mt-6">
-        <Stat label="Funded amount" value={a.fundedAmount ? `$${a.fundedAmount.toLocaleString()}` : "—"} />
-        <Stat label="Total payback" value={a.totalPayback ? `$${a.totalPayback.toLocaleString()}` : "—"} />
-        <Stat label="Factor rate" value={a.factorRate ? a.factorRate.toFixed(2) : "—"} />
-        <Stat label="Effective APR" value={a.effectiveApr ? `${a.effectiveApr.toFixed(1)}%` : "—"} highlight />
-        <Stat label="Term" value={a.termDays ? `${a.termDays} days` : "—"} />
-        <Stat label="Daily debit" value={a.dailyPayment ? `$${a.dailyPayment.toLocaleString()}` : "—"} />
+        <Stat label="Funded amount" value={a.fundedAmount ? `$${a.fundedAmount.toLocaleString()}` : ","} />
+        <Stat label="Total payback" value={a.totalPayback ? `$${a.totalPayback.toLocaleString()}` : ","} />
+        <Stat label="Factor rate" value={a.factorRate ? a.factorRate.toFixed(2) : ","} />
+        <Stat label="Effective APR" value={a.effectiveApr ? `${a.effectiveApr.toFixed(1)}%` : ","} highlight />
+        <Stat label="Term" value={a.termDays ? `${a.termDays} days` : ","} />
+        <Stat label="Daily debit" value={a.dailyPayment ? `$${a.dailyPayment.toLocaleString()}` : ","} />
       </dl>
 
       <h3 className="text-lg font-semibold mt-8">Red flags</h3>
@@ -2846,7 +2846,7 @@ export function EmailCapture({ reviewId }: { reviewId: string }) {
         <input type="email" placeholder="you@business.com" value={email} onChange={(e) => setEmail(e.target.value)} className="flex-1 border border-border rounded-md px-3 py-2" />
         <button onClick={submit} disabled={!email || submitting} className="bg-electric text-white px-4 py-2 rounded-md disabled:opacity-50">{submitting ? "..." : "Email it"}</button>
       </div>
-      <p className="mt-1 text-xs text-muted">Optional — your analysis is already shown above.</p>
+      <p className="mt-1 text-xs text-muted">Optional, your analysis is already shown above.</p>
     </div>
   );
 }
@@ -2873,7 +2873,7 @@ export default function ContractReviewPage() {
       <div>
         <span className="inline-block bg-electric/10 text-electric text-xs font-medium px-3 py-1 rounded-full">Free tool</span>
         <h1 className="mt-4 text-4xl font-bold">AI MCA Contract Review</h1>
-        <p className="mt-4 text-muted">Upload your MCA contract. Get the effective APR, total payback, red flags, and your options — in 30 seconds. No email required.</p>
+        <p className="mt-4 text-muted">Upload your MCA contract. Get the effective APR, total payback, red flags, and your options, in 30 seconds. No email required.</p>
       </div>
       <div>
         {!analysis && <UploadCard onResult={(id, a) => { setReviewId(id); setAnalysis(a); }} />}
@@ -2944,7 +2944,7 @@ git push origin main
 
 ---
 
-# Phase 5 — Admin CMS
+# Phase 5, Admin CMS
 
 ## Task 26: Auth (cookie session, login/logout)
 
@@ -3190,7 +3190,7 @@ export default async function AdminDashboard() {
                 <td>{l.firstName} {l.lastName}</td>
                 <td>{l.businessName}</td>
                 <td>{l.source}</td>
-                <td>{l.debtAmountBucket ?? "—"}</td>
+                <td>{l.debtAmountBucket ?? ","}</td>
               </tr>
             ))}
           </tbody>
@@ -3260,7 +3260,7 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
               <td>{l.businessName}</td>
               <td>{l.email}</td>
               <td>{l.source}</td>
-              <td>{l.debtAmountBucket ?? "—"}</td>
+              <td>{l.debtAmountBucket ?? ","}</td>
               <td>{l.status}</td>
             </tr>
           ))}
@@ -3273,7 +3273,7 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
 
 - [ ] **Step 2: Detail view + status update**
 
-`app/admin/leads/[id]/page.tsx` — show all lead fields + integration status JSON, allow updating status via `actions.ts` server action.
+`app/admin/leads/[id]/page.tsx`, show all lead fields + integration status JSON, allow updating status via `actions.ts` server action.
 
 - [ ] **Step 3: CSV export**
 
@@ -3332,9 +3332,9 @@ export default async function ContractReviewsPage() {
             <tr key={r.id} className="border-t border-border">
               <td className="px-3 py-2"><Link href={`/admin/contract-reviews/${r.id}`}>{r.createdAt.toISOString().slice(0, 16).replace("T", " ")}</Link></td>
               <td>{r.contractFilename}</td>
-              <td>{r.effectiveApr ? `${r.effectiveApr.toFixed(1)}%` : "—"}</td>
-              <td>{r.emailCaptured ?? "—"}</td>
-              <td>{r.lead ? `${r.lead.firstName} ${r.lead.lastName}` : "—"}</td>
+              <td>{r.effectiveApr ? `${r.effectiveApr.toFixed(1)}%` : ","}</td>
+              <td>{r.emailCaptured ?? ","}</td>
+              <td>{r.lead ? `${r.lead.firstName} ${r.lead.lastName}` : ","}</td>
             </tr>
           ))}
         </tbody>
@@ -3344,7 +3344,7 @@ export default async function ContractReviewsPage() {
 }
 ```
 
-- [ ] **Step 2: Detail page** — render `aiSummary` JSON pretty-printed + extracted text in collapsible.
+- [ ] **Step 2: Detail page**, render `aiSummary` JSON pretty-printed + extracted text in collapsible.
 
 - [ ] **Step 3: Commit**
 
@@ -3456,7 +3456,7 @@ git push origin main
 
 ---
 
-# Phase 6 — Launch polish
+# Phase 6, Launch polish
 
 ## Task 35: SEO meta + structured data
 
@@ -3464,7 +3464,7 @@ git push origin main
 - Modify: `app/(site)/layout.tsx`, page-level `generateMetadata` functions
 - Create: `lib/structured-data.ts`
 
-- [ ] **Step 1: Per-page metadata** (already on most pages — verify each page has `generateMetadata` with title + description + openGraph).
+- [ ] **Step 1: Per-page metadata** (already on most pages, verify each page has `generateMetadata` with title + description + openGraph).
 
 - [ ] **Step 2: Organization + Service structured data**
 
@@ -3507,7 +3507,7 @@ git commit -m "feat: SEO metadata + JSON-LD structured data"
 - [ ] **Step 4:** Commit any fixes.
 
 ```bash
-git commit -m "perf: Lighthouse pass — image opt, font preload, RSC migrations"
+git commit -m "perf: Lighthouse pass, image opt, font preload, RSC migrations"
 ```
 
 ---
@@ -3560,26 +3560,26 @@ git push origin v1.0.0
 
 **1. Spec coverage check**
 
-- ✅ §2 Strategic positioning (6 angles) — reflected in homepage hero, founder section, /contract-review, vertical pages, programmatic state pages, transparent fee messaging
-- ✅ §3 Tech stack — Next.js 16 + Postgres + Prisma + Tailwind + Railway (Tasks 1-3)
-- ✅ §4 Visual identity — slate + electric blue tokens, Inter font (Task 2)
-- ✅ §5 Content scope (~100 pages) — Tasks 13-21 cover home, programs, verticals, states, articles, case studies, calculator, AI tool, meta pages
-- ✅ §6 Lead capture — multi-step form (Task 6), AI tool flow (Tasks 22-24), all 5 integrations (Tasks 7-11)
-- ✅ §7 CMS scope — auth (26), dashboard (27), leads (28), contract reviews (29), pages (30), articles (31), verticals/states/case studies (32), visitors/settings (33)
-- ✅ §8 Data model — full Prisma schema in Task 3 matches spec exactly
-- ✅ §9 Page architecture — homepage composition Task 13, programs Task 14, verticals Task 15, states Task 18
-- ✅ §10 Tracking — visitor middleware (Task 4), GA4 (Task 10), Google Ads (Task 11), gclid/fbclid capture
-- ✅ §11 Hosting — Railway from Task 1, prod cutover Task 37
+- ✅ §2 Strategic positioning (6 angles), reflected in homepage hero, founder section, /contract-review, vertical pages, programmatic state pages, transparent fee messaging
+- ✅ §3 Tech stack, Next.js 16 + Postgres + Prisma + Tailwind + Railway (Tasks 1-3)
+- ✅ §4 Visual identity, slate + electric blue tokens, Inter font (Task 2)
+- ✅ §5 Content scope (~100 pages), Tasks 13-21 cover home, programs, verticals, states, articles, case studies, calculator, AI tool, meta pages
+- ✅ §6 Lead capture, multi-step form (Task 6), AI tool flow (Tasks 22-24), all 5 integrations (Tasks 7-11)
+- ✅ §7 CMS scope, auth (26), dashboard (27), leads (28), contract reviews (29), pages (30), articles (31), verticals/states/case studies (32), visitors/settings (33)
+- ✅ §8 Data model, full Prisma schema in Task 3 matches spec exactly
+- ✅ §9 Page architecture, homepage composition Task 13, programs Task 14, verticals Task 15, states Task 18
+- ✅ §10 Tracking, visitor middleware (Task 4), GA4 (Task 10), Google Ads (Task 11), gclid/fbclid capture
+- ✅ §11 Hosting, Railway from Task 1, prod cutover Task 37
 
 **2. Placeholder scan**
 
-- Vertical content (Task 15) and articles (Task 17) and case study text (Task 16) and state content (Task 18) ship with template/seed-only content. This is **explicit content authoring work** that happens outside this implementation plan — Bar will dispatch a content agent to generate the real copy. Plan covers the structural delivery; content delivery is parallel.
+- Vertical content (Task 15) and articles (Task 17) and case study text (Task 16) and state content (Task 18) ship with template/seed-only content. This is **explicit content authoring work** that happens outside this implementation plan, Bar will dispatch a content agent to generate the real copy. Plan covers the structural delivery; content delivery is parallel.
 - Founder bio + photo (Task 19) marked as Bar-to-provide.
 - Phone number, BBB account, Trustpilot account marked as Bar-to-provide in spec §13.
 
 **3. Type consistency**
 
-- `LeadInput` (lib/lead-schema.ts) → `LeadSubmitInput` (lib/lead-service.ts) — extends cleanly with metadata fields ✓
+- `LeadInput` (lib/lead-schema.ts) → `LeadSubmitInput` (lib/lead-service.ts), extends cleanly with metadata fields ✓
 - `ContractAnalysis` shape used identically in Tasks 23/24 ✓
 - `IntegrationResult` defined in `lib/integrations/index.ts`, imported consistently in slack/crm/ga4/google-ads ✓
 - Prisma model names match across schema (Task 3) and seed (Task 5) and all admin/public reads ✓
@@ -3587,7 +3587,7 @@ git push origin v1.0.0
 **4. Bite-sized check**
 
 - All steps are 2-5 min where they're TDD-style implementations
-- Some tasks (15, 17, 18) have content-authoring steps that are larger ("fill in 7 more verticals") — flagged as content work, not engineering
+- Some tasks (15, 17, 18) have content-authoring steps that are larger ("fill in 7 more verticals"), flagged as content work, not engineering
 - All tasks end with a commit step
 
 ---

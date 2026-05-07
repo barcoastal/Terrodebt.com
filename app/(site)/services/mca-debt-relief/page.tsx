@@ -51,7 +51,7 @@ export default function McaDebtReliefServices() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="md:col-span-2 space-y-4 text-slate leading-relaxed">
-              <p>MCA debt relief is the structured process of restoring cash flow to a business that has stacked one or more merchant cash advances. It is not a single product. It is a set of tools — restructure, settlement, legal defense, and program management — chosen to fit the merchant&apos;s situation.</p>
+              <p>MCA debt relief is the structured process of restoring cash flow to a business that has stacked one or more merchant cash advances. It is not a single product. It is a set of tools (restructure, settlement, legal defense, and program management) chosen to fit the merchant&apos;s situation.</p>
               <p>Our work has three primary outcomes. We pause damaging daily debits, reduce or restructure the underlying debt, and rebuild a path to bankable credit. The exact mix depends on whether you are still current, whether legal action has been taken, and what your lender mix looks like.</p>
               <ul className="mt-6 space-y-3">
                 {[

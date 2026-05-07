@@ -2,7 +2,7 @@
 
 **Version 1.0** · 2026-05-05
 
-This document is the source of truth for the TerraDebt brand — visual identity, voice, and how to apply both. Anything that touches a customer, a screen, an investor deck, or a paid ad starts here.
+This document is the source of truth for the TerraDebt brand, visual identity, voice, and how to apply both. Anything that touches a customer, a screen, an investor deck, or a paid ad starts here.
 
 The site renders a live version of this system at `/brand` for designers and engineers to inspect tokens and components in context.
 
@@ -60,7 +60,7 @@ The TerraDebt mark is built around three pieces: a geometric T inside a slate sq
 
 ### Construction
 
-- **Square**: 64×64 viewBox, 14px corner radius (22% radius ratio — matches Apple iOS app icon proportion).
+- **Square**: 64×64 viewBox, 14px corner radius (22% radius ratio, matches Apple iOS app icon proportion).
 - **T glyph**: stem 10px wide, top bar 36px wide, weight balanced for legibility down to 16px.
 - **Accent dot**: 5px radius, electric blue (#2563EB), positioned bottom-right of the T glyph (or trailing the wordmark). Always present. The dot is non-negotiable.
 - **Wordmark**: Inter Bold (700), `letter-spacing: -1.6` at 48px, lowercase. Lowercase is intentional. We don't shout.
@@ -128,10 +128,10 @@ These are not in `globals.css` yet. Add when needed (e.g., admin status badges).
 
 Use Tailwind's `/N` opacity syntax for tinted accents (e.g., `bg-electric/10` for the electric blue badge background). Approved tints:
 
-- `bg-electric/5` — barely-there accent fill
-- `bg-electric/10` — badge backgrounds, subtle highlight zones
-- `bg-electric/20` — hover states (use sparingly)
-- `bg-slate/5` — table row hover
+- `bg-electric/5`, barely-there accent fill
+- `bg-electric/10`, badge backgrounds, subtle highlight zones
+- `bg-electric/20`, hover states (use sparingly)
+- `bg-slate/5`, table row hover
 
 ---
 
@@ -162,7 +162,7 @@ Use Tailwind's `/N` opacity syntax for tinted accents (e.g., `bg-electric/10` fo
 - **Tighten headlines, breathe body.** Headlines use `tracking-tight`. Body uses default. Sublines use `leading-relaxed` if longer than 2 lines.
 - **No all-caps body copy.** Eyebrows and table headers only.
 - **No italics for emphasis.** Use weight (semibold) or color (slate vs muted).
-- **Lowercase the wordmark.** Always. The brand is "terradebt." not "TerraDebt." in display contexts. (This document uses TerraDebt in prose for English readability — the visual mark stays lowercase.)
+- **Lowercase the wordmark.** Always. The brand is "terradebt." not "TerraDebt." in display contexts. (This document uses TerraDebt in prose for English readability, the visual mark stays lowercase.)
 
 ---
 
@@ -255,7 +255,7 @@ We speak like a smart, slightly impatient operator who's seen the inside of bad 
 
 ### Grid
 
-- Two-column hero: `grid md:grid-cols-2 gap-12 items-start` — content left, form right.
+- Two-column hero: `grid md:grid-cols-2 gap-12 items-start`, content left, form right.
 - Three-stat row: `grid md:grid-cols-3 gap-6`.
 - Four-card grid: `grid md:grid-cols-4 gap-6`.
 
@@ -353,7 +353,7 @@ White background, slate links, electric primary CTA on the right. `border-b bord
 
 ## 8. Iconography
 
-Use **Lucide** icons (free, MIT, geometric, matches our type weight). Sized to body copy by default — `w-4 h-4` for inline, `w-5 h-5` for buttons, `w-6 h-6` for section accents. Stroke `1.5` (Lucide default).
+Use **Lucide** icons (free, MIT, geometric, matches our type weight). Sized to body copy by default, `w-4 h-4` for inline, `w-5 h-5` for buttons, `w-6 h-6` for section accents. Stroke `1.5` (Lucide default).
 
 ```tsx
 import { CheckCircle2, ArrowRight } from "lucide-react";
