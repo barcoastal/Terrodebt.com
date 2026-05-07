@@ -2,12 +2,22 @@ export const ORG_LD = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
   "name": "TerraDebt",
+  "legalName": "GRL Recovery LLC",
+  "alternateName": "GRL Recovery LLC",
   "url": "https://terradebt.com",
   "logo": "https://terradebt.com/logo.png",
   "description": "Resolve stacked MCAs with a tailored program. Free assessment, free calculators, and licensed counsel in all 50 states.",
   "areaServed": { "@type": "Country", "name": "United States" },
   "serviceType": ["MCA Settlement", "MCA Restructure", "Reverse Consolidation Defense", "MCA Legal Defense"],
   "telephone": "1-800-TERRA-00",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6301 NW 5th Way 5100",
+    "addressLocality": "Fort Lauderdale",
+    "addressRegion": "FL",
+    "postalCode": "33309",
+    "addressCountry": "US",
+  },
 };
 
 export type ArticleLdInput = {

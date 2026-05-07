@@ -11,6 +11,10 @@ export default function TermsPage() {
         <em>Last updated: this is starter copy that will be reviewed by counsel before any substantive update.</em>
       </p>
 
+      <p>
+        TerraDebt is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309. References to &quot;TerraDebt,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot; in these terms refer to GRL Recovery LLC.
+      </p>
+
       <h2>Use of the site</h2>
       <p>
         By accessing or using the TerraDebt website, you agree to these terms. If you do not agree, do not use the site. We may update these terms from time to time and the updated terms will be effective when posted.
@@ -48,7 +52,12 @@ export default function TermsPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about these terms can be sent to hello@terradebt.com.
+        Questions about these terms can be sent to hello@terradebt.com or by mail to:
+      </p>
+      <p>
+        <strong>GRL Recovery LLC</strong><br />
+        6301 NW 5th Way 5100<br />
+        Fort Lauderdale, FL 33309
       </p>
     </article>
   );

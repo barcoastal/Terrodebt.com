@@ -12,7 +12,7 @@ export default function PrivacyPage() {
       </p>
 
       <p>
-        This privacy policy describes how TerraDebt (referred to as &quot;TerraDebt,&quot; &quot;we,&quot; or &quot;us&quot;) collects, uses, and shares information when you use our website or engage our services. By using the site or submitting information through any form, you agree to the practices described here.
+        TerraDebt is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309. This privacy policy describes how GRL Recovery LLC, doing business as TerraDebt (referred to as &quot;TerraDebt,&quot; &quot;we,&quot; or &quot;us&quot;), collects, uses, and shares information when you use our website or engage our services. By using the site or submitting information through any form, you agree to the practices described here.
       </p>
 
       <h2>Information we collect</h2>
@@ -53,7 +53,13 @@ export default function PrivacyPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about this policy or about your information can be sent to hello@terradebt.com.
+        Questions about this policy or about your information can be sent to hello@terradebt.com or by mail to:
+      </p>
+      <p>
+        <strong>GRL Recovery LLC</strong><br />
+        Attn: Privacy<br />
+        6301 NW 5th Way 5100<br />
+        Fort Lauderdale, FL 33309
       </p>
     </article>
   );

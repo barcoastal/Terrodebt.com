@@ -22,6 +22,15 @@ export default function ContactPage() {
             <div className="mt-1 text-lg text-slate">hello@terradebt.com</div>
           </div>
           <div>
+            <div className="text-sm font-semibold uppercase tracking-wide text-muted">Office</div>
+            <p className="mt-1 text-sm text-slate leading-relaxed">
+              <strong>GRL Recovery LLC</strong><br />
+              6301 NW 5th Way 5100<br />
+              Fort Lauderdale, FL 33309
+            </p>
+            <p className="mt-3 text-xs text-muted">TerraDebt is a trade name of GRL Recovery LLC.</p>
+          </div>
+          <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-muted">Hours</div>
             <p className="mt-1 text-sm text-slate leading-relaxed">
               We answer the phone Monday through Friday from 8 AM to 8 PM Eastern, and Saturdays from 10 AM to 4 PM Eastern. For urgent legal defense matters, including COJ filings or frozen accounts, leave a voicemail anytime and we will return the call within one business hour during business days.

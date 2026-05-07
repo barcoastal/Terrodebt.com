@@ -47,7 +47,16 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border text-center text-xs text-muted py-4">© {new Date().getFullYear()} TerraDebt. All rights reserved.</div>
+      <div className="border-t border-border">
+        <div className="mx-auto max-w-content px-6 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-muted">
+          <div>
+            <span className="font-medium text-slate">GRL Recovery LLC</span>
+            <span className="mx-2 text-border">·</span>
+            <span>6301 NW 5th Way 5100, Fort Lauderdale, FL 33309</span>
+          </div>
+          <div>© {new Date().getFullYear()} GRL Recovery LLC. TerraDebt is a trade name of GRL Recovery LLC. All rights reserved.</div>
+        </div>
+      </div>
     </footer>
   );
 }

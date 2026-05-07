@@ -8,6 +8,10 @@ export default function DisclosurePage() {
     <article className="mx-auto max-w-content px-6 py-16 prose max-w-none">
       <h1>Disclosure</h1>
 
+      <p>
+        TerraDebt is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309.
+      </p>
+
       <h2>Not a debt settlement service</h2>
       <p>
         TerraDebt provides resolution services for merchant cash advance (MCA) debt held by commercial businesses. We do not provide consumer debt settlement, consumer credit counseling, or services governed by the Telemarketing Sales Rule&apos;s debt relief services provisions, which apply to consumer debts. The services described on this site are commercial in nature and are intended for businesses, not individuals seeking consumer relief.
