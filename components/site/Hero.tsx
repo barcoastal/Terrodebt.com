@@ -3,28 +3,42 @@ import { AggregateCounter } from "./AggregateCounter";
 
 export function Hero() {
   return (
-    <section className="bg-offwhite border-b border-border">
-      <div className="mx-auto max-w-content px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
+    <section className="relative bg-offwhite overflow-hidden">
+      <div className="absolute inset-0 bg-mesh pointer-events-none" />
+      <div className="absolute inset-0 grid-pattern pointer-events-none" />
+      <div className="relative mx-auto max-w-content px-6 pt-20 pb-24 grid md:grid-cols-2 gap-16 items-start">
         <div>
-          <span className="inline-block bg-electric/10 text-electric text-xs font-medium px-3 py-1 rounded-full">
-            Transparent flat fee
+          <span className="inline-flex items-center gap-2 bg-white border border-border text-slate text-xs font-medium px-3 py-1.5 rounded-full shadow-soft">
+            <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse" />
+            Transparent flat fee. Published.
           </span>
-          <h1 className="mt-4 text-4xl md:text-5xl font-bold text-slate leading-tight">
-            MCA debt relief, with a published flat fee.
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold text-slate leading-[1.05] tracking-tighter">
+            MCA debt relief, with a <span className="text-electric">published flat fee</span>.
           </h1>
-          <p className="mt-4 text-lg text-muted">
-            No upfront fees. No monthly retainers. We tell you the number before you sign anything.
+          <p className="mt-6 text-lg md:text-xl text-muted max-w-xl leading-relaxed">
+            No upfront cost. No monthly retainers. We tell you the number before you sign anything, and we work with stacked MCAs even before default.
           </p>
           <AggregateCounter />
-          <ul className="mt-6 space-y-2 text-sm text-slate">
-            <li>Flat fee, published on every program page</li>
-            <li>No upfront cost. You pay as we resolve.</li>
-            <li>Pre-default and post-default programs</li>
-            <li>Free AI contract review, no signup required</li>
+          <ul className="mt-8 grid grid-cols-2 gap-3 text-sm">
+            <Bullet>Flat fee, published</Bullet>
+            <Bullet>No upfront cost</Bullet>
+            <Bullet>Pre-default programs</Bullet>
+            <Bullet>Free AI contract review</Bullet>
           </ul>
         </div>
-        <LeadForm source="homepage" />
+        <div className="md:sticky md:top-8">
+          <LeadForm source="homepage" />
+        </div>
       </div>
     </section>
+  );
+}
+
+function Bullet({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex items-start gap-2">
+      <svg className="w-4 h-4 mt-0.5 text-electric flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <span className="text-slate">{children}</span>
+    </li>
   );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
+import { Reveal } from "./Reveal";
 
 type Card = {
   slug: string;
@@ -39,26 +40,31 @@ export async function CaseStudyCarousel() {
 
   return (
     <section className="bg-offwhite">
-      <div className="mx-auto max-w-content px-6 py-16">
-        <div className="flex items-baseline justify-between">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate">Recent outcomes</h2>
-          <Link href="/case-studies" className="text-sm font-medium">View all case studies</Link>
-        </div>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {cards.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/case-studies/${c.slug}`}
-              className="block p-5 rounded-xl border border-border bg-white no-underline hover:border-electric hover:no-underline"
-            >
-              <div className="text-xs font-semibold uppercase tracking-wide text-muted">{c.industry}</div>
-              <div className="mt-3 text-2xl font-bold text-slate">${(c.debtAmount / 1000).toFixed(0)}K</div>
-              <div className="text-xs text-muted">debt resolved</div>
-              <div className="mt-3 flex justify-between text-sm">
-                <span className="text-electric font-semibold">{c.savingsPct}% saved</span>
-                <span className="text-muted">{c.months} months</span>
-              </div>
-            </Link>
+      <div className="mx-auto max-w-content px-6 py-20">
+        <Reveal>
+          <div className="flex items-baseline justify-between">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate tracking-tighter">Recent outcomes</h2>
+            <Link href="/case-studies" className="text-sm font-medium text-electric no-underline hover:underline">View all case studies →</Link>
+          </div>
+        </Reveal>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {cards.map((c, i) => (
+            <Reveal key={c.slug} delay={i * 0.05}>
+              <Link
+                href={`/case-studies/${c.slug}`}
+                className="group block surface-card p-6 no-underline hover:-translate-y-0.5 hover:shadow-[var(--shadow-elevated)] hover:border-electric/40 transition-all h-full"
+              >
+                <div className="font-mono text-[10px] font-semibold uppercase tracking-widest text-muted">{c.industry}</div>
+                <div className="mt-4 font-mono text-3xl font-semibold text-slate tracking-tight">
+                  ${(c.debtAmount / 1000).toFixed(0)}K
+                </div>
+                <div className="text-xs text-muted">debt resolved</div>
+                <div className="mt-5 pt-5 border-t border-border flex justify-between items-baseline text-sm">
+                  <span className="font-mono text-electric font-semibold">{c.savingsPct}% saved</span>
+                  <span className="font-mono text-xs text-muted">{c.months} mo</span>
+                </div>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </div>

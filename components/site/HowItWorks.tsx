@@ -1,3 +1,5 @@
+import { Reveal } from "./Reveal";
+
 const STEPS = [
   {
     n: 1,
@@ -19,18 +21,22 @@ const STEPS = [
 export function HowItWorks() {
   return (
     <section className="bg-offwhite">
-      <div className="mx-auto max-w-content px-6 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate">How it works</h2>
-        <p className="mt-2 text-muted">Three steps. No surprises. No upfront fee.</p>
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
-          {STEPS.map((s) => (
-            <div key={s.n} className="bg-white border border-border rounded-xl p-6">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-electric text-white font-bold">
-                {s.n}
+      <div className="mx-auto max-w-content px-6 py-20">
+        <Reveal>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate tracking-tighter">How it works</h2>
+          <p className="mt-3 text-muted text-lg">Three steps. No surprises. No upfront fee.</p>
+        </Reveal>
+        <div className="mt-12 grid md:grid-cols-3 gap-5">
+          {STEPS.map((s, i) => (
+            <Reveal key={s.n} delay={i * 0.1}>
+              <div className="surface-card p-7 h-full transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-elevated)]">
+                <div className="font-mono text-4xl font-semibold text-electric tracking-tight">
+                  {String(s.n).padStart(2, "0")}
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-slate tracking-tight">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted leading-relaxed">{s.body}</p>
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-slate">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">{s.body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

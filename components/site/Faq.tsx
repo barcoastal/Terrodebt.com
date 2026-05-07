@@ -1,3 +1,5 @@
+import { Reveal } from "./Reveal";
+
 const FAQ = [
   {
     q: "How long does the program take?",
@@ -28,17 +30,23 @@ const FAQ = [
 export function Faq() {
   return (
     <section className="bg-offwhite">
-      <div className="mx-auto max-w-content px-6 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate">Common questions</h2>
-        <div className="mt-8 divide-y divide-border border-y border-border bg-white rounded-xl">
-          {FAQ.map((item) => (
-            <details key={item.q} className="group p-5">
-              <summary className="cursor-pointer list-none flex justify-between items-center text-base font-semibold text-slate">
-                {item.q}
-                <span className="text-muted text-xl group-open:rotate-45 transition-transform">+</span>
-              </summary>
-              <p className="mt-3 text-sm text-muted leading-relaxed">{item.a}</p>
-            </details>
+      <div className="mx-auto max-w-content px-6 py-20">
+        <Reveal>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate tracking-tighter">Common questions</h2>
+        </Reveal>
+        <div className="mt-12 grid gap-3">
+          {FAQ.map((item, i) => (
+            <Reveal key={item.q} delay={i * 0.05}>
+              <details className="group surface-card transition-all hover:border-electric/30 open:shadow-[var(--shadow-elevated)]">
+                <summary className="cursor-pointer list-none flex justify-between items-center p-6 text-base md:text-lg font-semibold text-slate tracking-tight">
+                  <span>{item.q}</span>
+                  <span className="text-electric text-2xl group-open:rotate-45 transition-transform duration-300 leading-none flex-shrink-0 ml-4">+</span>
+                </summary>
+                <div className="px-6 pb-6">
+                  <p className="text-sm md:text-base text-muted leading-relaxed">{item.a}</p>
+                </div>
+              </details>
+            </Reveal>
           ))}
         </div>
       </div>

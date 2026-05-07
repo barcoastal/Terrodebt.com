@@ -11,20 +11,19 @@ export async function AggregateCounter() {
     dollars = 0;
   }
 
-  if (dollars > 0) {
-    const millions = dollars / 1_000_000;
+  if (!dollars) {
     return (
-      <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm text-slate">
-        <span className="h-2 w-2 rounded-full bg-electric" />
-        <span className="font-semibold">${millions.toFixed(1)}M+</span>
-        <span className="text-muted">in MCA debt resolved</span>
+      <div className="mt-6 flex items-center gap-3">
+        <span className="font-mono text-xs uppercase tracking-wider text-muted">Founding cohort</span>
+        <span className="text-sm text-muted">We resolve real cases quietly while we build the brand.</span>
       </div>
     );
   }
-
+  const formatted = `$${(dollars / 1_000_000).toFixed(1)}M+`;
   return (
-    <p className="mt-6 text-sm text-muted">
-      Founding cohort. We resolve real cases - quietly, while we build the brand.
-    </p>
+    <div className="mt-6 inline-flex items-baseline gap-2">
+      <span className="font-mono text-3xl font-semibold text-slate tracking-tight">{formatted}</span>
+      <span className="text-sm text-muted">in MCA debt resolved.</span>
+    </div>
   );
 }
