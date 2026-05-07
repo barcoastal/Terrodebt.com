@@ -61,7 +61,7 @@ Outside that scenario, reverse consolidation is a way to add another lender to a
 
 ## What to do instead
 
-Settle the contracts that have the worst factor rates and the most aggressive lenders. Restructure the contracts that are workable into manageable monthly payments. Use the reconciliation language in your existing contracts to pause debits while the workout is being arranged. Bring in a relief firm that publishes its fee in writing, has attorneys on call for confession of judgment defense, and can show you anonymized case studies that look like your situation.
+Settle the contracts that have the worst factor rates and the most aggressive lenders. Restructure the contracts that are workable into manageable monthly payments. Use the reconciliation language in your existing contracts to pause debits while the workout is being arranged. Bring in a relief firm that walks you through the fee structure during the consultation, has attorneys on call for confession of judgment defense, and can show you anonymized case studies that look like your situation.
 
 The cleanest path through stacked MCAs almost always runs through the contracts you already have, not through a new one. The lenders you already owe have the most leverage to work with you, and the right negotiation produces real reductions in total payback. A reverse consolidation moves the payment around. A settlement or restructure changes the number.
 
@@ -512,21 +512,21 @@ If you have stacked MCAs and have not started a relief program, the first step i
 
 ## TL;DR
 
-- Real MCA relief is paid against outcomes, not as a large upfront retainer.
+- A large upfront retainer with no clear deliverable in return is a structural red flag.
 - Any firm pitching reverse consolidation as the relief product is selling a new MCA, not relief.
 - Vague pricing ("percentage of savings, depends") is a deliberate structure that lets the firm capture more than the merchant expected.
 - Scare tactics on the first call are sales pressure, not legitimate urgency.
-- Refusal to put fees in writing is disqualifying.
+- Refusal to discuss fee structure during the consultation is disqualifying.
 - Claims of "legal team" without actual attorney coordination are common.
 - "Thousands of clients" with zero verifiable case detail means no case detail.
 
-## Red flag 1: requires a large upfront retainer
+## Red flag 1: requires an unreasonably large upfront retainer
 
-Real relief work is paid against progress, not against the act of signing the engagement. Credible firms charge a small audit fee or no fee for the initial review, then earn against milestones (settlements closed, restructures executed, program completion). The merchant's leverage comes from being able to walk away if the work is not getting done. A $10,000 or $25,000 upfront retainer eliminates that leverage immediately.
+A small audit fee or initial engagement fee is industry-standard. The work to inventory contracts, calculate effective APR per advance, identify legal exposure, and propose a program structure has real cost behind it, and most credible firms charge for it. That is not the red flag.
 
-Firms that demand large upfront retainers are sometimes legitimate but operating on a different incentive structure. More often, the upfront retainer is the entire revenue model. The firm collects, does minimal work, and the merchant has no recourse because the engagement letter explicitly covers what was paid for.
+The red flag is a $10,000 or $25,000 upfront retainer with no deliverable defined for what that money buys. Firms that demand large retainers without specifying the audit deliverable, the milestones, or what happens if the program is terminated mid-stream are operating on a different incentive structure. The merchant's leverage comes from being able to walk away if the work is not getting done. A retainer with no defined deliverable eliminates that leverage immediately.
 
-The right structure is a published flat fee paid over the program timeline, with the bulk weighted toward outcomes rather than enrollment.
+The right structure ties fees to defined milestones (audit complete, reconciliation requests filed, settlements closed, program completion), with the bulk weighted toward outcomes rather than enrollment. Ask any firm: what specifically does this retainer buy, and what happens to it if the program is terminated.
 
 ## Red flag 2: pitches reverse consolidation as the relief product
 
@@ -548,11 +548,11 @@ These are sales tactics, not legitimate urgency. Real relief work is not time se
 
 Scare tactics in the first call are designed to compress the merchant's decision window so they cannot vet the firm or get a second opinion. Take 48 hours to read any engagement and have an attorney or accountant look at it before signing. Any firm that resists that timeline is telling you something.
 
-## Red flag 5: refuses to put fee in writing
+## Red flag 5: refuses to discuss the fee structure in your consultation
 
-The engagement letter should state, in dollars, the total program fee. It should specify the milestones at which fees are earned. It should specify what happens if the program is terminated mid-stream. A firm that refuses to put any of this in writing is giving themselves the option to bill more than disclosed.
+A credible firm walks you through the full fee structure during the consultation. The total program cost in dollars, the milestones at which fees are earned, what happens if the program is terminated mid-stream, and what is included versus billed separately. By the time you sign the engagement, every one of those answers should be explicit and in writing in the engagement letter.
 
-This sounds basic. It is one of the most commonly violated rules in the relief category.
+A firm that resists discussing the structure during the consultation, or that wants you to sign before walking through it, is giving themselves the option to bill more than disclosed. This sounds basic. It is one of the most commonly violated rules in the relief category.
 
 ## Red flag 6: claims to be a law firm but the people you talk to are not attorneys
 
@@ -578,13 +578,13 @@ The right structure is that the firm leads communications with lenders, but the 
 
 ## What credible firms look like
 
-Credible firms publish flat fees, do not require large upfront retainers beyond a small audit fee, coordinate with state-licensed attorneys when legal defense is required, document case studies with verifiable detail, set realistic timelines, and walk merchants through the program structure before any commitment.
+Credible firms walk merchants through the fee structure during the consultation, do not require unreasonable upfront retainers without a defined deliverable, coordinate with state-licensed attorneys when legal defense is required, document case studies with verifiable detail, set realistic timelines, and walk merchants through the program structure before any commitment.
 
 The vetting process should feel mutual. The right relief partner expects to be interviewed and answers questions without hesitation. The wrong one applies pressure to sign before the merchant can vet.
 
 ## What to do next
 
-If you are evaluating relief firms, run them through this list before signing anything. Ask the questions in writing where possible. Compare two or three firms before making a decision. The cost of vetting is a few days. The cost of a bad firm is the program itself, plus the time you lose recovering from the damage. Schedule a free assessment with us if you want a baseline comparison. We publish our fee, do not require an upfront retainer, and can produce case studies that match your situation.`,
+If you are evaluating relief firms, run them through this list before signing anything. Ask the questions in writing where possible. Compare two or three firms before making a decision. The cost of vetting is a few days. The cost of a bad firm is the program itself, plus the time you lose recovering from the damage. Schedule a free assessment with us if you want a baseline comparison. We give every merchant a free AI contract review on day one, walk you through fee structure during the consultation, and can produce case studies that match your situation.`,
   },
   {
     slug: "ucc-liens-and-account-freezes",
@@ -1380,12 +1380,12 @@ If you have stopped paying an MCA without a coordinated workout, the right move 
     title: "How to choose an MCA relief partner: a buyer's checklist",
     excerpt:
       "The buyer's checklist that separates credible firms from ones that will make your situation worse.",
-    contentMd: `Choosing the wrong MCA relief firm is one of the most expensive mistakes a stacked-MCA merchant can make. The wrong firm collects an upfront retainer, does minimal work, and leaves the merchant in worse shape with less time and less leverage. The right firm publishes its fee, does the audit before asking for commitment, and produces real outcomes. The difference between the two is visible in the first conversation if you know what to look for. This article is the buyer's checklist.
+    contentMd: `Choosing the wrong MCA relief firm is one of the most expensive mistakes a stacked-MCA merchant can make. The wrong firm collects an upfront retainer, does minimal work, and leaves the merchant in worse shape with less time and less leverage. The right firm walks you through the math before asking for commitment, structures the engagement clearly, and produces real outcomes. The difference between the two is visible in the first conversation if you know what to look for. This article is the buyer's checklist.
 
 ## TL;DR
 
-- Published flat fee in writing, not "percentage of savings depending."
-- No large upfront retainer beyond a small audit fee.
+- Clear fee structure explained during your consultation, not vague "percentage of savings, depends" language.
+- No upfront retainer above a small audit fee, with the deliverable for that audit defined.
 - Free initial assessment that includes contract review.
 - Real attorney coordination, not just claims of "legal team."
 - Documented anonymized case studies with industry, debt size, and outcome.
@@ -1393,13 +1393,13 @@ If you have stopped paying an MCA without a coordinated workout, the right move 
 - Willingness to provide references on request.
 - The interview goes both ways. The right firm expects to be vetted.
 
-## Item 1: published flat fee
+## Item 1: a clear fee structure walked through in your consultation
 
-Credible firms publish their fee structure clearly. The total program cost is defined upfront in dollars and locked in the engagement letter. A firm that will not tell you the total cost of the program before engagement is hiding something.
+Credible firms walk you through the full fee structure during the consultation, before you sign anything. The total program cost in dollars, the milestones at which fees are earned, what happens if the program is terminated mid-stream, and what is included versus billed separately. By the time the engagement letter is presented, every one of those answers is explicit in writing.
 
-The structures to watch for. Flat fee paid over the program timeline is the cleanest. A small audit fee at start, followed by milestone payments tied to outcomes, is also reasonable. Pure performance-based pricing (percentage of savings) can be legitimate but requires careful definition of how savings are calculated, and most firms that use it lean on the ambiguity.
+The structures to watch for. A flat program fee paid over the program timeline is the cleanest. A small audit fee at start, followed by milestone payments tied to outcomes, is also reasonable. Pure performance-based pricing (percentage of savings) can be legitimate but requires careful definition of how savings are calculated, and most firms that use it lean on the ambiguity.
 
-Vague pricing is disqualifying. "Percentage of savings, depending on the program" lets the firm capture more than the merchant expected. Any firm that resists committing to a specific dollar amount is not a credible counterparty.
+Vague pricing is disqualifying. "Percentage of savings, depending on the program" lets the firm capture more than the merchant expected. Any firm that resists committing to a specific dollar amount during the consultation is not a credible counterparty.
 
 ## Item 2: no large upfront retainer
 
@@ -1449,7 +1449,7 @@ References do not have to be unanimously positive. A real reference has texture.
 
 The interview goes both ways. The first call should include direct questions:
 
-What is your fee structure and is it published in writing? Total cost in dollars, not percentages.
+What is your fee structure and will you walk me through it in this consultation? Total cost in dollars, not percentages.
 
 Do you charge upfront beyond an audit fee? If yes, how much and for what specifically.
 
@@ -1479,7 +1479,7 @@ Ask the firm directly: have you done programs like mine? The answer should inclu
 
 ## What to do next
 
-Run any firm you are evaluating through this checklist before signing. Compare two or three firms before deciding. The cost of vetting is a few days. The cost of a bad firm is the program itself, plus the time you lose recovering. Schedule a free assessment with us if you want a baseline comparison. We publish our fee, do not require an upfront retainer beyond a small audit fee, coordinate state-licensed attorneys, and can produce case studies that match your situation.`,
+Run any firm you are evaluating through this checklist before signing. Compare two or three firms before deciding. The cost of vetting is a few days. The cost of a bad firm is the program itself, plus the time you lose recovering. Schedule a free assessment with us if you want a baseline comparison. We give every merchant a free AI contract review on day one, walk through the fee structure during your consultation, coordinate state-licensed attorneys in all 50 states, and can produce case studies that match your situation.`,
   },
   {
     slug: "life-after-mca-debt",

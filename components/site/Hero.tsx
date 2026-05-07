@@ -10,20 +10,20 @@ export function Hero() {
         <div>
           <span className="inline-flex items-center gap-2 bg-white border border-border text-slate text-xs font-medium px-3 py-1.5 rounded-full shadow-soft">
             <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse" />
-            Transparent flat fee. Published.
+            Modern MCA debt relief
           </span>
           <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold text-slate leading-[1.05] tracking-tighter">
-            MCA debt relief, with a <span className="text-electric">published flat fee</span>.
+            Resolve stacked MCAs with a <span className="text-electric">tailored program</span>.
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted max-w-xl leading-relaxed">
-            No upfront cost. No monthly retainers. We tell you the number before you sign anything, and we work with stacked MCAs even before default.
+            Settlement, restructure, or legal defense, coordinated end to end. Free assessment to find your fit, free AI contract review on day one.
           </p>
           <AggregateCounter />
           <ul className="mt-8 grid grid-cols-2 gap-3 text-sm">
-            <Bullet>Flat fee, published</Bullet>
-            <Bullet>No upfront cost</Bullet>
-            <Bullet>Pre-default programs</Bullet>
+            <Bullet>Free 60-second assessment</Bullet>
             <Bullet>Free AI contract review</Bullet>
+            <Bullet>Pre-default and post-default programs</Bullet>
+            <Bullet>Counsel in all 50 states</Bullet>
           </ul>
         </div>
         <div className="md:sticky md:top-8">

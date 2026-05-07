@@ -11,9 +11,9 @@ export function HeroBeam() {
             <div className="absolute inset-0 bg-gradient-to-r from-slate/70 via-slate/30 to-transparent" />
             <div className="absolute inset-y-0 left-0 flex items-center max-w-md p-10">
               <div>
-                <span className="font-mono text-xs uppercase tracking-wider text-white/70">For the owner who&apos;s tired of being spun</span>
-                <p className="mt-3 text-2xl md:text-3xl font-semibold tracking-tight text-white">We tell you the number before you sign anything.</p>
-                <p className="mt-3 text-white/80 text-sm">Free contract review, transparent flat fee, programs for pre-default and post-default.</p>
+                <span className="font-mono text-xs uppercase tracking-wider text-white/70">For the owner navigating stacked MCAs</span>
+                <p className="mt-3 text-2xl md:text-3xl font-semibold tracking-tight text-white">A modern path out, scoped to your situation.</p>
+                <p className="mt-3 text-white/80 text-sm">Free assessment. Free AI contract review. Programs that match where you are.</p>
               </div>
             </div>
           </div>

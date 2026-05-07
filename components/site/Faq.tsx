@@ -6,8 +6,8 @@ const FAQ = [
     a: "Most programs run 8 to 16 months. Settlement programs typically resolve faster, restructure programs trail longer because terms are renegotiated rather than discounted. We give you a target timeline before you sign.",
   },
   {
-    q: "Do you charge upfront?",
-    a: "No. There is no upfront fee. Our flat fee is published on every program page and earned only as we resolve balances. If we do not perform, you do not pay.",
+    q: "How does the fee structure work?",
+    a: "The initial assessment is free, and the AI contract review tool is free with no email required. Program fees depend on your debt size, lender mix, and which path fits your situation. We walk through the full fee structure during your consultation, before you sign anything.",
   },
   {
     q: "Will this hurt my credit?",
@@ -23,7 +23,7 @@ const FAQ = [
   },
   {
     q: "How is TerraDebt different from settlement firms?",
-    a: "Most settlement firms collect monthly retainers regardless of outcome and lean on a single tactic. We charge a flat fee tied to performance, run four distinct programs, and coordinate legal defense in all 50 states when needed.",
+    a: "Most settlement firms lean on a single tactic and pitch before they listen. We start with a free AI contract review, scope a program to your specific situation across four distinct paths, and coordinate state-licensed attorneys in all 50 states when legal defense is needed.",
   },
 ];
 

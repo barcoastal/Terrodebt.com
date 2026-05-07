@@ -12,19 +12,19 @@ The site renders a live version of this system at `/brand` for designers and eng
 
 ### Positioning
 
-The modern, transparent MCA debt relief brand. We publish our flat fee, we work with stacked MCAs before default, and we tell merchants the number before they sign anything.
+The modern MCA debt relief brand. We work with stacked MCAs before default, give every merchant a free AI contract review, and coordinate state-licensed attorneys in all 50 states. We are built for fit, not for the cheapest pitch.
 
 ### Mission
 
-Restore cash flow and dignity to small business owners crushed by stacked merchant cash advances, without the predatory pricing and theatrics of the relief industry.
+Restore cash flow and dignity to small business owners crushed by stacked merchant cash advances, without the scare tactics and theatrics of the relief industry.
 
 ### Vision
 
-Every owner with MCA debt gets a transparent, AI-augmented assessment before they make their next move.
+Every owner with MCA debt gets a clear, AI-augmented assessment before they make their next move.
 
 ### Values
 
-- **Transparency by default.** We publish our fee. We tell merchants what their effective APR is before we pitch.
+- **Honest math up front.** We give every merchant a free AI contract review with their effective APR before any pitch.
 - **Action, not theatrics.** No fake media badges, no inflated dollar counters, no scare-tactic copy.
 - **Pre-default first.** We earn the right to talk to merchants before they get sued, not after.
 - **Tools over talk.** A free AI contract review is more useful than a sales call. We lead with the tool.
@@ -32,13 +32,13 @@ Every owner with MCA debt gets a transparent, AI-augmented assessment before the
 
 ### Tagline
 
-> MCA debt relief, with a published flat fee.
+> Resolve stacked MCAs with a tailored program.
 
 ### Sub-headlines
 
 - The modern way to resolve stacked MCAs.
-- Tell us your contracts. We'll tell you the number.
-- For the owner who's tired of being spun.
+- For the owner navigating stacked MCAs.
+- A modern path out of stacked merchant cash advance debt.
 
 ---
 
@@ -218,15 +218,19 @@ We speak like a smart, slightly impatient operator who's seen the inside of bad 
 - "We've helped thousands!" (unverifiable, lazy)
 - "Best in the industry" (generic, undefendable)
 - "World class" (meaningless)
+- "Published flat fee" / "Flat fee, published" (factually inaccurate; TerraDebt does not publish program fees pre-consultation)
+- "No upfront fees" / "No upfront cost" / "No upfront retainer" (factually inaccurate)
+- "Transparent flat fee" / "fee in writing on day one" / "We tell you the number before you sign anything" (factually inaccurate)
+- "As featured in" / "As seen in" (no real media placements yet)
 - Any sentence ending in an em dash
 
 ### Sample voice
 
 **Hero**:
-> MCA debt relief, with a published flat fee. No upfront cost. No monthly retainers. We tell you the number before you sign anything.
+> Resolve stacked MCAs with a tailored program. Free assessment. Free AI contract review. Programs scoped to your specific situation.
 
 **Email**:
-> Bar — quick note. The contract you uploaded shows a 132% effective APR with a COJ clause. The settlement program would resolve the balance for around $X over 11 months. If you want to talk it through, I have time tomorrow at 2:30 ET.
+> Bar, quick note. The contract you uploaded shows a 132% effective APR with a COJ clause. The settlement program would resolve the balance for around $X over 11 months. If you want to talk it through, I have time tomorrow at 2:30 ET.
 
 **Disclosure**:
 > We are not a law firm. We coordinate licensed attorneys in your state when legal defense is required. We do not guarantee specific savings or outcomes. Results depend on lender mix, contract terms, and your business cash flow.
@@ -406,4 +410,5 @@ Style: geometric, single weight, electric or slate fill. No gradients. No charac
 
 ## 12. Changelog
 
-- **1.0 — 2026-05-05**: Initial brand book. Established positioning, logo system (lockup, wordmark, icon, monogram, favicon variants), color palette (slate + electric + 3 neutrals), Inter typography, voice & tone, component library reference, imagery direction.
+- **1.0**, 2026-05-05: Initial brand book. Established positioning, logo system (lockup, wordmark, icon, monogram, favicon variants), color palette (slate + electric + 3 neutrals), Inter typography, voice & tone, component library reference, imagery direction.
+- **1.1**, 2026-05-05: Removed false fee-transparency claims (TerraDebt has upfront fees and does not publish program fees pre-consultation). Removed false "as featured in" media badge references. Repositioned tagline to "Resolve stacked MCAs with a tailored program." Voice still anchors on direct, specific, confident, calm. The free AI Contract Review tool remains a real, defensible differentiator.

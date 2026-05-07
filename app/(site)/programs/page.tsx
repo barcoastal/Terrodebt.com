@@ -4,7 +4,7 @@ import { PROGRAMS, type ProgramKey } from "@/lib/programs";
 
 export const metadata: Metadata = {
   title: "Programs",
-  description: "Settlement, restructure, reverse consolidation defense, and legal defense. Four programs, one published flat fee.",
+  description: "Settlement, restructure, reverse consolidation defense, and legal defense. Four programs, scoped to your situation.",
 };
 
 export default function ProgramsIndex() {
@@ -15,7 +15,7 @@ export default function ProgramsIndex() {
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
         <div className="relative mx-auto max-w-content px-6 py-20">
           <span className="font-mono text-xs uppercase tracking-wider text-muted">Programs</span>
-          <h1 className="mt-3 text-4xl md:text-6xl font-bold tracking-tighter">Four programs. One published flat fee.</h1>
+          <h1 className="mt-3 text-4xl md:text-6xl font-bold tracking-tighter">Four programs. Scoped to your situation.</h1>
           <p className="mt-5 text-lg text-muted max-w-2xl">Each program is built for a specific situation. We tell you which one fits before we propose anything.</p>
         </div>
       </section>

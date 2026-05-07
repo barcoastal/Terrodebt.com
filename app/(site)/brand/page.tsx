@@ -55,11 +55,11 @@ export default function BrandPage() {
 
       <Section number="03" title="Typography" description="Inter, variable, via next/font. One typeface. No pairing.">
         <div className="space-y-6">
-          <TypeRow tag="Display" cls="text-5xl md:text-6xl font-bold tracking-tight" sample="MCA debt relief, with a published flat fee." />
+          <TypeRow tag="Display" cls="text-5xl md:text-6xl font-bold tracking-tight" sample="Resolve stacked MCAs with a tailored program." />
           <TypeRow tag="H1" cls="text-4xl md:text-5xl font-bold tracking-tight" sample="Settle stacked MCAs for less than you owe." />
           <TypeRow tag="H2" cls="text-2xl md:text-3xl font-semibold tracking-tight" sample="How it works" />
           <TypeRow tag="H3" cls="text-xl font-semibold" sample="Recent example" />
-          <TypeRow tag="Body" cls="text-base" sample="No upfront cost. No monthly retainers. We tell you the number before you sign anything." />
+          <TypeRow tag="Body" cls="text-base" sample="Settlement, restructure, or legal defense, coordinated end to end. Free assessment to find your fit." />
           <TypeRow tag="Body large (muted)" cls="text-lg text-muted" sample="The modern way to resolve stacked MCAs." />
           <TypeRow tag="Small (muted)" cls="text-sm text-muted" sample="Estimates only. Real numbers depend on lender mix and contract terms." />
           <TypeRow tag="Eyebrow" cls="text-xs uppercase tracking-wide text-muted font-medium" sample="Featured Case Study" />
@@ -104,7 +104,7 @@ export default function BrandPage() {
 
       <Section number="07" title="Badges & status" description="Pill shape. Tints, not solid color, for accent.">
         <div className="flex flex-wrap gap-3 items-center">
-          <span className="inline-block bg-electric/10 text-electric text-xs font-medium px-3 py-1 rounded-full">Transparent flat fee</span>
+          <span className="inline-block bg-electric/10 text-electric text-xs font-medium px-3 py-1 rounded-full">Tailored program</span>
           <span className="inline-block bg-offwhite text-muted text-xs font-medium px-2 py-0.5 rounded border border-border">Draft</span>
           <span className="inline-block bg-electric/10 text-electric text-xs font-medium px-2 py-0.5 rounded">Active</span>
           <span className="inline-block bg-slate/5 text-slate text-xs font-medium px-2 py-0.5 rounded">Completed</span>
@@ -115,7 +115,7 @@ export default function BrandPage() {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-white border border-border rounded-xl p-6">
             <div className="text-xs uppercase tracking-wide text-muted font-medium">Hero</div>
-            <p className="mt-3 text-slate">MCA debt relief, with a published flat fee. No upfront cost. No monthly retainers. We tell you the number before you sign anything.</p>
+            <p className="mt-3 text-slate">Resolve stacked MCAs with a tailored program. Free assessment. Free AI contract review. Programs scoped to your specific situation.</p>
           </div>
           <div className="bg-white border border-border rounded-xl p-6">
             <div className="text-xs uppercase tracking-wide text-muted font-medium">Outreach email</div>
@@ -131,6 +131,8 @@ export default function BrandPage() {
               <li>✕ &quot;Don&apos;t lose your business!&quot; (scare tactics)</li>
               <li>✕ &quot;Up to 80% off!&quot; (inflation, exclamation, generic)</li>
               <li>✕ &quot;World class&quot;, &quot;industry-leading&quot; (meaningless)</li>
+              <li>✕ &quot;Published flat fee&quot;, &quot;No upfront fees&quot; (factually inaccurate)</li>
+              <li>✕ &quot;As featured in&quot;, &quot;As seen in&quot; (no real placements yet)</li>
               <li>✕ Any sentence ending in an em dash</li>
             </ul>
           </div>

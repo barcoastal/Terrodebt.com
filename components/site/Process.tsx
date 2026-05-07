@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 
 const STEPS = [
   { n: "01", title: "Free assessment", body: "We review your contracts, your daily debits, and your cash flow. We tell you your effective APR and what is realistic for your situation. No commitment.", img: "/images/process-call.png" },
-  { n: "02", title: "Program design", body: "We propose a program tailored to your debt size, lender mix, and timeline. Settlement, restructure, defense, or a combination. Flat fee published upfront." },
+  { n: "02", title: "Program design", body: "We propose a program tailored to your debt size, lender mix, and timeline. Settlement, restructure, defense, or a combination. Engagement terms and fees are reviewed and confirmed during your consultation." },
   { n: "03", title: "Execution", body: "We manage the negotiation with each lender, file legal defense where needed, and structure your payments. You get clear status weekly until resolution." },
   { n: "04", title: "Resolution", body: "Programs typically resolve in 6 to 18 months. You walk away with cash flow restored and a path back to bankable credit." },
 ];

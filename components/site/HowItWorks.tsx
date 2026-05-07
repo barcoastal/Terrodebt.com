@@ -24,7 +24,7 @@ export function HowItWorks() {
       <div className="mx-auto max-w-content px-6 py-20">
         <Reveal>
           <h2 className="text-3xl md:text-5xl font-bold text-slate tracking-tighter">How it works</h2>
-          <p className="mt-3 text-muted text-lg">Three steps. No surprises. No upfront fee.</p>
+          <p className="mt-3 text-muted text-lg">Three steps. Free assessment. Free AI contract review on day one.</p>
         </Reveal>
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           {STEPS.map((s, i) => (

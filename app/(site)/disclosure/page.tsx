@@ -13,9 +13,9 @@ export default function DisclosurePage() {
         TerraDebt provides resolution services for merchant cash advance (MCA) debt held by commercial businesses. We do not provide consumer debt settlement, consumer credit counseling, or services governed by the Telemarketing Sales Rule&apos;s debt relief services provisions, which apply to consumer debts. The services described on this site are commercial in nature and are intended for businesses, not individuals seeking consumer relief.
       </p>
 
-      <h2>No upfront fees, fee structure published</h2>
+      <h2>Free assessment and free AI contract review</h2>
       <p>
-        TerraDebt does not collect a fee in advance of providing service. Our flat fee is published on each program page and earned only as we resolve balances on your behalf. No fee is charged for the initial assessment or contract review.
+        The initial assessment is free, with no commitment to engage. The AI contract review tool is free and does not require an email or registration. Program fees vary by debt size, lender mix, and the path that fits your situation. Fee structure and engagement terms are reviewed and confirmed during your consultation, before any agreement is signed.
       </p>
 
       <h2>Outcomes vary</h2>
@@ -40,7 +40,7 @@ export default function DisclosurePage() {
 
       <h2>Voluntary engagement</h2>
       <p>
-        Engaging TerraDebt is voluntary. You may pursue MCA debt resolution on your own, with separate counsel, or with another firm. We encourage you to compare options and to ask any firm for their published fee structure before signing an engagement agreement.
+        Engaging TerraDebt is voluntary. You may pursue MCA debt resolution on your own, with separate counsel, or with another firm. We encourage you to compare options and to ask any firm to walk you through their full fee structure before signing an engagement agreement.
       </p>
     </article>
   );

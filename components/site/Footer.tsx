@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-content px-6 py-12 grid gap-8 md:grid-cols-4 text-sm">
         <div>
           <Image src="/logos/terradebt-wordmark.svg" alt="TerraDebt" width={140} height={28} className="mb-3" />
-          <p className="text-muted">MCA debt relief with a published flat fee.</p>
+          <p className="text-muted">Resolve stacked MCAs with a tailored program.</p>
           <Link href="/brand" className="block mt-3 text-xs text-muted hover:text-slate">Brand &amp; design system →</Link>
         </div>
         <div>

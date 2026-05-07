@@ -17,8 +17,8 @@ export function FounderSection() {
               Stacked MCAs are not a shameful thing. They are a math problem with a clock on it.
             </blockquote>
             <div className="mt-6 space-y-4 text-slate leading-relaxed">
-              <p>I started TerraDebt because the relief category looks like 2018 and acts like it too. Vague pricing, scare tactics, and a sales script that pitches before it listens. Owners deserve better.</p>
-              <p>Our model is simple. We publish our flat fee. We tell you your effective APR before we propose anything. We work with you before default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in your state.</p>
+              <p>I started TerraDebt because the relief category looks like 2018 and acts like it too. Scare tactics and a sales script that pitches before it listens. Owners deserve better than that.</p>
+              <p>Our model is built around fit, not a one-size pitch. We give every merchant a free AI contract review on day one so the effective APR is on the table from the start. We work with owners before default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in your state.</p>
               <p>Before TerraDebt I worked at the intersection of small-business lending and operations. I have seen the inside of bad MCA contracts. I have watched what happens when a daily debit eats payroll. I built TerraDebt to be the firm I would have wanted on the other end of the phone.</p>
               <p>If you have stacked MCAs, upload your contract to our free AI tool. You will know your real effective APR in 30 seconds, no email required. From there, we can talk programs.</p>
             </div>
