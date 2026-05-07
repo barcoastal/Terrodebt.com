@@ -12,15 +12,19 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   } catch {}
   if (!s || !s.published) notFound();
   return (
-    <article className="mx-auto max-w-content px-6 py-16 grid md:grid-cols-3 gap-12">
+    <article className="mx-auto max-w-content px-6 py-20 grid md:grid-cols-3 gap-12">
       <div className="md:col-span-2">
-        <div className="text-sm text-muted">{s.industry}</div>
-        <h1 className="mt-2 text-4xl font-bold">${(s.debtAmount / 1000).toFixed(0)}K resolved · {s.savingsPct}% saved · {s.months} months</h1>
-        <div className="prose mt-8 max-w-none">
+        <div className="font-mono text-[10px] uppercase tracking-widest text-muted">{s.industry}</div>
+        <h1 className="mt-3 text-4xl md:text-5xl font-bold tracking-tighter leading-[1.1]">${(s.debtAmount / 1000).toFixed(0)}K resolved</h1>
+        <div className="mt-5 flex gap-3 flex-wrap">
+          <span className="font-mono text-sm font-semibold text-electric bg-electric/5 border border-electric/20 px-3 py-1.5 rounded-lg">{s.savingsPct}% saved</span>
+          <span className="font-mono text-sm text-slate bg-offwhite border border-border px-3 py-1.5 rounded-lg">{s.months} months</span>
+        </div>
+        <div className="prose prose-slate mt-10 max-w-none">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{s.storyMd}</ReactMarkdown>
         </div>
       </div>
-      <aside className="sticky top-8 self-start">
+      <aside className="md:sticky md:top-24 self-start">
         <LeadForm source={`case-study-${slug}`} />
       </aside>
     </article>

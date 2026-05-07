@@ -18,20 +18,21 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
   if (!v) notFound();
   return (
     <article>
-      <section className="bg-offwhite border-b border-border">
-        <div className="mx-auto max-w-content px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
+      <section className="relative bg-offwhite border-b border-border overflow-hidden">
+        <div className="absolute inset-0 bg-mesh pointer-events-none" />
+        <div className="relative mx-auto max-w-content px-6 pt-20 pb-20 grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">{v.headline}</h1>
-            <p className="mt-4 text-lg text-muted">{v.subline}</p>
+            <h1 className="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tighter">{v.headline}</h1>
+            <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed">{v.subline}</p>
           </div>
           <LeadForm source={`vertical-${slug}`} />
         </div>
       </section>
-      <section className="mx-auto max-w-content px-6 py-16 grid md:grid-cols-3 gap-6">
+      <section className="mx-auto max-w-content px-6 py-16 grid md:grid-cols-3 gap-4">
         {v.stats.map((s) => (
-          <div key={s.label} className="bg-white border border-border rounded-xl p-6">
-            <div className="text-3xl font-bold text-electric">{s.value}</div>
-            <div className="text-sm text-muted mt-1">{s.label}</div>
+          <div key={s.label} className="surface-card p-6">
+            <div className="font-mono text-3xl md:text-4xl font-bold text-electric tracking-tight">{s.value}</div>
+            <div className="text-sm text-muted mt-2">{s.label}</div>
           </div>
         ))}
       </section>

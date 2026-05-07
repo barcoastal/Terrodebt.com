@@ -14,27 +14,27 @@ export function SavingsCalculator() {
   }, [debt, dailyPayment]);
 
   return (
-    <div className="bg-white border border-border rounded-xl p-8 max-w-2xl">
+    <div className="surface-card-elevated p-8 max-w-2xl">
       <label className="block text-sm font-medium text-slate">Total MCA debt</label>
-      <input type="range" min={25000} max={2000000} step={5000} value={debt} onChange={(e) => setDebt(Number(e.target.value))} className="w-full mt-2" />
-      <div className="text-2xl font-bold text-electric">${debt.toLocaleString()}</div>
+      <input type="range" min={25000} max={2000000} step={5000} value={debt} onChange={(e) => setDebt(Number(e.target.value))} className="w-full mt-2 accent-electric" />
+      <div className="font-mono text-3xl font-semibold text-electric tracking-tight">${debt.toLocaleString()}</div>
 
       <label className="block text-sm font-medium text-slate mt-6">Total daily MCA debits (across all lenders)</label>
-      <input type="range" min={100} max={5000} step={50} value={dailyPayment} onChange={(e) => setDailyPayment(Number(e.target.value))} className="w-full mt-2" />
-      <div className="text-2xl font-bold text-electric">${dailyPayment.toLocaleString()}/day</div>
+      <input type="range" min={100} max={5000} step={50} value={dailyPayment} onChange={(e) => setDailyPayment(Number(e.target.value))} className="w-full mt-2 accent-electric" />
+      <div className="font-mono text-3xl font-semibold text-electric tracking-tight">${dailyPayment.toLocaleString()}<span className="text-base text-muted">/day</span></div>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-offwhite p-4 rounded-md">
-          <div className="text-xs text-muted uppercase">Estimated savings range</div>
-          <div className="text-xl font-semibold mt-1 text-slate">${result.settlementSavingsLow.toLocaleString()} to ${result.settlementSavingsHigh.toLocaleString()}</div>
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="bg-offwhite p-4 rounded-lg border border-border">
+          <div className="font-mono text-[10px] tracking-wider text-muted uppercase">Estimated savings</div>
+          <div className="font-mono text-lg font-semibold mt-1.5 text-slate tracking-tight">${(result.settlementSavingsLow / 1000).toFixed(0)}K to ${(result.settlementSavingsHigh / 1000).toFixed(0)}K</div>
         </div>
-        <div className="bg-offwhite p-4 rounded-md">
-          <div className="text-xs text-muted uppercase">New est. monthly payment</div>
-          <div className="text-xl font-semibold mt-1 text-slate">~${result.newMonthly.toLocaleString()}/mo</div>
+        <div className="bg-offwhite p-4 rounded-lg border border-border">
+          <div className="font-mono text-[10px] tracking-wider text-muted uppercase">New monthly</div>
+          <div className="font-mono text-lg font-semibold mt-1.5 text-slate tracking-tight">~${result.newMonthly.toLocaleString()}/mo</div>
         </div>
-        <div className="bg-offwhite p-4 rounded-md">
-          <div className="text-xs text-muted uppercase">Est. months at current pace</div>
-          <div className="text-xl font-semibold mt-1 text-slate">~{result.monthsRemaining} mo</div>
+        <div className="bg-offwhite p-4 rounded-lg border border-border">
+          <div className="font-mono text-[10px] tracking-wider text-muted uppercase">Months at pace</div>
+          <div className="font-mono text-lg font-semibold mt-1.5 text-slate tracking-tight">~{result.monthsRemaining} mo</div>
         </div>
       </div>
       <p className="mt-4 text-xs text-muted">Estimates only. Real numbers depend on lender mix, contract terms, and your business cash flow. Submit a free assessment for actual figures.</p>

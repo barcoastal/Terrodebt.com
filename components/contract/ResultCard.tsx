@@ -2,11 +2,11 @@ import type { ContractAnalysis } from "@/lib/contract-analyze";
 
 export function ResultCard({ a }: { a: ContractAnalysis }) {
   return (
-    <div className="bg-white border border-border rounded-xl p-8">
-      <h2 className="text-2xl font-semibold">Analysis</h2>
-      <p className="mt-2 text-muted">{a.summary}</p>
+    <div className="surface-card-elevated p-8">
+      <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Analysis</h2>
+      <p className="mt-3 text-muted leading-relaxed">{a.summary}</p>
 
-      <dl className="grid grid-cols-2 gap-4 mt-6">
+      <dl className="grid grid-cols-2 gap-3 mt-7">
         <Stat label="Funded amount" value={a.fundedAmount ? `$${a.fundedAmount.toLocaleString()}` : "-"} />
         <Stat label="Total payback" value={a.totalPayback ? `$${a.totalPayback.toLocaleString()}` : "-"} />
         <Stat label="Factor rate" value={a.factorRate ? a.factorRate.toFixed(2) : "-"} />
@@ -26,9 +26,9 @@ export function ResultCard({ a }: { a: ContractAnalysis }) {
 
 function Stat({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
-    <div className={`p-3 rounded-md ${highlight ? "bg-electric/10" : "bg-offwhite"}`}>
-      <div className="text-xs text-muted uppercase">{label}</div>
-      <div className={`text-lg font-semibold ${highlight ? "text-electric" : "text-slate"}`}>{value}</div>
+    <div className={`p-4 rounded-lg border ${highlight ? "bg-electric/5 border-electric/20" : "bg-offwhite border-border"}`}>
+      <div className="font-mono text-[10px] tracking-wider text-muted uppercase">{label}</div>
+      <div className={`mt-1 font-mono text-xl font-semibold tracking-tight ${highlight ? "text-electric" : "text-slate"}`}>{value}</div>
     </div>
   );
 }
