@@ -28,7 +28,7 @@ export async function uploadGoogleAdsConversion(lead: Lead): Promise<Integration
           conversion_action: conversionActionResource,
           gclid: lead.gclid,
           conversion_date_time: formatGclidDate(lead.createdAt),
-          conversion_value: bucketToValue(lead.debtAmountBucket),
+          conversion_value: leadValue(lead.debtAmount, lead.debtAmountBucket),
           currency_code: "USD",
           order_id: lead.id,
         }),
@@ -48,8 +48,11 @@ function formatGclidDate(d: Date): string {
   return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}:${pad(d.getUTCSeconds())}+00:00`;
 }
 
-function bucketToValue(b: string | null): number {
-  switch (b) {
+function leadValue(amount: number | null, bucket: string | null): number {
+  if (typeof amount === "number" && amount > 0) {
+    return Math.min(1000, Math.max(25, Math.round(amount / 1000)));
+  }
+  switch (bucket) {
     case "<25k": return 50;
     case "25k-75k": return 100;
     case "75k-200k": return 200;

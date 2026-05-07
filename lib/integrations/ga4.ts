@@ -16,8 +16,9 @@ export async function fireGa4Conversion(lead: Lead): Promise<IntegrationResult> 
       name: "generate_lead",
       params: {
         currency: "USD",
-        value: bucketToValue(lead.debtAmountBucket),
+        value: leadValue(lead.debtAmount, lead.debtAmountBucket),
         terra_source: lead.source,
+        debt_amount: lead.debtAmount ?? 0,
         debt_bucket: lead.debtAmountBucket ?? "unknown",
       },
     }],
@@ -32,8 +33,12 @@ export async function fireGa4Conversion(lead: Lead): Promise<IntegrationResult> 
   }
 }
 
-function bucketToValue(b: string | null): number {
-  switch (b) {
+function leadValue(amount: number | null, bucket: string | null): number {
+  if (typeof amount === "number" && amount > 0) {
+    // Lead value = ~0.1% of debt (proxy for downstream program revenue), capped at 1000.
+    return Math.min(1000, Math.max(25, Math.round(amount / 1000)));
+  }
+  switch (bucket) {
     case "<25k": return 50;
     case "25k-75k": return 100;
     case "75k-200k": return 200;

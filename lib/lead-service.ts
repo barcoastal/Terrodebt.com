@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { leadSchema, type LeadInput } from "./lead-schema";
+import { leadSchema, bucketFromAmount, type LeadInput } from "./lead-schema";
 
 export type LeadSubmitInput = LeadInput & {
   utmSource?: string;
@@ -15,9 +15,12 @@ export type LeadSubmitInput = LeadInput & {
 };
 
 export async function createLead(input: LeadSubmitInput) {
+  const debtAmount = Math.max(0, Math.min(1_000_000, Number(input.debtAmount) || 0));
+  const bucket = input.debtAmountBucket ?? bucketFromAmount(debtAmount);
   const parsed = leadSchema.parse({
-    hasMcaDebt: input.hasMcaDebt,
-    debtAmountBucket: input.debtAmountBucket,
+    debtAmount,
+    hasMcaDebt: input.hasMcaDebt ?? debtAmount > 0,
+    debtAmountBucket: bucket,
     businessName: input.businessName || "(no-mca off-ramp)",
     firstName: input.firstName || "Unknown",
     lastName: input.lastName || "Unknown",
@@ -27,7 +30,15 @@ export async function createLead(input: LeadSubmitInput) {
   });
   return db.lead.create({
     data: {
-      ...parsed,
+      hasMcaDebt: parsed.hasMcaDebt ?? false,
+      debtAmount: parsed.debtAmount,
+      debtAmountBucket: parsed.debtAmountBucket ?? null,
+      businessName: parsed.businessName,
+      firstName: parsed.firstName,
+      lastName: parsed.lastName,
+      phone: parsed.phone,
+      email: parsed.email,
+      source: parsed.source,
       utmSource: input.utmSource,
       utmMedium: input.utmMedium,
       utmCampaign: input.utmCampaign,

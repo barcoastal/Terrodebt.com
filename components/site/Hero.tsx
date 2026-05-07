@@ -6,28 +6,31 @@ export function Hero() {
     <section className="relative bg-offwhite overflow-hidden">
       <div className="absolute inset-0 bg-mesh pointer-events-none" />
       <div className="absolute inset-0 grid-pattern pointer-events-none" />
-      <div className="relative mx-auto max-w-content px-6 pt-20 pb-24 grid md:grid-cols-2 gap-16 items-start">
-        <div>
-          <span className="inline-flex items-center gap-2 bg-white border border-border text-slate text-xs font-medium px-3 py-1.5 rounded-full shadow-soft">
-            <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse" />
-            Modern MCA debt relief
-          </span>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold text-slate leading-[1.05] tracking-tighter">
-            Resolve stacked MCAs with a <span className="text-electric">tailored program</span>.
-          </h1>
-          <p className="mt-6 text-lg md:text-xl text-muted max-w-xl leading-relaxed">
-            Settlement, restructure, or legal defense, coordinated end to end. Free assessment to find your fit, free calculators to clarify your numbers.
-          </p>
-          <AggregateCounter />
-          <ul className="mt-8 grid grid-cols-2 gap-3 text-sm">
-            <Bullet>Free 60-second assessment</Bullet>
-            <Bullet>Free MCA calculators</Bullet>
-            <Bullet>Pre-default and post-default programs</Bullet>
-            <Bullet>Counsel in all 50 states</Bullet>
-          </ul>
-        </div>
-        <div className="md:sticky md:top-8">
+      <div className="relative mx-auto max-w-3xl px-6 pt-16 md:pt-20 pb-24 text-center">
+        <span className="inline-flex items-center gap-2 bg-white border border-border text-slate text-xs font-medium px-3 py-1.5 rounded-full shadow-soft">
+          <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse" />
+          Modern MCA debt relief
+        </span>
+        <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-slate leading-[1.05] tracking-tighter">
+          Resolve stacked MCAs with a <span className="text-electric">tailored program</span>.
+        </h1>
+        <p className="mt-5 text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+          Free 60-second assessment to find your fit. Settlement, restructure, or legal defense, coordinated end to end.
+        </p>
+
+        <div className="mt-10 mx-auto max-w-2xl text-left">
           <LeadForm source="homepage" />
+        </div>
+
+        <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
+          <Bullet>Free 60-second assessment</Bullet>
+          <Bullet>Free MCA calculators</Bullet>
+          <Bullet>Pre-default + post-default</Bullet>
+          <Bullet>Counsel in all 50 states</Bullet>
+        </ul>
+
+        <div className="mt-8">
+          <AggregateCounter />
         </div>
       </div>
     </section>

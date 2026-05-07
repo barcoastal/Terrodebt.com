@@ -3,7 +3,8 @@ import { z } from "zod";
 export const debtBuckets = ["<25k", "25k-75k", "75k-200k", "200k-500k", "500k+"] as const;
 
 export const leadSchema = z.object({
-  hasMcaDebt: z.boolean(),
+  debtAmount: z.number().min(0).max(1_000_000),
+  hasMcaDebt: z.boolean().optional(),
   debtAmountBucket: z.enum(debtBuckets).nullable().optional(),
   businessName: z.string().min(1, "Business name required"),
   firstName: z.string().min(1, "First name required"),
@@ -14,3 +15,12 @@ export const leadSchema = z.object({
 });
 
 export type LeadInput = z.infer<typeof leadSchema>;
+
+export function bucketFromAmount(amount: number): typeof debtBuckets[number] | null {
+  if (amount <= 0) return null;
+  if (amount < 25_000) return "<25k";
+  if (amount < 75_000) return "25k-75k";
+  if (amount < 200_000) return "75k-200k";
+  if (amount < 500_000) return "200k-500k";
+  return "500k+";
+}

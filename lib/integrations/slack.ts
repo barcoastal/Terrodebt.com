@@ -5,16 +5,18 @@ export async function notifySlack(lead: Lead): Promise<IntegrationResult> {
   const url = process.env.SLACK_LEADS_WEBHOOK_URL;
   if (!url) return { name: "slack", ok: false, error: "SLACK_LEADS_WEBHOOK_URL not set" };
 
+  const debtDisplay = lead.debtAmount != null
+    ? `$${lead.debtAmount.toLocaleString()}${lead.debtAmount >= 1_000_000 ? "+" : ""}${lead.debtAmountBucket ? ` (${lead.debtAmountBucket})` : ""}`
+    : (lead.debtAmountBucket ?? "n/a");
   const text = `*New TerraDebt lead* :seedling:
 *Name:* ${lead.firstName} ${lead.lastName}
 *Business:* ${lead.businessName}
 *Email:* ${lead.email}
 *Phone:* ${lead.phone}
-*Has MCA debt:* ${lead.hasMcaDebt ? "Yes" : "No"}
-*Debt:* ${lead.debtAmountBucket ?? "n/a"}
+*Debt:* ${debtDisplay}
 *Source:* ${lead.source}
-*UTM:* ${lead.utmSource ?? "—"} / ${lead.utmCampaign ?? "—"}
-*gclid:* ${lead.gclid ?? "—"}`;
+*UTM:* ${lead.utmSource ?? "-"} / ${lead.utmCampaign ?? "-"}
+*gclid:* ${lead.gclid ?? "-"}`;
 
   try {
     const res = await fetch(url, {

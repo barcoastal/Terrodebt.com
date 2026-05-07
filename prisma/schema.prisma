@@ -23,6 +23,7 @@ model Lead {
   phone               String
   email               String
   hasMcaDebt          Boolean
+  debtAmount          Int?
   debtAmountBucket    String?
   source              String   @default("homepage")
   status              String   @default("new")

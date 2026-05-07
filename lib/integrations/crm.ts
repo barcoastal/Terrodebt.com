@@ -15,6 +15,7 @@ export async function postToCrm(lead: Lead): Promise<IntegrationResult> {
       email: lead.email,
       phone: lead.phone,
       has_mca_debt: lead.hasMcaDebt,
+      debt_amount: lead.debtAmount,
       debt_amount_bucket: lead.debtAmountBucket,
       utm: {
         source: lead.utmSource, medium: lead.utmMedium, campaign: lead.utmCampaign,
