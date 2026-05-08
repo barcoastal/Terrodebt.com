@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { after } from "next/server";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { db } from "@/lib/db";
@@ -12,6 +13,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     a = await db.article.findUnique({ where: { slug } });
   } catch {}
   if (!a || !a.published) notFound();
+
+  const articleId = a.id;
+  after(async () => {
+    try {
+      await db.article.update({ where: { id: articleId }, data: { viewCount: { increment: 1 } } });
+    } catch {}
+  });
+
   return (
     <article className="mx-auto max-w-content px-6 py-16 grid md:grid-cols-3 gap-12">
       <ArticleJsonLd
