@@ -1,0 +1,16 @@
+"use client";
+import { usePathname } from "next/navigation";
+import { AdminSidebar } from "./Sidebar";
+
+export function AdminShell({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  if (pathname === "/admin/login") {
+    return <>{children}</>;
+  }
+  return (
+    <div className="flex bg-offwhite min-h-screen">
+      <AdminSidebar />
+      <main className="flex-1 p-8">{children}</main>
+    </div>
+  );
+}
