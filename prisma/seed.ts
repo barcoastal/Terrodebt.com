@@ -38,12 +38,12 @@ async function main() {
     });
   }
 
-  const adminEmail = process.env.SEED_ADMIN_EMAIL ?? "bar@albert-capital.com";
-  const adminPassword = process.env.SEED_ADMIN_PASSWORD ?? "change-me-now";
+  const adminEmail = process.env.SEED_ADMIN_EMAIL ?? "admin";
+  const adminPassword = process.env.SEED_ADMIN_PASSWORD ?? "fdshisddns";
   const passwordHash = await bcrypt.hash(adminPassword, 10);
   await db.user.upsert({
     where: { email: adminEmail },
-    update: {},
+    update: { passwordHash, role: "admin" },
     create: { email: adminEmail, passwordHash, role: "admin" },
   });
 
