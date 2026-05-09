@@ -17,7 +17,7 @@ export default function BrandPage() {
         </p>
       </header>
 
-      <Section number="01" title="Logo system" description="The TerraDebt mark is a geometric T inside a slate square, paired with the wordmark in Inter Bold. The electric blue dot is the brand's signal element. It always appears.">
+      <Section number="01" title="Logo system" description="The TerraDebt mark is a geometric T inside a slate square, paired with the wordmark in Inter Bold. The emerald green dot is the brand's signal element. It always appears.">
         <div className="grid md:grid-cols-2 gap-6">
           <LogoCard label="Default lockup" file="/logos/terradebt-lockup.svg" bg="bg-white" />
           <LogoCard label="Wordmark" file="/logos/terradebt-wordmark.svg" bg="bg-white" />
@@ -37,7 +37,7 @@ export default function BrandPage() {
       <Section number="02" title="Color" description="Two foundation colors. Three neutrals. Restraint earns the modernness.">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           <Swatch name="Slate" hex="#1E293B" varName="--color-slate" use="Primary text, dark surfaces" textOn="white" />
-          <Swatch name="Electric" hex="#2563EB" varName="--color-electric" use="CTAs, links, accent" textOn="white" />
+          <Swatch name="Electric" hex="#10B981" varName="--color-electric" use="CTAs, links, accent" textOn="white" />
           <Swatch name="White" hex="#FFFFFF" varName="--color-white" use="Card surfaces" textOn="slate" border />
           <Swatch name="Off-white" hex="#F8FAFC" varName="--color-offwhite" use="Page background" textOn="slate" border />
           <Swatch name="Border" hex="#E2E8F0" varName="--color-border" use="Dividers, card edges" textOn="slate" border />

@@ -4,8 +4,8 @@
 @theme inline {
   --color-slate: #1E293B;
   --color-slate-soft: #334155;
-  --color-electric: #2563EB;
-  --color-electric-soft: #3B82F6;
+  --color-electric: #10B981;
+  --color-electric-soft: #34D399;
   --color-offwhite: #F8FAFC;
   --color-border: #E2E8F0;
   --color-muted: #64748B;
@@ -16,7 +16,7 @@
 
   --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 12px rgb(15 23 42 / 0.04);
   --shadow-elevated: 0 1px 2px rgb(15 23 42 / 0.04), 0 12px 32px rgb(15 23 42 / 0.08);
-  --shadow-glow: 0 0 0 1px rgb(37 99 235 / 0.1), 0 8px 32px rgb(37 99 235 / 0.12);
+  --shadow-glow: 0 0 0 1px rgb(16 185 129 / 0.1), 0 8px 32px rgb(16 185 129 / 0.12);
 }
 
 @layer base {
@@ -27,7 +27,7 @@
   h1, h2, h3, h4 { @apply font-semibold tracking-tight; }
   a { @apply text-electric; }
   a:not(.no-underline):hover { text-decoration: underline; }
-  ::selection { background: #2563EB; color: white; }
+  ::selection { background: #10B981; color: white; }
 }
 
 @layer utilities {
@@ -38,13 +38,13 @@
   }
 
   .bg-radial-electric {
-    background-image: radial-gradient(80% 60% at 80% 0%, rgb(37 99 235 / 0.08), transparent 60%);
+    background-image: radial-gradient(80% 60% at 80% 0%, rgb(16 185 129 / 0.08), transparent 60%);
   }
 
   .bg-mesh {
     background-image:
-      radial-gradient(60% 50% at 75% 10%, rgb(37 99 235 / 0.10), transparent 60%),
-      radial-gradient(50% 40% at 15% 90%, rgb(37 99 235 / 0.06), transparent 60%);
+      radial-gradient(60% 50% at 75% 10%, rgb(16 185 129 / 0.10), transparent 60%),
+      radial-gradient(50% 40% at 15% 90%, rgb(16 185 129 / 0.06), transparent 60%);
   }
 
   .ring-glow {

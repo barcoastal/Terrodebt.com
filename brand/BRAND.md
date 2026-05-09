@@ -62,7 +62,7 @@ The TerraDebt mark is built around three pieces: a geometric T inside a slate sq
 
 - **Square**: 64×64 viewBox, 14px corner radius (22% radius ratio, matches Apple iOS app icon proportion).
 - **T glyph**: stem 10px wide, top bar 36px wide, weight balanced for legibility down to 16px.
-- **Accent dot**: 5px radius, electric blue (#2563EB), positioned bottom-right of the T glyph (or trailing the wordmark). Always present. The dot is non-negotiable.
+- **Accent dot**: 5px radius, emerald green (#10B981), positioned bottom-right of the T glyph (or trailing the wordmark). Always present. The dot is non-negotiable.
 - **Wordmark**: Inter Bold (700), `letter-spacing: -1.6` at 48px, lowercase. Lowercase is intentional. We don't shout.
 
 ### Clear space
@@ -95,7 +95,7 @@ The palette is intentionally narrow. Two foundation colors, three neutrals, and 
 | Token | Hex | RGB | Use |
 |---|---|---|---|
 | Slate | `#1E293B` | `30 41 59` | Primary text, dark surfaces, icon mark, all body copy |
-| Electric | `#2563EB` | `37 99 235` | Primary CTA, links, accent dot, key emphasis |
+| Electric | `#10B981` | `16 185 129` | Primary CTA, links, accent dot, key emphasis |
 
 ### Surfaces
 
@@ -118,7 +118,7 @@ These are not in `globals.css` yet. Add when needed (e.g., admin status badges).
 
 ### Usage rules
 
-- **Electric is sacred.** Reserve electric blue for CTAs, links, the accent dot, and one key emphasis per screen. If everything is electric, nothing is.
+- **Electric is sacred.** Reserve emerald green for CTAs, links, the accent dot, and one key emphasis per screen. If everything is electric, nothing is.
 - **Black is banned.** We use slate (`#1E293B`), never pure black. Black reads as harsh; slate reads as serious.
 - **Pure white only on cards.** Page backgrounds use off-white (`#F8FAFC`) so cards lift cleanly.
 - **Borders are quiet.** Border color (`#E2E8F0`) at 1px is the default. Anything heavier reads as a boxy 2018 site.
@@ -126,7 +126,7 @@ These are not in `globals.css` yet. Add when needed (e.g., admin status badges).
 
 ### Tints (for backgrounds)
 
-Use Tailwind's `/N` opacity syntax for tinted accents (e.g., `bg-electric/10` for the electric blue badge background). Approved tints:
+Use Tailwind's `/N` opacity syntax for tinted accents (e.g., `bg-electric/10` for the emerald green badge background). Approved tints:
 
 - `bg-electric/5`, barely-there accent fill
 - `bg-electric/10`, badge backgrounds, subtle highlight zones
