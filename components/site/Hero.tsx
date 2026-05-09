@@ -6,9 +6,9 @@ export function Hero() {
     <section className="relative bg-offwhite overflow-hidden">
       <div className="absolute inset-0 bg-mesh pointer-events-none" />
       <div className="absolute inset-0 grid-pattern pointer-events-none" />
-      <div className="relative mx-auto max-w-content px-6 pt-16 md:pt-24 lg:pt-28 pb-20 md:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div className="relative mx-auto max-w-content px-6 pt-16 md:pt-20 lg:pt-24 pb-16 md:pb-20 grid md:grid-cols-12 gap-10 md:gap-12 lg:gap-16 items-start">
         {/* Left column: pitch */}
-        <div className="lg:col-span-7">
+        <div className="md:col-span-7">
           <span className="inline-flex items-center gap-2 bg-white border border-border text-slate text-xs font-medium px-3 py-1.5 rounded-full shadow-soft">
             <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse" />
             Modern MCA debt relief
@@ -40,8 +40,8 @@ export function Hero() {
         </div>
 
         {/* Right column: form */}
-        <div className="lg:col-span-5">
-          <div className="lg:sticky lg:top-24">
+        <div className="md:col-span-5">
+          <div className="md:sticky md:top-24">
             <LeadForm source="homepage" />
           </div>
         </div>
