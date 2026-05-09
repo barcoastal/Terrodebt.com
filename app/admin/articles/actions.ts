@@ -2,6 +2,30 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
+import { ARTICLE_SEEDS } from "@/lib/seed-data/articles";
+
+export async function importSeedArticles() {
+  let inserted = 0;
+  let updated = 0;
+  for (const a of ARTICLE_SEEDS) {
+    const existing = await db.article.findUnique({ where: { slug: a.slug } });
+    if (existing) {
+      await db.article.update({
+        where: { slug: a.slug },
+        data: { ...a, published: true, publishedAt: existing.publishedAt ?? new Date() },
+      });
+      updated += 1;
+    } else {
+      await db.article.create({
+        data: { ...a, published: true, publishedAt: new Date() },
+      });
+      inserted += 1;
+    }
+  }
+  revalidatePath("/admin/articles");
+  revalidatePath("/articles");
+  redirect(`/admin/articles?imported=${inserted}&updated=${updated}`);
+}
 
 export async function createArticle(fd: FormData) {
   const data = parse(fd);

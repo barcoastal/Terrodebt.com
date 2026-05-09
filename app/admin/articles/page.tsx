@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
 import type { Prisma } from "@/app/generated/prisma";
+import { importSeedArticles } from "./actions";
 
 const PAGE_SIZE = 20;
 
@@ -11,7 +12,7 @@ function fmt(d: Date | null | undefined): string {
   return d.toISOString().slice(0, 16).replace("T", " ");
 }
 
-export default async function ArticlesIndex({ searchParams }: { searchParams: Promise<{ q?: string; status?: string; sort?: SortKey; page?: string }> }) {
+export default async function ArticlesIndex({ searchParams }: { searchParams: Promise<{ q?: string; status?: string; sort?: SortKey; page?: string; imported?: string; updated?: string }> }) {
   const sp = await searchParams;
   const sort: SortKey = (sp.sort as SortKey) ?? "recent";
   const status = sp.status ?? "";
@@ -63,10 +64,23 @@ export default async function ArticlesIndex({ searchParams }: { searchParams: Pr
 
   return (
     <>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-3">
         <h1 className="text-2xl font-bold">Articles</h1>
-        <Link href="/admin/articles/new" className="bg-electric text-white px-3 py-2 rounded-md text-sm no-underline">New article</Link>
+        <div className="flex gap-2">
+          <form action={importSeedArticles}>
+            <button type="submit" className="bg-white border border-border text-slate px-3 py-2 rounded-md text-sm hover:border-electric transition">
+              Import 20 seed articles
+            </button>
+          </form>
+          <Link href="/admin/articles/new" className="bg-electric text-white px-3 py-2 rounded-md text-sm no-underline">New article</Link>
+        </div>
       </div>
+
+      {(sp.imported || sp.updated) && (
+        <div className="mt-3 surface-card p-3 text-sm text-slate">
+          Imported {sp.imported ?? "0"} new articles. Updated {sp.updated ?? "0"} existing.
+        </div>
+      )}
 
       <form className="mt-4 flex flex-wrap gap-2 text-sm">
         <input name="q" defaultValue={sp.q ?? ""} placeholder="search by title or slug" className="border border-border rounded-md px-3 py-2 flex-1 min-w-[240px]" />
