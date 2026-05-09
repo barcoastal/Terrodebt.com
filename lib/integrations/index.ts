@@ -3,6 +3,7 @@ import { notifySlack } from "./slack";
 import { postToCrm } from "./crm";
 import { fireGa4Conversion } from "./ga4";
 import { uploadGoogleAdsConversion } from "./google-ads";
+import { postToZapier } from "./zapier";
 
 export type IntegrationResult = { name: string; ok: boolean; error?: string };
 
@@ -12,5 +13,6 @@ export async function fanOutIntegrations(lead: Lead): Promise<IntegrationResult[
     postToCrm(lead),
     fireGa4Conversion(lead),
     uploadGoogleAdsConversion(lead),
+    postToZapier(lead),
   ]);
 }
