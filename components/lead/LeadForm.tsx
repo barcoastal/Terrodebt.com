@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ProgressBar } from "./ProgressBar";
 import { bucketFromAmount, type LeadInput } from "@/lib/lead-schema";
@@ -17,7 +17,7 @@ const initial: LeadInput = {
   source: "homepage",
 };
 
-const TOTAL_STEPS = 6;
+const TOTAL_STEPS = 3;
 
 export function LeadForm({ source = "homepage" }: { source?: string }) {
   const [step, setStep] = useState(1);
@@ -41,7 +41,7 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
       const payload: LeadInput = {
         ...data,
         debtAmountBucket: bucketFromAmount(data.debtAmount),
-        hasMcaDebt: data.debtAmount > 0,
+        hasMcaDebt: data.hasMcaDebt,
       };
       const result = await submitLead({ ...payload, ...meta });
       if (result.ok) setDone(true);
@@ -80,7 +80,7 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
         {step > 1 && <button onClick={back} className="text-muted text-sm hover:text-slate transition">← Back</button>}
       </div>
 
-      <div className="mt-8 min-h-[260px]">
+      <div className="mt-8 min-h-[280px]">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={step}
@@ -91,13 +91,24 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
             {step === 1 && (
-              <DebtStep value={data.debtAmount} onChange={(v) => update("debtAmount", v)} onAdvance={next} />
+              <Question label="Do you have stacked MCA debt?">
+                <div className="grid grid-cols-2 gap-3">
+                  <Choice big active={data.hasMcaDebt === true} onClick={() => { update("hasMcaDebt", true); next(); }}>Yes</Choice>
+                  <Choice big active={data.hasMcaDebt === false} onClick={() => { update("hasMcaDebt", false); next(); }}>No</Choice>
+                </div>
+              </Question>
             )}
-            {step === 2 && <TextStep label="What's your business name?" placeholder="Acme Trucking LLC" value={data.businessName} onChange={(v) => update("businessName", v)} onAdvance={next} valid={data.businessName.trim().length > 0} />}
-            {step === 3 && <TextStep label="What's your first name?" placeholder="Jordan" value={data.firstName} onChange={(v) => update("firstName", v)} onAdvance={next} valid={data.firstName.trim().length > 0} />}
-            {step === 4 && <TextStep label="And your last name?" placeholder="Pierce" value={data.lastName} onChange={(v) => update("lastName", v)} onAdvance={next} valid={data.lastName.trim().length > 0} />}
-            {step === 5 && <TextStep label="Best phone to reach you?" placeholder="(555) 123-4567" type="tel" value={data.phone} onChange={(v) => update("phone", v)} onAdvance={next} valid={data.phone.trim().length >= 7} />}
-            {step === 6 && <TextStep label="Your email?" placeholder="you@business.com" type="email" value={data.email} onChange={(v) => update("email", v)} onAdvance={handleSubmit} valid={/\S+@\S+\.\S+/.test(data.email)} submit submitting={submitting} />}
+            {step === 2 && (
+              <DebtStep value={data.debtAmount} onChange={(v) => update("debtAmount", v)} onAdvance={next} disabled={data.hasMcaDebt === false} />
+            )}
+            {step === 3 && (
+              <ContactStep
+                data={data}
+                onUpdate={update}
+                onSubmit={handleSubmit}
+                submitting={submitting}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -116,7 +127,22 @@ function Question({ label, children }: { label: string; children: React.ReactNod
   );
 }
 
-function DebtStep({ value, onChange, onAdvance }: { value: number; onChange: (v: number) => void; onAdvance: () => void }) {
+function Choice({ active, onClick, children, big }: { active?: boolean; onClick: () => void; children: React.ReactNode; big?: boolean }) {
+  const sizing = big ? "h-20 text-lg" : "h-14 text-base";
+  return (
+    <button onClick={onClick}
+      className={`group relative ${sizing} px-5 rounded-xl border text-left font-medium transition-all
+        ${active ? "border-electric bg-electric/5 text-slate ring-2 ring-electric/20"
+                 : "border-border bg-white text-slate hover:border-electric hover:bg-electric/5 hover:-translate-y-0.5 hover:shadow-soft"}`}>
+      <span className="flex items-center justify-between">
+        <span>{children}</span>
+        <span className={`text-electric transition-opacity ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} aria-hidden>→</span>
+      </span>
+    </button>
+  );
+}
+
+function DebtStep({ value, onChange, onAdvance, disabled }: { value: number; onChange: (v: number) => void; onAdvance: () => void; disabled?: boolean }) {
   function onKey(e: React.KeyboardEvent) {
     if (e.key === "Enter") { e.preventDefault(); onAdvance(); }
   }
@@ -134,6 +160,7 @@ function DebtStep({ value, onChange, onAdvance }: { value: number; onChange: (v:
           onChange={(e) => onChange(Number(e.target.value))}
           className="w-full mt-6 accent-electric"
           aria-label="MCA debt amount"
+          disabled={disabled}
         />
         <div className="mt-2 flex justify-between font-mono text-xs text-muted">
           <span>$0</span>
@@ -156,27 +183,70 @@ function DebtStep({ value, onChange, onAdvance }: { value: number; onChange: (v:
   );
 }
 
-function TextStep({ label, placeholder, type = "text", value, onChange, onAdvance, valid, submit, submitting }: {
-  label: string; placeholder?: string; type?: string; value: string; onChange: (v: string) => void; onAdvance: () => void; valid: boolean; submit?: boolean; submitting?: boolean;
+function ContactStep({ data, onUpdate, onSubmit, submitting }: {
+  data: LeadInput;
+  onUpdate: <K extends keyof LeadInput>(k: K, v: LeadInput[K]) => void;
+  onSubmit: () => void;
+  submitting: boolean;
 }) {
-  const ref = useRef<HTMLInputElement | null>(null);
-  useEffect(() => { ref.current?.focus(); }, []);
-  function onKey(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key === "Enter" && valid && !submitting) { e.preventDefault(); onAdvance(); }
+  const firstRef = useRef<HTMLInputElement | null>(null);
+  useEffect(() => { firstRef.current?.focus(); }, []);
+
+  const valid =
+    data.businessName.trim().length > 0 &&
+    data.firstName.trim().length > 0 &&
+    data.lastName.trim().length > 0 &&
+    data.phone.trim().length >= 7 &&
+    /\S+@\S+\.\S+/.test(data.email);
+
+  function onSubmitForm(e: React.FormEvent) {
+    e.preventDefault();
+    if (valid && !submitting) onSubmit();
   }
+
   return (
-    <Question label={label}>
-      <input ref={ref} type={type} value={value} placeholder={placeholder} onKeyDown={onKey} onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-transparent border-0 border-b-2 border-border focus:border-electric outline-none px-0 py-3 text-2xl md:text-3xl font-medium text-slate transition placeholder:text-muted/60" />
-      <div className="mt-8 flex items-center justify-between">
-        <button onClick={onAdvance} disabled={!valid || !!submitting}
-          className="bg-slate text-white px-5 py-3 rounded-xl text-sm font-medium disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-soft transition flex items-center gap-2">
-          {submit ? (submitting ? "Submitting..." : "Get my analysis") : "Continue"}
-          <span aria-hidden>→</span>
-        </button>
-        <span className="font-mono text-xs text-muted">press <kbd className="bg-offwhite border border-border rounded px-1.5 py-0.5">Enter</kbd></span>
+    <form onSubmit={onSubmitForm}>
+      <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate leading-tight">
+        Where should we reach you?
+      </h3>
+      <p className="mt-2 text-muted text-sm">A TerraDebt advisor will call within one business hour.</p>
+
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <Field label="Business name" className="sm:col-span-2">
+          <input ref={firstRef} type="text" required value={data.businessName} onChange={(e) => onUpdate("businessName", e.target.value)} placeholder="Acme Trucking LLC" className={inputCls} />
+        </Field>
+        <Field label="First name">
+          <input type="text" required value={data.firstName} onChange={(e) => onUpdate("firstName", e.target.value)} placeholder="Jordan" className={inputCls} />
+        </Field>
+        <Field label="Last name">
+          <input type="text" required value={data.lastName} onChange={(e) => onUpdate("lastName", e.target.value)} placeholder="Pierce" className={inputCls} />
+        </Field>
+        <Field label="Phone">
+          <input type="tel" required value={data.phone} onChange={(e) => onUpdate("phone", e.target.value)} placeholder="(555) 123-4567" className={inputCls} />
+        </Field>
+        <Field label="Email">
+          <input type="email" required value={data.email} onChange={(e) => onUpdate("email", e.target.value)} placeholder="you@business.com" className={inputCls} />
+        </Field>
       </div>
-    </Question>
+
+      <button type="submit" disabled={!valid || submitting}
+        className="mt-8 w-full bg-slate text-white px-5 py-4 rounded-xl text-base font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-soft transition flex items-center justify-center gap-2">
+        {submitting ? "Submitting..." : "Get my free assessment"}
+        <span aria-hidden>→</span>
+      </button>
+      <p className="mt-3 text-xs text-muted text-center">No commitment. We will not share your info.</p>
+    </form>
+  );
+}
+
+const inputCls = "w-full bg-white border border-border rounded-lg px-3 py-3 text-base text-slate focus:border-electric focus:ring-2 focus:ring-electric/20 outline-none transition placeholder:text-muted/60";
+
+function Field({ label, children, className }: { label: string; children: React.ReactNode; className?: string }) {
+  return (
+    <div className={className}>
+      <label className="block text-xs font-mono uppercase tracking-wider text-muted mb-1.5">{label}</label>
+      {children}
+    </div>
   );
 }
 
