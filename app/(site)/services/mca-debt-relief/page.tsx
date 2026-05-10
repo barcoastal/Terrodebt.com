@@ -5,8 +5,8 @@ import { LeadForm } from "@/components/lead/LeadForm";
 import { Reveal } from "@/components/site/Reveal";
 
 export const metadata: Metadata = {
-  title: "MCA Debt Relief Services",
-  description: "TerraDebt's MCA debt relief services: restructure, settle, or defend stacked merchant cash advances. Free assessment, free calculators, attorney coordination in all 50 states.",
+  title: "MCA Debt Relief Services | TerraDebt",
+  description: "TerraDebt restructures, settles, and defends stacked merchant cash advances. Free assessment, free calculators, counsel in all 50 states.",
 };
 
 export default function McaDebtReliefServices() {

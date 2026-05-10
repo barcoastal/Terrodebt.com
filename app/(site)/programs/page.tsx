@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { PROGRAMS, type ProgramKey } from "@/lib/programs";
 
 export const metadata: Metadata = {
-  title: "Programs",
-  description: "Settlement, restructure, reverse consolidation defense, and legal defense. Four programs, scoped to your situation.",
+  title: "Programs | TerraDebt MCA Debt Relief",
+  description: "TerraDebt's four programs for stacked MCA debt: settlement, restructure, reverse consolidation defense, and legal defense. Free assessment.",
 };
 
 export default function ProgramsIndex() {

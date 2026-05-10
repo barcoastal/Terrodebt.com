@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free MCA Tools",
-  description: "Calculators and self-assessments for stacked MCA debt. Effective APR, stack burden, health check. All free, all client-side, no email required.",
+  title: "Free MCA Tools | TerraDebt Calculators",
+  description: "Free calculators for stacked MCA debt: effective APR, stacked-MCA burden, health check. No email required, runs entirely in your browser.",
 };
 
 const TOOLS = [

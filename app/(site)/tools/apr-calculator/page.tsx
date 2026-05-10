@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { AprCalculator } from "@/components/tools/AprCalculator";
 
 export const metadata: Metadata = {
-  title: "Effective APR Calculator",
-  description: "Convert factor rate and term to a real annualized rate. Free, no email required.",
+  title: "MCA Effective APR Calculator | TerraDebt",
+  description: "Convert factor rate and term length to the real annualized rate on your merchant cash advance. Free, no email required.",
 };
 
 export default function AprCalculatorPage() {

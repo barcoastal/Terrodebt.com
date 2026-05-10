@@ -14,7 +14,10 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const code = state.toUpperCase();
   const meta = STATES.find((s) => s.code === code);
   if (!meta) return {};
-  return { title: `MCA Defense in ${meta.name}`, description: `MCA debt relief and legal defense for businesses in ${meta.name}.` };
+  return {
+    title: `MCA Defense in ${meta.name} | TerraDebt`,
+    description: `MCA defense in ${meta.name}: licensed counsel, COJ response, account freeze help, settlement coordination. Free assessment within one business hour.`,
+  };
 }
 
 export default async function StatePage({ params }: { params: Promise<{ state: string }> }) {

@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Privacy Policy",
-  description: "How TerraDebt collects, uses, and protects your information.",
+  title: "Privacy Policy | TerraDebt",
+  description: "How TerraDebt collects, uses, and protects merchant information when you visit our site, request an assessment, or engage one of our debt relief programs.",
 };
 
 export default function PrivacyPage() {

@@ -2,8 +2,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About TerraDebt",
-  description: "TerraDebt is the modern MCA debt relief brand. Why we exist, how we are different, what we are not.",
+  title: "About TerraDebt | Modern MCA Debt Relief",
+  description: "TerraDebt is a modern MCA debt relief firm. We give merchants free calculators and an honest path through stacked merchant cash advances.",
 };
 
 export default function About() {

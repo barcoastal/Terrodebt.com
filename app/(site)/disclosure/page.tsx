@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Disclosure",
-  description: "Important disclosures about TerraDebt's services and outcomes.",
+  title: "Disclosure | TerraDebt MCA Debt Relief",
+  description: "TerraDebt is not a law firm. We coordinate licensed attorneys in your state. Outcomes vary. Read the full disclosure for our services and programs.",
 };
 
 export default function DisclosurePage() {

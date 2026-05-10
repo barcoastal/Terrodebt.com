@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { StackCalculator } from "@/components/tools/StackCalculator";
 
 export const metadata: Metadata = {
-  title: "Stacked MCA Calculator",
-  description: "Add every active advance and see total daily burden, weighted APR, and projected payoff. Free, no email required.",
+  title: "Stacked MCA Calculator | TerraDebt",
+  description: "Calculate total daily debit burden and weighted APR across all your active merchant cash advances. Free, no email required.",
 };
 
 export default function StackCalculatorPage() {

@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "Articles",
-  description: "Education on stacked MCA debt: settlement, restructure, contract reading, COJ defense, and more.",
+  title: "Articles | TerraDebt MCA Debt Education",
+  description: "TerraDebt articles on stacked MCA debt: settlement, restructure, COJ defense, effective APR math, and contract reading. Plain-spoken merchant guidance.",
 };
 
 export default async function ArticlesIndex() {

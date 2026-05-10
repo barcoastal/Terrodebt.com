@@ -1,16 +1,37 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { PROGRAMS, type ProgramKey } from "@/lib/programs";
 import { LeadForm } from "@/components/lead/LeadForm";
+
+const PROGRAM_META: Record<ProgramKey, { title: string; description: string }> = {
+  "settlement": {
+    title: "MCA Settlement | TerraDebt",
+    description: "Settle stacked merchant cash advances at typically 40 to 60 percent of face balance. Most settlement programs close inside 12 months.",
+  },
+  "restructure": {
+    title: "MCA Restructure | TerraDebt",
+    description: "Renegotiate terms and daily debits without settling. The right path when you want to preserve lender relationships and keep credit profile intact.",
+  },
+  "reverse-consolidation-defense": {
+    title: "Reverse Consolidation Defense | TerraDebt",
+    description: "Unwind a reverse consolidation that increased your total stack. TerraDebt rebuilds a real settlement or restructure plan around your actual debt.",
+  },
+  "legal-defense": {
+    title: "MCA Legal Defense | TerraDebt",
+    description: "72-hour coordinated counsel for confessions of judgment, frozen accounts, and active MCA litigation in any state. Free assessment available.",
+  },
+};
 
 export async function generateStaticParams() {
   return Object.keys(PROGRAMS).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const p = PROGRAMS[slug as ProgramKey];
   if (!p) return {};
-  return { title: p.title, description: p.subline };
+  const meta = PROGRAM_META[slug as ProgramKey];
+  return { title: meta.title, description: meta.description };
 }
 
 export default async function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {

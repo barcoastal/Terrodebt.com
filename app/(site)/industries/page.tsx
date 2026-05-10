@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve",
-  description: "TerraDebt builds MCA relief programs tailored to the cash-flow shape of each industry we work with.",
+  title: "Industries We Serve | TerraDebt MCA Debt Relief",
+  description: "MCA debt relief tailored to your industry. Trucking, restaurants, construction, healthcare, retail, e-commerce, salons, auto repair. Specific cash flow, specific programs.",
 };
 
 export default function IndustriesIndex() {

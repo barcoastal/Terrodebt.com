@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Trust",
-  description: "What TerraDebt clients say. Independent reviews, named outcomes, real industries.",
+  title: "Trust | TerraDebt Client Reviews and Outcomes",
+  description: "Real merchants. Specific industries. Specific numbers. What TerraDebt clients say after their MCA debt relief program closes.",
 };
 
 const TESTIMONIALS = [

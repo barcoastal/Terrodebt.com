@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Terms of Service",
-  description: "Terms governing your use of the TerraDebt website and services.",
+  title: "Terms of Service | TerraDebt",
+  description: "The terms that govern your use of TerraDebt's website and services. Outcomes vary. Past results do not predict future outcomes.",
 };
 
 export default function TermsPage() {

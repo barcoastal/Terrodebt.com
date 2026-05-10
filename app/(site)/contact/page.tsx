@@ -1,8 +1,8 @@
 import { LeadForm } from "@/components/lead/LeadForm";
 
 export const metadata = {
-  title: "Contact TerraDebt",
-  description: "Request a free assessment for stacked MCA debt.",
+  title: "Contact TerraDebt | Free MCA Debt Assessment",
+  description: "Request a free assessment for stacked MCA debt. A TerraDebt advisor will respond within one business hour. Free calculators available without contact.",
 };
 
 export default function ContactPage() {
