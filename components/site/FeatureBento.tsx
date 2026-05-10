@@ -13,10 +13,10 @@ export function FeatureBento() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
-          {/* Cell 1: Settlement (wide) */}
-          <Reveal delay={0.05}>
-            <BentoCell className="md:col-span-2 min-h-[280px]">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-fr">
+          {/* Cell 1: Settlement */}
+          <Reveal delay={0.05} className="h-full">
+            <BentoCell>
               <Eyebrow>Program 01</Eyebrow>
               <CellTitle>Settle stacked MCAs for 40 to 60 percent.</CellTitle>
               <CellBody>Negotiated lender-by-lender. We coordinate counsel where needed, structure the close-outs, and confirm releases in writing before any payment moves.</CellBody>
@@ -47,8 +47,8 @@ export function FeatureBento() {
           </Reveal>
 
           {/* Cell 2: Restructure */}
-          <Reveal delay={0.1}>
-            <BentoCell className="min-h-[280px]">
+          <Reveal delay={0.1} className="h-full">
+            <BentoCell>
               <Eyebrow>Program 02</Eyebrow>
               <CellTitle>Restructure without settling.</CellTitle>
               <CellBody>Pause, extend, or reduce daily debits with the lenders directly. The right move when settlement is premature.</CellBody>
@@ -67,8 +67,8 @@ export function FeatureBento() {
           </Reveal>
 
           {/* Cell 3: Reverse consolidation defense */}
-          <Reveal delay={0.15}>
-            <BentoCell className="min-h-[260px]">
+          <Reveal delay={0.15} className="h-full">
+            <BentoCell>
               <Eyebrow>Program 03</Eyebrow>
               <CellTitle>Unwind bad consolidations.</CellTitle>
               <CellBody>Reverse consolidations strip the holdback and stack the term on top. We exit them and rebuild a real plan.</CellBody>
@@ -86,9 +86,9 @@ export function FeatureBento() {
             </BentoCell>
           </Reveal>
 
-          {/* Cell 4: Legal defense (wide) */}
-          <Reveal delay={0.2}>
-            <BentoCell className="md:col-span-2 min-h-[260px]">
+          {/* Cell 4: Legal defense */}
+          <Reveal delay={0.2} className="h-full">
+            <BentoCell>
               <Eyebrow>Program 04</Eyebrow>
               <CellTitle>72-hour counsel for COJs and frozen accounts.</CellTitle>
               <CellBody>When a confession of judgment hits or an account gets frozen, hours matter. We have licensed counsel in every state and a defense playbook for the most common MCA filings.</CellBody>
@@ -101,8 +101,8 @@ export function FeatureBento() {
           </Reveal>
 
           {/* Cell 5: Free calculators */}
-          <Reveal delay={0.25}>
-            <BentoCell className="min-h-[240px]">
+          <Reveal delay={0.25} className="h-full">
+            <BentoCell>
               <Eyebrow>Tool</Eyebrow>
               <CellTitle>Effective APR, stack burden, health check.</CellTitle>
               <CellBody>Free calculators that show you the real math before any call. No login required.</CellBody>
@@ -115,8 +115,8 @@ export function FeatureBento() {
           </Reveal>
 
           {/* Cell 6: AI-augmented assessment */}
-          <Reveal delay={0.3}>
-            <BentoCell className="min-h-[240px]">
+          <Reveal delay={0.3} className="h-full">
+            <BentoCell>
               <Eyebrow>Method</Eyebrow>
               <CellTitle>Math first, pitch second.</CellTitle>
               <CellBody>Our assessment runs the numbers on your stack before anyone gets on a sales call. You see the path before you hear it.</CellBody>
@@ -134,7 +134,7 @@ export function FeatureBento() {
 
 function BentoCell({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`surface-card p-6 md:p-7 flex flex-col transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-elevated)] ${className}`}>
+    <div className={`surface-card p-6 md:p-7 flex flex-col h-full transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-elevated)] ${className}`}>
       {children}
     </div>
   );
