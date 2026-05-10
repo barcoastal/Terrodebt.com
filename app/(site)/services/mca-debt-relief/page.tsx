@@ -80,10 +80,10 @@ export default function McaDebtReliefServices() {
               <div className="absolute inset-y-0 left-0 flex items-center max-w-xl p-8 md:p-12">
                 <div>
                   <span className="font-mono text-xs uppercase tracking-wider text-white/70">Proof, not theatrics</span>
-                  <p className="mt-3 text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">Real outcomes. Real industries. Real numbers.</p>
-                  <p className="mt-3 text-white/80 text-sm md:text-base">Every case study on this site is published with the specific industry, debt amount, percent saved, and timeline. We do not run inflated dollar counters.</p>
-                  <Link href="/case-studies" className="mt-5 inline-flex items-center gap-2 text-white text-sm font-medium no-underline border border-white/20 hover:bg-white/10 px-4 py-2 rounded-lg transition">
-                    See case studies <span aria-hidden>→</span>
+                  <p className="mt-3 text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">Read the math before you commit.</p>
+                  <p className="mt-3 text-white/80 text-sm md:text-base">Our articles walk through effective APR, settlement vs restructure, and how to read your contract. Education first, no inflated dollar counters.</p>
+                  <Link href="/articles" className="mt-5 inline-flex items-center gap-2 text-white text-sm font-medium no-underline border border-white/20 hover:bg-white/10 px-4 py-2 rounded-lg transition">
+                    Read the articles <span aria-hidden>→</span>
                   </Link>
                 </div>
               </div>

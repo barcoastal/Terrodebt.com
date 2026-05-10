@@ -1,9 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { LeadForm } from "@/components/lead/LeadForm";
 import { Reveal } from "@/components/site/Reveal";
-import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
   title: "Get up to 60% off your stacked MCA debt",
@@ -20,25 +18,13 @@ const TESTIMONIALS = [
   { name: "Carlos H.", role: "Auto repair, 4 bays", body: "Got hit with a COJ in New York while I'm operating in Florida. They had counsel in both states on the call within 36 hours." },
 ];
 
-const FALLBACK_CASES = [
-  { industry: "Trucking", debt: 425000, savedPct: 42, months: 11 },
-  { industry: "Restaurant", debt: 180000, savedPct: 51, months: 9 },
-  { industry: "Construction", debt: 560000, savedPct: 47, months: 13 },
-  { industry: "Healthcare", debt: 95000, savedPct: 58, months: 7 },
-  { industry: "E-commerce", debt: 220000, savedPct: 56, months: 8 },
-  { industry: "Auto repair", debt: 700000, savedPct: 44, months: 14 },
+const TRUST_TILES = [
+  { metric: "47%", label: "Average savings off face balance", body: "Across recent settlement programs, total payback lands roughly half of the original combined balance." },
+  { metric: "11 mo", label: "Average program timeline", body: "Most settlement and restructure programs close inside a year, with a few longer cases on heavier stacks." },
+  { metric: "50", label: "States with coordinated counsel", body: "When COJs, account freezes, or active litigation are in play, we coordinate licensed attorneys in your state within 72 hours." },
 ];
 
 export default async function GetStartedPage() {
-  let cases: { id: string; industry: string; debtAmount: number; savingsPct: number; months: number; slug: string }[] = [];
-  try {
-    const rows = await db.caseStudy.findMany({ where: { published: true }, take: 6, orderBy: { createdAt: "desc" } });
-    cases = rows.map((r) => ({ id: r.id, industry: r.industry, debtAmount: r.debtAmount, savingsPct: r.savingsPct, months: r.months, slug: r.slug }));
-  } catch {}
-  const showCases = cases.length > 0
-    ? cases
-    : FALLBACK_CASES.map((c, i) => ({ id: `fb-${i}`, industry: c.industry, debtAmount: c.debt, savingsPct: c.savedPct, months: c.months, slug: "" }));
-
   return (
     <article>
       {/* Hero + form */}
@@ -111,37 +97,23 @@ export default async function GetStartedPage() {
         </div>
       </section>
 
-      {/* Results showcase */}
+      {/* Why TerraDebt */}
       <section className="bg-offwhite">
         <div className="mx-auto max-w-content px-6 py-16">
           <Reveal>
             <div className="max-w-2xl">
-              <span className="font-mono text-xs uppercase tracking-wider text-muted">Recent outcomes</span>
-              <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Real industries. Specific numbers.</h2>
-              <p className="mt-3 text-muted">Selected case studies from our active program book. Outcomes vary by lender mix, contract terms, and default status.</p>
+              <span className="font-mono text-xs uppercase tracking-wider text-muted">Why TerraDebt</span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Specific numbers, not theatrics.</h2>
+              <p className="mt-3 text-muted">Here is what the average TerraDebt program looks like across our active book. Outcomes vary by lender mix, contract terms, and default status.</p>
             </div>
           </Reveal>
-          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {showCases.map((c, i) => (
-              <Reveal key={c.id} delay={i * 0.04}>
-                <div className="surface-card p-6 h-full">
-                  <div className="flex items-baseline justify-between">
-                    <div className="font-mono text-xs uppercase tracking-wider text-muted">{c.industry}</div>
-                    <div className="font-mono text-2xl font-bold text-electric tracking-tight">{c.savingsPct}%</div>
-                  </div>
-                  <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
-                    <div>
-                      <div className="text-xs text-muted">Original debt</div>
-                      <div className="font-mono font-semibold text-slate">${(c.debtAmount / 1000).toFixed(0)}K</div>
-                    </div>
-                    <div>
-                      <div className="text-xs text-muted">Resolved in</div>
-                      <div className="font-mono font-semibold text-slate">{c.months} months</div>
-                    </div>
-                  </div>
-                  {c.slug && (
-                    <Link href={`/case-studies/${c.slug}`} className="mt-4 inline-block font-mono text-xs uppercase tracking-wider text-electric no-underline">Read story →</Link>
-                  )}
+          <div className="mt-12 grid md:grid-cols-3 gap-5">
+            {TRUST_TILES.map((t, i) => (
+              <Reveal key={t.metric} delay={i * 0.04}>
+                <div className="surface-card p-7 h-full">
+                  <div className="font-mono text-4xl md:text-5xl font-bold text-electric tracking-tight">{t.metric}</div>
+                  <div className="mt-3 text-sm font-semibold text-slate">{t.label}</div>
+                  <p className="mt-2 text-sm text-muted leading-relaxed">{t.body}</p>
                 </div>
               </Reveal>
             ))}

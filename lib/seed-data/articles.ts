@@ -1,4 +1,4 @@
-export type ArticleSeed = { slug: string; title: string; excerpt: string; contentMd: string };
+export type ArticleSeed = { slug: string; title: string; excerpt: string; heroImage?: string; contentMd: string };
 
 export const ARTICLE_SEEDS: ArticleSeed[] = [
   {
@@ -6,6 +6,7 @@ export const ARTICLE_SEEDS: ArticleSeed[] = [
     title: "What is reverse consolidation, and why it usually backfires",
     excerpt:
       "Reverse consolidation packages multiple MCAs into one new advance. It often increases total debt and accelerates daily debits.",
+    heroImage: "/images/articles/what-is-reverse-consolidation.png",
     contentMd: `Reverse consolidation is the most common product pitched to merchants buried in stacked MCAs. It looks like relief on day one. Lower daily debit, one lender to talk to, the immediate stress of four ACH pulls becomes one. The structure of the product is the part that does the damage, and most owners do not see it until they are 60 days in and the math has gotten worse, not better.
 
 ## TL;DR
@@ -63,6 +64,7 @@ If you have been pitched a reverse consolidation, get the full numbers in front 
     title: "MCA settlement vs restructure: which is right for your business",
     excerpt:
       "Settlement reduces the balance owed. Restructure preserves it but extends terms. The right choice depends on default status, lender mix, and cash flow.",
+    heroImage: "/images/articles/mca-settlement-vs-restructure.png",
     contentMd: `Settlement and restructure are the two real paths out of stacked MCAs. They look similar from a distance and are different in almost every way that matters. Picking the wrong path adds 6 to 12 months to your timeline and can cost six figures on a typical $300K to $500K stack. The choice depends on three things: where you are in the lender's escalation cycle, what you need from the lender after the program closes, and how stretched your cash flow has become.
 
 ## TL;DR
@@ -123,6 +125,7 @@ The choice between settlement and restructure is rarely obvious from inside a st
     title: "How to read your MCA contract: a line-by-line guide",
     excerpt:
       "Most MCA contracts share the same structural sections. Read these clauses in this order, and you will understand the contract better than the salesperson did.",
+    heroImage: "/images/articles/how-to-read-your-mca-contract.png",
     contentMd: `MCA contracts are written to be unreadable. They run 15 to 40 pages, the language is dense, and the parts that matter most are often buried after pages of standard commercial boilerplate. The good news: every MCA contract has the same structural skeleton. Once you know which clauses to find and what order to read them in, the contract reveals what it is actually charging and what defenses you have. This guide walks the structure end to end.
 
 ## TL;DR
@@ -195,6 +198,7 @@ Read your contracts in this order: definitions, purchase price and purchased amo
     title: "Effective APR on MCAs explained (and why it is not what they tell you)",
     excerpt:
       "MCAs are sold on factor rate, not APR. Effective APRs of 80 to 200 percent are common. Calculating yours changes the negotiation.",
+    heroImage: "/images/articles/effective-apr-explained.png",
     contentMd: `Factor rate is the most successful piece of financial product framing in the last 20 years. It takes a borrowing cost that would be illegal in most consumer contexts and presents it as a small multiplier that sounds reasonable. A 1.45 factor sounds like 45 percent. The real annualized cost is usually 90 to 200 percent depending on the term, and the gap between the two is where the MCA industry makes its money. This article shows you how to calculate the real number on your own contracts and why doing so changes every conversation you have with a lender.
 
 ## TL;DR
@@ -259,6 +263,7 @@ Pull your active MCA contracts. Find the purchase price (funded amount) and the 
     title: "Confession of Judgment defense: what to do in the first 72 hours",
     excerpt:
       "A confession of judgment can freeze accounts within days. The first 72 hours are critical. Here is exactly what to do.",
+    heroImage: "/images/articles/coj-defense-basics.png",
     contentMd: `A confession of judgment is the single most dangerous instrument in the MCA contract you signed. It is a pre-signed admission of liability that lets the lender obtain a court judgment without proving you defaulted, without serving you, and without giving you the chance to defend. In jurisdictions where COJs are enforceable, the lender can go from default declaration to filed judgment to frozen bank account in under a week. The first 72 hours after a COJ is filed often determine whether your business survives. This article walks the playbook step by step.
 
 ## TL;DR
@@ -339,6 +344,7 @@ If you have just received notice of a COJ filing, stop reading this article and 
     title: "When to pause MCA debits (and how reconciliation actually works)",
     excerpt:
       "Reconciliation is the right tool. Bank blocks usually are not. Here is the difference and how to use the contract language you already signed.",
+    heroImage: "/images/articles/when-to-pause-mca-debits.png",
     contentMd: `Pausing MCA debits is one of the most common things owners want to do and one of the most commonly mishandled. Done correctly, a pause buys you 2 to 4 weeks of breathing room to audit contracts and engage counsel without triggering default. Done incorrectly, the same pause accelerates the balance, files a confession of judgment, and freezes your accounts. The difference comes down to whether you use the reconciliation language already in your contract or you simply stop paying. This article walks the right and wrong ways to pause.
 
 ## TL;DR
@@ -415,6 +421,7 @@ If you are considering pausing MCA debits, do not block the bank yet. Pull your 
     title: "How MCA debt relief actually works, step by step",
     excerpt:
       "The work is part negotiation, part legal coordination, and part cash flow engineering. Here is the order of operations from intake to closeout.",
+    heroImage: "/images/articles/how-mca-debt-relief-actually-works.png",
     contentMd: `MCA debt relief looks like negotiation from the outside. Inside, it is mostly project management, forensic contract review, and coordinated legal pressure. The negotiation calls are the visible 10 percent. The other 90 percent is the work that makes the calls produce a result. This article walks the entire program end to end so you can see what a credible firm actually does and what to expect month by month.
 
 ## TL;DR
@@ -497,6 +504,7 @@ If you have stacked MCAs and have not started a relief program, the first step i
     title: "Signs your MCA relief firm is a scam",
     excerpt:
       "Upfront fees, guaranteed outcomes, and pressure to take a new advance are the most common red flags. Here is the full list.",
+    heroImage: "/images/articles/signs-your-mca-relief-firm-is-a-scam.png",
     contentMd: `The MCA relief category attracts predatory operators because the customers are distressed and the dollar values are large. A merchant with $400K in stacked MCAs is a high-value target for a scam, and the scams have evolved fast over the last 5 years. This article catalogs the red flags that separate credible firms from ones that will make your situation worse. Some of these signs are obvious. Most are not, and they are designed not to be.
 
 ## TL;DR
@@ -580,6 +588,7 @@ If you are evaluating relief firms, run them through this list before signing an
     title: "UCC liens and account freezes: what they mean and what to do",
     excerpt:
       "UCC enforcement can freeze receivables and customer payments very quickly. Knowing the timeline helps you act before the freeze hits.",
+    heroImage: "/images/articles/ucc-liens-and-account-freezes.png",
     contentMd: `Most MCA contracts grant a UCC security interest in receivables. The UCC filing itself is recorded at funding and is generally not a problem on its own. The problem starts when default is declared, because the lender can then serve UCC notices on customers, processors, and other counterparties to redirect incoming payments away from you. Once that happens, operating becomes effectively impossible within a week. This article walks the mechanics of UCC enforcement, account freezes, and what to do at each stage.
 
 ## TL;DR
@@ -652,6 +661,7 @@ If your account has been frozen, stop reading and call. The first 24 hours are t
     title: "How to handle stacked MCAs without making it worse",
     excerpt:
       "Three rules: stop stacking, document the cash flow, and engage early. Each one prevents a bigger problem.",
+    heroImage: "/images/articles/how-to-handle-stacked-mcas.png",
     contentMd: `Stacking is the act of taking new MCAs to service prior MCAs. Each new advance reduces tomorrow's cash flow further than today's debits do. The math compounds against you, and most owners do not see how steeply until they are four or five contracts deep. This article walks the rules that keep a stacked situation from becoming a frozen-account, COJ-filed situation. Some of these are common sense. The rest are technical and easy to miss.
 
 ## TL;DR
@@ -720,6 +730,7 @@ Build the inventory first. Sum the daily debits. Calculate the ratio against net
     title: "Should you consolidate your MCAs? A real-world look",
     excerpt:
       "Consolidation can help in narrow circumstances. In most cases it adds debt without solving the underlying cash flow problem.",
+    heroImage: "/images/articles/should-you-consolidate-mcas.png",
     contentMd: `"Consolidate your MCAs" is one of the most pitched phrases in the merchant cash advance category. It usually means one of two things. Reverse consolidation, which is itself a new MCA, or true consolidation through a bank line, SBA loan, or factoring arrangement. The first almost always makes the math worse. The second is rarely available to merchants who actually have stacked MCAs. This article walks both paths and the tests to apply before signing anything.
 
 ## TL;DR
@@ -786,6 +797,7 @@ Before signing any consolidation product, run the math test. Pull every existing
     title: "MCA restructure timeline: what to expect month by month",
     excerpt:
       "Restructure programs typically run 12 to 18 months. Here is what happens in each phase and what can extend the timeline.",
+    heroImage: "/images/articles/mca-restructure-timeline.png",
     contentMd: `Restructure is the slower of the two main relief paths but produces cleaner outcomes when the underlying business is healthy and the merchant wants to preserve lender relationships. The timeline is more predictable than settlement because the lender is paid in full rather than at a discount, which removes most of the negotiation around dollar amounts. This article walks the typical restructure timeline month by month and the variables that can extend it.
 
 ## TL;DR
@@ -875,6 +887,7 @@ If you are evaluating a restructure program, the first step is the audit. Pull e
     title: "Can I keep operating during an MCA debt program?",
     excerpt:
       "In almost all cases, yes. The program is designed around continued operations.",
+    heroImage: "/images/articles/can-i-keep-operating-during-an-mca-program.png",
     contentMd: `One of the most common questions on a first call is whether the business has to stop or pause operations during a relief program. The short answer is no. A program that requires the business to stop operating typically defeats its own purpose, because there is no revenue to fund settlements, no payroll for the staff that needs to be retained, and no path back to a viable business at the end of the program. Credible relief firms design programs around continued operations, not around them. This article walks what changes during a program and what does not.
 
 ## TL;DR
@@ -953,6 +966,7 @@ If you are evaluating whether a relief program is workable for your business, th
     title: "How attorneys help with MCA debt (and when you actually need one)",
     excerpt:
       "Attorneys are required for COJ defense, UCC enforcement, and active litigation. They are useful long before that.",
+    heroImage: "/images/articles/how-attorneys-help-with-mca-debt.png",
     contentMd: `An MCA-defense attorney plays three roles in a relief program. Defending against active legal action. Providing leverage in settlement negotiations. Reviewing contracts for unconscionability and procedural defects. Most owners associate attorneys only with the first role, which means they engage too late. This article walks when you actually need an attorney and when the relief firm's case manager is enough.
 
 ## TL;DR
@@ -1039,6 +1053,7 @@ If you have an active legal exposure (COJ, frozen account, served complaint), en
     title: "Negotiating with MCA lenders: what works and what does not",
     excerpt:
       "Documentation, sequencing, and credibility move lenders. Pleas and partial information do not.",
+    heroImage: "/images/articles/negotiating-with-mca-lenders.png",
     contentMd: `Lenders see thousands of distressed merchants every year. The salesperson on the phone has a script. The workout team has its own script. Most attempts at negotiation from the merchant side run into one of those scripts and stall. What actually moves lenders is documentation, sequencing, and credibility. None of those three are emotional, and all of them are technical. This article walks the leverage points, the documentation, and the sequence that produces real settlement numbers.
 
 ## TL;DR
@@ -1129,6 +1144,7 @@ If you are about to negotiate with MCA lenders, do not start the conversation un
     title: "Preserving business credit while resolving MCA debt",
     excerpt:
       "MCA balances usually do not report to consumer credit. Business credit takes a temporary hit and rebuilds quickly with the right documentation.",
+    heroImage: "/images/articles/preserving-business-credit-while-resolving-mca-debt.png",
     contentMd: `Business credit is one of the most misunderstood aspects of MCA relief. Most owners worry about personal credit and pay less attention to the business credit profile, which is where the actual reporting happens. This article walks how MCA settlements and restructures affect business credit, what reports differently between Dun and Bradstreet and Equifax Business, and how the rebuild path works after a program closes.
 
 ## TL;DR
@@ -1209,6 +1225,7 @@ If you are evaluating a relief program, ask the firm specifically how settlement
     title: "Pre-default options for stacked MCA debt",
     excerpt:
       "Pre-default is the best moment to act. You have leverage, options, and time that disappear once you default.",
+    heroImage: "/images/articles/mca-pre-default-options.png",
     contentMd: `Pre-default is the highest-leverage moment in any stacked MCA situation. The toolkit is broader than at any other point. Restructure programs are available. Reconciliation requests carry more weight. Refinance options exist that disappear once default occurs. Lenders are more flexible with current merchants than with defaulted ones. This article walks the pre-default playbook and why the window of opportunity matters more than most owners realize.
 
 ## TL;DR
@@ -1289,6 +1306,7 @@ If you are still current on all your MCAs but stretched, the right move is engag
     title: "What happens if you stop paying an MCA",
     excerpt:
       "Default triggers a sequence: acceleration, UCC enforcement, COJ filing, and litigation. Each stage narrows your options.",
+    heroImage: "/images/articles/what-happens-if-you-stop-paying-an-mca.png",
     contentMd: `Stopping payments on an MCA without a coordinated workout in place triggers a fast and well-defined sequence of consequences. The timeline runs days to weeks, not months. Each stage narrows the relief options available and increases the cost of resolution. This article walks the sequence stage by stage so you can see what happens and when. The exception, where stopping payments is part of a managed reconciliation process, runs differently and is covered at the end.
 
 ## TL;DR
@@ -1369,6 +1387,7 @@ If you have stopped paying an MCA without a coordinated workout, the right move 
     title: "How to choose an MCA relief partner: a buyer's checklist",
     excerpt:
       "The buyer's checklist that separates credible firms from ones that will make your situation worse.",
+    heroImage: "/images/articles/choosing-an-mca-relief-partner.png",
     contentMd: `Choosing the wrong MCA relief firm is one of the most expensive mistakes a stacked-MCA merchant can make. The wrong firm collects an upfront retainer, does minimal work, and leaves the merchant in worse shape with less time and less leverage. The right firm walks you through the math before asking for commitment, structures the engagement clearly, and produces real outcomes. The difference between the two is visible in the first conversation if you know what to look for. This article is the buyer's checklist.
 
 ## TL;DR
@@ -1475,6 +1494,7 @@ Run any firm you are evaluating through this checklist before signing. Compare t
     title: "Life after MCA debt: what comes next",
     excerpt:
       "The first 12 months after program completion are the most important. Here is what to focus on.",
+    heroImage: "/images/articles/life-after-mca-debt.png",
     contentMd: `Program completion is the start of the rebuild, not the finish line. Cash flow that was previously consumed by daily debits is now available for working capital, hiring, and growth. The credit profile that took a hit during the program rebuilds with consistent reporting. The banking relationships that may have been strained during the workout get replaced with cleaner ones. This article walks the first 12 months after program completion and the priorities that determine whether the recovery sticks or whether the merchant ends up back in another stack.
 
 ## TL;DR

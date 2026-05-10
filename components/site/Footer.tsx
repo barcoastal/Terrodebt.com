@@ -33,7 +33,6 @@ export function SiteFooter() {
           <div className="font-medium mb-2">Company</div>
           <ul className="space-y-1 text-muted">
             <li><Link href="/about">About</Link></li>
-            <li><Link href="/case-studies">Case Studies</Link></li>
             <li><Link href="/articles">Articles</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>

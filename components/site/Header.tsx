@@ -12,7 +12,6 @@ export function SiteHeader() {
           <Link href="/services/mca-debt-relief" className="hover:text-electric transition no-underline">Services</Link>
           <Link href="/industries" className="hover:text-electric transition no-underline">Industries</Link>
           <Link href="/tools" className="hover:text-electric transition no-underline">Tools</Link>
-          <Link href="/case-studies" className="hover:text-electric transition no-underline">Case Studies</Link>
           <Link href="/articles" className="hover:text-electric transition no-underline">Articles</Link>
           <Link href="/about" className="hover:text-electric transition no-underline">About</Link>
         </nav>
