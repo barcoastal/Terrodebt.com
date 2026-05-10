@@ -91,15 +91,16 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
             {step === 1 && (
-              <Question label="Do you have stacked MCA debt?">
+              <DebtStep value={data.debtAmount} onChange={(v) => update("debtAmount", v)} onAdvance={next} />
+            )}
+            {step === 2 && (
+              <Question label="Do you have more than one MCA loan?">
                 <div className="grid grid-cols-2 gap-3">
                   <Choice big active={data.hasMcaDebt === true} onClick={() => { update("hasMcaDebt", true); next(); }}>Yes</Choice>
                   <Choice big active={data.hasMcaDebt === false} onClick={() => { update("hasMcaDebt", false); next(); }}>No</Choice>
                 </div>
+                <p className="mt-6 text-sm text-muted">Stacked MCAs are our specialty. We work with single-MCA situations too.</p>
               </Question>
-            )}
-            {step === 2 && (
-              <DebtStep value={data.debtAmount} onChange={(v) => update("debtAmount", v)} onAdvance={next} disabled={data.hasMcaDebt === false} />
             )}
             {step === 3 && (
               <ContactStep
@@ -142,7 +143,7 @@ function Choice({ active, onClick, children, big }: { active?: boolean; onClick:
   );
 }
 
-function DebtStep({ value, onChange, onAdvance, disabled }: { value: number; onChange: (v: number) => void; onAdvance: () => void; disabled?: boolean }) {
+function DebtStep({ value, onChange, onAdvance }: { value: number; onChange: (v: number) => void; onAdvance: () => void }) {
   function onKey(e: React.KeyboardEvent) {
     if (e.key === "Enter") { e.preventDefault(); onAdvance(); }
   }
@@ -160,7 +161,6 @@ function DebtStep({ value, onChange, onAdvance, disabled }: { value: number; onC
           onChange={(e) => onChange(Number(e.target.value))}
           className="w-full mt-6 accent-electric"
           aria-label="MCA debt amount"
-          disabled={disabled}
         />
         <div className="mt-2 flex justify-between font-mono text-xs text-muted">
           <span>$0</span>
