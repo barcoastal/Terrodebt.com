@@ -4,6 +4,16 @@ import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { ARTICLE_SEEDS } from "@/lib/seed-data/articles";
 
+export async function publishAllArticles() {
+  const res = await db.article.updateMany({
+    where: { published: false },
+    data: { published: true, publishedAt: new Date() },
+  });
+  revalidatePath("/admin/articles");
+  revalidatePath("/articles");
+  redirect(`/admin/articles?published=${res.count}`);
+}
+
 export async function importSeedArticles() {
   let inserted = 0;
   let updated = 0;

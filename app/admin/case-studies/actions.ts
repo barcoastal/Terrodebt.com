@@ -2,6 +2,35 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
+import { CASE_STUDY_SEEDS } from "@/lib/seed-data/case-studies";
+
+export async function publishAllCaseStudies() {
+  const res = await db.caseStudy.updateMany({
+    where: { published: false },
+    data: { published: true },
+  });
+  revalidatePath("/admin/case-studies");
+  revalidatePath("/case-studies");
+  redirect(`/admin/case-studies?published=${res.count}`);
+}
+
+export async function importSeedCaseStudies() {
+  let inserted = 0;
+  let updated = 0;
+  for (const c of CASE_STUDY_SEEDS) {
+    const existing = await db.caseStudy.findUnique({ where: { slug: c.slug } });
+    if (existing) {
+      await db.caseStudy.update({ where: { slug: c.slug }, data: { ...c, published: true } });
+      updated += 1;
+    } else {
+      await db.caseStudy.create({ data: { ...c, published: true } });
+      inserted += 1;
+    }
+  }
+  revalidatePath("/admin/case-studies");
+  revalidatePath("/case-studies");
+  redirect(`/admin/case-studies?imported=${inserted}&updated=${updated}`);
+}
 
 export async function createCaseStudy(fd: FormData) {
   const data = parse(fd);
