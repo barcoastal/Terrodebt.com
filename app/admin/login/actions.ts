@@ -22,7 +22,7 @@ async function bootstrapIfNeeded() {
     }
 
     const settingDefaults: Record<string, unknown> = {
-      site_phone: "1-800-TERRA-00",
+      site_phone: "",
       aggregate_resolved_dollars: 0,
       bbb_status: "founding",
       slack_leads_webhook_url: "",

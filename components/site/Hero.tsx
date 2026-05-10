@@ -44,13 +44,6 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-8 flex items-center gap-4 text-sm">
-            <a href="tel:18008372300" className="font-semibold text-slate hover:text-electric transition no-underline">
-              Or call 1-800-TERRA-00
-            </a>
-            <span className="text-muted">Mon-Fri 8 AM to 8 PM ET</span>
-          </div>
-
           <div className="mt-8">
             <AggregateCounter />
           </div>

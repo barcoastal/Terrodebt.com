@@ -15,6 +15,7 @@ const initial: LeadInput = {
   phone: "",
   email: "",
   source: "homepage",
+  consent: false,
 };
 
 const TOTAL_STEPS = 3;
@@ -66,8 +67,8 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
         >
           <svg className="w-7 h-7 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         </motion.div>
-        <h3 className="mt-6 text-2xl font-semibold tracking-tight">You&apos;ll hear from us within the hour.</h3>
-        <p className="text-muted mt-2">Watch for a call from a TerraDebt advisor. If you&apos;d rather book a time, call us at 1-800-TERRA-00.</p>
+        <h3 className="mt-6 text-2xl font-semibold tracking-tight">Thanks. A TerraDebt advisor will reach out shortly.</h3>
+        <p className="text-muted mt-2">Watch for an email and a call within one business hour.</p>
       </motion.div>
     );
   }
@@ -190,18 +191,23 @@ function ContactStep({ data, onUpdate, onSubmit, submitting }: {
   submitting: boolean;
 }) {
   const firstRef = useRef<HTMLInputElement | null>(null);
+  const [consent, setConsent] = useState(false);
   useEffect(() => { firstRef.current?.focus(); }, []);
 
-  const valid =
+  const fieldsValid =
     data.businessName.trim().length > 0 &&
     data.firstName.trim().length > 0 &&
     data.lastName.trim().length > 0 &&
     data.phone.trim().length >= 7 &&
     /\S+@\S+\.\S+/.test(data.email);
+  const valid = fieldsValid && consent;
 
   function onSubmitForm(e: React.FormEvent) {
     e.preventDefault();
-    if (valid && !submitting) onSubmit();
+    if (valid && !submitting) {
+      onUpdate("consent", true);
+      onSubmit();
+    }
   }
 
   return (
@@ -209,7 +215,7 @@ function ContactStep({ data, onUpdate, onSubmit, submitting }: {
       <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate leading-tight">
         Where should we reach you?
       </h3>
-      <p className="mt-2 text-muted text-sm">A TerraDebt advisor will call within one business hour.</p>
+      <p className="mt-2 text-muted text-sm">A TerraDebt advisor will reach out within one business hour.</p>
 
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Business name" className="sm:col-span-2">
@@ -229,12 +235,29 @@ function ContactStep({ data, onUpdate, onSubmit, submitting }: {
         </Field>
       </div>
 
+      <label className="mt-6 flex items-start gap-3 cursor-pointer select-none">
+        <input
+          type="checkbox"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-1 h-4 w-4 rounded border-border accent-electric"
+          required
+        />
+        <span className="text-xs text-muted leading-relaxed">
+          I agree to TerraDebt&apos;s{" "}
+          <a href="/terms" target="_blank" rel="noreferrer" className="text-slate underline">Terms</a>
+          {" "}and{" "}
+          <a href="/privacy" target="_blank" rel="noreferrer" className="text-slate underline">Privacy Policy</a>
+          , and consent to receive calls, texts, and emails from TerraDebt at the number and email provided, including marketing communications. Message and data rates may apply. Consent is not a condition of any service. Reply STOP to opt out.
+        </span>
+      </label>
+
       <button type="submit" disabled={!valid || submitting}
-        className="mt-8 w-full bg-slate text-white px-5 py-4 rounded-xl text-base font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-soft transition flex items-center justify-center gap-2">
+        className="mt-6 w-full bg-slate text-white px-5 py-4 rounded-xl text-base font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-soft transition flex items-center justify-center gap-2">
         {submitting ? "Submitting..." : "Get my free assessment"}
         <span aria-hidden>→</span>
       </button>
-      <p className="mt-3 text-xs text-muted text-center">No commitment. We will not share your info.</p>
+      <p className="mt-3 text-xs text-muted text-center">No commitment. We will not sell your info.</p>
     </form>
   );
 }

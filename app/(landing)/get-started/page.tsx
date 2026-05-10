@@ -56,10 +56,6 @@ export default async function GetStartedPage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex items-center gap-4 text-sm text-muted">
-              <span className="font-mono text-xs uppercase tracking-wider">Talk now</span>
-              <a href="tel:18008372300" className="font-semibold text-slate hover:text-electric transition no-underline">1-800-TERRA-00</a>
-            </div>
           </div>
           <div className="lg:col-span-6 lg:sticky lg:top-6">
             <LeadForm source="get-started" />
@@ -191,9 +187,6 @@ export default async function GetStartedPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href="#top" className="bg-electric text-white px-6 py-3 rounded-xl text-sm font-medium no-underline hover:opacity-90 transition">
               Start my free assessment
-            </a>
-            <a href="tel:18008372300" className="border border-white/20 text-white px-6 py-3 rounded-xl text-sm font-medium no-underline hover:bg-white/10 transition">
-              Call 1-800-TERRA-00
             </a>
           </div>
         </div>

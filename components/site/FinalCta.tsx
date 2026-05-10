@@ -27,19 +27,17 @@ export function FinalCta() {
           >
             Start my free assessment
           </Link>
-          <a
-            href="tel:18008372300"
+          <Link
+            href="/tools"
             className="border border-white/20 text-white px-6 py-3 rounded-xl text-sm font-semibold no-underline hover:bg-white/10 transition"
           >
-            Call 1-800-TERRA-00
-          </a>
+            Run the free calculators
+          </Link>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50 font-mono uppercase tracking-wider">
           <span>50-state counsel</span>
           <span className="text-white/20">·</span>
           <span>Pre and post default</span>
-          <span className="text-white/20">·</span>
-          <span>Mon-Fri 8 AM to 8 PM ET</span>
         </div>
       </div>
     </section>

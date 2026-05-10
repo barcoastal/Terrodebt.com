@@ -9,7 +9,6 @@ export const ORG_LD = {
   "description": "Resolve stacked MCAs with a tailored program. Free assessment, free calculators, and licensed counsel in all 50 states.",
   "areaServed": { "@type": "Country", "name": "United States" },
   "serviceType": ["MCA Settlement", "MCA Restructure", "Reverse Consolidation Defense", "MCA Legal Defense"],
-  "telephone": "1-800-TERRA-00",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "6301 NW 5th Way 5100",

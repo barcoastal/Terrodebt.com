@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { leadSchema, bucketFromAmount, type LeadInput } from "./lead-schema";
+import { leadSchema, bucketFromAmount, CONSENT_TEXT, type LeadInput } from "./lead-schema";
 
 export type LeadSubmitInput = LeadInput & {
   utmSource?: string;
@@ -49,7 +49,12 @@ export async function createLead(input: LeadSubmitInput) {
       eliClickid: input.eliClickid,
       ip: input.ip ?? undefined,
       userAgent: input.userAgent ?? undefined,
-      integrationStatus: { db: "ok" },
+      integrationStatus: {
+        db: "ok",
+        consent: input.consent === true
+          ? { agreed: true, text: CONSENT_TEXT, at: new Date().toISOString() }
+          : { agreed: false },
+      },
     },
   });
 }

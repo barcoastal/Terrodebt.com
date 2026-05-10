@@ -9,7 +9,7 @@ const db = new PrismaClient({ adapter });
 
 async function main() {
   const defaults: Record<string, Prisma.InputJsonValue> = {
-    site_phone: "1-800-TERRA-00",
+    site_phone: "",
     aggregate_resolved_dollars: 0,
     bbb_status: "founding",
     slack_leads_webhook_url: "",

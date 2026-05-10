@@ -13,9 +13,9 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
           <Link href="/" className="flex items-center no-underline" aria-label="TerraDebt home">
             <Image src="/logos/terradebt-lockup.svg" alt="TerraDebt" width={170} height={26} priority />
           </Link>
-          <a href="tel:18008372300" className="font-semibold text-slate hover:text-electric transition no-underline text-sm md:text-base">
-            <span className="hidden md:inline">Call </span>1-800-TERRA-00
-          </a>
+          <Link href="#assessment" className="bg-slate text-white px-4 py-2 rounded-lg text-sm font-medium no-underline hover:bg-slate-soft transition">
+            Get free assessment
+          </Link>
         </div>
       </header>
       <main>{children}</main>
