@@ -27,7 +27,9 @@ async function bootstrapIfNeeded() {
       bbb_status: "founding",
       slack_leads_webhook_url: "",
       coastal_crm_webhook_url: "",
-      zapier_webhook_url: "",
+      zapier_webhook_default: "",
+      zapier_webhook_google: "",
+      zapier_webhook_affiliate: "",
       ga4_measurement_id: "",
       google_ads_conversion_id: "",
     };
