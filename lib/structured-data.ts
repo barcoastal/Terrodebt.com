@@ -6,9 +6,17 @@ export const ORG_LD = {
   "alternateName": "GRL Recovery LLC",
   "url": "https://terradebt.com",
   "logo": "https://terradebt.com/logo.png",
-  "description": "Resolve stacked MCAs with a tailored program. Free assessment, free calculators, and licensed counsel in all 50 states.",
+  "description":
+    "TerraDebt is a business debt restructure firm covering MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt resolution.",
   "areaServed": { "@type": "Country", "name": "United States" },
-  "serviceType": ["MCA Settlement", "MCA Restructure", "Reverse Consolidation Defense", "MCA Legal Defense"],
+  "serviceType": [
+    "MCA Debt Relief",
+    "SBA Loan Modification",
+    "Equipment Finance Restructure",
+    "Vendor and Supplier Debt Negotiation",
+    "Bank Loan and Line of Credit Workouts",
+    "Business Tax Debt Resolution",
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "6301 NW 5th Way 5100",

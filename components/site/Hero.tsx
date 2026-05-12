@@ -1,7 +1,7 @@
 import { LeadForm } from "@/components/lead/LeadForm";
 import { AggregateCounter } from "./AggregateCounter";
 
-const PILLS = ["Free assessment", "Pre-default", "50-state counsel", "Free MCA tools"];
+const PILLS = ["MCA workouts", "SBA modifications", "Equipment & vendor", "Bank & tax debt", "50-state counsel"];
 const TRUST_VERTICALS = ["Trucking", "Restaurants", "Construction", "Healthcare", "Retail", "E-commerce", "Auto"];
 
 export function Hero() {
@@ -14,13 +14,13 @@ export function Hero() {
         <div className="md:col-span-7">
           <span className="inline-flex items-center gap-2 bg-white border border-border text-slate text-[11px] font-medium px-2.5 py-1 rounded-full shadow-soft">
             <span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse" />
-            Modern MCA debt relief
+            Modern business debt restructure
           </span>
           <h1 className="mt-6 text-4xl md:text-5xl lg:text-7xl font-bold text-slate leading-[1.02] tracking-tighter">
-            Resolve stacked MCAs with a <span className="text-electric">tailored program</span>.
+            Restructure business debt with a <span className="text-electric">coordinated workout</span>.
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted max-w-xl leading-relaxed">
-            Settlement, restructure, or legal defense. Coordinated end to end.
+            MCA, SBA, equipment finance, vendor, bank, and tax debt. Six product categories, one team. Free assessment to find your fit.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-2 max-w-xl">

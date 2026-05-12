@@ -1,6 +1,6 @@
 # TerraDebt Brand Book
 
-**Version 1.0** · 2026-05-05
+**Version 1.3** · 2026-05-12
 
 This document is the source of truth for the TerraDebt brand, visual identity, voice, and how to apply both. Anything that touches a customer, a screen, an investor deck, or a paid ad starts here.
 
@@ -12,15 +12,15 @@ The site renders a live version of this system at `/brand` for designers and eng
 
 ### Positioning
 
-The modern MCA debt relief brand. We work with stacked MCAs before default, give every merchant free calculators that surface effective APR and stack burden, and coordinate state-licensed attorneys in all 50 states. We are built for fit, not for the cheapest pitch.
+The modern business debt restructure firm covering six product categories: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We work pre-default and post-default, give every merchant free calculators that surface effective APR and stack burden, and coordinate state-licensed attorneys in all 50 states. We are built for fit across the full debt mix, not for a single-product pitch.
 
 ### Mission
 
-Restore cash flow and dignity to small business owners crushed by stacked merchant cash advances, without the scare tactics and theatrics of the relief industry.
+Restore cash flow and dignity to small business owners carrying difficult business debt, across every product category that affects the operation: MCA, SBA, equipment, vendor, bank, and tax. Coordinated workouts without the scare tactics and theatrics of the relief industry.
 
 ### Vision
 
-Every owner with MCA debt gets a clear, math-first assessment before they make their next move.
+Every owner with stretched business debt gets a clear, math-first assessment across the full debt mix before they make their next move.
 
 ### Values
 
@@ -32,13 +32,24 @@ Every owner with MCA debt gets a clear, math-first assessment before they make t
 
 ### Tagline
 
-> Resolve stacked MCAs with a tailored program.
+> Restructure business debt with a coordinated workout.
 
 ### Sub-headlines
 
-- The modern way to resolve stacked MCAs.
-- For the owner navigating stacked MCAs.
-- A modern path out of stacked merchant cash advance debt.
+- The modern way to restructure business debt.
+- For the owner carrying stretched business debt across more than one product.
+- A coordinated path through MCA, SBA, equipment, vendor, bank, and tax debt.
+
+### Products
+
+The six product categories TerraDebt covers, each with a dedicated service page:
+
+- **MCA Debt Relief** (`/services/mca-debt-relief`). Settlement, restructure, reverse consolidation defense, and 72-hour legal coordination on stacked merchant cash advances.
+- **SBA Loan Modification** (`/services/sba-loan-modification`). Hardship modifications, offer in compromise, and structured workouts on 7(a), 504, and EIDL loans.
+- **Equipment Finance Restructure** (`/services/equipment-finance-restructure`). Term extensions, lease modifications, buyout negotiation, and acceleration defense.
+- **Vendor & Supplier Debt** (`/services/vendor-supplier-debt`). Coordinated paydowns and settlements with trade creditors. COD-plus-arrears arrangements.
+- **Bank Loan & LOC Workouts** (`/services/bank-loan-workout`). Forbearance, covenant waivers, term modifications with special assets groups.
+- **Business Tax Debt** (`/services/business-tax-debt`). IRS and state tax workouts: installment agreements, OIC, CNC status, Trust Fund Recovery Penalty defense.
 
 ---
 
@@ -413,3 +424,4 @@ Style: geometric, single weight, electric or slate fill. No gradients. No charac
 - **1.0**, 2026-05-05: Initial brand book. Established positioning, logo system (lockup, wordmark, icon, monogram, favicon variants), color palette (slate + electric + 3 neutrals), Inter typography, voice & tone, component library reference, imagery direction.
 - **1.1**, 2026-05-05: Removed false fee-transparency claims (TerraDebt has upfront fees and does not publish program fees pre-consultation). Removed false "as featured in" media badge references. Repositioned tagline to "Resolve stacked MCAs with a tailored program." Voice still anchors on direct, specific, confident, calm.
 - **1.2**, 2026-05-05: Removed AI Contract Review tool (not a real product). Added free calculators (Effective APR, Stacked MCA, Health Check) at /tools.
+- **1.3**, 2026-05-12: Pivoted from MCA-only to six-product business debt restructure firm. New tagline ("Restructure business debt with a coordinated workout."). New product categories: MCA Debt Relief, SBA Loan Modification, Equipment Finance Restructure, Vendor & Supplier Debt, Bank Loan & LOC Workouts, Business Tax Debt. Methods reduced from four to three (settlement, restructure, legal defense). Reverse consolidation defense folded into the MCA product page. Voice and visual system unchanged.

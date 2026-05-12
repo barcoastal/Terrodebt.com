@@ -16,10 +16,10 @@ export function AprComparison() {
       <div className="mx-auto max-w-content px-6 py-20 md:py-24">
         <Reveal>
           <div className="max-w-2xl">
-            <span className="font-mono text-xs uppercase tracking-wider text-muted">Effective APR comparison</span>
+            <span className="font-mono text-xs uppercase tracking-wider text-muted">MCA cost benchmark</span>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">MCA cost, in honest numbers.</h2>
             <p className="mt-4 text-muted leading-relaxed">
-              Factor rates obscure the real cost. Annualized, a typical aggressive MCA crosses 130 percent. Our programs are built to escape that range.
+              Factor rates obscure the real cost. Annualized, a typical aggressive MCA crosses 130 percent. APR is the right lens for MCA debt specifically. Other product categories use different math.
             </p>
           </div>
         </Reveal>

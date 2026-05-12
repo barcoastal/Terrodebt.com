@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { db } from "@/lib/db";
 import { STATES } from "@/lib/states";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
+import { PRODUCTS } from "@/lib/product-content";
 
 const BASE = "https://terradebt.com";
 
@@ -9,13 +10,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const staticPaths = [
     "", "/about", "/contact", "/trust", "/privacy", "/terms", "/disclosure",
-    "/calculator", "/articles", "/industries", "/programs",
-    "/services/mca-debt-relief",
+    "/calculator", "/articles", "/industries", "/programs", "/services",
     "/tools", "/tools/apr-calculator", "/tools/stack-calculator", "/tools/health-check",
-    "/programs/settlement", "/programs/restructure", "/programs/reverse-consolidation-defense", "/programs/legal-defense",
+    "/programs/settlement", "/programs/restructure", "/programs/legal-defense",
   ];
   const staticUrls = staticPaths.map((p) => ({ url: `${BASE}${p}`, lastModified: now, changeFrequency: "weekly" as const, priority: p === "" ? 1.0 : 0.8 }));
 
+  const productUrls = PRODUCTS.map((p) => ({ url: `${BASE}/services/${p.slug}`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 }));
   const verticalUrls = VERTICAL_CONTENT.map((v) => ({ url: `${BASE}/industries/${v.slug}`, lastModified: now, priority: 0.7 }));
   const stateUrls = STATES.map((s) => ({ url: `${BASE}/mca-defense/${s.code.toLowerCase()}`, lastModified: now, priority: 0.6 }));
 
@@ -25,5 +26,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     articleUrls = articles.map((a) => ({ url: `${BASE}/articles/${a.slug}`, lastModified: a.updatedAt, priority: 0.6 }));
   } catch {}
 
-  return [...staticUrls, ...verticalUrls, ...stateUrls, ...articleUrls];
+  return [...staticUrls, ...productUrls, ...verticalUrls, ...stateUrls, ...articleUrls];
 }

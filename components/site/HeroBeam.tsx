@@ -19,12 +19,12 @@ export function HeroBeam() {
             <div className="absolute inset-0 bg-gradient-to-r from-slate/70 via-slate/50 to-transparent" />
             <div className="absolute inset-y-0 left-0 flex items-center max-w-xl p-8 md:p-12">
               <div>
-                <span className="font-mono text-[11px] uppercase tracking-wider text-white/70">For the owner navigating stacked MCAs</span>
+                <span className="font-mono text-[11px] uppercase tracking-wider text-white/70">For the owner with any business debt</span>
                 <p className="mt-3 text-2xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
-                  We tell you the math before we propose a program.
+                  We tell you the math before we propose a workout.
                 </p>
                 <p className="mt-4 text-white/80 text-sm md:text-base leading-relaxed">
-                  Free assessment. Free calculators. No theatrics.
+                  MCA, SBA, equipment, vendor, bank, or tax debt. Free assessment, no theatrics.
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <Link

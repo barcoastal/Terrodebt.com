@@ -7,7 +7,8 @@ const jbmono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", dis
 
 export const metadata: Metadata = {
   title: { default: "TerraDebt", template: "%s | TerraDebt" },
-  description: "Resolve stacked MCAs with a tailored program.",
+  description:
+    "TerraDebt restructures business debt across MCA, SBA, equipment finance, vendor, bank, and tax debt. Coordinated workouts with real attorney coordination.",
   metadataBase: new URL("https://terradebt.com"),
   openGraph: {
     siteName: "TerraDebt",

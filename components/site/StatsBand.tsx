@@ -1,10 +1,10 @@
 import { Reveal } from "./Reveal";
 
 const STATS = [
-  { value: "47%", label: "Avg savings on settlements", sub: "Across recent close-outs" },
-  { value: "11 mo", label: "Avg program timeline", sub: "Settlement and restructure" },
-  { value: "50", label: "States with coordinated counsel", sub: "COJ and frozen account defense" },
-  { value: "72 hr", label: "Emergency legal response", sub: "When a lawsuit lands" },
+  { value: "47%", label: "Avg savings on settlements", sub: "MCA and trade creditor close-outs" },
+  { value: "11 mo", label: "Avg program timeline", sub: "Settlement, restructure, and workouts" },
+  { value: "50", label: "States with coordinated counsel", sub: "COJ, levy, and lawsuit defense" },
+  { value: "72 hr", label: "Emergency legal response", sub: "When an enforcement action lands" },
 ];
 
 export function StatsBand() {

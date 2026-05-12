@@ -13,12 +13,12 @@ export function FinalCta() {
       <div className="relative mx-auto max-w-content px-6 py-20 md:py-28 text-center">
         <span className="font-mono text-xs uppercase tracking-wider text-white/60">Ready when you are</span>
         <h2 className="mt-3 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1.05]">
-          Stop the daily debits.
+          Stop the daily pressure.
           <br />
-          <span className="text-electric">Resolve the stack.</span>
+          <span className="text-electric">Restructure the debt.</span>
         </h2>
         <p className="mt-5 text-white/80 max-w-2xl mx-auto leading-relaxed">
-          Free assessment. Free calculators. No commitment.
+          MCA, SBA, equipment, vendor, bank, or tax debt. Free assessment, scoped to your situation.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link
@@ -28,16 +28,18 @@ export function FinalCta() {
             Start my free assessment
           </Link>
           <Link
-            href="/tools"
+            href="/services"
             className="border border-white/20 text-white px-6 py-3 rounded-xl text-sm font-semibold no-underline hover:bg-white/10 transition"
           >
-            Run the free calculators
+            Explore the six services
           </Link>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-white/50 font-mono uppercase tracking-wider">
           <span>50-state counsel</span>
           <span className="text-white/20">·</span>
           <span>Pre and post default</span>
+          <span className="text-white/20">·</span>
+          <span>Coordinated workouts</span>
         </div>
       </div>
     </section>

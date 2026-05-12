@@ -1,24 +1,21 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PROGRAMS, type ProgramKey } from "@/lib/programs";
 import { LeadForm } from "@/components/lead/LeadForm";
 
 const PROGRAM_META: Record<ProgramKey, { title: string; description: string }> = {
   "settlement": {
-    title: "MCA Settlement | TerraDebt",
-    description: "Settle stacked merchant cash advances at typically 40 to 60 percent of face balance. Most settlement programs close inside 12 months.",
+    title: "Debt Settlement | TerraDebt",
+    description: "Settle distressed business debt at typically 40 to 75 percent of face balance. Used across MCAs, vendor debt, and IRS or state tax debt.",
   },
   "restructure": {
-    title: "MCA Restructure | TerraDebt",
-    description: "Renegotiate terms and daily debits without settling. The right path when you want to preserve lender relationships and keep credit profile intact.",
-  },
-  "reverse-consolidation-defense": {
-    title: "Reverse Consolidation Defense | TerraDebt",
-    description: "Unwind a reverse consolidation that increased your total stack. TerraDebt rebuilds a real settlement or restructure plan around your actual debt.",
+    title: "Debt Restructure | TerraDebt",
+    description: "Renegotiate terms without settling. Used across MCAs, SBA loans, equipment finance, and bank workouts to preserve lender relationships.",
   },
   "legal-defense": {
-    title: "MCA Legal Defense | TerraDebt",
-    description: "72-hour coordinated counsel for confessions of judgment, frozen accounts, and active MCA litigation in any state. Free assessment available.",
+    title: "Legal Defense | TerraDebt",
+    description: "72-hour coordinated counsel for confessions of judgment, frozen accounts, levies, and active litigation against any business debt.",
   },
 };
 
@@ -45,8 +42,12 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
         <div className="relative mx-auto max-w-content px-6 pt-20 pb-20 grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tighter">{p.headline}</h1>
+            <span className="font-mono text-xs uppercase tracking-wider text-muted">Method</span>
+            <h1 className="mt-3 text-4xl md:text-6xl font-bold leading-[1.05] tracking-tighter">{p.headline}</h1>
             <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed">{p.subline}</p>
+            <p className="mt-5 text-sm text-slate leading-relaxed border-l-2 border-electric pl-4">
+              {p.appliesTo}
+            </p>
           </div>
           <LeadForm source={`program-${slug}`} />
         </div>
@@ -88,6 +89,9 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
               <div className="mt-2 font-mono text-2xl md:text-3xl font-semibold text-slate tracking-tight">{p.example.months}</div>
             </div>
           </div>
+          <Link href="/services" className="mt-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-electric no-underline hover:underline">
+            See the six product categories →
+          </Link>
         </div>
       </section>
     </article>

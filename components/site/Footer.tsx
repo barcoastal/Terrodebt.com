@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { PRODUCTS } from "@/lib/product-content";
 
 export function SiteFooter() {
   return (
@@ -7,17 +8,16 @@ export function SiteFooter() {
       <div className="mx-auto max-w-content px-6 py-12 grid gap-8 md:grid-cols-5 text-sm">
         <div>
           <Image src="/logos/terradebt-wordmark.svg" alt="TerraDebt" width={140} height={28} className="mb-3" />
-          <p className="text-muted">Resolve stacked MCAs with a tailored program.</p>
+          <p className="text-muted">Restructure business debt with a coordinated workout.</p>
           <Link href="/brand" className="block mt-3 text-xs text-muted hover:text-slate">Brand &amp; design system →</Link>
         </div>
         <div>
           <div className="font-medium mb-2">Services</div>
           <ul className="space-y-1 text-muted">
-            <li><Link href="/services/mca-debt-relief">MCA Debt Relief</Link></li>
-            <li><Link href="/programs/settlement">Settlement</Link></li>
-            <li><Link href="/programs/restructure">Restructure</Link></li>
-            <li><Link href="/programs/reverse-consolidation-defense">Reverse Consolidation Defense</Link></li>
-            <li><Link href="/programs/legal-defense">Legal Defense</Link></li>
+            <li><Link href="/services">All services</Link></li>
+            {PRODUCTS.map((p) => (
+              <li key={p.slug}><Link href={`/services/${p.slug}`}>{p.shortName}</Link></li>
+            ))}
           </ul>
         </div>
         <div>
@@ -27,6 +27,7 @@ export function SiteFooter() {
             <li><Link href="/tools/apr-calculator">Effective APR Calculator</Link></li>
             <li><Link href="/tools/stack-calculator">Stacked MCA Calculator</Link></li>
             <li><Link href="/tools/health-check">MCA Health Check</Link></li>
+            <li><Link href="/programs">Methods</Link></li>
           </ul>
         </div>
         <div>
@@ -34,6 +35,7 @@ export function SiteFooter() {
           <ul className="space-y-1 text-muted">
             <li><Link href="/about">About</Link></li>
             <li><Link href="/articles">Articles</Link></li>
+            <li><Link href="/industries">Industries</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
