@@ -6,12 +6,15 @@
   --color-slate-soft: #334155;
   --color-electric: #10B981;
   --color-electric-soft: #34D399;
-  --color-offwhite: #F8FAFC;
+  --color-offwhite: #FAFAF7;
+  --color-cream: #F5F2EA;
+  --color-rule: #E5E0D5;
   --color-border: #E2E8F0;
   --color-muted: #64748B;
   --color-white: #FFFFFF;
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-mono), "SF Mono", Menlo, monospace;
+  --font-serif: var(--font-serif), Georgia, "Times New Roman", serif;
   --max-width-content: 72rem;
 
   --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 12px rgb(15 23 42 / 0.04);
@@ -24,7 +27,7 @@
     @apply bg-offwhite text-slate;
     font-feature-settings: "ss01", "cv11";
   }
-  h1, h2, h3, h4 { @apply font-semibold tracking-tight; }
+  h3, h4 { @apply font-semibold tracking-tight; }
   a { @apply text-electric; }
   a:not(.no-underline):hover { text-decoration: underline; }
   ::selection { background: #10B981; color: white; }
@@ -33,18 +36,23 @@
 @layer utilities {
   .font-mono { font-family: var(--font-mono); font-feature-settings: "ss02", "cv01"; }
 
+  .font-serif {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+  }
+
+  .font-serif-tight {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+    letter-spacing: -0.02em;
+  }
+
   .bg-grain {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.117 0 0 0 0 0.16 0 0 0 0 0.231 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
   .bg-radial-electric {
-    background-image: radial-gradient(80% 60% at 80% 0%, rgb(16 185 129 / 0.08), transparent 60%);
-  }
-
-  .bg-mesh {
-    background-image:
-      radial-gradient(60% 50% at 75% 10%, rgb(16 185 129 / 0.10), transparent 60%),
-      radial-gradient(50% 40% at 15% 90%, rgb(16 185 129 / 0.06), transparent 60%);
+    background-image: radial-gradient(80% 60% at 80% 0%, rgb(16 185 129 / 0.05), transparent 60%);
   }
 
   .ring-glow {
@@ -59,13 +67,5 @@
   .surface-card-elevated {
     @apply bg-white border border-border rounded-2xl;
     box-shadow: var(--shadow-elevated);
-  }
-
-  .grid-pattern {
-    background-image:
-      linear-gradient(to right, rgb(15 23 42 / 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(15 23 42 / 0.04) 1px, transparent 1px);
-    background-size: 32px 32px;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent);
   }
 }

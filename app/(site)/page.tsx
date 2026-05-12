@@ -1,29 +1,23 @@
-import { Hero } from "@/components/site/Hero";
-import { StatsBand } from "@/components/site/StatsBand";
-import { FeatureBento } from "@/components/site/FeatureBento";
+import { EditorialHero } from "@/components/site/EditorialHero";
+import { TopicAreas } from "@/components/site/TopicAreas";
+import { ResearchBand } from "@/components/site/ResearchBand";
+import { FeaturedEssays } from "@/components/site/FeaturedEssays";
 import { AprComparison } from "@/components/site/AprComparison";
-import { HeroBeam } from "@/components/site/HeroBeam";
-import { Process } from "@/components/site/Process";
-import { IndustriesShowcase } from "@/components/site/IndustriesShowcase";
-import { FeaturedArticles } from "@/components/site/FeaturedArticles";
-import { FounderSection } from "@/components/site/FounderSection";
-import { Faq } from "@/components/site/Faq";
-import { FinalCta } from "@/components/site/FinalCta";
+import { AboutTheFirm } from "@/components/site/AboutTheFirm";
+import { FaqQuiet } from "@/components/site/FaqQuiet";
+import { EditorialClose } from "@/components/site/EditorialClose";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <StatsBand />
-      <FeatureBento />
+      <EditorialHero />
+      <TopicAreas />
+      <FeaturedEssays />
+      <ResearchBand />
       <AprComparison />
-      <HeroBeam />
-      <Process />
-      <IndustriesShowcase />
-      <FeaturedArticles />
-      <FounderSection />
-      <Faq />
-      <FinalCta />
+      <AboutTheFirm />
+      <FaqQuiet />
+      <EditorialClose />
     </>
   );
 }

@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { Metadata } from "next";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
-import { LeadForm } from "@/components/lead/LeadForm";
+import { SubscribeForm } from "@/components/site/SubscribeForm";
 import { Reveal } from "@/components/site/Reveal";
 
 export async function generateStaticParams() {
@@ -35,35 +35,45 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
 
   return (
     <article>
-      {/* Hero with image + form */}
-      <section className="relative bg-offwhite border-b border-border overflow-hidden">
-        <div className="absolute inset-0 bg-mesh pointer-events-none" />
-        <div className="relative mx-auto max-w-content px-6 py-16 md:py-20 grid md:grid-cols-12 gap-10 items-start">
-          <div className="md:col-span-7">
-            <span className="font-mono text-xs uppercase tracking-wider text-muted">{v.heroEyebrow}</span>
-            <h1 className="mt-3 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1.05]">{v.headline}</h1>
-            <p className="mt-5 text-lg text-muted max-w-xl leading-relaxed">{v.subline}</p>
-            <div className="mt-8 relative aspect-[16/10] rounded-2xl overflow-hidden surface-card-elevated">
-              <Image src={`/images/industry-${slug}.png`} alt={v.name} fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 60vw" />
-            </div>
+      {/* Editorial hero, single column */}
+      <section className="bg-offwhite border-b border-rule">
+        <div className="mx-auto max-w-content px-6 pt-6">
+          <div className="flex items-center justify-between border-y border-rule py-3 text-[11px] font-mono uppercase tracking-wider text-muted">
+            <span>Industry · {v.name}</span>
+            <span>TerraDebt Research</span>
           </div>
-          <div className="md:col-span-5 md:sticky md:top-24">
-            <LeadForm source={`industry-${slug}`} />
+        </div>
+        <div className="mx-auto max-w-content px-6 py-14 md:py-20">
+          <span className="font-mono text-[11px] uppercase tracking-wider text-electric">{v.heroEyebrow}</span>
+          <h1 className="mt-4 font-serif-tight font-bold text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.04] max-w-4xl">
+            {v.headline}
+          </h1>
+          <p className="mt-6 text-lg md:text-xl text-muted max-w-3xl leading-relaxed">{v.subline}</p>
+          <div className="mt-10 relative aspect-[21/9] overflow-hidden bg-cream">
+            <Image
+              src={`/images/industry-${slug}.png`}
+              alt={v.name}
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+            />
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="bg-white border-y border-border">
-        <div className="mx-auto max-w-content px-6 py-12 grid grid-cols-2 md:grid-cols-3 gap-6">
-          {v.stats.map((s) => (
-            <Reveal key={s.label}>
-              <div className="surface-card p-6">
-                <div className="font-mono text-3xl md:text-4xl font-bold text-electric tracking-tighter">{s.value}</div>
-                <div className="mt-2 text-sm text-muted">{s.label}</div>
+      <section className="bg-offwhite border-b border-rule">
+        <div className="mx-auto max-w-content px-6 py-12 md:py-14">
+          <span className="font-mono text-[11px] uppercase tracking-wider text-muted">By the numbers</span>
+          <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-px bg-rule border border-rule">
+            {v.stats.map((s) => (
+              <div key={s.label} className="bg-offwhite p-6">
+                <div className="font-mono text-3xl md:text-4xl font-bold text-slate tracking-tight leading-none">{s.value}</div>
+                <div className="mt-3 text-sm text-slate leading-snug">{s.label}</div>
               </div>
-            </Reveal>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -71,12 +81,14 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
       <Section eyebrow="Why this industry" title={`Why MCAs hit ${v.name.toLowerCase()} hard.`} body={v.whyHits} />
 
       {/* Pain points */}
-      <section className="bg-white border-y border-border">
+      <section className="bg-white border-y border-rule">
         <div className="mx-auto max-w-content px-6 py-20 grid md:grid-cols-3 gap-12">
           <Reveal>
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-muted">Common pain points</span>
-              <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">What we hear from {v.name.toLowerCase()} merchants.</h2>
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Common pain points</span>
+              <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+                What we hear from {v.name.toLowerCase()} merchants.
+              </h2>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -92,65 +104,85 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
-      {/* Patterns */}
       <Section eyebrow="What we see" title="Common stack patterns." body={v.patterns} />
-
-      {/* Approach */}
-      <Section eyebrow="Our approach" title="How TerraDebt works with you." body={v.approach} dark />
-
-      {/* Scenario */}
+      <Section eyebrow="Our approach" title="How TerraDebt works with you." body={v.approach} alt />
       <Section eyebrow="Scenario" title={`A typical ${v.name.toLowerCase()} case.`} body={v.scenario} />
-
-      {/* Risks */}
-      <Section eyebrow="Watch for" title="Industry-specific risks." body={v.risks} dark />
+      <Section eyebrow="Watch for" title="Industry-specific risks." body={v.risks} alt />
 
       {/* FAQ */}
-      <section className="bg-offwhite">
-        <div className="mx-auto max-w-content px-6 py-20">
-          <div className="max-w-2xl">
-            <span className="font-mono text-xs uppercase tracking-wider text-muted">FAQ</span>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Frequent questions from {v.name.toLowerCase()} merchants.</h2>
+      <section className="bg-offwhite border-b border-rule">
+        <div className="mx-auto max-w-3xl px-6 py-20">
+          <div className="border-b border-rule pb-5">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">FAQ</span>
+            <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+              Frequent questions from {v.name.toLowerCase()} merchants.
+            </h2>
           </div>
-          <div className="mt-10 grid md:grid-cols-2 gap-6">
+          <div className="divide-y divide-rule">
             {v.faq.map((f) => (
-              <Reveal key={f.q}>
-                <details className="surface-card p-6 group">
-                  <summary className="cursor-pointer flex items-start justify-between gap-4 list-none">
-                    <span className="font-semibold text-slate">{f.q}</span>
-                    <span className="text-electric font-mono transition group-open:rotate-45">+</span>
-                  </summary>
-                  <p className="mt-3 text-muted leading-relaxed">{f.a}</p>
-                </details>
-              </Reveal>
+              <details key={f.q} className="group py-5">
+                <summary className="cursor-pointer list-none flex items-start justify-between gap-6 text-slate">
+                  <span className="font-serif text-lg md:text-xl leading-snug">{f.q}</span>
+                  <span className="text-muted text-xl group-open:rotate-45 transition-transform duration-200 leading-none flex-shrink-0 mt-1">+</span>
+                </summary>
+                <p className="mt-3 text-muted leading-relaxed pr-10">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-slate text-white">
-        <div className="mx-auto max-w-content px-6 py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready for a free assessment?</h2>
-          <p className="mt-3 text-white/80 max-w-xl mx-auto">A TerraDebt advisor familiar with {v.name.toLowerCase()} will review your situation within one business hour.</p>
-          <Link href="/get-started" className="mt-8 inline-block bg-electric text-white px-6 py-3 rounded-xl text-sm font-semibold no-underline hover:opacity-90 transition">Start my free assessment</Link>
+      {/* Editorial close */}
+      <section className="bg-offwhite">
+        <div className="mx-auto max-w-content px-6 py-16">
+          <div className="grid md:grid-cols-2 gap-px bg-rule border border-rule">
+            <div className="bg-cream p-8">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">The brief</span>
+              <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl">Get the newsletter.</h3>
+              <p className="mt-2 text-sm text-muted leading-relaxed max-w-md">
+                Weekly notes on business debt restructure. Industry-specific notes when they apply.
+              </p>
+              <div className="mt-5">
+                <SubscribeForm source={`industry-${slug}`} />
+              </div>
+            </div>
+            <div className="bg-cream p-8 flex flex-col">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Direct</span>
+              <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl">
+                Talk to the team about {v.name.toLowerCase()}.
+              </h3>
+              <p className="mt-2 text-sm text-muted leading-relaxed max-w-md">
+                A TerraDebt advisor familiar with {v.name.toLowerCase()} will review your situation. Free assessment.
+              </p>
+              <div className="mt-auto pt-5">
+                <Link
+                  href="/get-started"
+                  className="inline-flex items-center gap-2 text-slate text-sm font-medium no-underline border-b border-slate pb-0.5 hover:border-electric hover:text-electric transition"
+                >
+                  Request an assessment
+                  <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </article>
   );
 }
 
-function Section({ eyebrow, title, body, dark }: { eyebrow: string; title: string; body: string; dark?: boolean }) {
+function Section({ eyebrow, title, body, alt }: { eyebrow: string; title: string; body: string; alt?: boolean }) {
   return (
-    <section className={dark ? "bg-white border-y border-border" : "bg-offwhite"}>
+    <section className={alt ? "bg-white border-y border-rule" : "bg-offwhite border-b border-rule"}>
       <div className="mx-auto max-w-content px-6 py-20 grid md:grid-cols-3 gap-12">
         <Reveal>
           <div>
-            <span className="font-mono text-xs uppercase tracking-wider text-muted">{eyebrow}</span>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">{title}</h2>
+            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{eyebrow}</span>
+            <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">{title}</h2>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="md:col-span-2 prose prose-slate max-w-none text-slate leading-relaxed prose-p:my-3 prose-headings:tracking-tight prose-strong:text-slate prose-li:my-1">
+          <div className="md:col-span-2 prose prose-slate max-w-none text-slate leading-relaxed prose-p:my-3 prose-headings:tracking-tight prose-headings:font-serif prose-strong:text-slate prose-li:my-1">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
           </div>
         </Reveal>

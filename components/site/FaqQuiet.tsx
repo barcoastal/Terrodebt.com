@@ -1,5 +1,3 @@
-import { Reveal } from "./Reveal";
-
 const FAQ = [
   {
     q: "What kinds of business debt do you work with?",
@@ -35,26 +33,26 @@ const FAQ = [
   },
 ];
 
-export function Faq() {
+export function FaqQuiet() {
   return (
     <section className="bg-offwhite">
-      <div className="mx-auto max-w-content px-6 py-20">
-        <Reveal>
-          <h2 className="text-3xl md:text-5xl font-bold text-slate tracking-tighter">Common questions</h2>
-        </Reveal>
-        <div className="mt-12 grid gap-3">
-          {FAQ.map((item, i) => (
-            <Reveal key={item.q} delay={i * 0.05}>
-              <details className="group surface-card transition-all hover:border-electric/30 open:shadow-[var(--shadow-elevated)]">
-                <summary className="cursor-pointer list-none flex justify-between items-center p-6 text-base md:text-lg font-semibold text-slate tracking-tight">
-                  <span>{item.q}</span>
-                  <span className="text-electric text-2xl group-open:rotate-45 transition-transform duration-300 leading-none flex-shrink-0 ml-4">+</span>
-                </summary>
-                <div className="px-6 pb-6">
-                  <p className="text-sm md:text-base text-muted leading-relaxed">{item.a}</p>
-                </div>
-              </details>
-            </Reveal>
+      <div className="mx-auto max-w-3xl px-6 py-20 md:py-24">
+        <div className="border-b border-rule pb-5">
+          <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Answers</span>
+          <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+            Common questions, briefly.
+          </h2>
+        </div>
+
+        <div className="divide-y divide-rule">
+          {FAQ.map((item) => (
+            <details key={item.q} className="group py-5">
+              <summary className="cursor-pointer list-none flex items-start justify-between gap-6 text-base md:text-lg font-medium text-slate">
+                <span className="font-serif text-lg md:text-xl leading-snug">{item.q}</span>
+                <span className="text-muted text-xl group-open:rotate-45 transition-transform duration-200 leading-none flex-shrink-0 mt-1">+</span>
+              </summary>
+              <p className="mt-3 text-sm md:text-base text-muted leading-relaxed pr-10">{item.a}</p>
+            </details>
           ))}
         </div>
       </div>

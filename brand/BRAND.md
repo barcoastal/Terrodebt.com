@@ -1,6 +1,6 @@
 # TerraDebt Brand Book
 
-**Version 1.3** · 2026-05-12
+**Version 1.4** · 2026-05-04
 
 This document is the source of truth for the TerraDebt brand, visual identity, voice, and how to apply both. Anything that touches a customer, a screen, an investor deck, or a paid ad starts here.
 
@@ -12,7 +12,7 @@ The site renders a live version of this system at `/brand` for designers and eng
 
 ### Positioning
 
-The modern business debt restructure firm covering six product categories: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We work pre-default and post-default, give every merchant free calculators that surface effective APR and stack burden, and coordinate state-licensed attorneys in all 50 states. We are built for fit across the full debt mix, not for a single-product pitch.
+TerraDebt is the editorial-grade authority on business debt restructure. We cover six product categories: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We work pre-default and post-default, publish research and essays for operators, give every merchant free calculators that surface effective APR and stack burden, and coordinate state-licensed attorneys in all 50 states. We are built for fit across the full debt mix, not for a single-product pitch.
 
 ### Mission
 
@@ -32,7 +32,7 @@ Every owner with stretched business debt gets a clear, math-first assessment acr
 
 ### Tagline
 
-> Restructure business debt with a coordinated workout.
+> The business debt brief, written by operators.
 
 ### Sub-headlines
 
@@ -150,22 +150,28 @@ Use Tailwind's `/N` opacity syntax for tinted accents (e.g., `bg-electric/10` fo
 
 ### Family
 
-**Inter** (variable, via `next/font/google`). Loaded with `display: "swap"` and exposed as the `--font-inter` CSS variable. Inter is the only typeface used on the brand. We do not pair.
+Three typefaces, each with a defined role, all loaded via `next/font/google` with `display: "swap"`:
+
+- **Fraunces** (variable serif with `opsz`, `SOFT`, `WONK` axes). Used for headline display only: h1 and h2 across the marketing site. Exposed as `--font-serif`. Apply with `.font-serif` or `.font-serif-tight` (the latter adds a slight letter-spacing tightening for large display sizes).
+- **Inter** (variable sans). Body copy, h3 and h4, navigation, buttons, forms. Exposed as `--font-inter`. The default `font-sans` family.
+- **JetBrains Mono**. Numerical accents, eyebrows, kickers, metadata stamps, dates, code. Exposed as `--font-mono`. Apply with `.font-mono`.
+
+The pairing logic is editorial. Fraunces gives the site a magazine voice on headlines without sliding into serif-y warmth where it should not be. Inter does the heavy lifting on readability. JetBrains Mono carries the data and the metadata.
 
 ### Hierarchy
 
-| Token | Tailwind | Weight | Size | Tracking | Use |
+| Token | Tailwind | Family | Weight | Size | Use |
 |---|---|---|---|---|---|
-| Display | `text-5xl md:text-6xl font-bold tracking-tight` | 700 | 48-60px | -2% | Hero headlines, only one per page |
-| H1 | `text-4xl md:text-5xl font-bold tracking-tight` | 700 | 36-48px | -1.5% | Page titles |
-| H2 | `text-2xl md:text-3xl font-semibold tracking-tight` | 600 | 24-30px | -1% | Section titles |
-| H3 | `text-xl font-semibold` | 600 | 20px | normal | Subsection titles |
-| H4 | `text-lg font-semibold` | 600 | 18px | normal | Card titles |
-| Body | `text-base` | 400 | 16px | normal | Default body copy |
-| Body-lg | `text-lg text-muted` | 400 | 18px | normal | Hero sublines, lead paragraphs |
-| Small | `text-sm text-muted` | 400 | 14px | normal | Captions, secondary metadata |
-| Micro | `text-xs uppercase tracking-wide text-muted` | 500 | 12px | +5% | Eyebrows, badges, table headers |
-| Mono | (default mono stack) | 400 | 13-14px | normal | Code blocks, JSON inspectors in admin |
+| Display | `font-serif-tight font-bold text-5xl md:text-6xl lg:text-7xl` | Fraunces | 700 | 48-72px | Hero headlines, one per page |
+| H1 | `font-serif-tight font-bold text-4xl md:text-5xl` | Fraunces | 700 | 36-48px | Page titles |
+| H2 | `font-serif-tight font-bold text-3xl md:text-4xl` | Fraunces | 700 | 24-36px | Section titles |
+| H3 | `font-serif font-bold text-xl md:text-2xl` | Fraunces | 700 | 20-24px | Subsection titles, card headlines |
+| H4 | `text-lg font-semibold` | Inter | 600 | 18px | Compact card titles |
+| Body | `text-base` | Inter | 400 | 16px | Default body copy |
+| Body-lg | `text-lg md:text-xl text-muted` | Inter | 400 | 18-20px | Hero sublines, lead paragraphs |
+| Small | `text-sm text-muted` | Inter | 400 | 14px | Captions, secondary metadata |
+| Kicker | `font-mono text-[11px] uppercase tracking-wider text-muted` | JetBrains Mono | 500 | 11px | Eyebrows, kickers, datelines |
+| Mono | `font-mono` | JetBrains Mono | 400 | 13-14px | Stats, numerical accents, code |
 
 ### Rules
 
@@ -425,3 +431,4 @@ Style: geometric, single weight, electric or slate fill. No gradients. No charac
 - **1.1**, 2026-05-05: Removed false fee-transparency claims (TerraDebt has upfront fees and does not publish program fees pre-consultation). Removed false "as featured in" media badge references. Repositioned tagline to "Resolve stacked MCAs with a tailored program." Voice still anchors on direct, specific, confident, calm.
 - **1.2**, 2026-05-05: Removed AI Contract Review tool (not a real product). Added free calculators (Effective APR, Stacked MCA, Health Check) at /tools.
 - **1.3**, 2026-05-12: Pivoted from MCA-only to six-product business debt restructure firm. New tagline ("Restructure business debt with a coordinated workout."). New product categories: MCA Debt Relief, SBA Loan Modification, Equipment Finance Restructure, Vendor & Supplier Debt, Bank Loan & LOC Workouts, Business Tax Debt. Methods reduced from four to three (settlement, restructure, legal defense). Reverse consolidation defense folded into the MCA product page. Voice and visual system unchanged.
+- **1.4**, 2026-05-04: Editorial pivot. Site now positions as the editorial-grade authority on business debt restructure, with magazine-led homepage, research-style essay grids, and named bylines. Tagline updated to "The business debt brief, written by operators." Typography expanded from Inter-only to Inter + Fraunces (serif headlines on h1/h2) + JetBrains Mono (kickers and numerical accents). Palette refined with warmer offwhite (#FAFAF7), new cream (#F5F2EA) for editorial blocks, and a warm hairline rule (#E5E0D5). Mesh and grid-pattern overlays removed from hero zones. Sticky LeadForm removed from /services/[slug], /articles/[slug], and /industries/[slug] in favor of quieter editorial sidebars and a SubscribeForm + Talk-to-the-team CTA pair at the end of each piece. LeadForm retained on /get-started, /go/[id], and /contact. New components: EditorialHero, TopicAreas, ResearchBand, FeaturedEssays, AboutTheFirm, FaqQuiet, EditorialClose, SubscribeForm. New /api/subscribe endpoint persists newsletter signups into the Lead table with source distinguished.
