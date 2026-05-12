@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { PRODUCTS } from "@/lib/product-content";
 
 export const metadata: Metadata = {
-  title: "Topics | TerraDebt",
+  title: "Coverage | TerraDebt",
   description:
-    "Six topic areas for resolving business debt: MCA, SBA, equipment finance, vendor, bank, and tax debt. Editorial coverage and coordinated workouts.",
+    "Six coverage areas for resolving business debt: MCA, SBA, equipment finance, vendor, bank, and tax debt. Coordinated workouts across the full stack.",
 };
 
 export default function ServicesIndex() {
@@ -14,34 +14,25 @@ export default function ServicesIndex() {
   return (
     <article>
       <section className="bg-offwhite border-b border-rule">
-        <div className="mx-auto max-w-content px-6 pt-6">
-          <div className="flex items-center justify-between border-y border-rule py-3 text-[11px] font-mono uppercase tracking-wider text-muted">
-            <span>Topics</span>
-            <span>TerraDebt Research</span>
-          </div>
-        </div>
         <div className="mx-auto max-w-content px-6 py-14 md:py-20">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-electric">All topic areas</span>
-          <h1 className="mt-4 font-serif-tight font-bold text-slate text-5xl md:text-6xl lg:text-7xl leading-[1.04] max-w-4xl">
-            Six topic areas. One coordinated team.
+          <span className="font-mono text-[11px] uppercase tracking-wider text-electric">Coverage</span>
+          <h1 className="mt-4 font-bold tracking-tighter text-slate text-5xl md:text-6xl lg:text-7xl leading-[1.04] max-w-4xl">
+            Six coverage areas. One coordinated team.
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
-            We restructure, settle, and defend business debt across MCAs, SBA loans, equipment finance, vendor debt, bank loans, and IRS or state tax debt. Each topic area gets its own guide.
+            We restructure, settle, and defend business debt across MCAs, SBA loans, equipment finance, vendor debt, bank loans, and IRS or state tax debt. Each area gets its own guide.
           </p>
         </div>
       </section>
 
       <section className="bg-offwhite">
         <div className="mx-auto max-w-content px-6 py-16 space-y-16">
-          {groups.map((g, gi) => (
+          {groups.map((g) => (
             <div key={g.category}>
               <div className="flex items-baseline gap-4 flex-wrap border-b border-rule pb-4">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-electric">
-                  Category {String(gi + 1).padStart(2, "0")}
-                </span>
-                <h2 className="font-serif-tight font-bold text-slate text-2xl md:text-3xl leading-tight">{g.category}</h2>
+                <h2 className="font-bold tracking-tighter text-slate text-2xl md:text-3xl leading-tight">{g.category}</h2>
                 <span className="font-mono text-[11px] uppercase tracking-wider text-muted">
-                  {g.items.length} topic{g.items.length > 1 ? "s" : ""}
+                  {g.items.length} area{g.items.length > 1 ? "s" : ""}
                 </span>
               </div>
               <div className="mt-8 grid md:grid-cols-2 gap-px bg-rule border border-rule">
@@ -56,10 +47,10 @@ export default function ServicesIndex() {
                         {p.shortName}
                       </span>
                       <span className="font-mono text-[10px] uppercase tracking-wider text-electric">
-                        Read the guide →
+                        Read more →
                       </span>
                     </div>
-                    <h3 className="mt-3 font-serif font-bold text-slate text-xl md:text-2xl leading-snug">
+                    <h3 className="mt-3 font-semibold tracking-tight text-slate text-xl md:text-2xl leading-snug">
                       {p.name}
                     </h3>
                     <p className="mt-3 text-muted leading-relaxed text-sm">
@@ -89,7 +80,7 @@ export default function ServicesIndex() {
         <div className="mx-auto max-w-content px-6 py-20 grid md:grid-cols-3 gap-12">
           <div>
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted">How we work</span>
-            <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+            <h2 className="mt-3 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
               Most cases use more than one product.
             </h2>
           </div>
@@ -98,7 +89,7 @@ export default function ServicesIndex() {
               Business debt rarely shows up in one neat category. A trucking operator might have stacked MCAs, an SBA loan that funded the fleet, and equipment leases on two trailers. A restaurant group might have vendor debt, equipment leases on the kitchen, and a bank LOC with a covenant violation.
             </p>
             <p>
-              We work across all six topic areas because most cases need more than one. The intake assessment maps every obligation, identifies cross-default and lien exposure, and sequences the workouts in the order that protects operations and maximizes negotiation leverage.
+              We work across all six coverage areas because most cases need more than one. The intake assessment maps every obligation, identifies cross-default and lien exposure, and sequences the workouts in the order that protects operations and maximizes negotiation leverage.
             </p>
             <p>
               The free calculators are MCA-specific because effective APR is the single hardest number to compute on a merchant cash advance. Other product categories have simpler math, but the assessment is the place to evaluate the full picture.

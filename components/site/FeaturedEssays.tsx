@@ -55,9 +55,9 @@ export async function FeaturedEssays() {
       <div className="mx-auto max-w-content px-6 py-20 md:py-24">
         <div className="flex items-end justify-between gap-6 border-b border-rule pb-5">
           <div>
-            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Magazine</span>
-            <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
-              Recent essays and guides
+            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Articles</span>
+            <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
+              Recent articles
             </h2>
           </div>
           <Link href="/articles" className="font-mono text-[11px] uppercase tracking-wider text-electric no-underline hover:underline whitespace-nowrap">
@@ -106,12 +106,12 @@ function BigCard({ a }: { a: Article }) {
       <span className="mt-5 inline-block font-mono text-[10px] uppercase tracking-wider text-electric">
         {topicFromSlug(a.slug)}
       </span>
-      <h3 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight group-hover:underline decoration-1 underline-offset-4">
+      <h3 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight group-hover:underline decoration-1 underline-offset-4">
         {a.title}
       </h3>
       {a.excerpt && <p className="mt-3 text-base text-muted leading-relaxed">{a.excerpt}</p>}
       <div className="mt-4 font-mono text-[11px] uppercase tracking-wider text-muted">
-        {mins} min read · by {a.author}
+        {mins} min read
       </div>
     </Link>
   );
@@ -122,12 +122,12 @@ function MediumCard({ a }: { a: Article }) {
   return (
     <Link href={`/articles/${a.slug}`} className="group block no-underline py-5 first:pt-0 last:pb-0">
       <span className="font-mono text-[10px] uppercase tracking-wider text-electric">{topicFromSlug(a.slug)}</span>
-      <h3 className="mt-1.5 font-serif font-bold text-slate text-xl md:text-2xl leading-snug group-hover:underline decoration-1 underline-offset-4">
+      <h3 className="mt-1.5 font-semibold tracking-tight text-slate text-xl md:text-2xl leading-snug group-hover:underline decoration-1 underline-offset-4">
         {a.title}
       </h3>
       {a.excerpt && <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-2">{a.excerpt}</p>}
       <div className="mt-3 font-mono text-[10px] uppercase tracking-wider text-muted">
-        {mins} min read · by {a.author}
+        {mins} min read
       </div>
     </Link>
   );
@@ -151,12 +151,12 @@ function SmallCard({ a }: { a: Article }) {
       <span className="mt-4 inline-block font-mono text-[10px] uppercase tracking-wider text-electric">
         {topicFromSlug(a.slug)}
       </span>
-      <h3 className="mt-1.5 font-serif font-bold text-slate text-lg md:text-xl leading-snug group-hover:underline decoration-1 underline-offset-4">
+      <h3 className="mt-1.5 font-semibold tracking-tight text-slate text-lg md:text-xl leading-snug group-hover:underline decoration-1 underline-offset-4">
         {a.title}
       </h3>
       {a.excerpt && <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-2">{a.excerpt}</p>}
       <div className="mt-3 font-mono text-[10px] uppercase tracking-wider text-muted">
-        {mins} min read · by {a.author}
+        {mins} min read
       </div>
     </Link>
   );

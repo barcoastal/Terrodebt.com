@@ -1,6 +1,6 @@
 # TerraDebt Brand Book
 
-**Version 1.4** · 2026-05-04
+**Version 1.5** · 2026-05-04
 
 This document is the source of truth for the TerraDebt brand, visual identity, voice, and how to apply both. Anything that touches a customer, a screen, an investor deck, or a paid ad starts here.
 
@@ -12,7 +12,7 @@ The site renders a live version of this system at `/brand` for designers and eng
 
 ### Positioning
 
-TerraDebt is the editorial-grade authority on business debt restructure. We cover six product categories: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We work pre-default and post-default, publish research and essays for operators, give every merchant free calculators that surface effective APR and stack burden, and coordinate state-licensed attorneys in all 50 states. We are built for fit across the full debt mix, not for a single-product pitch.
+TerraDebt is a business debt restructure company. We cover six coverage areas: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We work pre-default and post-default, give every merchant free calculators that surface effective APR and stack burden, and coordinate state-licensed attorneys in all 50 states. We are built for fit across the full debt mix, not for a single-product pitch.
 
 ### Mission
 

@@ -39,20 +39,14 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   return (
     <article>
-      {/* Editorial hero, single column */}
+      {/* Hero */}
       <section className="bg-offwhite border-b border-rule">
-        <div className="mx-auto max-w-content px-6 pt-6">
-          <div className="flex items-center justify-between border-y border-rule py-3 text-[11px] font-mono uppercase tracking-wider text-muted">
-            <span>{product.category}</span>
-            <span>TerraDebt Research</span>
-          </div>
-        </div>
-        <div className="mx-auto max-w-content px-6 pt-12 pb-16 md:pt-16 md:pb-20 grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="mx-auto max-w-content px-6 pt-14 pb-16 md:pt-20 md:pb-20 grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
           <div className="md:col-span-8">
             <span className="font-mono text-[11px] uppercase tracking-wider text-electric">
               {product.heroEyebrow}
             </span>
-            <h1 className="mt-4 font-serif-tight font-bold text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.04]">
+            <h1 className="mt-4 font-bold tracking-tighter text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.04]">
               {product.headline}
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
@@ -67,13 +61,13 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               ))}
             </ul>
             <div className="mt-8 text-[11px] font-mono uppercase tracking-wider text-muted">
-              By the TerraDebt Research team
+              By the TerraDebt team
             </div>
           </div>
           <aside className="md:col-span-4 md:sticky md:top-24">
             <div className="bg-cream border border-rule p-6">
-              <span className="font-mono text-[10px] uppercase tracking-wider text-muted">About this topic</span>
-              <h2 className="mt-2 font-serif font-bold text-slate text-lg leading-snug">
+              <span className="font-mono text-[10px] uppercase tracking-wider text-muted">About this area</span>
+              <h2 className="mt-2 font-semibold tracking-tight text-slate text-lg leading-snug">
                 Need a real conversation?
               </h2>
               <p className="mt-2 text-sm text-muted leading-relaxed">
@@ -112,7 +106,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <Reveal>
             <div>
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">What it is</span>
-              <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+              <h2 className="mt-3 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
                 {product.name}, defined.
               </h2>
             </div>
@@ -133,7 +127,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <Reveal>
             <div className="bg-white border border-rule p-7 h-full">
               <span className="font-mono text-[11px] uppercase tracking-wider text-electric">Who it fits</span>
-              <h2 className="mt-2 font-serif font-bold text-slate text-2xl md:text-3xl leading-tight">You are a fit if</h2>
+              <h2 className="mt-2 font-semibold tracking-tight text-slate text-2xl md:text-3xl leading-tight">You are a fit if</h2>
               <ul className="mt-6 space-y-3">
                 {product.whoItFits.map((b) => (
                   <li key={b} className="flex items-start gap-3 text-slate">
@@ -147,7 +141,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <Reveal delay={0.1}>
             <div className="bg-white border border-rule p-7 h-full">
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Who it does not fit</span>
-              <h2 className="mt-2 font-serif font-bold text-slate text-2xl md:text-3xl leading-tight">This is not for you if</h2>
+              <h2 className="mt-2 font-semibold tracking-tight text-slate text-2xl md:text-3xl leading-tight">This is not for you if</h2>
               <ul className="mt-6 space-y-3">
                 {product.whoItDoesntFit.map((b) => (
                   <li key={b} className="flex items-start gap-3 text-muted">
@@ -167,7 +161,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <Reveal>
             <div className="max-w-2xl border-b border-rule pb-5">
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Methods</span>
-              <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+              <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
                 How we resolve {product.shortName.toLowerCase()} cases.
               </h2>
               <p className="mt-4 text-muted leading-relaxed">
@@ -180,7 +174,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <Reveal key={m.title} delay={i * 0.05} className="h-full">
                 <div className="bg-white p-6 md:p-8 h-full">
                   <span className="font-mono text-sm text-electric">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl leading-snug">{m.title}</h3>
+                  <h3 className="mt-2 font-semibold tracking-tight text-slate text-xl md:text-2xl leading-snug">{m.title}</h3>
                   <p className="mt-3 text-slate leading-relaxed">{m.body}</p>
                 </div>
               </Reveal>
@@ -195,7 +189,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <Reveal>
             <div>
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Typical scenario</span>
-              <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">An example case.</h2>
+              <h2 className="mt-3 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">An example case.</h2>
               <p className="mt-4 text-muted leading-relaxed">
                 Anonymized but representative. Real outcomes vary with lender mix, contract terms, and operations.
               </p>
@@ -217,7 +211,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <Reveal>
             <div>
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Pitfalls</span>
-              <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">Risks to watch for.</h2>
+              <h2 className="mt-3 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">Risks to watch for.</h2>
               <p className="mt-4 text-muted leading-relaxed">
                 Every debt type has its own enforcement playbook. We map the exposure at intake.
               </p>
@@ -238,13 +232,13 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="mx-auto max-w-3xl px-6 py-20">
           <div className="border-b border-rule pb-5">
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Common questions</span>
-            <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">{product.name} FAQ</h2>
+            <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">{product.name} FAQ</h2>
           </div>
           <div className="divide-y divide-rule">
             {product.faq.map((item) => (
               <details key={item.q} className="group py-5">
                 <summary className="cursor-pointer list-none flex items-start justify-between gap-6 text-slate">
-                  <span className="font-serif text-lg md:text-xl leading-snug">{item.q}</span>
+                  <span className="font-semibold tracking-tight text-lg md:text-xl leading-snug">{item.q}</span>
                   <span className="text-muted text-xl group-open:rotate-45 transition-transform duration-200 leading-none flex-shrink-0 mt-1">+</span>
                 </summary>
                 <p className="mt-3 text-sm md:text-base text-muted leading-relaxed pr-10">{item.a}</p>
@@ -261,13 +255,13 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <div className="flex items-end justify-between gap-6 border-b border-rule pb-4">
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">More from TerraDebt</span>
               <Link href="/articles" className="font-mono text-[11px] uppercase tracking-wider text-electric no-underline hover:underline">
-                All essays →
+                All articles →
               </Link>
             </div>
             <div className="mt-8 grid md:grid-cols-3 gap-8">
               {recent.map((a) => (
                 <Link key={a.id} href={`/articles/${a.slug}`} className="group block no-underline">
-                  <h3 className="font-serif font-bold text-slate text-lg md:text-xl leading-snug group-hover:underline decoration-1 underline-offset-4">
+                  <h3 className="font-semibold tracking-tight text-slate text-lg md:text-xl leading-snug group-hover:underline decoration-1 underline-offset-4">
                     {a.title}
                   </h3>
                   {a.excerpt && (
@@ -284,16 +278,16 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       <section className="bg-offwhite border-b border-rule">
         <div className="mx-auto max-w-content px-6 py-16">
           <div className="flex items-baseline justify-between flex-wrap gap-3 border-b border-rule pb-4">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Other topic areas</span>
+            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Other coverage areas</span>
             <Link href="/services" className="font-mono text-[11px] uppercase tracking-wider text-electric no-underline hover:underline">
-              View all topics →
+              View all →
             </Link>
           </div>
           <div className="mt-8 grid md:grid-cols-3 gap-px bg-rule border border-rule">
             {others.map((o) => (
               <Link key={o.slug} href={`/services/${o.slug}`} className="bg-offwhite hover:bg-cream p-6 h-full no-underline block transition-colors">
                 <span className="font-mono text-[10px] uppercase tracking-wider text-electric">{o.category}</span>
-                <h3 className="mt-2 font-serif font-bold text-slate text-lg md:text-xl leading-snug">{o.name}</h3>
+                <h3 className="mt-2 font-semibold tracking-tight text-slate text-lg md:text-xl leading-snug">{o.name}</h3>
                 <p className="mt-2 text-sm text-muted leading-relaxed">{o.metaDescription.split(".")[0]}.</p>
               </Link>
             ))}
@@ -306,10 +300,10 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="mx-auto max-w-content px-6 py-16">
           <div className="grid md:grid-cols-2 gap-px bg-rule border border-rule">
             <div className="bg-cream p-8">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">The brief</span>
-              <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl">Get the newsletter.</h3>
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Newsletter</span>
+              <h3 className="mt-2 font-semibold tracking-tight text-slate text-xl md:text-2xl">Get the newsletter.</h3>
               <p className="mt-2 text-sm text-muted leading-relaxed max-w-md">
-                Weekly notes on business debt restructure. New essays and research.
+                Weekly notes on business debt restructure. New articles and working numbers.
               </p>
               <div className="mt-5">
                 <SubscribeForm source={`service-${product.slug}`} />
@@ -317,7 +311,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             </div>
             <div className="bg-cream p-8 flex flex-col">
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Direct</span>
-              <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl">Talk to the team.</h3>
+              <h3 className="mt-2 font-semibold tracking-tight text-slate text-xl md:text-2xl">Talk to the team.</h3>
               <p className="mt-2 text-sm text-muted leading-relaxed max-w-md">
                 Free assessment scoped to your {product.shortName.toLowerCase()} situation.
               </p>

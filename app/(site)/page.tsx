@@ -3,7 +3,7 @@ import { TopicAreas } from "@/components/site/TopicAreas";
 import { ResearchBand } from "@/components/site/ResearchBand";
 import { FeaturedEssays } from "@/components/site/FeaturedEssays";
 import { AprComparison } from "@/components/site/AprComparison";
-import { AboutTheFirm } from "@/components/site/AboutTheFirm";
+import { AboutTerraDebt } from "@/components/site/AboutTerraDebt";
 import { FaqQuiet } from "@/components/site/FaqQuiet";
 import { EditorialClose } from "@/components/site/EditorialClose";
 
@@ -15,7 +15,7 @@ export default function Home() {
       <FeaturedEssays />
       <ResearchBand />
       <AprComparison />
-      <AboutTheFirm />
+      <AboutTerraDebt />
       <FaqQuiet />
       <EditorialClose />
     </>

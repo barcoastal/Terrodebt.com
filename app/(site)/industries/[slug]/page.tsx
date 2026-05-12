@@ -35,17 +35,11 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
 
   return (
     <article>
-      {/* Editorial hero, single column */}
+      {/* Hero, single column */}
       <section className="bg-offwhite border-b border-rule">
-        <div className="mx-auto max-w-content px-6 pt-6">
-          <div className="flex items-center justify-between border-y border-rule py-3 text-[11px] font-mono uppercase tracking-wider text-muted">
-            <span>Industry · {v.name}</span>
-            <span>TerraDebt Research</span>
-          </div>
-        </div>
         <div className="mx-auto max-w-content px-6 py-14 md:py-20">
           <span className="font-mono text-[11px] uppercase tracking-wider text-electric">{v.heroEyebrow}</span>
-          <h1 className="mt-4 font-serif-tight font-bold text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.04] max-w-4xl">
+          <h1 className="mt-4 font-bold tracking-tighter text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.04] max-w-4xl">
             {v.headline}
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted max-w-3xl leading-relaxed">{v.subline}</p>
@@ -86,7 +80,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
           <Reveal>
             <div>
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Common pain points</span>
-              <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+              <h2 className="mt-3 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
                 What we hear from {v.name.toLowerCase()} merchants.
               </h2>
             </div>
@@ -114,7 +108,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         <div className="mx-auto max-w-3xl px-6 py-20">
           <div className="border-b border-rule pb-5">
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted">FAQ</span>
-            <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+            <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
               Frequent questions from {v.name.toLowerCase()} merchants.
             </h2>
           </div>
@@ -122,7 +116,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
             {v.faq.map((f) => (
               <details key={f.q} className="group py-5">
                 <summary className="cursor-pointer list-none flex items-start justify-between gap-6 text-slate">
-                  <span className="font-serif text-lg md:text-xl leading-snug">{f.q}</span>
+                  <span className="font-semibold tracking-tight text-lg md:text-xl leading-snug">{f.q}</span>
                   <span className="text-muted text-xl group-open:rotate-45 transition-transform duration-200 leading-none flex-shrink-0 mt-1">+</span>
                 </summary>
                 <p className="mt-3 text-muted leading-relaxed pr-10">{f.a}</p>
@@ -137,8 +131,8 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         <div className="mx-auto max-w-content px-6 py-16">
           <div className="grid md:grid-cols-2 gap-px bg-rule border border-rule">
             <div className="bg-cream p-8">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">The brief</span>
-              <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl">Get the newsletter.</h3>
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Newsletter</span>
+              <h3 className="mt-2 font-semibold tracking-tight text-slate text-xl md:text-2xl">Get the newsletter.</h3>
               <p className="mt-2 text-sm text-muted leading-relaxed max-w-md">
                 Weekly notes on business debt restructure. Industry-specific notes when they apply.
               </p>
@@ -148,7 +142,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
             </div>
             <div className="bg-cream p-8 flex flex-col">
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Direct</span>
-              <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl">
+              <h3 className="mt-2 font-semibold tracking-tight text-slate text-xl md:text-2xl">
                 Talk to the team about {v.name.toLowerCase()}.
               </h3>
               <p className="mt-2 text-sm text-muted leading-relaxed max-w-md">
@@ -178,11 +172,11 @@ function Section({ eyebrow, title, body, alt }: { eyebrow: string; title: string
         <Reveal>
           <div>
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{eyebrow}</span>
-            <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">{title}</h2>
+            <h2 className="mt-3 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">{title}</h2>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="md:col-span-2 prose prose-slate max-w-none text-slate leading-relaxed prose-p:my-3 prose-headings:tracking-tight prose-headings:font-serif prose-strong:text-slate prose-li:my-1">
+          <div className="md:col-span-2 prose prose-slate max-w-none text-slate leading-relaxed prose-p:my-3 prose-headings:tracking-tight prose-strong:text-slate prose-li:my-1">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
           </div>
         </Reveal>

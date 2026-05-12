@@ -1,7 +1,7 @@
 const FAQ = [
   {
     q: "What kinds of business debt do you work with?",
-    a: "Six product categories: merchant cash advances (MCA), SBA loans (7(a), 504, EIDL), equipment finance and leases, vendor and supplier trade debt, bank term loans and lines of credit, and IRS or state business tax debt. Most cases involve more than one product.",
+    a: "Six coverage areas: merchant cash advances (MCA), SBA loans (7(a), 504, EIDL), equipment finance and leases, vendor and supplier trade debt, bank term loans and lines of credit, and IRS or state business tax debt. Most cases involve more than one.",
   },
   {
     q: "How long does a typical program take?",
@@ -13,7 +13,7 @@ const FAQ = [
   },
   {
     q: "Are you a law firm?",
-    a: "No. TerraDebt is a debt restructure firm. We coordinate licensed attorneys in your state when legal defense is required. We are not authorized to give legal advice on our own and we do not pretend to be a law firm.",
+    a: "No. TerraDebt is a business debt restructure company. We coordinate licensed attorneys in your state when legal defense is required. We are not authorized to give legal advice on our own and we do not pretend to be a law firm.",
   },
   {
     q: "How is TerraDebt different from a consumer debt relief company?",
@@ -38,9 +38,9 @@ export function FaqQuiet() {
     <section className="bg-offwhite">
       <div className="mx-auto max-w-3xl px-6 py-20 md:py-24">
         <div className="border-b border-rule pb-5">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Answers</span>
-          <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
-            Common questions, briefly.
+          <span className="font-mono text-[11px] uppercase tracking-wider text-muted">FAQ</span>
+          <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
+            Common questions
           </h2>
         </div>
 
@@ -48,7 +48,7 @@ export function FaqQuiet() {
           {FAQ.map((item) => (
             <details key={item.q} className="group py-5">
               <summary className="cursor-pointer list-none flex items-start justify-between gap-6 text-base md:text-lg font-medium text-slate">
-                <span className="font-serif text-lg md:text-xl leading-snug">{item.q}</span>
+                <span className="font-semibold tracking-tight text-lg md:text-xl leading-snug">{item.q}</span>
                 <span className="text-muted text-xl group-open:rotate-45 transition-transform duration-200 leading-none flex-shrink-0 mt-1">+</span>
               </summary>
               <p className="mt-3 text-sm md:text-base text-muted leading-relaxed pr-10">{item.a}</p>

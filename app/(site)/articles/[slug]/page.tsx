@@ -100,14 +100,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </>
             )}
           </div>
-          <h1 className="mt-4 font-serif-tight font-bold text-slate text-3xl md:text-5xl leading-tight">
+          <h1 className="mt-4 font-bold tracking-tighter text-slate text-3xl md:text-5xl leading-tight">
             {a.title}
           </h1>
           {a.excerpt && <p className="mt-4 text-lg text-muted leading-relaxed">{a.excerpt}</p>}
         </div>
       </header>
 
-      <div className="mx-auto max-w-3xl px-6 py-16 prose max-w-none prose-slate prose-headings:font-serif prose-headings:tracking-tight prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-10 prose-h2:font-bold prose-h3:text-lg prose-h3:font-semibold prose-a:text-electric prose-p:leading-relaxed">
+      <div className="mx-auto max-w-3xl px-6 py-16 prose max-w-none prose-slate prose-headings:tracking-tight prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-10 prose-h2:font-bold prose-h3:text-lg prose-h3:font-semibold prose-a:text-electric prose-p:leading-relaxed">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{a.contentMd}</ReactMarkdown>
       </div>
 
@@ -116,11 +116,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="mx-auto max-w-3xl px-6 py-14">
           <div className="bg-cream border border-rule p-8 md:p-10">
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted">If this was useful</span>
-            <h2 className="mt-2 font-serif-tight font-bold text-slate text-2xl md:text-3xl leading-tight">
+            <h2 className="mt-2 font-bold tracking-tighter text-slate text-2xl md:text-3xl leading-tight">
               Get the next one in your inbox.
             </h2>
             <p className="mt-3 text-sm md:text-base text-muted leading-relaxed">
-              The TerraDebt brief is one short email per week. New essays, research notes, and case anatomies on business debt restructure.
+              The TerraDebt newsletter is one short email per week. New articles, working numbers, and case anatomies on business debt restructure.
             </p>
             <div className="mt-5">
               <SubscribeForm source={`article-${slug}`} />
@@ -143,15 +143,15 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <section className="bg-offwhite">
           <div className="mx-auto max-w-content px-6 pb-20">
             <div className="flex items-end justify-between gap-6 border-b border-rule pb-4">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Recent essays</span>
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Recent articles</span>
               <Link href="/articles" className="font-mono text-[11px] uppercase tracking-wider text-electric no-underline hover:underline">
-                All essays →
+                All articles →
               </Link>
             </div>
             <div className="mt-8 grid md:grid-cols-3 gap-8">
               {recent.map((r) => (
                 <Link key={r.id} href={`/articles/${r.slug}`} className="group block no-underline">
-                  <h3 className="font-serif font-bold text-slate text-lg md:text-xl leading-snug group-hover:underline decoration-1 underline-offset-4">
+                  <h3 className="font-semibold tracking-tight text-slate text-lg md:text-xl leading-snug group-hover:underline decoration-1 underline-offset-4">
                     {r.title}
                   </h3>
                   {r.excerpt && (

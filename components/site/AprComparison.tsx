@@ -15,7 +15,7 @@ export function AprComparison() {
       <div className="mx-auto max-w-content px-6 py-20 md:py-24">
         <div className="max-w-3xl border-b border-rule pb-5">
           <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Cost benchmark</span>
-          <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+          <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
             MCA cost, in honest numbers.
           </h2>
           <p className="mt-4 text-base md:text-lg text-muted leading-relaxed">

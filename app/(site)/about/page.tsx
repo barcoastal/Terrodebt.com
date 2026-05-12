@@ -4,30 +4,24 @@ import type { Metadata } from "next";
 import { SubscribeForm } from "@/components/site/SubscribeForm";
 
 export const metadata: Metadata = {
-  title: "About TerraDebt | Editorial Authority on Business Debt Restructure",
+  title: "About TerraDebt | Business Debt Restructure",
   description:
-    "TerraDebt is the editorial-grade authority on business debt restructure. MCA, SBA, equipment, vendor, bank, and tax debt, coordinated workouts, real attorney coordination.",
+    "TerraDebt is a business debt restructure company. MCA, SBA, equipment, vendor, bank, and tax debt, coordinated workouts, real attorney coordination.",
 };
 
 export default function About() {
   return (
     <article>
-      {/* Editorial cover */}
+      {/* Cover */}
       <section className="bg-offwhite border-b border-rule">
-        <div className="mx-auto max-w-content px-6 pt-6">
-          <div className="flex items-center justify-between border-y border-rule py-3 text-[11px] font-mono uppercase tracking-wider text-muted">
-            <span>About the firm</span>
-            <span>TerraDebt</span>
-          </div>
-        </div>
         <div className="mx-auto max-w-content px-6 py-14 md:py-20 grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
           <div className="md:col-span-7">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-electric">Masthead</span>
-            <h1 className="mt-4 font-serif-tight font-bold text-slate text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
-              The business debt restructure firm we wished existed.
+            <span className="font-mono text-[11px] uppercase tracking-wider text-electric">About TerraDebt</span>
+            <h1 className="mt-4 font-bold tracking-tighter text-slate text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
+              The business debt restructure company we wished existed.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
-              TerraDebt brings modern tools and disciplined execution to a category stuck in 2018. Editorial-grade research and coordinated workouts across six product areas.
+              TerraDebt brings modern tools and disciplined execution to a category stuck in 2018. Plain-spoken research and coordinated workouts across six coverage areas.
             </p>
           </div>
           <div className="md:col-span-5">
@@ -44,10 +38,10 @@ export default function About() {
           Most owners we talk to did not stack four MCAs, default on an SBA loan, or fall behind on payroll taxes because they wanted to. A diesel price spike, an employee who left, a piece of equipment that broke, a client who paid 90 days late. Once the debt started compounding, every new layer looked like the only option.
         </p>
         <p>
-          The relief category that exists to help these owners is mostly stuck in 2018 and mostly single-product. One firm pitches MCA settlement. Another pitches SBA modification. A third pitches tax resolution. Most owners need help across two or three product categories at the same time, and they end up coordinating multiple firms or going without help on the rest.
+          The relief category that exists to help these owners is mostly stuck in 2018 and mostly single-product. One company pitches MCA settlement. Another pitches SBA modification. A third pitches tax resolution. Most owners need help across two or three product categories at the same time, and they end up coordinating multiple providers or going without help on the rest.
         </p>
         <p>
-          TerraDebt was built around a different default. We work across six product categories: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We give merchants free calculators on day one so the math is clear before any consultation. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.
+          TerraDebt was built around a different default. We work across six coverage areas: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We give merchants free calculators on day one so the math is clear before any consultation. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.
         </p>
       </Block>
 
@@ -56,20 +50,20 @@ export default function About() {
         <div className="mx-auto max-w-content px-6 py-20">
           <div className="max-w-2xl border-b border-rule pb-5">
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted">How we are different</span>
-            <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+            <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
               Four things that set us apart.
             </h2>
           </div>
           <div className="mt-10 grid md:grid-cols-2 gap-px bg-rule border border-rule">
             {[
-              { n: "01", title: "Six product categories, one team.", body: "Most relief firms pitch a single product. We work across MCA, SBA, equipment, vendor, bank, and tax debt because most cases need more than one. The intake assessment maps every obligation and sequences the workouts in the right order." },
+              { n: "01", title: "Six coverage areas, one team.", body: "Most relief companies pitch a single product. We work across MCA, SBA, equipment, vendor, bank, and tax debt because most cases need more than one. The intake assessment maps every obligation and sequences the workouts in the right order." },
               { n: "02", title: "Free tools, day one.", body: "Every merchant gets free calculators with no email required. You see your effective APR, your daily debit burden, and a program fit before any consultation. The math is on your side of the table from the start." },
-              { n: "03", title: "Pre-default, not just post-lawsuit.", body: "Most relief firms only engage once an owner is sued or has frozen accounts. We work with owners who are still current. The earlier we engage, the more options stay on the table across every product category." },
+              { n: "03", title: "Pre-default, not just post-lawsuit.", body: "Most relief companies only engage once an owner is sued or has frozen accounts. We work with owners who are still current. The earlier we engage, the more options stay on the table across every product category." },
               { n: "04", title: "Real attorneys, real states.", body: "When legal defense is needed, we coordinate licensed counsel in the merchant's state, not a generic referral. We are not pretending to be a law firm. We work with them." },
             ].map((p) => (
               <div key={p.n} className="bg-white p-6 md:p-8">
                 <span className="font-mono text-sm text-electric">{p.n}</span>
-                <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl leading-snug">{p.title}</h3>
+                <h3 className="mt-2 font-semibold tracking-tight text-slate text-xl md:text-2xl leading-snug">{p.title}</h3>
                 <p className="mt-3 text-slate leading-relaxed">{p.body}</p>
               </div>
             ))}
@@ -101,12 +95,12 @@ export default function About() {
         </p>
       </Block>
 
-      {/* Masthead */}
+      {/* Team */}
       <section className="bg-white border-y border-rule">
         <div className="mx-auto max-w-content px-6 py-20">
           <div className="border-b border-rule pb-5">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Masthead</span>
-            <h2 className="mt-2 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Team</span>
+            <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
               Who is behind TerraDebt.
             </h2>
           </div>
@@ -118,13 +112,13 @@ export default function About() {
             </div>
             <div className="md:col-span-8">
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Founder</span>
-              <h3 className="mt-2 font-serif font-bold text-slate text-2xl md:text-3xl leading-tight">Bar Elezra</h3>
+              <h3 className="mt-2 font-semibold tracking-tight text-slate text-2xl md:text-3xl leading-tight">Bar Elezra</h3>
               <div className="mt-4 space-y-4 text-slate leading-relaxed">
                 <p>
-                  Bar founded TerraDebt after a decade at the intersection of small-business lending and operations. He has seen the inside of bad MCA contracts, accelerated SBA loans, and bank workouts that landed in special assets. TerraDebt is built to be the firm he would have wanted on the other end of the phone.
+                  Bar founded TerraDebt after a decade at the intersection of small-business lending and operations. He has seen the inside of bad MCA contracts, accelerated SBA loans, and bank workouts that landed in special assets. TerraDebt is built to be the team he would have wanted on the other end of the phone.
                 </p>
                 <p>
-                  Bar writes the firm&apos;s research notes and essays, sits on every intake call for new engagements, and runs the workout sequence with the team for every active program.
+                  Bar writes TerraDebt&apos;s research notes and articles, sits on every intake call for new engagements, and runs the workout sequence with the team for every active program.
                 </p>
               </div>
 
@@ -144,10 +138,10 @@ export default function About() {
         <div className="mx-auto max-w-content px-6 py-16">
           <div className="grid md:grid-cols-2 gap-px bg-rule border border-rule">
             <div className="bg-cream p-8">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">The brief</span>
-              <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl">Get the newsletter.</h3>
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Newsletter</span>
+              <h3 className="mt-2 font-semibold tracking-tight text-slate text-xl md:text-2xl">Get the newsletter.</h3>
               <p className="mt-2 text-sm text-muted leading-relaxed max-w-md">
-                Weekly notes on business debt restructure. New essays, research notes, and case anatomies.
+                Weekly notes on business debt restructure. New articles, working numbers, and case anatomies.
               </p>
               <div className="mt-5">
                 <SubscribeForm source="about" />
@@ -155,7 +149,7 @@ export default function About() {
             </div>
             <div className="bg-cream p-8 flex flex-col">
               <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Direct</span>
-              <h3 className="mt-2 font-serif font-bold text-slate text-xl md:text-2xl">Talk to the team.</h3>
+              <h3 className="mt-2 font-semibold tracking-tight text-slate text-xl md:text-2xl">Talk to the team.</h3>
               <p className="mt-2 text-sm text-muted leading-relaxed max-w-md">
                 Free assessment scoped to your situation.
               </p>
@@ -182,7 +176,7 @@ function Block({ eyebrow, title, children, alt }: { eyebrow: string; title: stri
       <div className="mx-auto max-w-content px-6 py-20 grid md:grid-cols-3 gap-12">
         <div>
           <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{eyebrow}</span>
-          <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl leading-tight">{title}</h2>
+          <h2 className="mt-3 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">{title}</h2>
         </div>
         <div className="md:col-span-2 space-y-4 text-slate leading-relaxed">{children}</div>
       </div>

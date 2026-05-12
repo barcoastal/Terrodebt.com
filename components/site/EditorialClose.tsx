@@ -7,12 +7,12 @@ export function EditorialClose() {
       <div className="mx-auto max-w-content px-6 pb-24 pt-4">
         <div className="grid md:grid-cols-2 gap-px bg-rule border border-rule">
           <div className="bg-cream p-8 md:p-10">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">The brief</span>
-            <h2 className="mt-2 font-serif-tight font-bold text-slate text-2xl md:text-3xl leading-tight">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Newsletter</span>
+            <h2 className="mt-2 font-bold tracking-tighter text-slate text-2xl md:text-3xl leading-tight">
               Get the newsletter.
             </h2>
             <p className="mt-3 text-sm md:text-base text-muted leading-relaxed max-w-md">
-              A short weekly brief on business debt restructure. New essays, research notes, and case anatomies. Written by Bar Elezra. No filler.
+              A short weekly note on business debt restructure. New articles, working numbers, and case anatomies. No filler.
             </p>
             <div className="mt-6">
               <SubscribeForm source="homepage" />
@@ -22,7 +22,7 @@ export function EditorialClose() {
 
           <div className="bg-cream p-8 md:p-10 flex flex-col">
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Direct</span>
-            <h2 className="mt-2 font-serif-tight font-bold text-slate text-2xl md:text-3xl leading-tight">
+            <h2 className="mt-2 font-bold tracking-tighter text-slate text-2xl md:text-3xl leading-tight">
               Talk to the team.
             </h2>
             <p className="mt-3 text-sm md:text-base text-muted leading-relaxed max-w-md">

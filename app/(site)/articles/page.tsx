@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "Research and essays | TerraDebt",
+  title: "Articles | TerraDebt",
   description:
-    "Essays, research notes, and guides on business debt restructure. MCA, SBA, equipment, vendor, bank, and tax debt, written by Bar Elezra.",
+    "Articles and working notes on business debt restructure. MCA, SBA, equipment, vendor, bank, and tax debt, written by Bar Elezra.",
 };
 
 function readTime(md: string): number {
@@ -36,21 +36,14 @@ export default async function ArticlesIndex() {
 
   const featured = articles[0];
   const rest = articles.slice(1);
-  const today = new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
 
   return (
     <article>
       <section className="bg-offwhite">
-        <div className="mx-auto max-w-content px-6 pt-6">
-          <div className="flex items-center justify-between border-y border-rule py-3 text-[11px] font-mono uppercase tracking-wider text-muted">
-            <span>{today}</span>
-            <span>TerraDebt Research</span>
-          </div>
-        </div>
-        <div className="mx-auto max-w-content px-6 pt-12 pb-10">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Research</span>
-          <h1 className="mt-3 font-serif-tight font-bold text-slate text-5xl md:text-6xl lg:text-7xl leading-[1.04]">
-            Essays and research, on the work.
+        <div className="mx-auto max-w-content px-6 pt-14 pb-10">
+          <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Articles</span>
+          <h1 className="mt-3 font-bold tracking-tighter text-slate text-5xl md:text-6xl lg:text-7xl leading-[1.04]">
+            Articles and working notes.
           </h1>
           <p className="mt-5 text-lg text-muted max-w-2xl leading-relaxed">
             Plain-spoken guides on MCA, SBA, equipment, vendor, bank, and tax debt. Written by operators who have done the workouts themselves.
@@ -78,14 +71,14 @@ export default async function ArticlesIndex() {
               </div>
               <div className="md:col-span-5 md:pt-2">
                 <span className="font-mono text-[11px] uppercase tracking-wider text-electric">Featured · {topicFromSlug(featured.slug)}</span>
-                <h2 className="mt-3 font-serif-tight font-bold text-slate text-3xl md:text-4xl lg:text-5xl leading-tight group-hover:underline decoration-1 underline-offset-4">
+                <h2 className="mt-3 font-bold tracking-tighter text-slate text-3xl md:text-4xl lg:text-5xl leading-tight group-hover:underline decoration-1 underline-offset-4">
                   {featured.title}
                 </h2>
                 {featured.excerpt && (
                   <p className="mt-4 text-base md:text-lg text-muted leading-relaxed">{featured.excerpt}</p>
                 )}
                 <div className="mt-4 font-mono text-[11px] uppercase tracking-wider text-muted">
-                  {readTime(featured.contentMd)} min read · by {featured.author || "Bar Elezra"}
+                  {readTime(featured.contentMd)} min read
                 </div>
               </div>
             </Link>
@@ -97,7 +90,7 @@ export default async function ArticlesIndex() {
         <section className="bg-offwhite">
           <div className="mx-auto max-w-content px-6 pb-24">
             <div className="border-t border-rule pt-6 pb-8">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">More from the desk</span>
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">More articles</span>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
               {rest.map((a) => (
@@ -116,14 +109,14 @@ export default async function ArticlesIndex() {
                   <span className="mt-4 inline-block font-mono text-[10px] uppercase tracking-wider text-electric">
                     {topicFromSlug(a.slug)}
                   </span>
-                  <h3 className="mt-1.5 font-serif font-bold text-slate text-lg md:text-xl leading-snug group-hover:underline decoration-1 underline-offset-4">
+                  <h3 className="mt-1.5 font-semibold tracking-tight text-slate text-lg md:text-xl leading-snug group-hover:underline decoration-1 underline-offset-4">
                     {a.title}
                   </h3>
                   {a.excerpt && (
                     <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-3">{a.excerpt}</p>
                   )}
                   <div className="mt-3 font-mono text-[10px] uppercase tracking-wider text-muted">
-                    {readTime(a.contentMd)} min read · by {a.author || "Bar Elezra"}
+                    {readTime(a.contentMd)} min read
                   </div>
                 </Link>
               ))}
