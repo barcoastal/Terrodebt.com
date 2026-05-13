@@ -1,23 +1,23 @@
-import { EditorialHero } from "@/components/site/EditorialHero";
-import { TopicAreas } from "@/components/site/TopicAreas";
-import { ResearchBand } from "@/components/site/ResearchBand";
-import { FeaturedEssays } from "@/components/site/FeaturedEssays";
-import { AprComparison } from "@/components/site/AprComparison";
-import { AboutTerraDebt } from "@/components/site/AboutTerraDebt";
-import { FaqQuiet } from "@/components/site/FaqQuiet";
-import { EditorialClose } from "@/components/site/EditorialClose";
+import { HeroSplit } from "@/components/site/HeroSplit";
+import { CoverageBlock } from "@/components/site/CoverageBlock";
+import { ApproachStrip } from "@/components/site/ApproachStrip";
+import { IndustryGrid } from "@/components/site/IndustryGrid";
+import { StatBand } from "@/components/site/StatBand";
+import { ArticlesBlock } from "@/components/site/ArticlesBlock";
+import { AboutStrip } from "@/components/site/AboutStrip";
+import { Closer } from "@/components/site/Closer";
 
 export default function Home() {
   return (
     <>
-      <EditorialHero />
-      <TopicAreas />
-      <FeaturedEssays />
-      <ResearchBand />
-      <AprComparison />
-      <AboutTerraDebt />
-      <FaqQuiet />
-      <EditorialClose />
+      <HeroSplit />
+      <CoverageBlock />
+      <ApproachStrip />
+      <IndustryGrid />
+      <StatBand />
+      <ArticlesBlock />
+      <AboutStrip />
+      <Closer />
     </>
   );
 }
