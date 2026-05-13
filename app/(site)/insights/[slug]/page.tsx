@@ -139,7 +139,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="mx-auto max-w-content px-6 py-4">
           <Breadcrumb
             items={[
-              { label: "Articles", href: "/articles" },
+              { label: "Articles", href: "/insights" },
               ...(topic.href ? [{ label: topic.label, href: topic.href }] : []),
               { label: a.title },
             ]}
@@ -234,7 +234,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     {related.slice(0, 3).map((r) => (
                       <li key={r.id} className="border-t border-rule pt-3 first:border-t-0 first:pt-0">
                         <Link
-                          href={`/articles/${r.slug}`}
+                          href={`/insights/${r.slug}`}
                           className="text-sm font-medium text-slate leading-snug hover:text-electric no-underline transition"
                         >
                           {r.title}
@@ -293,7 +293,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         }))}
         heading={topic.label !== "Guide" ? `More guides on ${topic.label}` : "More from TerraDebt"}
         eyebrow="Read next"
-        allHref="/articles"
+        allHref="/insights"
       />
 
       <NewsletterStrip source={`article-${a.slug}`} />

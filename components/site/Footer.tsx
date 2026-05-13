@@ -1,103 +1,128 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PRODUCTS } from "@/lib/product-content";
-import { VERTICAL_CONTENT } from "@/lib/vertical-content";
+
+const SERVICES = [
+  { href: "/services/forensic-audit", label: "Forensic Financial Auditing" },
+  { href: "/services/liquidity-engineering", label: "Liquidity Engineering" },
+  { href: "/services/creditor-liaison", label: "Creditor Liaison & Communication" },
+  { href: "/services/operational-restructuring", label: "Operational Restructuring" },
+];
+
+const SECONDARY = [
+  { href: "/industries", label: "Industries" },
+  { href: "/insights", label: "Insights" },
+  { href: "/tools", label: "Tools" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+
+const LEGAL = [
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
+  { href: "/disclosure", label: "Disclosure" },
+];
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 bg-ink text-white">
-      <div className="mx-auto max-w-content px-6 py-14 grid gap-10 md:grid-cols-12 text-sm">
-        <div className="md:col-span-3">
-          <Image
-            src="/logos/terradebt-wordmark-white.svg"
-            alt="TerraDebt"
-            width={140}
-            height={28}
-            className="mb-3"
-          />
-          <p className="text-white/70 leading-relaxed text-sm">
-            Information hub and program shop for business debt restructure across six coverage areas.
-          </p>
-          <div className="mt-5 text-xs text-white/60 leading-relaxed">
-            <p className="text-white font-medium">GRL Recovery LLC dba TerraDebt</p>
-            <p className="mt-1">6301 NW 5th Way 5100</p>
-            <p>Fort Lauderdale, FL 33309</p>
-          </div>
-        </div>
-
-        <div className="md:col-span-2">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric font-bold mb-3">
-            Topics
-          </div>
-          <ul className="space-y-2 text-white/85">
-            {PRODUCTS.map((p) => (
-              <li key={p.slug}>
-                <Link
-                  href={`/services/${p.slug}`}
-                  className="no-underline text-white/85 hover:text-electric hover:underline"
-                >
-                  {p.shortName}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="md:col-span-2">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric font-bold mb-3">
-            Industries
-          </div>
-          <ul className="space-y-2 text-white/85">
-            {VERTICAL_CONTENT.map((v) => (
-              <li key={v.slug}>
-                <Link
-                  href={`/industries/${v.slug}`}
-                  className="no-underline text-white/85 hover:text-electric hover:underline"
-                >
-                  {v.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="md:col-span-2">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric font-bold mb-3">
-            Resources
-          </div>
-          <ul className="space-y-2 text-white/85">
-            <li><Link href="/articles" className="no-underline text-white/85 hover:text-electric hover:underline">Articles</Link></li>
-            <li><Link href="/tools" className="no-underline text-white/85 hover:text-electric hover:underline">Tools</Link></li>
-            <li><Link href="/glossary" className="no-underline text-white/85 hover:text-electric hover:underline">Glossary</Link></li>
-            <li><Link href="/about" className="no-underline text-white/85 hover:text-electric hover:underline">About</Link></li>
-            <li><Link href="/contact" className="no-underline text-white/85 hover:text-electric hover:underline">Contact</Link></li>
-          </ul>
-        </div>
-
-        <div className="md:col-span-3">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric font-bold mb-3">
-            Legal
-          </div>
-          <ul className="space-y-2 text-white/85">
-            <li><Link href="/privacy" className="no-underline text-white/85 hover:text-electric hover:underline">Privacy</Link></li>
-            <li><Link href="/terms" className="no-underline text-white/85 hover:text-electric hover:underline">Terms</Link></li>
-            <li><Link href="/disclosure" className="no-underline text-white/85 hover:text-electric hover:underline">Disclosure</Link></li>
-          </ul>
-          <p className="mt-5 text-xs text-white/60 leading-relaxed">
-            TerraDebt is not a law firm. When legal defense is required, we coordinate licensed counsel in your state.
+    <footer className="mt-20 bg-paper border-t border-hairline">
+      {/* Compliance band */}
+      <div className="bg-paper-mute border-b border-hairline">
+        <div className="mx-auto max-w-content px-6 py-5">
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink leading-relaxed">
+            GRL Recovery LLC <span className="text-muted">·</span> Strategic financial consulting <span className="text-muted">·</span> Not a law firm <span className="text-muted">·</span> Not a lender <span className="text-muted">·</span> We coordinate with state-licensed counsel for legal defense matters <span className="text-muted">·</span> Clients are encouraged to consult independent counsel for legal matters
           </p>
         </div>
       </div>
 
-      <div className="border-t border-white/15">
-        <div className="mx-auto max-w-content px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-white/50">
-          <div>© {new Date().getFullYear()} GRL Recovery LLC. TerraDebt is a trade name of GRL Recovery LLC.</div>
-          <Link
-            href="/#subscribe"
-            className="text-white/70 hover:text-electric no-underline transition font-mono uppercase tracking-[0.18em] text-[11px]"
-          >
-            Subscribe to the weekly brief →
-          </Link>
+      {/* Main footer grid */}
+      <div className="mx-auto max-w-content px-6 py-14 grid gap-10 md:grid-cols-12 text-sm">
+        <div className="md:col-span-3">
+          <Image
+            src="/logos/terradebt-lockup.svg"
+            alt="TerraDebt"
+            width={150}
+            height={22}
+            className="mb-4"
+          />
+          <p className="text-ink leading-relaxed text-sm">
+            TerraDebt is the trade name of GRL Recovery LLC, a strategic financial consulting practice based in Fort Lauderdale, FL. The practice serves small and mid-sized enterprises navigating stacked short-term debt.
+          </p>
+        </div>
+
+        <div className="md:col-span-3">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted mb-4">
+            Services
+          </div>
+          <ul className="space-y-2.5 text-ink">
+            {SERVICES.map((s) => (
+              <li key={s.href}>
+                <Link
+                  href={s.href}
+                  className="no-underline text-ink hover:text-pine transition"
+                >
+                  {s.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="md:col-span-3">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted mb-4">
+            Practice
+          </div>
+          <ul className="space-y-2.5 text-ink">
+            {SECONDARY.map((s) => (
+              <li key={s.href}>
+                <Link
+                  href={s.href}
+                  className="no-underline text-ink hover:text-pine transition"
+                >
+                  {s.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="md:col-span-3">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted mb-4">
+            Office
+          </div>
+          <address className="not-italic text-ink leading-relaxed text-sm">
+            <span className="font-semibold block">GRL Recovery LLC</span>
+            6301 NW 5th Way, Suite 5100<br />
+            Fort Lauderdale, FL 33309
+          </address>
+          <p className="mt-3 text-sm text-ink">
+            <Link href="mailto:hello@terradebt.com" className="text-ink hover:text-pine no-underline">
+              hello@terradebt.com
+            </Link>
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1">
+            {LEGAL.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted hover:text-pine no-underline transition"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-hairline">
+        <div className="mx-auto max-w-content px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[11px] font-mono uppercase tracking-[0.16em] text-muted">
+          <div>
+            &copy; {new Date().getFullYear()} GRL Recovery LLC. TerraDebt is a trade name of GRL Recovery LLC. Entity formed April 1, 2026.
+          </div>
+          <div className="text-muted">
+            Strategic financial consulting <span className="text-hairline">·</span> Fort Lauderdale, FL
+          </div>
         </div>
       </div>
     </footer>

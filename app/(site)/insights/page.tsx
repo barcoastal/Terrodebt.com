@@ -65,7 +65,7 @@ export default async function ArticlesIndex() {
       {featured && (
         <section className="bg-offwhite border-b border-rule">
           <div className="mx-auto max-w-content px-6 py-10 md:py-12 grid md:grid-cols-12 gap-8">
-            <Link href={`/articles/${featured.slug}`} className="group md:col-span-8 block no-underline">
+            <Link href={`/insights/${featured.slug}`} className="group md:col-span-8 block no-underline">
               {featured.heroImage && (
                 <div className="relative aspect-[16/9] overflow-hidden bg-cream border border-rule">
                   <Image
@@ -94,7 +94,7 @@ export default async function ArticlesIndex() {
 
             <div className="md:col-span-4 flex flex-col gap-6">
               {second.map((a) => (
-                <Link key={a.id} href={`/articles/${a.slug}`} className="group block no-underline">
+                <Link key={a.id} href={`/insights/${a.slug}`} className="group block no-underline">
                   {a.heroImage && (
                     <div className="relative aspect-[16/10] overflow-hidden bg-cream border border-rule">
                       <Image
@@ -130,7 +130,7 @@ export default async function ArticlesIndex() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
               {rest.map((a) => (
-                <Link key={a.id} href={`/articles/${a.slug}`} className="group block no-underline">
+                <Link key={a.id} href={`/insights/${a.slug}`} className="group block no-underline">
                   {a.heroImage && (
                     <div className="relative aspect-[16/10] overflow-hidden bg-cream border border-rule">
                       <Image

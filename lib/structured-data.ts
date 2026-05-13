@@ -42,7 +42,7 @@ export function articleLd(a: ArticleLdInput) {
     "@type": "Article",
     "headline": a.title,
     "description": a.excerpt ?? undefined,
-    "url": `https://terradebt.com/articles/${a.slug}`,
+    "url": `https://terradebt.com/insights/${a.slug}`,
     "datePublished": a.publishedAt?.toISOString(),
     "dateModified": (a.updatedAt ?? a.publishedAt ?? new Date()).toISOString(),
     "author": { "@type": "Organization", "name": a.author },

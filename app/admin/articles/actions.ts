@@ -10,7 +10,7 @@ export async function publishAllArticles() {
     data: { published: true, publishedAt: new Date() },
   });
   revalidatePath("/admin/articles");
-  revalidatePath("/articles");
+  revalidatePath("/insights");
   redirect(`/admin/articles?published=${res.count}`);
 }
 
@@ -33,7 +33,7 @@ export async function importSeedArticles() {
     }
   }
   revalidatePath("/admin/articles");
-  revalidatePath("/articles");
+  revalidatePath("/insights");
   redirect(`/admin/articles?imported=${inserted}&updated=${updated}`);
 }
 

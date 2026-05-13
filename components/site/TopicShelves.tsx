@@ -170,7 +170,7 @@ export async function TopicShelves() {
               </div>
               <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {cards.map((a) => (
-                  <Link key={a.slug} href={`/articles/${a.slug}`} className="group block no-underline bg-paper border border-ink">
+                  <Link key={a.slug} href={`/insights/${a.slug}`} className="group block no-underline bg-paper border border-ink">
                     <div className="h-1 bg-electric w-full" aria-hidden />
                     {a.heroImage && (
                       <div className="relative aspect-[16/10] overflow-hidden bg-paper-soft">

@@ -119,7 +119,7 @@ const TERMS: Omit<GlossaryEntry, "slug">[] = [
     term: "Lien",
     definition:
       "A legal claim against property securing repayment of a debt. UCC liens cover business assets, mechanic's liens cover construction work, tax liens cover all assets of the debtor, and mortgage liens cover real estate.",
-    related: { label: "UCC liens and account freezes", href: "/articles/ucc-liens-and-account-freezes" },
+    related: { label: "UCC liens and account freezes", href: "/insights/ucc-liens-and-account-freezes" },
   },
   {
     term: "Mechanic's lien",
@@ -149,19 +149,19 @@ const TERMS: Omit<GlossaryEntry, "slug">[] = [
     term: "Reconciliation",
     definition:
       "A contractual right in most MCA agreements that recalculates the daily debit based on actual revenue. Formal reconciliation requests pause damaging daily debits while the broader workout is negotiated.",
-    related: { label: "When to pause MCA debits", href: "/articles/when-to-pause-mca-debits" },
+    related: { label: "When to pause MCA debits", href: "/insights/when-to-pause-mca-debits" },
   },
   {
     term: "Reverse consolidation",
     definition:
       "An advance stacked on top of existing MCAs that pays the daily debits on the underlying advances rather than retiring them. Total payback usually grows. Most reverse consolidations make the case worse, not better.",
-    related: { label: "What is reverse consolidation", href: "/articles/what-is-reverse-consolidation" },
+    related: { label: "What is reverse consolidation", href: "/insights/what-is-reverse-consolidation" },
   },
   {
     term: "Settlement",
     definition:
       "A negotiated lump sum payoff for less than the full face balance. MCA settlements typically close at 40 to 60 cents on the dollar. Trade debt settlements typically close at 60 to 85 cents because the supplier relationship matters.",
-    related: { label: "MCA settlement vs restructure", href: "/articles/mca-settlement-vs-restructure" },
+    related: { label: "MCA settlement vs restructure", href: "/insights/mca-settlement-vs-restructure" },
   },
   {
     term: "Special assets",
@@ -173,7 +173,7 @@ const TERMS: Omit<GlossaryEntry, "slug">[] = [
     term: "Stacking",
     definition:
       "Taking a new MCA while older MCAs are still active. Stacking is the pattern that turns a manageable advance into an unmanageable debt load. Most cases on our desk have three to six stacked advances.",
-    related: { label: "How to handle stacked MCAs", href: "/articles/how-to-handle-stacked-mcas" },
+    related: { label: "How to handle stacked MCAs", href: "/insights/how-to-handle-stacked-mcas" },
   },
   {
     term: "Trust Fund Recovery Penalty (TFRP)",
@@ -185,7 +185,7 @@ const TERMS: Omit<GlossaryEntry, "slug">[] = [
     term: "UCC filing",
     definition:
       "A Uniform Commercial Code financing statement filed with the secretary of state to perfect a lender's security interest in business assets. UCC-1 filings give the lender repossession and enforcement rights without court action in most states.",
-    related: { label: "UCC liens and account freezes", href: "/articles/ucc-liens-and-account-freezes" },
+    related: { label: "UCC liens and account freezes", href: "/insights/ucc-liens-and-account-freezes" },
   },
   {
     term: "Workout",
@@ -269,7 +269,7 @@ const TERMS: Omit<GlossaryEntry, "slug">[] = [
     term: "Frozen account",
     definition:
       "A bank account locked by a lender or court order, usually following a COJ or levy. Once frozen, the merchant cannot pay payroll, vendors, or operating expenses from that account until the freeze is lifted.",
-    related: { label: "UCC liens and account freezes", href: "/articles/ucc-liens-and-account-freezes" },
+    related: { label: "UCC liens and account freezes", href: "/insights/ucc-liens-and-account-freezes" },
   },
   {
     term: "Note sale",

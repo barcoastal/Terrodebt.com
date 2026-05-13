@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const staticPaths = [
     "", "/about", "/contact", "/trust", "/privacy", "/terms", "/disclosure",
-    "/calculator", "/articles", "/industries", "/programs", "/services",
+    "/calculator", "/insights", "/industries", "/programs", "/services",
     "/tools", "/tools/apr-calculator", "/tools/stack-calculator", "/tools/health-check",
     "/programs/settlement", "/programs/restructure", "/programs/legal-defense",
   ];
@@ -23,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let articleUrls: MetadataRoute.Sitemap = [];
   try {
     const articles = await db.article.findMany({ where: { published: true }, select: { slug: true, updatedAt: true } });
-    articleUrls = articles.map((a) => ({ url: `${BASE}/articles/${a.slug}`, lastModified: a.updatedAt, priority: 0.6 }));
+    articleUrls = articles.map((a) => ({ url: `${BASE}/insights/${a.slug}`, lastModified: a.updatedAt, priority: 0.6 }));
   } catch {}
 
   return [...staticUrls, ...productUrls, ...verticalUrls, ...stateUrls, ...articleUrls];

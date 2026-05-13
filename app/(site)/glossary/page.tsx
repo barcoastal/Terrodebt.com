@@ -18,7 +18,7 @@ export default function GlossaryPage() {
     <article>
       <section className="bg-offwhite border-b border-rule">
         <div className="mx-auto max-w-content px-6 py-4">
-          <Breadcrumb items={[{ label: "Resources", href: "/articles" }, { label: "Glossary" }]} />
+          <Breadcrumb items={[{ label: "Resources", href: "/insights" }, { label: "Glossary" }]} />
         </div>
       </section>
 

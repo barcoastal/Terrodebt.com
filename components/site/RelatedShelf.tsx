@@ -49,7 +49,7 @@ export function RelatedShelf({
         </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.slice(0, 4).map((it) => {
-            const href = it.href ?? `/articles/${it.slug}`;
+            const href = it.href ?? `/insights/${it.slug}`;
             return (
               <Link key={`${href}-${it.slug}`} href={href} className="group block no-underline">
                 {it.heroImage && (

@@ -2,67 +2,60 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  /* New identity tokens */
+  /* Identity tokens — consulting firm system */
   --color-ink: #0A0A0A;
   --color-ink-soft: #1F1F1F;
   --color-paper: #FFFFFF;
-  --color-paper-soft: #F5F5F4;
-  --color-electric: #10B981;
-  --color-electric-soft: #34D399;
-  --color-rule: #E5E5E4;
-  --color-border: #E5E5E4;
-  --color-muted: #525252;
-  --color-banner: #F0EDEA;
-  --color-white: #FFFFFF;
+  --color-paper-mute: #F4F4F2;
+  --color-paper-soft: #F4F4F2;
+  --color-hairline: #D8D6D2;
+  --color-muted: #6B6B6B;
+  --color-pine: #064E3B;
+  --color-pine-bright: #10B981;
 
-  /* Legacy aliases pointing at the new values so existing components keep working */
+  /* Legacy aliases — keep existing components working without renames */
+  --color-electric: #064E3B;
+  --color-electric-soft: #10B981;
   --color-slate: #0A0A0A;
   --color-slate-soft: #1F1F1F;
   --color-offwhite: #FFFFFF;
-  --color-cream: #F0EDEA;
+  --color-cream: #F4F4F2;
+  --color-border: #D8D6D2;
+  --color-rule: #D8D6D2;
+  --color-banner: #F4F4F2;
+  --color-white: #FFFFFF;
 
-  --font-sans: var(--font-sans-geist), system-ui, sans-serif;
-  --font-mono: var(--font-mono-geist), "SF Mono", Menlo, monospace;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-mono: var(--font-mono), "SF Mono", Menlo, monospace;
   --max-width-content: 72rem;
-
-  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 12px rgb(0 0 0 / 0.04);
-  --shadow-elevated: 0 1px 2px rgb(0 0 0 / 0.04), 0 12px 32px rgb(0 0 0 / 0.08);
-  --shadow-glow: 0 0 0 1px rgb(16 185 129 / 0.1), 0 8px 32px rgb(16 185 129 / 0.12);
 }
 
 @layer base {
   body {
     @apply bg-paper text-ink;
     font-feature-settings: "ss01", "cv11";
+    font-family: var(--font-sans), system-ui, sans-serif;
   }
-  h3, h4 { @apply font-semibold tracking-tight; }
-  a { @apply text-electric; }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+  a { @apply text-pine; }
   a:not(.no-underline):hover { text-decoration: underline; }
-  ::selection { background: #10B981; color: white; }
+  ::selection { background: #064E3B; color: white; }
 }
 
 @layer utilities {
   .font-mono { font-family: var(--font-mono); font-feature-settings: "ss02", "cv01"; }
 
-  .bg-grain {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.04 0 0 0 0 0.04 0 0 0 0 0.04 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  }
-
-  .bg-radial-electric {
-    background-image: radial-gradient(80% 60% at 80% 0%, rgb(16 185 129 / 0.05), transparent 60%);
-  }
-
-  .ring-glow {
-    box-shadow: var(--shadow-glow);
-  }
-
   .surface-card {
-    @apply bg-white border border-border;
-    box-shadow: var(--shadow-soft);
+    @apply bg-white border border-hairline;
   }
 
   .surface-card-elevated {
-    @apply bg-white border border-border;
-    box-shadow: var(--shadow-elevated);
+    @apply bg-white border border-hairline;
   }
+
+  .photo-desat { filter: saturate(0.6); }
+  .photo-bw { filter: grayscale(1); }
 }

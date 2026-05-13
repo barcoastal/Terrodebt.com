@@ -221,7 +221,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         }))}
         heading="Recent guides"
         eyebrow="Read next"
-        allHref="/articles"
+        allHref="/insights"
       />
 
       <NewsletterStrip source={`industry-${slug}`} />

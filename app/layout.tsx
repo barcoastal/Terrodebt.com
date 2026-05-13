@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans-geist", display: "swap" });
-const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono-geist", display: "swap" });
+const inter = Inter_Tight({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: "TerraDebt", template: "%s | TerraDebt" },
   description:
-    "TerraDebt restructures business debt across MCA, SBA, equipment, vendor, bank, and tax debt. Coordinated workouts and plain-spoken research.",
+    "GRL Recovery LLC, doing business as TerraDebt. Strategic financial consulting for small and mid-sized enterprises facing stacked short-term debt. Fort Lauderdale, FL.",
   metadataBase: new URL("https://terradebt.com"),
   openGraph: {
     siteName: "TerraDebt",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body className="bg-paper text-ink font-sans antialiased">{children}</body>
     </html>
   );

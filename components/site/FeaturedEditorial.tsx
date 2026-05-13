@@ -18,7 +18,7 @@ const FALLBACK: Article = {
   title: "What is reverse consolidation, and why it usually backfires",
   excerpt:
     "Reverse consolidations look like a fix and usually make stacked MCAs worse. Here is the math, the typical contract pattern, and what to do instead.",
-  heroImage: "/images/articles/what-is-reverse-consolidation.png",
+  heroImage: "/images/insights/what-is-reverse-consolidation.png",
   author: "Bar Elezra",
   publishedAt: new Date("2026-04-15"),
   createdAt: new Date("2026-04-15"),
@@ -75,7 +75,7 @@ export async function FeaturedEditorial() {
       <div className="mx-auto max-w-content px-6 py-12 md:py-16 grid md:grid-cols-12 gap-10">
         {/* Featured */}
         <div className="md:col-span-7">
-          <Link href={`/articles/${featured.slug}`} className="group relative block no-underline overflow-hidden bg-ink aspect-[16/11]">
+          <Link href={`/insights/${featured.slug}`} className="group relative block no-underline overflow-hidden bg-ink aspect-[16/11]">
             {featured.heroImage && (
               <Image
                 src={featured.heroImage}
@@ -120,7 +120,7 @@ export async function FeaturedEditorial() {
               More from TerraDebt
             </span>
             <Link
-              href="/articles"
+              href="/insights"
               className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric no-underline hover:underline"
             >
               All guides →
@@ -130,7 +130,7 @@ export async function FeaturedEditorial() {
             {(stack.length > 0 ? stack : []).map((a, i) => (
               <li key={a.slug}>
                 <Link
-                  href={`/articles/${a.slug}`}
+                  href={`/insights/${a.slug}`}
                   className="group flex items-start gap-4 py-4 no-underline"
                 >
                   <span className="font-mono text-[11px] font-bold text-electric shrink-0 mt-1.5 w-6">

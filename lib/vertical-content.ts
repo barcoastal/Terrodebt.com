@@ -1,6 +1,7 @@
 export type VerticalContent = {
   slug: string;
   name: string;
+  priority?: boolean;
   metaTitle: string;
   metaDescription: string;
   heroEyebrow: string;
@@ -16,10 +17,18 @@ export type VerticalContent = {
   risks: string;
 };
 
+export function priorityVerticals() {
+  return VERTICAL_CONTENT.filter((v) => v.priority);
+}
+export function additionalVerticals() {
+  return VERTICAL_CONTENT.filter((v) => !v.priority);
+}
+
 export const VERTICAL_CONTENT: VerticalContent[] = [
   {
     slug: "trucking",
-    name: "Trucking",
+    name: "Logistics & Trucking",
+    priority: true,
     metaTitle: "MCA Debt Relief for Trucking Companies | TerraDebt",
     metaDescription: "Stacked MCA debt for fleets and owner-operators. Factor coordination, daily debit pause, and settlement averaging 42% off face balance. Free assessment.",
     heroEyebrow: "For trucking companies",
@@ -107,7 +116,8 @@ A subset of cases also involves a reverse consolidation lender. These are the wo
   },
   {
     slug: "restaurants",
-    name: "Restaurants",
+    name: "Hospitality & Food Service",
+    priority: true,
     metaTitle: "MCA Debt Relief for Restaurants | TerraDebt",
     metaDescription: "Stacked MCAs against tipped payroll, seasonal cash flow, and POS holds. We pause debits and rebuild around your real seasonality. Free assessment.",
     heroEyebrow: "For restaurants",
@@ -283,7 +293,8 @@ The unbonded cases are typically smaller residential GCs, remodelers, and trade 
   },
   {
     slug: "healthcare",
-    name: "Healthcare",
+    name: "Healthcare Practices",
+    priority: true,
     metaTitle: "MCA Debt Relief for Healthcare Practices | TerraDebt",
     metaDescription: "Insurance reimbursement runs on its schedule. MCA debits run on theirs. We restructure stacked MCAs around real reimbursement timing. Free assessment.",
     heroEyebrow: "For healthcare practices",

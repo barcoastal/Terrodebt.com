@@ -61,7 +61,7 @@ export async function GET() {
       items.push({
         type: "article",
         title: a.title,
-        slug: `/articles/${a.slug}`,
+        slug: `/insights/${a.slug}`,
         excerpt: a.excerpt ?? undefined,
       });
     }

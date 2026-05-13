@@ -1,384 +1,203 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { findProduct, getProductSlugs, PRODUCTS } from "@/lib/product-content";
-import { db } from "@/lib/db";
+import { findService, getServiceSlugs, SERVICES } from "@/lib/service-content";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
-import { Toc, type TocItem } from "@/components/site/Toc";
-import { RelatedShelf } from "@/components/site/RelatedShelf";
-import { NewsletterStrip } from "@/components/site/NewsletterStrip";
-import { CompareTable } from "@/components/site/CompareTable";
 
 export async function generateStaticParams() {
-  return getProductSlugs().map((slug) => ({ slug }));
+  return getServiceSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const p = findProduct(slug);
-  if (!p) return {};
-  return {
-    title: p.metaTitle,
-    description: p.metaDescription,
-  };
+  const s = findService(slug);
+  if (!s) return {};
+  return { title: s.metaTitle, description: s.metaDescription };
 }
-
-const SECTIONS: { id: string; label: string }[] = [
-  { id: "what-it-is", label: "What it is" },
-  { id: "who-it-fits", label: "Who it fits" },
-  { id: "methods", label: "Methods" },
-  { id: "scenario", label: "Typical scenario" },
-  { id: "pitfalls", label: "Pitfalls" },
-  { id: "faq", label: "FAQ" },
-];
-
-const COMPARE_BY_SLUG: Record<string, { eyebrow: string; heading: string; optionA: string; optionB: string; rows: { feature: string; optionA: string; optionB: string }[] }> = {
-  "mca-debt-relief": {
-    eyebrow: "Compare",
-    heading: "Settlement vs Restructure on MCA debt",
-    optionA: "Settlement",
-    optionB: "Restructure",
-    rows: [
-      { feature: "Typical outcome", optionA: "Lump sum payoff at 40 to 60 cents on the dollar", optionB: "Renegotiated terms, longer schedule, lower daily debit" },
-      { feature: "Timeline", optionA: "8 to 14 months", optionB: "12 to 18 months" },
-      { feature: "Daily debits", optionA: "Paused via reconciliation, replaced with escrow funding", optionB: "Modified daily debit or moved to weekly/monthly schedule" },
-      { feature: "Credit impact", optionA: "Temporary hit during settlement, then recovers", optionB: "Lower impact, performing modification" },
-      { feature: "Best when", optionA: "Stack is large, balances need reduction, business is operational", optionB: "Business wants to keep paying but at a different rate or pace" },
-      { feature: "Personal guaranty", optionA: "Released on each settled contract with clean closeout", optionB: "Stays in place but loan returns to performing status" },
-    ],
-  },
-  "sba-loan-modification": {
-    eyebrow: "Compare",
-    heading: "Modification vs Offer in Compromise on SBA loans",
-    optionA: "Modification",
-    optionB: "Offer in Compromise",
-    rows: [
-      { feature: "What it is", optionA: "Permanent change to rate, term, payment, or amortization", optionB: "Partial settlement of the SBA balance" },
-      { feature: "Qualification", optionA: "Documented hardship plus credible recovery pro forma", optionB: "Cannot reasonably pay full balance under collection period" },
-      { feature: "Timeline", optionA: "60 to 120 days", optionB: "6 to 12 months" },
-      { feature: "Reviewer", optionA: "SBA lender (sometimes SBA itself above thresholds)", optionB: "SBA lender and the SBA, sometimes Treasury" },
-      { feature: "Personal guaranty", optionA: "Stays in place under modified terms", optionB: "Can be released as part of the OIC closeout" },
-      { feature: "Best when", optionA: "Business is recoverable and the math supports a path back", optionB: "Reasonable collection potential is below the full balance" },
-    ],
-  },
-};
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const product = findProduct(slug);
-  if (!product) notFound();
-
-  const toc: TocItem[] = SECTIONS.map((s) => ({ id: s.id, text: s.label }));
-  const otherTopics = PRODUCTS.filter((p) => p.slug !== product.slug).slice(0, 3);
-  const compare = COMPARE_BY_SLUG[product.slug];
-
-  let recent: { id: string; slug: string; title: string; excerpt: string | null; heroImage: string | null }[] = [];
-  try {
-    recent = await db.article.findMany({
-      where: {
-        published: true,
-        OR:
-          product.slug === "mca-debt-relief"
-            ? [{ slug: { contains: "mca" } }, { slug: { contains: "reverse" } }, { slug: { contains: "coj" } }, { slug: { contains: "ucc" } }]
-            : product.slug === "sba-loan-modification"
-            ? [{ slug: { contains: "sba" } }, { slug: { contains: "loan-modification" } }]
-            : product.slug === "equipment-finance-restructure"
-            ? [{ slug: { contains: "equipment" } }]
-            : product.slug === "vendor-supplier-debt"
-            ? [{ slug: { contains: "vendor" } }]
-            : product.slug === "bank-loan-workout"
-            ? [{ slug: { contains: "bank" } }, { slug: { contains: "covenant" } }]
-            : [{ slug: { contains: "tax" } }, { slug: { contains: "irs" } }],
-      },
-      orderBy: { publishedAt: "desc" },
-      take: 4,
-      select: { id: true, slug: true, title: true, excerpt: true, heroImage: true },
-    });
-    if (recent.length < 3) {
-      const fillers = await db.article.findMany({
-        where: { published: true },
-        orderBy: { publishedAt: "desc" },
-        take: 4,
-        select: { id: true, slug: true, title: true, excerpt: true, heroImage: true },
-      });
-      const seen = new Set(recent.map((r) => r.slug));
-      for (const f of fillers) {
-        if (seen.has(f.slug)) continue;
-        recent.push(f);
-        if (recent.length >= 4) break;
-      }
-    }
-  } catch {}
+  const s = findService(slug);
+  if (!s) notFound();
+  const others = SERVICES.filter((x) => x.slug !== s.slug);
 
   return (
     <article>
-      {/* Breadcrumb */}
-      <section className="bg-offwhite border-b border-rule">
-        <div className="mx-auto max-w-content px-6 py-4">
-          <Breadcrumb items={[{ label: "Topics", href: "/services" }, { label: product.name }]} />
+      <div className="border-b border-hairline bg-paper">
+        <div className="mx-auto max-w-content px-6 py-5">
+          <Breadcrumb items={[{ href: "/services", label: "Services" }, { label: s.name }]} />
+        </div>
+      </div>
+
+      <section className="bg-paper border-b border-hairline">
+        <div className="mx-auto max-w-content px-6 py-16 md:py-20 grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-3">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">{s.kicker}</span>
+          </div>
+          <div className="md:col-span-9">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.05]">{s.name}</h1>
+            <div className="mt-8 space-y-5 text-base md:text-lg text-ink leading-relaxed max-w-3xl">
+              {s.overview.map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Hero */}
-      <section className="bg-offwhite border-b border-rule">
-        <div className="mx-auto max-w-content px-6 py-10 md:py-14">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-electric">
-            {product.heroEyebrow}
-          </span>
-          <h1 className="mt-3 font-bold tracking-tighter text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.04] max-w-4xl">
-            {product.name}
-          </h1>
-          <p className="mt-4 text-base md:text-lg text-muted leading-relaxed max-w-3xl">
-            {product.subline}
-          </p>
-          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted">
-            <span>By the TerraDebt team</span>
-            <span className="text-rule">·</span>
-            <span>Updated {new Date().toISOString().slice(0, 10)}</span>
-            <span className="text-rule">·</span>
-            <span>{Math.max(8, Math.round(((product.whatItIs + product.scenario + product.pitfalls).split(/\s+/).length) / 220))} min read</span>
+      <section className="bg-paper-mute border-b border-hairline">
+        <div className="mx-auto max-w-content px-6 py-14 md:py-16 grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-3">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">Engagement</span>
+            <h2 className="mt-2 text-xl font-bold tracking-tight text-ink leading-snug">Engagement structure</h2>
           </div>
-          <div className="mt-6">
-            <Link
-              href="/get-started"
-              className="inline-flex items-center gap-2 text-sm font-medium text-slate no-underline border-b border-slate pb-0.5 hover:border-electric hover:text-electric transition"
-            >
-              Talk to the team about {product.shortName.toLowerCase()}
-              <span aria-hidden>→</span>
+          <div className="md:col-span-9">
+            <div className="border border-hairline bg-paper">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-hairline text-left">
+                    <th className="px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted font-medium">Phase</th>
+                    <th className="px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted font-medium">Duration</th>
+                    <th className="px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted font-medium">Fee</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {s.engagement.map((e, i) => (
+                    <tr key={i} className="border-b border-hairline last:border-b-0">
+                      <td className="px-5 py-4 text-ink">{e.step}</td>
+                      <td className="px-5 py-4 text-muted font-mono text-xs">{e.duration}</td>
+                      <td className="px-5 py-4 text-muted font-mono text-xs">{e.fee}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-xs text-muted font-mono uppercase tracking-[0.15em]">Engagement scope confirmed at intake.</p>
+          </div>
+        </div>
+      </section>
+
+      <Section eyebrow="Scope" title="What this addresses">
+        <ul className="space-y-3 text-base md:text-lg text-ink leading-relaxed">
+          {s.whatItAddresses.map((p, i) => (
+            <li key={i} className="grid grid-cols-[auto_1fr] gap-4 border-t border-hairline pt-3 first:border-t-0 first:pt-0">
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted pt-1.5">{String(i + 1).padStart(2, "0")}</span>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section eyebrow="Method" title="Methodology" alt>
+        <ol className="space-y-8">
+          {s.methodology.map((m, i) => (
+            <li key={i} className="grid grid-cols-[auto_1fr] gap-6 border-t border-hairline pt-6 first:border-t-0 first:pt-0">
+              <span className="font-mono text-sm uppercase tracking-[0.2em] text-pine">{String(i + 1).padStart(2, "0")}</span>
+              <div>
+                <h3 className="text-xl font-bold tracking-tight text-ink leading-snug">{m.title}</h3>
+                <p className="mt-2 text-base text-ink leading-relaxed">{m.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      <Section eyebrow="Output" title="Deliverables">
+        <ul className="grid md:grid-cols-2 gap-x-10 gap-y-3 text-base text-ink">
+          {s.deliverables.map((d, i) => (
+            <li key={i} className="border-t border-hairline pt-3">{d}</li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section eyebrow="Scope of debt" title="Debt instruments covered" alt>
+        <dl className="grid md:grid-cols-2 gap-x-10 gap-y-6">
+          {s.debtInstruments.map((d) => (
+            <div key={d.name} className="border-t border-hairline pt-4">
+              <dt className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">{d.name}</dt>
+              <dd className="mt-2 text-base text-ink leading-relaxed">{d.note}</dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+
+      <Section eyebrow="Patterns" title="Common engagements">
+        <div className="grid md:grid-cols-2 gap-x-10 gap-y-10">
+          {s.commonEngagements.map((c, i) => (
+            <div key={i} className="border-t border-hairline pt-5">
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">Pattern {String(i + 1).padStart(2, "0")}</span>
+              <h3 className="mt-2 text-lg font-bold tracking-tight text-ink leading-snug">{c.title}</h3>
+              <p className="mt-3 text-base text-ink leading-relaxed">{c.body}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section eyebrow="FAQ" title="Frequently asked" alt>
+        <dl className="space-y-0">
+          {s.faq.map((f, i) => (
+            <div key={i} className="border-t border-hairline py-5 last:border-b last:border-b-hairline">
+              <dt className="text-base md:text-lg font-bold tracking-tight text-ink">{f.q}</dt>
+              <dd className="mt-3 text-base text-ink leading-relaxed">{f.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+
+      <section className="bg-paper border-b border-hairline">
+        <div className="mx-auto max-w-content px-6 py-16 md:py-20">
+          <div className="flex items-end justify-between gap-6 border-b border-hairline pb-5 mb-10">
+            <div>
+              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">Other services</span>
+              <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight text-ink leading-tight">Adjacent practice areas</h2>
+            </div>
+            <Link href="/services" className="font-mono text-[11px] uppercase tracking-[0.18em] text-pine no-underline hover:text-ink transition">
+              All services →
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Stats strip */}
-      <section className="bg-white border-b border-rule">
-        <div className="mx-auto max-w-content px-6 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-rule border border-rule">
-            {product.stats.map((s) => (
-              <div key={s.label} className="bg-white p-5">
-                <div className="font-mono text-2xl md:text-3xl font-bold text-slate tracking-tight leading-none">{s.value}</div>
-                <div className="mt-2 text-sm text-slate leading-snug">{s.label}</div>
-              </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {others.map((o) => (
+              <Link key={o.slug} href={`/services/${o.slug}`} className="group block no-underline border border-hairline p-6 hover:border-pine transition">
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">{o.numeral}</span>
+                <h3 className="mt-2 text-lg font-bold tracking-tight text-ink group-hover:text-pine transition leading-snug">{o.name}</h3>
+                <p className="mt-3 text-sm text-ink leading-relaxed line-clamp-3">{o.metaDescription}</p>
+                <span className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-pine">
+                  Open service →
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3-col body */}
-      <section className="bg-offwhite border-b border-rule">
-        <div className="mx-auto max-w-content px-6 py-12 md:py-16 grid md:grid-cols-12 gap-10">
-          <aside className="hidden md:block md:col-span-2">
-            <div className="sticky top-32">
-              <Toc items={toc} label="In this guide" />
-            </div>
-          </aside>
-
-          <div className="md:col-span-7 space-y-12">
-            <Section id="what-it-is" eyebrow="What it is" title={`${product.name}, defined`}>
-              {product.whatItIs.split("\n\n").map((p, i) => (
-                <p key={i} className="text-slate leading-relaxed">
-                  {p}
-                </p>
-              ))}
-            </Section>
-
-            <Section id="who-it-fits" eyebrow="Who it fits" title="The fit test">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="border border-rule bg-white p-5">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-electric">Fits</span>
-                  <ul className="mt-3 space-y-2.5">
-                    {product.whoItFits.map((b) => (
-                      <li key={b} className="flex gap-2 items-start text-sm text-slate">
-                        <svg className="w-4 h-4 mt-0.5 text-electric shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-                        <span className="leading-relaxed">{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="border border-rule bg-white p-5">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Does not fit</span>
-                  <ul className="mt-3 space-y-2.5">
-                    {product.whoItDoesntFit.map((b) => (
-                      <li key={b} className="flex gap-2 items-start text-sm text-muted">
-                        <svg className="w-4 h-4 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
-                        <span className="leading-relaxed">{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Section>
-
-            <Section id="methods" eyebrow="Methods" title={`How we resolve ${product.shortName.toLowerCase()} cases`}>
-              <p className="text-muted leading-relaxed">
-                The method is chosen for the specific case. Most cases use more than one.
-              </p>
-              <div className="mt-4 space-y-5">
-                {product.methods.map((m, i) => (
-                  <div key={m.title} className="border-l-2 border-electric pl-4">
-                    <span className="font-mono text-xs text-electric">{String(i + 1).padStart(2, "0")}</span>
-                    <h3 className="mt-1 font-semibold tracking-tight text-slate text-lg leading-snug">{m.title}</h3>
-                    <p className="mt-2 text-slate leading-relaxed">{m.body}</p>
-                  </div>
-                ))}
-              </div>
-              {compare && (
-                <div className="mt-8">
-                  <CompareTable
-                    eyebrow={compare.eyebrow}
-                    heading={compare.heading}
-                    optionALabel={compare.optionA}
-                    optionBLabel={compare.optionB}
-                    rows={compare.rows}
-                  />
-                </div>
-              )}
-            </Section>
-
-            <Section id="scenario" eyebrow="Typical scenario" title="An example case">
-              <p className="text-muted leading-relaxed text-sm">
-                Anonymized but representative. Real outcomes vary with lender mix, contract terms, and operations.
-              </p>
-              <div className="mt-4 border-l-2 border-rule pl-5 space-y-4">
-                {product.scenario.split("\n\n").map((para, i) => (
-                  <p key={i} className="text-slate leading-relaxed" dangerouslySetInnerHTML={renderInlineMarkdown(para)} />
-                ))}
-              </div>
-            </Section>
-
-            <Section id="pitfalls" eyebrow="Pitfalls" title="Risks to watch for">
-              <p className="text-muted leading-relaxed text-sm">
-                Every debt type has its own enforcement playbook. We map exposure at intake.
-              </p>
-              <div className="mt-4 space-y-4">
-                {product.pitfalls.split("\n\n").map((para, i) => (
-                  <p key={i} className="text-slate leading-relaxed" dangerouslySetInnerHTML={renderInlineMarkdown(para)} />
-                ))}
-              </div>
-            </Section>
-
-            <Section id="faq" eyebrow="FAQ" title={`${product.name} FAQ`}>
-              <div className="divide-y divide-rule border-y border-rule">
-                {product.faq.map((item) => (
-                  <details key={item.q} className="group py-4">
-                    <summary className="cursor-pointer list-none flex items-start justify-between gap-6 text-slate">
-                      <span className="font-semibold tracking-tight text-base md:text-lg leading-snug">{item.q}</span>
-                      <span className="text-muted text-xl group-open:rotate-45 transition-transform duration-200 leading-none shrink-0 mt-1">+</span>
-                    </summary>
-                    <p className="mt-3 text-sm md:text-base text-muted leading-relaxed pr-10">{item.a}</p>
-                  </details>
-                ))}
-              </div>
-            </Section>
+      <section className="bg-paper">
+        <div className="mx-auto max-w-content px-6 py-16 md:py-20 grid md:grid-cols-12 gap-10 items-end">
+          <div className="md:col-span-8">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">Initial review</span>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">Schedule an initial review.</h2>
+            <p className="mt-4 max-w-2xl text-base md:text-lg text-ink leading-relaxed">
+              Initial reviews are scoped to thirty minutes. The discussion is confidential and the review itself carries no fee.
+            </p>
           </div>
-
-          {/* Right sidebar */}
-          <aside className="md:col-span-3">
-            <div className="md:sticky md:top-32 space-y-6">
-              <div className="border border-rule bg-white p-5">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-muted">
-                  Other coverage areas
-                </span>
-                <ul className="mt-3 space-y-2.5">
-                  {otherTopics.map((o) => (
-                    <li key={o.slug} className="border-t border-rule pt-2.5 first:border-t-0 first:pt-0">
-                      <Link
-                        href={`/services/${o.slug}`}
-                        className="text-sm font-medium text-slate leading-snug hover:text-electric no-underline transition block"
-                      >
-                        {o.name}
-                      </Link>
-                      <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-muted">
-                        {o.category}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="border border-rule bg-offwhite p-5">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-electric">
-                  Use the calculator
-                </span>
-                <p className="mt-2 text-sm font-semibold text-slate leading-snug">
-                  {product.slug === "mca-debt-relief" ? "Effective APR Calculator" : "Debt Health Check"}
-                </p>
-                <p className="mt-1.5 text-xs text-muted leading-relaxed">
-                  {product.slug === "mca-debt-relief"
-                    ? "Compute the real annualized cost of your advance."
-                    : "10-question diagnostic across your debt mix."}
-                </p>
-                <Link
-                  href={product.slug === "mca-debt-relief" ? "/tools/apr-calculator" : "/tools/health-check"}
-                  className="mt-3 inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate border-b border-slate pb-0.5 hover:border-electric hover:text-electric transition"
-                >
-                  Open tool
-                  <span aria-hidden>→</span>
-                </Link>
-              </div>
-
-              <div className="border border-rule bg-slate text-white p-5">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-electric-soft">
-                  Talk to the team
-                </span>
-                <p className="mt-2 text-sm font-semibold leading-snug">
-                  Free assessment scoped to your {product.shortName.toLowerCase()} situation
-                </p>
-                <Link
-                  href="/get-started"
-                  className="mt-3 inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-white border-b border-white pb-0.5 hover:border-electric-soft hover:text-electric-soft transition"
-                >
-                  Request an assessment
-                  <span aria-hidden>→</span>
-                </Link>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <RelatedShelf
-        items={recent.map((r) => ({
-          slug: r.slug,
-          title: r.title,
-          excerpt: r.excerpt,
-          heroImage: r.heroImage,
-          topic: product.shortName,
-        }))}
-        heading={`Read next on ${product.shortName}`}
-        eyebrow="Related guides"
-        allHref="/articles"
-      />
-
-      <NewsletterStrip source={`service-${product.slug}`} />
-
-      {/* Disclosure */}
-      <section className="bg-offwhite border-t border-rule">
-        <div className="mx-auto max-w-content px-6 py-10 text-xs text-muted leading-relaxed">
-          <p>
-            <span className="font-mono uppercase tracking-wider text-slate">Disclosure.</span>{" "}
-            TerraDebt is a trade name of GRL Recovery LLC. We are not a law firm and do not provide legal advice. When legal defense is required, we coordinate licensed attorneys in your state. We do not guarantee specific savings or outcomes. Real results depend on your lender mix, contract terms, business cash flow, and how lenders respond. Programs typically run 6 to 18 months. Past results referenced in our case studies do not predict future outcomes.
-          </p>
+          <div className="md:col-span-4 md:text-right">
+            <Link href="/contact" className="inline-flex items-center bg-pine text-paper px-6 py-4 text-sm font-mono uppercase tracking-[0.18em] no-underline hover:bg-ink transition">
+              Schedule review →
+            </Link>
+          </div>
         </div>
       </section>
     </article>
   );
 }
 
-function Section({ id, eyebrow, title, children }: { id: string; eyebrow: string; title: string; children: React.ReactNode }) {
+function Section({ eyebrow, title, children, alt }: { eyebrow: string; title: string; children: React.ReactNode; alt?: boolean }) {
   return (
-    <section id={id} className="scroll-mt-32">
-      <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{eyebrow}</span>
-      <h2 className="mt-1 font-bold tracking-tighter text-slate text-2xl md:text-3xl leading-tight">
-        {title}
-      </h2>
-      <div className="mt-4 space-y-4">{children}</div>
+    <section className={`${alt ? "bg-paper-mute" : "bg-paper"} border-b border-hairline`}>
+      <div className="mx-auto max-w-content px-6 py-14 md:py-16 grid md:grid-cols-12 gap-10">
+        <div className="md:col-span-3">
+          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">{eyebrow}</span>
+          <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight text-ink leading-snug">{title}</h2>
+        </div>
+        <div className="md:col-span-9">{children}</div>
+      </div>
     </section>
   );
-}
-
-function renderInlineMarkdown(text: string): { __html: string } {
-  const escaped = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  const withBold = escaped.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-  return { __html: withBold };
 }
