@@ -1,36 +1,39 @@
 const STATS = [
-  { idx: "01", value: "47%", label: "Avg savings on settled balances" },
-  { idx: "02", value: "11 mo", label: "Avg program timeline" },
-  { idx: "03", value: "50", label: "States with counsel" },
-  { idx: "04", value: "6", label: "Coverage areas" },
+  { value: "47%", label: "Avg savings on settled balances" },
+  { value: "11 mo", label: "Avg program timeline" },
+  { value: "50", label: "States with coordinated counsel" },
+  { value: "6", label: "Coverage areas" },
 ];
 
 export function StatBand() {
   return (
-    <section className="bg-electric text-white">
-      <div className="mx-auto max-w-content px-6 py-20 md:py-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/20">
-          {STATS.map((s, i) => (
-            <div
-              key={s.idx}
-              className={`relative p-6 md:p-8 ${i < 2 ? "border-b border-white/20 md:border-b-0" : ""}`}
-            >
-              <span className="absolute top-3 right-4 font-mono text-[11px] uppercase tracking-wider text-white/40">
-                {s.idx}
-              </span>
-              <div className="font-mono text-5xl md:text-6xl font-bold tracking-tighter text-white">
-                {s.value}
-              </div>
-              <div className="mt-3 text-sm text-white/80 max-w-[12rem] leading-snug">
-                {s.label}
-              </div>
+    <section className="bg-offwhite">
+      <div className="mx-auto max-w-content px-6 py-24 md:py-32">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-12 items-end">
+          <div className="md:col-span-5">
+            <div className="font-mono text-[11px] uppercase tracking-wider text-muted">
+              Working numbers
             </div>
-          ))}
-        </div>
-        <div className="mt-10 pt-6 border-t border-white/20 max-w-3xl">
-          <p className="text-sm text-white/70 leading-relaxed">
-            Working numbers across TerraDebt coverage. Outcomes vary per program.
-          </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-slate leading-[1.05]">
+              Where TerraDebt programs land.
+            </h2>
+            <p className="mt-4 text-base text-muted max-w-md leading-relaxed">
+              Averages across active programs. Real outcomes vary with lender mix, debt size, and how soon you engage.
+            </p>
+          </div>
+
+          <div className="md:col-span-7">
+            <dl className="grid grid-cols-2 gap-x-10 gap-y-10">
+              {STATS.map((s) => (
+                <div key={s.label} className="border-t border-rule pt-5">
+                  <dt className="text-xs text-muted">{s.label}</dt>
+                  <dd className="mt-3 font-mono text-4xl md:text-5xl font-bold tracking-tighter text-slate">
+                    {s.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </div>
     </section>
