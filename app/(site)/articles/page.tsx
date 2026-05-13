@@ -2,11 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export const metadata: Metadata = {
-  title: "Articles | TerraDebt",
+  title: "Articles | TerraDebt Information Hub",
   description:
-    "Articles and working notes on business debt restructure. MCA, SBA, equipment, vendor, bank, and tax debt, written by Bar Elezra.",
+    "Articles and working notes on business debt restructure. MCA, SBA, equipment, vendor, bank, and tax debt.",
 };
 
 function readTime(md: string): number {
@@ -15,13 +17,12 @@ function readTime(md: string): number {
 }
 
 function topicFromSlug(slug: string): string {
-  if (slug.includes("mca")) return "MCA";
+  if (slug.includes("mca") || slug.includes("reverse") || slug.includes("coj") || slug.includes("ucc")) return "MCA";
   if (slug.includes("sba")) return "SBA";
   if (slug.includes("equipment")) return "Equipment";
   if (slug.includes("vendor")) return "Vendor";
-  if (slug.includes("bank")) return "Bank";
-  if (slug.includes("tax")) return "Tax";
-  if (slug.includes("coj")) return "Legal";
+  if (slug.includes("bank") || slug.includes("covenant")) return "Bank";
+  if (slug.includes("tax") || slug.includes("irs")) return "Tax";
   return "Guide";
 }
 
@@ -35,68 +36,67 @@ export default async function ArticlesIndex() {
   } catch {}
 
   const featured = articles[0];
-  const rest = articles.slice(1);
+  const second = articles.slice(1, 3);
+  const rest = articles.slice(3);
 
   return (
     <article>
-      <section className="bg-offwhite">
-        <div className="mx-auto max-w-content px-6 pt-14 pb-10">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Articles</span>
-          <h1 className="mt-3 font-bold tracking-tighter text-slate text-5xl md:text-6xl lg:text-7xl leading-[1.04]">
-            Articles and working notes.
+      {/* Breadcrumb + heading */}
+      <section className="bg-offwhite border-b border-rule">
+        <div className="mx-auto max-w-content px-6 py-4">
+          <Breadcrumb items={[{ label: "Articles" }]} />
+        </div>
+      </section>
+      <section className="bg-offwhite border-b border-rule">
+        <div className="mx-auto max-w-content px-6 pt-10 pb-8">
+          <span className="font-mono text-[11px] uppercase tracking-wider text-electric">
+            The TerraDebt archive
+          </span>
+          <h1 className="mt-3 font-bold tracking-tighter text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
+            All guides on business debt restructure
           </h1>
-          <p className="mt-5 text-lg text-muted max-w-2xl leading-relaxed">
-            Plain-spoken guides on MCA, SBA, equipment, vendor, bank, and tax debt. Written by operators who have done the workouts themselves.
+          <p className="mt-4 text-base md:text-lg text-muted max-w-3xl leading-relaxed">
+            Plain-spoken guides on MCA, SBA, equipment, vendor, bank, and tax debt. Written by operators who have run the workouts.
           </p>
         </div>
       </section>
 
+      {/* Featured + secondaries */}
       {featured && (
-        <section className="bg-offwhite">
-          <div className="mx-auto max-w-content px-6 pb-14">
-            <Link href={`/articles/${featured.slug}`} className="group grid md:grid-cols-12 gap-8 lg:gap-12 items-start no-underline border-t border-rule pt-8">
-              <div className="md:col-span-7">
-                {featured.heroImage && (
-                  <div className="relative aspect-[16/10] overflow-hidden bg-cream">
-                    <Image
-                      src={featured.heroImage}
-                      alt={featured.title}
-                      fill
-                      className="object-cover transition duration-500 group-hover:scale-[1.02]"
-                      sizes="(max-width: 768px) 100vw, 60vw"
-                      priority
-                    />
-                  </div>
-                )}
-              </div>
-              <div className="md:col-span-5 md:pt-2">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-electric">Featured · {topicFromSlug(featured.slug)}</span>
-                <h2 className="mt-3 font-bold tracking-tighter text-slate text-3xl md:text-4xl lg:text-5xl leading-tight group-hover:underline decoration-1 underline-offset-4">
-                  {featured.title}
-                </h2>
-                {featured.excerpt && (
-                  <p className="mt-4 text-base md:text-lg text-muted leading-relaxed">{featured.excerpt}</p>
-                )}
-                <div className="mt-4 font-mono text-[11px] uppercase tracking-wider text-muted">
-                  {readTime(featured.contentMd)} min read
+        <section className="bg-offwhite border-b border-rule">
+          <div className="mx-auto max-w-content px-6 py-10 md:py-12 grid md:grid-cols-12 gap-8">
+            <Link href={`/articles/${featured.slug}`} className="group md:col-span-8 block no-underline">
+              {featured.heroImage && (
+                <div className="relative aspect-[16/9] overflow-hidden bg-cream border border-rule">
+                  <Image
+                    src={featured.heroImage}
+                    alt={featured.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, 66vw"
+                    priority
+                  />
                 </div>
-              </div>
+              )}
+              <span className="mt-4 inline-block font-mono text-[11px] uppercase tracking-wider text-electric">
+                Featured · {topicFromSlug(featured.slug)}
+              </span>
+              <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl lg:text-5xl leading-tight group-hover:underline decoration-1 underline-offset-4">
+                {featured.title}
+              </h2>
+              {featured.excerpt && (
+                <p className="mt-3 text-base md:text-lg text-muted leading-relaxed">{featured.excerpt}</p>
+              )}
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-muted">
+                By {featured.author || "Bar Elezra"} · {readTime(featured.contentMd)} min read
+              </p>
             </Link>
-          </div>
-        </section>
-      )}
 
-      {rest.length > 0 && (
-        <section className="bg-offwhite">
-          <div className="mx-auto max-w-content px-6 pb-24">
-            <div className="border-t border-rule pt-6 pb-8">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">More articles</span>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {rest.map((a) => (
+            <div className="md:col-span-4 flex flex-col gap-6">
+              {second.map((a) => (
                 <Link key={a.id} href={`/articles/${a.slug}`} className="group block no-underline">
                   {a.heroImage && (
-                    <div className="relative aspect-[16/10] overflow-hidden bg-cream">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-cream border border-rule">
                       <Image
                         src={a.heroImage}
                         alt={a.title}
@@ -106,18 +106,54 @@ export default async function ArticlesIndex() {
                       />
                     </div>
                   )}
-                  <span className="mt-4 inline-block font-mono text-[10px] uppercase tracking-wider text-electric">
+                  <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-wider text-electric">
                     {topicFromSlug(a.slug)}
                   </span>
-                  <h3 className="mt-1.5 font-semibold tracking-tight text-slate text-lg md:text-xl leading-snug group-hover:underline decoration-1 underline-offset-4">
+                  <h3 className="mt-1 text-lg font-semibold tracking-tight text-slate leading-snug group-hover:underline decoration-1 underline-offset-4">
+                    {a.title}
+                  </h3>
+                  <p className="mt-1.5 font-mono text-[10px] uppercase tracking-wider text-muted">
+                    {readTime(a.contentMd)} min read
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {rest.length > 0 && (
+        <section className="bg-offwhite">
+          <div className="mx-auto max-w-content px-6 pb-16 pt-2">
+            <div className="border-t border-rule pt-5 pb-6">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">More guides</span>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+              {rest.map((a) => (
+                <Link key={a.id} href={`/articles/${a.slug}`} className="group block no-underline">
+                  {a.heroImage && (
+                    <div className="relative aspect-[16/10] overflow-hidden bg-cream border border-rule">
+                      <Image
+                        src={a.heroImage}
+                        alt={a.title}
+                        fill
+                        className="object-cover transition duration-500 group-hover:scale-[1.02]"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                  )}
+                  <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-wider text-electric">
+                    {topicFromSlug(a.slug)}
+                  </span>
+                  <h3 className="mt-1 text-base md:text-lg font-semibold tracking-tight text-slate leading-snug group-hover:underline decoration-1 underline-offset-4">
                     {a.title}
                   </h3>
                   {a.excerpt && (
-                    <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-3">{a.excerpt}</p>
+                    <p className="mt-1.5 text-sm text-muted leading-relaxed line-clamp-2">{a.excerpt}</p>
                   )}
-                  <div className="mt-3 font-mono text-[10px] uppercase tracking-wider text-muted">
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-muted">
                     {readTime(a.contentMd)} min read
-                  </div>
+                  </p>
                 </Link>
               ))}
             </div>
@@ -130,6 +166,8 @@ export default async function ArticlesIndex() {
           Articles are being prepared.
         </section>
       )}
+
+      <NewsletterStrip source="articles-index" />
     </article>
   );
 }

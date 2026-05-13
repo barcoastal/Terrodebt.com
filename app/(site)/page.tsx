@@ -1,23 +1,19 @@
-import { HubHero } from "@/components/site/HubHero";
-import { CoverageList } from "@/components/site/CoverageList";
-import { SituationPicker } from "@/components/site/SituationPicker";
-import { ToolsRow } from "@/components/site/ToolsRow";
-import { ArticlesBlock } from "@/components/site/ArticlesBlock";
-import { IndustryGrid } from "@/components/site/IndustryGrid";
-import { AboutStrip } from "@/components/site/AboutStrip";
-import { HelpLink } from "@/components/site/HelpLink";
+import { FeaturedEditorial } from "@/components/site/FeaturedEditorial";
+import { TopicShelves } from "@/components/site/TopicShelves";
+import { CalculatorsRow } from "@/components/site/CalculatorsRow";
+import { IndustriesCompact } from "@/components/site/IndustriesCompact";
+import { MethodologyStrip } from "@/components/site/MethodologyStrip";
+import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export default function Home() {
   return (
     <>
-      <HubHero />
-      <CoverageList />
-      <SituationPicker />
-      <ToolsRow />
-      <ArticlesBlock />
-      <IndustryGrid />
-      <AboutStrip />
-      <HelpLink />
+      <FeaturedEditorial />
+      <TopicShelves />
+      <CalculatorsRow />
+      <IndustriesCompact />
+      <MethodologyStrip />
+      <NewsletterStrip source="homepage-strip" />
     </>
   );
 }
