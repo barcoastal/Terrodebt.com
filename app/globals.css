@@ -2,28 +2,37 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-slate: #1E293B;
-  --color-slate-soft: #334155;
+  /* New identity tokens */
+  --color-ink: #0A0A0A;
+  --color-ink-soft: #1F1F1F;
+  --color-paper: #FFFFFF;
+  --color-paper-soft: #F5F5F4;
   --color-electric: #10B981;
   --color-electric-soft: #34D399;
-  --color-offwhite: #FAFAF7;
-  --color-cream: #F5F2EA;
-  --color-rule: #E5E0D5;
-  --color-border: #E2E8F0;
-  --color-muted: #64748B;
+  --color-rule: #E5E5E4;
+  --color-border: #E5E5E4;
+  --color-muted: #525252;
+  --color-banner: #F0EDEA;
   --color-white: #FFFFFF;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-mono: var(--font-mono), "SF Mono", Menlo, monospace;
+
+  /* Legacy aliases pointing at the new values so existing components keep working */
+  --color-slate: #0A0A0A;
+  --color-slate-soft: #1F1F1F;
+  --color-offwhite: #FFFFFF;
+  --color-cream: #F0EDEA;
+
+  --font-sans: var(--font-sans-geist), system-ui, sans-serif;
+  --font-mono: var(--font-mono-geist), "SF Mono", Menlo, monospace;
   --max-width-content: 72rem;
 
-  --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 12px rgb(15 23 42 / 0.04);
-  --shadow-elevated: 0 1px 2px rgb(15 23 42 / 0.04), 0 12px 32px rgb(15 23 42 / 0.08);
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 12px rgb(0 0 0 / 0.04);
+  --shadow-elevated: 0 1px 2px rgb(0 0 0 / 0.04), 0 12px 32px rgb(0 0 0 / 0.08);
   --shadow-glow: 0 0 0 1px rgb(16 185 129 / 0.1), 0 8px 32px rgb(16 185 129 / 0.12);
 }
 
 @layer base {
   body {
-    @apply bg-offwhite text-slate;
+    @apply bg-paper text-ink;
     font-feature-settings: "ss01", "cv11";
   }
   h3, h4 { @apply font-semibold tracking-tight; }
@@ -36,7 +45,7 @@
   .font-mono { font-family: var(--font-mono); font-feature-settings: "ss02", "cv01"; }
 
   .bg-grain {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.117 0 0 0 0 0.16 0 0 0 0 0.231 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.04 0 0 0 0 0.04 0 0 0 0 0.04 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
   .bg-radial-electric {
@@ -48,12 +57,12 @@
   }
 
   .surface-card {
-    @apply bg-white border border-border rounded-2xl;
+    @apply bg-white border border-border;
     box-shadow: var(--shadow-soft);
   }
 
   .surface-card-elevated {
-    @apply bg-white border border-border rounded-2xl;
+    @apply bg-white border border-border;
     box-shadow: var(--shadow-elevated);
   }
 }

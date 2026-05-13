@@ -35,11 +35,15 @@ const TOPIC_SHELVES = [
   { name: "Business Tax Debt", slug: "business-tax-debt", match: ["tax", "irs"] },
 ];
 
-function countMatchesForTopic(slug: string, keywords: string[]): number {
-  // Count product guides only (we render product category cards in the first shelf)
-  // Used for the big shelf card "[N guides]" mono count.
-  return keywords.length; // placeholder; actual article counts come from DB below
-}
+// Pair each product slug with a photographic backdrop pulled from /public/images
+const PRODUCT_BACKDROP: Record<string, string> = {
+  "mca-debt-relief": "/images/industry-trucking.png",
+  "sba-loan-modification": "/images/industry-construction.png",
+  "equipment-finance-restructure": "/images/industry-auto.png",
+  "vendor-supplier-debt": "/images/industry-retail.png",
+  "bank-loan-workout": "/images/industry-restaurants.png",
+  "business-tax-debt": "/images/industry-salons.png",
+};
 
 export async function TopicShelves() {
   let allArticles: Article[] = [];
@@ -76,51 +80,68 @@ export async function TopicShelves() {
 
   return (
     <>
-      {/* Topic cards shelf */}
-      <section className="bg-white border-b border-rule">
+      {/* Topic photo cards shelf */}
+      <section className="bg-paper border-b border-rule">
         <div className="mx-auto max-w-content px-6 py-12 md:py-14">
-          <div className="flex items-end justify-between gap-6 border-b border-rule pb-4">
+          <div className="flex items-end justify-between gap-6 border-b border-ink pb-4">
             <div>
-              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">
+              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
                 Browse by topic
               </span>
-              <h2 className="mt-1 font-bold tracking-tighter text-slate text-2xl md:text-3xl leading-tight">
+              <h2 className="mt-1 font-bold tracking-tight text-ink text-2xl md:text-3xl leading-tight">
                 The six coverage areas
               </h2>
             </div>
             <Link
               href="/services"
-              className="font-mono text-[11px] uppercase tracking-wider text-electric no-underline hover:underline shrink-0"
+              className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric no-underline hover:underline shrink-0"
             >
               All topics →
             </Link>
           </div>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-rule border border-rule">
-            {PRODUCTS.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/services/${p.slug}`}
-                className="group bg-slate text-white p-6 md:p-7 no-underline transition hover:bg-slate-soft block"
-              >
-                <span className="font-mono text-[10px] uppercase tracking-wider text-electric-soft">
-                  {p.category}
-                </span>
-                <h3 className="mt-2 text-xl md:text-2xl font-bold tracking-tight leading-snug text-white">
-                  {p.name}
-                </h3>
-                <p className="mt-2 text-sm text-white/70 leading-relaxed line-clamp-2">
-                  {p.subline}
-                </p>
-                <div className="mt-5 flex items-center justify-between text-xs font-mono uppercase tracking-wider">
-                  <span className="text-white/60">
-                    {counts[p.slug] ?? 0} {counts[p.slug] === 1 ? "guide" : "guides"}
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink border border-ink">
+            {PRODUCTS.map((p, i) => {
+              const num = String(i + 1).padStart(2, "0");
+              const bg = PRODUCT_BACKDROP[p.slug] ?? "/images/hero.png";
+              return (
+                <Link
+                  key={p.slug}
+                  href={`/services/${p.slug}`}
+                  className="group relative overflow-hidden bg-ink block no-underline aspect-[4/3]"
+                >
+                  <Image
+                    src={bg}
+                    alt=""
+                    fill
+                    className="object-cover opacity-60 transition duration-700 group-hover:opacity-50 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/55" aria-hidden />
+                  <span
+                    aria-hidden
+                    className="absolute top-4 left-5 font-mono font-bold text-electric leading-none text-7xl md:text-8xl"
+                  >
+                    {num}
                   </span>
-                  <span className="text-electric-soft border-b border-transparent group-hover:border-electric-soft">
-                    Read the guide →
-                  </span>
-                </div>
-              </Link>
-            ))}
+                  <div className="absolute inset-x-5 bottom-5">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-electric-soft">
+                      {p.category}
+                    </span>
+                    <h3 className="mt-1 text-2xl md:text-3xl font-bold tracking-tight text-white leading-tight">
+                      {p.name}
+                    </h3>
+                    <div className="mt-3 flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.18em]">
+                      <span className="text-white/60">
+                        {counts[p.slug] ?? 0} {counts[p.slug] === 1 ? "guide" : "guides"}
+                      </span>
+                      <span className="text-electric-soft border-b border-transparent group-hover:border-electric-soft">
+                        Read →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -134,45 +155,48 @@ export async function TopicShelves() {
         const cards = matched.slice(0, 4);
         if (cards.length === 0) return null;
         return (
-          <section key={shelf.slug} className="bg-offwhite border-b border-rule">
+          <section key={shelf.slug} className="bg-paper-soft border-b border-rule">
             <div className="mx-auto max-w-content px-6 py-10 md:py-12">
-              <div className="flex items-end justify-between gap-6 border-b border-rule pb-3">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-muted">
+              <div className="flex items-end justify-between gap-6 border-b border-ink pb-3">
+                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
                   Latest on {shelf.name}
                 </span>
                 <Link
                   href={`/services/${shelf.slug}`}
-                  className="font-mono text-[11px] uppercase tracking-wider text-electric no-underline hover:underline shrink-0"
+                  className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric no-underline hover:underline shrink-0"
                 >
                   Topic page →
                 </Link>
               </div>
               <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {cards.map((a) => (
-                  <Link key={a.slug} href={`/articles/${a.slug}`} className="group block no-underline">
+                  <Link key={a.slug} href={`/articles/${a.slug}`} className="group block no-underline bg-paper border border-ink">
+                    <div className="h-1 bg-electric w-full" aria-hidden />
                     {a.heroImage && (
-                      <div className="relative aspect-[16/10] overflow-hidden bg-cream border border-rule">
+                      <div className="relative aspect-[16/10] overflow-hidden bg-paper-soft">
                         <Image
                           src={a.heroImage}
                           alt={a.title}
                           fill
-                          className="object-cover transition duration-500 group-hover:scale-[1.02]"
+                          className="object-cover transition duration-500 group-hover:scale-[1.03]"
                           sizes="(max-width: 768px) 100vw, 25vw"
                         />
+                        <span className="absolute top-3 left-3 bg-ink text-white px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em]">
+                          {topicLabel(a.slug)}
+                        </span>
                       </div>
                     )}
-                    <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-wider text-electric">
-                      {topicLabel(a.slug)}
-                    </span>
-                    <h3 className="mt-1 text-base md:text-lg font-semibold tracking-tight text-slate leading-snug group-hover:underline decoration-1 underline-offset-4">
-                      {a.title}
-                    </h3>
-                    {a.excerpt && (
-                      <p className="mt-1.5 text-sm text-muted leading-relaxed line-clamp-2">{a.excerpt}</p>
-                    )}
-                    <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-muted">
-                      {readTime(a.contentMd)} min read
-                    </p>
+                    <div className="p-4">
+                      <h3 className="text-base md:text-lg font-bold tracking-tight text-ink leading-snug group-hover:text-electric transition">
+                        {a.title}
+                      </h3>
+                      {a.excerpt && (
+                        <p className="mt-1.5 text-sm text-muted leading-relaxed line-clamp-2">{a.excerpt}</p>
+                      )}
+                      <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+                        {readTime(a.contentMd)} min read
+                      </p>
+                    </div>
                   </Link>
                 ))}
               </div>

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { PRODUCTS } from "@/lib/product-content";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
-import { SearchPanel } from "./SearchPanel";
 
 const TOOLS = [
   { href: "/tools/apr-calculator", label: "Effective APR Calculator", desc: "Compute the real annualized cost of an MCA" },
@@ -20,20 +19,19 @@ const POPULAR_GUIDES = [
   { href: "/articles/coj-defense-basics", label: "COJ defense basics" },
 ];
 
+const CATEGORY_NAV = [
+  { href: "/services/mca-debt-relief", label: "MCA Debt Relief" },
+  { href: "/services/sba-loan-modification", label: "SBA Loans" },
+  { href: "/services/equipment-finance-restructure", label: "Equipment" },
+  { href: "/services/vendor-supplier-debt", label: "Vendor" },
+  { href: "/services/bank-loan-workout", label: "Bank" },
+  { href: "/services/business-tax-debt", label: "Tax Debt" },
+];
+
 export function MegaHeader() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 4);
-    }
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setOpenMenu(null);
@@ -42,80 +40,101 @@ export function MegaHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-40 bg-offwhite border-b border-rule transition-shadow ${
-        scrolled ? "shadow-[0_1px_0_rgba(15,23,42,0.04),0_8px_24px_rgba(15,23,42,0.06)]" : ""
-      }`}
+      className="sticky top-0 z-40 bg-paper border-b border-ink"
       onMouseLeave={() => setOpenMenu(null)}
     >
-      {/* Utility bar */}
-      <div className="hidden md:block bg-slate text-white/85">
-        <div className="mx-auto max-w-content px-6 flex items-center justify-between text-[11px] font-mono uppercase tracking-wider h-8">
-          <span>TerraDebt Information Hub</span>
-          <div className="flex items-center gap-5">
-            <Link href="/about" className="text-white/85 hover:text-electric no-underline transition">About</Link>
-            <Link href="/contact" className="text-white/85 hover:text-electric no-underline transition">Contact</Link>
-            <Link href="/get-started" className="text-white/85 hover:text-electric no-underline transition">Free assessment</Link>
+      {/* Row 1: black utility bar */}
+      <div className="hidden md:block bg-ink text-white">
+        <div className="mx-auto max-w-content px-6 flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.18em] h-8">
+          <span className="text-white/90">TerraDebt Information Hub</span>
+          <div className="flex items-center gap-6">
+            <Link href="/about" className="text-white/80 hover:text-electric-soft no-underline transition">About</Link>
+            <Link href="/contact" className="text-white/80 hover:text-electric-soft no-underline transition">Contact</Link>
+            <Link href="/#subscribe" className="text-white/80 hover:text-electric-soft no-underline transition">Subscribe</Link>
           </div>
         </div>
       </div>
 
-      {/* Main row */}
-      <div className="mx-auto max-w-content px-6 flex items-center justify-between gap-6 py-3">
-        <div className="flex items-center gap-2 md:gap-8">
-          <Link href="/" className="flex items-center no-underline" aria-label="TerraDebt home">
-            <Image src="/logos/terradebt-lockup.svg" alt="TerraDebt" width={150} height={22} priority />
-          </Link>
-          <nav className="hidden md:flex items-center gap-1 text-sm text-slate">
-            <NavItem
-              label="Topics"
-              active={openMenu === "topics"}
-              onEnter={() => setOpenMenu("topics")}
-            />
-            <NavItem
-              label="Industries"
-              active={openMenu === "industries"}
-              onEnter={() => setOpenMenu("industries")}
-            />
-            <NavItem
-              label="Tools"
-              active={openMenu === "tools"}
-              onEnter={() => setOpenMenu("tools")}
-            />
-            <NavItem
-              label="Guides"
-              active={openMenu === "guides"}
-              onEnter={() => setOpenMenu("guides")}
-            />
-            <Link
-              href="/about"
-              className="px-3 py-2 no-underline text-slate hover:text-electric transition"
-              onMouseEnter={() => setOpenMenu(null)}
-            >
-              About
+      {/* Row 2: main bar, pure white */}
+      <div className="bg-paper">
+        <div className="mx-auto max-w-content px-6 flex items-center justify-between gap-6 h-16 md:h-20">
+          <div className="flex items-center gap-8">
+            <Link href="/" className="flex items-center no-underline" aria-label="TerraDebt home">
+              <Image src="/logos/terradebt-lockup.svg" alt="TerraDebt" width={150} height={22} priority />
             </Link>
-          </nav>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="hidden sm:block">
-            <SearchPanel />
+            <nav className="hidden md:flex items-center gap-1 text-[15px] font-semibold tracking-tight text-ink">
+              <NavItem
+                label="Topics"
+                active={openMenu === "topics"}
+                onEnter={() => setOpenMenu("topics")}
+              />
+              <NavItem
+                label="Industries"
+                active={openMenu === "industries"}
+                onEnter={() => setOpenMenu("industries")}
+              />
+              <NavItem
+                label="Tools"
+                active={openMenu === "tools"}
+                onEnter={() => setOpenMenu("tools")}
+              />
+              <NavItem
+                label="Guides"
+                active={openMenu === "guides"}
+                onEnter={() => setOpenMenu("guides")}
+              />
+              <Link
+                href="/about"
+                className="px-4 py-2 no-underline text-ink hover:text-electric transition"
+                onMouseEnter={() => setOpenMenu(null)}
+              >
+                About
+              </Link>
+            </nav>
           </div>
-          <Link
-            href="/get-started"
-            className="hidden md:inline-block bg-slate text-white px-3.5 py-2 text-xs font-mono uppercase tracking-wider no-underline hover:bg-slate-soft transition"
-          >
-            Get a free assessment
-          </Link>
-          <button
-            type="button"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-label="Toggle menu"
-            className="md:hidden inline-flex items-center justify-center border border-rule bg-white p-2 text-slate"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              {mobileOpen ? <path d="M18 6 6 18M6 6l12 12" /> : <><path d="M3 12h18" /><path d="M3 6h18" /><path d="M3 18h18" /></>}
-            </svg>
-          </button>
+
+          <div className="flex items-center gap-3">
+            <Link
+              href="/get-started"
+              className="hidden md:inline-flex items-center bg-ink text-white px-5 py-3 text-xs font-mono uppercase tracking-[0.18em] no-underline hover:bg-electric hover:text-ink transition"
+            >
+              Free Assessment
+            </Link>
+            <button
+              type="button"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label="Toggle menu"
+              className="md:hidden inline-flex items-center justify-center border border-ink bg-paper p-2 text-ink"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                {mobileOpen ? <path d="M18 6 6 18M6 6l12 12" /> : <><path d="M3 12h18" /><path d="M3 6h18" /><path d="M3 18h18" /></>}
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Row 3: category subnav, with strong rules */}
+      <div className="hidden md:block bg-paper border-t border-ink">
+        <div className="mx-auto max-w-content px-6">
+          <nav className="flex items-stretch divide-x divide-rule">
+            {CATEGORY_NAV.map((c) => {
+              const active = pathname?.startsWith(c.href);
+              return (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className={`group flex-1 text-center px-4 py-3 no-underline text-[12px] font-mono uppercase tracking-[0.14em] transition ${
+                    active ? "text-electric" : "text-ink hover:text-electric"
+                  }`}
+                >
+                  <span className={`inline-block pb-1 border-b-2 ${active ? "border-electric" : "border-transparent group-hover:border-electric"}`}>
+                    {c.label}
+                  </span>
+                </Link>
+              );
+            })}
+          </nav>
         </div>
       </div>
 
@@ -130,7 +149,7 @@ export function MegaHeader() {
                   <Link
                     key={p.slug}
                     href={`/services/${p.slug}`}
-                    className="group flex items-baseline gap-3 border-t border-rule pt-3 no-underline text-slate hover:text-electric transition"
+                    className="group flex items-baseline gap-3 border-t border-rule pt-3 no-underline text-ink hover:text-electric transition"
                   >
                     <span className="text-sm font-medium tracking-tight">{p.name}</span>
                     <span className="ml-auto text-muted group-hover:text-electric" aria-hidden>→</span>
@@ -143,7 +162,7 @@ export function MegaHeader() {
               <ul className="mt-4 space-y-2.5 text-sm">
                 {POPULAR_GUIDES.map((g) => (
                   <li key={g.href}>
-                    <Link href={g.href} className="text-slate hover:text-electric no-underline transition">
+                    <Link href={g.href} className="text-ink hover:text-electric no-underline transition">
                       {g.label}
                     </Link>
                   </li>
@@ -152,10 +171,10 @@ export function MegaHeader() {
             </div>
             <div className="md:col-span-2">
               <PanelHeading>Featured</PanelHeading>
-              <Link href="/articles" className="mt-4 block border border-rule bg-offwhite p-4 no-underline transition hover:border-slate">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-electric">Editorial</span>
-                <p className="mt-1.5 text-sm font-semibold text-slate leading-snug">All TerraDebt guides</p>
-                <p className="mt-1 text-xs text-muted">Browse the full archive</p>
+              <Link href="/articles" className="mt-4 block border border-ink bg-paper p-4 no-underline transition hover:bg-ink hover:text-white group">
+                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-electric">Editorial</span>
+                <p className="mt-1.5 text-sm font-semibold text-ink group-hover:text-white leading-snug">All TerraDebt guides</p>
+                <p className="mt-1 text-xs text-muted group-hover:text-white/70">Browse the full archive</p>
               </Link>
             </div>
           </div>
@@ -170,7 +189,7 @@ export function MegaHeader() {
               <Link
                 key={v.slug}
                 href={`/industries/${v.slug}`}
-                className="group flex items-baseline gap-3 border-t border-rule pt-3 no-underline text-slate hover:text-electric transition"
+                className="group flex items-baseline gap-3 border-t border-rule pt-3 no-underline text-ink hover:text-electric transition"
               >
                 <span className="text-sm font-medium tracking-tight">{v.name}</span>
                 <span className="ml-auto text-muted group-hover:text-electric" aria-hidden>→</span>
@@ -180,7 +199,7 @@ export function MegaHeader() {
           <div className="mt-6 pt-4 border-t border-rule">
             <Link
               href="/industries"
-              className="font-mono text-[11px] uppercase tracking-wider text-electric no-underline hover:underline"
+              className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric no-underline hover:underline"
             >
               All industries →
             </Link>
@@ -196,10 +215,10 @@ export function MegaHeader() {
               <Link
                 key={t.href}
                 href={t.href}
-                className="bg-offwhite p-5 no-underline transition hover:bg-white"
+                className="bg-paper p-5 no-underline transition hover:bg-paper-soft"
               >
-                <span className="font-mono text-[10px] uppercase tracking-wider text-electric">Tool</span>
-                <p className="mt-1.5 text-sm font-semibold text-slate">{t.label}</p>
+                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-electric">Tool</span>
+                <p className="mt-1.5 text-sm font-semibold text-ink">{t.label}</p>
                 <p className="mt-1.5 text-xs text-muted leading-relaxed">{t.desc}</p>
               </Link>
             ))}
@@ -220,7 +239,7 @@ export function MegaHeader() {
                   { href: "/articles/irs-business-tax-debt-options", label: "IRS business tax debt options" },
                 ]).map((g) => (
                   <li key={g.href}>
-                    <Link href={g.href} className="text-slate hover:text-electric no-underline transition">
+                    <Link href={g.href} className="text-ink hover:text-electric no-underline transition">
                       {g.label}
                     </Link>
                   </li>
@@ -230,26 +249,10 @@ export function MegaHeader() {
             <div className="md:col-span-5">
               <PanelHeading>Resources</PanelHeading>
               <ul className="mt-4 space-y-2.5 text-sm">
-                <li>
-                  <Link href="/articles" className="text-slate hover:text-electric no-underline transition">
-                    All articles
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/glossary" className="text-slate hover:text-electric no-underline transition">
-                    Glossary
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools" className="text-slate hover:text-electric no-underline transition">
-                    All tools
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/industries" className="text-slate hover:text-electric no-underline transition">
-                    Industries
-                  </Link>
-                </li>
+                <li><Link href="/articles" className="text-ink hover:text-electric no-underline transition">All articles</Link></li>
+                <li><Link href="/glossary" className="text-ink hover:text-electric no-underline transition">Glossary</Link></li>
+                <li><Link href="/tools" className="text-ink hover:text-electric no-underline transition">All tools</Link></li>
+                <li><Link href="/industries" className="text-ink hover:text-electric no-underline transition">Industries</Link></li>
               </ul>
             </div>
           </div>
@@ -258,11 +261,8 @@ export function MegaHeader() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-rule bg-offwhite">
-          <div className="px-6 py-4">
-            <SearchPanel />
-          </div>
-          <nav className="border-t border-rule">
+        <div className="md:hidden border-t border-ink bg-paper">
+          <nav>
             <MobileGroup label="Topics">
               {PRODUCTS.map((p) => (
                 <MobileLink key={p.slug} href={`/services/${p.slug}`}>{p.name}</MobileLink>
@@ -300,8 +300,8 @@ function NavItem({ label, active, onEnter }: { label: string; active: boolean; o
       type="button"
       onMouseEnter={onEnter}
       onClick={onEnter}
-      className={`px-3 py-2 text-sm no-underline transition ${
-        active ? "text-electric" : "text-slate hover:text-electric"
+      className={`px-4 py-2 text-[15px] font-semibold no-underline transition ${
+        active ? "text-electric" : "text-ink hover:text-electric"
       }`}
     >
       {label}
@@ -311,7 +311,7 @@ function NavItem({ label, active, onEnter }: { label: string; active: boolean; o
 
 function MegaPanel({ children, onClose }: { children: React.ReactNode; onClose: () => void }) {
   return (
-    <div className="absolute inset-x-0 top-full border-t border-rule bg-white shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+    <div className="absolute inset-x-0 top-full border-t border-ink bg-white shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
       <div className="mx-auto max-w-content px-6 py-7">
         {children}
       </div>
@@ -319,7 +319,7 @@ function MegaPanel({ children, onClose }: { children: React.ReactNode; onClose: 
         type="button"
         onClick={onClose}
         aria-label="Close menu"
-        className="absolute right-6 top-3 text-muted hover:text-slate"
+        className="absolute right-6 top-3 text-muted hover:text-ink"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
       </button>
@@ -329,7 +329,7 @@ function MegaPanel({ children, onClose }: { children: React.ReactNode; onClose: 
 
 function PanelHeading({ children }: { children: React.ReactNode }) {
   return (
-    <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{children}</span>
+    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">{children}</span>
   );
 }
 
@@ -337,7 +337,7 @@ function MobileGroup({ label, children }: { label: string; children: React.React
   return (
     <div className="border-t border-rule">
       <div className="px-6 pt-4">
-        <span className="font-mono text-[10px] uppercase tracking-wider text-muted">{label}</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">{label}</span>
       </div>
       <div className="px-6 py-3 flex flex-col">{children}</div>
     </div>
@@ -346,7 +346,7 @@ function MobileGroup({ label, children }: { label: string; children: React.React
 
 function MobileLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="block py-1.5 text-sm text-slate no-underline hover:text-electric transition">
+    <Link href={href} className="block py-1.5 text-sm text-ink no-underline hover:text-electric transition">
       {children}
     </Link>
   );

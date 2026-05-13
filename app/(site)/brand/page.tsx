@@ -17,7 +17,7 @@ export default function BrandPage() {
         </p>
       </header>
 
-      <Section number="01" title="Logo system" description="The TerraDebt mark is a geometric T inside a slate square, paired with the wordmark in Inter Bold. The emerald green dot is the brand's signal element. It always appears.">
+      <Section number="01" title="Logo system" description="The TerraDebt mark is a geometric T inside a black square, paired with the wordmark in Geist Bold. The emerald green dot is the brand's signal element. It always appears.">
         <div className="grid md:grid-cols-2 gap-6">
           <LogoCard label="Default lockup" file="/logos/terradebt-lockup.svg" bg="bg-white" />
           <LogoCard label="Wordmark" file="/logos/terradebt-wordmark.svg" bg="bg-white" />
@@ -53,7 +53,7 @@ export default function BrandPage() {
         </div>
       </Section>
 
-      <Section number="03" title="Typography" description="Inter, variable, via next/font. One typeface. No pairing.">
+      <Section number="03" title="Typography" description="Geist, variable, via next/font. One typeface. No pairing.">
         <div className="space-y-6">
           <TypeRow tag="Display" cls="text-5xl md:text-6xl font-bold tracking-tight" sample="Resolve stacked MCAs with a tailored program." />
           <TypeRow tag="H1" cls="text-4xl md:text-5xl font-bold tracking-tight" sample="Settle stacked MCAs for less than you owe." />

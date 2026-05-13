@@ -71,84 +71,87 @@ export async function FeaturedEditorial() {
   const stack = articles.slice(1, 5);
 
   return (
-    <section className="bg-offwhite border-b border-rule">
+    <section className="bg-paper border-b border-ink">
       <div className="mx-auto max-w-content px-6 py-12 md:py-16 grid md:grid-cols-12 gap-10">
         {/* Featured */}
         <div className="md:col-span-7">
-          <Link href={`/articles/${featured.slug}`} className="group block no-underline">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-electric">
-              Featured guide
-            </span>
+          <Link href={`/articles/${featured.slug}`} className="group relative block no-underline overflow-hidden bg-ink aspect-[16/11]">
             {featured.heroImage && (
-              <div className="mt-4 relative aspect-[16/10] overflow-hidden bg-cream border border-rule">
-                <Image
-                  src={featured.heroImage}
-                  alt={featured.title}
-                  fill
-                  className="object-cover transition duration-500 group-hover:scale-[1.02]"
-                  sizes="(max-width: 768px) 100vw, 60vw"
-                  priority
-                />
-              </div>
+              <Image
+                src={featured.heroImage}
+                alt={featured.title}
+                fill
+                className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                sizes="(max-width: 768px) 100vw, 60vw"
+                priority
+              />
             )}
-            <h1 className="mt-5 font-bold tracking-tighter text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.05] group-hover:underline decoration-1 underline-offset-4">
-              {featured.title}
-            </h1>
-            {featured.excerpt && (
-              <p className="mt-4 text-base md:text-lg text-muted leading-relaxed max-w-2xl">
-                {featured.excerpt}
-              </p>
-            )}
-            <div className="mt-4 flex items-center gap-3 font-mono text-[11px] uppercase tracking-wider text-muted">
-              <span>By {featured.author || "Bar Elezra"}</span>
-              <span className="text-rule">·</span>
-              <span>Updated {formatDate(featured.publishedAt ?? featured.createdAt)}</span>
-              <span className="text-rule">·</span>
-              <span>{readTime(featured.contentMd)} min read</span>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" aria-hidden />
+            <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
+              <span className="bg-electric text-ink px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.2em] font-bold">
+                Featured Guide
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/80">
+                {readTime(featured.contentMd)} min read
+              </span>
             </div>
-            <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-slate border-b border-slate pb-0.5 group-hover:border-electric group-hover:text-electric transition">
-              Read the guide
-              <span aria-hidden>→</span>
+            <div className="absolute inset-x-5 bottom-5 md:inset-x-7 md:bottom-7">
+              <h1 className="font-bold tracking-tight text-white text-2xl md:text-4xl lg:text-5xl leading-[1.05]">
+                {featured.title}
+              </h1>
+              {featured.excerpt && (
+                <p className="mt-3 text-sm md:text-base text-white/80 leading-relaxed max-w-2xl line-clamp-2">
+                  {featured.excerpt}
+                </p>
+              )}
+              <div className="mt-4 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-white/70">
+                <span>By {featured.author || "Bar Elezra"}</span>
+                <span className="text-white/30">·</span>
+                <span>Updated {formatDate(featured.publishedAt ?? featured.createdAt)}</span>
+              </div>
             </div>
           </Link>
         </div>
 
         {/* Stack */}
         <aside className="md:col-span-5">
-          <div className="border-t border-rule pt-3 flex items-center justify-between">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">
+          <div className="border-t-2 border-ink pt-3 flex items-center justify-between">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink font-semibold">
               More from TerraDebt
             </span>
             <Link
               href="/articles"
-              className="font-mono text-[11px] uppercase tracking-wider text-electric no-underline hover:underline"
+              className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric no-underline hover:underline"
             >
               All guides →
             </Link>
           </div>
           <ul className="mt-2 divide-y divide-rule">
-            {(stack.length > 0 ? stack : []).map((a) => (
+            {(stack.length > 0 ? stack : []).map((a, i) => (
               <li key={a.slug}>
                 <Link
                   href={`/articles/${a.slug}`}
                   className="group flex items-start gap-4 py-4 no-underline"
                 >
+                  <span className="font-mono text-[11px] font-bold text-electric shrink-0 mt-1.5 w-6">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   {a.heroImage && (
-                    <div className="relative h-16 w-24 shrink-0 overflow-hidden bg-cream border border-rule">
+                    <div className="relative h-16 w-20 shrink-0 overflow-hidden bg-paper-soft">
                       <Image
                         src={a.heroImage}
                         alt={a.title}
                         fill
                         className="object-cover"
-                        sizes="96px"
+                        sizes="80px"
                       />
                     </div>
                   )}
-                  <div className="min-w-0">
-                    <p className="text-sm md:text-base font-semibold tracking-tight text-slate leading-snug group-hover:underline decoration-1 underline-offset-4">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm md:text-base font-bold tracking-tight text-ink leading-snug group-hover:text-electric transition">
                       {a.title}
                     </p>
-                    <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted">
+                    <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
                       {topicFromSlug(a.slug)} · {readTime(a.contentMd)} min
                     </p>
                   </div>
