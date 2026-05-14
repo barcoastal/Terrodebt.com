@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Disclosure | TerraDebt MCA Debt Relief",
-  description: "TerraDebt is not a law firm. We coordinate licensed attorneys in your state. Outcomes vary. Read the full disclosure for our services and programs.",
+  title: "Disclosure | Freshline Advisory MCA Debt Relief",
+  description: "Freshline Advisory is not a law firm. We coordinate licensed attorneys in your state. Outcomes vary. Read the full disclosure for our services and programs.",
 };
 
 export default function DisclosurePage() {
@@ -9,12 +9,12 @@ export default function DisclosurePage() {
       <h1>Disclosure</h1>
 
       <p>
-        TerraDebt is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309.
+        Freshline Advisory is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309.
       </p>
 
       <h2>Not a debt settlement service</h2>
       <p>
-        TerraDebt provides resolution services for merchant cash advance (MCA) debt held by commercial businesses. We do not provide consumer debt settlement, consumer credit counseling, or services governed by the Telemarketing Sales Rule&apos;s debt relief services provisions, which apply to consumer debts. The services described on this site are commercial in nature and are intended for businesses, not individuals seeking consumer relief.
+        Freshline Advisory provides resolution services for merchant cash advance (MCA) debt held by commercial businesses. We do not provide consumer debt settlement, consumer credit counseling, or services governed by the Telemarketing Sales Rule&apos;s debt relief services provisions, which apply to consumer debts. The services described on this site are commercial in nature and are intended for businesses, not individuals seeking consumer relief.
       </p>
 
       <h2>Free assessment and free calculators</h2>
@@ -29,7 +29,7 @@ export default function DisclosurePage() {
 
       <h2>Not a law firm</h2>
       <p>
-        TerraDebt is not a law firm and does not provide legal advice. When a matter requires legal representation, including defense against confessions of judgment, UCC enforcement actions, or active litigation, we coordinate with attorneys in our network who are licensed in the relevant state. An attorney-client relationship is established only after you and the attorney sign a separate engagement agreement, and any legal fees are charged separately by the attorney.
+        Freshline Advisory is not a law firm and does not provide legal advice. When a matter requires legal representation, including defense against confessions of judgment, UCC enforcement actions, or active litigation, we coordinate with attorneys in our network who are licensed in the relevant state. An attorney-client relationship is established only after you and the attorney sign a separate engagement agreement, and any legal fees are charged separately by the attorney.
       </p>
 
       <h2>Effect on credit</h2>
@@ -44,7 +44,7 @@ export default function DisclosurePage() {
 
       <h2>Voluntary engagement</h2>
       <p>
-        Engaging TerraDebt is voluntary. You may pursue MCA debt resolution on your own, with separate counsel, or with another firm. We encourage you to compare options and to ask any firm to walk you through their full fee structure before signing an engagement agreement.
+        Engaging Freshline Advisory is voluntary. You may pursue MCA debt resolution on your own, with separate counsel, or with another firm. We encourage you to compare options and to ask any firm to walk you through their full fee structure before signing an engagement agreement.
       </p>
     </article>
   );

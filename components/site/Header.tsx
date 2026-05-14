@@ -38,8 +38,8 @@ export function SiteHeader() {
       {/* Main bar */}
       <div className="bg-paper">
         <div className="mx-auto max-w-content px-6 flex items-center justify-between gap-6 h-16 md:h-20">
-          <Link href="/" className="flex items-center no-underline" aria-label="TerraDebt home">
-            <Image src="/logos/terradebt-lockup.svg" alt="TerraDebt" width={150} height={22} priority />
+          <Link href="/" className="flex items-center no-underline" aria-label="Freshline Advisory home">
+            <Image src="/logos/freshline-lockup.svg" alt="Freshline Advisory" width={150} height={22} priority />
           </Link>
           <nav className="hidden md:flex items-center gap-7 text-[11px] font-mono uppercase tracking-[0.18em] text-ink">
             {NAV.map((n) => {

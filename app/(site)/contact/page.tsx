@@ -1,8 +1,8 @@
 import { LeadForm } from "@/components/lead/LeadForm";
 
 export const metadata = {
-  title: "Contact TerraDebt | Free MCA Debt Assessment",
-  description: "Request a free assessment for stacked MCA debt. A TerraDebt advisor will respond within one business hour. Free calculators available without contact.",
+  title: "Contact Freshline Advisory | Free MCA Debt Assessment",
+  description: "Request a free assessment for stacked MCA debt. A Freshline Advisory advisor will respond within one business hour. Free calculators available without contact.",
 };
 
 export default function ContactPage() {
@@ -10,12 +10,12 @@ export default function ContactPage() {
     <section className="mx-auto max-w-content px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
       <div>
         <h1 className="text-4xl font-bold">Contact</h1>
-        <p className="mt-4 text-muted">Fill out the form and a TerraDebt advisor will reach out within one business hour.</p>
+        <p className="mt-4 text-muted">Fill out the form and a Freshline Advisory advisor will reach out within one business hour.</p>
 
         <div className="mt-8 space-y-6">
           <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-muted">Email</div>
-            <div className="mt-1 text-lg text-slate">hello@terradebt.com</div>
+            <div className="mt-1 text-lg text-slate">hello@freshlineadvisory.com</div>
           </div>
           <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-muted">Office</div>
@@ -24,7 +24,7 @@ export default function ContactPage() {
               6301 NW 5th Way 5100<br />
               Fort Lauderdale, FL 33309
             </p>
-            <p className="mt-3 text-xs text-muted">TerraDebt is a trade name of GRL Recovery LLC.</p>
+            <p className="mt-3 text-xs text-muted">Freshline Advisory is a trade name of GRL Recovery LLC.</p>
           </div>
           <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-muted">Hours</div>

@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { SubscribeForm } from "@/components/site/SubscribeForm";
 
 export const metadata: Metadata = {
-  title: "About TerraDebt | Business Debt Restructure",
+  title: "About Freshline Advisory | Business Debt Restructure",
   description:
-    "TerraDebt is a business debt restructure company. MCA, SBA, equipment, vendor, bank, and tax debt, coordinated workouts, real attorney coordination.",
+    "Freshline Advisory is a business debt restructure company. MCA, SBA, equipment, vendor, bank, and tax debt, coordinated workouts, real attorney coordination.",
 };
 
 export default function About() {
@@ -16,17 +16,17 @@ export default function About() {
       <section className="bg-offwhite border-b border-rule">
         <div className="mx-auto max-w-content px-6 py-14 md:py-20 grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
           <div className="md:col-span-7">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-electric">About TerraDebt</span>
+            <span className="font-mono text-[11px] uppercase tracking-wider text-electric">About Freshline Advisory</span>
             <h1 className="mt-4 font-bold tracking-tighter text-slate text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
               The business debt restructure company we wished existed.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
-              TerraDebt brings modern tools and disciplined execution to a category stuck in 2018. Plain-spoken research and coordinated workouts across six coverage areas.
+              Freshline Advisory brings modern tools and disciplined execution to a category stuck in 2018. Plain-spoken research and coordinated workouts across six coverage areas.
             </p>
           </div>
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden bg-cream">
-              <Image src="/images/founder-scene.png" alt="TerraDebt founder" fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" />
+              <Image src="/images/founder-scene.png" alt="Freshline Advisory founder" fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" />
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function About() {
           The relief category that exists to help these owners is mostly stuck in 2018 and mostly single-product. One company pitches MCA settlement. Another pitches SBA modification. A third pitches tax resolution. Most owners need help across two or three product categories at the same time, and they end up coordinating multiple providers or going without help on the rest.
         </p>
         <p>
-          TerraDebt was built around a different default. We work across six coverage areas: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We give merchants free calculators on day one so the math is clear before any consultation. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.
+          Freshline Advisory was built around a different default. We work across six coverage areas: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We give merchants free calculators on day one so the math is clear before any consultation. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.
         </p>
       </Block>
 
@@ -101,7 +101,7 @@ export default function About() {
           <div className="border-b border-rule pb-5">
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Team</span>
             <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
-              Who is behind TerraDebt.
+              Who is behind Freshline Advisory.
             </h2>
           </div>
           <div className="mt-10 grid md:grid-cols-12 gap-10 lg:gap-14">
@@ -115,17 +115,17 @@ export default function About() {
               <h3 className="mt-2 font-semibold tracking-tight text-slate text-2xl md:text-3xl leading-tight">Bar Elezra</h3>
               <div className="mt-4 space-y-4 text-slate leading-relaxed">
                 <p>
-                  Bar founded TerraDebt after a decade at the intersection of small-business lending and operations. He has seen the inside of bad MCA contracts, accelerated SBA loans, and bank workouts that landed in special assets. TerraDebt is built to be the team he would have wanted on the other end of the phone.
+                  Bar founded Freshline Advisory after a decade at the intersection of small-business lending and operations. He has seen the inside of bad MCA contracts, accelerated SBA loans, and bank workouts that landed in special assets. Freshline Advisory is built to be the team he would have wanted on the other end of the phone.
                 </p>
                 <p>
-                  Bar writes TerraDebt&apos;s research notes and articles, sits on every intake call for new engagements, and runs the workout sequence with the team for every active program.
+                  Bar writes Freshline Advisory&apos;s research notes and articles, sits on every intake call for new engagements, and runs the workout sequence with the team for every active program.
                 </p>
               </div>
 
               <div className="mt-8 pt-6 border-t border-rule">
                 <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Advisors and counsel</span>
                 <p className="mt-3 text-sm text-muted leading-relaxed max-w-2xl">
-                  TerraDebt coordinates licensed counsel in all 50 states for legal defense work. The attorney roster is engagement-specific and disclosed to the merchant at intake.
+                  Freshline Advisory coordinates licensed counsel in all 50 states for legal defense work. The attorney roster is engagement-specific and disclosed to the merchant at intake.
                 </p>
               </div>
             </div>

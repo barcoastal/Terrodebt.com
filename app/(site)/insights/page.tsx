@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export const metadata: Metadata = {
-  title: "Articles | TerraDebt Information Hub",
+  title: "Articles | Freshline Advisory Information Hub",
   description:
     "Articles and working notes on business debt restructure. MCA, SBA, equipment, vendor, bank, and tax debt.",
 };
@@ -50,7 +50,7 @@ export default async function ArticlesIndex() {
       <section className="bg-offwhite border-b border-rule">
         <div className="mx-auto max-w-content px-6 pt-10 pb-8">
           <span className="font-mono text-[11px] uppercase tracking-wider text-electric">
-            The TerraDebt archive
+            The Freshline Advisory archive
           </span>
           <h1 className="mt-3 font-bold tracking-tighter text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
             All guides on business debt restructure

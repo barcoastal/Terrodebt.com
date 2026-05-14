@@ -45,7 +45,7 @@ export async function GET() {
   });
   const body = HEADERS.join(",") + "\n" + rows.join("\n");
   return new NextResponse(body, {
-    headers: { "content-type": "text/csv", "content-disposition": `attachment; filename="terradebt-leads-${Date.now()}.csv"` },
+    headers: { "content-type": "text/csv", "content-disposition": `attachment; filename="freshline-advisory-leads-${Date.now()}.csv"` },
   });
 }
 

@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export const metadata: Metadata = {
-  title: "Glossary | TerraDebt Information Hub",
+  title: "Glossary | Freshline Advisory Information Hub",
   description:
     "Plain-English definitions for business debt restructure terms: MCA, SBA, equipment finance, vendor debt, bank workouts, and tax debt.",
 };

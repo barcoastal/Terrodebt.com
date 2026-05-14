@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Trust | TerraDebt Client Reviews and Outcomes",
-  description: "Real merchants. Specific industries. Specific numbers. What TerraDebt clients say after their MCA debt relief program closes.",
+  title: "Trust | Freshline Advisory Client Reviews and Outcomes",
+  description: "Real merchants. Specific industries. Specific numbers. What Freshline Advisory clients say after their MCA debt relief program closes.",
 };
 
 const TESTIMONIALS = [
-  { name: "Joel R.", role: "Owner, regional trucking", body: "Four MCAs, $3,200 a day in debits, and a reverse consolidation outfit trying to charge me $25K upfront. TerraDebt told me my real APR before they pitched me anything. That alone was the difference." },
+  { name: "Joel R.", role: "Owner, regional trucking", body: "Four MCAs, $3,200 a day in debits, and a reverse consolidation outfit trying to charge me $25K upfront. Freshline Advisory told me my real APR before they pitched me anything. That alone was the difference." },
   { name: "Maya K.", role: "Owner, neighborhood Italian restaurant", body: "I had stopped opening the lender emails. They explained the math, paused the debits, and built a single payment plan I could actually run my kitchen against." },
   { name: "Tony D.", role: "GC, residential remodels", body: "They knew what a progress payment cycle looks like and built a program around it. Other firms wanted me on a settlement track that would have killed my bonding capacity." },
   { name: "Dr. Adel M.", role: "Independent dental practice", body: "Two equipment loans on top of two MCAs. They unwound a reverse consolidation I never should have signed and got me back to even in 13 months." },

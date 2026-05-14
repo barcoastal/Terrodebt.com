@@ -38,14 +38,14 @@ export function SiteFooter() {
       <div className="mx-auto max-w-content px-6 py-14 grid gap-10 md:grid-cols-12 text-sm">
         <div className="md:col-span-3">
           <Image
-            src="/logos/terradebt-lockup.svg"
-            alt="TerraDebt"
+            src="/logos/freshline-lockup.svg"
+            alt="Freshline Advisory"
             width={150}
             height={22}
             className="mb-4"
           />
           <p className="text-ink leading-relaxed text-sm">
-            TerraDebt is the trade name of GRL Recovery LLC, a strategic financial consulting practice based in Fort Lauderdale, FL. The practice serves small and mid-sized enterprises navigating stacked short-term debt.
+            Freshline Advisory is the trade name of GRL Recovery LLC, a strategic financial consulting practice based in Fort Lauderdale, FL. The practice serves small and mid-sized enterprises navigating stacked short-term debt.
           </p>
         </div>
 
@@ -95,8 +95,8 @@ export function SiteFooter() {
             Fort Lauderdale, FL 33309
           </address>
           <p className="mt-3 text-sm text-ink">
-            <Link href="mailto:hello@terradebt.com" className="text-ink hover:text-pine no-underline">
-              hello@terradebt.com
+            <Link href="mailto:hello@freshlineadvisory.com" className="text-ink hover:text-pine no-underline">
+              hello@freshlineadvisory.com
             </Link>
           </p>
           <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1">
@@ -118,7 +118,7 @@ export function SiteFooter() {
       <div className="border-t border-hairline">
         <div className="mx-auto max-w-content px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[11px] font-mono uppercase tracking-[0.16em] text-muted">
           <div>
-            &copy; {new Date().getFullYear()} GRL Recovery LLC. TerraDebt is a trade name of GRL Recovery LLC. Entity formed April 1, 2026.
+            &copy; {new Date().getFullYear()} GRL Recovery LLC. Freshline Advisory is a trade name of GRL Recovery LLC. Entity formed April 1, 2026.
           </div>
           <div className="text-muted">
             Strategic financial consulting <span className="text-hairline">·</span> Fort Lauderdale, FL

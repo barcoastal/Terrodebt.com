@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Terms of Service | TerraDebt",
-  description: "The terms that govern your use of TerraDebt's website and services. Outcomes vary. Past results do not predict future outcomes.",
+  title: "Terms of Service | Freshline Advisory",
+  description: "The terms that govern your use of Freshline Advisory's website and services. Outcomes vary. Past results do not predict future outcomes.",
 };
 
 export default function TermsPage() {
@@ -12,12 +12,12 @@ export default function TermsPage() {
       </p>
 
       <p>
-        TerraDebt is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309. References to &quot;TerraDebt,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot; in these terms refer to GRL Recovery LLC.
+        Freshline Advisory is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309. References to &quot;Freshline Advisory,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot; in these terms refer to GRL Recovery LLC.
       </p>
 
       <h2>Use of the site</h2>
       <p>
-        By accessing or using the TerraDebt website, you agree to these terms. If you do not agree, do not use the site. We may update these terms from time to time and the updated terms will be effective when posted.
+        By accessing or using the Freshline Advisory website, you agree to these terms. If you do not agree, do not use the site. We may update these terms from time to time and the updated terms will be effective when posted.
       </p>
 
       <h2>No guarantee of outcomes</h2>
@@ -27,7 +27,7 @@ export default function TermsPage() {
 
       <h2>No attorney-client relationship</h2>
       <p>
-        TerraDebt is not a law firm. Visiting this site, contacting us, or submitting an inquiry does not create an attorney-client relationship. When your matter requires legal representation, we coordinate with attorneys in our network. An attorney-client relationship is established only after you and the attorney sign a separate engagement agreement.
+        Freshline Advisory is not a law firm. Visiting this site, contacting us, or submitting an inquiry does not create an attorney-client relationship. When your matter requires legal representation, we coordinate with attorneys in our network. An attorney-client relationship is established only after you and the attorney sign a separate engagement agreement.
       </p>
 
       <h2>No financial or legal advice</h2>
@@ -42,7 +42,7 @@ export default function TermsPage() {
 
       <h2>Limitation of liability</h2>
       <p>
-        To the maximum extent permitted by law, TerraDebt is not liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the site or services. Total liability for any direct damages is limited to fees you have paid to TerraDebt in the 12 months preceding the claim.
+        To the maximum extent permitted by law, Freshline Advisory is not liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the site or services. Total liability for any direct damages is limited to fees you have paid to Freshline Advisory in the 12 months preceding the claim.
       </p>
 
       <h2>Governing law</h2>
@@ -52,7 +52,7 @@ export default function TermsPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about these terms can be sent to hello@terradebt.com or by mail to:
+        Questions about these terms can be sent to hello@freshlineadvisory.com or by mail to:
       </p>
       <p>
         <strong>GRL Recovery LLC</strong><br />

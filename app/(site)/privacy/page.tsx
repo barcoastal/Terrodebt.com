@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Privacy Policy | TerraDebt",
-  description: "How TerraDebt collects, uses, and protects merchant information when you visit our site, request an assessment, or engage one of our debt relief programs.",
+  title: "Privacy Policy | Freshline Advisory",
+  description: "How Freshline Advisory collects, uses, and protects merchant information when you visit our site, request an assessment, or engage one of our debt relief programs.",
 };
 
 export default function PrivacyPage() {
@@ -12,7 +12,7 @@ export default function PrivacyPage() {
       </p>
 
       <p>
-        TerraDebt is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309. This privacy policy describes how GRL Recovery LLC, doing business as TerraDebt (referred to as &quot;TerraDebt,&quot; &quot;we,&quot; or &quot;us&quot;), collects, uses, and shares information when you use our website or engage our services. By using the site or submitting information through any form, you agree to the practices described here.
+        Freshline Advisory is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309. This privacy policy describes how GRL Recovery LLC, doing business as Freshline Advisory (referred to as &quot;Freshline Advisory,&quot; &quot;we,&quot; or &quot;us&quot;), collects, uses, and shares information when you use our website or engage our services. By using the site or submitting information through any form, you agree to the practices described here.
       </p>
 
       <h2>Information we collect</h2>
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about this policy or about your information can be sent to hello@terradebt.com or by mail to:
+        Questions about this policy or about your information can be sent to hello@freshlineadvisory.com or by mail to:
       </p>
       <p>
         <strong>GRL Recovery LLC</strong><br />

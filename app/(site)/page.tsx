@@ -28,13 +28,13 @@ export default async function Home() {
       <section className="bg-paper border-b border-hairline">
         <div className="mx-auto max-w-content px-6 pt-20 pb-24 md:pt-28 md:pb-32">
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">
-            Strategic financial consulting
+            Freshline Advisory · Strategic financial consulting
           </span>
-          <h1 className="mt-6 max-w-4xl text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-ink leading-[1.05]">
-            Forensic debt restructure for small and mid-sized enterprises.
+          <h1 className="mt-6 max-w-4xl text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ink leading-[0.95]">
+            Fresh out <br className="hidden md:block" />of <span className="text-pine">debt</span>.
           </h1>
           <p className="mt-8 max-w-3xl text-lg md:text-xl text-ink leading-relaxed">
-            GRL Recovery LLC, doing business as TerraDebt, advises operating entities navigating stacked short-term debt. The practice combines forensic financial auditing with liquidity engineering and creditor liaison to restore operational margin.
+            Forensic debt restructure for small and mid-sized enterprises. GRL Recovery LLC, doing business as Freshline Advisory, advises operating entities navigating stacked short-term debt. The practice combines forensic financial auditing with liquidity engineering and creditor liaison to restore operational margin.
           </p>
           <p className="mt-4 max-w-3xl text-base md:text-lg text-muted leading-relaxed">
             Engagements are scoped to the specific obligations and operating profile of the entity. The practice does not lend, does not litigate, and does not present itself as a law firm.
@@ -222,7 +222,7 @@ export default async function Home() {
                   The methodology is grounded in forensic financial auditing. Every engagement begins with a verified reconstruction of the actual cash mechanics the business is operating under, and downstream work rests on that documentation. The practice does not lend, does not litigate, and coordinates with state-licensed counsel for legal defense matters.
                 </p>
                 <p>
-                  TerraDebt is the trade name under which the practice operates. The brand and the operating entity are the same firm.
+                  Freshline Advisory is the trade name under which the practice operates. The brand and the operating entity are the same firm.
                 </p>
               </div>
 

@@ -6,15 +6,15 @@ import { LeadForm } from "@/components/lead/LeadForm";
 
 const PROGRAM_META: Record<ProgramKey, { title: string; description: string }> = {
   "settlement": {
-    title: "Debt Settlement | TerraDebt",
+    title: "Debt Settlement | Freshline Advisory",
     description: "Settle distressed business debt at typically 40 to 75 percent of face balance. Used across MCAs, vendor debt, and IRS or state tax debt.",
   },
   "restructure": {
-    title: "Debt Restructure | TerraDebt",
+    title: "Debt Restructure | Freshline Advisory",
     description: "Renegotiate terms without settling. Used across MCAs, SBA loans, equipment finance, and bank workouts to preserve lender relationships.",
   },
   "legal-defense": {
-    title: "Legal Defense | TerraDebt",
+    title: "Legal Defense | Freshline Advisory",
     description: "72-hour coordinated counsel for confessions of judgment, frozen accounts, levies, and active litigation against any business debt.",
   },
 };

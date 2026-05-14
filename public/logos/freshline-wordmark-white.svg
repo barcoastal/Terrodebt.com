@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 64" role="img" aria-label="Freshline Advisory">
+  <title>Freshline Advisory</title>
+  <text x="0" y="46" font-family="Inter Tight, Inter, system-ui, -apple-system, sans-serif" font-weight="700" font-size="42" letter-spacing="-1.5" fill="#FFFFFF">freshline</text>
+  <text x="218" y="46" font-family="Inter Tight, Inter, system-ui, -apple-system, sans-serif" font-weight="400" font-size="42" letter-spacing="-1.2" fill="rgba(255,255,255,0.65)">advisory</text>
+  <circle cx="436" cy="40" r="6" fill="#10B981"/>
+</svg>

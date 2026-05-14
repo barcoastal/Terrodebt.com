@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { HealthCheck } from "@/components/tools/HealthCheck";
 
 export const metadata: Metadata = {
-  title: "MCA Health Check | TerraDebt Self-Assessment",
+  title: "MCA Health Check | Freshline Advisory Self-Assessment",
   description: "Five-question self-assessment for stacked MCA debt. Get a risk score and program recommendation in 60 seconds. Free, no email required.",
 };
 

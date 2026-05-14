@@ -33,7 +33,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Forensic Financial Auditing",
     shortName: "Forensic Audit",
     numeral: "01",
-    metaTitle: "Forensic Financial Auditing | TerraDebt",
+    metaTitle: "Forensic Financial Auditing | Freshline Advisory",
     metaDescription:
       "Deep-dive analysis of debt-to-income ratio and daily cash outflow for small and mid-sized enterprises. GRL Recovery LLC, Fort Lauderdale.",
     kicker: "Service 01",
@@ -135,7 +135,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Liquidity Engineering",
     shortName: "Liquidity Engineering",
     numeral: "02",
-    metaTitle: "Liquidity Engineering | TerraDebt",
+    metaTitle: "Liquidity Engineering | Freshline Advisory",
     metaDescription:
       "Restructuring internal budgets to prioritize operational survival while meeting creditor obligations. Strategic financial consulting from GRL Recovery LLC.",
     kicker: "Service 02",
@@ -237,7 +237,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Creditor Liaison & Communication",
     shortName: "Creditor Liaison",
     numeral: "03",
-    metaTitle: "Creditor Liaison & Communication | TerraDebt",
+    metaTitle: "Creditor Liaison & Communication | Freshline Advisory",
     metaDescription:
       "Professional intermediary presenting structured, data-backed repayment proposals to lenders on behalf of small and mid-sized enterprises. GRL Recovery LLC.",
     kicker: "Service 03",
@@ -339,7 +339,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Operational Restructuring",
     shortName: "Operational Restructuring",
     numeral: "04",
-    metaTitle: "Operational Restructuring | TerraDebt",
+    metaTitle: "Operational Restructuring | Freshline Advisory",
     metaDescription:
       "Lean management consulting to increase Free Cash Flow for small and mid-sized enterprises emerging from creditor restructuring. GRL Recovery LLC.",
     kicker: "Service 04",

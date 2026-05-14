@@ -4,7 +4,7 @@ import { SERVICES } from "@/lib/service-content";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Services | TerraDebt",
+  title: "Services | Freshline Advisory",
   description:
     "GRL Recovery LLC operates four professional consulting service lines for small and mid-sized enterprises facing stacked short-term debt: forensic financial auditing, liquidity engineering, creditor liaison, and operational restructuring.",
 };

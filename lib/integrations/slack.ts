@@ -8,7 +8,7 @@ export async function notifySlack(lead: Lead): Promise<IntegrationResult> {
   const debtDisplay = lead.debtAmount != null
     ? `$${lead.debtAmount.toLocaleString()}${lead.debtAmount >= 1_000_000 ? "+" : ""}${lead.debtAmountBucket ? ` (${lead.debtAmountBucket})` : ""}`
     : (lead.debtAmountBucket ?? "n/a");
-  const text = `*New TerraDebt lead* :seedling:
+  const text = `*New Freshline Advisory lead* :seedling:
 *Name:* ${lead.firstName} ${lead.lastName}
 *Business:* ${lead.businessName}
 *Email:* ${lead.email}

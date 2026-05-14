@@ -16,7 +16,7 @@ export const leadSchema = z.object({
 });
 
 export const CONSENT_TEXT =
-  "I agree to TerraDebt's Terms and Privacy Policy, and consent to receive calls, texts, and emails from TerraDebt at the number and email provided, including marketing communications. Message and data rates may apply. Consent is not a condition of any service. Reply STOP to opt out.";
+  "I agree to Freshline Advisory's Terms and Privacy Policy, and consent to receive calls, texts, and emails from Freshline Advisory at the number and email provided, including marketing communications. Message and data rates may apply. Consent is not a condition of any service. Reply STOP to opt out.";
 
 export type LeadInput = z.infer<typeof leadSchema>;
 

@@ -65,7 +65,7 @@ export default async function LandingByIdPage({ params }: { params: Promise<{ id
           <div className="lg:col-span-6 lg:sticky lg:top-6">
             <LeadForm source={lp.source} />
             <p className="mt-3 text-xs text-muted text-center">
-              By submitting, you consent to TerraDebt contacting you. See our <Link href="/privacy" className="underline">Privacy Policy</Link>.
+              By submitting, you consent to Freshline Advisory contacting you. See our <Link href="/privacy" className="underline">Privacy Policy</Link>.
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default async function LandingByIdPage({ params }: { params: Promise<{ id
         <div className="mx-auto max-w-content px-6 py-10 text-xs text-muted leading-relaxed">
           <p>
             <span className="font-mono uppercase tracking-wider text-slate">Disclosure.</span>{" "}
-            TerraDebt is a trade name of GRL Recovery LLC. We are not a law firm and do not provide legal advice. When legal defense is required, we coordinate licensed attorneys in your state. Outcomes vary based on lender mix, contract terms, default status, and other factors. Programs typically resolve in 6 to 18 months. Settlement may impact your business credit profile.
+            Freshline Advisory is a trade name of GRL Recovery LLC. We are not a law firm and do not provide legal advice. When legal defense is required, we coordinate licensed attorneys in your state. Outcomes vary based on lender mix, contract terms, default status, and other factors. Programs typically resolve in 6 to 18 months. Settlement may impact your business credit profile.
           </p>
         </div>
       </section>

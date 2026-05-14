@@ -21,7 +21,7 @@ export const PROGRAMS: Record<ProgramKey, {
     mechanism: [
       "Pause damaging activity (MCA reconciliation, IRS CNC, vendor COD)",
       "Negotiate settled balance per creditor",
-      "Structure unified monthly payment to TerraDebt-managed escrow",
+      "Structure unified monthly payment to Freshline Advisory-managed escrow",
       "Disburse to creditors as settlements close",
     ],
     example: { debt: 425000, saved: 178500, months: 11 },

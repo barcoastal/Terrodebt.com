@@ -1,13 +1,13 @@
 export const ORG_LD = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
-  "name": "TerraDebt",
+  "name": "Freshline Advisory",
   "legalName": "GRL Recovery LLC",
   "alternateName": "GRL Recovery LLC",
-  "url": "https://terradebt.com",
-  "logo": "https://terradebt.com/logo.png",
+  "url": "https://freshlineadvisory.com",
+  "logo": "https://freshlineadvisory.com/logo.png",
   "description":
-    "TerraDebt is a business debt restructure company covering MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt resolution.",
+    "Freshline Advisory is a business debt restructure company covering MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt resolution.",
   "areaServed": { "@type": "Country", "name": "United States" },
   "serviceType": [
     "MCA Debt Relief",
@@ -42,10 +42,10 @@ export function articleLd(a: ArticleLdInput) {
     "@type": "Article",
     "headline": a.title,
     "description": a.excerpt ?? undefined,
-    "url": `https://terradebt.com/insights/${a.slug}`,
+    "url": `https://freshlineadvisory.com/insights/${a.slug}`,
     "datePublished": a.publishedAt?.toISOString(),
     "dateModified": (a.updatedAt ?? a.publishedAt ?? new Date()).toISOString(),
     "author": { "@type": "Organization", "name": a.author },
-    "publisher": { "@type": "Organization", "name": "TerraDebt", "logo": { "@type": "ImageObject", "url": "https://terradebt.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "Freshline Advisory", "logo": { "@type": "ImageObject", "url": "https://freshlineadvisory.com/logo.png" } },
   };
 }

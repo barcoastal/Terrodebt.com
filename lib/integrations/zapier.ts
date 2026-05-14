@@ -40,7 +40,7 @@ export async function postToZapier(lead: Lead): Promise<IntegrationResult> {
   if (!url) return { name: "zapier", ok: false, error: `No webhook configured for source=${lead.source}` };
 
   const payload = {
-    source: "terradebt",
+    source: "freshline-advisory",
     lead_source: lead.source,
     routed_to: routedTo,
     lead_id: lead.id,
