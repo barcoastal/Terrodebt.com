@@ -26,7 +26,7 @@ export function SiteHeader() {
       <div className="hidden md:block bg-ink text-paper">
         <div className="mx-auto max-w-content px-6 flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.18em] h-8">
           <span className="text-paper/85">
-            GRL Recovery LLC <span className="text-paper/40">·</span> Strategic financial consulting <span className="text-paper/40">·</span> Fort Lauderdale, FL
+            Strategic financial consulting <span className="text-paper/40">·</span> Fort Lauderdale, FL
           </span>
           <div className="flex items-center gap-6">
             <Link href="/about" className="text-paper/75 hover:text-pine-bright no-underline transition">About</Link>

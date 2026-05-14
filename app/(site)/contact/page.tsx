@@ -10,7 +10,7 @@ export default function ContactPage() {
     <section className="mx-auto max-w-content px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
       <div>
         <h1 className="text-4xl font-bold">Contact</h1>
-        <p className="mt-4 text-muted">Fill out the form and a Freshline Advisory advisor will reach out within one business hour.</p>
+        <p className="mt-4 text-muted">Fill out the form and an advisor will reach out within one business hour.</p>
 
         <div className="mt-8 space-y-6">
           <div>
@@ -20,11 +20,9 @@ export default function ContactPage() {
           <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-muted">Office</div>
             <p className="mt-1 text-sm text-slate leading-relaxed">
-              <strong>GRL Recovery LLC</strong><br />
               6301 NW 5th Way 5100<br />
               Fort Lauderdale, FL 33309
             </p>
-            <p className="mt-3 text-xs text-muted">Freshline Advisory is a trade name of GRL Recovery LLC.</p>
           </div>
           <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-muted">Hours</div>

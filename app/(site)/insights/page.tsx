@@ -49,7 +49,7 @@ export default async function ArticlesIndex() {
       <section className="bg-offwhite border-b border-rule">
         <div className="mx-auto max-w-content px-6 pt-10 pb-8">
           <span className="font-mono text-[11px] uppercase tracking-wider text-electric">
-            The Freshline Advisory archive
+            Insights archive
           </span>
           <h1 className="mt-3 font-bold tracking-tighter text-slate text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
             All guides on business debt restructure

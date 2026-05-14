@@ -26,7 +26,7 @@ export default function ServicesIndex() {
             Services
           </h1>
           <p className="mt-6 max-w-3xl text-base md:text-lg text-ink leading-relaxed">
-            GRL Recovery LLC provides four professional consulting services to small and mid-sized enterprises facing liquidity crisis caused by stacked short-term debt. The service lines are designed to be retained as discrete engagements and, where the matter warrants, sequenced as a complete restructuring program.
+            The practice provides four professional consulting services to small and mid-sized enterprises facing liquidity crisis caused by stacked short-term debt. The service lines are designed to be retained as discrete engagements and, where the matter warrants, sequenced as a complete restructuring program.
           </p>
           <p className="mt-4 max-w-3xl text-base md:text-lg text-muted leading-relaxed">
             The practice is not a law firm and is not a lender. Where a matter requires legal representation, the practice coordinates with state-licensed counsel retained directly by the client.

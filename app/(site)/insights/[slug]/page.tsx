@@ -291,7 +291,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           heroImage: r.heroImage,
           topic: topicFromSlug(r.slug).label,
         }))}
-        heading={topic.label !== "Guide" ? `More guides on ${topic.label}` : "More from Freshline Advisory"}
+        heading={topic.label !== "Guide" ? `More guides on ${topic.label}` : "More from the practice"}
         eyebrow="Read next"
         allHref="/insights"
       />

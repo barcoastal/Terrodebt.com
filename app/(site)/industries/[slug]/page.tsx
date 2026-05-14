@@ -77,7 +77,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
           </h1>
           <p className="mt-4 text-base md:text-lg text-muted max-w-3xl leading-relaxed">{v.subline}</p>
           <div className="mt-5 font-mono text-[11px] uppercase tracking-wider text-muted">
-            By the Freshline Advisory team · Updated {new Date().toISOString().slice(0, 10)}
+            By the practice · Updated {new Date().toISOString().slice(0, 10)}
           </div>
           <div className="mt-8 relative aspect-[16/9] overflow-hidden bg-cream border border-rule max-w-5xl">
             <Image
@@ -134,7 +134,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
             </section>
 
             <ProseSection id="patterns" eyebrow="What we see" title="Common stack patterns" body={v.patterns} />
-            <ProseSection id="approach" eyebrow="Our approach" title="How Freshline Advisory works with you" body={v.approach} />
+            <ProseSection id="approach" eyebrow="Our approach" title="How the practice works with you" body={v.approach} />
             <ProseSection id="scenario" eyebrow="Scenario" title={`A typical ${v.name.toLowerCase()} case`} body={v.scenario} />
             <ProseSection id="risks" eyebrow="Watch for" title="Industry-specific risks" body={v.risks} />
 
