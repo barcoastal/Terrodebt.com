@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | Freshline Advisory MCA Debt Relief",
-  description: "MCA debt relief tailored to your industry. Trucking, restaurants, construction, healthcare, retail, e-commerce, salons, auto repair. Specific cash flow, specific programs.",
+  title: "Industries We Serve | Freshline Advisory Debt Restructure",
+  description: "Debt restructure consulting for trucking, restaurants, healthcare, construction, retail, e-commerce, salons, and auto repair. Industry-specific cash flow expertise.",
 };
 
 export default function IndustriesIndex() {

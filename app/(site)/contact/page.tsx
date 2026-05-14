@@ -1,8 +1,8 @@
 import { LeadForm } from "@/components/lead/LeadForm";
 
 export const metadata = {
-  title: "Contact Freshline Advisory | Free MCA Debt Assessment",
-  description: "Request a free assessment for stacked MCA debt. A Freshline Advisory advisor will respond within one business hour. Free calculators available without contact.",
+  title: "Schedule an Initial Review | Freshline Advisory",
+  description: "Schedule a 30-minute initial review with Freshline Advisory. Fort Lauderdale, FL. Confidential and free. Strategic financial consulting for stacked business debt.",
 };
 
 export default function ContactPage() {

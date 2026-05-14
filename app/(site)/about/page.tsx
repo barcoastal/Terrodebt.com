@@ -4,9 +4,8 @@ import type { Metadata } from "next";
 import { SubscribeForm } from "@/components/site/SubscribeForm";
 
 export const metadata: Metadata = {
-  title: "About Freshline Advisory | Business Debt Restructure",
-  description:
-    "Freshline Advisory is a business debt restructure company. MCA, SBA, equipment, vendor, bank, and tax debt, coordinated workouts, real attorney coordination.",
+  title: "About Freshline Advisory | Fort Lauderdale Debt Restructure Consulting",
+  description: "Freshline Advisory is the trade name of GRL Recovery LLC, a strategic financial consulting practice in Fort Lauderdale specializing in SME debt restructure across six debt categories.",
 };
 
 export default function About() {

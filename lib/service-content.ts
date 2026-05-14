@@ -33,9 +33,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Forensic Financial Auditing",
     shortName: "Forensic Audit",
     numeral: "01",
-    metaTitle: "Forensic Financial Auditing | Freshline Advisory",
+    metaTitle: "Forensic Financial Audit for Business Debt | Freshline Advisory",
     metaDescription:
-      "Deep-dive analysis of debt-to-income ratio and daily cash outflow for small and mid-sized enterprises. GRL Recovery LLC, Fort Lauderdale.",
+      "Deep-dive audit of debt-to-income, daily cash outflow, and lender exposure for SMEs with stacked MCA, SBA, and equipment debt. The starting point of every Freshline Advisory engagement.",
     kicker: "Service 01",
     overview: [
       "Forensic Financial Auditing is the first engagement most clients enter. The practice performs a deep-dive analysis of the operating entity's debt-to-income ratio, daily cash outflow, and the underlying contracts driving both. The objective is not a financial statement audit in the GAAS sense. It is a forensic reconstruction of the actual cash mechanics the business is operating under, which in most distressed cases differ materially from what the operator believes is happening.",
@@ -135,9 +135,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Liquidity Engineering",
     shortName: "Liquidity Engineering",
     numeral: "02",
-    metaTitle: "Liquidity Engineering | Freshline Advisory",
+    metaTitle: "Liquidity Engineering for Business Cash Flow | Freshline Advisory",
     metaDescription:
-      "Restructuring internal budgets to prioritize operational survival while meeting creditor obligations. Strategic financial consulting from GRL Recovery LLC.",
+      "Restructure operating budgets to prioritize survival while meeting creditor obligations. Cash flow consulting for SMEs stacked on MCAs, SBA loans, and short-term debt.",
     kicker: "Service 02",
     overview: [
       "Liquidity Engineering is the practice's structured approach to restructuring the internal budget of an operating entity so that operational continuity is preserved while creditor obligations are met to the maximum extent the business actually supports. The work begins where the forensic audit ends. With a verified picture of daily outflow and obligated payments, the practice rebuilds the budget from the operational floor up.",
@@ -237,9 +237,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Creditor Liaison & Communication",
     shortName: "Creditor Liaison",
     numeral: "03",
-    metaTitle: "Creditor Liaison & Communication | Freshline Advisory",
+    metaTitle: "Creditor Negotiation & Liaison Services | Freshline Advisory",
     metaDescription:
-      "Professional intermediary presenting structured, data-backed repayment proposals to lenders on behalf of small and mid-sized enterprises. GRL Recovery LLC.",
+      "Professional intermediary services for negotiating with MCA lenders, SBA, equipment lessors, vendors, and banks. Data-backed repayment proposals.",
     kicker: "Service 03",
     overview: [
       "Creditor Liaison and Communication is the practice's third service line and the one in which the practice acts as a technical intermediary between the operating entity and its creditors. The work is grounded in the documentation produced through forensic auditing and the operating plan produced through liquidity engineering, and the role is purely procedural and informational. The practice presents structured, data-backed proposals to lenders on behalf of the client, manages the cadence of correspondence, and produces the written record that supports any agreement reached.",
@@ -339,9 +339,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Operational Restructuring",
     shortName: "Operational Restructuring",
     numeral: "04",
-    metaTitle: "Operational Restructuring | Freshline Advisory",
+    metaTitle: "Operational Restructuring Consulting for SMEs | Freshline Advisory",
     metaDescription:
-      "Lean management consulting to increase Free Cash Flow for small and mid-sized enterprises emerging from creditor restructuring. GRL Recovery LLC.",
+      "Lean management consulting to increase Free Cash Flow for small and mid-sized businesses restructuring stacked debt. Operational discipline that supports the workout.",
     kicker: "Service 04",
     overview: [
       "Operational Restructuring is the practice's fourth and final service line, retained most frequently after a creditor engagement has reached resolution and the operating entity is ready to rebuild a durable margin. The engagement consults on lean management practices, organizational structure, pricing discipline, and capital allocation, with the objective of increasing sustainable Free Cash Flow rather than simply controlling distress.",

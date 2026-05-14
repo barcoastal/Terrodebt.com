@@ -5,9 +5,8 @@ import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export const metadata: Metadata = {
-  title: "Glossary | Freshline Advisory Information Hub",
-  description:
-    "Plain-English definitions for business debt restructure terms: MCA, SBA, equipment finance, vendor debt, bank workouts, and tax debt.",
+  title: "Business Debt Glossary | MCA, SBA, COJ Terms | Freshline Advisory",
+  description: "Plain-English definitions of business debt restructure terms: factor rate, reconciliation, COJ, Trust Fund Recovery Penalty, UCC filing, and more.",
 };
 
 export default function GlossaryPage() {

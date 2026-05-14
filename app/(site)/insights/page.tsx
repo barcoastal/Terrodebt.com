@@ -6,9 +6,8 @@ import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export const metadata: Metadata = {
-  title: "Articles | Freshline Advisory Information Hub",
-  description:
-    "Articles and working notes on business debt restructure. MCA, SBA, equipment, vendor, bank, and tax debt.",
+  title: "Business Debt Restructure Insights & Guides | Freshline Advisory",
+  description: "Plain-language guides on MCA debt relief, SBA loan modification, COJ defense, effective APR math, and creditor negotiation. Written for SME operators.",
 };
 
 function readTime(md: string): number {
