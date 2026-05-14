@@ -37,9 +37,9 @@ export function SiteHeader() {
 
       {/* Main bar */}
       <div className="bg-paper">
-        <div className="mx-auto max-w-content px-6 flex items-center justify-between gap-6 h-20 md:h-24">
+        <div className="mx-auto max-w-content px-6 flex items-center justify-between gap-6 h-24 md:h-28">
           <Link href="/" className="flex items-center no-underline" aria-label="Freshline Advisory home">
-            <Image src="/logos/freshline-lockup.svg" alt="Freshline Advisory" width={300} height={36} priority className="h-9 md:h-10 w-auto" />
+            <Image src="/logos/freshline-lockup.svg" alt="Freshline Advisory" width={224} height={56} priority className="h-12 md:h-14 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-7 text-[11px] font-mono uppercase tracking-[0.18em] text-ink">
             {NAV.map((n) => {

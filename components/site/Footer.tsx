@@ -40,9 +40,9 @@ export function SiteFooter() {
           <Image
             src="/logos/freshline-lockup.svg"
             alt="Freshline Advisory"
-            width={260}
-            height={32}
-            className="mb-5 h-8 w-auto"
+            width={200}
+            height={50}
+            className="mb-5 h-12 w-auto"
           />
           <p className="text-ink leading-relaxed text-sm">
             Freshline Advisory is the trade name of GRL Recovery LLC, a strategic financial consulting practice based in Fort Lauderdale, FL. The practice serves small and mid-sized enterprises navigating stacked short-term debt.
