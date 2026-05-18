@@ -87,7 +87,7 @@ export default async function ArticlesIndex() {
                 <p className="mt-3 text-base md:text-lg text-muted leading-relaxed">{featured.excerpt}</p>
               )}
               <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-muted">
-                By {featured.author || "Bar Elezra"} · {readTime(featured.contentMd)} min read
+                By {featured.author || "Business Debt Insider"} · {readTime(featured.contentMd)} min read
               </p>
             </Link>
 

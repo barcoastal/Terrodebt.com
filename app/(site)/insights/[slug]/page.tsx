@@ -163,7 +163,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </p>
             )}
             <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-wider text-muted">
-              <span>By {a.author || "Bar Elezra"}</span>
+              <span>By {a.author || "Business Debt Insider"}</span>
               <span className="text-rule">·</span>
               <span>Updated {date.toISOString().slice(0, 10)}</span>
               <span className="text-rule">·</span>

@@ -39,9 +39,9 @@ export function MethodologyStrip() {
             </li>
           </ul>
           <div className="mt-7 pt-5 border-t border-ink">
-            <p className="text-sm text-ink font-bold">Bar Elezra</p>
+            <p className="text-sm text-ink font-bold">Business Debt Insider</p>
             <p className="text-xs text-muted font-mono uppercase tracking-[0.18em] mt-1">
-              Founder · GRL Recovery LLC dba Business Debt Insider
+              GRL Recovery LLC · Strategic financial consulting
             </p>
           </div>
           <div className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-mono uppercase tracking-[0.18em] text-muted">

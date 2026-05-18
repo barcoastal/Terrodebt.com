@@ -200,7 +200,7 @@ export default async function Home() {
               <div className="relative aspect-[4/5] bg-paper-mute overflow-hidden">
                 <Image
                   src="/images/founder-scene.png"
-                  alt="Bar Elezra, Managing Member"
+                  alt="Business Debt Insider, Fort Lauderdale office"
                   fill
                   className="object-cover photo-desat"
                   sizes="(max-width: 768px) 100vw, 40vw"

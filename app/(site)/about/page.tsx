@@ -106,18 +106,18 @@ export default function About() {
           <div className="mt-10 grid md:grid-cols-12 gap-10 lg:gap-14">
             <div className="md:col-span-4">
               <div className="relative aspect-[4/5] overflow-hidden bg-cream">
-                <Image src="/images/founder-scene.png" alt="Bar Elezra" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                <Image src="/images/founder-scene.png" alt="Business Debt Insider team at work" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
               </div>
             </div>
             <div className="md:col-span-8">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Founder</span>
-              <h3 className="mt-2 font-semibold tracking-tight text-slate text-2xl md:text-3xl leading-tight">Bar Elezra</h3>
+              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">The practice</span>
+              <h3 className="mt-2 font-semibold tracking-tight text-slate text-2xl md:text-3xl leading-tight">Business Debt Insider</h3>
               <div className="mt-4 space-y-4 text-slate leading-relaxed">
                 <p>
-                  Bar founded the practice after a decade at the intersection of small-business lending and operations. He has seen the inside of bad MCA contracts, accelerated SBA loans, and bank workouts that landed in special assets. The team is built to be the one he would have wanted on the other end of the phone.
+                  Business Debt Insider was built after a decade spent at the intersection of small-business lending and operations. The team has seen the inside of bad MCA contracts, accelerated SBA loans, and bank workouts that landed in special assets. The practice is built to be the team operators wished was on the other end of the phone.
                 </p>
                 <p>
-                  Bar writes the research notes and articles, sits on every intake call for new engagements, and runs the workout sequence with the team for every active program.
+                  The practice writes its own research notes and articles, sits on every intake call for new engagements, and runs the workout sequence for every active program.
                 </p>
               </div>
 

@@ -19,7 +19,7 @@ const FALLBACK: Article = {
   excerpt:
     "Reverse consolidations look like a fix and usually make stacked MCAs worse. Here is the math, the typical contract pattern, and what to do instead.",
   heroImage: "/images/insights/what-is-reverse-consolidation.png",
-  author: "Bar Elezra",
+  author: "Business Debt Insider",
   publishedAt: new Date("2026-04-15"),
   createdAt: new Date("2026-04-15"),
   contentMd: "",
@@ -105,7 +105,7 @@ export async function FeaturedEditorial() {
                 </p>
               )}
               <div className="mt-4 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-white/70">
-                <span>By {featured.author || "Bar Elezra"}</span>
+                <span>By {featured.author || "Business Debt Insider"}</span>
                 <span className="text-white/30">·</span>
                 <span>Updated {formatDate(featured.publishedAt ?? featured.createdAt)}</span>
               </div>
