@@ -28,7 +28,7 @@ export const PRODUCTS: ProductContent[] = [
     name: "MCA Debt Relief",
     shortName: "MCA Debt",
     category: "Lender debt",
-    metaTitle: "MCA Debt Relief Services | Freshline Advisory",
+    metaTitle: "MCA Debt Relief Services | Business Debt Insider",
     metaDescription:
       "Restructure, settle, or defend stacked merchant cash advances. Reconciliation, legal coordination, and counsel in all 50 states. Free assessment.",
     heroEyebrow: "MCA debt relief",
@@ -69,7 +69,7 @@ Most MCA programs run 6 to 18 months from intake to closeout. Settlement program
     methods: [
       {
         title: "Settlement",
-        body: "Negotiated lump sum payoff per lender, typically 40 to 60 percent of the face balance. Daily debits pause through formal reconciliation. The cash that was leaving your accounts accrues into a Freshline Advisory-managed escrow. We engage every lender in parallel, audit each contract for stacking violations and procedural defects, and disburse from escrow as settlements close.",
+        body: "Negotiated lump sum payoff per lender, typically 40 to 60 percent of the face balance. Daily debits pause through formal reconciliation. The cash that was leaving your accounts accrues into a Business Debt Insider-managed escrow. We engage every lender in parallel, audit each contract for stacking violations and procedural defects, and disburse from escrow as settlements close.",
       },
       {
         title: "Restructure",
@@ -145,7 +145,7 @@ We coordinated with the factor first to protect the senior lien on receivables. 
     name: "SBA Loan Modification",
     shortName: "SBA",
     category: "Lender debt",
-    metaTitle: "SBA Loan Modification & Workout Services | Freshline Advisory",
+    metaTitle: "SBA Loan Modification & Workout Services | Business Debt Insider",
     metaDescription:
       "Workouts and modifications for SBA 7(a), 504, and EIDL loans in default or stretched. Hardship modifications, offer in compromise, and lender coordination.",
     heroEyebrow: "SBA workouts",
@@ -263,7 +263,7 @@ The operator resumed payments under the modification, the dedicated lanes ran on
     name: "Equipment Finance Restructure",
     shortName: "Equipment",
     category: "Lender debt",
-    metaTitle: "Equipment Finance Restructure & Repossession Defense | Freshline Advisory",
+    metaTitle: "Equipment Finance Restructure & Repossession Defense | Business Debt Insider",
     metaDescription:
       "Restructure equipment leases and loans to prevent acceleration and repossession. Term extensions, buyout negotiation, and lease modifications.",
     heroEyebrow: "Equipment workouts",
@@ -381,7 +381,7 @@ The trucks stayed on the road. The shop tools stayed in operation. The cross-def
     name: "Vendor & Supplier Debt",
     shortName: "Vendor",
     category: "Trade debt",
-    metaTitle: "Vendor & Supplier Debt Negotiation | Freshline Advisory",
+    metaTitle: "Vendor & Supplier Debt Negotiation | Business Debt Insider",
     metaDescription:
       "Negotiated paydowns and settlements with trade creditors and suppliers. Restore COD or credit terms while resolving past-due balances. Free assessment.",
     heroEyebrow: "Trade creditor workouts",
@@ -501,7 +501,7 @@ By month 24, all 11 vendor balances were resolved. The operator had preserved th
     name: "Bank Loan & Line of Credit Workouts",
     shortName: "Bank loans",
     category: "Lender debt",
-    metaTitle: "Bank Loan & LOC Workout Services | Freshline Advisory",
+    metaTitle: "Bank Loan & LOC Workout Services | Business Debt Insider",
     metaDescription:
       "Term loan modifications, line of credit workouts, and covenant relief with banks and credit unions. Forbearance, covenant waivers, and loan modifications.",
     heroEyebrow: "Bank workouts",
@@ -621,7 +621,7 @@ The relationship was preserved. The operator kept the LOC at a reduced commitmen
     name: "Business Tax Debt",
     shortName: "Tax debt",
     category: "Tax debt",
-    metaTitle: "IRS & State Business Tax Debt Resolution | Freshline Advisory",
+    metaTitle: "IRS & State Business Tax Debt Resolution | Business Debt Insider",
     metaDescription:
       "IRS and state tax debt resolution: installment agreements, offer in compromise, and payroll tax workouts. Trust Fund Recovery Penalty defense.",
     heroEyebrow: "Tax debt resolution",

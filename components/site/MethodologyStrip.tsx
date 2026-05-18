@@ -9,7 +9,7 @@ export function MethodologyStrip() {
           <div className="relative aspect-[4/5] overflow-hidden bg-ink">
             <Image
               src="/images/founder-scene.png"
-              alt="Freshline Advisory founder"
+              alt="Business Debt Insider founder"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 40vw"
@@ -19,7 +19,7 @@ export function MethodologyStrip() {
         <div className="md:col-span-7 relative pl-6 md:pl-8">
           <span aria-hidden className="absolute left-0 top-0 bottom-0 w-1.5 bg-electric" />
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-electric font-bold">
-            About Freshline Advisory
+            About Business Debt Insider
           </span>
           <h2 className="mt-2 font-bold tracking-tight text-ink text-3xl md:text-4xl lg:text-5xl leading-[1.05]">
             How we research debt restructure
@@ -41,7 +41,7 @@ export function MethodologyStrip() {
           <div className="mt-7 pt-5 border-t border-ink">
             <p className="text-sm text-ink font-bold">Bar Elezra</p>
             <p className="text-xs text-muted font-mono uppercase tracking-[0.18em] mt-1">
-              Founder · GRL Recovery LLC dba Freshline Advisory
+              Founder · GRL Recovery LLC dba Business Debt Insider
             </p>
           </div>
           <div className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-mono uppercase tracking-[0.18em] text-muted">

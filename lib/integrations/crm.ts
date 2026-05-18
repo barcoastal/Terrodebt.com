@@ -7,7 +7,7 @@ export async function postToCrm(lead: Lead): Promise<IntegrationResult> {
   if (!url) return { name: "crm", ok: false, error: "COASTAL_CRM_WEBHOOK_URL not set" };
 
   const payload = {
-    source: "freshline-advisory",
+    source: "business-debt-insider",
     lead: {
       first_name: lead.firstName,
       last_name: lead.lastName,

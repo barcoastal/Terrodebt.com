@@ -10,8 +10,8 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
       <OrgJsonLd />
       <header className="border-b border-border bg-white">
         <div className="mx-auto max-w-content flex items-center justify-between px-6 py-3.5">
-          <Link href="/" className="flex items-center no-underline" aria-label="Freshline Advisory home">
-            <Image src="/logos/freshline-lockup.svg" alt="Freshline Advisory" width={200} height={50} priority className="h-12 w-auto" />
+          <Link href="/" className="flex items-center no-underline" aria-label="Business Debt Insider home">
+            <Image src="/logos/freshline-lockup.svg" alt="Business Debt Insider" width={200} height={50} priority className="h-12 w-auto" />
           </Link>
           <Link href="#assessment" className="bg-slate text-white px-4 py-2 rounded-lg text-sm font-medium no-underline hover:bg-slate-soft transition">
             Get free assessment

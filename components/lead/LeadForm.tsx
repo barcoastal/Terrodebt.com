@@ -67,7 +67,7 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
         >
           <svg className="w-7 h-7 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         </motion.div>
-        <h3 className="mt-6 text-2xl font-semibold tracking-tight">Thanks. A Freshline Advisory advisor will reach out shortly.</h3>
+        <h3 className="mt-6 text-2xl font-semibold tracking-tight">Thanks. A Business Debt Insider advisor will reach out shortly.</h3>
         <p className="text-muted mt-2">Watch for an email and a call within one business hour.</p>
       </motion.div>
     );
@@ -215,7 +215,7 @@ function ContactStep({ data, onUpdate, onSubmit, submitting }: {
       <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate leading-tight">
         Where should we reach you?
       </h3>
-      <p className="mt-2 text-muted text-sm">A Freshline Advisory advisor will reach out within one business hour.</p>
+      <p className="mt-2 text-muted text-sm">A Business Debt Insider advisor will reach out within one business hour.</p>
 
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Business name" className="sm:col-span-2">
@@ -244,11 +244,11 @@ function ContactStep({ data, onUpdate, onSubmit, submitting }: {
           required
         />
         <span className="text-xs text-muted leading-relaxed">
-          I agree to Freshline Advisory&apos;s{" "}
+          I agree to Business Debt Insider&apos;s{" "}
           <a href="/terms" target="_blank" rel="noreferrer" className="text-slate underline">Terms</a>
           {" "}and{" "}
           <a href="/privacy" target="_blank" rel="noreferrer" className="text-slate underline">Privacy Policy</a>
-          , and consent to receive calls, texts, and emails from Freshline Advisory at the number and email provided, including marketing communications. Message and data rates may apply. Consent is not a condition of any service. Reply STOP to opt out.
+          , and consent to receive calls, texts, and emails from Business Debt Insider at the number and email provided, including marketing communications. Message and data rates may apply. Consent is not a condition of any service. Reply STOP to opt out.
         </span>
       </label>
 

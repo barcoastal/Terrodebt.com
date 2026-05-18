@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { SubscribeForm } from "@/components/site/SubscribeForm";
 
 export const metadata: Metadata = {
-  title: "About Freshline Advisory | Fort Lauderdale Debt Restructure Consulting",
-  description: "Freshline Advisory is the trade name of GRL Recovery LLC, a strategic financial consulting practice in Fort Lauderdale specializing in SME debt restructure across six debt categories.",
+  title: "About Business Debt Insider | Fort Lauderdale Debt Restructure Consulting",
+  description: "Business Debt Insider is the trade name of GRL Recovery LLC, a strategic financial consulting practice in Fort Lauderdale specializing in SME debt restructure across six debt categories.",
 };
 
 export default function About() {
@@ -25,7 +25,7 @@ export default function About() {
           </div>
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden bg-cream">
-              <Image src="/images/founder-scene.png" alt="Freshline Advisory founder" fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" />
+              <Image src="/images/founder-scene.png" alt="Business Debt Insider founder" fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" />
             </div>
           </div>
         </div>

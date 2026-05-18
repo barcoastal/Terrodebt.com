@@ -44,7 +44,7 @@ export function ArticleEditor({ initial, mode, articleSlug, articlePublished, on
   const [title, setTitle] = useState<string>(initial?.title ?? "");
   const [excerpt, setExcerpt] = useState<string>(initial?.excerpt ?? "");
   const [heroImage, setHeroImage] = useState<string>(initial?.heroImage ?? "");
-  const [author, setAuthor] = useState<string>(initial?.author ?? "Freshline Advisory Team");
+  const [author, setAuthor] = useState<string>(initial?.author ?? "Business Debt Insider Team");
   const [contentMd, setContentMd] = useState<string>(initial?.contentMd ?? "");
   const [published, setPublished] = useState<boolean>(initial?.published ?? false);
   const [dirty, setDirty] = useState<boolean>(false);

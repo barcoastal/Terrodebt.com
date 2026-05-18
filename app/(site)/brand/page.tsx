@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Brand & Design System",
-  description: "Freshline Advisory's brand identity, color tokens, typography, and component library.",
+  description: "Business Debt Insider's brand identity, color tokens, typography, and component library.",
 };
 
 export default function BrandPage() {
@@ -13,11 +13,11 @@ export default function BrandPage() {
         <span className="inline-block bg-electric/10 text-electric text-xs font-medium px-3 py-1 rounded-full">v1.0</span>
         <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-slate">Brand &amp; Design System</h1>
         <p className="mt-4 text-lg text-muted max-w-2xl">
-          The visual and verbal source of truth for Freshline Advisory. Use this page to inspect tokens and components in context. The complete brand book lives in <code className="text-sm bg-offwhite px-2 py-0.5 rounded">/brand/BRAND.md</code>.
+          The visual and verbal source of truth for Business Debt Insider. Use this page to inspect tokens and components in context. The complete brand book lives in <code className="text-sm bg-offwhite px-2 py-0.5 rounded">/brand/BRAND.md</code>.
         </p>
       </header>
 
-      <Section number="01" title="Logo system" description="The Freshline Advisory mark is a geometric T inside a black square, paired with the wordmark in Geist Bold. The emerald green dot is the brand's signal element. It always appears.">
+      <Section number="01" title="Logo system" description="The Business Debt Insider mark is a geometric T inside a black square, paired with the wordmark in Geist Bold. The emerald green dot is the brand's signal element. It always appears.">
         <div className="grid md:grid-cols-2 gap-6">
           <LogoCard label="Default lockup" file="/logos/freshline-lockup.svg" bg="bg-white" />
           <LogoCard label="Wordmark" file="/logos/freshline-wordmark.svg" bg="bg-white" />
@@ -162,7 +162,7 @@ export default function BrandPage() {
       </Section>
 
       <footer className="pt-12 border-t border-border text-sm text-muted">
-        Freshline Advisory brand system v1.0. Source: <code className="text-xs bg-offwhite px-2 py-0.5 rounded">brand/BRAND.md</code>. Last updated 2026-05-05.
+        Business Debt Insider brand system v1.0. Source: <code className="text-xs bg-offwhite px-2 py-0.5 rounded">brand/BRAND.md</code>. Last updated 2026-05-05.
       </footer>
     </article>
   );

@@ -66,7 +66,7 @@ function parse(fd: FormData) {
     excerpt: String(fd.get("excerpt") ?? "") || null,
     contentMd: String(fd.get("contentMd") ?? ""),
     heroImage: String(fd.get("heroImage") ?? "") || null,
-    author: String(fd.get("author") ?? "Freshline Advisory Team"),
+    author: String(fd.get("author") ?? "Business Debt Insider Team"),
     published: fd.get("published") === "on",
   };
 }

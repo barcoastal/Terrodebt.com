@@ -31,7 +31,7 @@ export default async function Home() {
             Strategic financial consulting
           </span>
           <h1 className="mt-6 max-w-4xl text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ink leading-[0.95]">
-            Fresh out <br className="hidden md:block" />of <span className="text-pine">debt</span>.
+            Inside business <br className="hidden md:block" /><span className="text-pine">debt</span>.
           </h1>
           <p className="mt-8 max-w-3xl text-lg md:text-xl text-ink leading-relaxed">
             Forensic debt restructure for small and mid-sized enterprises. We combine forensic financial auditing with liquidity engineering and creditor liaison to restore operational margin on stacked short-term debt.

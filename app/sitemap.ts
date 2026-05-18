@@ -4,7 +4,7 @@ import { STATES } from "@/lib/states";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
 import { PRODUCTS } from "@/lib/product-content";
 
-const BASE = "https://freshlineadvisory.com";
+const BASE = "https://businessdebtinsider.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();

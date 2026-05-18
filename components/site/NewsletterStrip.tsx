@@ -6,7 +6,7 @@ export function NewsletterStrip({ source = "homepage-strip" }: { source?: string
       <div className="mx-auto max-w-content px-6 py-12 md:py-16 grid md:grid-cols-12 gap-8 items-center">
         <div className="md:col-span-7">
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-electric font-bold">
-            Freshline Advisory Weekly Brief
+            Business Debt Insider Weekly Brief
           </span>
           <h2 className="mt-2 font-bold tracking-tight text-white text-2xl md:text-3xl lg:text-4xl leading-tight">
             Get the weekly business-debt brief.

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const TESTIMONIALS = [
-  { name: "Joel R.", role: "Owner, regional trucking", body: "Four MCAs, $3,200 a day in debits, and a reverse consolidation firm trying to charge me $25K upfront. Freshline Advisory told me my real APR before they pitched me anything. That alone was the difference." },
+  { name: "Joel R.", role: "Owner, regional trucking", body: "Four MCAs, $3,200 a day in debits, and a reverse consolidation firm trying to charge me $25K upfront. Business Debt Insider told me my real APR before they pitched me anything. That alone was the difference." },
   { name: "Maya K.", role: "Owner, Italian restaurant", body: "I had stopped opening the lender emails. They explained the math, paused the debits, and built a single payment plan I could actually run my kitchen against." },
   { name: "Tony D.", role: "GC, residential remodels", body: "They knew what a progress payment cycle looks like and built a program around it. Other firms wanted me on a settlement track that would have killed my bonding capacity." },
   { name: "Marc L.", role: "Ecommerce, supplements", body: "Ad spend cycle was getting eaten by daily debits. Settled three MCAs in 8 months at 44 cents. We are scaling again without stacking new advances." },
@@ -60,7 +60,7 @@ export default async function GetStartedPage() {
           <div className="lg:col-span-6 lg:sticky lg:top-6">
             <LeadForm source="get-started" />
             <p className="mt-3 text-xs text-muted text-center">
-              By submitting, you consent to Freshline Advisory contacting you about your inquiry. See our <Link href="/privacy" className="underline">Privacy Policy</Link>.
+              By submitting, you consent to Business Debt Insider contacting you about your inquiry. See our <Link href="/privacy" className="underline">Privacy Policy</Link>.
             </p>
           </div>
         </div>
@@ -93,14 +93,14 @@ export default async function GetStartedPage() {
         </div>
       </section>
 
-      {/* Why Freshline Advisory */}
+      {/* Why Business Debt Insider */}
       <section className="bg-offwhite">
         <div className="mx-auto max-w-content px-6 py-16">
           <Reveal>
             <div className="max-w-2xl">
-              <span className="font-mono text-xs uppercase tracking-wider text-muted">Why Freshline Advisory</span>
+              <span className="font-mono text-xs uppercase tracking-wider text-muted">Why Business Debt Insider</span>
               <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Specific numbers, not theatrics.</h2>
-              <p className="mt-3 text-muted">Here is what the average Freshline Advisory program looks like across our active book. Outcomes vary by lender mix, contract terms, and default status.</p>
+              <p className="mt-3 text-muted">Here is what the average Business Debt Insider program looks like across our active book. Outcomes vary by lender mix, contract terms, and default status.</p>
             </div>
           </Reveal>
           <div className="mt-12 grid md:grid-cols-3 gap-5">
@@ -197,7 +197,7 @@ export default async function GetStartedPage() {
         <div className="mx-auto max-w-content px-6 py-10 text-xs text-muted leading-relaxed">
           <p>
             <span className="font-mono uppercase tracking-wider text-slate">Disclosure.</span>{" "}
-            Freshline Advisory is a trade name of GRL Recovery LLC. We are not a law firm and do not provide legal advice. When legal defense is required, we coordinate licensed attorneys in your state. Outcomes vary based on lender mix, contract terms, default status, and other factors. The savings ranges shown reflect a representative band of prior results and are not a guarantee of future outcomes. Programs typically resolve in 6 to 18 months. Settlement may impact your business credit profile.
+            Business Debt Insider is a trade name of GRL Recovery LLC. We are not a law firm and do not provide legal advice. When legal defense is required, we coordinate licensed attorneys in your state. Outcomes vary based on lender mix, contract terms, default status, and other factors. The savings ranges shown reflect a representative band of prior results and are not a guarantee of future outcomes. Programs typically resolve in 6 to 18 months. Settlement may impact your business credit profile.
           </p>
         </div>
       </section>

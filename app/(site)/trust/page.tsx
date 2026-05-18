@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Trust | Freshline Advisory Client Reviews and Outcomes",
-  description: "Real merchants. Specific industries. Specific numbers. What Freshline Advisory clients say after their MCA debt relief program closes.",
+  title: "Trust | Business Debt Insider Client Reviews and Outcomes",
+  description: "Real merchants. Specific industries. Specific numbers. What Business Debt Insider clients say after their MCA debt relief program closes.",
 };
 
 const TESTIMONIALS = [

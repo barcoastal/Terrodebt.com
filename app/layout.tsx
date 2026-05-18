@@ -7,11 +7,11 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", displ
 
 export const metadata: Metadata = {
   title: {
-    default: "Business Debt Restructure & MCA Relief Consulting | Freshline Advisory",
-    template: "%s | Freshline Advisory",
+    default: "Business Debt Restructure & MCA Relief Consulting | Business Debt Insider",
+    template: "%s | Business Debt Insider",
   },
   description:
-    "Freshline Advisory restructures stacked MCA, SBA, equipment, vendor, bank, and tax debt for small and mid-sized businesses. Forensic financial auditing and creditor negotiation. Fort Lauderdale, FL.",
+    "Business Debt Insider restructures stacked MCA, SBA, equipment, vendor, bank, and tax debt for small and mid-sized businesses. Forensic financial auditing and creditor negotiation. Fort Lauderdale, FL.",
   keywords: [
     "MCA debt relief",
     "merchant cash advance debt help",
@@ -25,19 +25,19 @@ export const metadata: Metadata = {
     "liquidity engineering",
     "Fort Lauderdale debt consulting",
   ],
-  metadataBase: new URL("https://freshlineadvisory.com"),
+  metadataBase: new URL("https://businessdebtinsider.com"),
   openGraph: {
-    siteName: "Freshline Advisory",
+    siteName: "Business Debt Insider",
     type: "website",
     locale: "en_US",
-    title: "Business Debt Restructure & MCA Relief Consulting | Freshline Advisory",
+    title: "Business Debt Restructure & MCA Relief Consulting | Business Debt Insider",
     description:
       "Strategic financial consulting for SMEs with stacked merchant cash advance, SBA, equipment, vendor, bank, and tax debt. Fort Lauderdale, FL.",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Freshline Advisory" }],
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Business Debt Insider" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Business Debt Restructure & MCA Relief Consulting | Freshline Advisory",
+    title: "Business Debt Restructure & MCA Relief Consulting | Business Debt Insider",
     description:
       "Strategic financial consulting for businesses with stacked debt. Forensic audit, liquidity engineering, creditor negotiation. Fort Lauderdale, FL.",
     images: ["/og-default.png"],

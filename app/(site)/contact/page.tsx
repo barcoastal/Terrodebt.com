@@ -1,8 +1,8 @@
 import { LeadForm } from "@/components/lead/LeadForm";
 
 export const metadata = {
-  title: "Schedule an Initial Review | Freshline Advisory",
-  description: "Schedule a 30-minute initial review with Freshline Advisory. Fort Lauderdale, FL. Confidential and free. Strategic financial consulting for stacked business debt.",
+  title: "Schedule an Initial Review | Business Debt Insider",
+  description: "Schedule a 30-minute initial review with Business Debt Insider. Fort Lauderdale, FL. Confidential and free. Strategic financial consulting for stacked business debt.",
 };
 
 export default function ContactPage() {
@@ -15,7 +15,7 @@ export default function ContactPage() {
         <div className="mt-8 space-y-6">
           <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-muted">Email</div>
-            <div className="mt-1 text-lg text-slate">hello@freshlineadvisory.com</div>
+            <div className="mt-1 text-lg text-slate">hello@businessdebtinsider.com</div>
           </div>
           <div>
             <div className="text-sm font-semibold uppercase tracking-wide text-muted">Office</div>

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const meta = STATES.find((s) => s.code === code);
   if (!meta) return {};
   return {
-    title: `MCA Defense in ${meta.name} | Freshline Advisory`,
+    title: `MCA Defense in ${meta.name} | Business Debt Insider`,
     description: `MCA defense in ${meta.name}: licensed counsel, COJ response, account freeze help, settlement coordination. Free assessment within one business hour.`,
   };
 }

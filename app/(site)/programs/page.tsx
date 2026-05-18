@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { PROGRAMS, type ProgramKey } from "@/lib/programs";
 
 export const metadata: Metadata = {
-  title: "Methods | Freshline Advisory Business Debt Restructure",
+  title: "Methods | Business Debt Insider Business Debt Restructure",
   description: "Three methods that run across our six product categories: settlement, restructure, and legal defense. Free assessment to scope the right approach.",
 };
 

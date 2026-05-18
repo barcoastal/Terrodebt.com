@@ -1,8 +1,8 @@
-# Freshline Advisory Brand Book
+# Business Debt Insider Brand Book
 
 **Version 1.5** · 2026-05-04
 
-This document is the source of truth for the Freshline Advisory brand, visual identity, voice, and how to apply both. Anything that touches a customer, a screen, an investor deck, or a paid ad starts here.
+This document is the source of truth for the Business Debt Insider brand, visual identity, voice, and how to apply both. Anything that touches a customer, a screen, an investor deck, or a paid ad starts here.
 
 The site renders a live version of this system at `/brand` for designers and engineers to inspect tokens and components in context.
 
@@ -12,7 +12,7 @@ The site renders a live version of this system at `/brand` for designers and eng
 
 ### Positioning
 
-Freshline Advisory is a business debt restructure company. We cover six coverage areas: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We work pre-default and post-default, give every merchant free calculators that surface effective APR and stack burden, and coordinate state-licensed attorneys in all 50 states. We are built for fit across the full debt mix, not for a single-product pitch.
+Business Debt Insider is a business debt restructure company. We cover six coverage areas: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We work pre-default and post-default, give every merchant free calculators that surface effective APR and stack burden, and coordinate state-licensed attorneys in all 50 states. We are built for fit across the full debt mix, not for a single-product pitch.
 
 ### Mission
 
@@ -42,7 +42,7 @@ Every owner with stretched business debt gets a clear, math-first assessment acr
 
 ### Products
 
-The six product categories Freshline Advisory covers, each with a dedicated service page:
+The six product categories Business Debt Insider covers, each with a dedicated service page:
 
 - **MCA Debt Relief** (`/services/mca-debt-relief`). Settlement, restructure, reverse consolidation defense, and 72-hour legal coordination on stacked merchant cash advances.
 - **SBA Loan Modification** (`/services/sba-loan-modification`). Hardship modifications, offer in compromise, and structured workouts on 7(a), 504, and EIDL loans.
@@ -55,7 +55,7 @@ The six product categories Freshline Advisory covers, each with a dedicated serv
 
 ## 2. Logo system
 
-The Freshline Advisory mark is built around three pieces: a geometric T inside a slate square, a wordmark in Inter Bold, and an electric-blue dot that closes both the wordmark and the icon. The dot is the brand's signal element. It's the moment of grounding.
+The Business Debt Insider mark is built around three pieces: a geometric T inside a slate square, a wordmark in Inter Bold, and an electric-blue dot that closes both the wordmark and the icon. The dot is the brand's signal element. It's the moment of grounding.
 
 ### Assets
 
@@ -179,7 +179,7 @@ The pairing logic is editorial. Fraunces gives the site a magazine voice on head
 - **Tighten headlines, breathe body.** Headlines use `tracking-tight`. Body uses default. Sublines use `leading-relaxed` if longer than 2 lines.
 - **No all-caps body copy.** Eyebrows and table headers only.
 - **No italics for emphasis.** Use weight (semibold) or color (slate vs muted).
-- **Lowercase the wordmark.** Always. The brand is "freshline-advisory." not "Freshline Advisory." in display contexts. (This document uses Freshline Advisory in prose for English readability, the visual mark stays lowercase.)
+- **Lowercase the wordmark.** Always. The brand is "businessdebtinsider" not "Business Debt Insider." in display contexts. (This document uses Business Debt Insider in prose for English readability, the visual mark stays lowercase.)
 
 ---
 
@@ -235,7 +235,7 @@ We speak like a smart, slightly impatient operator who's seen the inside of bad 
 - "We've helped thousands!" (unverifiable, lazy)
 - "Best in the industry" (generic, undefendable)
 - "World class" (meaningless)
-- "Published flat fee" / "Flat fee, published" (factually inaccurate; Freshline Advisory does not publish program fees pre-consultation)
+- "Published flat fee" / "Flat fee, published" (factually inaccurate; Business Debt Insider does not publish program fees pre-consultation)
 - "No upfront fees" / "No upfront cost" / "No upfront retainer" (factually inaccurate)
 - "Transparent flat fee" / "fee in writing on day one" / "We tell you the number before you sign anything" (factually inaccurate)
 - "As featured in" / "As seen in" (no real media placements yet)
@@ -420,15 +420,15 @@ Style: geometric, single weight, electric or slate fill. No gradients. No charac
 
 ## 11. Source files
 
-- Logos: `/Users/baralezrah/freshline-advisory/public/logos/`
-- Tokens (CSS): `/Users/baralezrah/freshline-advisory/app/globals.css` (`@theme inline` block)
-- Components: `/Users/baralezrah/freshline-advisory/components/site/`
-- Live design system: `https://freshlineadvisory.com/brand` (or `http://localhost:3000/brand` in dev)
+- Logos: `/Users/baralezrah/terradebt/public/logos/`
+- Tokens (CSS): `/Users/baralezrah/terradebt/app/globals.css` (`@theme inline` block)
+- Components: `/Users/baralezrah/terradebt/components/site/`
+- Live design system: `https://businessdebtinsider.com/brand` (or `http://localhost:3000/brand` in dev)
 
 ## 12. Changelog
 
 - **1.0**, 2026-05-05: Initial brand book. Established positioning, logo system (lockup, wordmark, icon, monogram, favicon variants), color palette (slate + electric + 3 neutrals), Inter typography, voice & tone, component library reference, imagery direction.
-- **1.1**, 2026-05-05: Removed false fee-transparency claims (Freshline Advisory has upfront fees and does not publish program fees pre-consultation). Removed false "as featured in" media badge references. Repositioned tagline to "Resolve stacked MCAs with a tailored program." Voice still anchors on direct, specific, confident, calm.
+- **1.1**, 2026-05-05: Removed false fee-transparency claims (Business Debt Insider has upfront fees and does not publish program fees pre-consultation). Removed false "as featured in" media badge references. Repositioned tagline to "Resolve stacked MCAs with a tailored program." Voice still anchors on direct, specific, confident, calm.
 - **1.2**, 2026-05-05: Removed AI Contract Review tool (not a real product). Added free calculators (Effective APR, Stacked MCA, Health Check) at /tools.
 - **1.3**, 2026-05-12: Pivoted from MCA-only to six-product business debt restructure firm. New tagline ("Restructure business debt with a coordinated workout."). New product categories: MCA Debt Relief, SBA Loan Modification, Equipment Finance Restructure, Vendor & Supplier Debt, Bank Loan & LOC Workouts, Business Tax Debt. Methods reduced from four to three (settlement, restructure, legal defense). Reverse consolidation defense folded into the MCA product page. Voice and visual system unchanged.
 - **1.4**, 2026-05-04: Editorial pivot. Site now positions as the editorial-grade authority on business debt restructure, with magazine-led homepage, research-style essay grids, and named bylines. Tagline updated to "The business debt brief, written by operators." Typography expanded from Inter-only to Inter + Fraunces (serif headlines on h1/h2) + JetBrains Mono (kickers and numerical accents). Palette refined with warmer offwhite (#FAFAF7), new cream (#F5F2EA) for editorial blocks, and a warm hairline rule (#E5E0D5). Mesh and grid-pattern overlays removed from hero zones. Sticky LeadForm removed from /services/[slug], /articles/[slug], and /industries/[slug] in favor of quieter editorial sidebars and a SubscribeForm + Talk-to-the-team CTA pair at the end of each piece. LeadForm retained on /get-started, /go/[id], and /contact. New components: EditorialHero, TopicAreas, ResearchBand, FeaturedEssays, AboutTheFirm, FaqQuiet, EditorialClose, SubscribeForm. New /api/subscribe endpoint persists newsletter signups into the Lead table with source distinguished.

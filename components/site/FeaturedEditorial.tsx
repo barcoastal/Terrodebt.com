@@ -117,7 +117,7 @@ export async function FeaturedEditorial() {
         <aside className="md:col-span-5">
           <div className="border-t-2 border-ink pt-3 flex items-center justify-between">
             <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink font-semibold">
-              More from Freshline Advisory
+              More from Business Debt Insider
             </span>
             <Link
               href="/insights"

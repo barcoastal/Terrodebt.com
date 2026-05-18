@@ -33,9 +33,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Forensic Financial Auditing",
     shortName: "Forensic Audit",
     numeral: "01",
-    metaTitle: "Forensic Financial Audit for Business Debt | Freshline Advisory",
+    metaTitle: "Forensic Financial Audit for Business Debt | Business Debt Insider",
     metaDescription:
-      "Deep-dive audit of debt-to-income, daily cash outflow, and lender exposure for SMEs with stacked MCA, SBA, and equipment debt. The starting point of every Freshline Advisory engagement.",
+      "Deep-dive audit of debt-to-income, daily cash outflow, and lender exposure for SMEs with stacked MCA, SBA, and equipment debt. The starting point of every Business Debt Insider engagement.",
     kicker: "Service 01",
     overview: [
       "Forensic Financial Auditing is the first engagement most clients enter. The practice performs a deep-dive analysis of the operating entity's debt-to-income ratio, daily cash outflow, and the underlying contracts driving both. The objective is not a financial statement audit in the GAAS sense. It is a forensic reconstruction of the actual cash mechanics the business is operating under, which in most distressed cases differ materially from what the operator believes is happening.",
@@ -135,7 +135,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Liquidity Engineering",
     shortName: "Liquidity Engineering",
     numeral: "02",
-    metaTitle: "Liquidity Engineering for Business Cash Flow | Freshline Advisory",
+    metaTitle: "Liquidity Engineering for Business Cash Flow | Business Debt Insider",
     metaDescription:
       "Restructure operating budgets to prioritize survival while meeting creditor obligations. Cash flow consulting for SMEs stacked on MCAs, SBA loans, and short-term debt.",
     kicker: "Service 02",
@@ -237,7 +237,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Creditor Liaison & Communication",
     shortName: "Creditor Liaison",
     numeral: "03",
-    metaTitle: "Creditor Negotiation & Liaison Services | Freshline Advisory",
+    metaTitle: "Creditor Negotiation & Liaison Services | Business Debt Insider",
     metaDescription:
       "Professional intermediary services for negotiating with MCA lenders, SBA, equipment lessors, vendors, and banks. Data-backed repayment proposals.",
     kicker: "Service 03",
@@ -339,7 +339,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Operational Restructuring",
     shortName: "Operational Restructuring",
     numeral: "04",
-    metaTitle: "Operational Restructuring Consulting for SMEs | Freshline Advisory",
+    metaTitle: "Operational Restructuring Consulting for SMEs | Business Debt Insider",
     metaDescription:
       "Lean management consulting to increase Free Cash Flow for small and mid-sized businesses restructuring stacked debt. Operational discipline that supports the workout.",
     kicker: "Service 04",
