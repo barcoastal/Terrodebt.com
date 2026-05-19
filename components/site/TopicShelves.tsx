@@ -21,7 +21,6 @@ function readTime(md: string): number {
 
 function topicLabel(slug: string): string {
   if (slug.includes("mca")) return "MCA";
-  if (slug.includes("sba")) return "SBA";
   if (slug.includes("equipment")) return "Equipment";
   if (slug.includes("vendor")) return "Vendor";
   if (slug.includes("bank")) return "Bank";
@@ -31,14 +30,12 @@ function topicLabel(slug: string): string {
 
 const TOPIC_SHELVES = [
   { name: "MCA Debt Relief", slug: "mca-debt-relief", match: ["mca", "reverse", "coj", "ucc", "factor", "settle", "consolidate"] },
-  { name: "SBA Loan Modification", slug: "sba-loan-modification", match: ["sba", "loan-modification", "eidl"] },
   { name: "Business Tax Debt", slug: "business-tax-debt", match: ["tax", "irs"] },
 ];
 
 // Pair each product slug with a photographic backdrop pulled from /public/images
 const PRODUCT_BACKDROP: Record<string, string> = {
   "mca-debt-relief": "/images/industry-trucking.png",
-  "sba-loan-modification": "/images/industry-construction.png",
   "equipment-finance-restructure": "/images/industry-auto.png",
   "vendor-supplier-debt": "/images/industry-retail.png",
   "bank-loan-workout": "/images/industry-restaurants.png",
@@ -69,7 +66,6 @@ export async function TopicShelves() {
     counts[p.slug] = allArticles.filter((a) => {
       const s = a.slug.toLowerCase();
       if (p.slug === "mca-debt-relief") return s.includes("mca") || s.includes("reverse") || s.includes("coj") || s.includes("ucc");
-      if (p.slug === "sba-loan-modification") return s.includes("sba") || s.includes("loan-modification") || s.includes("eidl");
       if (p.slug === "business-tax-debt") return s.includes("tax") || s.includes("irs");
       if (p.slug === "equipment-finance-restructure") return s.includes("equipment");
       if (p.slug === "vendor-supplier-debt") return s.includes("vendor");
@@ -89,7 +85,7 @@ export async function TopicShelves() {
                 Browse by topic
               </span>
               <h2 className="mt-1 font-bold tracking-tight text-ink text-2xl md:text-3xl leading-tight">
-                The six coverage areas
+                The five coverage areas
               </h2>
             </div>
             <Link

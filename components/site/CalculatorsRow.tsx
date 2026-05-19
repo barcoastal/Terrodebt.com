@@ -16,7 +16,7 @@ const TOOLS = [
   {
     href: "/tools/health-check",
     title: "Debt Health Check",
-    desc: "10 questions across MCA, SBA, equipment, vendor, bank, and tax debt. Plain-English diagnosis.",
+    desc: "10 questions across MCA, equipment, vendor, bank, and tax debt. Plain-English diagnosis.",
     mark: "health" as const,
   },
 ];

@@ -27,7 +27,6 @@ const FALLBACK: Article = {
 
 function topicFromSlug(slug: string): string {
   if (slug.includes("mca")) return "MCA";
-  if (slug.includes("sba")) return "SBA";
   if (slug.includes("equipment")) return "Equipment";
   if (slug.includes("vendor")) return "Vendor";
   if (slug.includes("bank")) return "Bank";

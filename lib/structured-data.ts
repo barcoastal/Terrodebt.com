@@ -7,11 +7,10 @@ export const ORG_LD = {
   "url": "https://businessdebtinsider.com",
   "logo": "https://businessdebtinsider.com/logo.png",
   "description":
-    "Business Debt Insider is a business debt restructure company covering MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt resolution.",
+    "Business Debt Insider is a business debt restructure company covering MCA debt relief, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt resolution.",
   "areaServed": { "@type": "Country", "name": "United States" },
   "serviceType": [
     "MCA Debt Relief",
-    "SBA Loan Modification",
     "Equipment Finance Restructure",
     "Vendor and Supplier Debt Negotiation",
     "Bank Loan and Line of Credit Workouts",

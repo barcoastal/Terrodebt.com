@@ -18,7 +18,7 @@ export function AprCalculator() {
   }, [funded, payback, termDays]);
 
   const benchmark = (apr: number) => {
-    if (apr < 12) return { label: "SBA-grade", tone: "good" as const };
+    if (apr < 12) return { label: "Bank-grade", tone: "good" as const };
     if (apr < 30) return { label: "Bank line of credit range", tone: "good" as const };
     if (apr < 60) return { label: "Business credit card range", tone: "fair" as const };
     if (apr < 100) return { label: "Aggressive MCA range", tone: "warn" as const };
@@ -88,7 +88,7 @@ function Stat({ label, value }: { label: string; value: string }) {
 
 function ApiBenchmark({ apr }: { apr: number }) {
   const points = [
-    { label: "SBA", apr: 10 },
+    { label: "Bank term", apr: 10 },
     { label: "Bank LOC", apr: 25 },
     { label: "Biz CC", apr: 45 },
     { label: "Standard MCA", apr: 80 },

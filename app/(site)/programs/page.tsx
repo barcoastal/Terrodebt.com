@@ -16,7 +16,7 @@ export default function ProgramsIndex() {
         <div className="relative mx-auto max-w-content px-6 py-20">
           <span className="font-mono text-xs uppercase tracking-wider text-muted">Methods</span>
           <h1 className="mt-3 text-4xl md:text-6xl font-bold tracking-tighter">Three methods, six product categories.</h1>
-          <p className="mt-5 text-lg text-muted max-w-2xl">Each case uses the right method for the debt mix. Most cases combine more than one across MCA, SBA, equipment, vendor, bank, and tax debt.</p>
+          <p className="mt-5 text-lg text-muted max-w-2xl">Each case uses the right method for the debt mix. Most cases combine more than one across MCA, equipment, vendor, bank, and tax debt.</p>
         </div>
       </section>
 
@@ -56,10 +56,10 @@ export default function ProgramsIndex() {
             <span className="font-mono text-xs uppercase tracking-wider text-muted">Methods vs products</span>
             <h2 className="mt-3 text-2xl md:text-3xl font-bold tracking-tight">Methods are how we work. Products are what we work on.</h2>
             <p className="mt-4 text-muted leading-relaxed">
-              The methods on this page (settlement, restructure, legal defense) are how we resolve debt. The product categories (MCA, SBA, equipment, vendor, bank, tax) are the types of debt we work on. A typical case uses one or two methods applied across one or more product categories.
+              The methods on this page (settlement, restructure, legal defense) are how we resolve debt. The product categories (MCA, equipment, vendor, bank, tax) are the types of debt we work on. A typical case uses one or two methods applied across one or more product categories.
             </p>
             <Link href="/services" className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-electric no-underline hover:underline">
-              See the six product categories →
+              See the five product categories →
             </Link>
           </div>
         </div>

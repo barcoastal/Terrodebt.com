@@ -11,13 +11,12 @@ export const metadata: Metadata = {
     template: "%s | Business Debt Insider",
   },
   description:
-    "Business Debt Insider restructures stacked MCA, SBA, equipment, vendor, bank, and tax debt for small and mid-sized businesses. Forensic financial auditing and creditor negotiation. Fort Lauderdale, FL.",
+    "Business Debt Insider restructures stacked MCA, equipment, vendor, bank, and tax debt for small and mid-sized businesses. Forensic financial auditing and creditor negotiation. Fort Lauderdale, FL.",
   keywords: [
     "MCA debt relief",
     "merchant cash advance debt help",
     "stacked MCA debt",
     "business debt restructure",
-    "SBA loan modification",
     "business debt consulting",
     "creditor negotiation",
     "small business debt restructuring",
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Business Debt Restructure & MCA Relief Consulting | Business Debt Insider",
     description:
-      "Strategic financial consulting for SMEs with stacked merchant cash advance, SBA, equipment, vendor, bank, and tax debt. Fort Lauderdale, FL.",
+      "Strategic financial consulting for SMEs with stacked merchant cash advance, equipment, vendor, bank, and tax debt. Fort Lauderdale, FL.",
     images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Business Debt Insider" }],
   },
   twitter: {

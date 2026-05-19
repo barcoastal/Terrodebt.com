@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export const metadata: Metadata = {
-  title: "Business Debt Glossary | MCA, SBA, COJ Terms | Business Debt Insider",
+  title: "Business Debt Glossary | MCA, COJ Terms | Business Debt Insider",
   description: "Plain-English definitions of business debt restructure terms: factor rate, reconciliation, COJ, Trust Fund Recovery Penalty, UCC filing, and more.",
 };
 
@@ -28,7 +28,7 @@ export default function GlossaryPage() {
             Business debt terms, defined
           </h1>
           <p className="mt-4 text-base md:text-lg text-muted max-w-3xl leading-relaxed">
-            {GLOSSARY.length} terms across MCA, SBA, equipment, vendor, bank, and tax debt. Each entry links to the related coverage area or guide.
+            {GLOSSARY.length} terms across MCA, equipment, vendor, bank, and tax debt. Each entry links to the related coverage area or guide.
           </p>
         </div>
       </section>

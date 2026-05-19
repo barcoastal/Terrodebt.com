@@ -35,7 +35,7 @@ export const SERVICES: ServiceContent[] = [
     numeral: "01",
     metaTitle: "Forensic Financial Audit for Business Debt | Business Debt Insider",
     metaDescription:
-      "Deep-dive audit of debt-to-income, daily cash outflow, and lender exposure for SMEs with stacked MCA, SBA, and equipment debt. The starting point of every Business Debt Insider engagement.",
+      "Deep-dive audit of debt-to-income, daily cash outflow, and lender exposure for SMEs with stacked MCA and equipment debt. The starting point of every Business Debt Insider engagement.",
     kicker: "Service 01",
     overview: [
       "Forensic Financial Auditing is the first engagement most clients enter. The practice performs a deep-dive analysis of the operating entity's debt-to-income ratio, daily cash outflow, and the underlying contracts driving both. The objective is not a financial statement audit in the GAAS sense. It is a forensic reconstruction of the actual cash mechanics the business is operating under, which in most distressed cases differ materially from what the operator believes is happening.",
@@ -83,7 +83,6 @@ export const SERVICES: ServiceContent[] = [
     ],
     debtInstruments: [
       { name: "Merchant Cash Advance (MCA)", note: "Reviewed for true effective annual cost, reconciliation provisions, COJ exposure, and stacking violations." },
-      { name: "SBA 7(a), 504, and EIDL loans", note: "Reviewed for covenant status, acceleration triggers, personal guaranty, and lien priority against the operating entity." },
       { name: "Equipment finance and capital leases", note: "Reviewed for cross-collateralization, GAP coverage, end-of-term obligations, and UCC filings on the underlying equipment." },
       { name: "Vendor and trade debt", note: "Reviewed for aging, contractual interest provisions, and mechanic's lien rights in construction or manufacturing contexts." },
       { name: "Bank term loans and lines of credit", note: "Reviewed for financial covenants, reporting covenants, deposit account offset rights, and cross-collateralization across the relationship." },
@@ -96,11 +95,11 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: "Independent restaurant group",
-        body: "A two-unit operator with an SBA 7(a) loan, equipment leases on kitchen build-out, an active line of credit with a regional bank, and aging trade payables to a primary food distributor. The audit identifies a covenant violation on the bank line that the operator was not aware of, and the resulting cross-default exposure across the equipment leases.",
+        body: "A two-unit operator with a bank term loan that funded kitchen build-out, equipment leases on the buildout, an active line of credit with a regional bank, and aging trade payables to a primary food distributor. The audit identifies a covenant violation on the bank line that the operator was not aware of, and the resulting cross-default exposure across the equipment leases.",
       },
       {
         title: "Specialty medical practice",
-        body: "A two-physician practice with an SBA 7(a) loan secured by practice receivables, a working capital advance taken during a Medicare reimbursement delay, and outstanding payroll tax obligations approaching the Trust Fund Recovery Penalty threshold. The audit prioritizes the tax exposure and produces a sequencing map that protects the practice's federal payer relationships.",
+        body: "A two-physician practice with a bank acquisition loan secured by practice receivables, a working capital advance taken during a Medicare reimbursement delay, and outstanding payroll tax obligations approaching the Trust Fund Recovery Penalty threshold. The audit prioritizes the tax exposure and produces a sequencing map that protects the practice's federal payer relationships.",
       },
     ],
     faq: [
@@ -137,7 +136,7 @@ export const SERVICES: ServiceContent[] = [
     numeral: "02",
     metaTitle: "Liquidity Engineering for Business Cash Flow | Business Debt Insider",
     metaDescription:
-      "Restructure operating budgets to prioritize survival while meeting creditor obligations. Cash flow consulting for SMEs stacked on MCAs, SBA loans, and short-term debt.",
+      "Restructure operating budgets to prioritize survival while meeting creditor obligations. Cash flow consulting for SMEs stacked on MCAs and short-term debt.",
     kicker: "Service 02",
     overview: [
       "Liquidity Engineering is the practice's structured approach to restructuring the internal budget of an operating entity so that operational continuity is preserved while creditor obligations are met to the maximum extent the business actually supports. The work begins where the forensic audit ends. With a verified picture of daily outflow and obligated payments, the practice rebuilds the budget from the operational floor up.",
@@ -185,7 +184,6 @@ export const SERVICES: ServiceContent[] = [
     ],
     debtInstruments: [
       { name: "Merchant Cash Advance (MCA)", note: "Daily debit timing is mapped against payroll cycles and operating disbursements to identify required reconciliation or restructuring." },
-      { name: "SBA 7(a), 504, and EIDL loans", note: "Monthly debt service is evaluated against the operational envelope, with deferral or modification candidates identified for subsequent creditor liaison." },
       { name: "Equipment finance and capital leases", note: "Equipment payments are prioritized against the revenue contribution of each underlying asset, with non-essential assets candidates for surrender or restructure." },
       { name: "Vendor and trade debt", note: "Vendor terms are sequenced to preserve supply chain continuity, with COD-plus-arrears arrangements modeled where appropriate." },
       { name: "Bank term loans and lines of credit", note: "Covenant exposure is modeled against the forecast, and deposit relocation is evaluated where offset risk is elevated." },
@@ -239,7 +237,7 @@ export const SERVICES: ServiceContent[] = [
     numeral: "03",
     metaTitle: "Creditor Negotiation & Liaison Services | Business Debt Insider",
     metaDescription:
-      "Professional intermediary services for negotiating with MCA lenders, SBA, equipment lessors, vendors, and banks. Data-backed repayment proposals.",
+      "Professional intermediary services for negotiating with MCA lenders, equipment lessors, vendors, and banks. Data-backed repayment proposals.",
     kicker: "Service 03",
     overview: [
       "Creditor Liaison and Communication is the practice's third service line and the one in which the practice acts as a technical intermediary between the operating entity and its creditors. The work is grounded in the documentation produced through forensic auditing and the operating plan produced through liquidity engineering, and the role is purely procedural and informational. The practice presents structured, data-backed proposals to lenders on behalf of the client, manages the cadence of correspondence, and produces the written record that supports any agreement reached.",
@@ -287,7 +285,6 @@ export const SERVICES: ServiceContent[] = [
     ],
     debtInstruments: [
       { name: "Merchant Cash Advance (MCA)", note: "The practice presents reconciliation requests, settlement offers, or restructure proposals supported by the forensic file. Where a confession of judgment has been filed or threatened, client counsel is coordinated directly." },
-      { name: "SBA 7(a), 504, and EIDL loans", note: "Hardship modification packages, offer in compromise submissions, and forbearance requests are prepared for the bank lender or SBA direct servicing as appropriate. Compromise submissions involving the SBA are coordinated with counsel." },
       { name: "Equipment finance and capital leases", note: "Term extensions, payment modifications, buyout negotiations, and voluntary surrender plus deficiency settlements are presented as packaged proposals to the relevant equipment lender." },
       { name: "Vendor and trade debt", note: "Single-vendor paydown plans, multi-vendor coordinated proposals, and COD-plus-arrears arrangements are presented as written packages. Mechanic's lien matters are coordinated with counsel." },
       { name: "Bank term loans and lines of credit", note: "Covenant waivers, forbearance proposals, modification packages, and (where applicable) note sale facilitation are coordinated with the bank's special assets group. Deposit account offset risk is addressed in the liquidity plan in advance." },
@@ -389,7 +386,6 @@ export const SERVICES: ServiceContent[] = [
     ],
     debtInstruments: [
       { name: "Merchant Cash Advance (MCA)", note: "Capital allocation framework explicitly excludes new merchant cash advance origination as a working capital source under any operational restructuring plan." },
-      { name: "SBA 7(a), 504, and EIDL loans", note: "Where an SBA obligation remains in place post-restructuring, the operational plan ensures debt service is fully supported by the verified margin and free cash flow." },
       { name: "Equipment finance and capital leases", note: "Equipment refresh cycles and lease versus purchase decisions are framed against the capital allocation framework and the underlying utilization economics of each asset." },
       { name: "Vendor and trade debt", note: "Supplier payment terms are renegotiated as part of the working capital review, with extended terms or volume-based discounts pursued where they increase the structural margin." },
       { name: "Bank term loans and lines of credit", note: "Bank facility structure is reviewed against actual working capital needs, with line right-sizing, term loan refinancing, or facility consolidation evaluated as part of the capital plan." },

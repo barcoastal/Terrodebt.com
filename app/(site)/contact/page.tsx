@@ -34,7 +34,7 @@ const AGENDA = [
 const FOR_OPERATORS = [
   "Stacked two or more merchant cash advances or short-term advances",
   "Combined daily debit load that is now interfering with operating cash flow",
-  "Active SBA loan modification, default notice, COJ filing, or UCC enforcement",
+  "Active default notice, COJ filing, or UCC enforcement",
   "Mixed obligations across MCA, equipment finance, vendor credit, and bank lines",
   "Operating as a corporate entity (LLC, S-corp, C-corp) with commercial debt",
 ];
@@ -243,7 +243,7 @@ export default function InitialReviewPage() {
                 Sat, 10 AM – 4 PM ET
               </p>
               <p className="mt-2 text-sm text-muted leading-relaxed">
-                Active COJ filings, frozen accounts, or accelerated SBA notes: flag urgency in the form.
+                Active COJ filings, frozen accounts, or accelerated bank notes: flag urgency in the form.
               </p>
             </div>
             <div>

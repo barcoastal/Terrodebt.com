@@ -141,124 +141,6 @@ We coordinated with the factor first to protect the senior lien on receivables. 
     ],
   },
   {
-    slug: "sba-loan-modification",
-    name: "SBA Loan Modification",
-    shortName: "SBA",
-    category: "Lender debt",
-    metaTitle: "SBA Loan Modification & Workout Services | Business Debt Insider",
-    metaDescription:
-      "Workouts and modifications for SBA 7(a), 504, and EIDL loans in default or stretched. Hardship modifications, offer in compromise, and lender coordination.",
-    heroEyebrow: "SBA workouts",
-    headline: "Work with your SBA lender before acceleration.",
-    headlineLead: "Work with your SBA lender",
-    headlineAccent: "before acceleration",
-    headlineTail: ".",
-    subline:
-      "Hardship modifications, offer in compromise, and structured workouts on SBA 7(a), 504, and EIDL loans. We package the documentation and coordinate the submission with the lender and the SBA.",
-    bullets: [
-      "Hardship modifications on 7(a), 504, and EIDL loans",
-      "Offer in compromise packaging for distressed cases",
-      "Coordination with the SBA lender and the SBA itself",
-      "Personal guarantee protection where the math allows",
-    ],
-    whatItIs: `SBA loans (7(a), 504, EIDL) can be restructured when the business has genuine hardship. The SBA program is not a default-and-walk-away product. It is a workout-friendly framework, but the lender and the SBA require structured documentation to consider any modification.
-
-Available modifications include rate reductions, term extensions, payment deferments, interest-only periods, and (in distressed cases) offer in compromise. Each path has specific qualification criteria and a specific documentation package. We coordinate the merchant's submission with the SBA lender, with the SBA itself when applicable, and with a CPA when the financials need to be reformatted for the workout package.
-
-A typical SBA workout starts with hardship documentation. The lender wants to see a real hardship event (revenue drop, illness, partner exit, key customer loss) supported by tax returns, profit and loss, and a forward-looking pro forma showing how the modification will allow the business to stabilize and resume payments. With the right package, modifications are routinely accepted by SBA lenders, but the package has to be complete and the math has to work.
-
-Offer in compromise (OIC) is the deepest workout option, available when the business cannot reasonably resume full payments and a partial settlement is in the SBA's interest. OIC is hardest to qualify for and takes the longest, but it can resolve a significant SBA balance for a fraction of face value when the math supports it.`,
-    whoItFits: [
-      "Two or more months delinquent on an SBA 7(a), 504, or EIDL loan",
-      "A genuine hardship event has occurred (revenue drop, illness, partner exit, key customer loss)",
-      "The business is still operational and you want to keep it going",
-      "Collateral exposure or personal guarantee pursuit is a real concern",
-      "You have received a 30, 60, or 90-day acceleration notice from the lender",
-      "You want to restructure rather than liquidate or walk away",
-    ],
-    whoItDoesntFit: [
-      "The SBA loan is current and the payments are affordable as written",
-      "The business is already shutting down and an orderly wind-down is appropriate",
-      "The guarantor has no income or assets at all (OIC math typically does not work)",
-      "You are looking for a forgiveness program with no workout requirements",
-    ],
-    methods: [
-      {
-        title: "Hardship modification",
-        body: "Rate reductions, term extensions, deferments, or interest-only periods. We package the hardship documentation (cause, duration, recovery plan) and submit to the SBA lender for consideration. Most lenders work with merchants who present a complete and credible package.",
-      },
-      {
-        title: "Offer in compromise",
-        body: "A partial settlement of the SBA debt when the business cannot reasonably resume full payments. OIC requires a financial disclosure package, asset documentation, and a pro forma showing why the partial settlement is in the SBA's interest. OIC takes 6 to 12 months and is reviewed by both the lender and the SBA.",
-      },
-      {
-        title: "Structured workout",
-        body: "A negotiated modification that goes beyond standard hardship terms, often used when the business has a credible recovery path that requires a multi-step plan. Structured workouts can include collateral substitution, partner contributions, or staged payment increases over 24 to 36 months.",
-      },
-      {
-        title: "Lender renegotiation",
-        body: "Direct renegotiation with the SBA lender on covenant terms, collateral release, or guaranty modifications. Some lenders are more flexible than others, and the merchant's history with the lender matters. We engage the special assets or workout group rather than the originating relationship manager.",
-      },
-    ],
-    scenario: `A trucking operator in the Midwest had a $480,000 SBA 7(a) loan that funded fleet expansion in 2022. By early 2024 the operator was four months delinquent. A combination of fuel volatility, a key broker that paid 90 days late on a $250,000 receivable, and a transmission failure on the lead truck had drained the operating account. The lender had issued a 90-day acceleration notice and threatened to call the loan.
-
-The operator had a real recovery path. The slow broker had finally paid. Two new dedicated lanes were starting in 60 days at better rates than the spot market. The math worked for a modified payment schedule, but the lender needed a documented hardship package to engage.
-
-We packaged the hardship documentation, including the slow-paying broker letter, the maintenance invoice, two years of tax returns, a 24-month pro forma, and the new dedicated lane contracts. The submission went to the SBA lender's special assets group. After 60 days of review and back-and-forth, the lender approved a 12-month interest-only modification, followed by a permanent payment reduction of 22 percent for the remaining term. The personal guarantee stayed in place but acceleration was lifted.
-
-The operator resumed payments under the modification, the dedicated lanes ran on schedule, and the loan is now performing under the modified terms.`,
-    pitfalls: `SBA cases come with risks that are different from MCA work and require their own diligence.
-
-**Personal guaranty pursuit by the SBA.** When an SBA loan defaults and is charged off, the SBA itself can pursue the personal guarantor for the unpaid balance through Treasury offset, federal lien filings, and other federal collection tools. This is more aggressive than what most commercial lenders can do on their own. The earlier the workout starts, the better the chance of preserving the guaranty.
-
-**Lien priority issues.** SBA loans are usually secured by a blanket lien on business assets and often by a mortgage or junior lien on personal real estate. The lien priority becomes critical when other creditors (MCAs, equipment lenders, banks) are also in the picture. Workout sequence has to respect lien priority.
-
-**EIDL specifics.** EIDL loans have unique features including the $200,000 personal guarantee threshold, collateral requirements above $25,000, and SBA-direct servicing rather than bank servicing. EIDL workouts go through the SBA itself, not through a bank lender, and the timing and process are different.
-
-**Collateral seizure risk.** SBA lenders can pursue collateral, including real estate, equipment, and accounts receivable. The earlier the workout starts, the more likely the collateral stays in place. Once seizure proceedings begin, the workout becomes much harder.
-
-**Cross-default triggers.** SBA defaults can trigger cross-default clauses in other loan documents, including bank LOCs, equipment leases, and (in some cases) MCA contracts. The program has to identify these clauses at intake.`,
-    stats: [
-      { label: "Avg modification accepted", value: "30-40%" },
-      { label: "Avg deferment length", value: "6-12 mo" },
-      { label: "Loan size range", value: "$150K-$5M" },
-    ],
-    faq: [
-      {
-        q: "Will an SBA workout hurt my personal credit?",
-        a: "SBA loans usually have a personal guarantee that can report to consumer credit if charged off. A workout that keeps the loan performing protects the credit better than a default. Modifications are reported as modifications, which is a less severe credit event than default or charge-off.",
-      },
-      {
-        q: "What if I have a 504 loan rather than a 7(a)?",
-        a: "504 loans have a different structure (first lien with a bank, second lien with a CDC carrying the SBA guarantee). Workouts on 504 loans require coordination with both the bank lender and the CDC. The mechanics differ from 7(a) but the same workout tools (modification, OIC, structured plan) apply.",
-      },
-      {
-        q: "How is EIDL different from a 7(a) loan?",
-        a: "EIDL loans are serviced directly by the SBA, not by a bank lender. The collateral structure is different (collateral above $25,000, personal guarantee above $200,000), and the workout process goes through the SBA directly. EIDL hardship deferments and modifications are available but the timing and documentation requirements are SBA-specific.",
-      },
-      {
-        q: "Can I keep operating during the workout?",
-        a: "Yes. The workout is designed to keep the business operating while the modification is being arranged. The lender's interest is in resumed performance, not liquidation. As long as the merchant is engaging in good faith with documented hardship, acceleration is usually paused.",
-      },
-      {
-        q: "What about my SBA guaranty if the loan is modified?",
-        a: "The personal guaranty stays in place through most modifications. Offer in compromise can release the guaranty in some cases, but the guaranty release is itself part of the OIC negotiation. We confirm guaranty status in any settlement or closeout language before signing.",
-      },
-      {
-        q: "How long does an OIC take?",
-        a: "Offer in compromise on an SBA loan typically takes 6 to 12 months from package submission to final decision. The process involves the lender, the SBA, and sometimes the Treasury Department. The financial disclosure package has to be complete and the math has to support the offered amount.",
-      },
-      {
-        q: "Will the SBA itself review my workout?",
-        a: "On 7(a) loans, modifications below certain thresholds can be approved by the lender alone. Larger modifications and any OIC require SBA review and approval. On EIDL loans, the SBA itself is the lender, so the SBA reviews directly. The timeline and documentation requirements vary by loan type and modification scope.",
-      },
-      {
-        q: "Can you help if my loan is already accelerated?",
-        a: "Yes. Accelerated SBA loans are still workable, especially if the acceleration is recent. We move quickly to engage the lender's special assets group and present a hardship package that can support a reversal of acceleration or a structured workout that gets the loan back to performing status.",
-      },
-    ],
-  },
-  {
     slug: "equipment-finance-restructure",
     name: "Equipment Finance Restructure",
     shortName: "Equipment",
@@ -523,7 +405,7 @@ Special assets is the workout group inside the bank. Their job is to maximize re
 
 A typical bank workout starts with a covenant or default analysis. Which covenants have been violated, what is the cure period, what is the bank's recourse under the loan documents, and what is the bank's actual posture (recover or remediate). From there, we negotiate the workout: forbearance, covenant waiver, loan modification, extended amortization, rate relief, or some combination.
 
-Bank workouts typically run 60 to 180 days from engagement to executed agreement. The bank's process is slower than equipment finance and faster than SBA, with multiple internal approval steps. The merchant has to present a credible pro forma turnaround story supported by financials, management changes, or operational fixes.`,
+Bank workouts typically run 60 to 180 days from engagement to executed agreement. The bank's process is slower than equipment finance, with multiple internal approval steps. The merchant has to present a credible pro forma turnaround story supported by financials, management changes, or operational fixes.`,
     whoItFits: [
       "30 or more days delinquent on a bank term loan or LOC",
       "Covenant violation has occurred (financial covenants, reporting covenants, or affirmative covenants)",
@@ -604,7 +486,7 @@ The relationship was preserved. The operator kept the LOC at a reduced commitmen
       },
       {
         q: "How long does a bank workout take?",
-        a: "Most workouts run 60 to 180 days from initial engagement to executed agreement. Bank approval processes are slower than equipment finance and faster than SBA. The merchant has to present a credible pro forma and supporting financials, and the bank has internal approval steps that cannot be rushed.",
+        a: "Most workouts run 60 to 180 days from initial engagement to executed agreement. Bank approval processes are slower than equipment finance. The merchant has to present a credible pro forma and supporting financials, and the bank has internal approval steps that cannot be rushed.",
       },
       {
         q: "What if the bank sells my loan to a third party?",

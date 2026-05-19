@@ -40,7 +40,6 @@ function readTime(text: string): number {
 function topicFromSlug(slug: string): { label: string; href?: string } {
   if (slug.includes("mca") || slug.includes("reverse") || slug.includes("coj") || slug.includes("ucc"))
     return { label: "MCA Debt Relief", href: "/services/mca-debt-relief" };
-  if (slug.includes("sba")) return { label: "SBA Loan Modification", href: "/services/sba-loan-modification" };
   if (slug.includes("equipment")) return { label: "Equipment Finance", href: "/services/equipment-finance-restructure" };
   if (slug.includes("vendor")) return { label: "Vendor & Supplier Debt", href: "/services/vendor-supplier-debt" };
   if (slug.includes("bank") || slug.includes("covenant")) return { label: "Bank Loan Workouts", href: "/services/bank-loan-workout" };
@@ -50,7 +49,6 @@ function topicFromSlug(slug: string): { label: string; href?: string } {
 
 function calculatorForTopic(label: string): { title: string; href: string; desc: string } {
   if (label.startsWith("MCA")) return { title: "Effective APR Calculator", href: "/tools/apr-calculator", desc: "Compute the real annualized cost of your advance." };
-  if (label.startsWith("SBA")) return { title: "Debt Health Check", href: "/tools/health-check", desc: "10-question diagnostic across your debt mix." };
   if (label.startsWith("Equipment")) return { title: "MCA Stack Calculator", href: "/tools/stack-calculator", desc: "Map your debits across active advances." };
   return { title: "Debt Health Check", href: "/tools/health-check", desc: "10-question diagnostic across your debt mix." };
 }

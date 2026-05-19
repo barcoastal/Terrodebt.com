@@ -30,7 +30,7 @@ export const PROGRAMS: Record<ProgramKey, {
   "restructure": {
     title: "Restructure",
     headline: "Restructure your debt into one manageable monthly payment.",
-    subline: "We renegotiate terms with each lender so payments fit your actual cash flow, without settling. Used across MCA, SBA, equipment, and bank debt where the relationship is worth preserving.",
+    subline: "We renegotiate terms with each lender so payments fit your actual cash flow, without settling. Used across MCA, equipment, and bank debt where the relationship is worth preserving.",
     whoFor: [
       "Current but stretched on stacked debt",
       "Want to preserve lender relationships and credit profile",
@@ -43,7 +43,7 @@ export const PROGRAMS: Record<ProgramKey, {
       "Optional: pair with refinance where the business qualifies",
     ],
     example: { debt: 320000, saved: 96000, months: 14 },
-    appliesTo: "Most effective on MCAs (term extension), SBA loans (hardship modification), equipment leases (term extension or buyout negotiation), and bank loans (covenant waiver or modification).",
+    appliesTo: "Most effective on MCAs (term extension), equipment leases (term extension or buyout negotiation), and bank loans (covenant waiver or modification).",
   },
   "legal-defense": {
     title: "Legal Defense",

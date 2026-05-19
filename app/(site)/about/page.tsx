@@ -5,7 +5,7 @@ import { SubscribeForm } from "@/components/site/SubscribeForm";
 
 export const metadata: Metadata = {
   title: "About Business Debt Insider | Fort Lauderdale Debt Restructure Consulting",
-  description: "Business Debt Insider is the trade name of GRL Recovery LLC, a strategic financial consulting practice in Fort Lauderdale specializing in SME debt restructure across six debt categories.",
+  description: "Business Debt Insider is the trade name of GRL Recovery LLC, a strategic financial consulting practice in Fort Lauderdale specializing in SME debt restructure across five debt categories.",
 };
 
 export default function About() {
@@ -20,7 +20,7 @@ export default function About() {
               The business debt restructure company we wished existed.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
-              Modern tools and disciplined execution for a category stuck in 2018. Plain-spoken research and coordinated workouts across six coverage areas.
+              Modern tools and disciplined execution for a category stuck in 2018. Plain-spoken research and coordinated workouts across five coverage areas.
             </p>
           </div>
           <div className="md:col-span-5">
@@ -34,13 +34,13 @@ export default function About() {
       {/* Why we exist */}
       <Block eyebrow="Why we exist" title="Business debt is a math problem with a clock on it.">
         <p>
-          Most owners we talk to did not stack four MCAs, default on an SBA loan, or fall behind on payroll taxes because they wanted to. A diesel price spike, an employee who left, a piece of equipment that broke, a client who paid 90 days late. Once the debt started compounding, every new layer looked like the only option.
+          Most owners we talk to did not stack four MCAs, default on a bank line, or fall behind on payroll taxes because they wanted to. A diesel price spike, an employee who left, a piece of equipment that broke, a client who paid 90 days late. Once the debt started compounding, every new layer looked like the only option.
         </p>
         <p>
-          The relief category that exists to help these owners is mostly stuck in 2018 and mostly single-product. One company pitches MCA settlement. Another pitches SBA modification. A third pitches tax resolution. Most owners need help across two or three product categories at the same time, and they end up coordinating multiple providers or going without help on the rest.
+          The relief category that exists to help these owners is mostly stuck in 2018 and mostly single-product. One company pitches MCA settlement. Another pitches bank workouts. A third pitches tax resolution. Most owners need help across two or three product categories at the same time, and they end up coordinating multiple providers or going without help on the rest.
         </p>
         <p>
-          The practice was built around a different default. We work across six coverage areas: MCA debt relief, SBA loan modification, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We give merchants free calculators on day one so the math is clear before any consultation. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.
+          The practice was built around a different default. We work across five coverage areas: MCA debt relief, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We give merchants free calculators on day one so the math is clear before any consultation. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.
         </p>
       </Block>
 
@@ -55,7 +55,7 @@ export default function About() {
           </div>
           <div className="mt-10 grid md:grid-cols-2 gap-px bg-rule border border-rule">
             {[
-              { n: "01", title: "Six coverage areas, one team.", body: "Most relief companies pitch a single product. We work across MCA, SBA, equipment, vendor, bank, and tax debt because most cases need more than one. The intake assessment maps every obligation and sequences the workouts in the right order." },
+              { n: "01", title: "Five coverage areas, one team.", body: "Most relief companies pitch a single product. We work across MCA, equipment, vendor, bank, and tax debt because most cases need more than one. The intake assessment maps every obligation and sequences the workouts in the right order." },
               { n: "02", title: "Free tools, day one.", body: "Every merchant gets free calculators with no email required. You see your effective APR, your daily debit burden, and a program fit before any consultation. The math is on your side of the table from the start." },
               { n: "03", title: "Pre-default, not just post-lawsuit.", body: "Most relief companies only engage once an owner is sued or has frozen accounts. We work with owners who are still current. The earlier we engage, the more options stay on the table across every product category." },
               { n: "04", title: "Real attorneys, real states.", body: "When legal defense is needed, we coordinate licensed counsel in the merchant's state, not a generic referral. We are not pretending to be a law firm. We work with them." },
@@ -84,7 +84,7 @@ export default function About() {
           Every engagement starts the same way: we map the full debt position. Every active obligation, the contract terms, the lien positions, the cross-default clauses, the personal guarantees, the current and projected daily and monthly cash impact. We collect tax returns, bank statements, contract PDFs, and the lender or creditor correspondence that has already landed.
         </p>
         <p>
-          From there we build a sequence. Not every workout goes in the obvious order. A merchant with stacked MCAs and a stretched SBA loan might need MCA reconciliation first to stop the daily debit bleed, but if the SBA loan has an active acceleration notice the SBA work has to start in parallel to preserve the option. Cross-default clauses, lien priorities, and statute of limitations dates all shape the sequence.
+          From there we build a sequence. Not every workout goes in the obvious order. A merchant with stacked MCAs and a stretched bank line might need MCA reconciliation first to stop the daily debit bleed, but if the bank has an active acceleration notice the bank work has to start in parallel to preserve the option. Cross-default clauses, lien priorities, and statute of limitations dates all shape the sequence.
         </p>
         <p>
           We pick the methods inside each product category for the specific case. Settlement, restructure, modification, forbearance, OIC, lien release, COJ defense, levy release. Most cases use more than one. We do not run a single playbook through every client. We do not run a script.
@@ -114,7 +114,7 @@ export default function About() {
               <h3 className="mt-2 font-semibold tracking-tight text-slate text-2xl md:text-3xl leading-tight">Business Debt Insider</h3>
               <div className="mt-4 space-y-4 text-slate leading-relaxed">
                 <p>
-                  Business Debt Insider was built after a decade spent at the intersection of small-business lending and operations. The team has seen the inside of bad MCA contracts, accelerated SBA loans, and bank workouts that landed in special assets. The practice is built to be the team operators wished was on the other end of the phone.
+                  Business Debt Insider was built after a decade spent at the intersection of small-business lending and operations. The team has seen the inside of bad MCA contracts, equipment defaults, and bank workouts that landed in special assets. The practice is built to be the team operators wished was on the other end of the phone.
                 </p>
                 <p>
                   The practice writes its own research notes and articles, sits on every intake call for new engagements, and runs the workout sequence for every active program.

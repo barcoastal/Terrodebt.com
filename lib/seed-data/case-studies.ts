@@ -141,7 +141,7 @@ The $220,000 debt resolved for $99,000 across 8 months. The brand kept running a
     months: 12,
     storyMd: `## Situation
 
-An independent used auto dealership with attached service operating in the Mountain West had stacked six MCAs over an 18-month stretch. Floor plan interest had absorbed the cash that the operator assumed would cover the daily debits of $7,800. Factor rates on the six contracts ranged from 1.33 to 1.47, and two of the contracts were already showing UCC notices filed against the dealership&apos;s receivables.
+An independent used auto dealership with attached service operating in the Mountain West had stacked six MCAs over an 18-month stretch. Floor plan interest had absorbed the cash that the operator assumed would cover the daily debits of $7,800. Factor rates on the five contracts ranged from 1.33 to 1.47, and two of the contracts were already showing UCC notices filed against the dealership&apos;s receivables.
 
 The shop side was healthy. Service revenue ran $90K to $110K a month with a steady book of repeat customers. The lot side was where the cash flow had broken down. Inventory had aged past the floor plan interest sweet spot on roughly a third of the units, and the salesperson commission structure was eating margin on the units that did move quickly. The combination produced a cash flow profile the daily MCAs were not built for.
 
@@ -149,7 +149,7 @@ The shop side was healthy. Service revenue ran $90K to $110K a month with a stea
 
 We coordinated with the floor plan provider before approaching any of the MCAs so the inventory line was not disrupted. The floor plan had been the highest-risk variable and pre-coordination was non-negotiable. We then sent reconciliation requests to all six lenders simultaneously, supported by bank statements that documented the gap between the daily debits and the actual operating cash flow.
 
-Four of the six contracts settled at 39 to 51 percent of face value. The remaining two were restructured into longer monthly terms because the underlying contract structure made settlement less efficient than extension. We sequenced the UCC-noticed contracts first to clear the lien posture, which protected the receivables and kept the floor plan provider comfortable.
+Four of the five contracts settled at 39 to 51 percent of face value. The remaining two were restructured into longer monthly terms because the underlying contract structure made settlement less efficient than extension. We sequenced the UCC-noticed contracts first to clear the lien posture, which protected the receivables and kept the floor plan provider comfortable.
 
 ## Outcome
 

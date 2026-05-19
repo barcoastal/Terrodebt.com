@@ -11,7 +11,7 @@ const PROGRAM_META: Record<ProgramKey, { title: string; description: string }> =
   },
   "restructure": {
     title: "Debt Restructure | Business Debt Insider",
-    description: "Renegotiate terms without settling. Used across MCAs, SBA loans, equipment finance, and bank workouts to preserve lender relationships.",
+    description: "Renegotiate terms without settling. Used across MCAs, equipment finance, and bank workouts to preserve lender relationships.",
   },
   "legal-defense": {
     title: "Legal Defense | Business Debt Insider",
@@ -90,7 +90,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
           <Link href="/services" className="mt-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-electric no-underline hover:underline">
-            See the six product categories →
+            See the five product categories →
           </Link>
         </div>
       </section>

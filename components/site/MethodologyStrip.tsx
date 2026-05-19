@@ -27,7 +27,7 @@ export function MethodologyStrip() {
           <ul className="mt-6 space-y-5 text-ink leading-relaxed max-w-2xl">
             <li className="flex gap-4">
               <span className="font-mono text-base font-bold text-electric shrink-0 mt-0.5">01</span>
-              <p>We work cases across six categories: MCA, SBA, equipment, vendor, bank, and tax debt. Our guides reflect what actually closes, not generic relief copy.</p>
+              <p>We work cases across five categories: MCA, equipment, vendor, bank, and tax debt. Our guides reflect what actually closes, not generic relief copy.</p>
             </li>
             <li className="flex gap-4">
               <span className="font-mono text-base font-bold text-electric shrink-0 mt-0.5">02</span>

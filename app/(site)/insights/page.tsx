@@ -7,7 +7,7 @@ import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export const metadata: Metadata = {
   title: "Business Debt Restructure Insights & Guides | Business Debt Insider",
-  description: "Plain-language guides on MCA debt relief, SBA loan modification, COJ defense, effective APR math, and creditor negotiation. Written for SME operators.",
+  description: "Plain-language guides on MCA debt relief, COJ defense, effective APR math, and creditor negotiation. Written for SME operators.",
 };
 
 function readTime(md: string): number {
@@ -17,7 +17,6 @@ function readTime(md: string): number {
 
 function topicFromSlug(slug: string): string {
   if (slug.includes("mca") || slug.includes("reverse") || slug.includes("coj") || slug.includes("ucc")) return "MCA";
-  if (slug.includes("sba")) return "SBA";
   if (slug.includes("equipment")) return "Equipment";
   if (slug.includes("vendor")) return "Vendor";
   if (slug.includes("bank") || slug.includes("covenant")) return "Bank";
@@ -55,7 +54,7 @@ export default async function ArticlesIndex() {
             All guides on business debt restructure
           </h1>
           <p className="mt-4 text-base md:text-lg text-muted max-w-3xl leading-relaxed">
-            Plain-spoken guides on MCA, SBA, equipment, vendor, bank, and tax debt. Written by operators who have run the workouts.
+            Plain-spoken guides on MCA, equipment, vendor, bank, and tax debt. Written by operators who have run the workouts.
           </p>
         </div>
       </section>

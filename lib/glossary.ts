@@ -106,8 +106,8 @@ const TERMS: Omit<GlossaryEntry, "slug">[] = [
   {
     term: "Hardship modification",
     definition:
-      "A change to loan terms (rate, term, payment) granted because of documented financial hardship. Common on SBA loans and bank term debt, hardship modifications require a documented cause and a credible recovery pro forma.",
-    related: { label: "SBA Loan Modification", href: "/services/sba-loan-modification" },
+      "A change to loan terms (rate, term, payment) granted because of documented financial hardship. Common on bank term debt, hardship modifications require a documented cause and a credible recovery pro forma.",
+    related: { label: "Bank Loan Workouts", href: "/services/bank-loan-workout" },
   },
   {
     term: "Installment agreement",
@@ -131,18 +131,18 @@ const TERMS: Omit<GlossaryEntry, "slug">[] = [
     term: "Modification",
     definition:
       "A permanent change to loan terms documented through an amendment. Modifications can extend amortization, reduce rate, restructure payments, or release collateral. Different from forbearance, which is temporary.",
-    related: { label: "SBA Loan Modification", href: "/services/sba-loan-modification" },
+    related: { label: "Bank Loan Workouts", href: "/services/bank-loan-workout" },
   },
   {
     term: "Offer in Compromise (OIC)",
     definition:
-      "A partial settlement of a tax debt or SBA debt when the merchant cannot reasonably pay the full balance. The IRS evaluates OIC against the reasonable collection potential standard. SBA OIC requires lender and SBA approval.",
+      "A partial settlement of a tax debt when the merchant cannot reasonably pay the full balance. The IRS evaluates OIC against the reasonable collection potential standard.",
     related: { label: "Business Tax Debt", href: "/services/business-tax-debt" },
   },
   {
     term: "Personal guaranty",
     definition:
-      "A signed promise by an individual to repay a business debt if the business defaults. Personal guarantees on MCAs, SBA loans, equipment finance, and trade credit are common and a primary risk in any workout.",
+      "A signed promise by an individual to repay a business debt if the business defaults. Personal guarantees on MCAs, bank loans, equipment finance, and trade credit are common and a primary risk in any workout.",
     related: { label: "MCA Debt Relief", href: "/services/mca-debt-relief" },
   },
   {
@@ -240,24 +240,6 @@ const TERMS: Omit<GlossaryEntry, "slug">[] = [
     definition:
       "Terms requiring payment at the time of delivery rather than on credit. Vendors move stressed accounts to COD when invoices age past terms. Restoring credit terms is often a workout goal alongside debt resolution.",
     related: { label: "Vendor and Supplier Debt", href: "/services/vendor-supplier-debt" },
-  },
-  {
-    term: "EIDL",
-    definition:
-      "Economic Injury Disaster Loans serviced directly by the SBA. EIDL loans above 200,000 dollars carry personal guarantees, and loans above 25,000 dollars require collateral. EIDL workouts go through the SBA rather than a bank lender.",
-    related: { label: "SBA Loan Modification", href: "/services/sba-loan-modification" },
-  },
-  {
-    term: "7(a) loan",
-    definition:
-      "The SBA's primary general-purpose loan program, originated by SBA lenders with a partial government guaranty. Modifications below certain thresholds can be approved by the lender alone. Larger modifications and OIC require SBA review.",
-    related: { label: "SBA Loan Modification", href: "/services/sba-loan-modification" },
-  },
-  {
-    term: "504 loan",
-    definition:
-      "An SBA program structured as a first lien with a bank and a second lien with a Certified Development Company carrying the SBA guarantee. Workouts require coordination with both the bank and the CDC.",
-    related: { label: "SBA Loan Modification", href: "/services/sba-loan-modification" },
   },
   {
     term: "Retainage",
