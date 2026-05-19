@@ -1,8 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { db } from "@/lib/db";
 import { SERVICES } from "@/lib/service-content";
 import { priorityVerticals } from "@/lib/vertical-content";
+
+export const metadata: Metadata = {
+  title: "Business Debt Insider | Inside Business Debt Restructure",
+  description:
+    "Strategic financial consulting for small and mid-sized enterprises with stacked short-term debt. Forensic audit, liquidity engineering, creditor liaison, operational restructuring. Fort Lauderdale, FL.",
+  openGraph: {
+    title: "Business Debt Insider — Inside business debt restructure",
+    description:
+      "Strategic financial consulting for SMEs with stacked MCA, equipment, vendor, bank, and tax debt. Forensic audit and creditor negotiation.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Business Debt Insider — Inside business debt restructure",
+    description:
+      "Strategic financial consulting for SMEs with stacked MCA, equipment, vendor, bank, and tax debt.",
+  },
+};
 
 function fmtDate(d: Date | null | undefined): string {
   const date = d ?? new Date();
