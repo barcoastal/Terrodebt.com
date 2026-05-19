@@ -37,13 +37,16 @@ export function SiteFooter() {
       {/* Main footer grid */}
       <div className="mx-auto max-w-content px-6 py-14 grid gap-10 md:grid-cols-12 text-sm">
         <div className="md:col-span-3">
-          <Image
-            src="/logos/freshline-lockup.svg"
-            alt="Business Debt Insider"
-            width={200}
-            height={50}
-            className="mb-5 h-12 w-auto"
-          />
+          <div className="mb-5 flex items-center gap-3">
+            <Image src="/logos/bdi-icon.svg" alt="" width={48} height={48} className="h-12 w-auto" />
+            <Image
+              src="/logos/freshline-lockup.svg"
+              alt="Business Debt Insider"
+              width={200}
+              height={50}
+              className="h-12 w-auto"
+            />
+          </div>
           <p className="text-ink leading-relaxed text-sm">
             Business Debt Insider is the trade name of GRL Recovery LLC, a strategic financial consulting practice based in Fort Lauderdale, FL. The practice serves small and mid-sized enterprises navigating stacked short-term debt.
           </p>

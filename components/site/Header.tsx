@@ -38,7 +38,8 @@ export function SiteHeader() {
       {/* Main bar */}
       <div className="bg-paper">
         <div className="mx-auto max-w-content px-6 flex items-center justify-between gap-6 h-24 md:h-28">
-          <Link href="/" className="flex items-center no-underline" aria-label="Business Debt Insider home">
+          <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Business Debt Insider home">
+            <Image src="/logos/bdi-icon.svg" alt="" width={56} height={56} priority className="h-12 md:h-14 w-auto" />
             <Image src="/logos/freshline-lockup.svg" alt="Business Debt Insider" width={224} height={56} priority className="h-12 md:h-14 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-7 text-[11px] font-mono uppercase tracking-[0.18em] text-ink">
