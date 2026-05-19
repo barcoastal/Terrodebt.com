@@ -284,6 +284,7 @@ function readClientMeta() {
       utmTerm: get("utm_term"),
       gclid: get("gclid"),
       fbclid: get("fbclid"),
+      affiliateClickid: get("affiliate_clickid"),
     };
   } catch { return {}; }
 }

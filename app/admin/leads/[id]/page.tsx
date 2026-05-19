@@ -48,6 +48,7 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
         <Field label="utm_term" value={lead.utmTerm ?? "-"} mono />
         <Field label="gclid" value={lead.gclid ?? "-"} mono />
         <Field label="fbclid" value={lead.fbclid ?? "-"} mono />
+        <Field label="affiliate_clickid" value={lead.affiliateClickid ?? "-"} mono />
         <Field label="eli_clickid" value={lead.eliClickid ?? "-"} mono />
       </Section>
 

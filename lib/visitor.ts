@@ -11,6 +11,7 @@ export type VisitorPayload = {
   utmTerm?: string | null;
   gclid?: string | null;
   fbclid?: string | null;
+  affiliateClickid?: string | null;
 };
 
 export async function recordVisitor(p: VisitorPayload) {
@@ -28,6 +29,7 @@ export async function recordVisitor(p: VisitorPayload) {
       utmTerm: p.utmTerm ?? undefined,
       gclid: p.gclid ?? undefined,
       fbclid: p.fbclid ?? undefined,
+      affiliateClickid: p.affiliateClickid ?? undefined,
     },
     create: {
       eliClickid: p.eliClickid,
@@ -40,6 +42,7 @@ export async function recordVisitor(p: VisitorPayload) {
       utmTerm: p.utmTerm,
       gclid: p.gclid,
       fbclid: p.fbclid,
+      affiliateClickid: p.affiliateClickid,
     },
   });
 }

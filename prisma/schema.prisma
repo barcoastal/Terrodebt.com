@@ -34,6 +34,7 @@ model Lead {
   utmTerm             String?
   gclid               String?
   fbclid              String?
+  affiliateClickid    String?
   eliClickid          String?
   ip                  String?
   userAgent           String?
@@ -141,6 +142,7 @@ model Visitor {
   utmTerm      String?
   gclid        String?
   fbclid       String?
+  affiliateClickid String?
   firstSeen    DateTime @default(now())
   lastSeen     DateTime @default(now())
   pageViews    Int      @default(1)

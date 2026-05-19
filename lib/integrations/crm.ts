@@ -21,7 +21,7 @@ export async function postToCrm(lead: Lead): Promise<IntegrationResult> {
         source: lead.utmSource, medium: lead.utmMedium, campaign: lead.utmCampaign,
         content: lead.utmContent, term: lead.utmTerm,
       },
-      click_ids: { gclid: lead.gclid, fbclid: lead.fbclid, eli_clickid: lead.eliClickid },
+      click_ids: { gclid: lead.gclid, fbclid: lead.fbclid, affiliate_clickid: lead.affiliateClickid, eli_clickid: lead.eliClickid },
       created_at: lead.createdAt,
       terra_lead_id: lead.id,
     },

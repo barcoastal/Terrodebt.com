@@ -17,6 +17,7 @@ export async function POST(req: NextRequest) {
     utmTerm: body.utm_term ?? null,
     gclid: body.gclid ?? null,
     fbclid: body.fbclid ?? null,
+    affiliateClickid: body.affiliate_clickid ?? null,
   });
   return NextResponse.json({ ok: true });
 }

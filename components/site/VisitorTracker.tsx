@@ -13,6 +13,7 @@ export function VisitorTracker() {
       utm_term: get("utm_term"),
       gclid: get("gclid"),
       fbclid: get("fbclid"),
+      affiliate_clickid: get("affiliate_clickid"),
     };
     fetch("/api/visitor", {
       method: "POST",
@@ -20,7 +21,7 @@ export function VisitorTracker() {
       body: JSON.stringify(payload),
     }).catch(() => {});
     try {
-      ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid"].forEach((k) => {
+      ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid","affiliate_clickid"].forEach((k) => {
         const v = get(k);
         if (v) localStorage.setItem(`td_${k}`, v);
       });

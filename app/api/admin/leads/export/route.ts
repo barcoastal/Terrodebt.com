@@ -21,6 +21,7 @@ const HEADERS = [
   "utmTerm",
   "gclid",
   "fbclid",
+  "affiliateClickid",
   "eliClickid",
   "ip",
   "userAgent",

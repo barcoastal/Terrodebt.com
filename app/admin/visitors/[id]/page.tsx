@@ -62,6 +62,7 @@ export default async function VisitorDetailPage({ params }: { params: Promise<{ 
         <Field label="utm_term" value={visitor.utmTerm} />
         <Field label="gclid" value={visitor.gclid} mono />
         <Field label="fbclid" value={visitor.fbclid} mono />
+        <Field label="affiliate_clickid" value={visitor.affiliateClickid} mono />
       </div>
 
       <h2 className="text-lg font-semibold mt-8">Behavior fingerprint</h2>
