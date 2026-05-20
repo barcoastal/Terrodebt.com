@@ -8,13 +8,25 @@ export async function GET() {
   const created: string[] = [];
   const skipped: string[] = [];
 
+  const republished: string[] = [];
   for (const a of ARTICLE_SEEDS) {
     const existing = await db.article.findUnique({
       where: { slug: a.slug },
-      select: { id: true },
+      select: { id: true, published: true, publishedAt: true },
     });
     if (existing) {
-      skipped.push(a.slug);
+      if (!existing.published) {
+        await db.article.update({
+          where: { slug: a.slug },
+          data: {
+            published: true,
+            publishedAt: existing.publishedAt ?? new Date(),
+          },
+        });
+        republished.push(a.slug);
+      } else {
+        skipped.push(a.slug);
+      }
       continue;
     }
     await db.article.create({
@@ -28,7 +40,9 @@ export async function GET() {
     ok: true,
     total,
     created: created.length,
+    republished: republished.length,
     skipped: skipped.length,
     createdSlugs: created,
+    republishedSlugs: republished,
   });
 }
