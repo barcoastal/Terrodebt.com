@@ -59,6 +59,44 @@ const PROMPTS = {
     "A clean editorial overhead shot of multiple business cards spread on a desk with one pulled forward, slight depth-of-field, neutral tones.",
   "life-after-mca-debt":
     "An editorial shot of a small business owner standing at the door of their open shop at sunrise, looking out at the street, slightly desaturated warm tones.",
+  "equipment-finance-when-to-restructure":
+    "Close-up editorial shot of a piece of commercial equipment, like an industrial mixer or printing press, on a workshop floor, side lighting with dust particles visible in the beam, slightly desaturated cool tones.",
+  "vendor-debt-negotiation-strategies":
+    "An editorial overhead shot of a stack of plain invoice envelopes tied with simple twine on a wooden desk, soft daylight from a window, slightly cool tones, generous negative space at the top.",
+  "bank-loan-covenant-violations":
+    "A composed editorial shot of a closed leather-bound ledger book sitting on a polished wood desk in a bank office, soft directional light from a side window, neutral muted tones.",
+  "irs-business-tax-debt-options":
+    "An editorial close-up of a manila tax filing folder with tabbed year markers on a clean desk, a fountain pen and reading glasses nearby, soft daylight, cool muted tones.",
+  "settle-mca-debt-without-bankruptcy":
+    "Composed editorial photograph of a fork in a country road at dusk, one path leading toward a clear horizon and one curving away into trees, slightly desaturated cool tones, no signage.",
+  "mca-settlement-letter-template":
+    "An editorial close-up of a single sheet of formal letterhead paper with a fountain pen lying beside it on a wood desk, soft directional light from one side.",
+  "coj-filed-against-me":
+    "An editorial composed shot of an old courthouse hallway with classical columns and a single closed file folder on a wooden bench, soft cool daylight, narrow depth of field.",
+  "stop-mca-daily-ach-debits":
+    "Editorial close-up of a vintage wall clock with the second hand frozen mid-tick, mounted above a small business desk with a ledger underneath, soft cool light.",
+  "stacked-mca-complete-guide":
+    "An editorial overhead still-life of multiple folded business contracts stacked deep on a wooden desk, with one half open on top, slight depth of field, neutral cool tones.",
+  "reverse-consolidation-unwind":
+    "An editorial close-up of a tangled coil of rope being patiently untied on a wooden surface, one hand partially visible, soft daylight, neutral cool tones.",
+  "business-debt-vs-bankruptcy":
+    "A composed editorial shot of two heavy wooden doors side by side in an old institutional hallway, one slightly ajar and one firmly closed, soft directional light, cool tones.",
+  "mca-settlement-lender-order":
+    "Editorial overhead shot of wooden dominoes arranged in a deliberate cascading curve on a desk, the first one just beginning to tip, soft side lighting, desaturated cool tones.",
+  "business-debt-resolution-timeline":
+    "An editorial photograph of a long wooden ruler or planner laid horizontally across a desk with hand-drawn pencil marks for phases, soft window light, neutral muted tones.",
+  "business-debt-vs-personal-credit":
+    "A composed editorial still-life of a business document and a separate personal document side by side on a desk, separated by a thin sliver of empty wood, neutral tones, no visible text.",
+  "loan-during-debt-workout":
+    "Editorial composed shot of a hand reaching across a wooden conference table to hand over a small brass key on a keyring, business attire blurred in the background, soft daylight.",
+  "how-many-mcas-too-many":
+    "An overhead editorial shot of five identical glass jars on a wooden surface, each filled to a progressively higher level, slightly desaturated cool tones, soft natural daylight, negative space above.",
+  "mca-settlement-success-rates":
+    "An editorial still-life of a stack of closed manila folders with a single open one on top showing a simple printed line chart in profile (not legible), on a wood desk, soft daylight.",
+  "mca-reconciliation-request-template":
+    "An editorial close-up of a typed formal letter on textured letterhead paper partially out of frame, an unmarked wax seal stamp resting nearby, soft directional daylight.",
+  "rebuild-business-credit-after-settlement":
+    "An editorial shot of a small green sapling emerging from rich soil in a clean clay pot on a wood desk, soft morning side light, slightly cool tones, generous negative space.",
 };
 
 // Inline list of seed articles (slug + title). Keep in sync with lib/seed-data/articles.ts.
@@ -83,6 +121,25 @@ const ARTICLES = [
   { slug: "what-happens-if-you-stop-paying-an-mca", title: "What happens if you stop paying an MCA" },
   { slug: "choosing-an-mca-relief-partner", title: "How to choose an MCA relief partner: a buyer's checklist" },
   { slug: "life-after-mca-debt", title: "Life after MCA debt: what comes next" },
+  { slug: "equipment-finance-when-to-restructure", title: "Equipment Finance: When to Restructure Before Repossession" },
+  { slug: "vendor-debt-negotiation-strategies", title: "Vendor Debt: Negotiating Paydowns That Preserve Supply" },
+  { slug: "bank-loan-covenant-violations", title: "Bank Loan Covenant Violations: What Happens Next" },
+  { slug: "irs-business-tax-debt-options", title: "IRS Business Tax Debt: Installment Agreements vs Offer in Compromise" },
+  { slug: "settle-mca-debt-without-bankruptcy", title: "How to Settle Merchant Cash Advance Debt Without Filing Bankruptcy" },
+  { slug: "mca-settlement-letter-template", title: "MCA Settlement Letter: Exact Language That Gets Lenders to the Table" },
+  { slug: "coj-filed-against-me", title: "Confession of Judgment Filed Against You: First 72 Hours" },
+  { slug: "stop-mca-daily-ach-debits", title: "How to Stop Daily ACH Debits from Your Business Account" },
+  { slug: "stacked-mca-complete-guide", title: "The Complete Guide to Resolving Stacked Merchant Cash Advances" },
+  { slug: "reverse-consolidation-unwind", title: "How to Unwind a Reverse Consolidation You Shouldn't Have Signed" },
+  { slug: "business-debt-vs-bankruptcy", title: "Business Debt Workout vs Bankruptcy: When Each One Wins" },
+  { slug: "mca-settlement-lender-order", title: "Which MCA to Settle First: Sequencing That Actually Works" },
+  { slug: "business-debt-resolution-timeline", title: "The Real Business Debt Resolution Timeline (Month by Month)" },
+  { slug: "business-debt-vs-personal-credit", title: "How Business Debt Settlement Affects Your Personal Credit" },
+  { slug: "loan-during-debt-workout", title: "Can You Get a Business Loan While in a Debt Workout?" },
+  { slug: "how-many-mcas-too-many", title: "How Many MCAs Is Too Many? A Decision Framework" },
+  { slug: "mca-settlement-success-rates", title: "MCA Settlement Success Rates: What Actually Closes" },
+  { slug: "mca-reconciliation-request-template", title: "MCA Reconciliation Request: Exact Language That Gets Results" },
+  { slug: "rebuild-business-credit-after-settlement", title: "Rebuilding Business Credit After MCA Settlement" },
 ];
 
 const SKIP_EXISTING = process.env.SKIP_EXISTING === "1";
