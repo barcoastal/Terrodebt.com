@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Disclosure | Business Debt Insider MCA Debt Relief",
-  description: "Business Debt Insider is not a law firm. We coordinate licensed attorneys in your state. Outcomes vary. Read the full disclosure for our services and programs.",
+  title: "Disclosure: Engagement Scope, Outcomes, and Legal Coordination",
+  description: "Business Debt Insider is a trade name of GRL Recovery LLC. Not a law firm or lender. We coordinate licensed counsel in all 50 states. Outcomes vary by lender mix and contract terms.",
 };
 
 export default function DisclosurePage() {
