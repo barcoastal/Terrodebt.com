@@ -7,7 +7,6 @@ import { after } from "next/server";
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
 import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
-import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { Toc, extractToc } from "@/components/site/Toc";
 import { RelatedShelf } from "@/components/site/RelatedShelf";
@@ -138,14 +137,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           updatedAt: a.updatedAt,
           author: a.author,
         }}
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Insights", url: "/insights" },
-          ...(topic.href ? [{ name: topic.label, url: topic.href }] : []),
-          { name: a.title, url: `/insights/${a.slug}` },
-        ]}
       />
 
       {/* Breadcrumb */}
