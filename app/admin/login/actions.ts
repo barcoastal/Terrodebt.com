@@ -60,9 +60,9 @@ async function bootstrapIfNeeded() {
       }
     }
 
-    const articleCount = await db.article.count();
-    if (articleCount === 0) {
-      for (const a of ARTICLE_SEEDS) {
+    for (const a of ARTICLE_SEEDS) {
+      const existing = await db.article.findUnique({ where: { slug: a.slug }, select: { id: true } });
+      if (!existing) {
         await db.article.create({
           data: { ...a, published: true, publishedAt: new Date() },
         });
