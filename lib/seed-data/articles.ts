@@ -1,6 +1,10 @@
-export type ArticleSeed = { slug: string; title: string; excerpt: string; heroImage?: string; contentMd: string };
+import { ARTICLE_SEEDS_BATCH_1 } from "./articles-batch-1";
+import { ARTICLE_SEEDS_BATCH_2 } from "./articles-batch-2";
+import { ARTICLE_SEEDS_BATCH_3 } from "./articles-batch-3";
 
-export const ARTICLE_SEEDS: ArticleSeed[] = [
+export type ArticleSeed = { slug: string; title: string; excerpt: string; heroImage?: string; contentMd: string; author?: string };
+
+const CORE_SEEDS: ArticleSeed[] = [
   {
     slug: "what-is-reverse-consolidation",
     title: "What is reverse consolidation, and why it usually backfires",
@@ -1832,4 +1836,11 @@ Lien release occurs automatically when the tax debt is paid in full or settled t
 
 If you have IRS business tax debt, the workout starts with a status check. Pull a transcript of the account to see the balance, the periods, and any collection activity. Identify whether all returns are filed. Identify whether TFRP exposure exists. Identify the timing of the most recent notice and the deadlines for response. The first 30 days are spent on compliance and documentation. The next 30 to 60 days are spent on workout option selection and package preparation. Schedule a free assessment with us if you want help selecting the right path and preparing the package. IRS workouts have specific procedural requirements and the timing matters.`,
   },
+];
+
+export const ARTICLE_SEEDS: ArticleSeed[] = [
+  ...CORE_SEEDS,
+  ...ARTICLE_SEEDS_BATCH_1,
+  ...ARTICLE_SEEDS_BATCH_2,
+  ...ARTICLE_SEEDS_BATCH_3,
 ];
