@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     title: "Business Debt Restructure & MCA Relief Consulting | Business Debt Insider",
     description:
       "Strategic financial consulting for SMEs with stacked merchant cash advance, equipment, vendor, bank, and tax debt. Fort Lauderdale, FL.",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Business Debt Insider" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Business Debt Insider" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Business Debt Restructure & MCA Relief Consulting | Business Debt Insider",
     description:
       "Strategic financial consulting for businesses with stacked debt. Forensic audit, liquidity engineering, creditor negotiation. Fort Lauderdale, FL.",
-    images: ["/og-default.png"],
+    images: ["/opengraph-image"],
   },
 };
 

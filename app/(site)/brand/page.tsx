@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Brand & Design System",
-  description: "Business Debt Insider's brand identity, color tokens, typography, and component library.",
+  description: "Business Debt Insider brand identity: color tokens, typography, logo system, and component library. Internal reference.",
+  robots: { index: false, follow: true },
 };
 
 export default function BrandPage() {

@@ -15,8 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const meta = STATES.find((s) => s.code === code);
   if (!meta) return {};
   return {
-    title: `MCA Defense in ${meta.name} | Business Debt Insider`,
-    description: `MCA defense in ${meta.name}: licensed counsel, COJ response, account freeze help, settlement coordination. Free assessment within one business hour.`,
+    title: `MCA Defense in ${meta.name} | COJ Response & Settlement`,
+    description: `Stacked MCA debt in ${meta.name}? We coordinate licensed counsel for COJ defense, account freezes, and settlement. Free initial review within one business hour.`,
+    alternates: { canonical: `/mca-defense/${meta.code.toLowerCase()}` },
   };
 }
 

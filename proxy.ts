@@ -9,6 +9,13 @@ function makeId() {
 }
 
 export async function proxy(req: NextRequest) {
+  const host = req.headers.get("host") ?? "";
+  if (host.startsWith("www.")) {
+    const url = req.nextUrl.clone();
+    url.host = host.slice(4);
+    return NextResponse.redirect(url, 308);
+  }
+
   const res = NextResponse.next();
 
   if (!req.cookies.get(COOKIE)) {

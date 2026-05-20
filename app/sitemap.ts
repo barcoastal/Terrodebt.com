@@ -10,15 +10,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const staticPaths = [
     "", "/about", "/contact", "/trust", "/privacy", "/terms", "/disclosure",
-    "/calculator", "/insights", "/industries", "/programs", "/services",
+    "/insights", "/industries", "/programs", "/services", "/glossary",
     "/tools", "/tools/apr-calculator", "/tools/stack-calculator", "/tools/health-check",
     "/programs/settlement", "/programs/restructure", "/programs/legal-defense",
   ];
   const staticUrls = staticPaths.map((p) => ({ url: `${BASE}${p}`, lastModified: now, changeFrequency: "weekly" as const, priority: p === "" ? 1.0 : 0.8 }));
 
   const productUrls = PRODUCTS.map((p) => ({ url: `${BASE}/services/${p.slug}`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 }));
-  const verticalUrls = VERTICAL_CONTENT.map((v) => ({ url: `${BASE}/industries/${v.slug}`, lastModified: now, priority: 0.7 }));
-  const stateUrls = STATES.map((s) => ({ url: `${BASE}/mca-defense/${s.code.toLowerCase()}`, lastModified: now, priority: 0.6 }));
+  const verticalUrls = VERTICAL_CONTENT.map((v) => ({ url: `${BASE}/industries/${v.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 }));
+  const stateUrls = STATES.map((s) => ({ url: `${BASE}/mca-defense/${s.code.toLowerCase()}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 }));
 
   let articleUrls: MetadataRoute.Sitemap = [];
   try {

@@ -23,10 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: v.metaTitle,
     description: v.metaDescription,
+    alternates: { canonical: `/industries/${slug}` },
     openGraph: {
       title: v.metaTitle,
       description: v.metaDescription,
       type: "article",
+      url: `/industries/${slug}`,
       images: [{ url: `/images/industry-${slug}.png`, alt: v.name }],
     },
   };

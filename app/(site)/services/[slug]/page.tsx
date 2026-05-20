@@ -12,7 +12,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const s = findService(slug);
   if (!s) return {};
-  return { title: s.metaTitle, description: s.metaDescription };
+  return {
+    title: s.metaTitle,
+    description: s.metaDescription,
+    alternates: { canonical: `/services/${s.slug}` },
+    openGraph: {
+      title: s.metaTitle,
+      description: s.metaDescription,
+      url: `/services/${s.slug}`,
+      type: "article",
+    },
+  };
 }
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
