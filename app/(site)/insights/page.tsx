@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: "Plain-language guides on MCA debt relief, COJ defense, effective APR math, and creditor negotiation. Written for SME operators.",
 };
 
+export const revalidate = 300;
+
 function readTime(md: string): number {
   const words = md.split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 220));

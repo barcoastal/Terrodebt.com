@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 300;
+
 function fmtDate(d: Date | null | undefined): string {
   const date = d ?? new Date();
   return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
