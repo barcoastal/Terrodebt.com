@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
+import { visitorSource } from "@/lib/visitor-source";
 
 function fmt(d: Date | null | undefined): string {
   if (!d) return "-";
@@ -50,6 +51,27 @@ export default async function VisitorDetailPage({ params }: { params: Promise<{ 
         ) : (
           <span className="inline-block bg-offwhite text-muted text-xs rounded-full px-3 py-1">Anonymous</span>
         )}
+      </div>
+
+      <div className="mt-4 surface-card p-5 bg-offwhite">
+        {(() => {
+          const src = visitorSource({
+            utmSource: visitor.utmSource,
+            utmMedium: visitor.utmMedium,
+            utmCampaign: visitor.utmCampaign,
+            gclid: visitor.gclid,
+            fbclid: visitor.fbclid,
+            affiliateClickid: visitor.affiliateClickid,
+            referrer: visitor.referrer,
+          });
+          return (
+            <>
+              <div className="text-xs text-muted uppercase tracking-wide">Source</div>
+              <div className="mt-1 text-xl font-bold text-slate">{src.label}</div>
+              <div className="mt-1 text-xs text-muted">Category: {src.category}{src.detail ? ` · ${src.detail}` : ""}</div>
+            </>
+          );
+        })()}
       </div>
 
       <h2 className="text-lg font-semibold mt-6">Identity</h2>

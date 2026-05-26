@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
 import type { Prisma } from "@/app/generated/prisma";
+import { visitorSource } from "@/lib/visitor-source";
 
 const PAGE_SIZE = 50;
 
@@ -150,11 +151,12 @@ export default async function VisitorsPage({ searchParams }: { searchParams: Pro
           <thead className="bg-offwhite text-left">
             <tr>
               <th className="px-3 py-2">First seen</th>
+              <th>Source</th>
               <th>Country</th>
               <th>Device</th>
               <th>Landing</th>
               <th>Referrer</th>
-              <th>Source</th>
+              <th>UTM</th>
               <th>Campaign</th>
               <th>PV</th>
               <th>Status</th>
@@ -162,15 +164,35 @@ export default async function VisitorsPage({ searchParams }: { searchParams: Pro
           </thead>
           <tbody>
             {visitors.length === 0 && (
-              <tr><td className="px-3 py-4 text-muted" colSpan={9}>No visitors match these filters.</td></tr>
+              <tr><td className="px-3 py-4 text-muted" colSpan={10}>No visitors match these filters.</td></tr>
             )}
             {visitors.map((v) => {
               const converted = v.eliClickid ? convertedClickIds.has(v.eliClickid) : false;
               const refHost = v.referrer ? (() => { try { return new URL(v.referrer).hostname; } catch { return v.referrer; } })() : null;
+              const src = visitorSource({
+                utmSource: v.utmSource,
+                utmMedium: v.utmMedium,
+                utmCampaign: v.utmCampaign,
+                gclid: v.gclid,
+                fbclid: v.fbclid,
+                affiliateClickid: v.affiliateClickid,
+                referrer: v.referrer,
+              });
               return (
                 <tr key={v.id} className="border-t border-border hover:bg-offwhite/40">
                   <td className="px-3 py-2">
                     <Link href={`/admin/visitors/${v.id}`}>{fmt(v.firstSeen)}</Link>
+                  </td>
+                  <td>
+                    <span className={`inline-block text-xs font-medium rounded-full px-2 py-0.5 ${
+                      src.category === "google-ads" ? "bg-blue-100 text-blue-800" :
+                      src.category === "facebook-ads" ? "bg-indigo-100 text-indigo-800" :
+                      src.category === "affiliate" ? "bg-amber-100 text-amber-800" :
+                      src.category === "organic" ? "bg-emerald-100 text-emerald-800" :
+                      src.category === "utm" ? "bg-violet-100 text-violet-800" :
+                      src.category === "referral" ? "bg-sky-100 text-sky-800" :
+                      "bg-offwhite text-muted"
+                    }`}>{src.label}</span>
                   </td>
                   <td>{v.country ?? "-"}</td>
                   <td>{v.deviceType ?? "-"}</td>
