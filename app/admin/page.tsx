@@ -1,5 +1,7 @@
 import { db } from "@/lib/db";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboard() {
   let leads24h = 0, leads7d = 0, totalLeads = 0;
   let recentLeads: Awaited<ReturnType<typeof db.lead.findMany>> = [];
