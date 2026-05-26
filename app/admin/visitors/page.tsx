@@ -150,28 +150,35 @@ export default async function VisitorsPage({ searchParams }: { searchParams: Pro
           <thead className="bg-offwhite text-left">
             <tr>
               <th className="px-3 py-2">First seen</th>
-              <th>Last seen</th>
-              <th>Pageviews</th>
-              <th>UTM source</th>
-              <th>UTM campaign</th>
+              <th>Country</th>
+              <th>Device</th>
+              <th>Landing</th>
+              <th>Referrer</th>
+              <th>Source</th>
+              <th>Campaign</th>
+              <th>PV</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
             {visitors.length === 0 && (
-              <tr><td className="px-3 py-4 text-muted" colSpan={6}>No visitors match these filters.</td></tr>
+              <tr><td className="px-3 py-4 text-muted" colSpan={9}>No visitors match these filters.</td></tr>
             )}
             {visitors.map((v) => {
               const converted = v.eliClickid ? convertedClickIds.has(v.eliClickid) : false;
+              const refHost = v.referrer ? (() => { try { return new URL(v.referrer).hostname; } catch { return v.referrer; } })() : null;
               return (
                 <tr key={v.id} className="border-t border-border hover:bg-offwhite/40">
                   <td className="px-3 py-2">
                     <Link href={`/admin/visitors/${v.id}`}>{fmt(v.firstSeen)}</Link>
                   </td>
-                  <td>{fmt(v.lastSeen)}</td>
-                  <td className="font-mono">{v.pageViews}</td>
+                  <td>{v.country ?? "-"}</td>
+                  <td>{v.deviceType ?? "-"}</td>
+                  <td className="font-mono text-xs">{v.landingPath ?? "-"}</td>
+                  <td className="text-xs">{refHost ?? "-"}</td>
                   <td>{v.utmSource ?? "-"}</td>
                   <td>{v.utmCampaign ?? "-"}</td>
+                  <td className="font-mono">{v.pageViews}</td>
                   <td>
                     {converted ? (
                       <span className="inline-block bg-electric text-white text-xs font-semibold rounded-full px-2 py-0.5">Lead</span>

@@ -143,9 +143,29 @@ model Visitor {
   gclid        String?
   fbclid       String?
   affiliateClickid String?
+  referrer     String?
+  landingPath  String?
+  country      String?
+  region       String?
+  city         String?
+  deviceType   String?
   firstSeen    DateTime @default(now())
   lastSeen     DateTime @default(now())
   pageViews    Int      @default(1)
+  pageHits     PageHit[]
+}
+
+model PageHit {
+  id         String   @id @default(cuid())
+  visitorId  String
+  visitor    Visitor  @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  path       String
+  referrer   String?
+  createdAt  DateTime @default(now())
+
+  @@index([visitorId])
+  @@index([createdAt])
+  @@index([path])
 }
 
 model Setting {

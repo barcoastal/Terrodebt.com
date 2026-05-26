@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function VisitorTracker() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const get = (k: string) => params.get(k);
@@ -14,6 +17,8 @@ export function VisitorTracker() {
       gclid: get("gclid"),
       fbclid: get("fbclid"),
       affiliate_clickid: get("affiliate_clickid"),
+      referrer: document.referrer || null,
+      path: pathname || window.location.pathname,
     };
     fetch("/api/visitor", {
       method: "POST",
@@ -26,6 +31,6 @@ export function VisitorTracker() {
         if (v) localStorage.setItem(`td_${k}`, v);
       });
     } catch {}
-  }, []);
+  }, [pathname]);
   return null;
 }

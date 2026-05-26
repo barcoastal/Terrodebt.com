@@ -24,6 +24,15 @@ export default async function VisitorDetailPage({ params }: { params: Promise<{ 
     } catch {}
   }
 
+  let pageHits: Awaited<ReturnType<typeof db.pageHit.findMany>> = [];
+  try {
+    pageHits = await db.pageHit.findMany({
+      where: { visitorId: visitor.id },
+      orderBy: { createdAt: "desc" },
+      take: 100,
+    });
+  } catch {}
+
   // Fingerprint stats
   const firstSeenMs = visitor.firstSeen.getTime();
   const lastSeenMs = visitor.lastSeen.getTime();
@@ -53,6 +62,16 @@ export default async function VisitorDetailPage({ params }: { params: Promise<{ 
         <Field label="Total pageviews" value={String(visitor.pageViews)} mono />
       </div>
 
+      <h2 className="text-lg font-semibold mt-8">Origin</h2>
+      <div className="mt-3 grid md:grid-cols-2 gap-3">
+        <Field label="Country" value={visitor.country} />
+        <Field label="Region" value={visitor.region} />
+        <Field label="City" value={visitor.city} />
+        <Field label="Device type" value={visitor.deviceType} />
+        <Field label="Landing page" value={visitor.landingPath} mono />
+        <Field label="Referrer" value={visitor.referrer} />
+      </div>
+
       <h2 className="text-lg font-semibold mt-8">UTM and click IDs</h2>
       <div className="mt-3 grid md:grid-cols-2 gap-3">
         <Field label="utm_source" value={visitor.utmSource} />
@@ -71,6 +90,32 @@ export default async function VisitorDetailPage({ params }: { params: Promise<{ 
         <Field label="Pageviews per day" value={pageviewsPerDay} mono />
         <Field label="Visit type" value={isReturning ? "Returning" : "First-time"} />
       </div>
+
+      <h2 className="text-lg font-semibold mt-8">Page hits ({pageHits.length})</h2>
+      {pageHits.length === 0 ? (
+        <div className="mt-3 surface-card p-4 text-sm text-muted">No pageviews recorded for this visitor yet. (Page-hit history starts tracking from the next deploy onward.)</div>
+      ) : (
+        <div className="mt-3 surface-card overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead className="bg-offwhite text-left">
+              <tr>
+                <th className="px-3 py-2">When</th>
+                <th>Path</th>
+                <th>Referrer</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pageHits.map((h) => (
+                <tr key={h.id} className="border-t border-border">
+                  <td className="px-3 py-2 font-mono text-xs">{fmt(h.createdAt)}</td>
+                  <td className="font-mono text-xs">{h.path}</td>
+                  <td className="text-xs">{h.referrer ?? "-"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       <h2 className="text-lg font-semibold mt-8">Linked leads</h2>
       {leads.length === 0 ? (
