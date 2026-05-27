@@ -198,6 +198,16 @@ model Postback {
   @@index([linkedLeadId])
 }
 
+model ConversionAction {
+  id        String   @id @default(cuid())
+  name      String
+  actionId  String
+  platform  String   @default("google_ads")
+  createdAt DateTime @default(now())
+
+  @@unique([platform, actionId])
+}
+
 model EventFire {
   id                 String   @id @default(cuid())
   platform           String   // google_ads, ga4, facebook
