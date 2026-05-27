@@ -53,25 +53,32 @@ export default async function VisitorDetailPage({ params }: { params: Promise<{ 
         )}
       </div>
 
-      <div className="mt-4 surface-card p-5 bg-offwhite">
-        {(() => {
-          const src = visitorSource({
-            utmSource: visitor.utmSource,
-            utmMedium: visitor.utmMedium,
-            utmCampaign: visitor.utmCampaign,
-            gclid: visitor.gclid,
-            fbclid: visitor.fbclid,
-            affiliateClickid: visitor.affiliateClickid,
-            referrer: visitor.referrer,
-          });
-          return (
-            <>
-              <div className="text-xs text-muted uppercase tracking-wide">Source</div>
-              <div className="mt-1 text-xl font-bold text-slate">{src.label}</div>
-              <div className="mt-1 text-xs text-muted">Category: {src.category}{src.detail ? ` · ${src.detail}` : ""}</div>
-            </>
-          );
-        })()}
+      <div className="mt-4 grid md:grid-cols-2 gap-3">
+        <div className="surface-card p-5 bg-offwhite">
+          <div className="text-xs text-muted uppercase tracking-wide">Click ID</div>
+          <div className="mt-1 text-xl font-mono font-bold text-slate break-all">{visitor.eliClickid}</div>
+          <div className="mt-1 text-xs text-muted">Pass this as a subid/click parameter when sending outbound traffic to partners so their postback links back to this visitor.</div>
+        </div>
+        <div className="surface-card p-5 bg-offwhite">
+          {(() => {
+            const src = visitorSource({
+              utmSource: visitor.utmSource,
+              utmMedium: visitor.utmMedium,
+              utmCampaign: visitor.utmCampaign,
+              gclid: visitor.gclid,
+              fbclid: visitor.fbclid,
+              affiliateClickid: visitor.affiliateClickid,
+              referrer: visitor.referrer,
+            });
+            return (
+              <>
+                <div className="text-xs text-muted uppercase tracking-wide">Source</div>
+                <div className="mt-1 text-xl font-bold text-slate">{src.label}</div>
+                <div className="mt-1 text-xs text-muted">Category: {src.category}{src.detail ? ` · ${src.detail}` : ""}</div>
+              </>
+            );
+          })()}
+        </div>
       </div>
 
       <h2 className="text-lg font-semibold mt-6">Identity</h2>

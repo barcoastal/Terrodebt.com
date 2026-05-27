@@ -151,6 +151,7 @@ export default async function VisitorsPage({ searchParams }: { searchParams: Pro
           <thead className="bg-offwhite text-left">
             <tr>
               <th className="px-3 py-2">First seen</th>
+              <th>Click ID</th>
               <th>Source</th>
               <th>Country</th>
               <th>Device</th>
@@ -164,7 +165,7 @@ export default async function VisitorsPage({ searchParams }: { searchParams: Pro
           </thead>
           <tbody>
             {visitors.length === 0 && (
-              <tr><td className="px-3 py-4 text-muted" colSpan={10}>No visitors match these filters.</td></tr>
+              <tr><td className="px-3 py-4 text-muted" colSpan={11}>No visitors match these filters.</td></tr>
             )}
             {visitors.map((v) => {
               const converted = v.eliClickid ? convertedClickIds.has(v.eliClickid) : false;
@@ -182,6 +183,9 @@ export default async function VisitorsPage({ searchParams }: { searchParams: Pro
                 <tr key={v.id} className="border-t border-border hover:bg-offwhite/40">
                   <td className="px-3 py-2">
                     <Link href={`/admin/visitors/${v.id}`}>{fmt(v.firstSeen)}</Link>
+                  </td>
+                  <td className="font-mono text-xs">
+                    <Link href={`/admin/visitors/${v.id}`} className="text-electric no-underline hover:underline">{v.eliClickid}</Link>
                   </td>
                   <td>
                     <span className={`inline-block text-xs font-medium rounded-full px-2 py-0.5 ${
