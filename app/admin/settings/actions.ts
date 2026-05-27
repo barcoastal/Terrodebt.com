@@ -9,6 +9,7 @@ const SECRET_KEYS = new Set([
   "google_ads_developer_token",
   "google_ads_client_secret",
   "google_ads_refresh_token",
+  "postback_secret",
 ]);
 
 export async function saveSettings(fd: FormData) {

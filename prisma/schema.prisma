@@ -172,3 +172,49 @@ model Setting {
   key   String @id
   value Json
 }
+
+model Postback {
+  id                String   @id @default(cuid())
+  source            String   // network identifier, e.g. "everflow", "google-postback", "manual"
+  affiliateClickid  String?
+  gclid             String?
+  fbclid            String?
+  eliClickid        String?
+  payout            Float?
+  status            String?  // qualified, sale, etc.
+  conversionActionId String? // optional explicit GA action to fire
+  rawPayload        Json
+  ip                String?
+  userAgent         String?
+  linkedLeadId      String?
+  linkedVisitorId   String?
+  forwarded         Boolean  @default(false)
+  forwardResult     Json?
+  createdAt         DateTime @default(now())
+
+  @@index([source])
+  @@index([createdAt])
+  @@index([affiliateClickid])
+  @@index([linkedLeadId])
+}
+
+model EventFire {
+  id                 String   @id @default(cuid())
+  platform           String   // google_ads, ga4, facebook
+  conversionActionId String?
+  leadId             String?
+  postbackId         String?
+  source             String   // "auto-on-submit", "manual-admin", "postback", "bulk"
+  status             String   // sent, failed
+  errorMessage       String?
+  gclid              String?
+  value              Float?
+  currency           String?
+  payload            Json?
+  createdAt          DateTime @default(now())
+
+  @@index([leadId])
+  @@index([postbackId])
+  @@index([createdAt])
+  @@index([status])
+}

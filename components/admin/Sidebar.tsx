@@ -10,6 +10,8 @@ const ITEMS = [
   { href: "/admin/states", label: "States" },
   { href: "/admin/case-studies", label: "Case Studies" },
   { href: "/admin/visitors", label: "Visitors" },
+  { href: "/admin/events", label: "Event center" },
+  { href: "/admin/postbacks", label: "Postbacks" },
   { href: "/admin/settings", label: "Settings" },
 ];
 

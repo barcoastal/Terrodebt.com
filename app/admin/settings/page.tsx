@@ -39,6 +39,14 @@ const GROUPS: { title: string; description: string; fields: FieldDef[] }[] = [
     ],
   },
   {
+    title: "Postbacks — inbound",
+    description: "External networks POST/GET /api/postback to report conversions. Set a shared secret to require auth on every postback. When a postback links to a lead with a stored gclid, a Google Ads conversion is auto-forwarded.",
+    fields: [
+      { key: "postback_secret", label: "Postback shared secret", help: "Required as ?secret= or Authorization: Bearer on every postback. Leave blank to accept unauthenticated postbacks (not recommended).", secret: true },
+      { key: "postback_forward_to_google_ads", label: "Auto-forward to Google Ads", help: "Set to 'false' to disable auto-forwarding. Default is on." },
+    ],
+  },
+  {
     title: "Google Ads — server-side conversion uploads",
     description: "Used by the Send event to Google Ads button on each lead. Secrets stay blank in the form — leave them empty to keep the existing value. See docs/google-ads-setup.md for how to obtain each one.",
     fields: [
