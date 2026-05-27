@@ -62,5 +62,20 @@ export async function POST(req: NextRequest) {
     region: geo.region,
     city: geo.city,
   });
-  return NextResponse.json({ ok: true });
+
+  const res = NextResponse.json({ ok: true });
+  const NINETY_DAYS = 60 * 60 * 24 * 90;
+  const setCookie = (name: string, value: string | null | undefined) => {
+    if (!value) return;
+    res.cookies.set(name, value, { maxAge: NINETY_DAYS, sameSite: "lax", path: "/", httpOnly: false });
+  };
+  setCookie("td_gclid", body.gclid);
+  setCookie("td_fbclid", body.fbclid);
+  setCookie("td_affiliate_clickid", body.affiliate_clickid);
+  setCookie("td_utm_source", body.utm_source);
+  setCookie("td_utm_medium", body.utm_medium);
+  setCookie("td_utm_campaign", body.utm_campaign);
+  setCookie("td_utm_content", body.utm_content);
+  setCookie("td_utm_term", body.utm_term);
+  return res;
 }

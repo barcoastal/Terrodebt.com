@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
-import { updateLeadStatus } from "./actions";
+import { updateLeadStatus, fireGoogleAdsConversion } from "./actions";
 
 const STATUSES = ["new", "contacted", "qualified", "signed", "dead"];
+
+type GaHistoryEntry = { name?: string; ok: boolean; error?: string; at: string; conversionActionId?: string };
 
 export default async function LeadDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -73,6 +75,61 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
         </select>
         <button className="bg-electric text-white px-3 py-2 rounded-md">Update</button>
       </form>
+
+      {/* Google Ads conversion */}
+      <h2 className="text-lg font-semibold mt-10">Send event to Google Ads</h2>
+      {!lead.gclid ? (
+        <p className="mt-2 text-sm text-muted">No gclid stored on this lead. Cannot fire a Google Ads conversion (would need the click ID that brought the user to the site).</p>
+      ) : (
+        <>
+          <p className="mt-2 text-sm text-muted">
+            Fires a click-conversion upload via Google Ads API using the stored gclid. Leave the action ID empty to use the default (env: <code className="font-mono text-xs">GOOGLE_ADS_CONVERSION_ACTION_ID</code>), or paste a specific conversion action ID to fire a funnel-stage event (e.g. Qualified, Booked, Closed-Won).
+          </p>
+          <form
+            action={async (fd: FormData) => { "use server"; await fireGoogleAdsConversion(id, String(fd.get("conversionActionId") || "") || undefined); }}
+            className="mt-3 flex gap-2 items-center flex-wrap"
+          >
+            <input
+              name="conversionActionId"
+              placeholder="Conversion action ID (optional)"
+              className="border border-border rounded-md px-3 py-2 font-mono text-sm min-w-[300px]"
+            />
+            <button className="bg-slate text-white px-3 py-2 rounded-md">Fire conversion</button>
+          </form>
+
+          {(() => {
+            const status = (lead.integrationStatus ?? {}) as Record<string, unknown>;
+            const gaHistory = Array.isArray(status.gaHistory) ? (status.gaHistory as GaHistoryEntry[]) : [];
+            if (gaHistory.length === 0) return null;
+            return (
+              <div className="mt-4 surface-card overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-offwhite text-left">
+                    <tr>
+                      <th className="px-3 py-2">At</th>
+                      <th>Action ID</th>
+                      <th>Status</th>
+                      <th>Error</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[...gaHistory].reverse().map((h, i) => (
+                      <tr key={i} className="border-t border-border">
+                        <td className="px-3 py-2 font-mono text-xs">{h.at}</td>
+                        <td className="font-mono text-xs">{h.conversionActionId ?? "default"}</td>
+                        <td>
+                          {h.ok ? <span className="text-emerald-700 text-xs font-semibold">✓ sent</span> : <span className="text-red-700 text-xs font-semibold">✗ failed</span>}
+                        </td>
+                        <td className="text-xs text-muted">{h.error ?? "-"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          })()}
+        </>
+      )}
 
       {/* Raw */}
       <h2 className="text-lg font-semibold mt-10">Raw integration status</h2>

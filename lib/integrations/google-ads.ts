@@ -1,12 +1,12 @@
 import type { Lead } from "@/app/generated/prisma";
 import type { IntegrationResult } from ".";
 
-export async function uploadGoogleAdsConversion(lead: Lead): Promise<IntegrationResult> {
+export async function uploadGoogleAdsConversion(lead: Lead, conversionActionIdOverride?: string): Promise<IntegrationResult> {
   if (!lead.gclid) return { name: "google_ads", ok: false, error: "no gclid" };
 
   const customerId = process.env.GOOGLE_ADS_CUSTOMER_ID;
   const developerToken = process.env.GOOGLE_ADS_DEVELOPER_TOKEN;
-  const conversionActionId = process.env.GOOGLE_ADS_CONVERSION_ACTION_ID;
+  const conversionActionId = conversionActionIdOverride ?? process.env.GOOGLE_ADS_CONVERSION_ACTION_ID;
   const refreshToken = process.env.GOOGLE_ADS_REFRESH_TOKEN;
   const clientId = process.env.GOOGLE_ADS_CLIENT_ID;
   const clientSecret = process.env.GOOGLE_ADS_CLIENT_SECRET;
@@ -30,7 +30,7 @@ export async function uploadGoogleAdsConversion(lead: Lead): Promise<Integration
           conversion_date_time: formatGclidDate(lead.createdAt),
           conversion_value: leadValue(lead.debtAmount, lead.debtAmountBucket),
           currency_code: "USD",
-          order_id: lead.id,
+          order_id: `${lead.id}-${conversionActionId}-${Date.now()}`,
         }),
       ],
       partial_failure: true,
