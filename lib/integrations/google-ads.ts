@@ -1,28 +1,38 @@
 import type { Lead } from "@/app/generated/prisma";
 import type { IntegrationResult } from ".";
+import { getSetting } from "@/lib/settings";
 
 export async function uploadGoogleAdsConversion(lead: Lead, conversionActionIdOverride?: string): Promise<IntegrationResult> {
   if (!lead.gclid) return { name: "google_ads", ok: false, error: "no gclid" };
 
-  const customerId = process.env.GOOGLE_ADS_CUSTOMER_ID;
-  const developerToken = process.env.GOOGLE_ADS_DEVELOPER_TOKEN;
-  const conversionActionId = conversionActionIdOverride ?? process.env.GOOGLE_ADS_CONVERSION_ACTION_ID;
-  const refreshToken = process.env.GOOGLE_ADS_REFRESH_TOKEN;
-  const clientId = process.env.GOOGLE_ADS_CLIENT_ID;
-  const clientSecret = process.env.GOOGLE_ADS_CLIENT_SECRET;
-  const loginCustomerId = process.env.GOOGLE_ADS_LOGIN_CUSTOMER_ID;
-  if (!customerId || !developerToken || !conversionActionId || !refreshToken || !clientId || !clientSecret) {
-    return { name: "google_ads", ok: false, error: "Google Ads env vars not set" };
+  const customerId = await getSetting("google_ads_customer_id", process.env.GOOGLE_ADS_CUSTOMER_ID);
+  const developerToken = await getSetting("google_ads_developer_token", process.env.GOOGLE_ADS_DEVELOPER_TOKEN);
+  const defaultActionId = await getSetting("google_ads_conversion_action_id", process.env.GOOGLE_ADS_CONVERSION_ACTION_ID);
+  const conversionActionId = conversionActionIdOverride ?? defaultActionId;
+  const refreshToken = await getSetting("google_ads_refresh_token", process.env.GOOGLE_ADS_REFRESH_TOKEN);
+  const clientId = await getSetting("google_ads_client_id", process.env.GOOGLE_ADS_CLIENT_ID);
+  const clientSecret = await getSetting("google_ads_client_secret", process.env.GOOGLE_ADS_CLIENT_SECRET);
+  const loginCustomerId = await getSetting("google_ads_login_customer_id", process.env.GOOGLE_ADS_LOGIN_CUSTOMER_ID);
+
+  const missing: string[] = [];
+  if (!customerId) missing.push("customer_id");
+  if (!developerToken) missing.push("developer_token");
+  if (!conversionActionId) missing.push("conversion_action_id");
+  if (!refreshToken) missing.push("refresh_token");
+  if (!clientId) missing.push("client_id");
+  if (!clientSecret) missing.push("client_secret");
+  if (missing.length > 0) {
+    return { name: "google_ads", ok: false, error: `Missing Google Ads settings: ${missing.join(", ")}` };
   }
 
   try {
     const { GoogleAdsApi, services } = await import("google-ads-api");
-    const client = new GoogleAdsApi({ client_id: clientId, client_secret: clientSecret, developer_token: developerToken });
-    const customer = client.Customer({ customer_id: customerId, refresh_token: refreshToken, login_customer_id: loginCustomerId });
+    const client = new GoogleAdsApi({ client_id: clientId!, client_secret: clientSecret!, developer_token: developerToken! });
+    const customer = client.Customer({ customer_id: customerId!, refresh_token: refreshToken!, login_customer_id: loginCustomerId });
     const conversionActionResource = `customers/${customerId}/conversionActions/${conversionActionId}`;
 
     const request = new services.UploadClickConversionsRequest({
-      customer_id: customerId,
+      customer_id: customerId!,
       conversions: [
         new services.ClickConversion({
           conversion_action: conversionActionResource,
