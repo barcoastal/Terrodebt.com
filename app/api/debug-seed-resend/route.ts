@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     ["notification_email_to", "bar@albert-capital.com, info@businessdebtinsider.com"],
   ];
   for (const [key, value] of entries) {
-    await db.setting.upsert({ where: { key }, update: { value: value as object }, create: { key, value: value as object } });
+    await db.setting.upsert({ where: { key }, update: { value: value as unknown as object }, create: { key, value: value as unknown as object } });
   }
   return NextResponse.json({ ok: true, seeded: entries.map(([k]) => k) });
 }

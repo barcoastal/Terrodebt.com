@@ -2,6 +2,7 @@ import type { Lead, Postback } from "@/app/generated/prisma";
 import { db } from "./db";
 import { getSetting } from "./settings";
 import { sendEmail, notificationRecipients } from "./integrations/email";
+import { shell, dataRow, dataTable, leadUrl, postbacksUrl } from "./email-templates";
 
 export type NotificationKind = "new-lead" | "postback" | "status-change" | "integration-failure";
 
@@ -59,24 +60,27 @@ export async function notifyNewLead(lead: Lead) {
     `*UTM:* ${lead.utmSource ?? "-"} / ${lead.utmCampaign ?? "-"}\n` +
     `*gclid:* ${lead.gclid ?? "-"}`,
   );
-  await emailNotification(
-    `New lead: ${lead.firstName} ${lead.lastName} — ${lead.businessName}`,
-    `<div style="font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;color:#0A0A0A">
-      <h2 style="margin:0 0 16px;font-size:20px">New lead</h2>
-      <table cellpadding="4" cellspacing="0" style="border-collapse:collapse;font-size:14px">
-        <tr><td><b>Name</b></td><td>${lead.firstName} ${lead.lastName}</td></tr>
-        <tr><td><b>Business</b></td><td>${lead.businessName}</td></tr>
-        <tr><td><b>Email</b></td><td><a href="mailto:${lead.email}">${lead.email}</a></td></tr>
-        <tr><td><b>Phone</b></td><td><a href="tel:${lead.phone}">${lead.phone}</a></td></tr>
-        <tr><td><b>Debt</b></td><td>${fmtDebt(lead)}</td></tr>
-        <tr><td><b>Source</b></td><td>${lead.source}</td></tr>
-        <tr><td><b>UTM source</b></td><td>${lead.utmSource ?? "-"}</td></tr>
-        <tr><td><b>UTM campaign</b></td><td>${lead.utmCampaign ?? "-"}</td></tr>
-        <tr><td><b>gclid</b></td><td><code>${lead.gclid ?? "-"}</code></td></tr>
-      </table>
-      <p style="margin-top:24px"><a href="https://businessdebtinsider.com/admin/leads/${lead.id}" style="background:#0A0A0A;color:#fff;padding:10px 16px;text-decoration:none;display:inline-block">Open lead in admin</a></p>
-    </div>`,
-  );
+  const headline = `${lead.firstName} ${lead.lastName}`;
+  const preheader = `${lead.businessName} · ${fmtDebt(lead)} · ${lead.source}`;
+  const html = shell({
+    title: `New lead — ${lead.businessName}`,
+    preheader,
+    eyebrow: "New lead",
+    headline,
+    bodyHtml: dataTable([
+      dataRow("Business", lead.businessName),
+      dataRow("Email", `<a href="mailto:${lead.email}" style="color:#064E3B;text-decoration:underline;">${lead.email}</a>`),
+      dataRow("Phone", `<a href="tel:${lead.phone}" style="color:#064E3B;text-decoration:underline;">${lead.phone}</a>`),
+      dataRow("Debt", fmtDebt(lead)),
+      dataRow("Source page", lead.source, { mono: true }),
+      dataRow("UTM source", lead.utmSource ?? "—", { mono: true }),
+      dataRow("UTM campaign", lead.utmCampaign ?? "—", { mono: true }),
+      dataRow("gclid", lead.gclid ?? "—", { mono: true }),
+    ]),
+    ctaLabel: "Open lead",
+    ctaHref: leadUrl(lead.id),
+  });
+  await emailNotification(`New lead · ${headline} — ${lead.businessName}`, html);
 }
 
 export async function notifyPostback(postback: Postback, leadName?: string) {
@@ -102,14 +106,25 @@ export async function notifyPostback(postback: Postback, leadName?: string) {
     `${body}\n` +
     (postback.linkedLeadId ? `Linked lead: \`${postback.linkedLeadId}\`` : "Unlinked"),
   );
-  await emailNotification(
-    `Postback received: ${postback.source}${leadName ? ` — ${leadName}` : ""}`,
-    `<div style="font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;color:#0A0A0A">
-      <h2 style="margin:0 0 16px;font-size:20px">Postback received</h2>
-      <p>${body}</p>
-      ${postback.linkedLeadId ? `<p><a href="https://businessdebtinsider.com/admin/leads/${postback.linkedLeadId}">Open linked lead →</a></p>` : "<p>No matching lead.</p>"}
-    </div>`,
-  );
+  const rows = [
+    dataRow("Source", postback.source, { mono: true }),
+    dataRow("Status", postback.status ?? "—"),
+    dataRow("Payout", typeof postback.payout === "number" ? `$${postback.payout.toFixed(2)}` : "—", { mono: true }),
+    dataRow("Affiliate click ID", postback.affiliateClickid ?? "—", { mono: true }),
+    dataRow("gclid", postback.gclid ?? "—", { mono: true }),
+    dataRow("Linked lead", postback.linkedLeadId ? `<a href="${leadUrl(postback.linkedLeadId)}" style="color:#064E3B;text-decoration:underline;">${leadName ?? postback.linkedLeadId}</a>` : "—"),
+    dataRow("Forwarded to Google Ads", postback.forwarded ? "Yes" : "No"),
+  ];
+  const html = shell({
+    title: `Postback — ${postback.source}`,
+    preheader: body,
+    eyebrow: "Postback received",
+    headline: leadName ? `${postback.source} · ${leadName}` : postback.source,
+    bodyHtml: dataTable(rows),
+    ctaLabel: postback.linkedLeadId ? "Open lead" : "View postbacks",
+    ctaHref: postback.linkedLeadId ? leadUrl(postback.linkedLeadId) : postbacksUrl(),
+  });
+  await emailNotification(`Postback · ${postback.source}${leadName ? ` — ${leadName}` : ""}`, html);
 }
 
 export async function notifyStatusChange(lead: Lead, prevStatus: string) {
