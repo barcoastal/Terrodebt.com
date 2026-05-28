@@ -39,6 +39,15 @@ const GROUPS: { title: string; description: string; fields: FieldDef[] }[] = [
     ],
   },
   {
+    title: "Email notifications (Resend)",
+    description: "Notifications fire via Resend when a new lead, postback, or status change happens. The API key was generated from resend.com.",
+    fields: [
+      { key: "resend_api_key", label: "Resend API key", help: "From resend.com → API keys.", secret: true },
+      { key: "resend_from", label: "From address", help: "e.g. \"Business Debt Insider <hello@businessdebtinsider.com>\". Domain must be verified in Resend.", placeholder: "Business Debt Insider <hello@businessdebtinsider.com>" },
+      { key: "notification_email_to", label: "Notify these addresses", help: "Comma-separated list. Receives every new-lead/postback notification.", placeholder: "bar@albert-capital.com, info@businessdebtinsider.com" },
+    ],
+  },
+  {
     title: "Postbacks — inbound",
     description: "External networks POST/GET /api/postback to report conversions. Set a shared secret to require auth on every postback. When a postback links to a lead with a stored gclid, a Google Ads conversion is auto-forwarded.",
     fields: [

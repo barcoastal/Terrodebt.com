@@ -1,8 +1,15 @@
 import type { Lead, Postback } from "@/app/generated/prisma";
 import { db } from "./db";
 import { getSetting } from "./settings";
+import { sendEmail, notificationRecipients } from "./integrations/email";
 
 export type NotificationKind = "new-lead" | "postback" | "status-change" | "integration-failure";
+
+async function emailNotification(subject: string, html: string) {
+  const to = await notificationRecipients();
+  if (to.length === 0) return;
+  await sendEmail({ to, subject, html });
+}
 
 function fmtDebt(lead: Lead): string {
   if (typeof lead.debtAmount === "number" && lead.debtAmount > 0) {
@@ -52,6 +59,24 @@ export async function notifyNewLead(lead: Lead) {
     `*UTM:* ${lead.utmSource ?? "-"} / ${lead.utmCampaign ?? "-"}\n` +
     `*gclid:* ${lead.gclid ?? "-"}`,
   );
+  await emailNotification(
+    `New lead: ${lead.firstName} ${lead.lastName} — ${lead.businessName}`,
+    `<div style="font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;color:#0A0A0A">
+      <h2 style="margin:0 0 16px;font-size:20px">New lead</h2>
+      <table cellpadding="4" cellspacing="0" style="border-collapse:collapse;font-size:14px">
+        <tr><td><b>Name</b></td><td>${lead.firstName} ${lead.lastName}</td></tr>
+        <tr><td><b>Business</b></td><td>${lead.businessName}</td></tr>
+        <tr><td><b>Email</b></td><td><a href="mailto:${lead.email}">${lead.email}</a></td></tr>
+        <tr><td><b>Phone</b></td><td><a href="tel:${lead.phone}">${lead.phone}</a></td></tr>
+        <tr><td><b>Debt</b></td><td>${fmtDebt(lead)}</td></tr>
+        <tr><td><b>Source</b></td><td>${lead.source}</td></tr>
+        <tr><td><b>UTM source</b></td><td>${lead.utmSource ?? "-"}</td></tr>
+        <tr><td><b>UTM campaign</b></td><td>${lead.utmCampaign ?? "-"}</td></tr>
+        <tr><td><b>gclid</b></td><td><code>${lead.gclid ?? "-"}</code></td></tr>
+      </table>
+      <p style="margin-top:24px"><a href="https://businessdebtinsider.com/admin/leads/${lead.id}" style="background:#0A0A0A;color:#fff;padding:10px 16px;text-decoration:none;display:inline-block">Open lead in admin</a></p>
+    </div>`,
+  );
 }
 
 export async function notifyPostback(postback: Postback, leadName?: string) {
@@ -76,6 +101,14 @@ export async function notifyPostback(postback: Postback, leadName?: string) {
     `*Postback received* from \`${postback.source}\`\n` +
     `${body}\n` +
     (postback.linkedLeadId ? `Linked lead: \`${postback.linkedLeadId}\`` : "Unlinked"),
+  );
+  await emailNotification(
+    `Postback received: ${postback.source}${leadName ? ` — ${leadName}` : ""}`,
+    `<div style="font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;color:#0A0A0A">
+      <h2 style="margin:0 0 16px;font-size:20px">Postback received</h2>
+      <p>${body}</p>
+      ${postback.linkedLeadId ? `<p><a href="https://businessdebtinsider.com/admin/leads/${postback.linkedLeadId}">Open linked lead →</a></p>` : "<p>No matching lead.</p>"}
+    </div>`,
   );
 }
 
