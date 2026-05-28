@@ -2,9 +2,14 @@
 import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { fireGoogleAdsEvent } from "@/lib/event-fire";
+import { notifyStatusChange } from "@/lib/notifications";
 
 export async function updateLeadStatus(id: string, status: string) {
-  await db.lead.update({ where: { id }, data: { status } });
+  const before = await db.lead.findUnique({ where: { id }, select: { status: true } });
+  const updated = await db.lead.update({ where: { id }, data: { status } });
+  if (before && before.status !== status) {
+    await notifyStatusChange(updated, before.status);
+  }
   revalidatePath(`/admin/leads/${id}`);
   revalidatePath("/admin/leads");
 }

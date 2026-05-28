@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { getSetting } from "@/lib/settings";
 import { fireGoogleAdsEvent } from "@/lib/event-fire";
+import { notifyPostback } from "@/lib/notifications";
 
 export const dynamic = "force-dynamic";
 
@@ -106,9 +107,12 @@ async function handle(req: NextRequest) {
       where: { id: postback.id },
       data: { forwarded: true, forwardResult: { ok: result.ok, error: result.error ?? null } as object },
     });
+    const refreshed = await db.postback.findUnique({ where: { id: postback.id } });
+    if (refreshed) await notifyPostback(refreshed, linkedLead ? `${linkedLead.firstName} ${linkedLead.lastName}` : undefined);
     return NextResponse.json({ ok: true, postbackId: postback.id, forwardedToGoogleAds: result.ok, error: result.error });
   }
 
+  await notifyPostback(postback, linkedLead ? `${linkedLead.firstName} ${linkedLead.lastName}` : undefined);
   return NextResponse.json({ ok: true, postbackId: postback.id, forwardedToGoogleAds: false, reason: linkedLead ? "no gclid on linked lead" : "no linked lead" });
 }
 

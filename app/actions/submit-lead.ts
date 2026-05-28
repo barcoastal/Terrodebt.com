@@ -34,7 +34,14 @@ export async function submitLead(input: Omit<LeadSubmitInput, "ip" | "userAgent"
     };
 
     const lead = await createLead(enriched);
+    const { notifyNewLead, notifyIntegrationFailure } = await import("@/lib/notifications");
+    await notifyNewLead(lead);
     const results = await fanOutIntegrations(lead);
+    for (const r of results) {
+      if (!r.ok && r.error && r.error !== "no gclid") {
+        await notifyIntegrationFailure({ leadId: lead.id, integration: r.name, error: r.error });
+      }
+    }
     await db.lead.update({ where: { id: lead.id }, data: { integrationStatus: { db: "ok", integrations: results } } });
     return { ok: true as const, leadId: lead.id };
   } catch (e) {

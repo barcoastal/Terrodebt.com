@@ -198,6 +198,22 @@ model Postback {
   @@index([linkedLeadId])
 }
 
+model Notification {
+  id          String   @id @default(cuid())
+  type        String   // new-lead, postback, status-change, integration-failure
+  title       String
+  body        String?
+  leadId      String?
+  postbackId  String?
+  meta        Json?
+  read        Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([read])
+  @@index([type])
+}
+
 model ConversionAction {
   id        String   @id @default(cuid())
   name      String
