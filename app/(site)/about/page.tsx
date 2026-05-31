@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { SubscribeForm } from "@/components/site/SubscribeForm";
 
 export const metadata: Metadata = {
-  title: "About Business Debt Insider | Fort Lauderdale Debt Restructure Consulting",
+  title: "About — Fort Lauderdale Debt Restructure",
   description: "Strategic financial consulting practice in Fort Lauderdale specializing in SME debt restructure across MCA, equipment, vendor, bank, and tax debt.",
 };
 

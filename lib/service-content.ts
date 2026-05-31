@@ -33,7 +33,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Forensic Financial Auditing",
     shortName: "Forensic Audit",
     numeral: "01",
-    metaTitle: "Forensic Financial Audit for Stacked Business Debt | SME Workouts",
+    metaTitle: "Forensic Financial Audit for Business Debt",
     metaDescription:
       "Forensic reconstruction of debt-to-income, daily cash outflow, lien priority, and cross-default exposure for SMEs with stacked MCA, equipment, vendor, bank, tax debt.",
     kicker: "Service 01",
@@ -134,7 +134,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Liquidity Engineering",
     shortName: "Liquidity Engineering",
     numeral: "02",
-    metaTitle: "Liquidity Engineering & Cash Flow Restructure for SMEs",
+    metaTitle: "Liquidity Engineering for SMEs",
     metaDescription:
       "Rebuild the operating budget from the floor up so the business survives while creditor obligations are met. 13-week forecasting and weekly envelope discipline.",
     kicker: "Service 02",
@@ -235,7 +235,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Creditor Liaison & Communication",
     shortName: "Creditor Liaison",
     numeral: "03",
-    metaTitle: "Creditor Liaison & Negotiation: MCA, Equipment, Bank, Vendor",
+    metaTitle: "Creditor Liaison & Negotiation",
     metaDescription:
       "Intermediary between the business and its creditors. Settlement offers, reconciliation requests, modification packages, and forbearance proposals from forensic data.",
     kicker: "Service 03",
@@ -336,7 +336,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Operational Restructuring",
     shortName: "Operational Restructuring",
     numeral: "04",
-    metaTitle: "Operational Restructuring & Free Cash Flow Consulting for SMEs",
+    metaTitle: "Operational Restructuring for SMEs",
     metaDescription:
       "Post-workout rebuild: lean management, pricing discipline, capital allocation, and org design that converts stabilization into durable Free Cash Flow growth.",
     kicker: "Service 04",

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free MCA Debt Calculators | Effective APR, Stack Burden, Health Check",
+  title: "Free MCA Debt Calculators",
   description: "Free calculators for stacked MCA debt: effective APR, total stack burden, debt risk score. No email required, runs in your browser.",
 };
 

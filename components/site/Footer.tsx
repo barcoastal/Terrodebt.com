@@ -102,7 +102,7 @@ export function SiteFooter() {
             Fort Lauderdale, FL 33309
           </address>
           <p className="mt-3 text-sm text-ink">
-            <Link href="mailto:hello@businessdebtinsider.com" className="text-ink hover:text-pine no-underline">
+            <Link href="/contact" className="text-ink hover:text-pine no-underline">
               hello@businessdebtinsider.com
             </Link>
           </p>

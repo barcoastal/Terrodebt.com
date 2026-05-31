@@ -4,6 +4,8 @@ import { STATES } from "@/lib/states";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
 import { SERVICES } from "@/lib/service-content";
 
+export const revalidate = 300;
+
 const BASE = "https://businessdebtinsider.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

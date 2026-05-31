@@ -8,7 +8,7 @@ import { priorityVerticals } from "@/lib/vertical-content";
 export const metadata: Metadata = {
   title: { absolute: "Business Debt Insider — Inside Business Debt Restructure" },
   description:
-    "Strategic financial consulting for small and mid-sized enterprises with stacked short-term debt. Forensic audit, liquidity engineering, creditor liaison, operational restructuring. Fort Lauderdale, FL.",
+    "Strategic financial consulting for SMEs with stacked short-term debt: forensic audit, liquidity engineering, creditor liaison, operational restructuring. Fort Lauderdale, FL.",
   openGraph: {
     title: "Business Debt Insider — Inside business debt restructure",
     description:

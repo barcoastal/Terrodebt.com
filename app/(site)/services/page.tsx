@@ -4,7 +4,7 @@ import { SERVICES } from "@/lib/service-content";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Debt Restructure Consulting Services for SMEs",
+  title: "Debt Restructure Consulting Services",
   description: "Four consulting services for businesses with stacked short-term debt: forensic audit, liquidity engineering, creditor liaison, operational restructuring.",
 };
 

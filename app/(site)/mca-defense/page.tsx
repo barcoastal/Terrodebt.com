@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { STATES } from "@/lib/states";
 
 export const metadata: Metadata = {
-  title: "MCA Defense by State — COJ Response, Account Freeze, Settlement",
+  title: "MCA Defense by State",
   description: "MCA defense in all 50 states. Coordinated licensed counsel for confession-of-judgment, account freezes, UCC liens, and settlement. Pick your state.",
   alternates: { canonical: "/mca-defense" },
 };

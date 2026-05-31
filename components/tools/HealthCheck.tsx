@@ -122,7 +122,7 @@ function Result({ score, onReset }: { score: number; onReset: () => void }) {
         <div className="mt-1 text-lg font-semibold text-slate">{tier.program}</div>
       </div>
       <div className="mt-8 flex flex-wrap gap-3">
-        <a href="/services/mca-debt-relief" className="bg-slate text-white px-4 py-2 rounded-xl text-sm font-medium no-underline hover:bg-slate-soft transition">Talk to us</a>
+        <a href="/services/creditor-liaison" className="bg-slate text-white px-4 py-2 rounded-xl text-sm font-medium no-underline hover:bg-slate-soft transition">Talk to us</a>
         <button onClick={onReset} className="border border-border text-slate px-4 py-2 rounded-xl text-sm font-medium hover:border-electric transition">Reset</button>
       </div>
       <p className="mt-6 text-xs text-muted leading-relaxed">This is a self-assessment, not a diagnosis. The recommendation is a starting point for a conversation, not a guarantee of program eligibility.</p>

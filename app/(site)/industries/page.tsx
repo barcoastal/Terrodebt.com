@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve — Debt Restructure for 8 Verticals",
+  title: "Industries We Serve",
   description: "Debt restructure for trucking, restaurants, healthcare, construction, retail, e-commerce, salons, auto repair. Industry-specific cash flow expertise.",
 };
 
