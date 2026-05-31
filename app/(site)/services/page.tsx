@@ -4,8 +4,8 @@ import { SERVICES } from "@/lib/service-content";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Debt Restructure Consulting Services for SMEs | Business Debt Insider",
-  description: "Four professional consulting services for businesses with stacked short-term debt: forensic financial audit, liquidity engineering, creditor liaison, operational restructuring.",
+  title: "Debt Restructure Consulting Services for SMEs",
+  description: "Four consulting services for businesses with stacked short-term debt: forensic audit, liquidity engineering, creditor liaison, operational restructuring.",
 };
 
 export default function ServicesIndex() {

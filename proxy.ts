@@ -4,16 +4,45 @@ import { sessionOptions, type SessionData } from "@/lib/session";
 
 const COOKIE = "eli_clickid";
 
+// Old /services/{product-slug} URLs that 404 now → permanent redirects to live URLs
+const SERVICE_REDIRECTS: Record<string, string> = {
+  "/services/mca-debt-relief": "/services/creditor-liaison",
+  "/services/equipment-finance-restructure": "/services/creditor-liaison",
+  "/services/vendor-supplier-debt": "/services/creditor-liaison",
+  "/services/bank-loan-workout": "/services/creditor-liaison",
+  "/services/business-tax-debt": "/services/creditor-liaison",
+};
+
 function makeId() {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
 }
 
 export async function proxy(req: NextRequest) {
-  const host = req.headers.get("host") ?? "";
+  const host = (req.headers.get("host") ?? "").toLowerCase();
+
+  // www → apex 308 (preserve scheme + path, drop port so Railway internal :8080 doesn't leak)
   if (host.startsWith("www.")) {
+    const apex = host.slice(4).replace(/:\d+$/, "");
     const url = req.nextUrl.clone();
-    url.host = host.slice(4);
+    url.host = apex;
+    url.port = "";
+    url.protocol = "https:";
     return NextResponse.redirect(url, 308);
+  }
+
+  // Permanent redirects for retired /services/{product-slug} URLs
+  const target = SERVICE_REDIRECTS[req.nextUrl.pathname];
+  if (target) {
+    const url = req.nextUrl.clone();
+    url.pathname = target;
+    return NextResponse.redirect(url, 301);
+  }
+
+  // /articles/* → /insights/* (article body links use the old path)
+  if (req.nextUrl.pathname.startsWith("/articles/")) {
+    const url = req.nextUrl.clone();
+    url.pathname = req.nextUrl.pathname.replace(/^\/articles\//, "/insights/");
+    return NextResponse.redirect(url, 301);
   }
 
   const res = NextResponse.next();

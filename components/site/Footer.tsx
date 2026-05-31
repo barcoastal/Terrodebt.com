@@ -12,6 +12,10 @@ const SECONDARY = [
   { href: "/industries", label: "Industries" },
   { href: "/insights", label: "Insights" },
   { href: "/tools", label: "Tools" },
+  { href: "/programs", label: "Programs" },
+  { href: "/mca-defense", label: "MCA defense by state" },
+  { href: "/glossary", label: "Glossary" },
+  { href: "/trust", label: "Trust & outcomes" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

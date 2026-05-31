@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Free MCA Debt Calculators | Effective APR, Stack Burden, Health Check",
-  description: "Free calculators for stacked merchant cash advance debt. Calculate effective APR, total stack burden, and debt risk score. No email required, runs in your browser.",
+  description: "Free calculators for stacked MCA debt: effective APR, total stack burden, debt risk score. No email required, runs in your browser.",
 };
 
 const TOOLS = [

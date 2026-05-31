@@ -6,15 +6,15 @@ import { LeadForm } from "@/components/lead/LeadForm";
 
 const PROGRAM_META: Record<ProgramKey, { title: string; description: string }> = {
   "settlement": {
-    title: "Debt Settlement | Business Debt Insider",
+    title: "Debt Settlement",
     description: "Settle distressed business debt at typically 40 to 75 percent of face balance. Used across MCAs, vendor debt, and IRS or state tax debt.",
   },
   "restructure": {
-    title: "Debt Restructure | Business Debt Insider",
+    title: "Debt Restructure",
     description: "Renegotiate terms without settling. Used across MCAs, equipment finance, and bank workouts to preserve lender relationships.",
   },
   "legal-defense": {
-    title: "Legal Defense | Business Debt Insider",
+    title: "Legal Defense",
     description: "72-hour coordinated counsel for confessions of judgment, frozen accounts, levies, and active litigation against any business debt.",
   },
 };

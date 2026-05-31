@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | Business Debt Insider Debt Restructure",
-  description: "Debt restructure consulting for trucking, restaurants, healthcare, construction, retail, e-commerce, salons, and auto repair. Industry-specific cash flow expertise.",
+  title: "Industries We Serve — Debt Restructure for 8 Verticals",
+  description: "Debt restructure for trucking, restaurants, healthcare, construction, retail, e-commerce, salons, auto repair. Industry-specific cash flow expertise.",
 };
 
 export default function IndustriesIndex() {

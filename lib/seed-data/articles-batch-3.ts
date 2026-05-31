@@ -580,7 +580,7 @@ Personal credit recovery from a workout-impacted FICO of 580 to 620 (typical pos
 
 ## Trade references: the foundation
 
-Vendors and suppliers who carried the business through the squeeze are the foundation of the post-settlement rebuild. The work of repairing those relationships starts during the workout (see [the workout-credit article](/articles/loan-during-debt-workout)) and continues through closeout.
+Vendors and suppliers who carried the business through the squeeze are the foundation of the post-settlement rebuild. The work of repairing those relationships starts during the workout (see [the workout-credit article](/insights/loan-during-debt-workout)) and continues through closeout.
 
 The post-settlement work: confirm each key vendor is on standard terms, paid current, and willing to be listed as a trade reference. Three to five solid trade references on the business credit profile improve underwriter confidence substantially.
 

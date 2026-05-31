@@ -35,7 +35,7 @@ export const SERVICES: ServiceContent[] = [
     numeral: "01",
     metaTitle: "Forensic Financial Audit for Stacked Business Debt | SME Workouts",
     metaDescription:
-      "Forensic reconstruction of debt-to-income, daily cash outflow, lien priority, and cross-default exposure for SMEs with stacked MCA, equipment, vendor, bank, and tax debt. Written report.",
+      "Forensic reconstruction of debt-to-income, daily cash outflow, lien priority, and cross-default exposure for SMEs with stacked MCA, equipment, vendor, bank, tax debt.",
     kicker: "Service 01",
     overview: [
       "Forensic Financial Auditing is the first engagement most clients enter. The practice performs a deep-dive analysis of the operating entity's debt-to-income ratio, daily cash outflow, and the underlying contracts driving both. The objective is not a financial statement audit in the GAAS sense. It is a forensic reconstruction of the actual cash mechanics the business is operating under, which in most distressed cases differ materially from what the operator believes is happening.",
@@ -136,7 +136,7 @@ export const SERVICES: ServiceContent[] = [
     numeral: "02",
     metaTitle: "Liquidity Engineering & Cash Flow Restructure for SMEs",
     metaDescription:
-      "Rebuild the operating budget from the floor up so the business survives while creditor obligations are met. 13-week forecasting, vendor sequencing, and weekly envelope discipline.",
+      "Rebuild the operating budget from the floor up so the business survives while creditor obligations are met. 13-week forecasting and weekly envelope discipline.",
     kicker: "Service 02",
     overview: [
       "Liquidity Engineering is the practice's structured approach to restructuring the internal budget of an operating entity so that operational continuity is preserved while creditor obligations are met to the maximum extent the business actually supports. The work begins where the forensic audit ends. With a verified picture of daily outflow and obligated payments, the practice rebuilds the budget from the operational floor up.",
@@ -237,7 +237,7 @@ export const SERVICES: ServiceContent[] = [
     numeral: "03",
     metaTitle: "Creditor Liaison & Negotiation: MCA, Equipment, Bank, Vendor",
     metaDescription:
-      "Professional intermediary between the business and its creditors. Settlement offers, reconciliation requests, modification packages, and forbearance proposals supported by forensic data.",
+      "Intermediary between the business and its creditors. Settlement offers, reconciliation requests, modification packages, and forbearance proposals from forensic data.",
     kicker: "Service 03",
     overview: [
       "Creditor Liaison and Communication is the practice's third service line and the one in which the practice acts as a technical intermediary between the operating entity and its creditors. The work is grounded in the documentation produced through forensic auditing and the operating plan produced through liquidity engineering, and the role is purely procedural and informational. The practice presents structured, data-backed proposals to lenders on behalf of the client, manages the cadence of correspondence, and produces the written record that supports any agreement reached.",
@@ -338,7 +338,7 @@ export const SERVICES: ServiceContent[] = [
     numeral: "04",
     metaTitle: "Operational Restructuring & Free Cash Flow Consulting for SMEs",
     metaDescription:
-      "Post-workout operational rebuild: lean management, pricing discipline, capital allocation, and organizational design that converts stabilization into durable Free Cash Flow growth.",
+      "Post-workout rebuild: lean management, pricing discipline, capital allocation, and org design that converts stabilization into durable Free Cash Flow growth.",
     kicker: "Service 04",
     overview: [
       "Operational Restructuring is the practice's fourth and final service line, retained most frequently after a creditor engagement has reached resolution and the operating entity is ready to rebuild a durable margin. The engagement consults on lean management practices, organizational structure, pricing discipline, and capital allocation, with the objective of increasing sustainable Free Cash Flow rather than simply controlling distress.",

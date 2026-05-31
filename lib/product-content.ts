@@ -28,7 +28,7 @@ export const PRODUCTS: ProductContent[] = [
     name: "MCA Debt Relief",
     shortName: "MCA Debt",
     category: "Lender debt",
-    metaTitle: "MCA Debt Relief Services | Business Debt Insider",
+    metaTitle: "MCA Debt Relief Services",
     metaDescription:
       "Restructure, settle, or defend stacked merchant cash advances. Reconciliation, legal coordination, and counsel in all 50 states. Free assessment.",
     heroEyebrow: "MCA debt relief",
@@ -145,7 +145,7 @@ We coordinated with the factor first to protect the senior lien on receivables. 
     name: "Equipment Finance Restructure",
     shortName: "Equipment",
     category: "Lender debt",
-    metaTitle: "Equipment Finance Restructure & Repossession Defense | Business Debt Insider",
+    metaTitle: "Equipment Finance Restructure & Repossession Defense",
     metaDescription:
       "Restructure equipment leases and loans to prevent acceleration and repossession. Term extensions, buyout negotiation, and lease modifications.",
     heroEyebrow: "Equipment workouts",
@@ -263,7 +263,7 @@ The trucks stayed on the road. The shop tools stayed in operation. The cross-def
     name: "Vendor & Supplier Debt",
     shortName: "Vendor",
     category: "Trade debt",
-    metaTitle: "Vendor & Supplier Debt Negotiation | Business Debt Insider",
+    metaTitle: "Vendor & Supplier Debt Negotiation",
     metaDescription:
       "Negotiated paydowns and settlements with trade creditors and suppliers. Restore COD or credit terms while resolving past-due balances. Free assessment.",
     heroEyebrow: "Trade creditor workouts",
@@ -383,7 +383,7 @@ By month 24, all 11 vendor balances were resolved. The operator had preserved th
     name: "Bank Loan & Line of Credit Workouts",
     shortName: "Bank loans",
     category: "Lender debt",
-    metaTitle: "Bank Loan & LOC Workout Services | Business Debt Insider",
+    metaTitle: "Bank Loan & LOC Workout Services",
     metaDescription:
       "Term loan modifications, line of credit workouts, and covenant relief with banks and credit unions. Forbearance, covenant waivers, and loan modifications.",
     heroEyebrow: "Bank workouts",
@@ -503,7 +503,7 @@ The relationship was preserved. The operator kept the LOC at a reduced commitmen
     name: "Business Tax Debt",
     shortName: "Tax debt",
     category: "Tax debt",
-    metaTitle: "IRS & State Business Tax Debt Resolution | Business Debt Insider",
+    metaTitle: "IRS & State Business Tax Debt Resolution",
     metaDescription:
       "IRS and state tax debt resolution: installment agreements, offer in compromise, and payroll tax workouts. Trust Fund Recovery Penalty defense.",
     heroEyebrow: "Tax debt resolution",

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Privacy Policy | Business Debt Insider",
+  title: "Privacy Policy",
   description: "How we collect, use, and protect business owner information when you visit the site, request an initial review, or engage the practice for a debt restructure program.",
 };
 

@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Disclosure: Engagement Scope, Outcomes, and Legal Coordination",
-  description: "Business Debt Insider is a trade name of GRL Recovery LLC. Not a law firm or lender. We coordinate licensed counsel in all 50 states. Outcomes vary by lender mix and contract terms.",
+  description: "Trade name of GRL Recovery LLC. Not a law firm or lender. Coordinated counsel in all 50 states. Outcomes vary by lender mix and contract terms.",
 };
 
 export default function DisclosurePage() {

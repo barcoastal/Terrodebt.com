@@ -888,7 +888,7 @@ If you are evaluating a restructure program, the first step is the audit. Pull e
     slug: "can-i-keep-operating-during-an-mca-program",
     title: "Can I keep operating during an MCA debt program?",
     excerpt:
-      "In almost all cases, yes. The program is designed around continued operations.",
+      "In almost all cases, yes. MCA debt resolution programs are designed around continued operations: payroll, vendor terms, processing, and customer experience all stay running.",
     heroImage: "/images/articles/can-i-keep-operating-during-an-mca-program.png",
     contentMd: `One of the most common questions on a first call is whether the business has to stop or pause operations during a relief program. The short answer is no. A program that requires the business to stop operating typically defeats its own purpose, because there is no revenue to fund settlements, no payroll for the staff that needs to be retained, and no path back to a viable business at the end of the program. Credible relief firms design programs around continued operations, not around them. This article walks what changes during a program and what does not.
 
@@ -1054,7 +1054,7 @@ If you have an active legal exposure (COJ, frozen account, served complaint), en
     slug: "negotiating-with-mca-lenders",
     title: "Negotiating with MCA lenders: what works and what does not",
     excerpt:
-      "Documentation, sequencing, and credibility move lenders. Pleas and partial information do not.",
+      "Documentation, sequencing, and credibility move MCA lenders. Pleas and partial information do not. What actually closes a settlement, and what gets the call dropped.",
     heroImage: "/images/articles/negotiating-with-mca-lenders.png",
     contentMd: `Lenders see thousands of distressed merchants every year. The salesperson on the phone has a script. The workout team has its own script. Most attempts at negotiation from the merchant side run into one of those scripts and stall. What actually moves lenders is documentation, sequencing, and credibility. None of those three are emotional, and all of them are technical. This article walks the leverage points, the documentation, and the sequence that produces real settlement numbers.
 
@@ -1388,7 +1388,7 @@ If you have stopped paying an MCA without a coordinated workout, the right move 
     slug: "choosing-an-mca-relief-partner",
     title: "How to choose an MCA relief partner: a buyer's checklist",
     excerpt:
-      "The buyer's checklist that separates credible firms from ones that will make your situation worse.",
+      "A buyer's checklist that separates credible MCA relief firms from the ones that will make your situation worse. Eight questions to ask before signing anything.",
     heroImage: "/images/articles/choosing-an-mca-relief-partner.png",
     contentMd: `Choosing the wrong MCA relief firm is one of the most expensive mistakes a stacked-MCA merchant can make. The wrong firm collects an upfront retainer, does minimal work, and leaves the merchant in worse shape with less time and less leverage. The right firm walks you through the math before asking for commitment, structures the engagement clearly, and produces real outcomes. The difference between the two is visible in the first conversation if you know what to look for. This article is the buyer's checklist.
 
@@ -1495,7 +1495,7 @@ Run any firm you are evaluating through this checklist before signing. Compare t
     slug: "life-after-mca-debt",
     title: "Life after MCA debt: what comes next",
     excerpt:
-      "The first 12 months after program completion are the most important. Here is what to focus on.",
+      "The first 12 months after an MCA program closes are the most important. Cash reserve, credit rebuild, new banking relationship, and operational fixes that compound.",
     heroImage: "/images/articles/life-after-mca-debt.png",
     contentMd: `Program completion is the start of the rebuild, not the finish line. Cash flow that was previously consumed by daily debits is now available for working capital, hiring, and growth. The credit profile that took a hit during the program rebuilds with consistent reporting. The banking relationships that may have been strained during the workout get replaced with cleaner ones. This article walks the first 12 months after program completion and the priorities that determine whether the recovery sticks or whether the merchant ends up back in another stack.
 

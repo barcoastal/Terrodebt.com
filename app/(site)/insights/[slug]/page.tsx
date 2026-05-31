@@ -61,6 +61,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           publishedAt: a.publishedAt,
           updatedAt: a.updatedAt,
           author: a.author,
+          heroImage: a.heroImage,
         }}
       />
 

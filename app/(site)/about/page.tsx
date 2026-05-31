@@ -5,7 +5,7 @@ import { SubscribeForm } from "@/components/site/SubscribeForm";
 
 export const metadata: Metadata = {
   title: "About Business Debt Insider | Fort Lauderdale Debt Restructure Consulting",
-  description: "Business Debt Insider is the trade name of GRL Recovery LLC, a strategic financial consulting practice in Fort Lauderdale specializing in SME debt restructure across five debt categories.",
+  description: "Strategic financial consulting practice in Fort Lauderdale specializing in SME debt restructure across MCA, equipment, vendor, bank, and tax debt.",
 };
 
 export default function About() {

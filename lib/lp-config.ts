@@ -17,7 +17,7 @@ export const LP_CONFIGS: Record<string, LpConfig> = {
   google: {
     id: "google",
     source: "google-lp",
-    metaTitle: "Business Debt Restructure - Free Assessment | Business Debt Insider",
+    metaTitle: "Business Debt Restructure - Free Assessment",
     metaDescription: "Restructure stacked MCA, equipment, vendor, bank, or tax debt with a coordinated workout. Free assessment, real counsel, no commitment.",
     eyebrow: "Free assessment for stretched business debt",
     headlineLead: "Restructure your business debt with a",
@@ -38,7 +38,7 @@ export const LP_CONFIGS: Record<string, LpConfig> = {
   affiliate: {
     id: "affiliate",
     source: "affiliate-lp",
-    metaTitle: "Resolve Business Debt with a Coordinated Workout | Business Debt Insider",
+    metaTitle: "Resolve Business Debt with a Coordinated Workout",
     metaDescription: "A modern, transparent path through business debt. Free assessment, tailored programs across MCA, equipment, vendor, bank, and tax debt.",
     eyebrow: "Referred to Business Debt Insider",
     headlineLead: "Resolve your business debt with a",
