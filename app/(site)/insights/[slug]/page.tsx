@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
 import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { ArticleCover } from "@/components/site/ArticleCover";
 
 function readTime(text: string): number {
   const words = text.split(/\s+/).filter(Boolean).length;
@@ -99,18 +99,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               {minutes} min read
             </p>
           </div>
-          {a.heroImage && (
-            <div className="mt-10 relative aspect-[16/9] overflow-hidden bg-paper-mute border border-hairline max-w-5xl">
-              <Image
-                src={a.heroImage}
-                alt={a.title}
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 100vw, 1024px"
-              />
-            </div>
-          )}
+          <div className="mt-10 max-w-5xl">
+            <ArticleCover title={a.title} topic={topic.label} date={date} />
+          </div>
         </div>
       </section>
 

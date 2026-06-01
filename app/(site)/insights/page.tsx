@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { NewsletterStrip } from "@/components/site/NewsletterStrip";
+import { ArticleCover } from "@/components/site/ArticleCover";
 
 export const metadata: Metadata = {
   title: "Business Debt Insights & Guides",
@@ -66,18 +66,11 @@ export default async function ArticlesIndex() {
         <section className="bg-offwhite border-b border-rule">
           <div className="mx-auto max-w-content px-6 py-10 md:py-12 grid md:grid-cols-12 gap-8">
             <Link href={`/insights/${featured.slug}`} className="group md:col-span-8 block no-underline">
-              {featured.heroImage && (
-                <div className="relative aspect-[16/9] overflow-hidden bg-cream border border-rule">
-                  <Image
-                    src={featured.heroImage}
-                    alt={featured.title}
-                    fill
-                    className="object-cover transition duration-500 group-hover:scale-[1.02]"
-                    sizes="(max-width: 768px) 100vw, 66vw"
-                    priority
-                  />
-                </div>
-              )}
+              <ArticleCover
+                title={featured.title}
+                topic={topicFromSlug(featured.slug)}
+                date={featured.publishedAt ?? featured.createdAt}
+              />
               <span className="mt-4 inline-block font-mono text-[11px] uppercase tracking-wider text-electric">
                 Featured · {topicFromSlug(featured.slug)}
               </span>
@@ -95,17 +88,12 @@ export default async function ArticlesIndex() {
             <div className="md:col-span-4 flex flex-col gap-6">
               {second.map((a) => (
                 <Link key={a.id} href={`/insights/${a.slug}`} className="group block no-underline">
-                  {a.heroImage && (
-                    <div className="relative aspect-[16/10] overflow-hidden bg-cream border border-rule">
-                      <Image
-                        src={a.heroImage}
-                        alt={a.title}
-                        fill
-                        className="object-cover transition duration-500 group-hover:scale-[1.02]"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                    </div>
-                  )}
+                  <ArticleCover
+                    title={a.title}
+                    topic={topicFromSlug(a.slug)}
+                    date={a.publishedAt ?? a.createdAt}
+                    size="small"
+                  />
                   <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-wider text-electric">
                     {topicFromSlug(a.slug)}
                   </span>
@@ -131,17 +119,12 @@ export default async function ArticlesIndex() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
               {rest.map((a) => (
                 <Link key={a.id} href={`/insights/${a.slug}`} className="group block no-underline">
-                  {a.heroImage && (
-                    <div className="relative aspect-[16/10] overflow-hidden bg-cream border border-rule">
-                      <Image
-                        src={a.heroImage}
-                        alt={a.title}
-                        fill
-                        className="object-cover transition duration-500 group-hover:scale-[1.02]"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                    </div>
-                  )}
+                  <ArticleCover
+                    title={a.title}
+                    topic={topicFromSlug(a.slug)}
+                    date={a.publishedAt ?? a.createdAt}
+                    size="small"
+                  />
                   <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-wider text-electric">
                     {topicFromSlug(a.slug)}
                   </span>

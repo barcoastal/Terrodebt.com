@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { db } from "@/lib/db";
 import { SERVICES } from "@/lib/service-content";
 import { priorityVerticals } from "@/lib/vertical-content";
+import { ArticleCover } from "@/components/site/ArticleCover";
 
 export const metadata: Metadata = {
   title: { absolute: "Business Debt Insider — Relief, Restructuring & Resolution" },
@@ -270,10 +271,16 @@ export default async function Home() {
             <div className="grid md:grid-cols-3 gap-8 md:gap-10">
               {insights.map((a) => (
                 <Link key={a.id} href={`/insights/${a.slug}`} className="group block no-underline">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                  <ArticleCover
+                    title={a.title}
+                    topic="Guide"
+                    date={a.publishedAt ?? a.createdAt}
+                    size="small"
+                  />
+                  <span className="mt-3 inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
                     Insight <span className="text-hairline">·</span> {fmtDate(a.publishedAt ?? a.createdAt)}
                   </span>
-                  <h3 className="mt-3 text-lg md:text-xl font-bold tracking-tight text-ink leading-snug group-hover:text-pine transition">
+                  <h3 className="mt-2 text-lg md:text-xl font-bold tracking-tight text-ink leading-snug group-hover:text-pine transition">
                     {a.title}
                   </h3>
                   {a.excerpt && (
