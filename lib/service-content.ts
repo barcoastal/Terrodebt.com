@@ -229,13 +229,13 @@ export const SERVICES: ServiceContent[] = [
     ],
   },
   {
-    slug: "business-debt-settlement",
-    name: "Business Debt Settlement",
-    shortName: "Settlement",
+    slug: "business-debt-resolution",
+    name: "Business Debt Resolution",
+    shortName: "Resolution",
     numeral: "03",
-    metaTitle: "Business Debt Settlement & MCA Settlement",
+    metaTitle: "Business Debt Resolution & Settlement",
     metaDescription:
-      "Negotiate stacked business debt down. Historical settlements range from 40 to 80 percent of original balance. Free analysis. No new loans.",
+      "Resolve stacked short-term business debt at a reduced lump-sum balance. Historical resolutions range from 40 to 80 percent of original balance.",
     kicker: "Service 03",
     overview: [
       "Business Debt Settlement is the right service when the realistic outcome is a discounted lump-sum payoff rather than a restructured payment schedule. Lenders with weak recourse, obligations the business cannot service even after restructuring, and credit instruments where the lender prefers a settled balance to a litigated one are the typical candidates.",

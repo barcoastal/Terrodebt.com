@@ -4,7 +4,7 @@ import { STATES } from "@/lib/states";
 import { VERTICAL_CONTENT } from "@/lib/vertical-content";
 import { SERVICES } from "@/lib/service-content";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 const BASE = "https://businessdebtinsider.com";
 

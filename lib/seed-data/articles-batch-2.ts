@@ -92,7 +92,7 @@ The demand is signed by counsel. We do not litigate, but we coordinate licensed 
 
 ### Stage three: negotiation
 
-The funder responds. The response is rarely an immediate yes. The response is usually a counter that acknowledges some of the audit findings and disputes others. From there, [creditor liaison](/services/business-debt-settlement) work moves the negotiation toward a number that closes.
+The funder responds. The response is rarely an immediate yes. The response is usually a counter that acknowledges some of the audit findings and disputes others. From there, [creditor liaison](/services/business-debt-resolution) work moves the negotiation toward a number that closes.
 
 A typical resolution arc: demand at 30 percent payoff, funder counters at 75 percent, agreement at 45 to 55 percent. The number depends on the strength of the audit, the funder's exposure across other contracts, and the funder's appetite for litigation.
 
@@ -268,7 +268,7 @@ A typical MCA settlement program runs 6 to 18 months. During that window, you ar
 
 Sequence wrong and you spend the first six months settling a $40K balance with a passive lender while the $180K contract with the COJ goes to judgment. Sequence right and the contracts most likely to hurt you are off the board by month four, before they have time to escalate.
 
-The sequence question is what [creditor liaison](/services/business-debt-settlement) work answers in the first 30 days of any engagement.
+The sequence question is what [creditor liaison](/services/business-debt-resolution) work answers in the first 30 days of any engagement.
 
 ## Variable one: COJ status
 
@@ -525,7 +525,7 @@ If the judgment is entered against the personal guarantor, the judgment can be r
 
 The point of a well-run business debt workout is to resolve the underlying obligation before the personal guarantee enforcement track ever starts. When the business obligation closes through settlement, the personal guarantee gets released in the same agreement. No demand letter, no lawsuit, no judgment, no personal credit exposure.
 
-The negotiation includes guarantee release language in every settlement. Without that language, the creditor can settle the business contract and still come after the guarantor. With it, the personal exposure closes at the same time as the business exposure. [Creditor liaison](/services/business-debt-settlement) work is what produces those release terms.
+The negotiation includes guarantee release language in every settlement. Without that language, the creditor can settle the business contract and still come after the guarantor. With it, the personal exposure closes at the same time as the business exposure. [Creditor liaison](/services/business-debt-resolution) work is what produces those release terms.
 
 ## Channel two: business credit cards
 

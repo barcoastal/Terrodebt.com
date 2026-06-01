@@ -6,20 +6,20 @@ import { SERVICES } from "@/lib/service-content";
 import { priorityVerticals } from "@/lib/vertical-content";
 
 export const metadata: Metadata = {
-  title: { absolute: "Business Debt Relief, Restructuring & Settlement — Business Debt Insider" },
+  title: { absolute: "Business Debt Insider — Relief, Restructuring & Resolution" },
   description:
-    "Cut daily MCA debits, restructure stacked business debt into one weekly payment, or settle debt at 40-80% of balance. Free analysis. No new loans.",
+    "Plain-spoken guides and case-tested workouts on stacked business debt. Daily debits replaced with weekly schedules, resolutions at 40-80% of balance.",
   openGraph: {
-    title: "Business Debt Relief, Restructuring & Settlement",
+    title: "Business Debt Insider — Relief, Restructuring & Resolution",
     description:
-      "Cut daily MCA debits, restructure stacked business debt into one weekly payment, or settle debt at 40-80% of balance. Free analysis.",
+      "Plain-spoken guides and case-tested workouts on stacked business debt.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Business Debt Relief, Restructuring & Settlement",
+    title: "Business Debt Insider — Relief, Restructuring & Resolution",
     description:
-      "Cut daily MCA debits, restructure stacked business debt into one weekly payment, or settle at 40-80% of balance.",
+      "Plain-spoken guides and case-tested workouts on stacked business debt.",
   },
 };
 
@@ -49,23 +49,23 @@ export default async function Home() {
       <section className="bg-paper border-b border-hairline">
         <div className="mx-auto max-w-content px-6 pt-20 pb-24 md:pt-28 md:pb-32">
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">
-            Business debt relief, restructuring & settlement
+            Business debt relief, restructuring & resolution
           </span>
           <h1 className="mt-6 max-w-4xl text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ink leading-[0.95]">
-            Get out from under <span className="text-pine">stacked MCA debt</span>.
+            Inside <span className="text-pine">business debt</span>.
           </h1>
           <p className="mt-8 max-w-3xl text-lg md:text-xl text-ink leading-relaxed">
-            For SMEs carrying 2+ merchant cash advances or $50K+ in stacked short-term debt. We replace daily debits with a single weekly payment, settle obligations at 40-80% of balance where lenders accept, and keep the business operating throughout.
+            Plain-spoken information and case-tested workouts for operators carrying stacked short-term debt. Daily debits replaced with weekly schedules, obligations resolved at 40-80% of balance where lenders accept, and the business operating throughout.
           </p>
           <p className="mt-4 max-w-3xl text-base md:text-lg text-muted leading-relaxed">
-            Free written analysis before any engagement fee. We do not lend, do not issue new debt, and do not act as a law firm. Documented agreements, flat fees, no contingency.
+            We do not lend, do not issue new debt, and do not act as a law firm. Flat fees, documented agreements, no contingency.
           </p>
           <div className="mt-10 flex flex-wrap gap-6 items-center">
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-pine text-paper px-6 py-3 text-sm font-mono uppercase tracking-[0.18em] no-underline hover:bg-ink transition"
+              href="/insights"
+              className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-[0.18em] text-pine border-b border-pine pb-1 no-underline hover:text-ink hover:border-ink transition"
             >
-              Free debt analysis
+              Read the guides
               <span aria-hidden>→</span>
             </Link>
             <Link
@@ -73,6 +73,13 @@ export default async function Home() {
               className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-[0.18em] text-pine border-b border-pine pb-1 no-underline hover:text-ink hover:border-ink transition"
             >
               See the four services
+              <span aria-hidden>→</span>
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-[0.18em] text-muted hover:text-ink transition"
+            >
+              Or schedule a call
               <span aria-hidden>→</span>
             </Link>
           </div>

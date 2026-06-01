@@ -42,7 +42,7 @@ The realistic timeline for clean bank product access runs 9 to 18 months after t
 
 The work that compresses that timeline starts during the workout itself. Documentation of every settlement, every UCC release, every restructured balance becomes the package you walk into the next bank with. A workout that closes cleanly with documented releases puts you 6 months ahead of a workout that closes ambiguously with paperwork gaps.
 
-[Creditor liaison work during the program](/services/business-debt-settlement) is what generates that documentation. Every settlement letter, every release confirmation, every payoff statement gets organized into a package that a future lender can underwrite from.
+[Creditor liaison work during the program](/services/business-debt-resolution) is what generates that documentation. Every settlement letter, every release confirmation, every payoff statement gets organized into a package that a future lender can underwrite from.
 
 ### What banks look for after a workout closes
 
@@ -206,7 +206,7 @@ Run the count and the percentage together. The decision matrix:
 
 **3 MCAs at any debit burden, or 1 to 2 MCAs above 12 percent:** Warning zone. Begin workout planning. The right time to engage is before the fourth advance is taken.
 
-**4 to 5 MCAs, or any count above 15 percent debit burden:** Critical. Start workout intake within 30 days. Stop taking new advances regardless of how the math is pitched. [Creditor liaison](/services/business-debt-settlement) and [liquidity engineering](/services/business-debt-restructuring) coordination start here.
+**4 to 5 MCAs, or any count above 15 percent debit burden:** Critical. Start workout intake within 30 days. Stop taking new advances regardless of how the math is pitched. [Creditor liaison](/services/business-debt-resolution) and [liquidity engineering](/services/business-debt-restructuring) coordination start here.
 
 **5+ MCAs, or debit burden above 25 percent:** Active distress. Workout intake immediately. Forensic audit first. Reconciliation requests to pause debits while the workout is structured. Consider [operational restructuring](/services/bankruptcy-alternative) alongside the debt work.
 
@@ -298,7 +298,7 @@ A contract that restructures is not a settlement failure. It is a different reso
 
 ### Contracts that escalate to counsel
 
-Some contracts go to litigation. This happens in two directions. Either the lender sues the merchant (confession of judgment, breach of contract action) before settlement is reached, or counsel for the merchant raises defenses that move the matter to court. Our practice does not litigate, but we coordinate with [licensed counsel in all 50 states](/services/business-debt-settlement) when escalation becomes necessary.
+Some contracts go to litigation. This happens in two directions. Either the lender sues the merchant (confession of judgment, breach of contract action) before settlement is reached, or counsel for the merchant raises defenses that move the matter to court. Our practice does not litigate, but we coordinate with [licensed counsel in all 50 states](/services/business-debt-resolution) when escalation becomes necessary.
 
 Litigation tends to resolve at meaningful discounts when the underlying paper has weaknesses, but the timeline extends to 12 to 24 months and counsel fees become a factor in the math.
 
@@ -468,7 +468,7 @@ The funder responds with a counter-calculation, often disputing the documentatio
 
 ### Outcome 3: Funder ignores or denies
 
-The funder either does not respond within the contractual window or responds with a blanket denial. This happens about 20 to 35 percent of the time. The non-response or unsupported denial becomes evidence of bad faith and strengthens later settlement positioning. [Creditor liaison](/services/business-debt-settlement) work escalates the matter to counsel at this point.
+The funder either does not respond within the contractual window or responds with a blanket denial. This happens about 20 to 35 percent of the time. The non-response or unsupported denial becomes evidence of bad faith and strengthens later settlement positioning. [Creditor liaison](/services/business-debt-resolution) work escalates the matter to counsel at this point.
 
 ## When reconciliation alone is not enough
 
@@ -524,7 +524,7 @@ Active UCCs from settled debts are the most damaging artifact in the post-settle
 
 The work: within 30 days of each settlement closing, confirm the funder has filed a UCC-3 termination in the original filing jurisdiction. If they have not, send a formal demand citing the settlement agreement's release language. Continue weekly follow-up until the termination is filed and confirmed in the public record.
 
-[Creditor liaison](/services/business-debt-settlement) work during closeout typically includes this verification as part of the documentation package. Without it, the business carries phantom liens that block future credit.
+[Creditor liaison](/services/business-debt-resolution) work during closeout typically includes this verification as part of the documentation package. Without it, the business carries phantom liens that block future credit.
 
 ### Timeline target
 

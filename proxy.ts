@@ -9,13 +9,14 @@ const SERVICE_REDIRECTS: Record<string, string> = {
   // Retired 2026-05 product slugs
   "/services/mca-debt-relief": "/services/business-debt-relief",
   "/services/equipment-finance-restructure": "/services/business-debt-restructuring",
-  "/services/vendor-supplier-debt": "/services/business-debt-settlement",
+  "/services/vendor-supplier-debt": "/services/business-debt-resolution",
   "/services/bank-loan-workout": "/services/business-debt-restructuring",
-  "/services/business-tax-debt": "/services/business-debt-settlement",
+  "/services/business-tax-debt": "/services/business-debt-resolution",
   // Retired 2026-06 process-named slugs → outcome-named slugs
   "/services/forensic-audit": "/services/business-debt-relief",
   "/services/liquidity-engineering": "/services/business-debt-restructuring",
-  "/services/creditor-liaison": "/services/business-debt-settlement",
+  "/services/creditor-liaison": "/services/business-debt-resolution",
+  "/services/business-debt-settlement": "/services/business-debt-resolution",
   "/services/operational-restructuring": "/services/bankruptcy-alternative",
 };
 

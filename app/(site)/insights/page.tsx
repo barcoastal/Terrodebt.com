@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Plain-language guides on MCA debt relief, COJ defense, effective APR math, and creditor negotiation. Written for SME operators.",
 };
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 function readTime(md: string): number {
   const words = md.split(/\s+/).filter(Boolean).length;
@@ -18,7 +18,7 @@ function readTime(md: string): number {
 }
 
 function topicFromSlug(slug: string): string {
-  if (slug.includes("mca") || slug.includes("reverse") || slug.includes("coj") || slug.includes("ucc")) return "MCA";
+  if (slug.includes("mca") || slug.includes("reverse") || slug.includes("coj") || slug.includes("ucc")) return "Debt Relief";
   if (slug.includes("equipment")) return "Equipment";
   if (slug.includes("vendor")) return "Vendor";
   if (slug.includes("bank") || slug.includes("covenant")) return "Bank";

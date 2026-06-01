@@ -4,7 +4,7 @@ import Image from "next/image";
 const SERVICES = [
   { href: "/services/business-debt-relief", label: "Business Debt Relief" },
   { href: "/services/business-debt-restructuring", label: "Business Debt Restructuring" },
-  { href: "/services/business-debt-settlement", label: "Business Debt Settlement" },
+  { href: "/services/business-debt-resolution", label: "Business Debt Resolution" },
   { href: "/services/bankruptcy-alternative", label: "Bankruptcy Alternative" },
 ];
 
