@@ -49,13 +49,16 @@ export default async function Home() {
       <section className="bg-paper border-b border-hairline">
         <div className="mx-auto max-w-content px-6 pt-20 pb-24 md:pt-28 md:pb-32">
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">
-            Business debt relief, restructuring & resolution
+            Plain-spoken information on business debt
           </span>
           <h1 className="mt-6 max-w-4xl text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ink leading-[0.95]">
-            Inside <span className="text-pine">business debt</span>.
+            The only way out of <span className="text-pine">business debt</span> is in.
           </h1>
           <p className="mt-8 max-w-3xl text-lg md:text-xl text-ink leading-relaxed">
-            Plain-spoken information and case-tested workouts for operators carrying stacked short-term debt. Daily debits replaced with weekly schedules, obligations resolved at 40-80% of balance where lenders accept, and the business operating throughout.
+            Most operators try to outrun debt by stacking new advances on old ones. It never works. Business Debt Insider goes the other direction: into the stack. We take it apart with you, lender by lender, debit by debit, until you understand exactly how it got there.
+          </p>
+          <p className="mt-4 max-w-3xl text-base md:text-lg text-ink leading-relaxed">
+            From that understanding, you get out. Daily debits replaced with weekly schedules, obligations resolved at a reduced balance, the business operating throughout. Then we rebuild the cash discipline that keeps you from reaching for the next advance.
           </p>
           <p className="mt-4 max-w-3xl text-base md:text-lg text-muted leading-relaxed">
             We do not lend, do not issue new debt, and do not act as a law firm. Flat fees, documented agreements, no contingency.
