@@ -1,6 +1,21 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
 import type { Prisma } from "@/app/generated/prisma";
+import { STATUS_LABELS, type LeadStatus } from "@/lib/lead-funnel";
+
+const STATUS_COLORS: Record<string, string> = {
+  new: "bg-slate-100 text-slate-700 border-slate-200",
+  lead: "bg-blue-50 text-blue-700 border-blue-200",
+  opportunity: "bg-amber-50 text-amber-800 border-amber-200",
+  closed_won: "bg-emerald-50 text-emerald-800 border-emerald-200",
+  lost: "bg-zinc-100 text-zinc-500 border-zinc-200",
+};
+
+function StatusBadge({ status }: { status: string }) {
+  const label = STATUS_LABELS[status as LeadStatus] ?? status;
+  const color = STATUS_COLORS[status] ?? "bg-zinc-100 text-zinc-700 border-zinc-200";
+  return <span className={`inline-block border rounded-full px-2 py-0.5 text-xs font-semibold ${color}`}>{label}</span>;
+}
 
 export default async function LeadsPage({ searchParams }: { searchParams: Promise<{ source?: string; status?: string; q?: string; utm_source?: string; utm_medium?: string; utm_campaign?: string }> }) {
   const sp = await searchParams;
@@ -93,7 +108,7 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
                 <td className="font-mono text-xs">{l.utmMedium ?? "-"}</td>
                 <td className="font-mono text-xs">{l.utmCampaign ?? "-"}</td>
                 <td>{l.debtAmountBucket ?? "-"}</td>
-                <td>{l.status}</td>
+                <td><StatusBadge status={l.status} /></td>
               </tr>
             ))}
           </tbody>

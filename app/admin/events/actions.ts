@@ -29,6 +29,18 @@ export async function saveConversionAction(fd: FormData) {
   revalidatePath("/admin/events");
 }
 
+export async function updateConversionAction(fd: FormData) {
+  const id = String(fd.get("id") ?? "").trim();
+  const name = String(fd.get("name") ?? "").trim();
+  const actionId = String(fd.get("actionId") ?? "").trim();
+  if (!id || !name || !actionId) return;
+  await db.conversionAction.update({
+    where: { id },
+    data: { name, actionId },
+  });
+  revalidatePath("/admin/events");
+}
+
 export async function deleteConversionAction(id: string) {
   await db.conversionAction.delete({ where: { id } });
   revalidatePath("/admin/events");

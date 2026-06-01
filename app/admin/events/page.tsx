@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
-import { saveConversionAction, deleteConversionAction, fireEvent, bulkFire } from "./actions";
+import { saveConversionAction, updateConversionAction, deleteConversionAction, fireEvent, bulkFire } from "./actions";
 
 const PAGE_SIZE = 30;
 
@@ -84,10 +84,16 @@ export default async function EventsPage({ searchParams }: { searchParams: Promi
               </thead>
               <tbody>
                 {savedActions.map((a) => (
-                  <tr key={a.id} className="border-t border-border">
-                    <td className="px-3 py-2 font-semibold">{a.name}</td>
-                    <td className="font-mono text-xs">{a.actionId}</td>
-                    <td className="text-xs">{a.platform}</td>
+                  <tr key={a.id} className="border-t border-border align-middle">
+                    <td className="px-3 py-2" colSpan={3}>
+                      <form action={updateConversionAction} className="flex flex-wrap gap-2 items-center">
+                        <input type="hidden" name="id" value={a.id} />
+                        <input name="name" defaultValue={a.name} required className="border border-border rounded-md px-3 py-2 text-sm min-w-[180px]" />
+                        <input name="actionId" defaultValue={a.actionId} required className="border border-border rounded-md px-3 py-2 font-mono text-sm min-w-[160px]" />
+                        <span className="text-xs text-muted">{a.platform}</span>
+                        <button className="bg-slate text-white px-3 py-1.5 rounded-md text-xs">Save</button>
+                      </form>
+                    </td>
                     <td className="text-right pr-3">
                       <form action={async () => { "use server"; await deleteConversionAction(a.id); }}>
                         <button className="text-xs text-red-700 hover:underline">Delete</button>
