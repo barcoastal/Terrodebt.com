@@ -57,8 +57,12 @@ export default async function EventsPage({ searchParams }: { searchParams: Promi
 
       {/* Saved conversion actions */}
       <section className="mt-10">
-        <h2 className="text-lg font-semibold">Saved conversion actions</h2>
-        <p className="text-sm text-muted mt-1">Give each Google Ads conversion action a friendly name so you can quick-fire it by name instead of pasting the numeric ID every time.</p>
+        <h2 className="text-lg font-semibold">Event names → Google Ads action IDs</h2>
+        <p className="text-sm text-muted mt-1">Each entry below maps a friendly event name (e.g. <code className="font-mono text-xs">opportunity</code>) to a Google Ads conversion action ID. Postbacks can reference either <code className="font-mono text-xs">event=opportunity</code> or <code className="font-mono text-xs">conversion_action_id=7631584923</code>.</p>
+
+        <form action={async () => { "use server"; const { seedDefaultConversionActions } = await import("./actions"); await seedDefaultConversionActions(); }} className="mt-3">
+          <button className="text-xs text-electric underline">Seed default funnel events (Lead / Opportunity / Closed Won)</button>
+        </form>
 
         <form action={saveConversionAction} className="mt-4 flex flex-wrap gap-2 items-end">
           <div>

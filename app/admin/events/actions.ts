@@ -2,6 +2,20 @@
 import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { fireGoogleAdsEvent } from "@/lib/event-fire";
+import { STATUS_TO_CONVERSION_ACTION, STATUS_LABELS, type LeadStatus } from "@/lib/lead-funnel";
+
+export async function seedDefaultConversionActions() {
+  for (const status of ["lead", "opportunity", "closed_won"] as LeadStatus[]) {
+    const actionId = STATUS_TO_CONVERSION_ACTION[status];
+    if (!actionId) continue;
+    await db.conversionAction.upsert({
+      where: { platform_actionId: { platform: "google_ads", actionId } },
+      update: { name: STATUS_LABELS[status] },
+      create: { name: STATUS_LABELS[status], actionId, platform: "google_ads" },
+    });
+  }
+  revalidatePath("/admin/events");
+}
 
 export async function saveConversionAction(fd: FormData) {
   const name = String(fd.get("name") ?? "").trim();

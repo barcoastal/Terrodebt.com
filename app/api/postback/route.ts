@@ -50,8 +50,18 @@ async function handle(req: NextRequest) {
     const v = pick(params, "payout", "value", "amount", "revenue");
     return v ? Number(v) : null;
   })();
-  const status = pick(params, "status", "event", "type");
-  const conversionActionId = pick(params, "conversion_action_id", "action_id", "ga_action");
+  const status = pick(params, "status", "type");
+  const eventName = pick(params, "event", "event_name");
+  let conversionActionId = pick(params, "conversion_action_id", "action_id", "ga_action");
+  if (!conversionActionId && eventName) {
+    try {
+      const match = await db.conversionAction.findFirst({
+        where: { platform: "google_ads", name: { equals: eventName, mode: "insensitive" } },
+        select: { actionId: true },
+      });
+      conversionActionId = match?.actionId ?? null;
+    } catch {}
+  }
 
   // Try to link to a visitor and lead
   let linkedVisitor: Awaited<ReturnType<typeof db.visitor.findFirst>> = null;
@@ -102,6 +112,7 @@ async function handle(req: NextRequest) {
       conversionActionId: conversionActionId ?? undefined,
       source: "postback",
       postbackId: postback.id,
+      conversionValue: typeof payout === "number" && payout > 0 ? payout : undefined,
     });
     await db.postback.update({
       where: { id: postback.id },

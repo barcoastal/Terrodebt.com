@@ -17,6 +17,7 @@ export default async function PostbacksPage({ searchParams }: { searchParams: Pr
   let forwardedCount = 0;
   let linkedCount = 0;
   let allSources: string[] = [];
+  let actionNameById: Record<string, string> = {};
   try {
     [total, postbacks, forwardedCount, linkedCount] = await Promise.all([
       db.postback.count({ where }),
@@ -26,6 +27,8 @@ export default async function PostbacksPage({ searchParams }: { searchParams: Pr
     ]);
     const grouped = await db.postback.groupBy({ by: ["source"], _count: { _all: true } });
     allSources = grouped.map((g) => g.source).sort();
+    const actions = await db.conversionAction.findMany({ where: { platform: "google_ads" } });
+    actionNameById = Object.fromEntries(actions.map((a) => [a.actionId, a.name]));
   } catch {}
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
@@ -58,36 +61,41 @@ export default async function PostbacksPage({ searchParams }: { searchParams: Pr
             <tr>
               <th className="px-3 py-2">When</th>
               <th>Source</th>
-              <th>Status</th>
+              <th>Event</th>
               <th>Payout</th>
               <th>Click ID</th>
               <th>Linked lead</th>
-              <th>Forwarded</th>
+              <th>Sent to Google Ads</th>
             </tr>
           </thead>
           <tbody>
             {postbacks.length === 0 && (
               <tr><td colSpan={7} className="px-3 py-4 text-muted">No postbacks received yet.</td></tr>
             )}
-            {postbacks.map((p) => (
-              <tr key={p.id} className="border-t border-border">
-                <td className="px-3 py-2 font-mono text-xs">{p.createdAt.toISOString().slice(0, 19).replace("T", " ")}</td>
-                <td>{p.source}</td>
-                <td>{p.status ?? "-"}</td>
-                <td className="font-mono">{typeof p.payout === "number" ? `$${p.payout.toFixed(2)}` : "-"}</td>
-                <td className="font-mono text-xs">{(p.affiliateClickid ?? p.gclid ?? p.eliClickid ?? "-").slice(0, 24)}</td>
-                <td className="text-xs">
-                  {p.linkedLeadId ? <Link href={`/admin/leads/${p.linkedLeadId}`} className="text-electric">{p.linkedLeadId.slice(0, 8)}…</Link> : <span className="text-muted">unlinked</span>}
-                </td>
-                <td>
-                  {p.forwarded ? (
-                    <span className="text-emerald-700 text-xs font-semibold">✓</span>
-                  ) : (
-                    <span className="text-muted text-xs">—</span>
-                  )}
-                </td>
-              </tr>
-            ))}
+            {postbacks.map((p) => {
+              const eventLabel = p.conversionActionId ? (actionNameById[p.conversionActionId] ?? p.conversionActionId) : (p.status ?? "—");
+              const fr = (p.forwardResult ?? null) as { ok?: boolean; error?: string | null } | null;
+              return (
+                <tr key={p.id} className="border-t border-border align-top">
+                  <td className="px-3 py-2 font-mono text-xs whitespace-nowrap">{p.createdAt.toISOString().slice(0, 19).replace("T", " ")}</td>
+                  <td>{p.source}</td>
+                  <td><span className="font-mono text-xs">{eventLabel}</span></td>
+                  <td className="font-mono">{typeof p.payout === "number" ? `$${p.payout.toFixed(2)}` : "-"}</td>
+                  <td className="font-mono text-xs">{(p.affiliateClickid ?? p.gclid ?? p.eliClickid ?? "-").slice(0, 24)}</td>
+                  <td className="text-xs">
+                    {p.linkedLeadId ? <Link href={`/admin/leads/${p.linkedLeadId}`} className="text-electric">{p.linkedLeadId.slice(0, 8)}…</Link> : <span className="text-muted">unlinked</span>}
+                  </td>
+                  <td className="text-xs">
+                    {p.forwarded && fr?.ok && <span className="text-emerald-700 font-semibold">✓ sent</span>}
+                    {p.forwarded && fr && !fr.ok && (
+                      <span className="text-red-700"><span className="font-semibold">✗ failed</span> <span className="text-muted">{fr.error ?? ""}</span></span>
+                    )}
+                    {!p.forwarded && p.linkedLeadId && <span className="text-muted">no gclid on lead</span>}
+                    {!p.forwarded && !p.linkedLeadId && <span className="text-muted">no linked lead</span>}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -104,18 +112,18 @@ export default async function PostbacksPage({ searchParams }: { searchParams: Pr
         <h2 className="text-lg font-semibold">How to send a postback</h2>
         <p className="mt-2 text-sm text-muted">Point external networks at the endpoint below. The shared secret is set in <Link href="/admin/settings" className="text-electric">Settings → postback_secret</Link>; without it requests are accepted (open mode) unless one is configured.</p>
         <pre className="mt-4 bg-offwhite border border-border rounded-md p-4 text-xs overflow-auto font-mono">
-{`GET  https://businessdebtinsider.com/api/postback?source=NETWORK&affiliate_clickid={CLICK_ID}&payout={AMOUNT}&status={STATUS}&secret=YOUR_SECRET
+{`GET  https://businessdebtinsider.com/api/postback?source=NETWORK&affiliate_clickid={CLICK_ID}&event=opportunity&payout={AMOUNT}&secret=YOUR_SECRET
 
 POST https://businessdebtinsider.com/api/postback
 content-type: application/json
 authorization: Bearer YOUR_SECRET
 
 {
-  "source": "network-name",
+  "source": "coastal-crm",
   "affiliate_clickid": "{CLICK_ID}",
-  "payout": 12.50,
-  "status": "sale",
-  "conversion_action_id": "12345"  // optional override; otherwise default is used
+  "event": "closed_won",                 // friendly name from /admin/events
+  "payout": 12000.00,                    // dollar value, used for Closed Won
+  "conversion_action_id": "7631563090"   // OR pass the raw Google Ads action ID
 }`}
         </pre>
         <p className="mt-3 text-xs text-muted">Recognized click-ID parameter names: <code className="font-mono">affiliate_clickid</code>, <code className="font-mono">click_id</code>, <code className="font-mono">clickid</code>, <code className="font-mono">subid</code>, <code className="font-mono">transaction_id</code>, <code className="font-mono">gclid</code>, <code className="font-mono">fbclid</code>, <code className="font-mono">eli_clickid</code>.</p>
