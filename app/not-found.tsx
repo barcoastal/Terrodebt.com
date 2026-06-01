@@ -24,10 +24,10 @@ export default function NotFound() {
           <NavBlock
             eyebrow="Services"
             items={[
-              { href: "/services/forensic-audit", label: "Forensic Financial Auditing" },
-              { href: "/services/liquidity-engineering", label: "Liquidity Engineering" },
-              { href: "/services/creditor-liaison", label: "Creditor Liaison" },
-              { href: "/services/operational-restructuring", label: "Operational Restructuring" },
+              { href: "/services/business-debt-relief", label: "Business Debt Relief" },
+              { href: "/services/business-debt-restructuring", label: "Business Debt Restructuring" },
+              { href: "/services/business-debt-settlement", label: "Business Debt Settlement" },
+              { href: "/services/bankruptcy-alternative", label: "Bankruptcy Alternative" },
             ]}
           />
           <NavBlock

@@ -4,13 +4,19 @@ import { sessionOptions, type SessionData } from "@/lib/session";
 
 const COOKIE = "eli_clickid";
 
-// Old /services/{product-slug} URLs that 404 now → permanent redirects to live URLs
+// Old /services/{slug} URLs → live outcome-named slugs (301)
 const SERVICE_REDIRECTS: Record<string, string> = {
-  "/services/mca-debt-relief": "/services/creditor-liaison",
-  "/services/equipment-finance-restructure": "/services/creditor-liaison",
-  "/services/vendor-supplier-debt": "/services/creditor-liaison",
-  "/services/bank-loan-workout": "/services/creditor-liaison",
-  "/services/business-tax-debt": "/services/creditor-liaison",
+  // Retired 2026-05 product slugs
+  "/services/mca-debt-relief": "/services/business-debt-relief",
+  "/services/equipment-finance-restructure": "/services/business-debt-restructuring",
+  "/services/vendor-supplier-debt": "/services/business-debt-settlement",
+  "/services/bank-loan-workout": "/services/business-debt-restructuring",
+  "/services/business-tax-debt": "/services/business-debt-settlement",
+  // Retired 2026-06 process-named slugs → outcome-named slugs
+  "/services/forensic-audit": "/services/business-debt-relief",
+  "/services/liquidity-engineering": "/services/business-debt-restructuring",
+  "/services/creditor-liaison": "/services/business-debt-settlement",
+  "/services/operational-restructuring": "/services/bankruptcy-alternative",
 };
 
 function makeId() {

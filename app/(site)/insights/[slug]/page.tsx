@@ -15,11 +15,11 @@ function readTime(text: string): number {
 
 function topicFromSlug(slug: string): { label: string; href?: string } {
   if (slug.includes("mca") || slug.includes("reverse") || slug.includes("coj") || slug.includes("ucc"))
-    return { label: "MCA Debt Relief", href: "/services/creditor-liaison" };
-  if (slug.includes("equipment")) return { label: "Equipment Finance", href: "/services/creditor-liaison" };
-  if (slug.includes("vendor")) return { label: "Vendor & Supplier Debt", href: "/services/creditor-liaison" };
-  if (slug.includes("bank") || slug.includes("covenant")) return { label: "Bank Loan Workouts", href: "/services/creditor-liaison" };
-  if (slug.includes("tax") || slug.includes("irs")) return { label: "Business Tax Debt", href: "/services/creditor-liaison" };
+    return { label: "MCA Debt Relief", href: "/services/business-debt-settlement" };
+  if (slug.includes("equipment")) return { label: "Equipment Finance", href: "/services/business-debt-settlement" };
+  if (slug.includes("vendor")) return { label: "Vendor & Supplier Debt", href: "/services/business-debt-settlement" };
+  if (slug.includes("bank") || slug.includes("covenant")) return { label: "Bank Loan Workouts", href: "/services/business-debt-settlement" };
+  if (slug.includes("tax") || slug.includes("irs")) return { label: "Business Tax Debt", href: "/services/business-debt-settlement" };
   return { label: "Insight" };
 }
 

@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const SERVICES = [
-  { href: "/services/forensic-audit", label: "Forensic Financial Auditing" },
-  { href: "/services/liquidity-engineering", label: "Liquidity Engineering" },
-  { href: "/services/creditor-liaison", label: "Creditor Liaison & Communication" },
-  { href: "/services/operational-restructuring", label: "Operational Restructuring" },
+  { href: "/services/business-debt-relief", label: "Business Debt Relief" },
+  { href: "/services/business-debt-restructuring", label: "Business Debt Restructuring" },
+  { href: "/services/business-debt-settlement", label: "Business Debt Settlement" },
+  { href: "/services/bankruptcy-alternative", label: "Bankruptcy Alternative" },
 ];
 
 const SECONDARY = [

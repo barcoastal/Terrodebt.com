@@ -70,7 +70,7 @@ How did the broker reach you? What did they say? Many reverse consolidation pitc
 
 The audit captures the solicitation in writing through a sworn statement from you, attached to whatever emails, texts, or recordings exist.
 
-The full audit is what our [forensic audit](/services/forensic-audit) work produces. It is the foundation every defensible unwind is built on.
+The full audit is what our [forensic audit](/services/business-debt-relief) work produces. It is the foundation every defensible unwind is built on.
 
 ## The unwind sequence
 
@@ -92,7 +92,7 @@ The demand is signed by counsel. We do not litigate, but we coordinate licensed 
 
 ### Stage three: negotiation
 
-The funder responds. The response is rarely an immediate yes. The response is usually a counter that acknowledges some of the audit findings and disputes others. From there, [creditor liaison](/services/creditor-liaison) work moves the negotiation toward a number that closes.
+The funder responds. The response is rarely an immediate yes. The response is usually a counter that acknowledges some of the audit findings and disputes others. From there, [creditor liaison](/services/business-debt-settlement) work moves the negotiation toward a number that closes.
 
 A typical resolution arc: demand at 30 percent payoff, funder counters at 75 percent, agreement at 45 to 55 percent. The number depends on the strength of the audit, the funder's exposure across other contracts, and the funder's appetite for litigation.
 
@@ -108,7 +108,7 @@ Some things to avoid.
 
 Do not stop paying without a written reconciliation request and ACH block in place. Default without procedural cover hands the funder a confession of judgment opportunity if one is in the contract.
 
-Do not refinance into another MCA. The exit from a bad consolidation is not a new advance. The exit is closing the bad contract, then rebuilding the cash flow that made you take the consolidation in the first place. That cash flow work is [liquidity engineering](/services/liquidity-engineering).
+Do not refinance into another MCA. The exit from a bad consolidation is not a new advance. The exit is closing the bad contract, then rebuilding the cash flow that made you take the consolidation in the first place. That cash flow work is [liquidity engineering](/services/business-debt-restructuring).
 
 Do not negotiate alone with the funder while the contract is still performing. The leverage in an unwind comes from the audit and the demand. Without those, the funder has no reason to come off face value.
 
@@ -232,7 +232,7 @@ The debt load exceeds what a workout can plausibly resolve. A business with $15M
 
 Litigation is already active and the cost of defending against it exceeds the cost of filing.
 
-The business has structural problems that the debt resolution alone will not fix. Operational restructuring inside a Chapter 11 framework gives the business more tools than [operational restructuring](/services/operational-restructuring) outside of court.
+The business has structural problems that the debt resolution alone will not fix. Operational restructuring inside a Chapter 11 framework gives the business more tools than [operational restructuring](/services/bankruptcy-alternative) outside of court.
 
 ## How to decide
 
@@ -268,7 +268,7 @@ A typical MCA settlement program runs 6 to 18 months. During that window, you ar
 
 Sequence wrong and you spend the first six months settling a $40K balance with a passive lender while the $180K contract with the COJ goes to judgment. Sequence right and the contracts most likely to hurt you are off the board by month four, before they have time to escalate.
 
-The sequence question is what [creditor liaison](/services/creditor-liaison) work answers in the first 30 days of any engagement.
+The sequence question is what [creditor liaison](/services/business-debt-settlement) work answers in the first 30 days of any engagement.
 
 ## Variable one: COJ status
 
@@ -384,7 +384,7 @@ If you are managing a stack of three or more MCAs and the order of operations is
 
 The first month is the most important and the least visible to creditors. Nothing changes in their world during this phase. From the merchant's side, the work is intensive.
 
-Documents come in. Every active contract, every funding statement, every recent bank statement, and the last two years of tax returns get scanned, organized, and analyzed. The [forensic audit](/services/forensic-audit) reads each contract for breach points, structural defects, and negotiation leverage.
+Documents come in. Every active contract, every funding statement, every recent bank statement, and the last two years of tax returns get scanned, organized, and analyzed. The [forensic audit](/services/business-debt-relief) reads each contract for breach points, structural defects, and negotiation leverage.
 
 The audit produces a stack analysis. For each contract: original face, current balance, daily debit, factor rate, effective APR, COJ status, UCC position, enforcement risk, and the specific breach points identified. The stack analysis is the document every subsequent decision is made off.
 
@@ -404,7 +404,7 @@ The business stops paying creditors on the original terms. The cash that was goi
 
 The escrow account is operated separately from the operating account. Funds accumulate there for settlements. The contribution schedule is set by the cash flow analysis, not by what the merchant hopes they can pay.
 
-This is the [liquidity engineering](/services/liquidity-engineering) phase. The work is unglamorous and decisive. A business that cannot fund escrow cannot complete a workout. The first three months establish whether the cash flow plan is real.
+This is the [liquidity engineering](/services/business-debt-restructuring) phase. The work is unglamorous and decisive. A business that cannot fund escrow cannot complete a workout. The first three months establish whether the cash flow plan is real.
 
 ### The first creditor outreach
 
@@ -442,7 +442,7 @@ Two things happen.
 
 First, the remaining creditors observe the closure pattern. They see UCC releases coming through. They see the program working. The negotiations get easier, not harder, because the merchant's credibility as a workout candidate has been established.
 
-Second, some restructures get layered in alongside the settlements. Restructures preserve the lender relationship and avoid the credit hit from settlement. For workable contracts that the merchant might want to use as a future credit reference, a restructure is the right tool. The [operational restructuring](/services/operational-restructuring) work covers the broader picture, but contract-level restructures fit naturally into this phase.
+Second, some restructures get layered in alongside the settlements. Restructures preserve the lender relationship and avoid the credit hit from settlement. For workable contracts that the merchant might want to use as a future credit reference, a restructure is the right tool. The [operational restructuring](/services/bankruptcy-alternative) work covers the broader picture, but contract-level restructures fit naturally into this phase.
 
 By the end of month 12, the stack is usually 70 to 85 percent resolved by face balance. Two to four contracts remain.
 
@@ -525,7 +525,7 @@ If the judgment is entered against the personal guarantor, the judgment can be r
 
 The point of a well-run business debt workout is to resolve the underlying obligation before the personal guarantee enforcement track ever starts. When the business obligation closes through settlement, the personal guarantee gets released in the same agreement. No demand letter, no lawsuit, no judgment, no personal credit exposure.
 
-The negotiation includes guarantee release language in every settlement. Without that language, the creditor can settle the business contract and still come after the guarantor. With it, the personal exposure closes at the same time as the business exposure. [Creditor liaison](/services/creditor-liaison) work is what produces those release terms.
+The negotiation includes guarantee release language in every settlement. Without that language, the creditor can settle the business contract and still come after the guarantor. With it, the personal exposure closes at the same time as the business exposure. [Creditor liaison](/services/business-debt-settlement) work is what produces those release terms.
 
 ## Channel two: business credit cards
 

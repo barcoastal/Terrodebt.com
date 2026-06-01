@@ -6,20 +6,20 @@ import { SERVICES } from "@/lib/service-content";
 import { priorityVerticals } from "@/lib/vertical-content";
 
 export const metadata: Metadata = {
-  title: { absolute: "Business Debt Insider — Inside Business Debt Restructure" },
+  title: { absolute: "Business Debt Relief, Restructuring & Settlement — Business Debt Insider" },
   description:
-    "Strategic financial consulting for SMEs with stacked short-term debt: forensic audit, liquidity engineering, creditor liaison, operational restructuring. Fort Lauderdale, FL.",
+    "Cut daily MCA debits, restructure stacked business debt into one weekly payment, or settle debt at 40-80% of balance. Free analysis. No new loans.",
   openGraph: {
-    title: "Business Debt Insider — Inside business debt restructure",
+    title: "Business Debt Relief, Restructuring & Settlement",
     description:
-      "Strategic financial consulting for SMEs with stacked MCA, equipment, vendor, bank, and tax debt. Forensic audit and creditor negotiation.",
+      "Cut daily MCA debits, restructure stacked business debt into one weekly payment, or settle debt at 40-80% of balance. Free analysis.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Business Debt Insider — Inside business debt restructure",
+    title: "Business Debt Relief, Restructuring & Settlement",
     description:
-      "Strategic financial consulting for SMEs with stacked MCA, equipment, vendor, bank, and tax debt.",
+      "Cut daily MCA debits, restructure stacked business debt into one weekly payment, or settle at 40-80% of balance.",
   },
 };
 
@@ -49,23 +49,30 @@ export default async function Home() {
       <section className="bg-paper border-b border-hairline">
         <div className="mx-auto max-w-content px-6 pt-20 pb-24 md:pt-28 md:pb-32">
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">
-            Strategic financial consulting
+            Business debt relief, restructuring & settlement
           </span>
           <h1 className="mt-6 max-w-4xl text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ink leading-[0.95]">
-            Inside business <br className="hidden md:block" /><span className="text-pine">debt</span>.
+            Get out from under <span className="text-pine">stacked MCA debt</span>.
           </h1>
           <p className="mt-8 max-w-3xl text-lg md:text-xl text-ink leading-relaxed">
-            Forensic debt restructure for small and mid-sized enterprises. We combine forensic financial auditing with liquidity engineering and creditor liaison to restore operational margin on stacked short-term debt.
+            For SMEs carrying 2+ merchant cash advances or $50K+ in stacked short-term debt. We replace daily debits with a single weekly payment, settle obligations at 40-80% of balance where lenders accept, and keep the business operating throughout.
           </p>
           <p className="mt-4 max-w-3xl text-base md:text-lg text-muted leading-relaxed">
-            Engagements are scoped to the specific obligations and operating profile of the entity. The practice does not lend, does not litigate, and does not present itself as a law firm.
+            Free written analysis before any engagement fee. We do not lend, do not issue new debt, and do not act as a law firm. Documented agreements, flat fees, no contingency.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap gap-6 items-center">
             <Link
               href="/contact"
+              className="inline-flex items-center gap-2 bg-pine text-paper px-6 py-3 text-sm font-mono uppercase tracking-[0.18em] no-underline hover:bg-ink transition"
+            >
+              Free debt analysis
+              <span aria-hidden>→</span>
+            </Link>
+            <Link
+              href="/services"
               className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-[0.18em] text-pine border-b border-pine pb-1 no-underline hover:text-ink hover:border-ink transition"
             >
-              Schedule an initial review
+              See the four services
               <span aria-hidden>→</span>
             </Link>
           </div>
@@ -81,12 +88,12 @@ export default async function Home() {
                 Practice areas
               </span>
               <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">
-                Four professional services.
+                Four ways out of business debt.
               </h2>
             </div>
             <div className="md:col-span-8">
               <p className="text-base md:text-lg text-ink leading-relaxed">
-                The practice operates four service lines, each scoped as a discrete engagement. The lines are designed to be retained sequentially, with the forensic audit producing the documentation that subsequent engagements rely on.
+                Every engagement starts with a free written analysis. From there, the right service depends on what the business can support: relief on the daily debits, a restructured weekly payment, settlement at a discounted lump sum, or a coordinated workout as an alternative to filing.
               </p>
             </div>
           </div>
