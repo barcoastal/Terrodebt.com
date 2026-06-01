@@ -3,13 +3,22 @@ import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { fireGoogleAdsEvent } from "@/lib/event-fire";
 import { notifyStatusChange } from "@/lib/notifications";
+import { STATUS_TO_CONVERSION_ACTION, type LeadStatus } from "@/lib/lead-funnel";
 
-export async function updateLeadStatus(id: string, status: string) {
+export async function updateLeadStatus(id: string, status: string, dealValue?: number) {
   const before = await db.lead.findUnique({ where: { id }, select: { status: true } });
   const updated = await db.lead.update({ where: { id }, data: { status } });
+
   if (before && before.status !== status) {
     await notifyStatusChange(updated, before.status);
   }
+
+  const actionId = STATUS_TO_CONVERSION_ACTION[status as LeadStatus];
+  if (actionId && updated.gclid) {
+    const conversionValue = status === "closed_won" && typeof dealValue === "number" && dealValue > 0 ? dealValue : undefined;
+    await fireGoogleAdsEvent({ lead: updated, conversionActionId: actionId, source: "manual-admin", conversionValue });
+  }
+
   revalidatePath(`/admin/leads/${id}`);
   revalidatePath("/admin/leads");
 }

@@ -38,8 +38,9 @@ export async function bulkFire(fd: FormData) {
 
   const whereByFilter: Record<string, Record<string, unknown>> = {
     "all-with-gclid": { gclid: { not: null } },
-    "qualified": { gclid: { not: null }, status: "qualified" },
-    "signed": { gclid: { not: null }, status: "signed" },
+    "lead": { gclid: { not: null }, status: "lead" },
+    "opportunity": { gclid: { not: null }, status: "opportunity" },
+    "closed_won": { gclid: { not: null }, status: "closed_won" },
   };
   const where = whereByFilter[filter] ?? whereByFilter["all-with-gclid"];
 

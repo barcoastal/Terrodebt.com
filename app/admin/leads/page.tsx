@@ -53,11 +53,11 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
         </select>
         <select name="status" defaultValue={sp.status ?? ""} className="border border-border rounded-md px-3 py-2">
           <option value="">All statuses</option>
-          <option value="new">new</option>
-          <option value="contacted">contacted</option>
-          <option value="qualified">qualified</option>
-          <option value="signed">signed</option>
-          <option value="dead">dead</option>
+          <option value="new">New</option>
+          <option value="lead">Lead</option>
+          <option value="opportunity">Opportunity</option>
+          <option value="closed_won">Closed Won</option>
+          <option value="lost">Lost</option>
         </select>
         <button className="bg-slate text-white px-3 py-2 rounded-md md:col-span-6">Filter</button>
       </form>

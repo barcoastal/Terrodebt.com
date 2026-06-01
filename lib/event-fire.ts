@@ -9,8 +9,9 @@ export async function fireGoogleAdsEvent(opts: {
   conversionActionId?: string;
   source: FireSource;
   postbackId?: string;
+  conversionValue?: number;
 }) {
-  const result = await uploadGoogleAdsConversion(opts.lead, opts.conversionActionId);
+  const result = await uploadGoogleAdsConversion(opts.lead, opts.conversionActionId, opts.conversionValue);
   await db.eventFire.create({
     data: {
       platform: "google_ads",

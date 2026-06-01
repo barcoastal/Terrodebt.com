@@ -17,11 +17,11 @@ export default async function EventsPage({ searchParams }: { searchParams: Promi
   let fires: Awaited<ReturnType<typeof db.eventFire.findMany>> = [];
   let recentLeadsWithGclid: LeadOpt[] = [];
   let leadsWithGclidCount = 0;
-  let qualifiedWithGclidCount = 0;
-  let signedWithGclidCount = 0;
+  let opportunityWithGclidCount = 0;
+  let closedWonWithGclidCount = 0;
 
   try {
-    [savedActions, totalFires, sentCount, failedCount, fires, recentLeadsWithGclid, leadsWithGclidCount, qualifiedWithGclidCount, signedWithGclidCount] = await Promise.all([
+    [savedActions, totalFires, sentCount, failedCount, fires, recentLeadsWithGclid, leadsWithGclidCount, opportunityWithGclidCount, closedWonWithGclidCount] = await Promise.all([
       db.conversionAction.findMany({ orderBy: { createdAt: "asc" } }),
       db.eventFire.count(),
       db.eventFire.count({ where: { status: "sent" } }),
@@ -34,8 +34,8 @@ export default async function EventsPage({ searchParams }: { searchParams: Promi
         select: { id: true, firstName: true, lastName: true, businessName: true, email: true, createdAt: true, status: true, gclid: true },
       }),
       db.lead.count({ where: { gclid: { not: null } } }),
-      db.lead.count({ where: { gclid: { not: null }, status: "qualified" } }),
-      db.lead.count({ where: { gclid: { not: null }, status: "signed" } }),
+      db.lead.count({ where: { gclid: { not: null }, status: "opportunity" } }),
+      db.lead.count({ where: { gclid: { not: null }, status: "closed_won" } }),
     ]);
   } catch {}
 
@@ -143,12 +143,12 @@ export default async function EventsPage({ searchParams }: { searchParams: Promi
             <div className="text-xl font-bold text-slate">{leadsWithGclidCount}</div>
           </div>
           <div className="surface-card p-3">
-            <div className="text-xs text-muted">Qualified + gclid</div>
-            <div className="text-xl font-bold text-slate">{qualifiedWithGclidCount}</div>
+            <div className="text-xs text-muted">Opportunity + gclid</div>
+            <div className="text-xl font-bold text-slate">{opportunityWithGclidCount}</div>
           </div>
           <div className="surface-card p-3">
-            <div className="text-xs text-muted">Signed + gclid</div>
-            <div className="text-xl font-bold text-slate">{signedWithGclidCount}</div>
+            <div className="text-xs text-muted">Closed Won + gclid</div>
+            <div className="text-xl font-bold text-slate">{closedWonWithGclidCount}</div>
           </div>
         </div>
 
@@ -157,8 +157,9 @@ export default async function EventsPage({ searchParams }: { searchParams: Promi
             <label className="block text-xs text-muted uppercase tracking-wide mb-1">Filter</label>
             <select name="filter" defaultValue="all-with-gclid" className="border border-border rounded-md px-3 py-2 text-sm">
               <option value="all-with-gclid">All with gclid</option>
-              <option value="qualified">Qualified + gclid</option>
-              <option value="signed">Signed + gclid</option>
+              <option value="lead">Lead + gclid</option>
+              <option value="opportunity">Opportunity + gclid</option>
+              <option value="closed_won">Closed Won + gclid</option>
             </select>
           </div>
           <div>

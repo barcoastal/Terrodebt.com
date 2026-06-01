@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { updateLeadStatus, fireGoogleAdsConversion } from "./actions";
-
-const STATUSES = ["new", "contacted", "qualified", "signed", "dead"];
+import { LEAD_STATUSES, STATUS_LABELS, STATUS_TO_CONVERSION_ACTION, type LeadStatus } from "@/lib/lead-funnel";
 
 type GaHistoryEntry = { name?: string; ok: boolean; error?: string; at: string; conversionActionId?: string };
 
@@ -67,13 +66,39 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
         <Field label="Text" value={consent?.text ?? "-"} full />
       </Section>
 
-      {/* Status update */}
-      <h2 className="text-lg font-semibold mt-10">Update status</h2>
-      <form action={async (fd: FormData) => { "use server"; await updateLeadStatus(id, String(fd.get("status"))); }} className="mt-3 flex gap-2 items-center">
+      {/* Funnel stage */}
+      <h2 className="text-lg font-semibold mt-10">Funnel stage</h2>
+      <p className="mt-2 text-sm text-muted">
+        Updating the stage fires the matching Google Ads conversion (when a gclid is present). Closed Won uploads the deal value entered below.
+      </p>
+      <form
+        action={async (fd: FormData) => {
+          "use server";
+          const status = String(fd.get("status"));
+          const dealValueRaw = String(fd.get("dealValue") || "").trim();
+          const dealValue = dealValueRaw ? Number(dealValueRaw) : undefined;
+          await updateLeadStatus(id, status, Number.isFinite(dealValue) ? dealValue : undefined);
+        }}
+        className="mt-3 flex flex-wrap gap-2 items-center"
+      >
         <select name="status" defaultValue={lead.status} className="border border-border rounded-md px-3 py-2">
-          {STATUSES.map((s) => <option key={s} value={s}>{s}</option>)}
+          {LEAD_STATUSES.map((s) => (
+            <option key={s} value={s}>
+              {STATUS_LABELS[s]}
+              {STATUS_TO_CONVERSION_ACTION[s] ? ` → fires ${STATUS_TO_CONVERSION_ACTION[s]}` : ""}
+            </option>
+          ))}
         </select>
+        <input
+          name="dealValue"
+          type="number"
+          min="0"
+          step="1"
+          placeholder="Deal $ (Closed Won only)"
+          className="border border-border rounded-md px-3 py-2 font-mono text-sm w-56"
+        />
         <button className="bg-electric text-white px-3 py-2 rounded-md">Update</button>
+        {!lead.gclid && <span className="text-xs text-muted">No gclid on lead — status will save but no Google Ads event will fire.</span>}
       </form>
 
       {/* Google Ads conversion */}
