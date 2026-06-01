@@ -7,7 +7,7 @@ import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export const metadata: Metadata = {
   title: "Business Debt Insights & Guides",
-  description: "Plain-language guides on MCA debt relief, COJ defense, effective APR math, and creditor negotiation. Written for SME operators.",
+  description: "Plain-language guides on business debt relief, COJ defense, effective APR math, and creditor negotiation. Written for SME operators.",
 };
 
 export const dynamic = "force-dynamic";

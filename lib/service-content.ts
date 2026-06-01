@@ -33,9 +33,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Business Debt Relief",
     shortName: "Debt Relief",
     numeral: "01",
-    metaTitle: "Business Debt Relief for MCA & Stacked Debt",
+    metaTitle: "Business Debt Relief — Lower Payments, Keep Operating",
     metaDescription:
-      "Cut daily MCA debits and lower payments fast. Free analysis for businesses with 2+ merchant cash advances or $50K+ in stacked short-term debt.",
+      "Plain-spoken information on business debt relief. How daily debits get replaced with weekly schedules, and what relief options are available to operators.",
     kicker: "Service 01",
     overview: [
       "Business Debt Relief is the first step for owners stuck with stacked merchant cash advances, daily debits draining the operating account, and creditors calling. The objective is fast, structural relief: lower the dollars leaving the business each week so payroll, vendors, and tax deposits stop slipping behind. Most clients see daily debits replaced by a single weekly payment within 30 to 60 days of engaging.",
@@ -133,9 +133,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Business Debt Restructuring",
     shortName: "Restructuring",
     numeral: "02",
-    metaTitle: "Business Debt Restructuring for Stacked MCAs",
+    metaTitle: "Business Debt Restructuring — One Weekly Payment",
     metaDescription:
-      "Consolidate stacked MCAs and short-term business debt into one weekly payment. No new loans. Free analysis. Restructure existing obligations.",
+      "How stacked short-term business debt gets restructured into a single weekly payment. No new loans, no refinancing. Renegotiation of existing obligations.",
     kicker: "Service 02",
     overview: [
       "Business Debt Restructuring takes a business carrying multiple credit instruments and rebuilds the obligation schedule into something the operation can actually support. Multiple daily MCA debits, equipment lease payments, vendor arrears, and a bank line all pulling against the same operating account are consolidated, sequenced, and reduced to a manageable weekly payment.",
@@ -233,9 +233,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Business Debt Resolution",
     shortName: "Resolution",
     numeral: "03",
-    metaTitle: "Business Debt Resolution & Settlement",
+    metaTitle: "Business Debt Resolution — Reduced Lump-Sum Payoff",
     metaDescription:
-      "Resolve stacked short-term business debt at a reduced lump-sum balance. Historical resolutions range from 40 to 80 percent of original balance.",
+      "Resolve stacked short-term business debt at a reduced lump-sum balance. How resolutions are structured, and the range of outcomes by lender type.",
     kicker: "Service 03",
     overview: [
       "Business Debt Settlement is the right service when the realistic outcome is a discounted lump-sum payoff rather than a restructured payment schedule. Lenders with weak recourse, obligations the business cannot service even after restructuring, and credit instruments where the lender prefers a settled balance to a litigated one are the typical candidates.",
@@ -333,9 +333,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Bankruptcy Alternative",
     shortName: "Bankruptcy Alternative",
     numeral: "04",
-    metaTitle: "Business Bankruptcy Alternative — Restructure Without Filing",
+    metaTitle: "Bankruptcy Alternative — Restructure Without Filing",
     metaDescription:
-      "Restructure stacked business debt without filing for bankruptcy. Keep operating, keep equipment, keep the entity. Free analysis for SMEs.",
+      "How operators restructure stacked business debt without filing for bankruptcy. Out-of-court workouts, what they can address, and when they cannot.",
     kicker: "Service 04",
     overview: [
       "Bankruptcy Alternative is the right service when an operator is being told to file Chapter 11 or Chapter 7 but has a viable underlying business that can keep running. Filing carries legal cost, equipment risk, customer disclosure, and a long shadow on the entity. For most SMEs with stacked short-term debt, a structured out-of-court workout is faster, cheaper, and less disruptive than a formal filing.",

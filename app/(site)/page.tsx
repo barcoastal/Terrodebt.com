@@ -131,6 +131,66 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* 2b. How a workout actually works */}
+      <section className="bg-paper border-b border-hairline">
+        <div className="mx-auto max-w-content px-6 py-16 md:py-20">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-10">
+            <div className="md:col-span-4">
+              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                Inside the process
+              </span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">
+                How a business debt workout actually works.
+              </h2>
+            </div>
+            <div className="md:col-span-8">
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                Every engagement runs the same four phases regardless of which service line ends up applying. The first two phases are free. Engagement fees apply only if the operator decides to move forward after seeing the written plan.
+              </p>
+            </div>
+          </div>
+
+          <ol className="border-t border-hairline">
+            {[
+              {
+                step: "01",
+                title: "Free analysis",
+                body: "We map every active credit instrument the business is carrying, reconstruct the daily debit pattern hitting the operating account, and identify which lenders have the strongest recourse. The output is a single-page composite of total outflow and total exposure.",
+              },
+              {
+                step: "02",
+                title: "Written plan",
+                body: "Before any engagement fee is charged, the operator receives a written plan showing the recommended path — relief, restructure, resolution, or out-of-court workout — with the target weekly payment, the timeline to reach it, and the specific creditor concessions we will request.",
+              },
+              {
+                step: "03",
+                title: "Negotiation period",
+                body: "Each lender is approached in sequence based on lien position and recourse. Modifications, deferrals, and resolutions are presented as documented proposals supported by the file. Every communication is logged. Most engagements close within 45 to 120 days.",
+              },
+              {
+                step: "04",
+                title: "Documented agreements",
+                body: "Accepted terms are reduced to writing with release language reviewed line by line. The business operates on a new single payment schedule. Personal guaranties are released where the obligation has been resolved.",
+              },
+            ].map((p) => (
+              <li key={p.step} className="border-b border-hairline">
+                <div className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10">
+                  <div className="md:col-span-2">
+                    <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-pine">{p.step}</span>
+                  </div>
+                  <div className="md:col-span-3">
+                    <h3 className="text-lg md:text-xl font-bold tracking-tight text-ink leading-snug">{p.title}</h3>
+                  </div>
+                  <div className="md:col-span-7">
+                    <p className="text-base md:text-lg text-ink leading-relaxed">{p.body}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* 3. Priority industries */}
       <section className="bg-paper-mute border-b border-hairline">
         <div className="mx-auto max-w-content px-6 py-16 md:py-20">
@@ -227,6 +287,66 @@ export default async function Home() {
         </section>
       )}
 
+      {/* 4b. Browse by topic */}
+      <section className="bg-paper border-b border-hairline">
+        <div className="mx-auto max-w-content px-6 py-16 md:py-20">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-10">
+            <div className="md:col-span-4">
+              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                Browse the library
+              </span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">
+                Find what you need by topic.
+              </h2>
+            </div>
+            <div className="md:col-span-8">
+              <p className="text-base md:text-lg text-ink leading-relaxed">
+                The library is organized by debt instrument and by procedural posture. Pick the topic closest to your situation — every entry links to the underlying guides, calculators, and engagement notes.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { topic: "Stacked MCAs", body: "Daily debits, reconciliation, settlement ranges, and how the typical stack gets unwound.", href: "/insights" },
+              { topic: "Confession of Judgment", body: "How a COJ gets entered, how to react, and what licensed counsel does next.", href: "/insights/coj-filed-against-me" },
+              { topic: "Bank loan workouts", body: "Covenant violations, special assets group, forbearance, and modified terms.", href: "/insights" },
+              { topic: "Equipment finance", body: "Voluntary surrender, deficiency claims, and the lender economics that drive each.", href: "/insights" },
+              { topic: "Vendor and trade debt", body: "Aged payables, supplier paydown plans, and mechanic's lien matters.", href: "/insights" },
+              { topic: "Business tax debt", body: "Installment agreements, offers in compromise, and trust fund recovery exposure.", href: "/insights" },
+            ].map((c) => (
+              <Link
+                key={c.topic}
+                href={c.href}
+                className="block no-underline border border-hairline p-6 hover:border-pine transition"
+              >
+                <h3 className="text-base md:text-lg font-bold tracking-tight text-ink leading-snug">{c.topic}</h3>
+                <p className="mt-2 text-sm text-ink leading-relaxed">{c.body}</p>
+                <span className="mt-4 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-pine">
+                  Open
+                  <span aria-hidden>→</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-6 items-center border-t border-hairline pt-6">
+            <Link href="/insights" className="font-mono text-[11px] uppercase tracking-[0.18em] text-pine no-underline hover:text-ink transition">
+              All insights →
+            </Link>
+            <Link href="/tools" className="font-mono text-[11px] uppercase tracking-[0.18em] text-pine no-underline hover:text-ink transition">
+              All calculators →
+            </Link>
+            <Link href="/glossary" className="font-mono text-[11px] uppercase tracking-[0.18em] text-pine no-underline hover:text-ink transition">
+              Glossary of terms →
+            </Link>
+            <Link href="/mca-defense" className="font-mono text-[11px] uppercase tracking-[0.18em] text-pine no-underline hover:text-ink transition">
+              Legal defense by state →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* 5. About strip */}
       <section className="bg-paper-mute border-b border-hairline">
         <div className="mx-auto max-w-content px-6 py-16 md:py-20">
@@ -247,29 +367,28 @@ export default async function Home() {
                 About the practice
               </span>
               <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">
-                A Fort Lauderdale practice for operators in distress.
+                A working desk for business debt restructure.
               </h2>
               <div className="mt-6 space-y-4 text-base md:text-lg text-ink leading-relaxed">
                 <p>
-                  Formed in April 2026 to provide strategic financial consulting to small and mid-sized enterprises navigating stacked short-term debt. The practice operates from Fort Lauderdale, Florida, and serves operating entities nationally.
+                  Business Debt Insider publishes plain-spoken information on how stacked short-term business debt actually gets resolved. The work covers the four common paths an operator has when daily debits start outpacing receipts: relief on the existing schedule, restructure into a single weekly payment, resolution at a discounted balance, or an out-of-court workout as an alternative to filing.
                 </p>
                 <p>
-                  The methodology is grounded in forensic financial auditing. Every engagement begins with a verified reconstruction of the actual cash mechanics the business is operating under, and downstream work rests on that documentation. The practice does not lend, does not litigate, and coordinates with state-licensed counsel for legal defense matters.
+                  Every guide is written from the engagement file: real lender postures, real settlement ranges by instrument type, real timelines from intake to closeout. The practice does not lend, does not act as a law firm, and coordinates with state-licensed counsel where a matter has matured into litigation.
+                </p>
+                <p>
+                  Operations are based in Fort Lauderdale, Florida. Engagements serve operating entities in every state.
                 </p>
               </div>
 
-              <div className="mt-8 border-t border-hairline pt-5 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-3 font-mono text-[11px] uppercase tracking-[0.18em]">
-                <div>
-                  <div className="text-muted">Founded</div>
-                  <div className="mt-1 text-ink">April 2026</div>
-                </div>
+              <div className="mt-8 border-t border-hairline pt-5 grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3 font-mono text-[11px] uppercase tracking-[0.18em]">
                 <div>
                   <div className="text-muted">Office</div>
                   <div className="mt-1 text-ink">Fort Lauderdale, FL</div>
                 </div>
                 <div>
                   <div className="text-muted">Discipline</div>
-                  <div className="mt-1 text-ink">Strategic financial consulting</div>
+                  <div className="mt-1 text-ink">Business debt restructure</div>
                 </div>
                 <div>
                   <div className="text-muted">Reach</div>
