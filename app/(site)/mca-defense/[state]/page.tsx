@@ -4,6 +4,7 @@ import { LeadForm } from "@/components/lead/LeadForm";
 import { STATES } from "@/lib/states";
 import type { StateContent } from "@/lib/state-content";
 import { buildStateContent } from "@/lib/state-content";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 
 export async function generateStaticParams() {
   return STATES.map((s) => ({ state: s.code.toLowerCase() }));
@@ -37,6 +38,13 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   return (
     <article>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "MCA Defense", url: "/mca-defense" },
+          { name: stateName, url: `/mca-defense/${stateCode.toLowerCase()}` },
+        ]}
+      />
       <section className="bg-offwhite border-b border-border">
         <div className="mx-auto max-w-content px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
           <div>

@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
 import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { ArticleCover } from "@/components/site/ArticleCover";
 
@@ -63,6 +64,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           author: a.author,
           heroImage: a.heroImage,
         }}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Insights", url: "/insights" },
+          ...(topic.href ? [{ name: topic.label, url: topic.href }] : []),
+          { name: a.title, url: `/insights/${a.slug}` },
+        ]}
       />
 
       {/* Breadcrumb */}

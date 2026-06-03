@@ -3,6 +3,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { findService, getServiceSlugs, SERVICES } from "@/lib/service-content";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 
 export async function generateStaticParams() {
   return getServiceSlugs().map((slug) => ({ slug }));
@@ -33,6 +35,15 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   return (
     <article>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Services", url: "/services" },
+          { name: s.name, url: `/services/${s.slug}` },
+        ]}
+      />
+      <FaqJsonLd items={s.faq} />
+
       <div className="border-b border-hairline bg-paper">
         <div className="mx-auto max-w-content px-6 py-5">
           <Breadcrumb items={[{ href: "/services", label: "Services" }, { label: s.name }]} />

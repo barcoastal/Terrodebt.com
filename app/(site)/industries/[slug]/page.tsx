@@ -11,6 +11,7 @@ import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { Toc, type TocItem } from "@/components/site/Toc";
 import { RelatedShelf } from "@/components/site/RelatedShelf";
 import { NewsletterStrip } from "@/components/site/NewsletterStrip";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 
 export async function generateStaticParams() {
   return VERTICAL_CONTENT.map((v) => ({ slug: v.slug }));
@@ -63,6 +64,13 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
 
   return (
     <article>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Industries", url: "/industries" },
+          { name: v.name, url: `/industries/${v.slug}` },
+        ]}
+      />
       {/* Breadcrumb */}
       <section className="bg-offwhite border-b border-rule">
         <div className="mx-auto max-w-content px-6 py-4">
