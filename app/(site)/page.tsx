@@ -318,12 +318,36 @@ export default async function Home() {
 
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { topic: "Stacked MCAs", body: "Daily debits, reconciliation, settlement ranges, and how the typical stack gets unwound.", href: "/insights" },
-              { topic: "Confession of Judgment", body: "How a COJ gets entered, how to react, and what licensed counsel does next.", href: "/insights/coj-filed-against-me" },
-              { topic: "Bank loan workouts", body: "Covenant violations, special assets group, forbearance, and modified terms.", href: "/insights" },
-              { topic: "Equipment finance", body: "Voluntary surrender, deficiency claims, and the lender economics that drive each.", href: "/insights" },
-              { topic: "Vendor and trade debt", body: "Aged payables, supplier paydown plans, and mechanic's lien matters.", href: "/insights" },
-              { topic: "Business tax debt", body: "Installment agreements, offers in compromise, and trust fund recovery exposure.", href: "/insights" },
+              {
+                topic: "Stacked MCAs",
+                body: "When a business takes one merchant cash advance, then another, then another, daily debits start outpacing receipts. Guides on how the stack got there, how to ask the lender for a refund or settlement, and what each MCA company usually accepts.",
+                href: "/insights",
+              },
+              {
+                topic: "Confession of Judgment",
+                body: "Most MCA contracts written in New York or Florida include a confession of judgment clause. If a lender files one, your bank account can be frozen in a single business day. Guides on how a COJ gets entered, how to react in the first 48 hours, and what licensed counsel does next.",
+                href: "/insights/coj-filed-against-me",
+              },
+              {
+                topic: "Bank loan workouts",
+                body: "When a covenant gets broken or a payment gets missed, the loan moves from the original banker to the special assets group. Guides on forbearance, covenant waivers, and how to present a credible plan that keeps the relationship alive.",
+                href: "/insights",
+              },
+              {
+                topic: "Equipment finance",
+                body: "Equipment leases and financed assets behave differently than MCAs in a workout. Guides on voluntary surrender, deficiency claims after repossession, and how to decide which pieces are worth keeping.",
+                href: "/insights",
+              },
+              {
+                topic: "Vendor and trade debt",
+                body: "Aged supplier balances do not have to mean losing the supplier. Guides on written paydown plans, COD-plus-arrears arrangements, and mechanic's lien matters in construction and manufacturing.",
+                href: "/insights",
+              },
+              {
+                topic: "Business tax debt",
+                body: "Past-due payroll, sales, and income tax balances carry different risks than other creditors. Guides on installment agreements, offers in compromise, and how trust fund liability can become personal if it is not handled quickly.",
+                href: "/insights",
+              },
             ].map((c) => (
               <Link
                 key={c.topic}
