@@ -16,6 +16,7 @@ export type ServiceContent = {
   numeral: string;
   metaTitle: string;
   metaDescription: string;
+  homeSummary: string;
   kicker: string;
   overview: string[];
   engagement: Engagement[];
@@ -36,6 +37,8 @@ export const SERVICES: ServiceContent[] = [
     metaTitle: "Creditor Communication Management for Small Business",
     metaDescription:
       "We become the point of contact for your creditors. Daily calls and emails stop. You get back to running the business while we manage every conversation.",
+    homeSummary:
+      "When MCA lenders, banks, vendors, or the IRS keep calling, we step in as the contact. The daily calls and threatening letters stop. We give each creditor straight answers and a clear timeline. You get back to running the business.",
     kicker: "Service 01",
     overview: [
       "When your MCA lender, bank, or vendor calls, we pick up. You do not have to. We become the point of contact for every creditor on your account, so the daily calls, emails, and threatening letters stop hitting your phone.",
@@ -135,6 +138,8 @@ export const SERVICES: ServiceContent[] = [
     metaTitle: "Strategic Debt Relief Planning for Small Business",
     metaDescription:
       "Before any creditor talks, you need a plan. We build a written plan showing which debts get paid, which get discounted, and on what timeline.",
+    homeSummary:
+      "Before we talk to any creditor, we build the plan. We look at every loan and what your business can really pay each week. Then we show you exactly who gets paid in full, who gets a discount, and who gets more time. The plan is yours in writing before any creditor work begins.",
     kicker: "Service 02",
     overview: [
       "Before anyone signs a deal with a creditor, you need a plan. We build it.",
@@ -235,6 +240,8 @@ export const SERVICES: ServiceContent[] = [
     metaTitle: "Business Debt Restructuring — One Weekly Payment",
     metaDescription:
       "Combine stacked business loans and advances into a single manageable weekly payment. No new loans. We renegotiate the existing agreements with the existing lenders.",
+    homeSummary:
+      "If too many loans are pulling money out of your account every day, we combine them into one weekly payment. No new loans. We renegotiate the existing agreements with the existing lenders. Most engagements close in 45 to 90 days, with the business operating throughout.",
     kicker: "Service 03",
     overview: [
       "If your business has too many loans pulling money out every day, we can combine them into one weekly payment. The lenders agree to it. You stop trying to keep track of six different payment schedules.",
@@ -335,6 +342,8 @@ export const SERVICES: ServiceContent[] = [
     metaTitle: "Alternative to Bankruptcy for Small Business",
     metaDescription:
       "Restructure stacked business debt without filing. Keep operating, keep your equipment, keep the entity. We give an honest assessment before any engagement.",
+    homeSummary:
+      "When a lawyer tells you to file Chapter 11, but the business is still working and still serving customers, you may have another option. We do an honest check first: can the business actually keep operating, or is bankruptcy really the answer. If a workout makes sense, we combine restructuring with selective settlements so the entity, the equipment, and the customer relationships stay intact.",
     kicker: "Service 04",
     overview: [
       "When a lawyer tells you to file Chapter 11 or Chapter 7, but the business is still running and still serving customers, you might have another option. We do an honest check first: can the business actually keep operating, or is bankruptcy really the answer?",

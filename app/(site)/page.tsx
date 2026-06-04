@@ -123,7 +123,7 @@ export default async function Home() {
                   {s.name}
                 </h3>
                 <p className="mt-4 text-sm md:text-base text-ink leading-relaxed">
-                  {s.metaDescription}
+                  {s.homeSummary}
                 </p>
                 <span className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-pine">
                   Service overview
