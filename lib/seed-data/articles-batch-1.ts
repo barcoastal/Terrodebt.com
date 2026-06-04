@@ -28,7 +28,7 @@ export const ARTICLE_SEEDS_BATCH_1: SeedArticle[] = [
 
 ## What settlement actually is
 
-Settlement is a negotiated reduction of the balance owed on each MCA contract, paid as a lump sum that closes the contract and triggers a UCC release. It is not litigation. It is not bankruptcy. It is a commercial negotiation between you (usually through a [creditor liaison](/services/business-debt-resolution)) and each funder, one contract at a time.
+Settlement is a negotiated reduction of the balance owed on each MCA contract, paid as a lump sum that closes the contract and triggers a UCC release. It is not litigation. It is not bankruptcy. It is a commercial negotiation between you (usually through a [creditor liaison](/services/debt-relief-planning)) and each funder, one contract at a time.
 
 The mechanics are straightforward. You stop the daily debit. Funds that were going to the MCA every day now accumulate in a managed escrow account. The liaison approaches each funder with a documented package: 90 days of bank statements, the original contract, a UCC search showing position, and a proposed settlement amount. The funder accepts, counters, or refuses. Most accept after one or two rounds because the alternative on their side is litigation that produces a worse net recovery.
 
@@ -70,7 +70,7 @@ The damage is temporary. Most clients see business credit recover within 18 mont
 
 ### There is no pending COJ or active litigation
 
-A confession of judgment that has already been entered changes the picture. So does an active lawsuit by a senior lender. Both can be worked into a settlement strategy, but they require coordinated legal action through [licensed counsel](/services/business-debt-resolution) at the same time as the negotiation. If those threats are already live, the timing window for clean settlement compresses.
+A confession of judgment that has already been entered changes the picture. So does an active lawsuit by a senior lender. Both can be worked into a settlement strategy, but they require coordinated legal action through [licensed counsel](/services/debt-relief-planning) at the same time as the negotiation. If those threats are already live, the timing window for clean settlement compresses.
 
 ## When bankruptcy is the right path
 
@@ -90,7 +90,7 @@ A clean settlement program runs through five distinct phases.
 
 ### Phase 1: forensic intake (weeks 1 to 3)
 
-Every contract is pulled. Bank statements going back 12 months come in. A [forensic audit](/services/business-debt-relief) confirms the actual factor rate, the effective APR, any double-charged debits, and whether the contracts include unenforceable language. UCC searches confirm position. Personal guarantees get reviewed. This is the data foundation. Without it, negotiation is improvisation.
+Every contract is pulled. Bank statements going back 12 months come in. A [forensic audit](/services/debt-relief-planning) confirms the actual factor rate, the effective APR, any double-charged debits, and whether the contracts include unenforceable language. UCC searches confirm position. Personal guarantees get reviewed. This is the data foundation. Without it, negotiation is improvisation.
 
 ### Phase 2: debit pause and reconciliation (weeks 2 to 4)
 
@@ -148,7 +148,7 @@ If you want help running the comparison, [reach out](/contact) and we will walk 
 - Attach bank statements, the contract, and a brief revenue narrative. Empty letters get filed under low priority.
 - Do not threaten litigation in the opening letter. Do not admit liability in language a funder can use later. Do not promise a payment date you cannot hit.
 - Send via certified mail and email both, addressed to a named human at the funder when possible. Letters to generic inboxes get processed slower.
-- Coordinate the letter with [licensed counsel](/services/business-debt-resolution) if a confession of judgment is filed or threatened.
+- Coordinate the letter with [licensed counsel](/services/debt-relief-planning) if a confession of judgment is filed or threatened.
 
 ## Why the letter matters
 
@@ -214,7 +214,7 @@ Three categories of language kill settlement letters.
 
 Do not threaten litigation in the opening letter. Phrases like "if not resolved, we will pursue all available legal remedies" make the funder defensive and route the file to their legal team instead of underwriting. The legal team does not settle. They litigate.
 
-If the contract has actual legal defects (usurious effective APR, defective confession of judgment, unconscionable terms) those defenses get raised by [counsel](/services/business-debt-resolution) in a separate channel, not in the opening settlement letter.
+If the contract has actual legal defects (usurious effective APR, defective confession of judgment, unconscionable terms) those defenses get raised by [counsel](/services/debt-relief-planning) in a separate channel, not in the opening settlement letter.
 
 ### Admissions of liability
 
@@ -256,7 +256,7 @@ Follow up by phone 5 business days after delivery. One call, brief. "I sent a se
 
 A settlement letter is the opening move in a longer negotiation. Get the structure right and the response rate is dramatically higher. Get it wrong and the file sits.
 
-If you want help drafting the letters, sequencing the outreach, and managing counters, [contact us](/contact). We coordinate the documentation, the [forensic audit](/services/business-debt-relief) that informs the proposal numbers, and the licensed counsel that handles any legal escalation. The letter is the easiest part. The leverage that makes the letter land is the harder part.`,
+If you want help drafting the letters, sequencing the outreach, and managing counters, [contact us](/contact). We coordinate the documentation, the [forensic audit](/services/debt-relief-planning) that informs the proposal numbers, and the licensed counsel that handles any legal escalation. The letter is the easiest part. The leverage that makes the letter land is the harder part.`,
   },
   {
     slug: "coj-filed-against-me",
@@ -274,7 +274,7 @@ If you want help drafting the letters, sequencing the outreach, and managing cou
 - Florida and Texas remain active COJ venues with shorter motion-to-vacate windows. California does not recognize COJs entered against California businesses.
 - The motion to vacate must be filed in the venue named in the COJ, not your home venue, and the deadline ranges from 10 days to 30 days depending on state.
 - An account freeze can be partially lifted within 5 to 10 days through a motion or a negotiated release, often before the underlying COJ is resolved.
-- Coordinate immediately with [licensed counsel](/services/business-debt-resolution) in the COJ venue. Self-representation on a COJ motion is almost always a losing path.
+- Coordinate immediately with [licensed counsel](/services/debt-relief-planning) in the COJ venue. Self-representation on a COJ motion is almost always a losing path.
 
 ## What a COJ actually does
 
@@ -310,7 +310,7 @@ Do not open new accounts at the same bank that received the notice. The notice a
 
 ### Engage counsel in the COJ venue
 
-The motion to vacate must be filed in the venue named in the COJ, by counsel licensed in that state. The home-state attorney cannot file in another state's court. Engage local counsel in the COJ venue immediately. [Our liaison practice](/services/business-debt-resolution) coordinates licensed counsel in all 50 states.
+The motion to vacate must be filed in the venue named in the COJ, by counsel licensed in that state. The home-state attorney cannot file in another state's court. Engage local counsel in the COJ venue immediately. [Our liaison practice](/services/debt-relief-planning) coordinates licensed counsel in all 50 states.
 
 ## State-by-state procedures
 
@@ -370,7 +370,7 @@ The motion to vacate creates leverage for settlement. A funder facing a credible
 
 A coordinated strategy runs the motion and a settlement proposal in parallel. The motion creates pressure. The settlement proposal gives the funder a clean exit. Many COJ cases resolve through settlement at 30 to 50 percent of face balance within 60 to 120 days of the motion filing, before the motion is even decided.
 
-This coordination requires a [creditor liaison](/services/business-debt-resolution) working with licensed counsel in the COJ venue. The liaison handles the settlement outreach. Counsel handles the motion. Information flows between both.
+This coordination requires a [creditor liaison](/services/debt-relief-planning) working with licensed counsel in the COJ venue. The liaison handles the settlement outreach. Counsel handles the motion. Information flows between both.
 
 ## What to do next
 
@@ -517,7 +517,7 @@ Step 3: if reconciliation is refused or ignored, prepare the settlement proposal
 
 Step 4: in parallel, open account protection at a new bank and begin routing.
 
-Step 5: engage [counsel](/services/business-debt-resolution) on COJ defense before the revocation lands, not after.
+Step 5: engage [counsel](/services/debt-relief-planning) on COJ defense before the revocation lands, not after.
 
 The sequence preserves the contractual high ground (reconciliation first), accelerates only when necessary (revocation), and protects operations during the transition (account protection). Skipping steps or running them in the wrong order produces worse outcomes.
 
@@ -544,7 +544,7 @@ If the daily debits are no longer sustainable, the first move is the reconciliat
 - Forensic audit identifies which contracts have legal defects, which have the highest effective APR, and which funders are most likely to settle deepest.
 - Liquidity stabilization buys 60 to 120 days of operating runway through reconciliation, controlled defaults, and account architecture.
 - Creditor sequencing settles or restructures contracts in an order that uses each resolution to strengthen leverage against the next.
-- Legal integration runs in parallel through [licensed counsel](/services/business-debt-resolution) handling confession of judgment defense and litigation exposure.
+- Legal integration runs in parallel through [licensed counsel](/services/debt-relief-planning) handling confession of judgment defense and litigation exposure.
 - Post-settlement, the business needs operational restructuring to prevent re-stacking. Most owners who settle without operational change re-stack within 18 months.
 - A typical $500K stack resolves at 45 to 55 percent of face over 10 to 16 months when the plan is layered correctly.
 
@@ -605,7 +605,7 @@ Some operators advertise "stack consolidation" as a non-product service that res
 
 ## Phase 1: forensic audit
 
-The first phase of real resolution is a [forensic audit](/services/business-debt-relief) of every contract in the stack.
+The first phase of real resolution is a [forensic audit](/services/debt-relief-planning) of every contract in the stack.
 
 ### Document collection
 
@@ -677,7 +677,7 @@ The wrong first move sets the wrong anchor. Settling the cleanest contract first
 
 ### Parallel settlements
 
-After the first settlement closes, multiple settlements can run in parallel. The escrow funds them in order of agreement. The [creditor liaison](/services/business-debt-resolution) handles correspondence with all funders simultaneously.
+After the first settlement closes, multiple settlements can run in parallel. The escrow funds them in order of agreement. The [creditor liaison](/services/debt-relief-planning) handles correspondence with all funders simultaneously.
 
 Parallel settlements typically close 1 to 2 per month across a 4 to 7 contract stack.
 
@@ -700,7 +700,7 @@ Each closed contract produces a written release and a UCC-3 termination filing. 
 
 ## Phase 4: legal integration
 
-Throughout Phases 1 through 3, legal exposure runs in parallel. The legal track is managed by [licensed counsel](/services/business-debt-resolution) coordinated by the liaison.
+Throughout Phases 1 through 3, legal exposure runs in parallel. The legal track is managed by [licensed counsel](/services/debt-relief-planning) coordinated by the liaison.
 
 ### COJ defense
 

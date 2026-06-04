@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const SERVICES = [
-  { href: "/services/business-debt-relief", label: "Business Debt Relief" },
+  { href: "/services/creditor-communication", label: "Creditor Communication" },
+  { href: "/services/debt-relief-planning", label: "Strategic Debt Relief Planning" },
   { href: "/services/business-debt-restructuring", label: "Business Debt Restructuring" },
-  { href: "/services/business-debt-resolution", label: "Business Debt Resolution" },
-  { href: "/services/bankruptcy-alternative", label: "Bankruptcy Alternative" },
+  { href: "/services/bankruptcy-alternative", label: "Alternative to Bankruptcy" },
 ];
 
 const SECONDARY = [

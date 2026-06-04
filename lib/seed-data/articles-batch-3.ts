@@ -42,7 +42,7 @@ The realistic timeline for clean bank product access runs 9 to 18 months after t
 
 The work that compresses that timeline starts during the workout itself. Documentation of every settlement, every UCC release, every restructured balance becomes the package you walk into the next bank with. A workout that closes cleanly with documented releases puts you 6 months ahead of a workout that closes ambiguously with paperwork gaps.
 
-[Creditor liaison work during the program](/services/business-debt-resolution) is what generates that documentation. Every settlement letter, every release confirmation, every payoff statement gets organized into a package that a future lender can underwrite from.
+[Creditor liaison work during the program](/services/debt-relief-planning) is what generates that documentation. Every settlement letter, every release confirmation, every payoff statement gets organized into a package that a future lender can underwrite from.
 
 ### What banks look for after a workout closes
 
@@ -86,7 +86,7 @@ The right sequence: stabilize the workout first, close the most aggressive contr
 
 ### Sequence in practice
 
-Month 1 to 3: Workout intake, [forensic audit](/services/business-debt-relief) of the debt stack, initial creditor outreach, escrow funding begins. No new credit.
+Month 1 to 3: Workout intake, [forensic audit](/services/debt-relief-planning) of the debt stack, initial creditor outreach, escrow funding begins. No new credit.
 
 Month 3 to 6: First settlements close, daily debits stop, operating account stabilizes. Vendor conversations begin. Possible ABL or factoring setup if receivables qualify.
 
@@ -168,7 +168,7 @@ Five or more MCAs almost always means the business is borrowing to make payments
 
 By the time a business has 6, 7, or 8 MCAs, the workout has to address not just the debt but the cash flow rhythm. Some businesses at this level have lost track of which contracts are senior, which lenders have actually filed UCCs versus which threatened to, and what the actual total payback is.
 
-[Forensic audit](/services/business-debt-relief) work at this stage is non-negotiable. Before any settlement or restructure conversation, the actual obligations have to be mapped: face balance, accrued balance, daily debit, UCC position, contract terms, lender escalation history. Without that map, every negotiation is partial.
+[Forensic audit](/services/debt-relief-planning) work at this stage is non-negotiable. Before any settlement or restructure conversation, the actual obligations have to be mapped: face balance, accrued balance, daily debit, UCC position, contract terms, lender escalation history. Without that map, every negotiation is partial.
 
 ## The math that matters more than count
 
@@ -206,7 +206,7 @@ Run the count and the percentage together. The decision matrix:
 
 **3 MCAs at any debit burden, or 1 to 2 MCAs above 12 percent:** Warning zone. Begin workout planning. The right time to engage is before the fourth advance is taken.
 
-**4 to 5 MCAs, or any count above 15 percent debit burden:** Critical. Start workout intake within 30 days. Stop taking new advances regardless of how the math is pitched. [Creditor liaison](/services/business-debt-resolution) and [liquidity engineering](/services/business-debt-restructuring) coordination start here.
+**4 to 5 MCAs, or any count above 15 percent debit burden:** Critical. Start workout intake within 30 days. Stop taking new advances regardless of how the math is pitched. [Creditor liaison](/services/debt-relief-planning) and [liquidity engineering](/services/business-debt-restructuring) coordination start here.
 
 **5+ MCAs, or debit burden above 25 percent:** Active distress. Workout intake immediately. Forensic audit first. Reconciliation requests to pause debits while the workout is structured. Consider [operational restructuring](/services/bankruptcy-alternative) alongside the debt work.
 
@@ -274,7 +274,7 @@ Average settlement when performing contracts close: 55 to 70 percent of face. Ti
 
 ### Contracts with weak underlying paper: 90+ percent close
 
-Some MCA contracts have legal weaknesses that surface during [forensic audit](/services/business-debt-relief). Missing reconciliation language, unconscionable factor rates, improper UCC filings, or signature defects. Contracts with these characteristics close at the highest rates and the deepest discounts because the lender's legal exposure outweighs the collection value.
+Some MCA contracts have legal weaknesses that surface during [forensic audit](/services/debt-relief-planning). Missing reconciliation language, unconscionable factor rates, improper UCC filings, or signature defects. Contracts with these characteristics close at the highest rates and the deepest discounts because the lender's legal exposure outweighs the collection value.
 
 Average settlement on weak-paper contracts: 25 to 40 percent of face. Timeline: 60 to 150 days.
 
@@ -298,7 +298,7 @@ A contract that restructures is not a settlement failure. It is a different reso
 
 ### Contracts that escalate to counsel
 
-Some contracts go to litigation. This happens in two directions. Either the lender sues the merchant (confession of judgment, breach of contract action) before settlement is reached, or counsel for the merchant raises defenses that move the matter to court. Our practice does not litigate, but we coordinate with [licensed counsel in all 50 states](/services/business-debt-resolution) when escalation becomes necessary.
+Some contracts go to litigation. This happens in two directions. Either the lender sues the merchant (confession of judgment, breach of contract action) before settlement is reached, or counsel for the merchant raises defenses that move the matter to court. Our practice does not litigate, but we coordinate with [licensed counsel in all 50 states](/services/debt-relief-planning) when escalation becomes necessary.
 
 Litigation tends to resolve at meaningful discounts when the underlying paper has weaknesses, but the timeline extends to 12 to 24 months and counsel fees become a factor in the math.
 
@@ -406,7 +406,7 @@ Some contracts bury the language in a paragraph within "Merchant's Obligations" 
 
 The clause typically reads something like: "Upon Merchant's written request, accompanied by such documentation as Funder may reasonably require, Funder shall reconcile the Specified Daily Amount to reflect actual Future Receipts and either refund overpaid amounts or adjust subsequent daily remittances accordingly."
 
-If the contract does not contain reconciliation language at all, the request structure changes. That is a separate conversation involving the legal characterization of the product. [Forensic audit](/services/business-debt-relief) work surfaces this gap.
+If the contract does not contain reconciliation language at all, the request structure changes. That is a separate conversation involving the legal characterization of the product. [Forensic audit](/services/debt-relief-planning) work surfaces this gap.
 
 ## The request structure
 
@@ -468,7 +468,7 @@ The funder responds with a counter-calculation, often disputing the documentatio
 
 ### Outcome 3: Funder ignores or denies
 
-The funder either does not respond within the contractual window or responds with a blanket denial. This happens about 20 to 35 percent of the time. The non-response or unsupported denial becomes evidence of bad faith and strengthens later settlement positioning. [Creditor liaison](/services/business-debt-resolution) work escalates the matter to counsel at this point.
+The funder either does not respond within the contractual window or responds with a blanket denial. This happens about 20 to 35 percent of the time. The non-response or unsupported denial becomes evidence of bad faith and strengthens later settlement positioning. [Creditor liaison](/services/debt-relief-planning) work escalates the matter to counsel at this point.
 
 ## When reconciliation alone is not enough
 
@@ -524,7 +524,7 @@ Active UCCs from settled debts are the most damaging artifact in the post-settle
 
 The work: within 30 days of each settlement closing, confirm the funder has filed a UCC-3 termination in the original filing jurisdiction. If they have not, send a formal demand citing the settlement agreement's release language. Continue weekly follow-up until the termination is filed and confirmed in the public record.
 
-[Creditor liaison](/services/business-debt-resolution) work during closeout typically includes this verification as part of the documentation package. Without it, the business carries phantom liens that block future credit.
+[Creditor liaison](/services/debt-relief-planning) work during closeout typically includes this verification as part of the documentation package. Without it, the business carries phantom liens that block future credit.
 
 ### Timeline target
 

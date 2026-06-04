@@ -4,20 +4,23 @@ import { sessionOptions, type SessionData } from "@/lib/session";
 
 const COOKIE = "eli_clickid";
 
-// Old /services/{slug} URLs → live outcome-named slugs (301)
+// Old /services/{slug} URLs → live slugs (301)
 const SERVICE_REDIRECTS: Record<string, string> = {
   // Retired 2026-05 product slugs
-  "/services/mca-debt-relief": "/services/business-debt-relief",
+  "/services/mca-debt-relief": "/services/debt-relief-planning",
   "/services/equipment-finance-restructure": "/services/business-debt-restructuring",
-  "/services/vendor-supplier-debt": "/services/business-debt-resolution",
+  "/services/vendor-supplier-debt": "/services/creditor-communication",
   "/services/bank-loan-workout": "/services/business-debt-restructuring",
-  "/services/business-tax-debt": "/services/business-debt-resolution",
-  // Retired 2026-06 process-named slugs → outcome-named slugs
-  "/services/forensic-audit": "/services/business-debt-relief",
-  "/services/liquidity-engineering": "/services/business-debt-restructuring",
-  "/services/creditor-liaison": "/services/business-debt-resolution",
-  "/services/business-debt-settlement": "/services/business-debt-resolution",
+  "/services/business-tax-debt": "/services/debt-relief-planning",
+  // Retired 2026-06 process-named slugs
+  "/services/forensic-audit": "/services/debt-relief-planning",
+  "/services/liquidity-engineering": "/services/debt-relief-planning",
+  "/services/creditor-liaison": "/services/creditor-communication",
   "/services/operational-restructuring": "/services/bankruptcy-alternative",
+  // Retired 2026-06 outcome-named intermediate slugs
+  "/services/business-debt-relief": "/services/debt-relief-planning",
+  "/services/business-debt-resolution": "/services/debt-relief-planning",
+  "/services/business-debt-settlement": "/services/debt-relief-planning",
 };
 
 function makeId() {
