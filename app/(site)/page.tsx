@@ -50,19 +50,16 @@ export default async function Home() {
       <section className="bg-paper border-b border-hairline">
         <div className="mx-auto max-w-content px-6 pt-20 pb-24 md:pt-28 md:pb-32">
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">
-            Plain-spoken information on business debt
+            Help for business debt
           </span>
           <h1 className="mt-6 max-w-4xl text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ink leading-[0.95]">
-            The only way out of <span className="text-pine">business debt</span> is in.
+            When <span className="text-pine">business debt</span> gets out of hand.
           </h1>
           <p className="mt-8 max-w-3xl text-lg md:text-xl text-ink leading-relaxed">
-            Most operators try to outrun debt by stacking new advances on old ones. It never works. Business Debt Insider goes the other direction: into the stack. We take it apart with you, lender by lender, debit by debit, until you understand exactly how it got there.
-          </p>
-          <p className="mt-4 max-w-3xl text-base md:text-lg text-ink leading-relaxed">
-            From that understanding, you get out. Daily debits replaced with weekly schedules, obligations resolved at a reduced balance, the business operating throughout. Then we rebuild the cash discipline that keeps you from reaching for the next advance.
+            We pick up the calls. We build the plan. We combine what you owe into one weekly payment. The business keeps operating throughout. No new loans, no bankruptcy filing.
           </p>
           <p className="mt-4 max-w-3xl text-base md:text-lg text-muted leading-relaxed">
-            We do not lend, do not issue new debt, and do not act as a law firm. Flat fees, documented agreements, no contingency.
+            We do not lend and we are not a law firm. Flat fees, documented agreements, no contingency.
           </p>
           <div className="mt-10 flex flex-wrap gap-6 items-center">
             <Link
