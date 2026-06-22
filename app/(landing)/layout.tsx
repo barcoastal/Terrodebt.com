@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { VisitorTracker } from "@/components/site/VisitorTracker";
-import { Analytics } from "@/components/site/Analytics";
+import { TrackingScripts } from "@/components/site/TrackingScripts";
 import { OrgJsonLd } from "@/components/seo/OrgJsonLd";
+
+// Revalidate at most every 5 min so DB-backed tracking settings (TrackingScripts)
+// propagate without a redeploy.
+export const revalidate = 300;
 
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -20,7 +24,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
         </div>
       </header>
       <main>{children}</main>
-      <Analytics measurementId={process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID} />
+      <TrackingScripts />
       <VisitorTracker />
       <footer className="border-t border-border bg-white">
         <div className="mx-auto max-w-content px-6 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-muted">

@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 import { saveSettings } from "./actions";
 
-type FieldDef = { key: string; label: string; help?: string; placeholder?: string; secret?: boolean };
+type FieldDef = { key: string; label: string; help?: string; placeholder?: string; secret?: boolean; multiline?: boolean };
 
 const GROUPS: { title: string; description: string; fields: FieldDef[] }[] = [
   {
@@ -31,11 +31,21 @@ const GROUPS: { title: string; description: string; fields: FieldDef[] }[] = [
     ],
   },
   {
-    title: "Analytics",
-    description: "Front-end conversion tracking IDs (loaded by the GA4 and gtag snippets in the site head).",
+    title: "Analytics & pixels",
+    description: "Tracking IDs loaded site-wide (not on /admin). Each renders the official snippet automatically — just paste the ID. Leave blank to disable.",
     fields: [
-      { key: "ga4_measurement_id", label: "GA4 measurement ID", placeholder: "G-XXXXXXX" },
-      { key: "google_ads_conversion_id", label: "Google Ads conversion ID (gtag)", placeholder: "AW-1234567890" },
+      { key: "ga4_measurement_id", label: "GA4 measurement ID", placeholder: "G-XXXXXXX", help: "Google Analytics 4. Falls back to NEXT_PUBLIC_GA4_MEASUREMENT_ID env var when blank." },
+      { key: "google_ads_conversion_id", label: "Google Ads tag ID (gtag)", placeholder: "AW-1234567890", help: "The global site tag for Google Ads conversions." },
+      { key: "meta_pixel_id", label: "Meta (Facebook) Pixel ID", placeholder: "1234567890123456", help: "Fires fbq init + PageView." },
+      { key: "tiktok_pixel_id", label: "TikTok Pixel ID", placeholder: "CABCD1234EFGH", help: "Fires ttq.load + page view." },
+    ],
+  },
+  {
+    title: "Custom scripts",
+    description: "Paste any raw vendor snippet (Google Tag Manager, Hotjar, Clarity, custom tags). Scripts execute on every public page. Use the head box for tags that must load early, the body box for everything else. These do NOT load on /admin.",
+    fields: [
+      { key: "custom_head_scripts", label: "Custom <head> scripts", multiline: true, help: "Injected into the document head. Paste the full snippet including <script> tags.", placeholder: "<!-- e.g. Google Tag Manager, Hotjar -->\n<script>...</script>" },
+      { key: "custom_body_scripts", label: "Custom <body> scripts", multiline: true, help: "Injected at the end of the body.", placeholder: "<script>...</script>" },
     ],
   },
   {
@@ -103,6 +113,22 @@ export default async function SettingsPage() {
                         type="password"
                         placeholder={hasStored ? "Leave blank to keep current value" : (f.placeholder ?? "")}
                         className="w-full border border-border rounded-md px-3 py-2 font-mono text-sm"
+                      />
+                      {f.help && <p className="mt-1 text-xs text-muted">{f.help}</p>}
+                    </div>
+                  );
+                }
+                if (f.multiline) {
+                  return (
+                    <div key={f.key}>
+                      <label htmlFor={f.key} className="block text-sm font-medium mb-1">{f.label}</label>
+                      <textarea
+                        id={f.key}
+                        name={f.key}
+                        rows={6}
+                        placeholder={f.placeholder}
+                        defaultValue={hasStored ? String(stored) : ""}
+                        className="w-full border border-border rounded-md px-3 py-2 font-mono text-xs"
                       />
                       {f.help && <p className="mt-1 text-xs text-muted">{f.help}</p>}
                     </div>
