@@ -21,6 +21,11 @@ const SERVICE_REDIRECTS: Record<string, string> = {
   "/services/business-debt-relief": "/services/debt-relief-planning",
   "/services/business-debt-resolution": "/services/debt-relief-planning",
   "/services/business-debt-settlement": "/services/debt-relief-planning",
+  // Pre-rebrand /article/{slug} URLs still indexed by Google (no live equivalent)
+  "/article/best-bankruptcy-attorneys-georgia": "/mca-defense/ga",
+  "/article/personal-guarantee-defenses": "/mca-defense",
+  "/article/sba-loan-default": "/insights",
+  "/article/statute-of-limitations-business-debt": "/insights",
 };
 
 function makeId() {
@@ -48,10 +53,10 @@ export async function proxy(req: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // /articles/* → /insights/* (article body links use the old path)
-  if (req.nextUrl.pathname.startsWith("/articles/")) {
+  // /articles/* and pre-rebrand /article/* → /insights/*
+  if (/^\/articles?\//.test(req.nextUrl.pathname)) {
     const url = req.nextUrl.clone();
-    url.pathname = req.nextUrl.pathname.replace(/^\/articles\//, "/insights/");
+    url.pathname = req.nextUrl.pathname.replace(/^\/articles?\//, "/insights/");
     return NextResponse.redirect(url, 301);
   }
 
