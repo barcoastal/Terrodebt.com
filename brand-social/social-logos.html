@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #444; font-family: 'Inter Tight', sans-serif; padding: 40px; display: flex; flex-direction: column; gap: 40px; }
+  .label { color: #fff; font-size: 20px; margin-bottom: 8px; }
+
+  /* ============ PROFILE A: BD / line / I (current favicon, circle-safe) ============ */
+  #avatar-a {
+    width: 1080px; height: 1080px; background: #0A0A0A;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  #avatar-a .bd { font-size: 150px; font-weight: 500; letter-spacing: 26px; color: rgba(255,255,255,0.65); text-indent: 26px; }
+  #avatar-a .line { width: 400px; height: 14px; background: #10B981; margin: 52px 0; }
+  #avatar-a .i { font-size: 300px; font-weight: 700; color: #fff; line-height: 0.8; }
+
+  /* ============ PROFILE B: BDI monogram, pine I ============ */
+  #avatar-b {
+    width: 1080px; height: 1080px; background: #0A0A0A;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  #avatar-b .mono { font-size: 340px; font-weight: 800; letter-spacing: 8px; color: #fff; line-height: 1; }
+  #avatar-b .mono .accent { color: #10B981; }
+  #avatar-b .rule { width: 430px; height: 10px; background: #064E3B; margin-top: 60px; }
+
+  /* ============ PROFILE C: white bg, stacked wordmark ============ */
+  #avatar-c {
+    width: 1080px; height: 1080px; background: #FFFFFF;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  #avatar-c .top { font-size: 74px; font-weight: 500; letter-spacing: 20px; color: #6B6B6B; text-indent: 20px; }
+  #avatar-c .line { width: 560px; height: 8px; background: #064E3B; margin: 48px 0; }
+  #avatar-c .main { font-size: 172px; font-weight: 700; letter-spacing: 14px; color: #0A0A0A; text-indent: 14px; }
+
+  /* ============ COVER 1: dark, full wordmark left ============ */
+  #cover-dark {
+    width: 1640px; height: 624px; background: #0A0A0A;
+    display: flex; flex-direction: column; justify-content: center; padding-left: 500px;
+  }
+  #cover-dark .top { font-size: 44px; font-weight: 500; letter-spacing: 14px; color: rgba(255,255,255,0.6); }
+  #cover-dark .line { width: 620px; height: 5px; background: #10B981; margin: 26px 0; }
+  #cover-dark .main { font-size: 120px; font-weight: 700; letter-spacing: 16px; color: #fff; line-height: 1; }
+  #cover-dark .tag { font-size: 30px; font-weight: 400; letter-spacing: 2px; color: rgba(255,255,255,0.55); margin-top: 34px; }
+
+  /* ============ COVER 2: paper, centered ============ */
+  #cover-light {
+    width: 1640px; height: 624px; background: #FFFFFF; border: 1px solid #E5E5E5;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  #cover-light .top { font-size: 44px; font-weight: 500; letter-spacing: 14px; color: #6B6B6B; text-indent: 14px; }
+  #cover-light .line { width: 620px; height: 5px; background: #064E3B; margin: 26px 0; }
+  #cover-light .main { font-size: 120px; font-weight: 700; letter-spacing: 16px; color: #0A0A0A; text-indent: 16px; line-height: 1; }
+  #cover-light .tag { font-size: 30px; font-weight: 400; letter-spacing: 2px; color: #6B6B6B; margin-top: 34px; }
+</style>
+</head>
+<body>
+  <div><div class="label">avatar-a (1080x1080)</div><div id="avatar-a"><div class="bd">BD</div><div class="line"></div><div class="i">I</div></div></div>
+  <div><div class="label">avatar-b (1080x1080)</div><div id="avatar-b"><div class="mono">BD<span class="accent">I</span></div><div class="rule"></div></div></div>
+  <div><div class="label">avatar-c (1080x1080)</div><div id="avatar-c"><div class="top">BUSINESS DEBT</div><div class="line"></div><div class="main">INSIDER</div></div></div>
+  <div><div class="label">cover-dark (1640x624)</div><div id="cover-dark"><div class="top">BUSINESS DEBT</div><div class="line"></div><div class="main">INSIDER</div><div class="tag">Strategic debt restructuring for small business</div></div></div>
+  <div><div class="label">cover-light (1640x624)</div><div id="cover-light"><div class="top">BUSINESS DEBT</div><div class="line"></div><div class="main">INSIDER</div><div class="tag">Strategic debt restructuring for small business</div></div></div>
+<script>
+  // ?asset=<id> renders only that asset at 0,0 for pixel-exact headless screenshots
+  const id = new URLSearchParams(location.search).get("asset");
+  if (id) {
+    document.body.style.padding = "0";
+    document.querySelectorAll("body > div").forEach((w) => {
+      if (w.querySelector("#" + CSS.escape(id))) {
+        w.querySelector(".label").style.display = "none";
+      } else {
+        w.style.display = "none";
+      }
+    });
+  }
+</script>
+</body>
+</html>
