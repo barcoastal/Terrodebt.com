@@ -69,6 +69,10 @@ export default function ThankYouPage() {
                 An advisor is reviewing your file now. Expect a call within one
                 business hour, from a person who has seen your situation before.
               </p>
+              <p className="mt-3 text-sm text-muted max-w-xl mx-auto">
+                You may receive the call from us directly or from one of the
+                affiliate companies we work with on cases like yours.
+              </p>
             </div>
           </Reveal>
 
