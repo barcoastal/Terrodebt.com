@@ -103,7 +103,7 @@ export function SiteFooter() {
           </address>
           <p className="mt-3 text-sm text-ink">
             <Link href="/contact" className="text-ink hover:text-pine no-underline">
-              hello@businessdebtinsider.com
+              info@businessdebtinsider.com
             </Link>
           </p>
           <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1">

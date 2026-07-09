@@ -53,7 +53,7 @@ export default function PrivacyPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about this policy or about your information can be sent to hello@businessdebtinsider.com or by mail to:
+        Questions about this policy or about your information can be sent to info@businessdebtinsider.com or by mail to:
       </p>
       <p>
         <strong>GRL Recovery LLC</strong><br />

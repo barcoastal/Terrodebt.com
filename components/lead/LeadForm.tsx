@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { ProgressBar } from "./ProgressBar";
 import { bucketFromAmount, type LeadInput } from "@/lib/lead-schema";
@@ -21,6 +22,7 @@ const initial: LeadInput = {
 const TOTAL_STEPS = 3;
 
 export function LeadForm({ source = "homepage" }: { source?: string }) {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState<1 | -1>(1);
   const [data, setData] = useState<LeadInput>({ ...initial, source });
@@ -45,8 +47,10 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
         hasMcaDebt: data.hasMcaDebt,
       };
       const result = await submitLead({ ...payload, ...meta });
-      if (result.ok) setDone(true);
-      else setError(result.error ?? "Submission failed");
+      if (result.ok) {
+        setDone(true);
+        router.push("/thank-you");
+      } else setError(result.error ?? "Submission failed");
     } catch {
       setError("Submission failed");
     } finally { setSubmitting(false); }

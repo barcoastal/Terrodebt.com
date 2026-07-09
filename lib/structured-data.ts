@@ -37,7 +37,7 @@ export const ORG_LD = {
     postalCode: "33309",
     addressCountry: "US",
   },
-  email: "hello@businessdebtinsider.com",
+  email: "info@businessdebtinsider.com",
   founder: {
     "@type": "Organization",
     name: "GRL Recovery LLC",

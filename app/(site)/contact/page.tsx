@@ -228,7 +228,7 @@ export default function InitialReviewPage() {
                 Direct
               </span>
               <p className="mt-2 text-lg font-bold tracking-tight text-ink">
-                hello@businessdebtinsider.com
+                info@businessdebtinsider.com
               </p>
               <p className="mt-1 text-sm text-muted leading-relaxed">
                 Operators can email contracts and statements in advance. Encrypted attachments welcome.

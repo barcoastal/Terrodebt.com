@@ -52,7 +52,7 @@ export default function TermsPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about these terms can be sent to hello@businessdebtinsider.com or by mail to:
+        Questions about these terms can be sent to info@businessdebtinsider.com or by mail to:
       </p>
       <p>
         <strong>GRL Recovery LLC</strong><br />
