@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #444; font-family: 'Inter Tight', sans-serif; padding: 40px; display: flex; flex-direction: column; gap: 40px; }
+  .label { color: #fff; font-size: 20px; margin-bottom: 8px; }
+
+  .card {
+    width: 1080px; height: 1080px; background: #0A0A0A; color: #fff;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 90px; position: relative;
+  }
+  .card .kicker { font-size: 34px; font-weight: 500; letter-spacing: 10px; color: rgba(255,255,255,0.55); }
+  .card .rule { width: 140px; height: 8px; background: #10B981; margin-top: 36px; }
+  .card .big { font-size: 92px; font-weight: 700; line-height: 1.08; letter-spacing: -1px; }
+  .card .big .em { color: #10B981; }
+  .card .foot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .card .brand { font-size: 30px; font-weight: 600; letter-spacing: 3px; }
+  .card .brand .thin { font-weight: 400; color: rgba(255,255,255,0.55); }
+  .card .site { font-size: 26px; color: rgba(255,255,255,0.55); font-weight: 400; }
+
+  .card.light { background: #FFFFFF; color: #0A0A0A; border: 1px solid #E5E5E5; }
+  .card.light .kicker { color: #6B6B6B; }
+  .card.light .rule { background: #064E3B; }
+  .card.light .big .em { color: #064E3B; }
+  .card.light .brand .thin { color: #6B6B6B; }
+  .card.light .site { color: #6B6B6B; }
+
+  .card .list { font-size: 44px; font-weight: 500; line-height: 1.7; }
+  .card .list .num { color: #10B981; font-weight: 700; margin-right: 18px; }
+  .card.light .list .num { color: #064E3B; }
+</style>
+</head>
+<body>
+  <div><div class="label">post-1 intro</div>
+    <div class="card" id="post-1">
+      <div>
+        <div class="kicker">BUSINESS DEBT INSIDER</div>
+        <div class="rule"></div>
+      </div>
+      <div class="big">The only way out of business debt is <span class="em">in.</span></div>
+      <div class="foot">
+        <div class="brand">BD<span class="thin">I</span></div>
+        <div class="site">businessdebtinsider.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div><div class="label">post-2 stacked MCAs</div>
+    <div class="card light" id="post-2">
+      <div>
+        <div class="kicker">MCA REALITY CHECK</div>
+        <div class="rule"></div>
+      </div>
+      <div class="big">Stacking a second MCA to cover the first is how a cash flow problem becomes a <span class="em">survival problem.</span></div>
+      <div class="foot">
+        <div class="brand">BD<span class="thin">I</span></div>
+        <div class="site">businessdebtinsider.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div><div class="label">post-3 daily debits</div>
+    <div class="card" id="post-3">
+      <div>
+        <div class="kicker">KNOW YOUR OPTIONS</div>
+        <div class="rule"></div>
+      </div>
+      <div>
+        <div class="big" style="font-size:72px; margin-bottom:60px;">Daily ACH debits draining the account?</div>
+        <div class="list">
+          <div><span class="num">1</span>Request a reconciliation</div>
+          <div><span class="num">2</span>Review your contract terms</div>
+          <div><span class="num">3</span>Negotiate before you default</div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="brand">BD<span class="thin">I</span></div>
+        <div class="site">businessdebtinsider.com</div>
+      </div>
+    </div>
+  </div>
+<script>
+  const id = new URLSearchParams(location.search).get("asset");
+  if (id) {
+    document.body.style.padding = "0";
+    document.querySelectorAll("body > div").forEach((w) => {
+      if (w.querySelector("#" + CSS.escape(id))) {
+        w.querySelector(".label").style.display = "none";
+      } else {
+        w.style.display = "none";
+      }
+    });
+  }
+</script>
+</body>
+</html>
