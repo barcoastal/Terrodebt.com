@@ -54,17 +54,22 @@ Based on this article, produce JSON with exactly these keys:
 Article URL: ${articleUrl}
 Article content: ${articleText}`;
 
-const gemini = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent", {
-  method: "POST",
-  headers: { "x-goog-api-key": env.GEMINI_API_KEY, "content-type": "application/json" },
-  body: JSON.stringify({
-    contents: [{ parts: [{ text: prompt }] }],
-    generationConfig: { responseMimeType: "application/json" },
-  }),
-}).then((r) => r.json());
-const raw = gemini.candidates?.[0]?.content?.parts?.[0]?.text;
-if (!raw) throw new Error("Gemini returned nothing: " + JSON.stringify(gemini).slice(0, 300));
-const copy = JSON.parse(raw);
+let copy;
+for (let attempt = 1; attempt <= 3; attempt++) {
+  const gemini = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent", {
+    method: "POST",
+    headers: { "x-goog-api-key": env.GEMINI_API_KEY, "content-type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { responseMimeType: "application/json" },
+    }),
+  }).then((r) => r.json());
+  const raw = gemini.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (raw) { copy = JSON.parse(raw); break; }
+  console.error(`Gemini attempt ${attempt} failed:`, JSON.stringify(gemini).slice(0, 300));
+  if (attempt === 3) throw new Error("Gemini gave no usable response after 3 attempts");
+  await new Promise((r) => setTimeout(r, 5000));
+}
 // enforce the no-dash rule regardless of what the model did
 for (const k of Object.keys(copy)) if (typeof copy[k] === "string") copy[k] = copy[k].replace(/—|–/g, ",");
 console.log("Copy:", JSON.stringify(copy, null, 2));

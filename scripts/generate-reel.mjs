@@ -45,12 +45,19 @@ Based on this article, return JSON with keys:
 
 Article: ${articleText}`;
 
-const gem = await fetch(`${GEM}/models/gemini-2.5-flash:generateContent`, {
-  method: "POST",
-  headers: { "x-goog-api-key": env.GEMINI_API_KEY, "content-type": "application/json" },
-  body: JSON.stringify({ contents: [{ parts: [{ text: geminiPrompt }] }], generationConfig: { responseMimeType: "application/json" } }),
-}).then((r) => r.json());
-const copy = JSON.parse(gem.candidates[0].content.parts[0].text);
+let copy;
+for (let attempt = 1; attempt <= 3; attempt++) {
+  const gem = await fetch(`${GEM}/models/gemini-2.5-flash:generateContent`, {
+    method: "POST",
+    headers: { "x-goog-api-key": env.GEMINI_API_KEY, "content-type": "application/json" },
+    body: JSON.stringify({ contents: [{ parts: [{ text: geminiPrompt }] }], generationConfig: { responseMimeType: "application/json" } }),
+  }).then((r) => r.json());
+  const text = gem.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (text) { copy = JSON.parse(text); break; }
+  console.error(`Gemini attempt ${attempt} failed:`, JSON.stringify(gem).slice(0, 300));
+  if (attempt === 3) throw new Error("Gemini gave no usable response after 3 attempts");
+  await new Promise((r) => setTimeout(r, 5000));
+}
 for (const k of Object.keys(copy)) if (typeof copy[k] === "string") copy[k] = copy[k].replace(/—|–/g, ",");
 console.log("Concept:", JSON.stringify(copy, null, 2));
 
