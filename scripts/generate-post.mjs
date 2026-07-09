@@ -65,8 +65,12 @@ for (let attempt = 1; attempt <= 3; attempt++) {
     }),
   }).then((r) => r.json());
   const raw = gemini.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (raw) { copy = JSON.parse(raw); break; }
-  console.error(`Gemini attempt ${attempt} failed:`, JSON.stringify(gemini).slice(0, 300));
+  if (raw) {
+    try { copy = JSON.parse(raw); break; }
+    catch { console.error(`Gemini attempt ${attempt}: invalid JSON:`, raw.slice(0, 200)); }
+  } else {
+    console.error(`Gemini attempt ${attempt} failed:`, JSON.stringify(gemini).slice(0, 300));
+  }
   if (attempt === 3) throw new Error("Gemini gave no usable response after 3 attempts");
   await new Promise((r) => setTimeout(r, 5000));
 }

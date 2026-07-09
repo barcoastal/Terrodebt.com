@@ -39,7 +39,7 @@ console.log("Article:", slug);
 const geminiPrompt = `You create short-form video for Business Debt Insider, a consulting practice for small businesses stuck in MCA and short-term debt. Voice: calm, direct, insider. Hard rules: NEVER use em dashes anywhere. No emojis in the veoPrompt.
 
 Based on this article, return JSON with keys:
-- veoPrompt: a prompt for an 8 second vertical (9:16) cinematic video. Describe one continuous scene related to small business financial stress or relief (a real workplace: restaurant, truck cab, shop floor, office). Include a voiceover line in double quotes that a calm narrator speaks, max 20 words, delivering the single sharpest insight from the article. Professional documentary style, moody lighting with a subtle green accent. No on-screen text.
+- veoPrompt: a prompt for an 8 second vertical (9:16) cinematic video. Describe one continuous scene related to small business financial stress or relief (a real workplace: restaurant, truck cab, shop floor, office). Include a voiceover line in SINGLE quotes (never double quotes) that a calm narrator speaks, max 20 words, delivering the single sharpest insight from the article. Professional documentary style, moody lighting with a subtle green accent. No on-screen text.
 - caption: 2-3 sentences for the post caption, plain language, ends with "Full guide at businessdebtinsider.com"
 - hashtags: 4-6 hashtags as one space-separated string
 
@@ -53,8 +53,12 @@ for (let attempt = 1; attempt <= 3; attempt++) {
     body: JSON.stringify({ contents: [{ parts: [{ text: geminiPrompt }] }], generationConfig: { responseMimeType: "application/json" } }),
   }).then((r) => r.json());
   const text = gem.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (text) { copy = JSON.parse(text); break; }
-  console.error(`Gemini attempt ${attempt} failed:`, JSON.stringify(gem).slice(0, 300));
+  if (text) {
+    try { copy = JSON.parse(text); break; }
+    catch { console.error(`Gemini attempt ${attempt}: invalid JSON:`, text.slice(0, 200)); }
+  } else {
+    console.error(`Gemini attempt ${attempt} failed:`, JSON.stringify(gem).slice(0, 300));
+  }
   if (attempt === 3) throw new Error("Gemini gave no usable response after 3 attempts");
   await new Promise((r) => setTimeout(r, 5000));
 }
