@@ -105,9 +105,17 @@ console.log(" live:", videoUrl);
 
 // 5. Publish
 const call = async (path, params) => {
-  const d = await fetch(`${G}${path}`, { method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ ...params, access_token: env.FB_PAGE_TOKEN }) }).then((r) => r.json());
-  if (d.error) throw new Error(path + ": " + d.error.message);
-  return d;
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const d = await fetch(`${G}${path}`, { method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ ...params, access_token: env.FB_PAGE_TOKEN }) }).then((r) => r.json());
+      if (d.error) throw new Error(path + ": " + d.error.message);
+      return d;
+    } catch (e) {
+      if (attempt >= 4 || !/fetch failed|ETIMEDOUT|ECONNRESET|EHOSTUNREACH/.test(String(e.cause ?? e))) throw e;
+      console.error(`Graph call ${path} network failure (attempt ${attempt}), retrying in 20s`);
+      await new Promise((r) => setTimeout(r, 20000));
+    }
+  }
 };
 const igCaption = copy.caption + "\n\n" + copy.hashtags;
 
