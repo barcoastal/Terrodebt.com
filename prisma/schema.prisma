@@ -8,39 +8,39 @@ datasource db {
 }
 
 model User {
-  id            String   @id @default(cuid())
-  email         String   @unique
-  passwordHash  String
-  role          String   @default("admin")
-  createdAt     DateTime @default(now())
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         String   @default("admin")
+  createdAt    DateTime @default(now())
 }
 
 model Lead {
-  id                  String   @id @default(cuid())
-  firstName           String
-  lastName            String
-  businessName        String
-  phone               String
-  email               String
-  hasMcaDebt          Boolean
-  debtAmount          Int?
-  debtAmountBucket    String?
-  source              String   @default("homepage")
-  status              String   @default("new")
-  utmSource           String?
-  utmMedium           String?
-  utmCampaign         String?
-  utmContent          String?
-  utmTerm             String?
-  gclid               String?
-  fbclid              String?
-  affiliateClickid    String?
-  eliClickid          String?
-  ip                  String?
-  userAgent           String?
-  integrationStatus   Json?
-  createdAt           DateTime @default(now())
-  contractReview      ContractReview?
+  id                String          @id @default(cuid())
+  firstName         String
+  lastName          String
+  businessName      String
+  phone             String
+  email             String
+  hasMcaDebt        Boolean
+  debtAmount        Int?
+  debtAmountBucket  String?
+  source            String          @default("homepage")
+  status            String          @default("new")
+  utmSource         String?
+  utmMedium         String?
+  utmCampaign       String?
+  utmContent        String?
+  utmTerm           String?
+  gclid             String?
+  fbclid            String?
+  affiliateClickid  String?
+  eliClickid        String?
+  ip                String?
+  userAgent         String?
+  integrationStatus Json?
+  createdAt         DateTime        @default(now())
+  contractReview    ContractReview?
 
   @@index([createdAt])
   @@index([source])
@@ -48,48 +48,48 @@ model Lead {
 }
 
 model ContractReview {
-  id                String   @id @default(cuid())
-  leadId            String?  @unique
-  lead              Lead?    @relation(fields: [leadId], references: [id])
-  contractText      String
-  contractFilename  String
-  aiSummary         Json
-  effectiveApr      Float?
-  totalPayback      Float?
-  redFlags          Json?
-  emailCaptured     String?
-  createdAt         DateTime @default(now())
+  id               String   @id @default(cuid())
+  leadId           String?  @unique
+  lead             Lead?    @relation(fields: [leadId], references: [id])
+  contractText     String
+  contractFilename String
+  aiSummary        Json
+  effectiveApr     Float?
+  totalPayback     Float?
+  redFlags         Json?
+  emailCaptured    String?
+  createdAt        DateTime @default(now())
 }
 
 model Page {
-  id              String   @id @default(cuid())
-  slug            String   @unique
-  templateType    String
-  title           String
-  heroHeadline    String
-  heroSubline     String?
-  content         Json
-  phoneOverride   String?
-  mobileCta       String   @default("form")
-  skipPreQual     Boolean  @default(false)
-  published       Boolean  @default(false)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  templateType  String
+  title         String
+  heroHeadline  String
+  heroSubline   String?
+  content       Json
+  phoneOverride String?
+  mobileCta     String   @default("form")
+  skipPreQual   Boolean  @default(false)
+  published     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
 model Article {
-  id          String   @id @default(cuid())
-  slug        String   @unique
+  id          String    @id @default(cuid())
+  slug        String    @unique
   title       String
   excerpt     String?
   contentMd   String
   heroImage   String?
-  author      String   @default("TerraDebt Team")
-  published   Boolean  @default(false)
+  author      String    @default("TerraDebt Team")
+  published   Boolean   @default(false)
   publishedAt DateTime?
-  viewCount   Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  viewCount   Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
 
 model Vertical {
@@ -108,60 +108,60 @@ model Vertical {
 }
 
 model StatePage {
-  id         String   @id @default(cuid())
-  stateCode  String   @unique
-  stateName  String
-  content    Json
-  published  Boolean  @default(false)
-  updatedAt  DateTime @updatedAt
+  id        String   @id @default(cuid())
+  stateCode String   @unique
+  stateName String
+  content   Json
+  published Boolean  @default(false)
+  updatedAt DateTime @updatedAt
 }
 
 model CaseStudy {
-  id           String   @id @default(cuid())
-  slug         String   @unique
-  industry     String
-  debtAmount   Float
-  savingsPct   Float
-  months       Int
-  storyMd      String
-  heroImage    String?
-  published    Boolean  @default(false)
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id         String   @id @default(cuid())
+  slug       String   @unique
+  industry   String
+  debtAmount Float
+  savingsPct Float
+  months     Int
+  storyMd    String
+  heroImage  String?
+  published  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 model Visitor {
-  id           String   @id @default(cuid())
-  eliClickid   String   @unique
-  ip           String?
-  userAgent    String?
-  utmSource    String?
-  utmMedium    String?
-  utmCampaign  String?
-  utmContent   String?
-  utmTerm      String?
-  gclid        String?
-  fbclid       String?
+  id               String    @id @default(cuid())
+  eliClickid       String    @unique
+  ip               String?
+  userAgent        String?
+  utmSource        String?
+  utmMedium        String?
+  utmCampaign      String?
+  utmContent       String?
+  utmTerm          String?
+  gclid            String?
+  fbclid           String?
   affiliateClickid String?
-  referrer     String?
-  landingPath  String?
-  country      String?
-  region       String?
-  city         String?
-  deviceType   String?
-  firstSeen    DateTime @default(now())
-  lastSeen     DateTime @default(now())
-  pageViews    Int      @default(1)
-  pageHits     PageHit[]
+  referrer         String?
+  landingPath      String?
+  country          String?
+  region           String?
+  city             String?
+  deviceType       String?
+  firstSeen        DateTime  @default(now())
+  lastSeen         DateTime  @default(now())
+  pageViews        Int       @default(1)
+  pageHits         PageHit[]
 }
 
 model PageHit {
-  id         String   @id @default(cuid())
-  visitorId  String
-  visitor    Visitor  @relation(fields: [visitorId], references: [id], onDelete: Cascade)
-  path       String
-  referrer   String?
-  createdAt  DateTime @default(now())
+  id        String   @id @default(cuid())
+  visitorId String
+  visitor   Visitor  @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  path      String
+  referrer  String?
+  createdAt DateTime @default(now())
 
   @@index([visitorId])
   @@index([createdAt])
@@ -174,23 +174,23 @@ model Setting {
 }
 
 model Postback {
-  id                String   @id @default(cuid())
-  source            String   // network identifier, e.g. "everflow", "google-postback", "manual"
-  affiliateClickid  String?
-  gclid             String?
-  fbclid            String?
-  eliClickid        String?
-  payout            Float?
-  status            String?  // qualified, sale, etc.
+  id                 String   @id @default(cuid())
+  source             String // network identifier, e.g. "everflow", "google-postback", "manual"
+  affiliateClickid   String?
+  gclid              String?
+  fbclid             String?
+  eliClickid         String?
+  payout             Float?
+  status             String? // qualified, sale, etc.
   conversionActionId String? // optional explicit GA action to fire
-  rawPayload        Json
-  ip                String?
-  userAgent         String?
-  linkedLeadId      String?
-  linkedVisitorId   String?
-  forwarded         Boolean  @default(false)
-  forwardResult     Json?
-  createdAt         DateTime @default(now())
+  rawPayload         Json
+  ip                 String?
+  userAgent          String?
+  linkedLeadId       String?
+  linkedVisitorId    String?
+  forwarded          Boolean  @default(false)
+  forwardResult      Json?
+  createdAt          DateTime @default(now())
 
   @@index([source])
   @@index([createdAt])
@@ -199,15 +199,15 @@ model Postback {
 }
 
 model Notification {
-  id          String   @id @default(cuid())
-  type        String   // new-lead, postback, status-change, integration-failure
-  title       String
-  body        String?
-  leadId      String?
-  postbackId  String?
-  meta        Json?
-  read        Boolean  @default(false)
-  createdAt   DateTime @default(now())
+  id         String   @id @default(cuid())
+  type       String // new-lead, postback, status-change, integration-failure
+  title      String
+  body       String?
+  leadId     String?
+  postbackId String?
+  meta       Json?
+  read       Boolean  @default(false)
+  createdAt  DateTime @default(now())
 
   @@index([createdAt])
   @@index([read])
@@ -226,12 +226,12 @@ model ConversionAction {
 
 model EventFire {
   id                 String   @id @default(cuid())
-  platform           String   // google_ads, ga4, facebook
+  platform           String // google_ads, ga4, facebook
   conversionActionId String?
   leadId             String?
   postbackId         String?
-  source             String   // "auto-on-submit", "manual-admin", "postback", "bulk"
-  status             String   // sent, failed
+  source             String // "auto-on-submit", "manual-admin", "postback", "bulk"
+  status             String // sent, failed
   errorMessage       String?
   gclid              String?
   value              Float?
@@ -243,4 +243,20 @@ model EventFire {
   @@index([postbackId])
   @@index([createdAt])
   @@index([status])
+}
+
+model SocialPost {
+  id          String   @id @default(cuid())
+  slug        String?
+  type        String   @default("image") // image | reel
+  caption     String
+  mediaUrl    String
+  fbPostId    String?
+  igMediaId   String?
+  igPermalink String?
+  status      String   @default("published") // published | failed
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+
+  @@index([publishedAt])
 }

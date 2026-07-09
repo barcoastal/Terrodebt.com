@@ -141,7 +141,23 @@ for (let i = 0; i < 10; i++) {
 const ig = await call(`/${env.IG_USER_ID}/media_publish`, { creation_id: container.id });
 console.log("IG post:", ig.id);
 
-// 6. Record state
+// 6. Log to the admin calendar (best effort)
+try {
+  const igInfo = await fetch(`${G}/${ig.id}?fields=permalink&access_token=${env.FB_PAGE_TOKEN}`).then((r) => r.json());
+  await fetch(`${SITE}/api/social/log`, {
+    method: "POST",
+    headers: { "content-type": "application/json", "x-social-secret": env.SOCIAL_LOG_SECRET },
+    body: JSON.stringify({
+      slug, type: "image", caption: igCaption, mediaUrl: imageUrl,
+      fbPostId: fb.post_id || fb.id, igMediaId: ig.id, igPermalink: igInfo.permalink ?? null,
+    }),
+  });
+  console.log("Logged to admin calendar");
+} catch (e) {
+  console.error("Calendar log failed (post still published):", e.message);
+}
+
+// 7. Record state
 state.posted.push(slug);
 fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
 execSync(`git -C "${ROOT}" add scripts/social-posted.json && git -C "${ROOT}" commit -m "Mark ${slug} as posted" -m "Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>" && git -C "${ROOT}" push origin main`, { stdio: "pipe" });

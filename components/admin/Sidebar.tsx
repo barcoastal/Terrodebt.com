@@ -10,6 +10,7 @@ const ITEMS = [
   { href: "/admin/states", label: "States" },
   { href: "/admin/case-studies", label: "Case Studies" },
   { href: "/admin/visitors", label: "Visitors" },
+  { href: "/admin/social", label: "Social calendar" },
   { href: "/admin/events", label: "Event center" },
   { href: "/admin/postbacks", label: "Postbacks" },
   { href: "/admin/notifications", label: "Notifications", badgeKey: "unread" as const },
