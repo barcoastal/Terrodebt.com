@@ -47,7 +47,7 @@ Article: ${articleText}`;
 
 let copy;
 for (let attempt = 1; attempt <= 3; attempt++) {
-  const gem = await fetch(`${GEM}/models/gemini-2.5-flash:generateContent`, {
+  const gem = await fetch(`${GEM}/models/gemini-flash-latest:generateContent`, {
     method: "POST",
     headers: { "x-goog-api-key": env.GEMINI_API_KEY, "content-type": "application/json" },
     body: JSON.stringify({ contents: [{ parts: [{ text: geminiPrompt }] }], generationConfig: { responseMimeType: "application/json" } }),

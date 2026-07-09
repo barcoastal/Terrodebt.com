@@ -56,7 +56,7 @@ Article content: ${articleText}`;
 
 let copy;
 for (let attempt = 1; attempt <= 3; attempt++) {
-  const gemini = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent", {
+  const gemini = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent", {
     method: "POST",
     headers: { "x-goog-api-key": env.GEMINI_API_KEY, "content-type": "application/json" },
     body: JSON.stringify({
