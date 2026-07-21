@@ -106,6 +106,14 @@ export function SiteFooter() {
               info@businessdebtinsider.com
             </Link>
           </p>
+          <p className="mt-3 text-sm text-ink leading-relaxed">
+            This site is owned and operated by Shai Tamam
+            <br />
+            Phone:{" "}
+            <a href="tel:+13054949487" className="text-ink hover:text-pine no-underline">
+              305-494-9487
+            </a>
+          </p>
           <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1">
             {LEGAL.map((l) => (
               <li key={l.href}>

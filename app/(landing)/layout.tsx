@@ -32,6 +32,11 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
             <span className="font-medium text-slate">GRL Recovery LLC</span>
             <span className="mx-2 text-border">·</span>
             <span>6301 NW 5th Way 5100, Fort Lauderdale, FL 33309</span>
+            <span className="mx-2 text-border">·</span>
+            <span>
+              Owned and operated by Shai Tamam, Phone:{" "}
+              <a href="tel:+13054949487" className="hover:text-slate">305-494-9487</a>
+            </span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-slate">Privacy</Link>
