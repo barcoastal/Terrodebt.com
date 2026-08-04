@@ -3,6 +3,7 @@ import { ARTICLE_SEEDS_BATCH_2 } from "./articles-batch-2";
 import { ARTICLE_SEEDS_BATCH_3 } from "./articles-batch-3";
 import { ARTICLE_SEEDS_BATCH_4 } from "./articles-batch-4";
 import { ARTICLE_SEEDS_BATCH_5 } from "./articles-batch-5";
+import { ARTICLE_SEEDS_BATCH_6 } from "./articles-batch-6";
 
 export type ArticleSeed = { slug: string; title: string; excerpt: string; heroImage?: string; contentMd: string; author?: string };
 
@@ -1847,4 +1848,5 @@ export const ARTICLE_SEEDS: ArticleSeed[] = [
   ...ARTICLE_SEEDS_BATCH_3,
   ...ARTICLE_SEEDS_BATCH_4,
   ...ARTICLE_SEEDS_BATCH_5,
+  ...ARTICLE_SEEDS_BATCH_6,
 ];
