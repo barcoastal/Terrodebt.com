@@ -37,7 +37,17 @@ export default function ReviewsIndex() {
             Disclosure: this comparison is published by Business Debt Insider,
             which lists its own program first. Every other firm is reviewed using
             its public records, which we cite on each page. We are not a lender
-            and not a law firm.
+            and not a law firm. For a second independent perspective on this
+            category, see the rankings at{" "}
+            <a
+              href="https://www.mcasettlementreviews.com/"
+              className="underline hover:text-pine transition"
+              target="_blank"
+              rel="noopener"
+            >
+              MCA Settlement Reviews
+            </a>
+            .
           </p>
         </div>
       </section>
