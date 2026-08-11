@@ -289,6 +289,14 @@ function readClientMeta() {
       gclid: get("gclid"),
       fbclid: get("fbclid"),
       affiliateClickid: get("affiliate_clickid"),
+      tkclid: readCookie("tkclid") ?? get("tkclid"),
     };
   } catch { return {}; }
+}
+
+function readCookie(name: string): string | undefined {
+  try {
+    const m = document.cookie.match(new RegExp("(?:^|;\\s*)" + name + "=([^;]*)"));
+    return m ? decodeURIComponent(m[1]) : undefined;
+  } catch { return undefined; }
 }

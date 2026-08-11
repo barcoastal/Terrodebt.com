@@ -26,10 +26,15 @@ export function VisitorTracker() {
       body: JSON.stringify(payload),
     }).catch(() => {});
     try {
-      ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid","affiliate_clickid"].forEach((k) => {
+      ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid","affiliate_clickid","tkclid"].forEach((k) => {
         const v = get(k);
         if (v) localStorage.setItem(`td_${k}`, v);
       });
+      // mirror a URL-carried tkclid into the cookie the tracker normally sets
+      const tk = get("tkclid");
+      if (tk && !document.cookie.includes("tkclid=")) {
+        document.cookie = `tkclid=${encodeURIComponent(tk)};path=/;max-age=${60 * 60 * 24 * 90};samesite=lax`;
+      }
     } catch {}
   }, [pathname]);
   return null;

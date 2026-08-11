@@ -23,6 +23,7 @@ export async function submitLead(input: Omit<LeadSubmitInput, "ip" | "userAgent"
       gclid: pick(input.gclid, "td_gclid", "gclid"),
       fbclid: pick(input.fbclid, "td_fbclid", "fbclid"),
       affiliateClickid: pick(input.affiliateClickid, "td_affiliate_clickid", "affiliateClickid"),
+      tkclid: input.tkclid || c.get("tkclid")?.value || c.get("td_tkclid")?.value || undefined,
       utmSource: pick(input.utmSource, "td_utm_source", "utmSource"),
       utmMedium: pick(input.utmMedium, "td_utm_medium", "utmMedium"),
       utmCampaign: pick(input.utmCampaign, "td_utm_campaign", "utmCampaign"),

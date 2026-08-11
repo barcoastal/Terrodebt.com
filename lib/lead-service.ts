@@ -10,6 +10,7 @@ export type LeadSubmitInput = LeadInput & {
   gclid?: string;
   fbclid?: string;
   affiliateClickid?: string;
+  tkclid?: string;
   eliClickid?: string;
   ip?: string | null;
   userAgent?: string | null;
@@ -48,6 +49,7 @@ export async function createLead(input: LeadSubmitInput) {
       gclid: input.gclid,
       fbclid: input.fbclid,
       affiliateClickid: input.affiliateClickid,
+      tkclid: input.tkclid,
       eliClickid: input.eliClickid,
       ip: input.ip ?? undefined,
       userAgent: input.userAgent ?? undefined,
