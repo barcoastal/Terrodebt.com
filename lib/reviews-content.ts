@@ -128,7 +128,7 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
       "An established Massachusetts restructuring firm known for Article 9 reorganization, with strong reviews but higher minimums and a slower intake.",
     founded: "2009",
     hq: "Northampton, Massachusetts",
-    bbb: "A rated and accredited",
+    bbb: "A+ rated and accredited",
     publicReviews: "Strong public reviews and a long operating history",
     focus: "Article 9 reorganization, business restructuring, MCA resolution",
     bestFor: [
@@ -140,7 +140,7 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
       "Small businesses in active funder distress may need faster relief on the daily debits",
     ],
     verdict:
-      "Second Wind is one of the more credible names in restructuring, A rated and accredited, with a real track record in Article 9 reorganization. The trade-off is fit: its process and minimums point toward mid-market owners, while a small business getting hit by daily debits often needs faster relief first. If your priority is stopping the bleeding this week, weigh that against Second Wind's more deliberate restructuring timeline.",
+      "Second Wind is one of the more credible names in restructuring, A+ rated and accredited, with a real track record in Article 9 reorganization. The trade-off is fit: its process and minimums point toward mid-market owners, while a small business getting hit by daily debits often needs faster relief first. If your priority is stopping the bleeding this week, weigh that against Second Wind's more deliberate restructuring timeline.",
     feeNote:
       "Fees are set per case and geared toward a full restructuring engagement rather than quick relief.",
     faq: [
@@ -203,13 +203,13 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     score: 3.9,
     metaTitle: "Eastern Financial Partners Review (2026): BBB, Complaints",
     metaDescription:
-      "Eastern Financial Partners has a strong Trustpilot score but is a young firm (started 2023), is not BBB accredited, and draws complaints about aggressive calling and disputed refunds.",
+      "Eastern Financial Partners holds a 4.4 Trustpilot score but is a young firm (started 2023), holds a C+ BBB grade, and draws complaints about aggressive calling and disputed refunds.",
     oneLiner:
-      "Attorney-led shop with a strong 4.8 Trustpilot score, but a young firm (started 2023), not BBB accredited, with documented complaints about aggressive calling and disputed refunds.",
+      "Attorney-led shop with a 4.4 Trustpilot score across 190+ reviews, but a young firm (started 2023) whose BBB grade has slipped to C+, with documented complaints about aggressive calling and disputed refunds.",
     founded: "2023",
     hq: "Red Bank, New Jersey",
-    bbb: "B+ rating, not BBB accredited; one unanswered complaint on record",
-    publicReviews: "4.8 across roughly 74 Trustpilot reviews, offset by calling and refund complaints",
+    bbb: "C+ rating, not BBB accredited; two unanswered complaints on record",
+    publicReviews: "4.4 across 190+ Trustpilot reviews, offset by calling and refund complaints",
     focus: "MCA negotiation, settlement, attorney-led representation",
     bestFor: [
       "Owners who want a boutique attorney-led shop",
@@ -220,13 +220,13 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
       "BBB and Trustpilot complaints describe robo-dialer calls continuing after opt-out requests, plus disputed refunds",
     ],
     verdict:
-      "Eastern Financial leads with attorneys, which is structurally sound, and its 4.8 Trustpilot rating is genuine. Two things temper it: the business only started in 2023, so its track record is short, and the recurring complaint pattern is about conduct, robo-dialer calls that continue after opt-out and refunds denied as already used for attorneys. If you engage, require milestone-based fees, a written refund policy, and confirmation of removal from all calling lists.",
+      "Eastern Financial leads with attorneys, which is structurally sound, and its 4.4 Trustpilot rating across 190+ reviews is genuine. Two things temper it: the business only started in 2023, so its track record is short, and the recurring complaint pattern is about conduct, robo-dialer calls that continue after opt-out and refunds denied as already used for attorneys. If you engage, require milestone-based fees, a written refund policy, and confirmation of removal from all calling lists.",
     feeNote:
       "Fees are set per case. Get milestone-based disbursement and refund terms in writing before signing.",
     faq: [
       {
         q: "Is Eastern Financial Partners legit?",
-        a: "It is a real, attorney-led firm with a strong Trustpilot score, but it is young (started 2023) and not BBB accredited, with complaints about calling practices and refunds.",
+        a: "It is a real, attorney-led firm with a 4.4 Trustpilot score, but it is young (started 2023) and holds a C+ BBB grade, with complaints about calling practices and refunds.",
       },
       {
         q: "What are the main complaints about Eastern Financial Partners?",
@@ -489,7 +489,7 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     founded: "2009",
     hq: "New York, New York",
     bbb: "A+ rating; one of the largest debt-settlement firms",
-    publicReviews: "4.73 average across 5,900+ reviews",
+    publicReviews: "4.7 average across 44,900+ Trustpilot reviews",
     focus: "Consumer and unsecured debt settlement (not MCA-specific)",
     bestFor: [
       "Owners whose problem is mainly unsecured or consumer debt",
@@ -523,12 +523,12 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     score: 3.4,
     metaTitle: "Business Debt Adjusters Review (2026): BBB, Complaints",
     metaDescription:
-      "Business Debt Adjusters is a long-tenured NJ firm with an A BBB rating but no accreditation, some real payment-reduction wins, and complaints about aggressive phone contact.",
+      "Business Debt Adjusters is a long-tenured NJ firm with an A- BBB rating but no accreditation, some real payment-reduction wins, and complaints about aggressive phone contact.",
     oneLiner:
-      "A long-tenured New Jersey firm with an A BBB rating and some documented payment-reduction wins, but not accredited, with complaints about aggressive phone contact.",
+      "A long-tenured New Jersey firm with an A- BBB rating and some documented payment-reduction wins, but not accredited, with complaints about aggressive phone contact.",
     founded: "2016",
     hq: "Englewood Cliffs, New Jersey",
-    bbb: "A rating, not BBB accredited; one unanswered complaint on record",
+    bbb: "A- rating, not BBB accredited; one unanswered complaint on record",
     publicReviews: "Mixed; some strongly positive payment-reduction reviews",
     focus: "Business debt settlement, MCA and creditor negotiation",
     bestFor: [
@@ -536,7 +536,7 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
       "Multi-creditor business debt beyond a single advance",
     ],
     watchFor: [
-      "Not BBB accredited despite the A rating",
+      "Not BBB accredited despite the A- rating",
       "Complaints describe high-frequency phone outreach and, in at least one case, a lien after assurances to the contrary",
     ],
     verdict:
@@ -546,7 +546,7 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     faq: [
       {
         q: "Is Business Debt Adjusters legit?",
-        a: "It is a real firm operating since 2016 with an A BBB rating, though it is not accredited and draws complaints about calling practices.",
+        a: "It is a real firm operating since 2016 with an A- BBB rating, though it is not accredited and draws complaints about calling practices.",
       },
       {
         q: "What are the complaints about Business Debt Adjusters?",
@@ -603,31 +603,31 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     score: 2.6,
     metaTitle: "MCA Debt Advisors Review (2026): F BBB Rating, Complaints",
     metaDescription:
-      "MCA Debt Advisors carries an F BBB rating with 25 complaints on file (six unanswered) and reviews alleging large fees for little delivered work. High caution.",
+      "MCA Debt Advisors carries an F BBB rating with 26 complaints on file (seven unanswered) and reviews alleging large fees for little delivered work. High caution.",
     oneLiner:
-      "A Pennsylvania firm with an F BBB rating, 25 complaints on file (six unanswered), and reviews alleging large fees for little delivered work. High caution.",
+      "A Pennsylvania firm with an F BBB rating, 26 complaints on file (seven unanswered), and reviews alleging large fees for little delivered work. High caution.",
     founded: "2020",
     hq: "Erie, Pennsylvania",
-    bbb: "F rating, not accredited; 25 complaints on file, six unanswered",
+    bbb: "F rating, not accredited; 26 complaints on file, seven unanswered",
     publicReviews: "Mixed; recurring fee and delivery complaints",
     focus: "MCA debt settlement, creditor negotiation",
     bestFor: [],
     watchFor: [
-      "F rating with 25 complaints, six left unanswered by the business",
+      "F rating with 26 complaints, seven left unanswered by the business",
       "Complaints allege large fees for little delivered work and poor communication",
     ],
     verdict:
-      "We do not recommend MCA Debt Advisors based on the current record. The BBB profile carries an F rating with 25 complaints, six unanswered, and the recurring theme is large fees collected for limited or no delivered work. We document the pattern here so owners find it before they sign. Anyone who still proceeds should get a written fee schedule and verify creditor contact independently at every step.",
+      "We do not recommend MCA Debt Advisors based on the current record. The BBB profile carries an F rating with 26 complaints, seven unanswered, and the recurring theme is large fees collected for limited or no delivered work. We document the pattern here so owners find it before they sign. Anyone who still proceeds should get a written fee schedule and verify creditor contact independently at every step.",
     feeNote:
       "Fees are not published and complaints describe large sums collected, sometimes as ACH drafts with a short dispute window.",
     faq: [
       {
         q: "Is MCA Debt Advisors legit?",
-        a: "It is a real company, but it carries an F BBB rating with 25 complaints, six unanswered, and a pattern of fee-for-little-delivery complaints.",
+        a: "It is a real company, but it carries an F BBB rating with 26 complaints, seven unanswered, and a pattern of fee-for-little-delivery complaints.",
       },
       {
         q: "What is MCA Debt Advisors' BBB rating?",
-        a: "An F, with 25 complaints on file, six left unanswered by the business.",
+        a: "An F, with 26 complaints on file, seven left unanswered by the business.",
       },
     ],
   },
@@ -645,16 +645,16 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
       "A significant pattern of negative reviews and BBB complaints alleging undelivered services, fees taken without creditor contact, and instructions that put clients in default. We do not recommend.",
     founded: "Recent entrant",
     hq: "Delray Beach, Florida",
-    bbb: "26 BBB complaints on record at time of review",
+    bbb: "23 BBB complaints on record at time of review",
     publicReviews: "Negative pattern across public review platforms",
     focus: "MCA debt settlement, restructuring",
     bestFor: [],
     watchFor: [
-      "26 BBB complaints describing fees taken with no creditor contact made",
+      "23 BBB complaints describing fees taken with no creditor contact made",
       "Reports of being instructed to stop paying creditors, leading to default and lost fees",
     ],
     verdict:
-      "We do not recommend MCA Resolve at this time. The pattern across 26 BBB complaints and public reviews is consistent: clients report being told their debt would go into default to use the service, paying substantial fees, and then discovering the firm never contacted creditors. We include it here so owners searching for MCA Resolve find the documented complaint pattern in one place rather than after signing.",
+      "We do not recommend MCA Resolve at this time. The pattern across 23 BBB complaints and public reviews is consistent: clients report being told their debt would go into default to use the service, paying substantial fees, and then discovering the firm never contacted creditors. We include it here so owners searching for MCA Resolve find the documented complaint pattern in one place rather than after signing.",
     feeNote:
       "Public complaints describe fees taken in full with no creditor contact subsequently made. Verify everything independently.",
     faq: [
