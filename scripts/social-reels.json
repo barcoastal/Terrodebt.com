@@ -4,6 +4,7 @@
     "mca-settlement-lender-order",
     "mca-pre-default-options",
     "stop-mca-daily-ach-debits",
-    "business-debt-management-plan"
+    "business-debt-management-plan",
+    "bank-loan-covenant-violations"
   ]
 }
