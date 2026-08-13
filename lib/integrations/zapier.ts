@@ -62,6 +62,7 @@ export async function postToZapier(lead: Lead): Promise<IntegrationResult> {
     gclid: lead.gclid,
     fbclid: lead.fbclid,
     affiliate_clickid: lead.affiliateClickid,
+    tkclid: lead.tkclid,
     eli_clickid: lead.eliClickid,
     ip: lead.ip,
     user_agent: lead.userAgent,
