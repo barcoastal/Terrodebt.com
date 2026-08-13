@@ -9,7 +9,24 @@ export type NotificationKind = "new-lead" | "postback" | "status-change" | "inte
 async function emailNotification(subject: string, html: string) {
   const to = await notificationRecipients();
   if (to.length === 0) return;
-  await sendEmail({ to, subject, html });
+  // Send per recipient: with a sandbox/restricted sender, one blocked address
+  // must not sink delivery to the others. Surface failures in the admin feed.
+  const failures: string[] = [];
+  for (const recipient of to) {
+    const result = await sendEmail({ to: recipient, subject, html });
+    if (!result.ok) failures.push(`${recipient}: ${result.error}`);
+  }
+  if (failures.length > 0) {
+    try {
+      await db.notification.create({
+        data: {
+          type: "integration-failure",
+          title: `Email notification failed (${failures.length}/${to.length} recipients)`,
+          body: failures.join(" | ").slice(0, 1000),
+        },
+      });
+    } catch {}
+  }
 }
 
 function fmtDebt(lead: Lead): string {
