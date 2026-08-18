@@ -5,6 +5,7 @@
     "mca-pre-default-options",
     "stop-mca-daily-ach-debits",
     "business-debt-management-plan",
-    "bank-loan-covenant-violations"
+    "bank-loan-covenant-violations",
+    "business-debt-vs-personal-credit"
   ]
 }
