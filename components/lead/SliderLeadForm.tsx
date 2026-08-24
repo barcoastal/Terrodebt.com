@@ -13,7 +13,13 @@ function fmt(n: number) {
 const inputCls =
   "w-full rounded-lg border border-border bg-white px-3.5 py-2.5 text-sm text-slate placeholder-muted outline-none transition focus:border-electric";
 
-export function SliderLeadForm({ source = "mca-lp" }: { source?: string }) {
+export function SliderLeadForm({
+  source = "mca-lp",
+  question = "How much in MCA advances are currently active on your account?",
+}: {
+  source?: string;
+  question?: string;
+}) {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [amount, setAmount] = useState(100_000);
@@ -57,9 +63,7 @@ export function SliderLeadForm({ source = "mca-lp" }: { source?: string }) {
 
       {step === 1 && (
         <>
-          <div className="mb-1 text-[17px] font-bold text-slate">
-            How much in MCA advances are currently active on your account?
-          </div>
+          <div className="mb-1 text-[17px] font-bold text-slate">{question}</div>
           <div className="mb-4 text-[28px] font-extrabold tabular-nums text-electric">{fmt(amount)}</div>
           <input
             type="range"
