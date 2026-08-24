@@ -237,6 +237,185 @@ SLIDER_LP_CONFIGS["business-debt-services"] = {
   ctaHeadline: "Business debt relief, delivered as a complete service.",
 };
 
+// Campaign (03.00) MCA_Debt: one LP per keyword theme
+SLIDER_LP_CONFIGS["mca-restructuring"] = {
+  id: "mca-restructuring",
+  source: "mca-restructuring-lp",
+  metaTitle: "MCA Restructuring - Free Assessment",
+  metaDescription:
+    "Restructure merchant cash advances: daily debits converted to monthly terms your cash flow can carry. Free assessment, no commitment.",
+  badge: "Free assessment for MCA restructuring",
+  headlineLead: "MCA restructuring that converts daily debits into",
+  headlineAccent: "terms you can carry",
+  headlineTail: ".",
+  subline:
+    "Balances stay whole; the velocity changes. Formal reconciliation pauses the bleeding, then every position is renegotiated into one workable structure.",
+  bullets: [
+    "Daily and weekly debits converted to monthly obligations",
+    "Reconciliation enforced first, often cutting debits 30 to 50%",
+    "Every funder inside the plan, documented in writing",
+    "No default required, no new loan taken",
+    "Most restructures show relief inside the first 30 to 60 days",
+  ],
+  ctaHeadline: "Restructure the stack before it restructures you.",
+};
+
+SLIDER_LP_CONFIGS["mca-consolidation"] = {
+  id: "mca-consolidation",
+  source: "mca-consolidation-lp",
+  metaTitle: "MCA Consolidation Without Another Advance - Free Assessment",
+  metaDescription:
+    "Consolidate MCA payments into one coordinated obligation without taking a new advance. Free assessment, no commitment.",
+  badge: "MCA consolidation without a new advance",
+  headlineLead: "Consolidate your MCA payments,",
+  headlineAccent: "not your problems",
+  headlineTail: ".",
+  subline:
+    "Most consolidation offers are just another MCA with a bigger balance. We consolidate the obligations themselves: renegotiated positions, one coordinated payment, no new debt.",
+  bullets: [
+    "One coordinated payment replacing every daily debit",
+    "No new advance, no factor rate, no new UCC lien",
+    "Existing balances renegotiated down, not rolled up",
+    "Reverse consolidation rescues if you already signed one",
+    "Real refinancing arranged only when you truly qualify",
+  ],
+  ctaHeadline: "One payment. No new debt. That is real consolidation.",
+};
+
+SLIDER_LP_CONFIGS["mca-debt-help"] = {
+  id: "mca-debt-help",
+  source: "mca-debt-help-lp",
+  metaTitle: "MCA Debt Help - Free Assessment",
+  metaDescription:
+    "Straight answers and real help for MCA debt: paused debits, renegotiated balances, coordinated defense. Free assessment, no commitment.",
+  badge: "Free, straight-answer MCA debt assessment",
+  headlineLead: "Drowning in MCA debt?",
+  headlineAccent: "Real help",
+  headlineTail: "starts with real numbers.",
+  subline:
+    "One call: what you actually owe, what it truly costs, and which path fits, restructuring, settlement, or defense. Including the paths that cost you nothing.",
+  bullets: [
+    "Free assessment of every position and its true cost",
+    "The free moves first: reconciliation rights your contracts already contain",
+    "Restructure, settle, or defend, based on your numbers",
+    "No enrollment pressure, no percentage-of-debt fees",
+    "Licensed counsel coordinated when enforcement starts",
+  ],
+  ctaHeadline: "Get help that starts with the truth about your file.",
+};
+
+SLIDER_LP_CONFIGS["get-out-of-mca-debt"] = {
+  id: "get-out-of-mca-debt",
+  source: "get-out-mca-lp",
+  metaTitle: "Get Out of MCA Debt - Free Assessment",
+  metaDescription:
+    "There are five real ways out of MCA debt. Find out which one fits your file in one free assessment call. No commitment.",
+  badge: "Free assessment: your way out, mapped",
+  headlineLead: "There are five ways out of MCA debt.",
+  headlineAccent: "One fits your file",
+  headlineTail: ".",
+  subline:
+    "Reconciliation, restructuring, settlement, refinancing, or defense. The right one depends on your numbers, and the wrong one costs months you do not have.",
+  bullets: [
+    "All five exit paths evaluated against your actual cash flow",
+    "The fastest relief moves executed first",
+    "Average settlement reduction of 47% when settlement is the path",
+    "Exit plans that protect payroll and operations throughout",
+    "A clear timeline: most files close inside a year",
+  ],
+  ctaHeadline: "Map your way out. It starts with one call.",
+};
+
+SLIDER_LP_CONFIGS["merchant-cash-advance-relief"] = {
+  id: "merchant-cash-advance-relief",
+  source: "mca-relief-lp",
+  metaTitle: "Merchant Cash Advance Relief - Free Assessment",
+  metaDescription:
+    "Relief from merchant cash advance debt: paused withdrawals, renegotiated balances, one coordinated program. Free assessment, no commitment.",
+  badge: "Free merchant cash advance relief assessment",
+  headlineLead: "Merchant cash advance relief that shows up in your",
+  headlineAccent: "bank account",
+  headlineTail: ", fast.",
+  subline:
+    "Relief means the withdrawals slow down this month, not a brochure. Reconciliation first, then restructuring or settlement, whichever your numbers support.",
+  bullets: [
+    "Withdrawals paused or reduced, often within 2 to 4 weeks",
+    "Every advance contract audited for defects worth leverage",
+    "Balances renegotiated across all funders at once",
+    "Pre-default and post-default programs",
+    "50-state legal coordination when funders escalate",
+  ],
+  ctaHeadline: "Feel the relief where it counts: your daily balance.",
+};
+
+SLIDER_LP_CONFIGS["mca-payment-reduction"] = {
+  id: "mca-payment-reduction",
+  source: "mca-payment-reduction-lp",
+  metaTitle: "Lower Your MCA Payments - Free Assessment",
+  metaDescription:
+    "Your MCA contracts contain payment reduction rights funders hope you never use. We enforce them. Free assessment, no commitment.",
+  badge: "Free assessment: lower the daily payments",
+  headlineLead: "Your MCA contracts already contain the right to",
+  headlineAccent: "lower payments",
+  headlineTail: ". We enforce it.",
+  subline:
+    "Reconciliation clauses require funders to reduce debits when revenue declines. Documented, formal requests, backed by your bank statements, make it happen.",
+  bullets: [
+    "Reconciliation requests filed on every eligible position",
+    "Payment reductions of 30 to 50% are common outcomes",
+    "Excess pulls identified and turned into leverage",
+    "Refusals documented and escalated as contract breaches",
+    "Full restructuring when reduction alone is not enough",
+  ],
+  ctaHeadline: "Pay what the contract actually requires. Not more.",
+};
+
+SLIDER_LP_CONFIGS["reverse-consolidation-rescue"] = {
+  id: "reverse-consolidation-rescue",
+  source: "reverse-consolidation-lp",
+  metaTitle: "Reverse Consolidation Problems? - Free Assessment",
+  metaDescription:
+    "Signed a reverse consolidation you regret? Structured unwinds release you through contract defects and sequenced negotiation. Free assessment.",
+  badge: "Free assessment for reverse consolidation unwinds",
+  headlineLead: "That reverse consolidation can usually be",
+  headlineAccent: "unwound",
+  headlineTail: ".",
+  subline:
+    "Most owners see the mistake within 60 days. The contracts are thin, the breaches are common, and a structured unwind gets you out without a default spiral.",
+  bullets: [
+    "Full audit of the consolidation contract and funding trail",
+    "Promised payoffs that never happened become leverage",
+    "Discounted payoffs at 30 to 50% of remaining balance are common",
+    "ACH protections in place before any confrontation",
+    "Most unwinds close inside 90 to 180 days",
+  ],
+  formQuestion: "How much is left on your reverse consolidation?",
+  ctaHeadline: "Unwind the deal you should never have been sold.",
+};
+
+SLIDER_LP_CONFIGS["mca-coj-help"] = {
+  id: "mca-coj-help",
+  source: "mca-coj-lp",
+  metaTitle: "COJ Filed or Account Frozen? - Immediate Assessment",
+  metaDescription:
+    "Confession of judgment filed or bank account frozen by an MCA funder? The first 72 hours decide the outcome. Immediate free assessment.",
+  badge: "Emergency response: COJs and frozen accounts",
+  headlineLead: "COJ filed? Account frozen?",
+  headlineAccent: "The next 72 hours",
+  headlineTail: "decide the outcome.",
+  subline:
+    "Confessions of judgment and account freezes move fast, but they have procedural clocks and defenses. We coordinate licensed counsel in your state within 72 hours.",
+  bullets: [
+    "Counsel coordinated in your state and the filing state within 72 hours",
+    "Freeze response and exemption claims filed inside the deadlines",
+    "Domestication of foreign judgments challenged where defective",
+    "Payroll protection moves executed immediately",
+    "Negotiated resolutions while defenses hold the line",
+  ],
+  formQuestion: "How much MCA debt is behind the enforcement action?",
+  ctaHeadline: "Move now. The clocks are already running.",
+};
+
 export function getSliderLpIds(): string[] {
   return Object.keys(SLIDER_LP_CONFIGS).filter((id) => id !== "mca");
 }
