@@ -170,6 +170,73 @@ export const SLIDER_LP_CONFIGS: Record<string, SliderLpConfig> = {
   },
 };
 
+SLIDER_LP_CONFIGS["mca-services"] = {
+  id: "mca-services",
+  source: "mca-services-lp",
+  metaTitle: "MCA Services: Restructuring, Consolidation, Settlement - Free Assessment",
+  metaDescription:
+    "Full-stack MCA services: restructuring, payment consolidation, and settlement in one coordinated program. Free assessment, no commitment.",
+  badge: "Free assessment across all MCA services",
+  headlineLead: "MCA restructuring, consolidation, and settlement in",
+  headlineAccent: "one coordinated program",
+  headlineTail: ".",
+  subline:
+    "One audit decides the path. Restructuring converts daily debits to terms you can carry, consolidation merges positions into one obligation without a new loan, and settlement retires balances at a documented discount.",
+  bullets: [
+    "Forensic audit of every advance contract and payment history",
+    "MCA restructuring: daily debits converted to monthly terms",
+    "MCA consolidation: one coordinated obligation, no new loan",
+    "MCA settlement: balances retired at an average 47% reduction",
+    "Legal coordination in all 50 states when escalation is required",
+  ],
+  ctaHeadline: "One program, every MCA service your file needs.",
+};
+
+SLIDER_LP_CONFIGS["mca-attorney"] = {
+  id: "mca-attorney",
+  source: "mca-attorney-lp",
+  metaTitle: "MCA Defense Attorneys Coordinated in Your State - Free Assessment",
+  metaDescription:
+    "COJ filed, account frozen, or funder in litigation? We coordinate licensed MCA defense attorneys in your state within 72 hours, backed by a full contract audit.",
+  badge: "MCA defense: counsel coordinated within 72 hours",
+  headlineLead: "MCA defense attorneys in your state,",
+  headlineAccent: "coordinated within 72 hours",
+  headlineTail: ".",
+  subline:
+    "Confessions of judgment, frozen accounts, UCC letters to your customers. We audit the contracts, build the defense file, and coordinate licensed MCA defense attorneys in all 50 states.",
+  bullets: [
+    "COJ response and vacatur strategy coordinated in days, not weeks",
+    "Account freeze and garnishment response in your state",
+    "UCC letters to your customers answered by counsel fast",
+    "Contract defects documented and turned into leverage",
+    "Strategy, negotiation, and litigation working the same file",
+  ],
+  formQuestion: "How much MCA debt is currently in dispute or default?",
+  ctaHeadline: "Get real legal firepower on your side of the table.",
+};
+
+SLIDER_LP_CONFIGS["business-debt-services"] = {
+  id: "business-debt-services",
+  source: "business-debt-services-lp",
+  metaTitle: "Business Debt Services - Free Assessment",
+  metaDescription:
+    "Complete business debt services: audit, restructuring, settlement, creditor negotiation, and legal coordination for real business debt relief. Free assessment.",
+  badge: "Free assessment across all business debt services",
+  headlineLead: "Every business debt service you need for",
+  headlineAccent: "real relief",
+  headlineTail: ".",
+  subline:
+    "Audit, restructuring, settlement, creditor negotiation, and legal coordination in one practice. MCA, equipment, vendor, bank, and tax debt handled end to end.",
+  bullets: [
+    "Forensic audit of every obligation before any recommendation",
+    "Restructuring that converts crushing payments into workable terms",
+    "Settlement programs at a documented average 47% reduction",
+    "Creditor negotiation across funders, banks, vendors, and the IRS",
+    "Licensed counsel coordinated in all 50 states when needed",
+  ],
+  ctaHeadline: "Business debt relief, delivered as a complete service.",
+};
+
 export function getSliderLpIds(): string[] {
   return Object.keys(SLIDER_LP_CONFIGS).filter((id) => id !== "mca");
 }
