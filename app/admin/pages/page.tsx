@@ -16,6 +16,13 @@ export default async function PagesIndex() {
   let pages: Awaited<ReturnType<typeof db.page.findMany>> = [];
   try { pages = await db.page.findMany({ orderBy: { updatedAt: "desc" } }); } catch {}
 
+  const sliderRows = await Promise.all(
+    Object.values(SLIDER_LP_CONFIGS).map(async (lp) => {
+      const webhook = await readSetting(`zapier_webhook_${lp.source}`);
+      return { ...lp, webhook };
+    })
+  );
+
   const lpRows = await Promise.all(
     Object.values(LP_CONFIGS).map(async (lp) => {
       const settingKey =
@@ -93,11 +100,11 @@ export default async function PagesIndex() {
                 <th className="px-3 py-2">Live URL</th>
                 <th>Source tag</th>
                 <th>Headline</th>
-                <th>Badge</th>
+                <th>Zapier webhook</th>
               </tr>
             </thead>
             <tbody>
-              {Object.values(SLIDER_LP_CONFIGS).map((lp) => {
+              {sliderRows.map((lp) => {
                 const path = lp.id === "mca" ? "/mca" : `/c/${lp.id}`;
                 return (
                   <tr key={lp.id} className="border-t border-border">
@@ -110,7 +117,19 @@ export default async function PagesIndex() {
                     <td className="text-slate">
                       {lp.headlineLead} <span className="text-electric">{lp.headlineAccent}</span> {lp.headlineTail}
                     </td>
-                    <td className="text-xs text-muted">{lp.badge}</td>
+                    <td>
+                      {lp.webhook ? (
+                        <span className="inline-flex items-center gap-1.5 text-xs">
+                          <span className="w-2 h-2 rounded-full bg-electric" />
+                          <span className="font-mono text-muted truncate max-w-[280px]">{lp.webhook.slice(0, 48)}{lp.webhook.length > 48 ? "..." : ""}</span>
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1.5 text-xs text-muted">
+                          <span className="w-2 h-2 rounded-full bg-border" />
+                          Not configured · falls back to default
+                        </span>
+                      )}
+                    </td>
                   </tr>
                 );
               })}

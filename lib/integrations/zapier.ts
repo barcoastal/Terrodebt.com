@@ -24,6 +24,11 @@ async function readSetting(key: string): Promise<string | undefined> {
 }
 
 async function webhookForSource(source: string): Promise<{ url: string | undefined; routedTo: string }> {
+  // Generic per-source setting first: zapier_webhook_<source> (e.g. zapier_webhook_mca-services-lp)
+  const generic = await readSetting(`zapier_webhook_${source}`);
+  if (generic) return { url: generic, routedTo: source };
+
+  // Legacy named routes (google-lp / affiliate-lp)
   const route = SOURCE_TO_KEY[source];
   if (route) {
     const fromDb = await readSetting(route.settingKey);

@@ -1,7 +1,15 @@
 import { db } from "@/lib/db";
 import { saveSettings } from "./actions";
+import { SLIDER_LP_CONFIGS } from "@/lib/slider-lp-config";
 
 type FieldDef = { key: string; label: string; help?: string; placeholder?: string; secret?: boolean; multiline?: boolean };
+
+const SLIDER_LP_WEBHOOK_FIELDS: FieldDef[] = Object.values(SLIDER_LP_CONFIGS).map((lp) => ({
+  key: `zapier_webhook_${lp.source}`,
+  label: `Zapier webhook for ${lp.id === "mca" ? "/mca" : `/c/${lp.id}`}`,
+  help: `Fires only for leads with source=${lp.source}.`,
+  placeholder: "https://hooks.zapier.com/hooks/catch/...",
+}));
 
 const GROUPS: { title: string; description: string; fields: FieldDef[] }[] = [
   {
@@ -20,6 +28,7 @@ const GROUPS: { title: string; description: string; fields: FieldDef[] }[] = [
       { key: "zapier_webhook_default", label: "Default Zapier webhook", help: "Used for homepage, /get-started, articles, programs, contact, and any source not listed below.", placeholder: "https://hooks.zapier.com/hooks/catch/..." },
       { key: "zapier_webhook_google", label: "Zapier webhook for /go/google", help: "Fires only for leads with source=google-lp.", placeholder: "https://hooks.zapier.com/hooks/catch/..." },
       { key: "zapier_webhook_affiliate", label: "Zapier webhook for /go/affiliate", help: "Fires only for leads with source=affiliate-lp.", placeholder: "https://hooks.zapier.com/hooks/catch/..." },
+      ...SLIDER_LP_WEBHOOK_FIELDS,
     ],
   },
   {
