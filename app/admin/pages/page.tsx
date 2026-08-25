@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
 import { LP_CONFIGS } from "@/lib/lp-config";
+import { SLIDER_LP_CONFIGS } from "@/lib/slider-lp-config";
 
 async function readSetting(key: string): Promise<string> {
   try {
@@ -70,6 +71,49 @@ export default async function PagesIndex() {
                   </td>
                 </tr>
               ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Campaign slider landing pages */}
+      <div className="mt-12">
+        <h2 className="text-xl font-bold">Campaign pages (slider template)</h2>
+        <p className="mt-2 text-sm text-muted">
+          Keyword-matched Google Ads pages driven by{" "}
+          <code className="bg-offwhite px-1.5 py-0.5 rounded font-mono text-xs">lib/slider-lp-config.ts</code>. The
+          &quot;mca&quot; entry renders at <code className="bg-offwhite px-1.5 py-0.5 rounded font-mono text-xs">/mca</code>,
+          all others at <code className="bg-offwhite px-1.5 py-0.5 rounded font-mono text-xs">/c/[id]</code>. Leads route
+          to the default Zapier webhook unless a per-source webhook is configured.
+        </p>
+        <div className="mt-4 overflow-x-auto bg-white border border-border rounded-md">
+          <table className="w-full text-sm">
+            <thead className="bg-offwhite text-left">
+              <tr>
+                <th className="px-3 py-2">Live URL</th>
+                <th>Source tag</th>
+                <th>Headline</th>
+                <th>Badge</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.values(SLIDER_LP_CONFIGS).map((lp) => {
+                const path = lp.id === "mca" ? "/mca" : `/c/${lp.id}`;
+                return (
+                  <tr key={lp.id} className="border-t border-border">
+                    <td className="px-3 py-2">
+                      <a href={path} target="_blank" rel="noreferrer" className="font-mono text-xs text-electric no-underline hover:underline">
+                        {path} →
+                      </a>
+                    </td>
+                    <td className="font-mono text-xs">{lp.source}</td>
+                    <td className="text-slate">
+                      {lp.headlineLead} <span className="text-electric">{lp.headlineAccent}</span> {lp.headlineTail}
+                    </td>
+                    <td className="text-xs text-muted">{lp.badge}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
