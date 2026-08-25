@@ -19,6 +19,7 @@
     "vendor-debt-negotiation-strategies",
     "stop-mca-daily-ach-debits",
     "mca-reconciliation-request-template",
-    "life-after-mca-debt"
+    "life-after-mca-debt",
+    "mca-restructure-timeline"
   ]
 }
