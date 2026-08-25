@@ -78,6 +78,6 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(8585, () => console.log("Waiting for OAuth redirect on http://localhost:8585 ..."));
 setTimeout(() => {
-  console.error("Timed out after 10 minutes.");
+  console.error("Timed out after 60 minutes.");
   process.exit(1);
-}, 600_000);
+}, 3_600_000);
