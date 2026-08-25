@@ -42,6 +42,27 @@ export const SLIDER_LP_CONFIGS: Record<string, SliderLpConfig> = {
     ],
     ctaHeadline: "Get out from under stacked MCA advances.",
   },
+  "mca-debt-relief": {
+    id: "mca-debt-relief",
+    source: "mca-debt-relief-lp",
+    metaTitle: "MCA Debt Relief - Free Assessment",
+    metaDescription:
+      "Real relief from merchant cash advance debt: paused daily debits, restructured payments, and negotiated balances. Free assessment, no commitment.",
+    badge: "Free assessment for MCA debt relief",
+    headlineLead: "Real",
+    headlineAccent: "MCA debt relief",
+    headlineTail: "without losing your business.",
+    subline:
+      "Daily debits paused through formal reconciliation, balances renegotiated, and one coordinated plan instead of five funders pulling from your account.",
+    bullets: [
+      "Daily withdrawals paused, often within 2 to 4 weeks",
+      "Balances renegotiated with every funder in one coordinated plan",
+      "Contract defects found and used as leverage on your side",
+      "Pre-default and post-default programs",
+      "Licensed counsel coordinated in all 50 states when needed",
+    ],
+    ctaHeadline: "Get relief from MCA debt, starting this week.",
+  },
   "business-debt-relief": {
     id: "business-debt-relief",
     source: "business-debt-relief-lp",
