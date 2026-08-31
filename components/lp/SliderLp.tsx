@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SliderLeadForm } from "@/components/lead/SliderLeadForm";
 import { Reveal } from "@/components/site/Reveal";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
@@ -146,21 +147,33 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
                 </li>
               ))}
             </ul>
+            <div className="relative mt-8 hidden h-56 overflow-hidden rounded-2xl border border-border shadow-soft lg:block">
+              <Image
+                src="/images/lp-handshake.jpg"
+                alt="Advisor and business owner closing a debt resolution plan"
+                fill
+                sizes="(min-width: 1024px) 560px, 100vw"
+                className="object-cover object-[50%_30%]"
+                priority
+              />
+            </div>
           </div>
 
           <SliderLeadForm source={lp.source} question={lp.formQuestion} />
         </div>
       </section>
 
-      {/* Trust strip */}
-      <section className="border-y border-border bg-white px-6 py-5">
-        <div className="mx-auto flex max-w-content flex-wrap items-center justify-center gap-x-8 gap-y-2">
+      {/* Trust badge strip */}
+      <section className="relative z-10 -mt-8 px-6">
+        <div className="shadow-soft mx-auto grid max-w-content grid-cols-2 gap-4 rounded-2xl border border-border bg-white px-6 py-5 md:grid-cols-4">
           {TRUST_STRIP.map((t) => (
-            <span key={t} className="inline-flex items-center gap-2 text-[13px] font-medium text-slate">
-              <svg className="h-4 w-4 shrink-0 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <path d="M9 12l2 2 4-4" />
-              </svg>
+            <span key={t} className="flex items-center gap-2.5 text-[13px] font-medium leading-snug text-slate">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-electric/10">
+                <svg className="h-4.5 w-4.5 text-electric" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </span>
               {t}
             </span>
           ))}
@@ -237,15 +250,19 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               Specific outcomes, not theatrics.
             </h2>
           </Reveal>
-          <div className="grid gap-8 md:grid-cols-3">
-            {STATS.map((s) => (
+          <div className="grid gap-6 md:grid-cols-3">
+            {STATS.map((s, i) => (
               <Reveal key={s.n}>
-                <div className="border-t-2 border-electric pt-5">
-                  <div className="mb-2 text-[clamp(36px,5vw,56px)] font-bold leading-none tracking-tight text-electric">
+                <div
+                  className={`h-full rounded-2xl p-7 shadow-soft ${
+                    i === 0 ? "bg-electric text-white" : "border border-border bg-white"
+                  }`}
+                >
+                  <div className={`mb-2 text-[clamp(36px,5vw,56px)] font-bold leading-none tracking-tight ${i === 0 ? "text-white" : "text-electric"}`}>
                     {s.n}
                   </div>
-                  <div className="mb-1.5 font-semibold text-slate">{s.title}</div>
-                  <div className="text-[13.5px] leading-relaxed text-muted">{s.body}</div>
+                  <div className={`mb-1.5 font-semibold ${i === 0 ? "text-white" : "text-slate"}`}>{s.title}</div>
+                  <div className={`text-[13.5px] leading-relaxed ${i === 0 ? "text-white/80" : "text-muted"}`}>{s.body}</div>
                 </div>
               </Reveal>
             ))}
@@ -276,15 +293,37 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
                     ))}
                   </div>
                   <blockquote className="flex-1 text-sm leading-relaxed text-slate">&ldquo;{t.body}&rdquo;</blockquote>
-                  <figcaption className="mt-4 border-t border-border pt-3">
-                    <span className="block text-sm font-semibold text-slate">{t.name}</span>
-                    <span className="text-xs text-muted">{t.role}</span>
+                  <figcaption className="mt-4 flex items-center gap-3 border-t border-border pt-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-electric text-sm font-bold text-white">
+                      {t.name.charAt(0)}
+                    </span>
+                    <span>
+                      <span className="block text-sm font-semibold text-slate">{t.name}</span>
+                      <span className="text-xs text-muted">{t.role}</span>
+                    </span>
                   </figcaption>
                 </figure>
               </Reveal>
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Ink CTA band */}
+      <section className="bg-offwhite px-6 pt-16">
+        <Reveal>
+          <div className="mx-auto flex max-w-content flex-col items-center justify-between gap-5 rounded-3xl bg-ink px-8 py-10 md:flex-row md:px-12">
+            <h2 className="text-center text-[clamp(22px,3vw,32px)] font-bold tracking-tighter text-white md:text-left">
+              See what we can do for your business.
+            </h2>
+            <a
+              href="#assessment"
+              className="shrink-0 rounded-full bg-white px-7 py-3 text-[15px] font-bold text-ink no-underline transition hover:bg-electric hover:text-white"
+            >
+              Free consultation →
+            </a>
+          </div>
+        </Reveal>
       </section>
 
       {/* How we're different */}
@@ -298,28 +337,41 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               Not another enrollment mill.
             </h2>
           </Reveal>
-          <Reveal>
-            <div className="overflow-hidden rounded-2xl border border-border bg-white">
-              <div className="grid grid-cols-2 border-b border-border bg-offwhite text-sm font-bold">
-                <div className="px-5 py-3 text-muted">The typical debt relief pitch</div>
-                <div className="px-5 py-3 text-electric">How we work</div>
-              </div>
-              {DIFFERENCE.map((row) => (
-                <div key={row.us} className="grid grid-cols-2 border-b border-border text-sm last:border-b-0">
-                  <div className="flex items-start gap-2 px-5 py-4 text-muted">
-                    <span className="mt-0.5 text-border" aria-hidden>✕</span>
-                    {row.them}
-                  </div>
-                  <div className="flex items-start gap-2 px-5 py-4 font-medium text-slate">
-                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                    {row.us}
-                  </div>
+          <div className="grid items-stretch gap-8 lg:grid-cols-[1fr_320px]">
+            <Reveal>
+              <div className="overflow-hidden rounded-2xl border border-border bg-white">
+                <div className="grid grid-cols-2 border-b border-border bg-offwhite text-sm font-bold">
+                  <div className="px-5 py-3 text-muted">The typical debt relief pitch</div>
+                  <div className="px-5 py-3 text-electric">How we work</div>
                 </div>
-              ))}
-            </div>
-          </Reveal>
+                {DIFFERENCE.map((row) => (
+                  <div key={row.us} className="grid grid-cols-2 border-b border-border text-sm last:border-b-0">
+                    <div className="flex items-start gap-2 px-5 py-4 text-muted">
+                      <span className="mt-0.5 text-border" aria-hidden>✕</span>
+                      {row.them}
+                    </div>
+                    <div className="flex items-start gap-2 px-5 py-4 font-medium text-slate">
+                      <svg className="mt-0.5 h-4 w-4 shrink-0 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      {row.us}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="relative hidden h-full min-h-[280px] overflow-hidden rounded-2xl border border-border shadow-soft lg:block">
+                <Image
+                  src="/images/process-call.png"
+                  alt="Advisor reviewing a business debt file"
+                  fill
+                  sizes="320px"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
