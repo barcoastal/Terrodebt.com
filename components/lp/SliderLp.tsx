@@ -122,8 +122,15 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
     <article>
       {/* Hero + form */}
       <section className="relative overflow-hidden bg-offwhite">
-        <div className="bg-mesh pointer-events-none absolute inset-0" />
-        <div className="grid-pattern pointer-events-none absolute inset-0" />
+        <Image
+          src="/images/lp-handshake.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          priority
+          className="pointer-events-none object-cover object-[70%_25%]"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-offwhite via-offwhite/85 to-offwhite/15" />
         <div className="relative mx-auto grid max-w-content items-start gap-10 px-6 pb-16 pt-12 lg:grid-cols-[1fr_420px] lg:gap-16 lg:pt-16">
           <div>
             <span className="shadow-soft inline-flex items-center gap-2 rounded-full border border-border bg-white px-3.5 py-1.5 text-xs font-medium text-slate">
@@ -147,16 +154,6 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
                 </li>
               ))}
             </ul>
-            <div className="relative mt-8 hidden h-56 overflow-hidden rounded-2xl border border-border shadow-soft lg:block">
-              <Image
-                src="/images/lp-handshake.jpg"
-                alt="Advisor and business owner closing a debt resolution plan"
-                fill
-                sizes="(min-width: 1024px) 560px, 100vw"
-                className="object-cover object-[50%_30%]"
-                priority
-              />
-            </div>
           </div>
 
           <SliderLeadForm source={lp.source} question={lp.formQuestion} />
