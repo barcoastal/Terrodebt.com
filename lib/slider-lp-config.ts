@@ -18,7 +18,7 @@ export type SliderLpConfig = {
   ctaSub?: string;
 };
 
-const DEFAULT_FORM_QUESTION = "How much in MCA advances are currently active on your account?";
+const DEFAULT_FORM_QUESTION = "How Much Debt Does Your Business Have?";
 
 export const SLIDER_LP_CONFIGS: Record<string, SliderLpConfig> = {
   mca: {

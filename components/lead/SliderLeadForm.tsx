@@ -15,7 +15,7 @@ const inputCls =
 
 export function SliderLeadForm({
   source = "mca-lp",
-  question = "How much in MCA advances are currently active on your account?",
+  question = "How Much Debt Does Your Business Have?",
 }: {
   source?: string;
   question?: string;
