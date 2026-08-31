@@ -79,7 +79,7 @@ export function SliderLeadForm({
             <span>$0</span><span>$250K</span><span>$500K</span><span>$750K</span><span>$1M+</span>
           </div>
           <p className="mb-5 text-[12.5px] leading-relaxed text-muted">
-            Slide to your approximate total across all active advances. We&apos;ll tailor the call from here.
+            Select your total MCA balance to see your custom relief options
           </p>
           <button
             onClick={() => setStep(2)}
