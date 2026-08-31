@@ -128,10 +128,10 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
           fill
           sizes="100vw"
           priority
-          className="pointer-events-none object-cover object-[55%_30%]"
+          className="pointer-events-none object-cover object-[70%_25%]"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-offwhite from-26% via-offwhite/20 via-44% to-transparent" />
-        <div className="relative mx-auto grid max-w-content items-start gap-10 px-6 pb-16 pt-12 lg:max-w-none lg:grid-cols-[minmax(420px,540px)_1fr_420px] lg:gap-8 lg:px-14 lg:pb-24 lg:pt-16">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-offwhite via-offwhite/85 to-offwhite/15" />
+        <div className="relative mx-auto grid max-w-content items-start gap-10 px-6 pb-16 pt-12 lg:grid-cols-[1fr_420px] lg:gap-16 lg:pt-16">
           <div>
             <span className="shadow-soft inline-flex items-center gap-2 rounded-full border border-border bg-white px-3.5 py-1.5 text-xs font-medium text-slate">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-electric" />
@@ -155,9 +155,6 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               ))}
             </ul>
           </div>
-
-          {/* middle column stays empty so the background photo shows through */}
-          <div className="hidden lg:block" aria-hidden />
 
           <SliderLeadForm source={lp.source} question={lp.formQuestion} />
         </div>
