@@ -29,6 +29,8 @@ const GROUPS: { title: string; description: string; fields: FieldDef[] }[] = [
       { key: "zapier_webhook_google", label: "Zapier webhook for /go/google", help: "Fires only for leads with source=google-lp.", placeholder: "https://hooks.zapier.com/hooks/catch/..." },
       { key: "zapier_webhook_affiliate", label: "Zapier webhook for /go/affiliate", help: "Fires only for leads with source=affiliate-lp.", placeholder: "https://hooks.zapier.com/hooks/catch/..." },
       ...SLIDER_LP_WEBHOOK_FIELDS,
+      { key: "zapier_webhook_get-started", label: "Zapier webhook for /get-started", help: "Fires only for leads with source=get-started (the main site funnel).", placeholder: "https://hooks.zapier.com/hooks/catch/..." },
+      { key: "zapier_webhook_homepage", label: "Zapier webhook for homepage forms", help: "Fires only for leads with source=homepage (forms with no explicit source).", placeholder: "https://hooks.zapier.com/hooks/catch/..." },
     ],
   },
   {
