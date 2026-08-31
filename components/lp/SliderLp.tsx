@@ -132,7 +132,7 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-offwhite via-offwhite/85 to-offwhite/15" />
         <div className="relative mx-auto grid max-w-content items-start gap-10 px-6 pb-16 pt-12 lg:grid-cols-[1fr_420px] lg:gap-16 lg:pt-16">
-          <div className="order-last lg:order-none">
+          <div className="order-1 lg:order-none lg:col-start-1">
             <span className="shadow-soft inline-flex items-center gap-2 rounded-full border border-border bg-white px-3.5 py-1.5 text-xs font-medium text-slate">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-electric" />
               {lp.badge}
@@ -142,7 +142,10 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               {lp.headlineTail}
             </h1>
             <p className="mt-5 max-w-md leading-relaxed text-muted">{lp.subline}</p>
-            <ul className="mt-7 flex flex-col gap-2.5">
+          </div>
+
+          <div className="order-3 lg:order-none lg:col-start-1">
+            <ul className="flex flex-col gap-2.5 lg:mt-0">
               {lp.bullets.map((b) => (
                 <li key={b} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate">
                   <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-electric">
@@ -156,7 +159,9 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
             </ul>
           </div>
 
-          <SliderLeadForm source={lp.source} question={lp.formQuestion} />
+          <div className="order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-2">
+            <SliderLeadForm source={lp.source} question={lp.formQuestion} />
+          </div>
         </div>
       </section>
 
