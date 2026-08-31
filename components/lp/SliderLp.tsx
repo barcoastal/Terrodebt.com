@@ -198,10 +198,12 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               <Reveal key={s.n}>
                 <div className="relative h-full">
                   <div className="surface-card-elevated h-full p-7">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-electric text-lg font-bold text-white">
-                      {s.n}
-                    </span>
-                    <h3 className="mb-2 mt-4 text-lg font-bold text-slate">{s.title}</h3>
+                    <div className="mb-3 flex items-center gap-3">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-electric text-lg font-bold text-white">
+                        {s.n}
+                      </span>
+                      <h3 className="text-lg font-bold text-slate">{s.title}</h3>
+                    </div>
                     <p className="text-sm leading-relaxed text-muted">{s.body}</p>
                   </div>
                   {i < STEPS.length - 1 && (
