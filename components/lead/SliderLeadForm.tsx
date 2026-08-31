@@ -85,7 +85,7 @@ export function SliderLeadForm({
             onClick={() => setStep(2)}
             className="flex w-full items-center justify-center gap-2 rounded-lg bg-electric py-3 text-[15px] font-bold text-white transition hover:bg-electric-soft"
           >
-            Continue →
+            Check Free Eligibility →
           </button>
         </>
       )}
