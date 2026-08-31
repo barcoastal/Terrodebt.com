@@ -233,8 +233,10 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
             {WHY.map((c) => (
               <Reveal key={c.n}>
                 <div className="surface-card h-full p-6">
-                  <div className="mb-3 font-mono text-[11px] font-bold uppercase tracking-wider text-electric">{c.n}</div>
-                  <h3 className="mb-2 text-[17px] font-bold leading-snug text-slate">{c.title}</h3>
+                  <div className="mb-2 flex items-baseline gap-2.5">
+                    <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-electric">{c.n}</span>
+                    <h3 className="text-[17px] font-bold leading-snug text-slate">{c.title}</h3>
+                  </div>
                   <p className="text-sm leading-relaxed text-muted">{c.body}</p>
                 </div>
               </Reveal>
