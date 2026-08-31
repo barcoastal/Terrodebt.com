@@ -1,6 +1,84 @@
 import { SliderLeadForm } from "@/components/lead/SliderLeadForm";
 import { Reveal } from "@/components/site/Reveal";
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import type { SliderLpConfig } from "@/lib/slider-lp-config";
+
+const TRUST_STRIP = [
+  "Flat engagement fees, never a percentage of your debt",
+  "Not a lender: no new loans, no new liens",
+  "Licensed counsel coordinated in all 50 states",
+  "Pre-default and post-default programs",
+];
+
+const STEPS = [
+  {
+    n: "1",
+    title: "Free assessment call",
+    body: "One call with an advisor who has seen your situation before. Your positions, your real numbers, and a straight answer about which path fits, including the paths that cost nothing.",
+  },
+  {
+    n: "2",
+    title: "Forensic audit",
+    body: "Every contract, funding statement, and bank debit pulled apart. The audit finds what you actually owe, what it truly costs, and the contract defects that become your leverage.",
+  },
+  {
+    n: "3",
+    title: "Coordinated program",
+    body: "Reconciliation first to slow the bleeding, then restructuring or settlement executed creditor by creditor, documented in writing, with counsel coordinated when funders escalate.",
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    name: "Joel R.",
+    role: "Owner, regional trucking",
+    body: "Four MCAs, $3,200 a day in debits, and a reverse consolidation firm trying to charge me $25K upfront. Business Debt Insider told me my real APR before they pitched me anything. That alone was the difference.",
+  },
+  {
+    name: "Marc L.",
+    role: "Ecommerce, supplements",
+    body: "Ad spend cycle was getting eaten by daily debits. Settled three MCAs in 8 months at 44 cents. We are scaling again without stacking new advances.",
+  },
+  {
+    name: "Maya K.",
+    role: "Owner, Italian restaurant",
+    body: "I had stopped opening the lender emails. They explained the math, paused the debits, and built a single payment plan I could actually run my kitchen against.",
+  },
+];
+
+const DIFFERENCE = [
+  { them: "Enroll first, ask questions later", us: "Forensic audit before any recommendation" },
+  { them: "Fees at 15 to 25% of your enrolled debt", us: "Flat engagement fee, quoted up front" },
+  { them: "One product pitched to every caller", us: "Restructure, settle, or defend, based on your numbers" },
+  { them: "Disappear when a funder files a COJ", us: "Licensed counsel coordinated within 72 hours" },
+];
+
+const FAQ = [
+  {
+    q: "Is this a loan or consolidation product?",
+    a: "No. We are not a lender and we do not place new debt. We renegotiate, restructure, or settle the obligations you already have, and we arrange real refinancing only when you genuinely qualify for it.",
+  },
+  {
+    q: "How fast do the daily withdrawals stop?",
+    a: "Formal reconciliation requests are usually the first move, and debit reductions or pauses commonly land within 2 to 4 weeks of starting. Full restructures and settlements take longer, but the cash flow relief is front-loaded.",
+  },
+  {
+    q: "What does it cost?",
+    a: "Flat engagement fees quoted up front after the free assessment, typically $10,000 to $13,000 for stacked files between $100K and $2M. Never a percentage of your enrolled debt, and the first call costs nothing.",
+  },
+  {
+    q: "Will this hurt my business credit?",
+    a: "Restructuring generally protects it; settlement involves a default window and does more damage before the rebuild. We tell you the credit impact of each path before you choose, and the program includes the rebuild plan.",
+  },
+  {
+    q: "Are you a law firm?",
+    a: "No, and we say so plainly. We are a financial consulting practice. When legal defense is needed, COJs, freezes, or litigation, we coordinate licensed attorneys in your state, usually within 72 hours.",
+  },
+  {
+    q: "Do I qualify?",
+    a: "Programs fit businesses with roughly $25K to $5M+ in short-term debt. If your file is better served by a bank workout, a bankruptcy attorney, or nothing at all, we tell you that on the first call.",
+  },
+];
 
 const WHY = [
   {
@@ -74,6 +152,55 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
         </div>
       </section>
 
+      {/* Trust strip */}
+      <section className="border-y border-border bg-white px-6 py-5">
+        <div className="mx-auto flex max-w-content flex-wrap items-center justify-center gap-x-8 gap-y-2">
+          {TRUST_STRIP.map((t) => (
+            <span key={t} className="inline-flex items-center gap-2 text-[13px] font-medium text-slate">
+              <svg className="h-4 w-4 shrink-0 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+              {t}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="bg-offwhite px-6 py-16 lg:py-20">
+        <div className="mx-auto max-w-content">
+          <Reveal>
+            <div className="mb-2 font-mono text-[11px] font-bold uppercase tracking-[1.2px] text-electric">
+              How it works
+            </div>
+            <h2 className="mb-10 max-w-xl text-[clamp(24px,3.5vw,36px)] font-bold leading-tight tracking-tighter text-slate">
+              Three steps from drowning to a plan that holds.
+            </h2>
+          </Reveal>
+          <div className="grid gap-6 md:grid-cols-3">
+            {STEPS.map((s, i) => (
+              <Reveal key={s.n}>
+                <div className="relative h-full">
+                  <div className="surface-card-elevated h-full p-7">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-electric text-lg font-bold text-white">
+                      {s.n}
+                    </span>
+                    <h3 className="mb-2 mt-4 text-lg font-bold text-slate">{s.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted">{s.body}</p>
+                  </div>
+                  {i < STEPS.length - 1 && (
+                    <span className="absolute -right-5 top-1/2 hidden -translate-y-1/2 text-2xl text-electric md:block" aria-hidden>
+                      →
+                    </span>
+                  )}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why */}
       <section className="border-y border-border bg-white px-6 py-16 lg:py-20">
         <div className="mx-auto max-w-content">
@@ -125,6 +252,111 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <section className="border-y border-border bg-white px-6 py-16 lg:py-20">
+        <div className="mx-auto max-w-content">
+          <Reveal>
+            <div className="mb-2 font-mono text-[11px] font-bold uppercase tracking-[1.2px] text-electric">
+              From the files
+            </div>
+            <h2 className="mb-10 max-w-xl text-[clamp(24px,3.5vw,36px)] font-bold leading-tight tracking-tighter text-slate">
+              Owners who were where you are.
+            </h2>
+          </Reveal>
+          <div className="grid gap-6 md:grid-cols-3">
+            {TESTIMONIALS.map((t) => (
+              <Reveal key={t.name}>
+                <figure className="surface-card flex h-full flex-col p-6">
+                  <div className="mb-3 flex gap-0.5 text-electric" aria-label="5 out of 5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <svg key={i} className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <blockquote className="flex-1 text-sm leading-relaxed text-slate">&ldquo;{t.body}&rdquo;</blockquote>
+                  <figcaption className="mt-4 border-t border-border pt-3">
+                    <span className="block text-sm font-semibold text-slate">{t.name}</span>
+                    <span className="text-xs text-muted">{t.role}</span>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How we're different */}
+      <section className="bg-offwhite px-6 py-16 lg:py-20">
+        <div className="mx-auto max-w-content">
+          <Reveal>
+            <div className="mb-2 font-mono text-[11px] font-bold uppercase tracking-[1.2px] text-electric">
+              The difference
+            </div>
+            <h2 className="mb-10 max-w-xl text-[clamp(24px,3.5vw,36px)] font-bold leading-tight tracking-tighter text-slate">
+              Not another enrollment mill.
+            </h2>
+          </Reveal>
+          <Reveal>
+            <div className="overflow-hidden rounded-2xl border border-border bg-white">
+              <div className="grid grid-cols-2 border-b border-border bg-offwhite text-sm font-bold">
+                <div className="px-5 py-3 text-muted">The typical debt relief pitch</div>
+                <div className="px-5 py-3 text-electric">How we work</div>
+              </div>
+              {DIFFERENCE.map((row) => (
+                <div key={row.us} className="grid grid-cols-2 border-b border-border text-sm last:border-b-0">
+                  <div className="flex items-start gap-2 px-5 py-4 text-muted">
+                    <span className="mt-0.5 text-border" aria-hidden>✕</span>
+                    {row.them}
+                  </div>
+                  <div className="flex items-start gap-2 px-5 py-4 font-medium text-slate">
+                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    {row.us}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-y border-border bg-white px-6 py-16 lg:py-20">
+        <FaqJsonLd items={FAQ} />
+        <div className="mx-auto max-w-content">
+          <Reveal>
+            <div className="mb-2 font-mono text-[11px] font-bold uppercase tracking-[1.2px] text-electric">
+              Questions owners actually ask
+            </div>
+            <h2 className="mb-10 max-w-xl text-[clamp(24px,3.5vw,36px)] font-bold leading-tight tracking-tighter text-slate">
+              Straight answers, before you ever call.
+            </h2>
+          </Reveal>
+          <div className="grid gap-x-10 gap-y-8 md:grid-cols-2">
+            {FAQ.map((f) => (
+              <Reveal key={f.q}>
+                <div>
+                  <h3 className="mb-2 text-[16px] font-bold text-slate">{f.q}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{f.a}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sticky mobile CTA */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-white/95 p-3 backdrop-blur md:hidden">
+        <a
+          href="#assessment"
+          className="flex w-full items-center justify-center rounded-lg bg-electric py-3 text-[15px] font-bold text-white no-underline"
+        >
+          Start my free assessment →
+        </a>
+      </div>
 
       {/* Final CTA */}
       <div className="bg-offwhite px-6 pb-20">

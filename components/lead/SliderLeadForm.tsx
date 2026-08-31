@@ -138,7 +138,14 @@ export function SliderLeadForm({
         </>
       )}
 
-      <div className="mt-4 text-center text-[11px] leading-relaxed text-muted">
+      <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-muted">
+        <svg className="h-3.5 w-3.5 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+        SSL secured. Your information is never sold or shared for marketing.
+      </div>
+      <div className="mt-2 text-center text-[11px] leading-relaxed text-muted">
         By submitting, you consent to Business Debt Insider contacting you. See our{" "}
         <a href="/privacy" className="text-electric">Privacy Policy</a>.
       </div>
