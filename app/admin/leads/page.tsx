@@ -89,13 +89,14 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
               <th>utm_source</th>
               <th>utm_medium</th>
               <th>utm_campaign</th>
+              <th>Click IDs</th>
               <th>Debt</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
             {leads.length === 0 && (
-              <tr><td className="px-3 py-4 text-muted" colSpan={10}>No leads match these filters.</td></tr>
+              <tr><td className="px-3 py-4 text-muted" colSpan={11}>No leads match these filters.</td></tr>
             )}
             {leads.map((l) => (
               <tr key={l.id} className="border-t border-border">
@@ -107,6 +108,21 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
                 <td className="font-mono text-xs">{l.utmSource ?? "-"}</td>
                 <td className="font-mono text-xs">{l.utmMedium ?? "-"}</td>
                 <td className="font-mono text-xs">{l.utmCampaign ?? "-"}</td>
+                <td className="font-mono text-[10px] leading-tight">
+                  {[
+                    l.gclid ? ["gclid", l.gclid] : null,
+                    l.tkclid ? ["tkclid", l.tkclid] : null,
+                    l.fbclid ? ["fbclid", l.fbclid] : null,
+                    l.affiliateClickid ? ["aff", l.affiliateClickid] : null,
+                  ]
+                    .filter((x): x is [string, string] => x !== null)
+                    .map(([label, value]) => (
+                      <span key={label} className="block" title={value}>
+                        <span className="text-muted">{label}:</span> {value.length > 14 ? value.slice(0, 14) + "…" : value}
+                      </span>
+                    ))}
+                  {!l.gclid && !l.tkclid && !l.fbclid && !l.affiliateClickid && "-"}
+                </td>
                 <td>{l.debtAmountBucket ?? "-"}</td>
                 <td><StatusBadge status={l.status} /></td>
               </tr>

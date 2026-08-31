@@ -50,6 +50,7 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
         <Field label="gclid" value={lead.gclid ?? "-"} mono />
         <Field label="fbclid" value={lead.fbclid ?? "-"} mono />
         <Field label="affiliate_clickid" value={lead.affiliateClickid ?? "-"} mono />
+        <Field label="tkclid" value={lead.tkclid ?? "-"} mono />
         <Field label="eli_clickid" value={lead.eliClickid ?? "-"} mono />
       </Section>
 
