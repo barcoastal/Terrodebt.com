@@ -13,13 +13,13 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
     <>
       <OrgJsonLd />
       <header className="border-b border-border bg-white">
-        <div className="mx-auto max-w-content flex items-center justify-between px-6 py-3.5">
-          <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Business Debt Insider home">
-            <Image src="/logos/bdi-icon.svg" alt="" width={48} height={48} priority className="h-12 w-auto" />
-            <Image src="/logos/freshline-lockup.svg" alt="Business Debt Insider" width={200} height={50} priority className="h-12 w-auto" />
+        <div className="mx-auto max-w-content flex items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-3.5">
+          <Link href="/" className="flex min-w-0 items-center gap-2 no-underline md:gap-3" aria-label="Business Debt Insider home">
+            <Image src="/logos/bdi-icon.svg" alt="" width={48} height={48} priority className="h-9 w-auto md:h-12" />
+            <Image src="/logos/freshline-lockup.svg" alt="Business Debt Insider" width={200} height={50} priority className="h-9 w-auto md:h-12" />
           </Link>
-          <Link href="#assessment" className="bg-slate text-white px-4 py-2 rounded-lg text-sm font-medium no-underline hover:bg-slate-soft transition">
-            Get free assessment
+          <Link href="#assessment" className="shrink-0 whitespace-nowrap rounded-lg bg-slate px-3 py-1.5 text-xs font-medium text-white no-underline transition hover:bg-slate-soft md:px-4 md:py-2 md:text-sm">
+            Free assessment
           </Link>
         </div>
       </header>

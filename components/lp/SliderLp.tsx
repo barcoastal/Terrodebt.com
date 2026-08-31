@@ -141,7 +141,7 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               {lp.headlineLead} <span className="text-electric">{lp.headlineAccent}</span>{" "}
               {lp.headlineTail}
             </h1>
-            <p className="mt-5 max-w-md leading-relaxed text-muted">{lp.subline}</p>
+            <p className="mt-5 hidden max-w-md leading-relaxed text-muted lg:block">{lp.subline}</p>
           </div>
 
           <div className="order-3 lg:order-none lg:col-start-1">
