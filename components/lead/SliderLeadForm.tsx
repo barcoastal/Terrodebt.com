@@ -74,21 +74,20 @@ export function SliderLeadForm({
           <p className="mb-4 mt-1 text-[12.5px] leading-relaxed text-muted">
             Select your total balance to see your custom relief options
           </p>
-          <div className="mb-5 grid gap-2">
+          <select
+            value={choice?.label ?? ""}
+            onChange={(e) => setChoice(AMOUNT_OPTIONS.find((o) => o.label === e.target.value) ?? null)}
+            className="mb-5 w-full cursor-pointer appearance-none rounded-lg border border-border bg-white bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%228%22%3E%3Cpath%20d%3D%22M1%201l5%205%205-5%22%20stroke%3D%22%23064E3B%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-[right_14px_center] bg-no-repeat px-3.5 py-3 text-[15px] font-semibold text-slate outline-none transition focus:border-electric"
+          >
+            <option value="" disabled>
+              Select
+            </option>
             {AMOUNT_OPTIONS.map((o) => (
-              <button
-                key={o.label}
-                onClick={() => setChoice(o)}
-                className={`rounded-lg border py-2.5 text-[14px] font-semibold transition ${
-                  choice?.label === o.label
-                    ? "border-electric bg-electric/10 text-electric"
-                    : "border-border bg-white text-slate hover:border-electric hover:text-electric"
-                }`}
-              >
+              <option key={o.label} value={o.label}>
                 {o.label}
-              </button>
+              </option>
             ))}
-          </div>
+          </select>
           <button
             onClick={() => {
               if (!choice) return;
