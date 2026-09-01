@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { ProgressBar } from "./ProgressBar";
 import { bucketFromAmount, type LeadInput } from "@/lib/lead-schema";
+import { AMOUNT_OPTIONS, type AmountOption } from "./amount-options";
 import { submitLead } from "@/app/actions/submit-lead";
 
 const initial: LeadInput = {
@@ -148,41 +149,75 @@ function Choice({ active, onClick, children, big }: { active?: boolean; onClick:
   );
 }
 
-function DebtStep({ value, onChange, onAdvance }: { value: number; onChange: (v: number) => void; onAdvance: () => void }) {
-  function onKey(e: React.KeyboardEvent) {
-    if (e.key === "Enter") { e.preventDefault(); onAdvance(); }
+function DebtStep({ onChange, onAdvance }: { value: number; onChange: (v: number) => void; onAdvance: () => void }) {
+  const [choice, setChoice] = useState<AmountOption | null>(null);
+  const [open, setOpen] = useState(false);
+  const [declined, setDeclined] = useState(false);
+
+  if (declined) {
+    return (
+      <Question label="Our programs start at $20,000 in business debt.">
+        <p className="text-sm text-muted leading-relaxed">
+          Below that level, professional fees would eat the benefit, so enrolling you would be
+          wrong. At your size, direct negotiation usually works. Start with our free guides on{" "}
+          <a href="/insights/business-debt-negotiation" className="text-electric">negotiating with creditors</a>{" "}
+          and{" "}
+          <a href="/insights/business-debt-management-plan" className="text-electric">building a debt management plan</a>.
+        </p>
+        <button onClick={() => { setDeclined(false); setChoice(null); }} className="mt-6 text-xs text-muted hover:text-slate">← Back</button>
+      </Question>
+    );
   }
-  const formatted = `$${value.toLocaleString()}${value >= 1_000_000 ? "+" : ""}`;
+
   return (
-    <Question label="How much MCA debt do you have?">
-      <div onKeyDown={onKey}>
-        <div className="font-mono text-5xl md:text-6xl font-bold text-electric tracking-tighter">{formatted}</div>
-        <input
-          type="range"
-          min={0}
-          max={1_000_000}
-          step={5_000}
-          value={value}
-          onChange={(e) => onChange(Number(e.target.value))}
-          className="w-full mt-6 accent-electric"
-          aria-label="MCA debt amount"
-        />
-        <div className="mt-2 flex justify-between font-mono text-xs text-muted">
-          <span>$0</span>
-          <span>$250K</span>
-          <span>$500K</span>
-          <span>$750K</span>
-          <span>$1M+</span>
-        </div>
-        <p className="mt-6 text-sm text-muted">Slide to your approximate total across all advances. We&apos;ll tailor the call from here.</p>
+    <Question label="How Much Debt Does Your Business Have?">
+      <p className="text-sm text-muted">Select your total balance to see your custom relief options</p>
+      <div className="relative mt-4">
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          className="flex w-full items-center justify-between rounded-xl border border-border bg-white px-4 py-3.5 text-base font-semibold text-slate outline-none transition focus:border-electric"
+        >
+          <span className={choice ? "" : "text-muted"}>{choice?.label ?? "Select"}</span>
+          <svg className={`h-3 w-3 text-electric transition-transform ${open ? "rotate-180" : ""}`} viewBox="0 0 12 8" fill="none">
+            <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+        {open && (
+          <ul role="listbox" className="absolute left-0 right-0 top-full z-30 mt-1 overflow-hidden rounded-xl border border-border bg-white shadow-soft">
+            {AMOUNT_OPTIONS.map((o) => (
+              <li key={o.label}>
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={choice?.label === o.label}
+                  onClick={() => { setChoice(o); setOpen(false); onChange(o.value); }}
+                  className={`w-full px-4 py-2.5 text-left text-sm font-medium transition ${
+                    choice?.label === o.label ? "bg-electric/10 text-electric" : "text-slate hover:bg-offwhite"
+                  }`}
+                >
+                  {o.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      <div className="mt-8 flex items-center justify-between">
-        <button onClick={onAdvance}
-          className="bg-slate text-white px-5 py-3 rounded-xl text-sm font-medium hover:bg-slate-soft transition flex items-center gap-2">
-          Continue
+      <div className="mt-8">
+        <button
+          onClick={() => {
+            if (!choice) return;
+            if (choice.qualifies) onAdvance();
+            else setDeclined(true);
+          }}
+          disabled={!choice}
+          className="bg-slate text-white px-5 py-3 rounded-xl text-sm font-medium hover:bg-slate-soft transition flex items-center gap-2 disabled:opacity-50"
+        >
+          Check Free Eligibility
           <span aria-hidden>→</span>
         </button>
-        <span className="font-mono text-xs text-muted">press <kbd className="bg-offwhite border border-border rounded px-1.5 py-0.5">Enter</kbd></span>
       </div>
     </Question>
   );

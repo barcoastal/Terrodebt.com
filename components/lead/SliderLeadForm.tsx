@@ -4,16 +4,9 @@ import { useRouter } from "next/navigation";
 import { bucketFromAmount, type LeadInput } from "@/lib/lead-schema";
 import { submitLead } from "@/app/actions/submit-lead";
 
-const TOTAL_STEPS = 3;
+import { AMOUNT_OPTIONS, type AmountOption } from "./amount-options";
 
-const AMOUNT_OPTIONS = [
-  { label: "Under $20,000", value: 10_000, qualifies: false },
-  { label: "$20,000 - $50,000", value: 35_000, qualifies: true },
-  { label: "$50,000 - $100,000", value: 75_000, qualifies: true },
-  { label: "$100,000 - $500,000", value: 300_000, qualifies: true },
-  { label: "$500,000 - $1,000,000", value: 750_000, qualifies: true },
-  { label: "$1,000,000+", value: 1_000_000, qualifies: true },
-];
+const TOTAL_STEPS = 3;
 
 const inputCls =
   "w-full rounded-lg border border-border bg-white px-3.5 py-2.5 text-sm text-slate placeholder-muted outline-none transition focus:border-electric";
@@ -27,7 +20,7 @@ export function SliderLeadForm({
 }) {
   const router = useRouter();
   const [step, setStep] = useState(1);
-  const [choice, setChoice] = useState<(typeof AMOUNT_OPTIONS)[number] | null>(null);
+  const [choice, setChoice] = useState<AmountOption | null>(null);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [disqualified, setDisqualified] = useState(false);
   const amount = choice?.value ?? 0;
