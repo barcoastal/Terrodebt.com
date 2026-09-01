@@ -6,9 +6,14 @@ import { submitLead } from "@/app/actions/submit-lead";
 
 const TOTAL_STEPS = 3;
 
-function fmt(n: number) {
-  return n >= 1_000_000 ? "$1M+" : "$" + Math.round(n).toLocaleString("en-US");
-}
+const AMOUNT_OPTIONS = [
+  { label: "Under $20,000", value: 10_000, qualifies: false },
+  { label: "$20,000 - $50,000", value: 35_000, qualifies: true },
+  { label: "$50,000 - $100,000", value: 75_000, qualifies: true },
+  { label: "$100,000 - $500,000", value: 300_000, qualifies: true },
+  { label: "$500,000 - $1,000,000", value: 750_000, qualifies: true },
+  { label: "$1,000,000+", value: 1_000_000, qualifies: true },
+];
 
 const inputCls =
   "w-full rounded-lg border border-border bg-white px-3.5 py-2.5 text-sm text-slate placeholder-muted outline-none transition focus:border-electric";
@@ -22,7 +27,9 @@ export function SliderLeadForm({
 }) {
   const router = useRouter();
   const [step, setStep] = useState(1);
-  const [amount, setAmount] = useState(100_000);
+  const [choice, setChoice] = useState<(typeof AMOUNT_OPTIONS)[number] | null>(null);
+  const [disqualified, setDisqualified] = useState(false);
+  const amount = choice?.value ?? 0;
   const [hasMca, setHasMca] = useState<boolean | undefined>(undefined);
   const [contact, setContact] = useState({ businessName: "", firstName: "", lastName: "", phone: "", email: "" });
   const [submitting, setSubmitting] = useState(false);
@@ -61,33 +68,66 @@ export function SliderLeadForm({
         Step {step} / {TOTAL_STEPS}
       </div>
 
-      {step === 1 && (
+      {step === 1 && !disqualified && (
         <>
           <div className="mb-1 text-[17px] font-bold text-slate">{question}</div>
-          <div className="mb-4 text-[28px] font-extrabold tabular-nums text-electric">{fmt(amount)}</div>
-          <input
-            type="range"
-            min={0}
-            max={1_000_000}
-            step={10_000}
-            value={amount}
-            onChange={(e) => setAmount(+e.target.value)}
-            className="lp-slider w-full cursor-pointer"
-            aria-label="Total active MCA advances"
-          />
-          <div className="mb-5 mt-1 flex justify-between text-[10.5px] text-muted">
-            <span>$0</span><span>$250K</span><span>$500K</span><span>$750K</span><span>$1M+</span>
-          </div>
-          <p className="mb-5 text-[12.5px] leading-relaxed text-muted">
-            Select your total MCA balance to see your custom relief options
+          <p className="mb-4 mt-1 text-[12.5px] leading-relaxed text-muted">
+            Select your total balance to see your custom relief options
           </p>
+          <div className="mb-5 grid gap-2">
+            {AMOUNT_OPTIONS.map((o) => (
+              <button
+                key={o.label}
+                onClick={() => setChoice(o)}
+                className={`rounded-lg border py-2.5 text-[14px] font-semibold transition ${
+                  choice?.label === o.label
+                    ? "border-electric bg-electric/10 text-electric"
+                    : "border-border bg-white text-slate hover:border-electric hover:text-electric"
+                }`}
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
           <button
-            onClick={() => setStep(2)}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-electric py-3 text-[15px] font-bold text-white transition hover:bg-electric-soft"
+            onClick={() => {
+              if (!choice) return;
+              if (choice.qualifies) setStep(2);
+              else setDisqualified(true);
+            }}
+            disabled={!choice}
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-electric py-3 text-[15px] font-bold text-white transition hover:bg-electric-soft disabled:opacity-50"
           >
             Check Free Eligibility →
           </button>
         </>
+      )}
+
+      {disqualified && (
+        <div className="py-2">
+          <div className="mb-2 text-[17px] font-bold text-slate">
+            Our programs start at $20,000 in business debt.
+          </div>
+          <p className="text-sm leading-relaxed text-muted">
+            Below that level, professional fees would eat the benefit, so enrolling you would be
+            wrong. The good news: at your size, direct negotiation usually works. Start with our
+            free guides on{" "}
+            <a href="/insights/business-debt-negotiation" className="text-electric">
+              negotiating with creditors
+            </a>{" "}
+            and{" "}
+            <a href="/insights/business-debt-management-plan" className="text-electric">
+              building a debt management plan
+            </a>
+            .
+          </p>
+          <button
+            onClick={() => { setDisqualified(false); setChoice(null); }}
+            className="mt-4 text-xs text-muted hover:text-slate"
+          >
+            ← Back
+          </button>
+        </div>
       )}
 
       {step === 2 && (
@@ -150,34 +190,6 @@ export function SliderLeadForm({
         <a href="/privacy" className="text-electric">Privacy Policy</a>.
       </div>
 
-      <style jsx global>{`
-        .lp-slider {
-          appearance: none;
-          height: 4px;
-          border-radius: 2px;
-          background: #e5e5e5;
-          outline: none;
-        }
-        .lp-slider::-webkit-slider-thumb {
-          appearance: none;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: #064e3b;
-          border: 2px solid #ffffff;
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-          cursor: pointer;
-        }
-        .lp-slider::-moz-range-thumb {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: #064e3b;
-          border: 2px solid #ffffff;
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-          cursor: pointer;
-        }
-      `}</style>
     </div>
   );
 }
