@@ -28,6 +28,7 @@ export function SliderLeadForm({
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [choice, setChoice] = useState<(typeof AMOUNT_OPTIONS)[number] | null>(null);
+  const [pickerOpen, setPickerOpen] = useState(false);
   const [disqualified, setDisqualified] = useState(false);
   const amount = choice?.value ?? 0;
   const [hasMca, setHasMca] = useState<boolean | undefined>(undefined);
@@ -74,20 +75,48 @@ export function SliderLeadForm({
           <p className="mb-4 mt-1 text-[12.5px] leading-relaxed text-muted">
             Select your total balance to see your custom relief options
           </p>
-          <select
-            value={choice?.label ?? ""}
-            onChange={(e) => setChoice(AMOUNT_OPTIONS.find((o) => o.label === e.target.value) ?? null)}
-            className="mb-5 w-full cursor-pointer appearance-none rounded-lg border border-border bg-white bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%228%22%3E%3Cpath%20d%3D%22M1%201l5%205%205-5%22%20stroke%3D%22%23064E3B%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-[right_14px_center] bg-no-repeat px-3.5 py-3 text-[15px] font-semibold text-slate outline-none transition focus:border-electric"
-          >
-            <option value="" disabled>
-              Select
-            </option>
-            {AMOUNT_OPTIONS.map((o) => (
-              <option key={o.label} value={o.label}>
-                {o.label}
-              </option>
-            ))}
-          </select>
+          <div className="relative mb-5">
+            <button
+              type="button"
+              onClick={() => setPickerOpen((v) => !v)}
+              aria-haspopup="listbox"
+              aria-expanded={pickerOpen}
+              className="flex w-full items-center justify-between rounded-lg border border-border bg-white px-3.5 py-3 text-[15px] font-semibold text-slate outline-none transition focus:border-electric"
+            >
+              <span className={choice ? "" : "text-muted"}>{choice?.label ?? "Select"}</span>
+              <svg
+                className={`h-3 w-3 text-electric transition-transform ${pickerOpen ? "rotate-180" : ""}`}
+                viewBox="0 0 12 8"
+                fill="none"
+              >
+                <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </button>
+            {pickerOpen && (
+              <ul
+                role="listbox"
+                className="absolute left-0 right-0 top-full z-30 mt-1 overflow-hidden rounded-lg border border-border bg-white shadow-soft"
+              >
+                {AMOUNT_OPTIONS.map((o) => (
+                  <li key={o.label}>
+                    <button
+                      type="button"
+                      role="option"
+                      aria-selected={choice?.label === o.label}
+                      onClick={() => { setChoice(o); setPickerOpen(false); }}
+                      className={`w-full px-3.5 py-2.5 text-left text-[14px] font-medium transition ${
+                        choice?.label === o.label
+                          ? "bg-electric/10 text-electric"
+                          : "text-slate hover:bg-offwhite"
+                      }`}
+                    >
+                      {o.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
           <button
             onClick={() => {
               if (!choice) return;
