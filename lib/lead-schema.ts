@@ -20,6 +20,23 @@ export const CONSENT_TEXT =
 
 export type LeadInput = z.infer<typeof leadSchema>;
 
+export function isValidUsPhone(raw: string): boolean {
+  const d = (raw ?? "").replace(/\D/g, "");
+  // 10-digit US number, or 11 digits with a leading country code "1".
+  if (d.length === 11 && d.startsWith("1")) return isValidNanp(d.slice(1));
+  if (d.length === 10) return isValidNanp(d);
+  return false;
+}
+
+// North American Numbering Plan: area code and exchange code must start 2-9.
+function isValidNanp(d: string): boolean {
+  return /^[2-9]\d{2}[2-9]\d{6}$/.test(d);
+}
+
+export function isValidEmail(raw: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((raw ?? "").trim());
+}
+
 export function bucketFromAmount(amount: number): typeof debtBuckets[number] | null {
   if (amount <= 0) return null;
   if (amount < 25_000) return "<25k";

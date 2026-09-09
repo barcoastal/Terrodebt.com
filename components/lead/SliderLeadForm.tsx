@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { bucketFromAmount, type LeadInput } from "@/lib/lead-schema";
+import { bucketFromAmount, isValidUsPhone, isValidEmail, type LeadInput } from "@/lib/lead-schema";
 import { submitLead } from "@/app/actions/submit-lead";
 
 import { AMOUNT_OPTIONS, type AmountOption } from "./amount-options";
@@ -23,15 +23,26 @@ export function SliderLeadForm({
   const [choice, setChoice] = useState<AmountOption | null>(null);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [disqualified, setDisqualified] = useState(false);
+  const [noMca, setNoMca] = useState(false);
   const amount = choice?.value ?? 0;
   const [hasMca, setHasMca] = useState<boolean | undefined>(undefined);
   const [contact, setContact] = useState({ businessName: "", firstName: "", lastName: "", phone: "", email: "" });
+  const [touched, setTouched] = useState<{ phone?: boolean; email?: boolean }>({});
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   function update(k: keyof typeof contact, v: string) {
     setContact((c) => ({ ...c, [k]: v }));
   }
+
+  const phoneValid = isValidUsPhone(contact.phone);
+  const emailValid = isValidEmail(contact.email);
+  const contactValid =
+    contact.businessName.trim().length > 0 &&
+    contact.firstName.trim().length > 0 &&
+    contact.lastName.trim().length > 0 &&
+    phoneValid &&
+    emailValid;
 
   async function submit() {
     setSubmitting(true);
@@ -151,7 +162,7 @@ export function SliderLeadForm({
         </div>
       )}
 
-      {step === 2 && (
+      {step === 2 && !noMca && (
         <>
           <div className="mb-5 text-[17px] font-bold text-slate">Do you have more than one active advance?</div>
           <div className="grid grid-cols-2 gap-3">
@@ -161,7 +172,7 @@ export function SliderLeadForm({
             ].map((o) => (
               <button
                 key={o.label}
-                onClick={() => { setHasMca(o.value); setStep(3); }}
+                onClick={() => { setHasMca(o.value); if (o.value) { setNoMca(false); setStep(3); } else { setNoMca(true); } }}
                 className="rounded-lg border border-border bg-white py-4 text-[15px] font-bold text-slate transition hover:border-electric hover:text-electric"
               >
                 {o.label}
@@ -169,10 +180,32 @@ export function SliderLeadForm({
             ))}
           </div>
           <p className="mt-5 text-[12.5px] leading-relaxed text-muted">
-            Stacked advances are our specialty. Single-advance situations work too.
+            Stacked advances are our specialty. This program is built for businesses with more than one active advance.
           </p>
           <button onClick={() => setStep(1)} className="mt-4 text-xs text-muted hover:text-slate">← Back</button>
         </>
+      )}
+
+      {step === 2 && noMca && (
+        <div className="py-2">
+          <div className="mb-2 text-[17px] font-bold text-slate">
+            This program is for businesses with multiple advances.
+          </div>
+          <p className="text-sm leading-relaxed text-muted">
+            Our restructuring program is built for businesses juggling more than one merchant cash
+            advance. With a single advance, direct negotiation usually works and professional fees
+            would outweigh the benefit. Start with our free guides on{" "}
+            <a href="/insights/business-debt-negotiation" className="text-electric">negotiating with creditors</a>{" "}
+            and{" "}
+            <a href="/insights/how-mca-debt-relief-actually-works" className="text-electric">how MCA debt relief works</a>.
+          </p>
+          <button
+            onClick={() => { setNoMca(false); setHasMca(undefined); }}
+            className="mt-4 text-xs text-muted hover:text-slate"
+          >
+            ← Back
+          </button>
+        </div>
       )}
 
       {step === 3 && (
@@ -184,14 +217,40 @@ export function SliderLeadForm({
               <input className={inputCls} placeholder="First name" value={contact.firstName} onChange={(e) => update("firstName", e.target.value)} />
               <input className={inputCls} placeholder="Last name" value={contact.lastName} onChange={(e) => update("lastName", e.target.value)} />
             </div>
-            <input className={inputCls} placeholder="Phone" inputMode="tel" value={contact.phone} onChange={(e) => update("phone", e.target.value)} />
-            <input className={inputCls} placeholder="Email" inputMode="email" value={contact.email} onChange={(e) => update("email", e.target.value)} />
+            <div>
+              <input
+                className={`${inputCls} ${touched.phone && !phoneValid ? "border-red-500 focus:border-red-500" : ""}`}
+                placeholder="Phone"
+                inputMode="tel"
+                value={contact.phone}
+                onChange={(e) => update("phone", e.target.value)}
+                onBlur={() => setTouched((t) => ({ ...t, phone: true }))}
+                aria-invalid={touched.phone && !phoneValid}
+              />
+              {touched.phone && !phoneValid && (
+                <p className="mt-1 text-[11px] text-red-600">Enter a valid 10-digit US phone number.</p>
+              )}
+            </div>
+            <div>
+              <input
+                className={`${inputCls} ${touched.email && !emailValid ? "border-red-500 focus:border-red-500" : ""}`}
+                placeholder="Email"
+                inputMode="email"
+                value={contact.email}
+                onChange={(e) => update("email", e.target.value)}
+                onBlur={() => setTouched((t) => ({ ...t, email: true }))}
+                aria-invalid={touched.email && !emailValid}
+              />
+              {touched.email && !emailValid && (
+                <p className="mt-1 text-[11px] text-red-600">Enter a valid email address.</p>
+              )}
+            </div>
           </div>
           {error && <p className="mt-3 text-xs text-red-600">{error}</p>}
           <button
             onClick={submit}
-            disabled={submitting}
-            className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-electric py-3 text-[15px] font-bold text-white transition hover:bg-electric-soft disabled:opacity-60"
+            disabled={submitting || !contactValid}
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-electric py-3 text-[15px] font-bold text-white transition hover:bg-electric-soft disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {submitting ? "Submitting..." : "Get my free assessment →"}
           </button>

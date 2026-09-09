@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { ProgressBar } from "./ProgressBar";
-import { bucketFromAmount, type LeadInput } from "@/lib/lead-schema";
+import { bucketFromAmount, isValidUsPhone, isValidEmail, type LeadInput } from "@/lib/lead-schema";
 import { AMOUNT_OPTIONS, type AmountOption } from "./amount-options";
 import { submitLead } from "@/app/actions/submit-lead";
 
@@ -30,6 +30,7 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [mcaDeclined, setMcaDeclined] = useState(false);
 
   function update<K extends keyof LeadInput>(k: K, v: LeadInput[K]) {
     setData((d) => ({ ...d, [k]: v }));
@@ -99,13 +100,26 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
             {step === 1 && (
               <DebtStep value={data.debtAmount} onChange={(v) => update("debtAmount", v)} onAdvance={next} />
             )}
-            {step === 2 && (
+            {step === 2 && !mcaDeclined && (
               <Question label="Do you have more than one MCA loan?">
                 <div className="grid grid-cols-2 gap-3">
-                  <Choice big active={data.hasMcaDebt === true} onClick={() => { update("hasMcaDebt", true); next(); }}>Yes</Choice>
-                  <Choice big active={data.hasMcaDebt === false} onClick={() => { update("hasMcaDebt", false); next(); }}>No</Choice>
+                  <Choice big active={data.hasMcaDebt === true} onClick={() => { update("hasMcaDebt", true); setMcaDeclined(false); next(); }}>Yes</Choice>
+                  <Choice big active={data.hasMcaDebt === false} onClick={() => { update("hasMcaDebt", false); setMcaDeclined(true); }}>No</Choice>
                 </div>
-                <p className="mt-6 text-sm text-muted">Stacked MCAs are our specialty. We work with single-MCA situations too.</p>
+                <p className="mt-6 text-sm text-muted">Stacked MCAs are our specialty. This program is built for businesses juggling more than one advance.</p>
+              </Question>
+            )}
+            {step === 2 && mcaDeclined && (
+              <Question label="This program is for businesses with multiple MCAs.">
+                <p className="text-sm text-muted leading-relaxed">
+                  Our restructuring program is built for businesses juggling more than one merchant cash
+                  advance. With a single MCA, direct negotiation usually works and professional fees would
+                  outweigh the benefit. Start with our free guides on{" "}
+                  <a href="/insights/business-debt-negotiation" className="text-electric">negotiating with creditors</a>{" "}
+                  and{" "}
+                  <a href="/insights/how-mca-debt-relief-actually-works" className="text-electric">how MCA debt relief works</a>.
+                </p>
+                <button onClick={() => { setMcaDeclined(false); update("hasMcaDebt", true); }} className="mt-6 text-xs text-muted hover:text-slate">← Back</button>
               </Question>
             )}
             {step === 3 && (
@@ -231,14 +245,17 @@ function ContactStep({ data, onUpdate, onSubmit, submitting }: {
 }) {
   const firstRef = useRef<HTMLInputElement | null>(null);
   const [consent, setConsent] = useState(false);
+  const [touched, setTouched] = useState<{ phone?: boolean; email?: boolean }>({});
   useEffect(() => { firstRef.current?.focus(); }, []);
 
+  const phoneValid = isValidUsPhone(data.phone);
+  const emailValid = isValidEmail(data.email);
   const fieldsValid =
     data.businessName.trim().length > 0 &&
     data.firstName.trim().length > 0 &&
     data.lastName.trim().length > 0 &&
-    data.phone.trim().length >= 7 &&
-    /\S+@\S+\.\S+/.test(data.email);
+    phoneValid &&
+    emailValid;
   const valid = fieldsValid && consent;
 
   function onSubmitForm(e: React.FormEvent) {
@@ -267,10 +284,34 @@ function ContactStep({ data, onUpdate, onSubmit, submitting }: {
           <input type="text" required value={data.lastName} onChange={(e) => onUpdate("lastName", e.target.value)} placeholder="Pierce" className={inputCls} />
         </Field>
         <Field label="Phone">
-          <input type="tel" required value={data.phone} onChange={(e) => onUpdate("phone", e.target.value)} placeholder="(555) 123-4567" className={inputCls} />
+          <input
+            type="tel"
+            required
+            value={data.phone}
+            onChange={(e) => onUpdate("phone", e.target.value)}
+            onBlur={() => setTouched((t) => ({ ...t, phone: true }))}
+            placeholder="(555) 123-4567"
+            aria-invalid={touched.phone && !phoneValid}
+            className={`${inputCls} ${touched.phone && !phoneValid ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" : ""}`}
+          />
+          {touched.phone && !phoneValid && (
+            <p className="mt-1 text-xs text-red-600">Enter a valid 10-digit US phone number.</p>
+          )}
         </Field>
         <Field label="Email">
-          <input type="email" required value={data.email} onChange={(e) => onUpdate("email", e.target.value)} placeholder="you@business.com" className={inputCls} />
+          <input
+            type="email"
+            required
+            value={data.email}
+            onChange={(e) => onUpdate("email", e.target.value)}
+            onBlur={() => setTouched((t) => ({ ...t, email: true }))}
+            placeholder="you@business.com"
+            aria-invalid={touched.email && !emailValid}
+            className={`${inputCls} ${touched.email && !emailValid ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" : ""}`}
+          />
+          {touched.email && !emailValid && (
+            <p className="mt-1 text-xs text-red-600">Enter a valid email address.</p>
+          )}
         </Field>
       </div>
 
@@ -301,7 +342,7 @@ function ContactStep({ data, onUpdate, onSubmit, submitting }: {
   );
 }
 
-const inputCls = "w-full bg-white border border-border rounded-lg px-3 py-3 text-base text-slate focus:border-electric focus:ring-2 focus:ring-electric/20 outline-none transition placeholder:text-muted/60";
+const inputCls ="w-full bg-white border border-border rounded-lg px-3 py-3 text-base text-slate focus:border-electric focus:ring-2 focus:ring-electric/20 outline-none transition placeholder:text-muted/60";
 
 function Field({ label, children, className }: { label: string; children: React.ReactNode; className?: string }) {
   return (

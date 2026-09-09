@@ -2,10 +2,18 @@
 import { cookies, headers } from "next/headers";
 import { createLead, type LeadSubmitInput } from "@/lib/lead-service";
 import { fanOutIntegrations } from "@/lib/integrations";
+import { isValidUsPhone, isValidEmail } from "@/lib/lead-schema";
 import { db } from "@/lib/db";
 
 export async function submitLead(input: Omit<LeadSubmitInput, "ip" | "userAgent" | "eliClickid">) {
   try {
+    if (!isValidUsPhone(input.phone ?? "")) {
+      return { ok: false as const, error: "Please enter a valid US phone number." };
+    }
+    if (!isValidEmail(input.email ?? "")) {
+      return { ok: false as const, error: "Please enter a valid email address." };
+    }
+
     const c = await cookies();
     const h = await headers();
     const eliClickid = c.get("eli_clickid")?.value;
