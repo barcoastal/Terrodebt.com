@@ -118,6 +118,11 @@ const STATS = [
 ];
 
 export function SliderLp({ lp }: { lp: SliderLpConfig }) {
+  const steps = lp.steps ?? STEPS;
+  const why = lp.why ?? WHY;
+  const stats = lp.stats ?? STATS;
+  const faq = lp.faq ?? FAQ;
+  const h = lp.headings ?? {};
   return (
     <article>
       {/* Hero + form */}
@@ -190,11 +195,11 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               How it works
             </div>
             <h2 className="mb-10 max-w-xl text-[clamp(24px,3.5vw,36px)] font-bold leading-tight tracking-tighter text-slate">
-              Three steps from drowning to a plan that holds.
+              {h.howItWorks ?? "Three steps from drowning to a plan that holds."}
             </h2>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-3">
-            {STEPS.map((s, i) => (
+            {steps.map((s, i) => (
               <Reveal key={s.n}>
                 <div className="relative h-full">
                   <div className="surface-card-elevated h-full p-7">
@@ -206,7 +211,7 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
                     </div>
                     <p className="text-sm leading-relaxed text-muted">{s.body}</p>
                   </div>
-                  {i < STEPS.length - 1 && (
+                  {i < steps.length - 1 && (
                     <span className="absolute -right-5 top-1/2 hidden -translate-y-1/2 text-2xl text-electric md:block" aria-hidden>
                       →
                     </span>
@@ -226,11 +231,11 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               Why merchants choose us
             </div>
             <h2 className="mb-10 max-w-xl text-[clamp(24px,3.5vw,36px)] font-bold leading-tight tracking-tighter text-slate">
-              Keep your business operating while the debt gets fixed.
+              {h.why ?? "Keep your business operating while the debt gets fixed."}
             </h2>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-3">
-            {WHY.map((c) => (
+            {why.map((c) => (
               <Reveal key={c.n}>
                 <div className="surface-card h-full p-6">
                   <div className="mb-2 flex items-baseline gap-2.5">
@@ -253,11 +258,11 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               By the numbers
             </div>
             <h2 className="mb-10 text-[clamp(24px,3.5vw,36px)] font-bold tracking-tighter text-slate">
-              Specific outcomes, not theatrics.
+              {h.stats ?? "Specific outcomes, not theatrics."}
             </h2>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-3">
-            {STATS.map((s, i) => (
+            {stats.map((s, i) => (
               <Reveal key={s.n}>
                 <div
                   className={`h-full rounded-2xl p-7 shadow-soft ${
@@ -284,7 +289,7 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               From the files
             </div>
             <h2 className="mb-10 max-w-xl text-[clamp(24px,3.5vw,36px)] font-bold leading-tight tracking-tighter text-slate">
-              Owners who were where you are.
+              {h.testimonials ?? "Owners who were where you are."}
             </h2>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-3">
@@ -320,7 +325,7 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
         <Reveal>
           <div className="mx-auto flex max-w-content flex-col items-center justify-between gap-5 rounded-3xl bg-ink px-8 py-10 md:flex-row md:px-12">
             <h2 className="text-center text-[clamp(22px,3vw,32px)] font-bold tracking-tighter text-white md:text-left">
-              See what we can do for your business.
+              {h.ctaBand ?? "See what we can do for your business."}
             </h2>
             <a
               href="#assessment"
@@ -340,7 +345,7 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
               The difference
             </div>
             <h2 className="mb-10 max-w-xl text-[clamp(24px,3.5vw,36px)] font-bold leading-tight tracking-tighter text-slate">
-              Not another enrollment mill.
+              {h.difference ?? "Not another enrollment mill."}
             </h2>
           </Reveal>
           <div className="grid items-stretch gap-8 lg:grid-cols-[1fr_320px]">
@@ -383,18 +388,18 @@ export function SliderLp({ lp }: { lp: SliderLpConfig }) {
 
       {/* FAQ */}
       <section className="border-y border-border bg-white px-6 py-16 lg:py-20">
-        <FaqJsonLd items={FAQ} />
+        <FaqJsonLd items={faq} />
         <div className="mx-auto max-w-content">
           <Reveal>
             <div className="mb-2 font-mono text-[11px] font-bold uppercase tracking-[1.2px] text-electric">
               Questions owners actually ask
             </div>
             <h2 className="mb-10 max-w-xl text-[clamp(24px,3.5vw,36px)] font-bold leading-tight tracking-tighter text-slate">
-              Straight answers, before you ever call.
+              {h.faq ?? "Straight answers, before you ever call."}
             </h2>
           </Reveal>
           <div className="grid gap-x-10 gap-y-8 md:grid-cols-2">
-            {FAQ.map((f) => (
+            {faq.map((f) => (
               <Reveal key={f.q}>
                 <div>
                   <h3 className="mb-2 text-[16px] font-bold text-slate">{f.q}</h3>
