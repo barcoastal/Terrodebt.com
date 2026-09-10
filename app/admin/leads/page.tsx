@@ -2,6 +2,7 @@ import Link from "next/link";
 import { db } from "@/lib/db";
 import type { Prisma } from "@/app/generated/prisma";
 import { STATUS_LABELS, type LeadStatus } from "@/lib/lead-funnel";
+import { backfillDebtRanges, countOldFormatLeads } from "./actions";
 
 const STATUS_COLORS: Record<string, string> = {
   new: "bg-slate-100 text-slate-700 border-slate-200",
@@ -45,11 +46,23 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
     ]);
   } catch {}
 
+  let oldFormatCount = 0;
+  try { oldFormatCount = await countOldFormatLeads(); } catch {}
+
   return (
     <>
       <div className="flex items-center justify-between flex-wrap gap-3">
         <h1 className="text-2xl font-bold">Leads</h1>
-        <a href="/api/admin/leads/export" className="bg-electric text-white px-3 py-2 rounded-md text-sm no-underline">Export CSV</a>
+        <div className="flex items-center gap-2">
+          {oldFormatCount > 0 && (
+            <form action={backfillDebtRanges}>
+              <button className="bg-amber-500 text-white px-3 py-2 rounded-md text-sm">
+                Fix debt ranges on {oldFormatCount} old lead{oldFormatCount === 1 ? "" : "s"}
+              </button>
+            </form>
+          )}
+          <a href="/api/admin/leads/export" className="bg-electric text-white px-3 py-2 rounded-md text-sm no-underline">Export CSV</a>
+        </div>
       </div>
 
       <form className="mt-4 grid md:grid-cols-6 gap-2 text-sm">
