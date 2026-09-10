@@ -34,8 +34,8 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
       {/* Qualification */}
       <Section title="Qualification">
         <Field label="Has more than 1 MCA" value={lead.hasMcaDebt ? "Yes" : "No"} />
-        <Field label="Debt amount (raw)" value={lead.debtAmount != null ? `$${lead.debtAmount.toLocaleString()}` : "-"} mono />
-        <Field label="Debt bucket" value={lead.debtAmountBucket ?? "-"} mono />
+        <Field label="Debt amount (selected range)" value={lead.debtAmountBucket ?? "-"} mono />
+        <Field label="Debt amount (estimate)" value={lead.debtAmount != null ? `$${lead.debtAmount.toLocaleString()}` : "-"} mono />
         <Field label="Source page" value={lead.source} mono />
         <Field label="Status" value={lead.status} />
       </Section>

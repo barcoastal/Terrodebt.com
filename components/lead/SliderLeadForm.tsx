@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { bucketFromAmount, isValidUsPhone, isValidEmail, type LeadInput } from "@/lib/lead-schema";
+import { isValidUsPhone, isValidEmail, type LeadInput } from "@/lib/lead-schema";
 import { submitLead } from "@/app/actions/submit-lead";
 
 import { AMOUNT_OPTIONS, type AmountOption } from "./amount-options";
@@ -51,7 +51,7 @@ export function SliderLeadForm({
       const meta = readClientMeta();
       const payload: LeadInput = {
         debtAmount: amount,
-        debtAmountBucket: bucketFromAmount(amount),
+        debtAmountBucket: choice?.label ?? null,
         hasMcaDebt: hasMca,
         ...contact,
         source,

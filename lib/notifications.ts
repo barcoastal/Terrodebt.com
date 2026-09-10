@@ -30,10 +30,12 @@ async function emailNotification(subject: string, html: string) {
 }
 
 function fmtDebt(lead: Lead): string {
+  // Prefer the exact range the lead selected (e.g. "$50,000 - $100,000").
+  if (lead.debtAmountBucket) return lead.debtAmountBucket;
   if (typeof lead.debtAmount === "number" && lead.debtAmount > 0) {
     return `$${lead.debtAmount.toLocaleString()}`;
   }
-  return lead.debtAmountBucket ?? "n/a";
+  return "n/a";
 }
 
 async function postToSlack(text: string) {

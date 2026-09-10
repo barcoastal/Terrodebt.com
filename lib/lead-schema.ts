@@ -5,7 +5,8 @@ export const debtBuckets = ["<25k", "25k-75k", "75k-200k", "200k-500k", "500k+"]
 export const leadSchema = z.object({
   debtAmount: z.number().min(0).max(1_000_000),
   hasMcaDebt: z.boolean().optional(),
-  debtAmountBucket: z.enum(debtBuckets).nullable().optional(),
+  // Stores the exact range label the lead selected, e.g. "$50,000 - $100,000".
+  debtAmountBucket: z.string().nullable().optional(),
   businessName: z.string().min(1, "Business name required"),
   firstName: z.string().min(1, "First name required"),
   lastName: z.string().min(1, "Last name required"),

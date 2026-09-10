@@ -168,7 +168,7 @@ export default async function VisitorDetailPage({ params }: { params: Promise<{ 
                   <td className="px-3 py-2">{fmt(l.createdAt)}</td>
                   <td>{l.businessName}</td>
                   <td>{l.source}</td>
-                  <td className="font-mono">{l.debtAmount ? `$${l.debtAmount.toLocaleString()}` : (l.debtAmountBucket ?? "-")}</td>
+                  <td className="font-mono">{l.debtAmountBucket ?? (l.debtAmount ? `$${l.debtAmount.toLocaleString()}` : "-")}</td>
                   <td>{l.status}</td>
                   <td><Link href={`/admin/leads/${l.id}`} className="text-electric">View</Link></td>
                 </tr>

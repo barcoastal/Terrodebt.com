@@ -5,9 +5,9 @@ export async function notifySlack(lead: Lead): Promise<IntegrationResult> {
   const url = process.env.SLACK_LEADS_WEBHOOK_URL;
   if (!url) return { name: "slack", ok: false, error: "SLACK_LEADS_WEBHOOK_URL not set" };
 
-  const debtDisplay = lead.debtAmount != null
-    ? `$${lead.debtAmount.toLocaleString()}${lead.debtAmount >= 1_000_000 ? "+" : ""}${lead.debtAmountBucket ? ` (${lead.debtAmountBucket})` : ""}`
-    : (lead.debtAmountBucket ?? "n/a");
+  // Show the exact range the lead selected (e.g. "$50,000 - $100,000").
+  const debtDisplay = lead.debtAmountBucket
+    ?? (lead.debtAmount != null ? `$${lead.debtAmount.toLocaleString()}` : "n/a");
   const text = `*New Business Debt Insider lead* :seedling:
 *Name:* ${lead.firstName} ${lead.lastName}
 *Business:* ${lead.businessName}

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { ProgressBar } from "./ProgressBar";
-import { bucketFromAmount, isValidUsPhone, isValidEmail, type LeadInput } from "@/lib/lead-schema";
+import { isValidUsPhone, isValidEmail, type LeadInput } from "@/lib/lead-schema";
 import { AMOUNT_OPTIONS, type AmountOption } from "./amount-options";
 import { submitLead } from "@/app/actions/submit-lead";
 
@@ -45,7 +45,6 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
       const meta = readClientMeta();
       const payload: LeadInput = {
         ...data,
-        debtAmountBucket: bucketFromAmount(data.debtAmount),
         hasMcaDebt: data.hasMcaDebt,
       };
       const result = await submitLead({ ...payload, ...meta });
@@ -98,7 +97,10 @@ export function LeadForm({ source = "homepage" }: { source?: string }) {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
             {step === 1 && (
-              <DebtStep value={data.debtAmount} onChange={(v) => update("debtAmount", v)} onAdvance={next} />
+              <DebtStep
+                onSelect={(o) => { update("debtAmount", o.value); update("debtAmountBucket", o.label); }}
+                onAdvance={next}
+              />
             )}
             {step === 2 && !mcaDeclined && (
               <Question label="Do you have more than one MCA loan?">
@@ -163,7 +165,7 @@ function Choice({ active, onClick, children, big }: { active?: boolean; onClick:
   );
 }
 
-function DebtStep({ onChange, onAdvance }: { value: number; onChange: (v: number) => void; onAdvance: () => void }) {
+function DebtStep({ onSelect, onAdvance }: { onSelect: (o: AmountOption) => void; onAdvance: () => void }) {
   const [choice, setChoice] = useState<AmountOption | null>(null);
   const [open, setOpen] = useState(false);
   const [declined, setDeclined] = useState(false);
@@ -207,7 +209,7 @@ function DebtStep({ onChange, onAdvance }: { value: number; onChange: (v: number
                   type="button"
                   role="option"
                   aria-selected={choice?.label === o.label}
-                  onClick={() => { setChoice(o); setOpen(false); onChange(o.value); }}
+                  onClick={() => { setChoice(o); setOpen(false); onSelect(o); }}
                   className={`w-full px-4 py-2.5 text-left text-sm font-medium transition ${
                     choice?.label === o.label ? "bg-electric/10 text-electric" : "text-slate hover:bg-offwhite"
                   }`}
