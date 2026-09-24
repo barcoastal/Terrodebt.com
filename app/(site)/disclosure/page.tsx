@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: "/disclosure" },
   title: "Disclosure",
   description: "Trade name of GRL Recovery LLC. Not a law firm or lender. Coordinated counsel in all 50 states. Outcomes vary by lender mix and contract terms.",
 };

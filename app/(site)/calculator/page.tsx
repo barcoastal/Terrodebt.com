@@ -1,7 +1,8 @@
 import { SavingsCalculator } from "@/components/site/SavingsCalculator";
 import { LeadForm } from "@/components/lead/LeadForm";
 
-export const metadata = { title: "Business Debt Savings Calculator", description: "Estimate the range of savings on stacked business debt across settlement and restructure outcomes." };
+export const metadata = {
+  alternates: { canonical: "/calculator" }, title: "Business Debt Savings Calculator", description: "Estimate the range of savings on stacked business debt across settlement and restructure outcomes." };
 
 export default function CalculatorPage() {
   return (

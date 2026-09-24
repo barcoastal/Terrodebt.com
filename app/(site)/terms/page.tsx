@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: "/terms" },
   title: "Terms of Service",
   description: "The terms that govern your use of Business Debt Insider's website and services. Outcomes vary. Past results do not predict future outcomes.",
 };

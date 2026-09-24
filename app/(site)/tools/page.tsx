@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/tools" },
   title: "Free Business Debt Calculators",
   description: "Free calculators for stacked business debt: effective APR, total stack burden, debt risk score. No email required, runs in your browser.",
 };

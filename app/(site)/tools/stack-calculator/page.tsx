@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { StackCalculator } from "@/components/tools/StackCalculator";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/tools/stack-calculator" },
   title: "Stacked MCA Calculator",
   description: "Calculate total daily debit burden and weighted APR across all your active merchant cash advances. Free, no email required.",
 };

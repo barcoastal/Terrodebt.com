@@ -28,7 +28,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = PROGRAMS[slug as ProgramKey];
   if (!p) return {};
   const meta = PROGRAM_META[slug as ProgramKey];
-  return { title: meta.title, description: meta.description };
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: { canonical: `/programs/${slug}` },
+    openGraph: { title: meta.title, description: meta.description, url: `/programs/${slug}`, type: "website" },
+  };
 }
 
 export default async function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {

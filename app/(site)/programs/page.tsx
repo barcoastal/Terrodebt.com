@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { PROGRAMS, type ProgramKey } from "@/lib/programs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/programs" },
   title: "Business Debt Workout Methods",
   description: "Three workout methods across five debt categories: settlement, restructure, legal defense. Resolves stacked MCA, equipment, vendor, bank, tax debt.",
 };

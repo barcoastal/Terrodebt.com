@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AprCalculator } from "@/components/tools/AprCalculator";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/tools/apr-calculator" },
   title: "MCA Effective APR Calculator",
   description: "Convert factor rate and term length to the real annualized rate on your merchant cash advance. Free, no email required.",
 };

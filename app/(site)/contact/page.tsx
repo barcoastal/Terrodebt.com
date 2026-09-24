@@ -2,6 +2,7 @@ import { LeadForm } from "@/components/lead/LeadForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Schedule an Initial Review",
   description: "Thirty minutes, no fee, confidential. A working call with the practice to determine whether your debt position is a fit for a forensic restructure engagement.",
 };
@@ -121,7 +122,7 @@ export default function InitialReviewPage() {
           </div>
 
           {/* Right: sticky form */}
-          <div className="lg:col-span-5">
+          <div id="review-request" tabIndex={-1} className="lg:col-span-5 scroll-mt-28 lg:scroll-mt-40">
             <div className="lg:sticky lg:top-32">
               <div className="border border-hairline bg-paper">
                 <div className="border-b border-hairline px-6 py-5">

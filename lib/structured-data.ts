@@ -11,7 +11,7 @@ export const ORG_LD = {
   legalName: "GRL Recovery LLC",
   url: SITE,
   logo: LOGO,
-  image: `${SITE}/opengraph-image`,
+  image: `${SITE}/social-image`,
   description:
     "Strategic financial consulting practice in Fort Lauderdale specializing in business debt restructure for small and mid-sized enterprises across MCA, equipment, vendor, bank, and tax debt.",
   areaServed: {
@@ -56,7 +56,7 @@ export type ArticleLdInput = {
 
 export function articleLd(a: ArticleLdInput) {
   const url = `${SITE}/insights/${a.slug}`;
-  const image = a.heroImage ? (a.heroImage.startsWith("http") ? a.heroImage : `${SITE}${a.heroImage}`) : `${SITE}/opengraph-image`;
+  const image = a.heroImage ? (a.heroImage.startsWith("http") ? a.heroImage : `${SITE}${a.heroImage}`) : `${SITE}/social-image`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",

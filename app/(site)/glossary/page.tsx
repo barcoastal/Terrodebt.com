@@ -5,6 +5,7 @@ import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/glossary" },
   title: "Business Debt Glossary",
   description: "Plain-English definitions of business debt restructure terms: factor rate, reconciliation, COJ, Trust Fund Recovery Penalty, UCC filing, and more.",
 };

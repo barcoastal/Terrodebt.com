@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: "/privacy" },
   title: "Privacy Policy",
   description: "How we collect, use, and protect business owner information across the site, initial reviews, and debt restructure engagements.",
 };

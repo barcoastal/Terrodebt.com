@@ -5,22 +5,26 @@ import { db } from "@/lib/db";
 import { SERVICES } from "@/lib/service-content";
 import { priorityVerticals } from "@/lib/vertical-content";
 import { ArticleCover } from "@/components/site/ArticleCover";
+import { LeadForm } from "@/components/lead/LeadForm";
+import { ReviewLink } from "@/components/site/ReviewLink";
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
+import { HOME_TITLE, HOME_DESCRIPTION, HOME_TOPICS, HOME_FAQS } from "@/lib/home-content";
 
 export const metadata: Metadata = {
-  title: { absolute: "Business Debt Insider — Relief, Restructuring & Resolution" },
-  description:
-    "Plain-spoken guides and case-tested workouts on stacked business debt. Daily debits replaced with weekly schedules, resolutions at 40-80% of balance.",
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Business Debt Insider — Relief, Restructuring & Resolution",
-    description:
-      "Plain-spoken guides and case-tested workouts on stacked business debt.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: "/",
+    siteName: "Business Debt Insider",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Business Debt Insider — Relief, Restructuring & Resolution",
-    description:
-      "Plain-spoken guides and case-tested workouts on stacked business debt.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
   },
 };
 
@@ -46,49 +50,68 @@ export default async function Home() {
 
   return (
     <>
+      <FaqJsonLd items={HOME_FAQS} />
       {/* 1. Hero */}
       <section className="bg-paper border-b border-hairline">
-        <div className="mx-auto max-w-content px-6 pt-20 pb-24 md:pt-28 md:pb-32">
-          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">
-            Help for business debt
-          </span>
-          <h1 className="mt-6 max-w-4xl text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-ink leading-[0.95]">
-            When <span className="text-pine">business debt</span> gets out of hand.
-          </h1>
-          <p className="mt-8 max-w-3xl text-lg md:text-xl text-ink leading-relaxed">
-            We pick up the calls. We build the plan. We combine what you owe into one weekly payment. The business keeps operating throughout. No new loans, no bankruptcy filing.
-          </p>
-          <p className="mt-4 max-w-3xl text-base md:text-lg text-muted leading-relaxed">
-            We do not lend and we are not a law firm. Flat fees, documented agreements, no contingency.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-6 items-center">
-            <Link
-              href="/insights"
-              className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-[0.18em] text-pine border-b border-pine pb-1 no-underline hover:text-ink hover:border-ink transition"
-            >
-              Read the guides
-              <span aria-hidden>→</span>
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-[0.18em] text-pine border-b border-pine pb-1 no-underline hover:text-ink hover:border-ink transition"
-            >
-              See the four services
-              <span aria-hidden>→</span>
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-[0.18em] text-muted hover:text-ink transition"
-            >
-              Or schedule a call
-              <span aria-hidden>→</span>
-            </Link>
+        <div className="mx-auto max-w-content px-6 py-12 md:py-16 lg:py-20 grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div className="lg:col-span-7">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">
+              MCA debt relief &amp; business debt restructuring
+            </span>
+            <h1 className="mt-5 text-[2.75rem] sm:text-6xl lg:text-[4.25rem] font-bold tracking-tight text-ink leading-[1.02]">
+              Business debt relief.<br />
+              <span className="text-pine">Start with a clear plan.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-ink leading-relaxed">
+              When MCA payments and other business debts put pressure on cash flow, start by understanding your options. We review what you owe and help you explore a restructuring plan with your existing creditors.
+            </p>
+            <div className="mt-8 flex flex-col sm:items-start gap-4">
+              <ReviewLink
+                href="#free-review"
+                placement="homepage-hero"
+                className="inline-flex min-h-14 items-center justify-center gap-5 bg-pine text-white px-6 py-4 text-base font-semibold no-underline hover:bg-ink transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pine"
+              >
+                Get my free debt review
+                <span aria-hidden>→</span>
+              </ReviewLink>
+              <p className="text-sm text-muted">Free initial review · Confidential · No commitment</p>
+            </div>
+            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-pine underline underline-offset-4 hover:text-ink transition"
+              >
+                Explore our services
+                <span aria-hidden>→</span>
+              </Link>
+              <Link
+                href="/tools/stack-calculator"
+                className="inline-flex items-center gap-2 text-pine underline underline-offset-4 hover:text-ink transition"
+              >
+                Calculate your MCA payments
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+            <p className="mt-8 max-w-xl border-t border-hairline pt-5 text-sm text-muted leading-relaxed">
+              Business Debt Insider is a financial consulting practice, not a lender or law firm. Options depend on your business and creditor agreements.
+            </p>
+          </div>
+          <div id="free-review" tabIndex={-1} aria-labelledby="review-heading" className="lg:col-span-5 scroll-mt-28 lg:scroll-mt-44 border border-hairline bg-paper-mute focus-visible:outline-2 focus-visible:outline-pine">
+            <div className="px-6 pt-6 pb-5">
+              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-pine">Your next step</span>
+              <h2 id="review-heading" className="mt-2 text-2xl font-bold tracking-tight text-ink">Start your free MCA review.</h2>
+              <p className="mt-3 text-sm text-ink leading-relaxed">For businesses with multiple MCAs and $20,000 or more in debt. Start with your balance range.</p>
+            </div>
+            <LeadForm source="homepage-organic-review" />
+            <p className="px-6 py-5 text-sm text-muted leading-relaxed">
+              Have a different business debt question? <a href="tel:+13054949487" className="underline underline-offset-4">Call 305-494-9487</a> to discuss fit.
+            </p>
           </div>
         </div>
       </section>
 
       {/* 2. Four services 2x2 */}
-      <section className="bg-paper border-b border-hairline">
+      <section id="services" className="bg-paper border-b border-hairline scroll-mt-28 lg:scroll-mt-44">
         <div className="mx-auto max-w-content px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-10">
             <div className="md:col-span-4">
@@ -96,7 +119,7 @@ export default async function Home() {
                 Practice areas
               </span>
               <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">
-                Four ways out of business debt.
+                Business debt relief and restructuring services.
               </h2>
             </div>
             <div className="md:col-span-8">
@@ -314,38 +337,7 @@ export default async function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-4">
-            {[
-              {
-                topic: "Stacked MCAs",
-                body: "When a business takes one merchant cash advance, then another, then another, daily debits start outpacing receipts. Guides on how the stack got there, how to ask the lender for a refund or settlement, and what each MCA company usually accepts.",
-                href: "/insights",
-              },
-              {
-                topic: "Confession of Judgment",
-                body: "Most MCA contracts written in New York or Florida include a confession of judgment clause. If a lender files one, your bank account can be frozen in a single business day. Guides on how a COJ gets entered, how to react in the first 48 hours, and what licensed counsel does next.",
-                href: "/insights/coj-filed-against-me",
-              },
-              {
-                topic: "Bank loan workouts",
-                body: "When a covenant gets broken or a payment gets missed, the loan moves from the original banker to the special assets group. Guides on forbearance, covenant waivers, and how to present a credible plan that keeps the relationship alive.",
-                href: "/insights",
-              },
-              {
-                topic: "Equipment finance",
-                body: "Equipment leases and financed assets behave differently than MCAs in a workout. Guides on voluntary surrender, deficiency claims after repossession, and how to decide which pieces are worth keeping.",
-                href: "/insights",
-              },
-              {
-                topic: "Vendor and trade debt",
-                body: "Aged supplier balances do not have to mean losing the supplier. Guides on written paydown plans, COD-plus-arrears arrangements, and mechanic's lien matters in construction and manufacturing.",
-                href: "/insights",
-              },
-              {
-                topic: "Business tax debt",
-                body: "Past-due payroll, sales, and income tax balances carry different risks than other creditors. Guides on installment agreements, offers in compromise, and how trust fund liability can become personal if it is not handled quickly.",
-                href: "/insights",
-              },
-            ].map((c) => (
+            {HOME_TOPICS.map((c) => (
               <Link
                 key={c.topic}
                 href={c.href}
@@ -431,27 +423,46 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 6. Final CTA */}
-      <section className="bg-paper border-b border-hairline">
+      <section className="bg-paper border-b border-hairline" aria-labelledby="faq-heading">
+        <div className="mx-auto max-w-content px-6 py-16 md:py-20 grid lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">Before you start</span>
+            <h2 id="faq-heading" className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">Questions about business debt relief.</h2>
+            <p className="mt-5 text-base text-muted leading-relaxed">Understand the review, who it is for, and what happens next.</p>
+          </div>
+          <div className="lg:col-span-8 border-t border-hairline">
+            {HOME_FAQS.map((faq) => (
+              <details key={faq.q} className="group border-b border-hairline py-5">
+                <summary className="cursor-pointer text-lg font-semibold text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pine">{faq.q}</summary>
+                <p className="mt-4 text-base text-muted leading-relaxed">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-pine border-b border-pine">
         <div className="mx-auto max-w-content px-6 py-16 md:py-20 grid md:grid-cols-12 gap-10 items-end">
           <div className="md:col-span-8">
-            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-              Initial review
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/75">
+              Free, confidential review
             </span>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-ink leading-tight">
-              Schedule an initial review with the practice.
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
+              Know your options before your next move.
             </h2>
-            <p className="mt-4 max-w-2xl text-base md:text-lg text-ink leading-relaxed">
-              Initial reviews are scoped to thirty minutes and are designed to determine whether the practice is the appropriate engagement for the matter. The discussion is confidential and the review itself carries no fee.
+            <p className="mt-4 max-w-2xl text-base md:text-lg text-white/85 leading-relaxed">
+              Start with your business debt balance and a conversation about what comes next. The initial review is free, with no commitment to an engagement.
             </p>
           </div>
           <div className="md:col-span-4 md:text-right">
-            <Link
-              href="/contact"
-              className="inline-flex items-center bg-pine text-paper px-6 py-4 text-sm font-mono uppercase tracking-[0.18em] no-underline hover:bg-ink transition"
+            <ReviewLink
+              href="#free-review"
+              placement="homepage-footer"
+              className="inline-flex min-h-14 items-center justify-center gap-4 bg-white text-pine px-6 py-4 text-base font-semibold no-underline hover:bg-paper-mute transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              Schedule review →
-            </Link>
+              Get my free debt review <span aria-hidden>→</span>
+            </ReviewLink>
           </div>
         </div>
       </section>

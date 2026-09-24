@@ -8,6 +8,15 @@ import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { ArticleCover } from "@/components/site/ArticleCover";
+import { cache } from "react";
+
+const getArticle = cache(async (slug: string) => {
+  try {
+    return await db.article.findUnique({ where: { slug } });
+  } catch {
+    return null;
+  }
+});
 
 function readTime(text: string): number {
   const words = text.split(/\s+/).filter(Boolean).length;
@@ -26,26 +35,36 @@ function topicFromSlug(slug: string): { label: string; href?: string } {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  let a: Awaited<ReturnType<typeof db.article.findUnique>> = null;
-  try {
-    a = await db.article.findUnique({ where: { slug } });
-  } catch {}
-  if (!a) return {};
+  const a = await getArticle(slug);
+  if (!a || !a.published) notFound();
+  const url = `/insights/${a.slug}`;
+  const image = a.heroImage || "/social-image";
   return {
     title: a.title,
     description: a.excerpt ?? undefined,
-    openGraph: a.heroImage ? { images: [{ url: a.heroImage, alt: a.title }] } : undefined,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      title: a.title,
+      description: a.excerpt ?? undefined,
+      url,
+      siteName: "Business Debt Insider",
+      publishedTime: (a.publishedAt ?? a.createdAt).toISOString(),
+      modifiedTime: a.updatedAt.toISOString(),
+      images: [{ url: image, alt: a.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: a.title,
+      description: a.excerpt ?? undefined,
+      images: [image],
+    },
   };
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  let a: Awaited<ReturnType<typeof db.article.findUnique>> = null;
-  try {
-    a = await db.article.findUnique({ where: { slug } });
-  } catch (e) {
-    console.error("article fetch failed", e);
-  }
+  const a = await getArticle(slug);
   if (!a || !a.published) notFound();
 
   const date = a.publishedAt ?? a.createdAt;
@@ -59,7 +78,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           title: a.title,
           excerpt: a.excerpt,
           slug: a.slug,
-          publishedAt: a.publishedAt,
+          publishedAt: a.publishedAt ?? a.createdAt,
           updatedAt: a.updatedAt,
           author: a.author,
           heroImage: a.heroImage,
@@ -103,7 +122,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
               By {a.author || "Business Debt Insider"}
               <span className="text-hairline"> · </span>
-              Updated {date.toISOString().slice(0, 10)}
+              Published <time dateTime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
               <span className="text-hairline"> · </span>
               {minutes} min read
             </p>

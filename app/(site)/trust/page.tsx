@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/trust" },
   title: "Trust — Client Reviews and Outcomes",
   description: "Real merchants. Specific industries. Specific numbers. What Business Debt Insider clients say after their MCA debt relief program closes.",
 };

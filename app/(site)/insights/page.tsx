@@ -6,6 +6,7 @@ import { NewsletterStrip } from "@/components/site/NewsletterStrip";
 import { ArticleCover } from "@/components/site/ArticleCover";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/insights" },
   title: "Business Debt Insights & Guides",
   description: "Plain-language guides on business debt relief, COJ defense, effective APR math, and creditor negotiation. Written for SME operators.",
 };

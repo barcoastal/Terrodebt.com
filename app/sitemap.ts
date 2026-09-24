@@ -10,20 +10,21 @@ export const dynamic = "force-dynamic";
 const BASE = "https://businessdebtinsider.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
   const staticPaths = [
     "", "/about", "/contact", "/trust", "/privacy", "/terms", "/disclosure",
     "/insights", "/industries", "/programs", "/services", "/reviews", "/glossary",
-    "/tools", "/tools/apr-calculator", "/tools/stack-calculator", "/tools/health-check",
+    "/tools", "/tools/apr-calculator", "/tools/stack-calculator", "/tools/health-check", "/calculator",
     "/programs/settlement", "/programs/restructure", "/programs/legal-defense",
     "/mca-defense",
   ];
-  const staticUrls = staticPaths.map((p) => ({ url: `${BASE}${p}`, lastModified: now, changeFrequency: "weekly" as const, priority: p === "" ? 1.0 : 0.8 }));
+  // Only emit lastModified when there is an actual content-update timestamp.
+  // Request time is not the last time a static page was edited.
+  const staticUrls = staticPaths.map((p) => ({ url: `${BASE}${p}` }));
 
-  const serviceUrls = SERVICES.map((s) => ({ url: `${BASE}/services/${s.slug}`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 }));
-  const reviewUrls = REVIEW_FIRMS.map((f) => ({ url: `${BASE}/reviews/${f.slug}`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 }));
-  const verticalUrls = VERTICAL_CONTENT.map((v) => ({ url: `${BASE}/industries/${v.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 }));
-  const stateUrls = STATES.map((s) => ({ url: `${BASE}/mca-defense/${s.code.toLowerCase()}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 }));
+  const serviceUrls = SERVICES.map((s) => ({ url: `${BASE}/services/${s.slug}` }));
+  const reviewUrls = REVIEW_FIRMS.map((f) => ({ url: `${BASE}/reviews/${f.slug}` }));
+  const verticalUrls = VERTICAL_CONTENT.map((v) => ({ url: `${BASE}/industries/${v.slug}` }));
+  const stateUrls = STATES.map((s) => ({ url: `${BASE}/mca-defense/${s.code.toLowerCase()}` }));
 
   let articleUrls: MetadataRoute.Sitemap = [];
   try {
