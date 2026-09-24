@@ -16,7 +16,7 @@ const NEXT_STEPS = [
   },
   {
     step: "2",
-    title: "You get a call within one business hour",
+    title: "Coastal Debt calls you within one business hour",
     body: "A real conversation, not a pitch. We walk your numbers and tell you plainly whether a program makes sense.",
   },
   {
@@ -65,13 +65,12 @@ export default function ThankYouPage() {
               <h1 className="mt-6 text-4xl md:text-5xl font-bold text-slate tracking-tighter leading-[1.05]">
                 Your request is in.
               </h1>
-              <p className="mt-4 text-lg text-muted max-w-xl mx-auto">
-                An advisor is reviewing your file now. Expect a call within one
-                business hour, from a person who has seen your situation before.
+              <p className="mt-5 text-xl md:text-2xl text-electric max-w-xl mx-auto">
+                <strong className="font-bold">You will receive a call from Coastal Debt.</strong>
               </p>
-              <p className="mt-3 text-sm text-muted max-w-xl mx-auto">
-                You may receive the call from us directly or from one of the
-                affiliate companies we work with on cases like yours.
+              <p className="mt-3 text-base text-muted max-w-xl mx-auto">
+                Please keep your phone nearby. Expect a call within one business
+                hour to discuss your business debt and next steps.
               </p>
             </div>
           </Reveal>
