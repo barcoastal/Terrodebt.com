@@ -202,7 +202,7 @@ function DebtStep({ onSelect, onAdvance }: { onSelect: (o: AmountOption) => void
           </svg>
         </button>
         {open && (
-          <ul role="listbox" className="absolute left-0 right-0 top-full z-30 mt-1 overflow-hidden rounded-xl border border-border bg-white shadow-soft">
+          <ul role="listbox" aria-label="Business debt amount" className="mt-2 overflow-hidden rounded-xl border border-border bg-white shadow-soft">
             {AMOUNT_OPTIONS.map((o) => (
               <li key={o.label}>
                 <button

@@ -103,9 +103,6 @@ export default async function Home() {
               <p className="mt-3 text-sm text-ink leading-relaxed">For businesses with multiple MCAs and $20,000 or more in debt. Start with your balance range.</p>
             </div>
             <LeadForm source="homepage-organic-review" />
-            <p className="px-6 py-5 text-sm text-muted leading-relaxed">
-              Have a different business debt question? <a href="tel:+13054949487" className="underline underline-offset-4">Call 305-494-9487</a> to discuss fit.
-            </p>
           </div>
         </div>
       </section>
