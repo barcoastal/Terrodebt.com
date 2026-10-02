@@ -1,4 +1,5 @@
 "use client";
+import { readTrakkitClickId } from "@/lib/client-attribution";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
@@ -17,6 +18,7 @@ export function VisitorTracker() {
       gclid: get("gclid"),
       fbclid: get("fbclid"),
       affiliate_clickid: get("affiliate_clickid"),
+      tkclid: readTrakkitClickId(),
       referrer: document.referrer || null,
       path: pathname || window.location.pathname,
     };
@@ -30,9 +32,11 @@ export function VisitorTracker() {
         const v = get(k);
         if (v) localStorage.setItem(`td_${k}`, v);
       });
+    } catch {}
+    try {
       // mirror a URL-carried tkclid into the cookie the tracker normally sets
       const tk = get("tkclid");
-      if (tk && !document.cookie.includes("tkclid=")) {
+      if (tk) {
         document.cookie = `tkclid=${encodeURIComponent(tk)};path=/;max-age=${60 * 60 * 24 * 90};samesite=lax`;
       }
     } catch {}

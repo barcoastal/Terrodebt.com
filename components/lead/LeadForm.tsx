@@ -1,4 +1,5 @@
 "use client";
+import { readClientMeta } from "@/lib/client-attribution";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
@@ -353,28 +354,4 @@ function Field({ label, children, className }: { label: string; children: React.
       {children}
     </div>
   );
-}
-
-function readClientMeta() {
-  try {
-    const get = (k: string) => localStorage.getItem(`td_${k}`) ?? undefined;
-    return {
-      utmSource: get("utm_source"),
-      utmMedium: get("utm_medium"),
-      utmCampaign: get("utm_campaign"),
-      utmContent: get("utm_content"),
-      utmTerm: get("utm_term"),
-      gclid: get("gclid"),
-      fbclid: get("fbclid"),
-      affiliateClickid: get("affiliate_clickid"),
-      tkclid: readCookie("tkclid") ?? get("tkclid"),
-    };
-  } catch { return {}; }
-}
-
-function readCookie(name: string): string | undefined {
-  try {
-    const m = document.cookie.match(new RegExp("(?:^|;\\s*)" + name + "=([^;]*)"));
-    return m ? decodeURIComponent(m[1]) : undefined;
-  } catch { return undefined; }
 }

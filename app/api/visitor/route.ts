@@ -69,6 +69,7 @@ export async function POST(req: NextRequest) {
     if (!value) return;
     res.cookies.set(name, value, { maxAge: NINETY_DAYS, sameSite: "lax", path: "/", httpOnly: false });
   };
+  setCookie("td_tkclid", typeof body.tkclid === "string" ? body.tkclid : null);
   setCookie("td_gclid", body.gclid);
   setCookie("td_fbclid", body.fbclid);
   setCookie("td_affiliate_clickid", body.affiliate_clickid);
