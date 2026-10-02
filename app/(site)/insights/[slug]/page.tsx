@@ -1,3 +1,5 @@
+import { editorialAuthor, articleReferences } from "@/lib/editorial";
+import { References } from "@/components/content/References";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -80,7 +82,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           slug: a.slug,
           publishedAt: a.publishedAt ?? a.createdAt,
           updatedAt: a.updatedAt,
-          author: a.author,
+          author: editorialAuthor(a.author),
           heroImage: a.heroImage,
         }}
       />
@@ -120,7 +122,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <p className="mt-5 text-lg md:text-xl text-ink leading-relaxed">{a.excerpt}</p>
             )}
             <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-              By {a.author || "Business Debt Insider"}
+              By <Link href="/editorial-policy" className="underline underline-offset-2">{editorialAuthor(a.author)}</Link>
               <span className="text-hairline"> · </span>
               Published <time dateTime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
               <span className="text-hairline"> · </span>
@@ -159,6 +161,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             "
           >
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{a.contentMd}</ReactMarkdown>
+            <References items={articleReferences(a.slug)} furtherReading />
           </div>
         </div>
       </section>

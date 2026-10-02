@@ -1,3 +1,4 @@
+import { editorialAuthor } from "./editorial";
 // JSON-LD building blocks. Validated against schema.org spec.
 
 const SITE = "https://businessdebtinsider.com";
@@ -69,8 +70,8 @@ export function articleLd(a: ArticleLdInput) {
     dateModified: (a.updatedAt ?? a.publishedAt ?? new Date()).toISOString(),
     author: {
       "@type": "Organization",
-      name: a.author || "Business Debt Insider",
-      url: SITE,
+      name: editorialAuthor(a.author),
+      url: `${SITE}/editorial-policy`,
     },
     publisher: {
       "@type": "Organization",

@@ -1,66 +1,79 @@
+import { REFERENCES, type Reference } from "./editorial";
 export type ProgramKey = "settlement" | "restructure" | "legal-defense";
-
+type Section = { heading: string; paragraphs: string[] };
 export const PROGRAMS: Record<ProgramKey, {
-  title: string;
-  headline: string;
-  subline: string;
-  whoFor: string[];
-  mechanism: string[];
-  example: { debt: number; saved: number; months: number };
-  appliesTo: string;
+  title: string; headline: string; subline: string; description: string;
+  whoFor: string[]; mechanism: string[]; appliesTo: string;
+  sections: Section[]; documents: string[]; questions: { q: string; a: string }[];
+  references: Reference[];
 }> = {
-  "settlement": {
-    title: "Settlement",
-    headline: "Settle distressed business debt for less than you owe.",
-    subline: "We negotiate balances down with each creditor and structure a single affordable plan. Used across MCA, vendor, and tax debt where reductions of 40 to 75 percent are reachable.",
-    whoFor: [
-      "Behind on 2+ payments to one or more creditors",
-      "Account frozen or facing UCC liens or levy notices",
-      "Total debt $25K-$2M+ across MCA, vendor, or tax obligations",
+  settlement: {
+    title: "Business Debt Settlement",
+    headline: "Understand your business debt settlement options.",
+    description: "Compare business debt settlement with restructuring and bankruptcy. Learn about costs, creditor approval, risks, and preparing for an MCA debt review.",
+    subline: "A settlement asks a creditor to accept an agreed amount to resolve an obligation. The practical question is whether your business can fund an agreement and continue operating afterward.",
+    appliesTo: "For commercial obligations such as MCA balances and supplier debt. Tax liabilities require a separate process and qualified tax advice.",
+    whoFor: ["Owners who cannot sustain the existing payment schedule", "Businesses with funds available for a realistic negotiated offer", "Operators comparing settlement with a term modification or legal options"],
+    mechanism: ["Map balances, payment history, collateral, guarantees, and any active court deadlines", "Prepare an offer based on documented cash flow and available funds", "Request written creditor terms and have legal release provisions reviewed", "Track required payments and obtain the agreed completion documents"],
+    sections: [
+      { heading: "What settlement changes—and what it does not", paragraphs: ["A proposed discount is not an agreement. Before planning around a lower balance, identify the creditor, the exact obligation being resolved, the amount and timing of each payment, and the consequences of a missed installment. A separate obligation or personal guarantee may need its own release language.", "Settlement differs from restructuring, which usually changes the payment schedule or other terms. It also differs from a new consolidation loan: borrowing to pay a creditor creates a new obligation. Compare the total cash required under each option, including fees, rather than comparing only the advertised monthly payment."] },
+      { heading: "Build an offer your business can actually fund", paragraphs: ["Start with a weekly cash-flow forecast that separates operating costs from debt service. Include payroll, rent, essential suppliers, tax deposits, seasonality, and a reserve for unexpected costs. A settlement that depends on optimistic sales or an unapproved loan can create another default.", "List each creditor separately. Ask which agreements depend on another creditor accepting an offer, whether a payment to one party leaves enough working capital for the rest, and whether collateral or guarantees require attorney review. A single administration schedule does not mean every creditor has accepted the same deal."] },
+      { heading: "Fees and the true cost of a settlement", paragraphs: ["The initial BDI assessment is free. Before engaging, obtain a written fee proposal and scope explaining what is included, when charges become due, who receives your payments, and how cancellation is handled. Attorney, court, tax-professional, or payment-administration costs may be separate; confirm them before signing.", "Compare the original obligation with all payments needed to finish: creditor payments plus service fees and other costs. A gross balance reduction is not the same as net savings. We do not quote a universal discount, success rate, or completion period because those figures require a defined and documented case population."] },
+      { heading: "Risks, timing, and alternatives", paragraphs: ["Do not assume that requesting a settlement stops collections, litigation, or contractual deadlines. Discuss proposed payment changes with counsel before acting. A creditor may reject the offer or require different terms, and completing a negotiated payment schedule can take longer than reaching an agreement.", "Ask a tax professional whether cancellation of debt creates a reporting or tax obligation. If the business cannot support any negotiated plan, consult bankruptcy counsel rather than promising payments it cannot make. The U.S. Courts reference below explains Chapter 11 as a separate legal process.", "Federal tax settlement is not an ordinary creditor negotiation. The IRS describes an offer in compromise as a program subject to eligibility and financial review; approval is not automatic. Compare it with an installment agreement using the official IRS resources below."] },
+      { heading: "Illustrative comparison, not a client result", paragraphs: ["Suppose a business owes $100,000 and receives a written offer to resolve that obligation for $70,000. If separate service and professional costs total $8,000, the combined outlay would be $78,000, before any taxes or other costs. That is a $22,000 difference—not the $30,000 headline reduction. These numbers explain the calculation; they are not a BDI fee quote or an expected outcome."] },
     ],
-    mechanism: [
-      "Pause damaging activity (MCA reconciliation, IRS CNC, vendor COD)",
-      "Negotiate settled balance per creditor",
-      "Structure unified monthly payment to Business Debt Insider-managed escrow",
-      "Disburse to creditors as settlements close",
+    documents: ["Signed agreements, amendments, and personal guarantees", "Current creditor statements and a payment history", "Recent bank statements and a cash-flow forecast", "Lawsuits, default notices, and any proposed settlement documents"],
+    questions: [
+      { q: "Do I have to stop paying to request a review?", a: "No. A review can start with your current documents. Do not change payments solely because you have submitted a form; evaluate the contract and consequences with your advisers." },
+      { q: "Can BDI guarantee a reduced balance?", a: "No. A creditor must agree to the proposed terms. Any legal or tax outcome depends on the individual matter." },
+      { q: "How do I compare settlement with restructuring?", a: "Compare the total cost, required cash at signing, payment schedule, effect on operations, and the treatment of collateral and guarantees. Review both paths before committing." },
     ],
-    example: { debt: 425000, saved: 178500, months: 11 },
-    appliesTo: "Most effective on MCAs, vendor and trade creditor debt, and IRS or state tax debt where the math supports a discounted resolution.",
+    references: [REFERENCES.irsOffer, REFERENCES.irsPlan, REFERENCES.bankruptcy],
   },
-  "restructure": {
-    title: "Restructure",
-    headline: "Restructure your debt into one manageable monthly payment.",
-    subline: "We renegotiate terms with each lender so payments fit your actual cash flow, without settling. Used across MCA, equipment, and bank debt where the relationship is worth preserving.",
-    whoFor: [
-      "Current but stretched on stacked debt",
-      "Want to preserve lender relationships and credit profile",
-      "Total debt $25K-$1M+ across the lender mix",
+  restructure: {
+    title: "Business Debt Restructuring",
+    headline: "Build a debt payment schedule around operating cash flow.",
+    description: "Learn how business debt restructuring differs from refinancing and settlement, what documents to prepare, and how to compare payment relief with total cost.",
+    subline: "Restructuring seeks changes to existing creditor agreements. A useful proposal starts with what the business can sustain, then makes the requested changes explicit.",
+    appliesTo: "Review MCA obligations, equipment agreements, supplier balances, and bank loans separately. Their terms and approval requirements are not interchangeable.",
+    whoFor: ["Businesses whose operations can support a revised payment schedule", "Owners under pressure from several daily, weekly, or monthly obligations", "Operators who want to compare a negotiated modification with settlement or refinancing"],
+    mechanism: ["Create a complete debt schedule and operating cash-flow forecast", "Identify the payment changes needed for each creditor", "Present a documented proposal and compare counteroffers", "Review and sign any accepted amendments before relying on new terms"],
+    sections: [
+      { heading: "Restructuring, refinancing, and settlement", paragraphs: ["Restructuring requests changes to an existing agreement, such as payment timing or an extension. Refinancing replaces an obligation with new financing. Settlement seeks an agreed resolution that may be below the claimed balance. These options can have very different upfront costs and consequences.", "BDI is a consulting practice, not a lender. A review does not approve a new loan or obligate creditors to modify agreements. If refinancing is under consideration, evaluate lender eligibility, security requirements, fees, and total repayment using actual written offers. The SBA resource below describes its loan programs; it is not an endorsement or an eligibility determination."] },
+      { heading: "What a credible proposal includes", paragraphs: ["Prepare a debt schedule showing the creditor, balance, payment frequency, maturity, collateral, guarantee, and current status of every obligation. Reconcile that schedule against bank withdrawals so the forecast does not omit automatic debits or irregular payments.", "Then show the requested payment, the reason it is needed, and the evidence supporting the amount. Explain how seasonality, late customer payments, or another operational issue affects cash flow. A proposal should say what changes if revenue misses the forecast, rather than assuming every week will be an average week.", "An MCA reconciliation request should be assessed against that particular contract. A bank modification or equipment lease extension is a different request. Do not assume a clause or procedure from one agreement exists in another."] },
+      { heading: "Payment relief is not necessarily savings", paragraphs: ["A longer term can lower the periodic payment while increasing total cost. Ask for a before-and-after schedule showing every payment, fees, any remaining balloon amount, and the final maturity. Identify which guarantees and security interests remain in place.", "Illustration only: spreading a hypothetical $60,000 obligation from 12 equal monthly payments to 24 would change a $5,000 payment to $2,500 if no additional charges applied. The balance has not been reduced. Actual amendments may add interest or fees, so use the creditor's proposed schedule instead of this simplified example."] },
+      { heading: "Fees, timing, and creditor decisions", paragraphs: ["The initial BDI assessment is free. Request the complete written scope and fee proposal before deciding to engage. Confirm who handles creditor contact, whether legal review costs are separate, how payments will be made, and what work continues if a creditor declines the proposal.", "There is no guaranteed approval date. Organizing the file, getting creditor responses, negotiating terms, and completing amended payments are separate stages. Ask for a plan tied to those milestones and a named point of contact, rather than relying on a general completion promise.", "Until accepted terms are documented, the existing obligations and any court deadlines need attention. A consulting engagement alone does not amend an agreement, release collateral, or promise protection of business or personal credit."] },
+      { heading: "When a modification may not be enough", paragraphs: ["If the operating forecast cannot support even a reduced payment, extending the term may only postpone the same problem. Compare a funded settlement, an operational change, or a discussion with bankruptcy counsel. Active lawsuits or enforcement notices require legal attention in parallel with the financial review.", "Tax payment plans have their own rules. Use the IRS installment-agreement resource below with a qualified tax adviser rather than treating a business tax liability as another private loan modification."] },
     ],
-    mechanism: [
-      "Aggregate all contracts and map total monthly obligation",
-      "Negotiate extended terms, lower payments, or covenant relief per lender",
-      "Single monthly payment plan or modified payment schedule",
-      "Optional: pair with refinance where the business qualifies",
+    documents: ["A creditor-by-creditor debt schedule", "Signed loan, MCA, equipment, and guarantee documents", "Bank statements, financial statements, and a weekly forecast", "Covenant notices, default correspondence, and upcoming maturities"],
+    questions: [
+      { q: "Will every creditor accept one payment?", a: "Not necessarily. Each creditor must accept its own terms. Payment administration and legal modification are separate issues, and multiple payment schedules may remain." },
+      { q: "Can I request help before default?", a: "Yes. A review can compare your current obligations with projected cash flow before a missed payment. Creditor approval is still required for a modification." },
+      { q: "Does a lower payment mean a lower total cost?", a: "No. Compare the entire repayment schedule, including fees, interest, and balloon payments. Extending a term can increase the total paid." },
     ],
-    example: { debt: 320000, saved: 96000, months: 14 },
-    appliesTo: "Most effective on MCAs (term extension), equipment leases (term extension or buyout negotiation), and bank loans (covenant waiver or modification).",
+    references: [REFERENCES.sba, REFERENCES.irsPlan, REFERENCES.bankruptcy],
   },
   "legal-defense": {
-    title: "Legal Defense",
-    headline: "Sued? COJ filed? Account frozen? We coordinate immediate defense.",
-    subline: "Through our network of attorneys in all 50 states, we coordinate emergency response within 72 hours for any business debt enforcement action.",
-    whoFor: [
-      "Confession of Judgment filed (common on MCAs)",
-      "Account frozen, levy issued, or UCC enforcement underway",
-      "Active litigation from any business creditor",
+    title: "MCA Legal Defense Coordination",
+    headline: "Organize the financial file while qualified counsel handles the legal response.",
+    description: "Facing an MCA lawsuit, judgment, or account restraint? Learn what to gather, how attorney engagement works, and how legal defense differs from debt negotiation.",
+    subline: "A lawsuit or enforcement notice needs a response specific to the court, documents, and deadlines involved. BDI can help organize the debt position and coordinate with counsel; BDI does not represent clients in court.",
+    appliesTo: "For business owners dealing with creditor litigation, judgments, account restraints, or threatened enforcement. Contact licensed counsel promptly if a deadline is pending.",
+    whoFor: ["Owners who have received a summons, complaint, or judgment notice", "Businesses whose bank reports a restraint, levy, or garnishment", "Operators who need legal review alongside a possible creditor workout"],
+    mechanism: ["Identify the court, case number, parties, service documents, and pending dates", "Arrange a separate attorney engagement for advice and representation", "Give counsel the contracts, payment history, and relevant creditor correspondence", "Coordinate financial proposals with the legal strategy approved by counsel"],
+    sections: [
+      { heading: "Start with the actual notice", paragraphs: ["Save the complete documents, including envelopes, attachments, and the date and method of receipt. Record the court, case number, creditor, business entity, and any owner named individually. A collection demand, a filed complaint, a judgment, and a bank restraint are different stages; they should not be treated as interchangeable.", "If the bank reports restricted funds, ask for the underlying notice and case details. Do not assume that negotiating with a creditor extends a response date or releases the account. Share the documents with counsel and ask which deadlines require action now."] },
+      { heading: "What counsel evaluates", paragraphs: ["Questions for the attorney include where the matter was filed, whether service was proper, which agreement governs, how the claimed amount was calculated, and whether guarantees or collateral are involved. The appropriate response depends on the file; there is no universal motion that fits every MCA dispute.", "State rules also differ. New York's CPLR §3218 sets affidavit and filing requirements for judgments by confession. California's Code of Civil Procedure §1132 bars entry and enforcement of such judgments, with an exception for judgments obtained or entered before January 1, 2023. Follow the state guides and official sources below rather than assuming one state's rule applies everywhere."] },
+      { heading: "Who does what", paragraphs: ["BDI is not a law firm and cannot give legal advice, file a court response on your behalf, or guarantee emergency relief. The financial work can include organizing balances, payment records, and a proposed operating budget for discussions with creditors.", "An attorney's scope, fees, jurisdiction, and availability must be confirmed in a separate engagement. Ask whether the engagement covers the business, an individual guarantor, or both; whether court appearances and motion practice are included; and who communicates directly with the bank or opposing counsel."] },
+      { heading: "Costs and timing", paragraphs: ["The BDI initial assessment is free. Legal representation may involve a separate retainer, court expenses, and charges for particular work. Obtain the attorney's written terms and any BDI service proposal before agreeing to either engagement.", "A website inquiry is not an attorney engagement and does not preserve a deadline. We do not promise a 72-hour resolution, a successful motion, or the release of frozen funds. Court scheduling, the documents, service issues, and the relief requested can all affect what happens next."] },
+      { heading: "Coordinate negotiation without losing the legal thread", paragraphs: ["A financial proposal and a court response may need to proceed on separate tracks. Ask counsel how settlement communications, admissions, releases, and payment changes could affect the pending matter. Keep copies of all proposals and accepted agreements.", "For illustration, a business may have a weekly payment it can afford while also facing a response deadline. Preparing the forecast does not answer the lawsuit. The owner should confirm that counsel is handling the deadline while the financial proposal is being evaluated. This is a process example, not a report of a client outcome.", "If the broader business cannot meet its obligations, discuss bankruptcy alternatives with qualified counsel. The U.S. Courts resource below explains Chapter 11; suitability requires an individual legal assessment."] },
     ],
-    mechanism: [
-      "Within 72 hours: emergency attorney engagement in the filing state",
-      "File defense, motion to vacate, or restraining order where applicable",
-      "Negotiate settlement or workout in parallel with litigation",
-      "Coordinate across the debt mix (MCA, bank, equipment, tax) where multiple actions are live",
+    documents: ["Every page of the summons, complaint, judgment, or bank notice", "Proof or records of service and upcoming court dates", "Signed agreements, guarantees, and payment records", "Creditor correspondence and your bank's restraint information"],
+    questions: [
+      { q: "Does submitting the form create an attorney-client relationship?", a: "No. Legal representation requires a separate engagement with the attorney. If a deadline is pending, contact licensed counsel directly rather than waiting for a website response." },
+      { q: "Can BDI guarantee that my account will be unfrozen?", a: "No. The basis of the restraint, the legal process, and any creditor agreement determine the available options. Counsel must evaluate the actual documents." },
+      { q: "Which state matters if my business and the court are in different states?", a: "Give counsel both locations and the signed contract. Filing location, jurisdiction, service, and governing-law provisions need separate evaluation." },
     ],
-    example: { debt: 280000, saved: 134000, months: 8 },
-    appliesTo: "Any business debt with an active enforcement action: MCA confessions of judgment, bank lawsuits, equipment lessor repossession, tax levy or lien filings, or vendor lawsuits.",
+    references: [REFERENCES.ny, REFERENCES.ca, REFERENCES.bankruptcy],
   },
 };

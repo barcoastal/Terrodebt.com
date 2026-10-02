@@ -25,7 +25,7 @@ export default function DisclosurePage() {
 
       <h2>Outcomes vary</h2>
       <p>
-        Case studies, statistics, and outcome ranges shown on this site reflect actual or representative results from prior engagements, which depend on contract specifics, lender mix, default status, jurisdiction, and other factors. Your outcome may be better or worse than the examples shown. We do not guarantee any specific result, including settlement percentage, program length, or restoration of credit.
+        Illustrative examples are educational calculations, not client results. Any documented case outcome depends on contract specifics, lender mix, default status, jurisdiction, fees, and other factors. Your outcome may be better or worse than the examples shown. We do not guarantee any specific result, including settlement percentage, program length, or restoration of credit.
       </p>
 
       <h2>Not a law firm</h2>

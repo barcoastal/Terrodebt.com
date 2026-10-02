@@ -1,10 +1,11 @@
+import { hasStateGuide } from "@/lib/state-guides";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { STATES } from "@/lib/states";
 
 export const metadata: Metadata = {
   title: "MCA Defense by State",
-  description: "MCA defense in all 50 states. Coordinated licensed counsel for confession-of-judgment, account freezes, UCC liens, and settlement. Pick your state.",
+  description: "Prepare for an MCA dispute with state resources, a document checklist, and an explanation of attorney engagement and financial review.",
   alternates: { canonical: "/mca-defense" },
 };
 
@@ -17,13 +18,13 @@ export default function McaDefenseIndex() {
             MCA defense
           </span>
           <h1 className="mt-4 max-w-4xl text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.04]">
-            MCA defense in all 50 states.
+            MCA defense: start with the documents and the jurisdiction.
           </h1>
           <p className="mt-6 max-w-3xl text-lg md:text-xl text-ink leading-relaxed">
-            Confession of judgment filed? Account frozen? UCC lien blocking deposits? The practice coordinates licensed counsel in your state and handles the settlement work on the same case file.
+            A collection demand, a lawsuit, a judgment, and an account restraint call for different responses. Identify what you have received and contact licensed counsel about any pending deadline. BDI helps organize the financial side of the review.
           </p>
           <p className="mt-4 max-w-3xl text-base text-muted leading-relaxed">
-            Pick your state below to see the local procedure, typical timeline, and how engagement works. Or schedule a 30-minute review directly.
+            The Florida, New York, and California guides include state-specific statutory references. Other locations provide a general preparation checklist. Attorney availability and scope must be confirmed in a separate engagement.
           </p>
           <div className="mt-8">
             <Link
@@ -45,7 +46,7 @@ export default function McaDefenseIndex() {
                 href={`/mca-defense/${s.code.toLowerCase()}`}
                 className="text-base text-ink no-underline border-b border-hairline pb-1.5 hover:text-pine hover:border-pine transition leading-snug"
               >
-                {s.name}
+                {s.name}<span className="block text-xs text-muted mt-1">{hasStateGuide(s.code) ? "State guide and sources" : "Preparation checklist"}</span>
               </Link>
             ))}
           </div>
@@ -65,10 +66,10 @@ export default function McaDefenseIndex() {
             </div>
             <div className="md:col-span-7 space-y-4 text-base md:text-lg text-ink leading-relaxed">
               <p>
-                Confession-of-judgment defense begins with a motion to vacate where state procedure allows it. Account freezes are addressed through emergency-relief filings and coordination with the depository bank. UCC enforcement is handled in parallel with reconciliation and settlement negotiations.
+                Ask counsel to identify the procedure appropriate to the actual court record and contract. Do not assume every dispute calls for a motion to vacate, that a UCC filing itself freezes a bank account, or that contacting a creditor pauses a response deadline.
               </p>
               <p>
-                The practice does not represent clients in court directly. Counsel licensed in your state is engaged at intake and disclosed in writing. Legal work is billed by the attorney; the practice does not collect legal fees.
+                The practice does not represent clients in court directly. An attorney must confirm the jurisdiction, availability, scope, and fees through a separate engagement. A BDI inquiry alone does not establish legal representation.
               </p>
             </div>
           </div>

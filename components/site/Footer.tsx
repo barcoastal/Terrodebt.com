@@ -15,12 +15,13 @@ const SECONDARY = [
   { href: "/programs", label: "Programs" },
   { href: "/mca-defense", label: "MCA defense by state" },
   { href: "/glossary", label: "Glossary" },
-  { href: "/trust", label: "Trust & outcomes" },
+  { href: "/trust", label: "Transparency" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
 const LEGAL = [
+  { href: "/editorial-policy", label: "Editorial standards" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
   { href: "/disclosure", label: "Disclosure" },

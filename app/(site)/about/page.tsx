@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SubscribeForm } from "@/components/site/SubscribeForm";
@@ -6,7 +5,7 @@ import { SubscribeForm } from "@/components/site/SubscribeForm";
 export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   title: "About — Fort Lauderdale Business Debt Practice",
-  description: "Plain-spoken information and case-tested workouts for operators carrying stacked short-term business debt. Fort Lauderdale, Florida.",
+  description: "Learn about Business Debt Insider, the commercial financial consulting practice of GRL Recovery LLC, its scope, and its publishing standards.",
 };
 
 export default function About() {
@@ -24,10 +23,11 @@ export default function About() {
               Modern tools and disciplined execution for a category stuck in 2018. Plain-spoken research and coordinated workouts across five coverage areas.
             </p>
           </div>
-          <div className="md:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden bg-cream">
-              <Image src="/images/founder-scene.png" alt="Business Debt Insider founder" fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" />
-            </div>
+          <div className="md:col-span-5 border border-rule bg-white p-8">
+            <h2 className="text-2xl font-semibold">The organization behind BDI</h2>
+            <p className="mt-4 leading-relaxed">Business Debt Insider is a trade name of GRL Recovery LLC, a Florida limited liability company formed April 1, 2026.</p>
+            <p className="mt-4 leading-relaxed">6301 NW 5th Way, Suite 5100<br />Fort Lauderdale, FL 33309</p>
+            <Link href="/trust" className="mt-5 inline-block text-electric underline">Scope, fees, and due diligence</Link>
           </div>
         </div>
       </section>
@@ -41,7 +41,7 @@ export default function About() {
           The relief category that exists to help these owners is mostly stuck in 2018 and mostly single-product. One company pitches MCA settlement. Another pitches bank workouts. A third pitches tax resolution. Most owners need help across two or three product categories at the same time, and they end up coordinating multiple providers or going without help on the rest.
         </p>
         <p>
-          The practice was built around a different default. We work across five coverage areas: MCA debt relief, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We give merchants free calculators on day one so the math is clear before any consultation. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.
+          Our approach starts with the full debt position. We work across five coverage areas: MCA debt relief, equipment finance restructure, vendor and supplier debt, bank loan workouts, and business tax debt. We give merchants free calculators on day one so the math is clear before any consultation. We work with owners before they default, not just after a lawsuit lands. And when legal defense is required, we coordinate licensed attorneys in the merchant&apos;s state instead of pretending we are one.
         </p>
       </Block>
 
@@ -73,10 +73,10 @@ export default function About() {
 
       {/* What we are not */}
       <Block eyebrow="What we are not" title="Set expectations, plainly." alt>
-        <p>We are not a law firm. We coordinate licensed attorneys in your state when legal defense is required. We are not authorized to give legal advice on our own.</p>
+        <p>We are not a law firm. When legal defense is required, attorney availability, jurisdiction, and scope must be confirmed through a separate engagement. We are not authorized to give legal advice on our own.</p>
         <p>We are not a consumer debt relief service. Consumer debt relief works on credit cards, medical bills, and personal loans under consumer credit law. Our work is on commercial debt against the business entity. The legal frameworks, the lenders, and the workout playbooks are entirely different.</p>
         <p>We do not guarantee specific savings or specific outcomes. Real numbers depend on your lender mix, your contract terms, your business cash flow, and how the lenders respond. We will tell you what is realistic for your situation up front, and then we will execute against it.</p>
-        <p>We are not a quick fix. Most programs run 6 to 18 months. The quick fix industry that promises 30 day resolutions is the same one that often makes the situation worse.</p>
+        <p>We are not a quick fix. The time required depends on the debt, creditor responses, any court proceedings, and the accepted repayment schedule. Reaching an agreement and completing payments are different milestones.</p>
       </Block>
 
       {/* Methodology */}
@@ -95,43 +95,11 @@ export default function About() {
         </p>
       </Block>
 
-      {/* Team */}
-      <section className="bg-white border-y border-rule">
-        <div className="mx-auto max-w-content px-6 py-20">
-          <div className="border-b border-rule pb-5">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Team</span>
-            <h2 className="mt-2 font-bold tracking-tighter text-slate text-3xl md:text-4xl leading-tight">
-              Who runs the practice.
-            </h2>
-          </div>
-          <div className="mt-10 grid md:grid-cols-12 gap-10 lg:gap-14">
-            <div className="md:col-span-4">
-              <div className="relative aspect-[4/5] overflow-hidden bg-cream">
-                <Image src="/images/founder-scene.png" alt="Business Debt Insider team at work" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-              </div>
-            </div>
-            <div className="md:col-span-8">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-muted">The practice</span>
-              <h3 className="mt-2 font-semibold tracking-tight text-slate text-2xl md:text-3xl leading-tight">Business Debt Insider</h3>
-              <div className="mt-4 space-y-4 text-slate leading-relaxed">
-                <p>
-                  Business Debt Insider was built after a decade spent at the intersection of small-business lending and operations. The team has seen the inside of bad MCA contracts, equipment defaults, and bank workouts that landed in special assets. The practice is built to be the team operators wished was on the other end of the phone.
-                </p>
-                <p>
-                  The practice writes its own research notes and articles, sits on every intake call for new engagements, and runs the workout sequence for every active program.
-                </p>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-rule">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-muted">Advisors and counsel</span>
-                <p className="mt-3 text-sm text-muted leading-relaxed max-w-2xl">
-                  The practice coordinates licensed counsel in all 50 states for legal defense work. The attorney roster is engagement-specific and disclosed to the merchant at intake.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Block eyebrow="Publishing" title="Guidance published by the organization.">
+        <p>Our articles use the Business Debt Insider organization byline. We do not currently publish individual author or reviewer biographies, and that byline does not indicate attorney or accountant review.</p>
+        <p>We link official sources where relevant and distinguish general background resources from rules summarized on a specific page. A worked example is not a client result or a promise of savings.</p>
+        <p><Link href="/editorial-policy" className="text-electric underline">Read our editorial standards and correction process</Link>, and check the <Link href="/disclosure" className="text-electric underline">business disclosures</Link> before choosing a provider.</p>
+      </Block>
 
       {/* Close */}
       <section className="bg-offwhite">

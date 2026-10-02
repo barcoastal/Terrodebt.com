@@ -1,72 +1,24 @@
 import type { Metadata } from "next";
-
+import Link from "next/link";
 export const metadata: Metadata = {
   alternates: { canonical: "/trust" },
-  title: "Trust — Client Reviews and Outcomes",
-  description: "Real merchants. Specific industries. Specific numbers. What Business Debt Insider clients say after their MCA debt relief program closes.",
+  title: "Business Debt Consulting: Transparency and Due Diligence",
+  description: "Evaluate BDI's role, written engagement terms, fees, evidence of results, and the distinction between consulting and legal representation.",
 };
-
-const TESTIMONIALS = [
-  { name: "Joel R.", role: "Owner, regional trucking", body: "Four MCAs, $3,200 a day in debits, and a reverse consolidation outfit trying to charge me $25K upfront. They told me my real APR before they pitched me anything. That alone was the difference." },
-  { name: "Maya K.", role: "Owner, neighborhood Italian restaurant", body: "I had stopped opening the lender emails. They explained the math, paused the debits, and built a single payment plan I could actually run my kitchen against." },
-  { name: "Tony D.", role: "GC, residential remodels", body: "They knew what a progress payment cycle looks like and built a program around it. Other firms wanted me on a settlement track that would have killed my bonding capacity." },
-  { name: "Dr. Adel M.", role: "Independent dental practice", body: "Two equipment loans on top of two MCAs. They unwound a reverse consolidation I never should have signed and got me back to even in 13 months." },
-  { name: "Priya S.", role: "Boutique retail, 2 locations", body: "I had a pile of contracts I didn't fully understand. Their calculators showed me what each one actually cost, then their team built a single restructure that finally made sense for our seasonality." },
-  { name: "Marc L.", role: "Ecommerce, supplements", body: "Ad spend cycle was getting eaten by daily debits. Settled three MCAs in 8 months at 44 cents. We are scaling again without stacking new advances." },
-  { name: "Renata V.", role: "Independent salon owner", body: "They walked me through every contract before any pitch. The free calculators were a real help for getting clarity. I felt informed the whole way through." },
-  { name: "Carlos H.", role: "Auto repair, 4 bays", body: "Got hit with a COJ in New York while I'm operating in Florida. They had counsel in both states on the call within 36 hours." },
-];
-
-const STATS = [
-  { v: "47%", k: "Average savings on settlement programs" },
-  { v: "11mo", k: "Average program length" },
-  { v: "8", k: "Industries we serve at launch" },
-  { v: "50", k: "States with attorney coverage" },
-];
-
 export default function Trust() {
-  return (
-    <article>
-      <section className="relative bg-offwhite border-b border-border overflow-hidden">
-        <div className="absolute inset-0 bg-mesh pointer-events-none" />
-        <div className="relative mx-auto max-w-content px-6 py-20">
-          <span className="font-mono text-xs uppercase tracking-wider text-muted">Trust</span>
-          <h1 className="mt-3 text-4xl md:text-6xl font-bold tracking-tighter">Real merchants, named industries, specific numbers.</h1>
-          <p className="mt-5 text-lg text-muted max-w-2xl">We do not run inflated dollar counters. We do not buy media badges. The proof is the cases, and what the merchants we have worked with say after the program closes.</p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-content px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {STATS.map((s) => (
-            <div key={s.k} className="surface-card p-6">
-              <div className="font-mono text-3xl font-semibold text-electric tracking-tight">{s.v}</div>
-              <div className="mt-2 text-sm text-muted">{s.k}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-white border-y border-border">
-        <div className="mx-auto max-w-content px-6 py-20">
-          <span className="font-mono text-xs uppercase tracking-wider text-muted">What clients say</span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight">Eight merchants. One thing in common.</h2>
-          <div className="mt-12 grid md:grid-cols-2 gap-6">
-            {TESTIMONIALS.map((t) => (
-              <figure key={t.name} className="surface-card p-6">
-                <blockquote className="text-slate leading-relaxed">&ldquo;{t.body}&rdquo;</blockquote>
-                <figcaption className="mt-4 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-slate text-white font-mono text-xs flex items-center justify-center">{t.name[0]}{t.name.split(" ")[1]?.[0] ?? ""}</div>
-                  <div>
-                    <div className="text-sm font-semibold text-slate">{t.name}</div>
-                    <div className="text-xs text-muted">{t.role}</div>
-                  </div>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-    </article>
-  );
+  return <article>
+    <section className="bg-offwhite border-b border-border"><div className="mx-auto max-w-content px-6 py-16 md:py-20 max-w-5xl">
+      <p className="font-mono text-xs uppercase tracking-wider text-muted">Transparency</p>
+      <h1 className="mt-4 text-4xl md:text-6xl font-bold tracking-tight">Make the decision on documents, scope, and total cost.</h1>
+      <p className="mt-6 text-lg leading-relaxed max-w-3xl">A debt review should help you understand the choices and the people responsible for each part of the work. These are the questions to resolve before engaging BDI or another provider.</p>
+    </div></section>
+    <div className="mx-auto max-w-content px-6 py-14 md:py-20"><div className="max-w-3xl space-y-10 text-base md:text-lg leading-relaxed">
+      <section><h2 className="text-2xl font-semibold">Know which business you are engaging</h2><p className="mt-4">Business Debt Insider is a trade name of GRL Recovery LLC. Our published address is 6301 NW 5th Way, Suite 5100, Fort Lauderdale, FL 33309. Confirm that the entity named in an engagement agreement matches the service provider you intend to hire.</p><p className="mt-4">BDI provides commercial financial consulting. We are not a lender or a law firm. Legal representation and tax advice require the appropriate professional and a confirmed scope. Read the <Link href="/disclosure" className="text-pine underline">business disclosures</Link> before making a decision.</p></section>
+      <section><h2 className="text-2xl font-semibold">Ask for the full fee picture in writing</h2><p className="mt-4">The initial assessment is free. Before paid work begins, request the service scope, total fee or calculation method, due dates, cancellation terms, and any separate legal, administrative, or tax-professional costs. Clarify who holds funds and who receives each payment.</p><p className="mt-4">Compare the original obligation with the complete projected outlay. Gross balance reductions do not account for every fee or tax consequence, and a smaller weekly payment can come with a longer repayment period.</p></section>
+      <section><h2 className="text-2xl font-semibold">Evaluate evidence behind an outcome</h2><p className="mt-4">For any case example, ask whether it is a documented engagement or an illustration. A useful case record explains the starting balance, creditor agreement, fees, payment completion, elapsed time, and what happened to guarantees or liens. Sensitive documents should be handled through an appropriate private process.</p><p className="mt-4">For an average or success rate, ask which cases were counted, over what dates, whether incomplete engagements were excluded, and whether the calculation includes fees. We do not present an aggregate savings rate or a standard completion time on this page. Your circumstances and creditor decisions determine the available outcome.</p></section>
+      <section><h2 className="text-2xl font-semibold">Confirm who is responsible for deadlines</h2><p className="mt-4">If there is a lawsuit or account restraint, confirm directly with counsel who is handling the response and whether the attorney represents the entity, an individual guarantor, or both. A consultation request or a creditor negotiation does not by itself preserve a legal deadline.</p><p className="mt-4">Ask for a point of contact, the next milestone, and the documents that will demonstrate acceptance of any revised terms. Do not assume all creditors have agreed because one creditor has responded.</p></section>
+      <section><h2 className="text-2xl font-semibold">Understand our publishing interests</h2><p className="mt-4">BDI publishes educational content and promotes its consulting services. Our comparison pages include our own program. An organization byline does not imply independent or licensed-professional review. Our <Link href="/editorial-policy" className="text-pine underline">editorial standards</Link> explain sources, examples, and how to raise a correction.</p></section>
+      <nav aria-label="Next steps" className="flex flex-wrap gap-6 border-t border-border pt-6"><Link href="/programs" className="text-pine underline">Compare the program options</Link><Link href="/contact" className="text-pine underline">Request a free initial review</Link></nav>
+    </div></div>
+  </article>;
 }

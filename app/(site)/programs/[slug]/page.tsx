@@ -1,23 +1,10 @@
+import { References } from "@/components/content/References";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PROGRAMS, type ProgramKey } from "@/lib/programs";
 import { LeadForm } from "@/components/lead/LeadForm";
-
-const PROGRAM_META: Record<ProgramKey, { title: string; description: string }> = {
-  "settlement": {
-    title: "Debt Settlement",
-    description: "Settle distressed business debt at typically 40 to 75 percent of face balance. Used across MCAs, vendor debt, and IRS or state tax debt.",
-  },
-  "restructure": {
-    title: "Debt Restructure",
-    description: "Renegotiate terms without settling. Used across MCAs, equipment finance, and bank workouts to preserve lender relationships.",
-  },
-  "legal-defense": {
-    title: "Legal Defense",
-    description: "72-hour coordinated counsel for confessions of judgment, frozen accounts, levies, and active litigation against any business debt.",
-  },
-};
 
 export async function generateStaticParams() {
   return Object.keys(PROGRAMS).map((slug) => ({ slug }));
@@ -27,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const p = PROGRAMS[slug as ProgramKey];
   if (!p) return {};
-  const meta = PROGRAM_META[slug as ProgramKey];
+  const meta = p;
   return {
     title: meta.title,
     description: meta.description,
@@ -43,6 +30,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
 
   return (
     <article>
+      <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Programs", url: "/programs" }, { name: p.title, url: `/programs/${slug}` }]} />
       <section className="relative bg-offwhite border-b border-border overflow-hidden">
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
         <div className="relative mx-auto max-w-content px-6 pt-20 pb-20 grid md:grid-cols-2 gap-12 items-start">
@@ -77,26 +65,30 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
           ))}</ol>
         </div>
       </section>
-      <section className="bg-white border-y border-border">
-        <div className="mx-auto max-w-content px-6 py-16">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Recent example</h2>
-          <div className="mt-8 grid grid-cols-3 gap-4 max-w-2xl">
-            <div className="surface-card p-5">
-              <div className="font-mono text-[10px] uppercase tracking-widest text-muted">Resolved</div>
-              <div className="mt-2 font-mono text-2xl md:text-3xl font-semibold text-slate tracking-tight">${(p.example.debt / 1000).toFixed(0)}K</div>
-            </div>
-            <div className="surface-card p-5">
-              <div className="font-mono text-[10px] uppercase tracking-widest text-muted">Saved</div>
-              <div className="mt-2 font-mono text-2xl md:text-3xl font-semibold text-electric tracking-tight">{Math.round((p.example.saved / p.example.debt) * 100)}%</div>
-            </div>
-            <div className="surface-card p-5">
-              <div className="font-mono text-[10px] uppercase tracking-widest text-muted">Months</div>
-              <div className="mt-2 font-mono text-2xl md:text-3xl font-semibold text-slate tracking-tight">{p.example.months}</div>
-            </div>
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-content px-6 py-12 md:py-16">
+          <div className="max-w-3xl space-y-10">
+            {p.sections.map((section) => <section key={section.heading}>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">{section.heading}</h2>
+              {section.paragraphs.map((paragraph) => <p key={paragraph} className="mt-4 text-base md:text-lg leading-relaxed text-slate">{paragraph}</p>)}
+            </section>)}
+            <section>
+              <h2 className="text-2xl font-semibold">What to bring to an initial review</h2>
+              <ul className="mt-4 list-disc pl-5 space-y-3">{p.documents.map((item) => <li key={item}>{item}</li>)}</ul>
+            </section>
+            <section>
+              <h2 className="text-2xl font-semibold">Questions owners ask</h2>
+              {p.questions.map((item) => <div key={item.q} className="mt-6"><h3 className="text-lg font-semibold">{item.q}</h3><p className="mt-2 leading-relaxed">{item.a}</p></div>)}
+            </section>
+            <nav aria-label="Compare program options" className="border-t border-border pt-6">
+              <h2 className="text-xl font-semibold">Compare your options</h2>
+              <ul className="mt-4 space-y-3">{(Object.keys(PROGRAMS) as ProgramKey[]).filter((key) => key !== slug).map((key) => <li key={key}><Link href={`/programs/${key}`} className="text-electric underline">{PROGRAMS[key].title}</Link></li>)}
+                <li><Link href="/mca-defense" className="text-electric underline">MCA defense: documents and state resources</Link></li>
+                <li><Link href="/contact" className="text-electric underline">Request a free initial review</Link></li>
+              </ul>
+            </nav>
           </div>
-          <Link href="/services" className="mt-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-electric no-underline hover:underline">
-            See the five product categories →
-          </Link>
+          <References items={p.references} />
         </div>
       </section>
     </article>
