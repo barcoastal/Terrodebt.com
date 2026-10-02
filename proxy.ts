@@ -26,6 +26,14 @@ const SERVICE_REDIRECTS: Record<string, string> = {
   "/article/personal-guarantee-defenses": "/mca-defense",
   "/article/sba-loan-default": "/insights",
   "/article/statute-of-limitations-business-debt": "/insights",
+  // GSC legacy URLs with a matching published article (checked 2026-10-02).
+  "/article/negotiating-with-irs": "/insights/irs-business-tax-debt-options",
+  "/articles/negotiating-with-irs": "/insights/irs-business-tax-debt-options",
+  "/insights/negotiating-with-irs": "/insights/irs-business-tax-debt-options",
+  "/insights/how-many-mcas-too-many-how-many-mcas-too-many": "/insights/how-many-mcas-too-many",
+  "/insights/loans-to-restructure-business-debt-loans-to-restructure-business-debt": "/insights/loans-to-restructure-business-debt",
+  "/insights/what-is-business-debt-resolution-what-is-business-debt-resolution": "/insights/what-is-business-debt-resolution",
+  "/insights/rebuild-business-credit-after-settlement-rebuild-business-credit-after-settlement": "/insights/rebuild-business-credit-after-settlement",
 };
 
 function makeId() {

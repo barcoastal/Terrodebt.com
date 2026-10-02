@@ -44,24 +44,19 @@ export default async function ReviewDetailPage({
   const f = findReviewFirm(slug);
   if (!f) notFound();
 
-  const others = REVIEW_FIRMS.filter((x) => x.slug !== f.slug && !x.isBDI).slice(
+  const others = REVIEW_FIRMS.filter((x) => x.slug !== f.slug && !x.isBDI).sort((a, b) => Number(b.slug === f.relatedSlug) - Number(a.slug === f.relatedSlug)).slice(
     0,
     3,
   );
 
   const reviewJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "Organization", name: f.name },
-    author: { "@type": "Organization", name: "Business Debt Insider" },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: f.score,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    name: `${f.name} Review`,
-    reviewBody: f.verdict,
+    "@type": "Article",
+    headline: f.metaTitle,
+    author: { "@type": "Organization", name: "Business Debt Insider", url: "https://businessdebtinsider.com/editorial-policy" },
+    mainEntityOfPage: `https://businessdebtinsider.com/reviews/${f.slug}`,
+    ...(f.checkedAt ? { dateModified: f.checkedAt } : {}),
+    ...(f.sources ? { citation: f.sources.map((source) => source.url) } : {}),
   };
 
   return (
@@ -95,19 +90,7 @@ export default async function ReviewDetailPage({
             <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pine">
               {f.isBDI ? "Our program" : `Review ${f.numeral}`}
             </span>
-            <div className="mt-6 border border-hairline p-5 bg-paper-mute">
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold tracking-tight text-ink tabular-nums">
-                  {f.score.toFixed(1)}
-                </span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                  / 5
-                </span>
-              </div>
-              <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                Ranked #{f.rank} of {REVIEW_FIRMS.length}
-              </div>
-            </div>
+
           </div>
           <div className="md:col-span-9">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.05]">
@@ -116,13 +99,15 @@ export default async function ReviewDetailPage({
             <p className="mt-8 text-lg md:text-xl text-ink leading-relaxed max-w-3xl">
               {f.oneLiner}
             </p>
-            {f.isBDI && (
-              <p className="mt-5 max-w-3xl text-sm text-muted leading-relaxed">
-                Disclosure: Business Debt Insider is the publisher of this
-                comparison and lists its own program first. Every other firm on
-                this page is reviewed using its public records, which we cite.
-              </p>
-            )}
+            <p className="mt-5 max-w-3xl text-sm text-muted leading-relaxed">
+              By <Link href="/editorial-policy" className="underline">Business Debt Insider</Link>
+              {f.checkedAt && <> · Sources checked <time dateTime={f.checkedAt}>October 2, 2026</time></>}
+            </p>
+            <p className="mt-3 max-w-3xl text-sm text-muted leading-relaxed">
+              Disclosure: BDI offers business debt consulting and publishes this comparison.
+              We have a commercial interest in this category. This is an organization-authored
+              assessment, not an independent customer review or a professional endorsement.
+            </p>
           </div>
         </div>
       </section>
@@ -204,6 +189,31 @@ export default async function ReviewDetailPage({
         </Section>
       )}
 
+      {f.sections?.map((section) => (
+        <Section key={section.title} eyebrow="Comparison" title={section.title}>
+          <p className="text-base md:text-lg text-ink leading-relaxed max-w-3xl">{section.body}</p>
+        </Section>
+      ))}
+
+      {f.sources && (
+        <Section eyebrow="Evidence" title="Sources and review method" alt>
+          <p className="text-base text-ink leading-relaxed mb-5">
+            We checked the pages below for the company relationship, published services,
+            and fee descriptions. These are company statements, not independently verified
+            customer outcomes. We have not assigned a numeric rating. Public profiles and
+            terms can change; verify them before engagement.
+          </p>
+          <ul className="space-y-3">
+            {f.sources.map((source) => <li key={source.url}><a href={source.url} className="underline text-pine">{source.label}</a></li>)}
+          </ul>
+          <p className="mt-5 text-base text-ink">
+            Compare <Link className="underline text-pine" href={`/reviews/${f.relatedSlug}`}>{f.relatedSlug === "rise-alliance" ? "Rise Alliance" : "Second Wind Consultants"}</Link>,
+            read our <Link className="underline text-pine" href="/insights/choosing-an-mca-relief-partner">provider-selection guide</Link>,
+            and review the <Link className="underline text-pine" href="/programs/restructure">restructuring process and risks</Link>.
+          </p>
+        </Section>
+      )}
+
       <Section eyebrow="FAQ" title="Frequently asked">
         <dl className="space-y-0">
           {f.faq.map((item, i) => (
@@ -276,7 +286,7 @@ export default async function ReviewDetailPage({
                 className="group block no-underline border border-hairline p-6 hover:border-pine transition"
               >
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-                  {o.score.toFixed(1)} / 5
+                  Company overview
                 </span>
                 <h3 className="mt-2 text-lg font-bold tracking-tight text-ink group-hover:text-pine transition leading-snug">
                   {o.name}

@@ -23,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticUrls = staticPaths.map((p) => ({ url: `${BASE}${p}` }));
 
   const serviceUrls = SERVICES.map((s) => ({ url: `${BASE}/services/${s.slug}` }));
-  const reviewUrls = REVIEW_FIRMS.map((f) => ({ url: `${BASE}/reviews/${f.slug}` }));
+  const reviewUrls = REVIEW_FIRMS.map((f) => ({ url: `${BASE}/reviews/${f.slug}`, ...(f.checkedAt ? { lastModified: f.checkedAt } : {}) }));
   const verticalUrls = VERTICAL_CONTENT.map((v) => ({ url: `${BASE}/industries/${v.slug}` }));
   const stateUrls = STATES.filter((s) => hasStateGuide(s.code)).map((s) => ({ url: `${BASE}/mca-defense/${s.code.toLowerCase()}` }));
 

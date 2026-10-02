@@ -1,8 +1,7 @@
 // Competitor review content for businessdebtinsider.com.
 // Business Debt Insider is the publisher and is listed first as its own program;
-// this is disclosed on the hub page. Every competitor entry is grounded in public
-// records (BBB, Trustpilot, and other review platforms) and written fresh for this
-// site. Facts here mirror what those sources reported at time of writing.
+// this is disclosed on the hub and detail pages. Entries with checkedAt and
+// sources have a dated source review; other entries still need verification.
 
 export type ReviewFirm = {
   slug: string;
@@ -10,7 +9,10 @@ export type ReviewFirm = {
   shortName: string;
   numeral: string;
   rank: number;
-  score: number;
+  checkedAt?: string;
+  sources?: { label: string; url: string }[];
+  sections?: { title: string; body: string }[];
+  relatedSlug?: string;
   isBDI?: boolean;
   metaTitle: string;
   metaDescription: string;
@@ -34,7 +36,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Business Debt Insider",
     numeral: "01",
     rank: 1,
-    score: 4.8,
     isBDI: true,
     metaTitle: "Business Debt Insider Review (2026): Flat-Fee MCA Restructuring",
     metaDescription:
@@ -80,7 +81,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Spergel",
     numeral: "02",
     rank: 2,
-    score: 4.5,
     metaTitle: "Spergel Review (2026): Ratings, Focus, and Who It Fits",
     metaDescription:
       "Spergel is a long-established Canadian licensed insolvency trustee firm with strong public reviews. Here is what it does well and where US MCA owners should look elsewhere.",
@@ -120,39 +120,23 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Second Wind",
     numeral: "03",
     rank: 3,
-    score: 4.4,
-    metaTitle: "Second Wind Consultants Review (2026): Ratings, Fees, Fit",
-    metaDescription:
-      "Second Wind Consultants is an established Massachusetts restructuring firm using Article 9 reorganization. Strong reviews, but better suited to mid-market owners than small businesses in active distress.",
-    oneLiner:
-      "An established Massachusetts restructuring firm known for Article 9 reorganization, with strong reviews but higher minimums and a slower intake.",
-    founded: "2009",
-    hq: "Northampton, Massachusetts",
-    bbb: "A+ rated and accredited",
-    publicReviews: "Strong public reviews and a long operating history",
-    focus: "Article 9 reorganization, business restructuring, MCA resolution",
-    bestFor: [
-      "Mid-market owners who want full balance-sheet restructuring",
-      "Businesses that fit the Article 9 reorganization approach",
-    ],
-    watchFor: [
-      "Higher minimums and a slower intake than dedicated MCA settlement shops",
-      "Small businesses in active funder distress may need faster relief on the daily debits",
-    ],
-    verdict:
-      "Second Wind is one of the more credible names in restructuring, A+ rated and accredited, with a real track record in Article 9 reorganization. The trade-off is fit: its process and minimums point toward mid-market owners, while a small business getting hit by daily debits often needs faster relief first. If your priority is stopping the bleeding this week, weigh that against Second Wind's more deliberate restructuring timeline.",
-    feeNote:
-      "Fees are set per case and geared toward a full restructuring engagement rather than quick relief.",
-    faq: [
-      {
-        q: "Is Second Wind Consultants legit?",
-        a: "Yes. It is an established, A-rated and accredited restructuring firm operating since 2009 with strong public reviews.",
-      },
-      {
-        q: "What does Second Wind Consultants specialize in?",
-        a: "Article 9 reorganization and broader business restructuring, more than fast, single-MCA settlement.",
-      },
-    ],
+    metaTitle: "Second Wind Consultants Reviews: Fees, Article 9 & Fit",
+    metaDescription: "Compare Second Wind Consultants’ published fee approach, Article 9 services, and relationship with Rise Alliance. Sourced facts and questions before signing.",
+    oneLiner: "Second Wind Consultants describes an Article 9 restructuring approach and a fixed scope-of-work fee. Compare the proposed transaction, creditor treatment, and total cost before deciding whether it fits your business.",
+    founded: "Not independently verified for this review",
+    hq: "Confirm the contracting entity and address in your proposal",
+    bbb: "Check the current profile for the exact legal entity; no BBB grade is reproduced here.",
+    publicReviews: "No combined star score is published here. Match each review profile to the contracting entity and read recent feedback in context.",
+    focus: "Article 9 restructuring and business debt resolution, according to its published FAQ",
+    bestFor: ["Owners evaluating a broader restructuring rather than only a change to payment amounts", "Businesses comparing a documented Article 9 proposal with negotiated workouts and other alternatives"],
+    watchFor: ["Request a written explanation of which assets, entities, debts, and personal guarantees the proposal covers.", "Ask who provides legal and tax advice and whether those costs are included.", "No universal minimum balance or completion deadline is established by the sources cited here."],
+    verdict: "Second Wind warrants consideration when an owner needs to evaluate a broader restructuring proposal. Its published fee model is more specific than a vague promise to quote later, but a fixed fee alone does not establish suitability or the total cost. Compare the written scope and exclusions with another qualified adviser’s assessment. We have not engaged the firm, audited its client results, or verified a typical savings rate.",
+    feeNote: "Its FAQ says it establishes a flat, fixed scope-of-work fee before engagement, with payments structured over time. Obtain the amount, milestones, exclusions, and cancellation terms in writing.",
+    faq: [{"q": "What are Second Wind Consultants’ fees?", "a": "Its published FAQ describes a flat fee for a defined scope rather than hourly billing. It does not provide a universal dollar price. Ask for a case-specific written quote and separately identify legal, tax, filing, and other third-party costs."}, {"q": "How is Second Wind related to Rise Alliance?", "a": "Rise Alliance describes itself as Second Wind Consultants’ business debt resolution arm. Their relationship does not establish that every engagement has the same contract, team, scope, or price."}, {"q": "Does every engagement require Article 9 restructuring?", "a": "Ask the firm to identify the proposed approach in writing. Its public description of Article 9 services does not establish that the same transaction is suitable for every business."}, {"q": "Does BDI verify Second Wind’s customer outcomes?", "a": "No. This review examines the cited public service information. It is not an audit of settlements, customer satisfaction, savings, or legal outcomes."}],
+    sections: [{"title": "Article 9: questions about the actual proposal", "body": "Ask for a transaction diagram showing the current business, any proposed buyer or new entity, the assets involved, and each creditor’s proposed treatment. Have your own advisers explain any guarantees, liens, contracts, permits, or tax obligations that remain. A lower payment estimate is not a substitute for understanding the entire transaction."}, {"title": "Compare the same scope across providers", "body": "Prepare a current creditor list, contracts, recent statements, cash-flow forecast, and any notices or lawsuit papers. Give each adviser the same information. Compare the deliverables, who performs them, when fees become payable, what happens if a creditor declines, and how the engagement ends. Ask for written answers rather than relying on a sales conversation."}],
+    sources: [{"label": "Second Wind Consultants: service and fee FAQ (company statements)", "url": "https://secondwindconsultants.com/faq/"}, {"label": "Rise Alliance: business debt resolution and relationship to Second Wind", "url": "https://risealliance.com/services/business-debt-resolution/"}],
+    relatedSlug: "rise-alliance",
+    checkedAt: "2026-10-02",
   },
   {
     slug: "national-credit-partners",
@@ -160,7 +144,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "National Credit Partners",
     numeral: "04",
     rank: 4,
-    score: 4.0,
     metaTitle: "National Credit Partners Review (2026): BBB, Fees, Complaints",
     metaDescription:
       "National Credit Partners is an A+ BBB-accredited business debt modification firm. Mostly positive reviews, with a few complaints about fee clarity. Here is the full read.",
@@ -200,7 +183,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Eastern Financial",
     numeral: "05",
     rank: 5,
-    score: 3.9,
     metaTitle: "Eastern Financial Partners Review (2026): BBB, Complaints",
     metaDescription:
       "Eastern Financial Partners holds a 4.4 Trustpilot score but is a young firm (started 2023), holds a C+ BBB grade, and draws complaints about aggressive calling and disputed refunds.",
@@ -240,39 +222,23 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Rise Alliance",
     numeral: "06",
     rank: 6,
-    score: 3.9,
-    metaTitle: "Rise Alliance Review (2026): Second Wind Brand, Ratings",
-    metaDescription:
-      "Rise Alliance is a Second Wind Consultants brand focused on MCA settlement, with strong Google and Birdeye ratings but no standalone BBB accreditation.",
-    oneLiner:
-      "A Second Wind Consultants brand focused on MCA settlement and cash-flow relief, with strong Google and Birdeye ratings but limited standalone BBB transparency.",
-    founded: "Second Wind Consultants brand",
-    hq: "New York, New York",
-    bbb: "No standalone BBB rating; operates under the Second Wind Consultants group",
-    publicReviews: "4.5+ across roughly 289 Google and Birdeye reviews",
-    focus: "MCA settlement, cash-flow relief, guaranty resolution",
-    bestFor: [
-      "Owners who like the Second Wind restructuring philosophy",
-      "Faster MCA settlements, often two to eight weeks",
-    ],
-    watchFor: [
-      "No standalone BBB rating or accreditation to verify independently",
-      "Overlaps heavily with the Second Wind brand, so compare the two before choosing",
-    ],
-    verdict:
-      "Rise Alliance is a Second Wind brand, so its credibility rests largely on Second Wind's track record plus its own strong Google and Birdeye ratings. The gap is independent verification: there is no standalone BBB accreditation, and the offering overlaps with Second Wind itself. Before signing, confirm which entity contracts with you and get the timeline and fees in writing.",
-    feeNote:
-      "Fees are per case and not published. Ask which entity, Rise Alliance or Second Wind, actually contracts with you.",
-    faq: [
-      {
-        q: "Is Rise Alliance the same as Second Wind Consultants?",
-        a: "Rise Alliance operates as a brand within the Second Wind Consultants group, so compare the two directly before choosing.",
-      },
-      {
-        q: "Does Rise Alliance have a BBB rating?",
-        a: "There is no standalone BBB rating for Rise Alliance; its public ratings come mainly from Google and Birdeye.",
-      },
-    ],
+    metaTitle: "Rise Alliance Reviews: Fees, Services & Second Wind Connection",
+    metaDescription: "What Rise Alliance publishes about its services, fees, and Second Wind connection. Compare the contract, customer reviews, and unanswered questions before signing.",
+    oneLiner: "Rise Alliance describes itself as the business debt resolution arm of Second Wind Consultants. Its published offering includes MCA and broader business debt restructuring; the right comparison is the specific contract and scope offered to your business.",
+    founded: "Formerly Polaris Business Advisors, according to its rebranding announcement",
+    hq: "Confirm the contracting entity and address in your proposal",
+    bbb: "A current entity-matched BBB rating was not verified for this review. This is not a claim that no profile exists.",
+    publicReviews: "Customer testimonials appear on its website. We do not combine platform scores or treat selected testimonials as a verified average outcome.",
+    focus: "MCA and business debt resolution through its RISE program, according to the company",
+    bestFor: ["Owners comparing a proposal addressing several business debt obligations", "Businesses evaluating how creditor negotiations and broader restructuring would fit together"],
+    watchFor: ["Confirm the legal entity on the engagement agreement and who is responsible for each service.", "Ask which costs are included and whether personal-guarantee work or outside counsel costs extra.", "A specific completion time or savings result cannot be inferred from selected testimonials."],
+    verdict: "Rise’s connection to Second Wind helps explain its service model, but it does not replace reviewing the actual agreement. Compare the proposed creditor work, fee obligations, exclusions, and exit terms. We have not retained Rise, inspected customer files, or established an average settlement result. Our assessment is limited to the public sources below and the questions an owner should resolve before engaging a provider.",
+    feeNote: "Its service page says costs vary with project scope. The cited page does not establish a complete standard fee schedule. Obtain the total fee, payment dates, third-party costs, and refund terms in writing.",
+    faq: [{"q": "Is Rise Alliance part of Second Wind Consultants?", "a": "Rise’s service page calls it the business debt resolution arm of Second Wind Consultants. Confirm which legal entity signs your agreement and which team delivers the work."}, {"q": "Was Rise Alliance previously Polaris Business Advisors?", "a": "Yes. Its own announcement states that Polaris Business Advisors became Rise Alliance. Use the current legal entity and any former names when checking records."}, {"q": "How much does Rise Alliance charge?", "a": "The cited service page says costs vary by scope. It does not establish a universal price. Request a written quote covering provider fees, third-party costs, payment timing, cancellation, and refunds."}, {"q": "Does Rise Alliance guarantee a two-to-eight-week settlement?", "a": "We could not substantiate a universal two-to-eight-week timeline from the cited sources. Ask for case-specific milestones, dependencies, and what happens if negotiations take longer."}, {"q": "How should I assess Rise Alliance complaints and reviews?", "a": "Match the profile to the correct entity, check review dates and the service used, and read both the complaint and response. Ask about recurring concerns directly. This page does not certify that a provider is complaint-free."}],
+    sections: [{"title": "Rise Alliance and Second Wind: what to compare", "body": "The companies describe a relationship, so treating them as unrelated competing quotes can obscure who will actually do the work. Ask whether the proposals use the same team or contract. Compare the scope, costs, responsibilities, and reporting arrangements rather than assuming the brand name determines the service."}, {"title": "Before you accept a proposal", "body": "Request a creditor-by-creditor plan with responsibilities, milestones, and a full cash-flow budget. Separate the provider’s fee from money intended for creditors. Ask what requires creditor agreement, how missed milestones are handled, and who addresses any litigation. Keep copies of the signed engagement, payment authorizations, and written creditor agreements."}],
+    sources: [{"label": "Rise Alliance: business debt resolution and scope-dependent costs (company statements)", "url": "https://risealliance.com/services/business-debt-resolution/"}, {"label": "Rise Alliance: Polaris Business Advisors rebranding announcement", "url": "https://risealliance.com/resource/polaris-business-advisors-is-now-rise-alliance/"}],
+    relatedSlug: "second-wind-consultants",
+    checkedAt: "2026-10-02",
   },
   {
     slug: "regroup-partners",
@@ -280,7 +246,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Regroup Partners",
     numeral: "07",
     rank: 7,
-    score: 3.8,
     metaTitle: "Regroup Partners Review (2026): Fees, Reviews, Fit",
     metaDescription:
       "Regroup Partners is a consolidation and restructuring firm with no upfront fees and several positive outcomes, tempered by a trust-account complaint worth verifying in writing.",
@@ -320,7 +285,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Delancey Street",
     numeral: "08",
     rank: 8,
-    score: 3.8,
     metaTitle: "Delancey Street Review (2026): Fees, BBB, Track Record",
     metaDescription:
       "Delancey Street is a NYC attorney-network firm handling MCA, SBA, and stacked debt on performance-based fees, but with no BBB rating and a thin independent review base.",
@@ -360,7 +324,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Corporate Turnaround",
     numeral: "09",
     rank: 9,
-    score: 3.7,
     metaTitle: "Corporate Turnaround Review (2026): BBB, Complaints, Fees",
     metaDescription:
       "Corporate Turnaround has a long pedigree in turnaround consulting, but recurring BBB complaints about billing and undelivered creditor contact pull it down. Verify everything in writing.",
@@ -400,7 +363,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Business Debt Law Group",
     numeral: "10",
     rank: 10,
-    score: 3.7,
     metaTitle: "Business Debt Law Group Review (2026): Fit and Fees",
     metaDescription:
       "Business Debt Law Group is a law-firm route to MCA defense. Strong when litigation is the real need, but confirm scope, jurisdiction, and fees before retaining.",
@@ -440,7 +402,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Corporate Rescue",
     numeral: "11",
     rank: 11,
-    score: 3.5,
     metaTitle: "Corporate Rescue Review (2026): Ratings, Fees, Fit",
     metaDescription:
       "Corporate Rescue is a national, accredited business debt firm with a moderate track record. Solid basics, but verify fee structure and outcomes before you commit.",
@@ -480,7 +441,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "National Debt Relief",
     numeral: "12",
     rank: 12,
-    score: 3.5,
     metaTitle: "National Debt Relief Review (2026): Great Firm, Wrong Tool for MCA",
     metaDescription:
       "National Debt Relief is a huge, A+ consumer debt-settlement company, but it does not handle MCA-specific work: no COJ defense, no court motions, no funder litigation.",
@@ -520,7 +480,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Business Debt Adjusters",
     numeral: "13",
     rank: 13,
-    score: 3.4,
     metaTitle: "Business Debt Adjusters Review (2026): BBB, Complaints",
     metaDescription:
       "Business Debt Adjusters is a long-tenured NJ firm with an A- BBB rating but no accreditation, some real payment-reduction wins, and complaints about aggressive phone contact.",
@@ -560,7 +519,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "Stop MCA",
     numeral: "14",
     rank: 14,
-    score: 3.2,
     metaTitle: "Stop MCA Review (2026): Marketing-Led, Verify Everything",
     metaDescription:
       "Stop MCA has an aggressive marketing presence and a thin public review base. Approach with diligence: get fees and creditor-contact verification in writing first.",
@@ -600,7 +558,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "MCA Debt Advisors",
     numeral: "15",
     rank: 15,
-    score: 2.6,
     metaTitle: "MCA Debt Advisors Review (2026): F BBB Rating, Complaints",
     metaDescription:
       "MCA Debt Advisors carries an F BBB rating with 26 complaints on file (seven unanswered) and reviews alleging large fees for little delivered work. High caution.",
@@ -637,7 +594,6 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
     shortName: "MCA Resolve",
     numeral: "16",
     rank: 16,
-    score: 2.5,
     metaTitle: "MCA Resolve Review (2026): BBB Complaints, Warning",
     metaDescription:
       "MCA Resolve shows a significant pattern of BBB complaints alleging undelivered services, fees taken without creditor contact, and instructions that put clients in default.",

@@ -4,9 +4,9 @@ import { REVIEW_FIRMS } from "@/lib/reviews-content";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "MCA Debt Relief Company Reviews (2026): Ranked & Compared",
+  title: "MCA Debt Relief Company Reviews: Services, Fees & Fit",
   description:
-    "Independent-style reviews of the main MCA and business debt relief firms, ranked and compared on ratings, fees, and complaints. Published by Business Debt Insider.",
+    "Compare MCA and business debt relief providers, service scope, fee questions, and fit. Published by Business Debt Insider, a provider in this category.",
   alternates: { canonical: "/reviews" },
 };
 
@@ -29,26 +29,29 @@ export default function ReviewsIndex() {
           </h1>
           <p className="mt-6 max-w-3xl text-base md:text-lg text-ink leading-relaxed">
             We review the firms a business owner actually runs into when they
-            search for MCA settlement or business debt relief, and rank them on
-            ratings, fees, track record, and complaints. Each firm is assessed
-            against its public records.
+            search for MCA settlement or business debt relief, and compare their services, fee information, and fit. Start with the
+            source-checked Rise Alliance and Second Wind profiles below. Other
+            profiles are awaiting the same source review; verify their claims directly.
           </p>
           <p className="mt-4 max-w-3xl text-sm text-muted leading-relaxed">
             Disclosure: this comparison is published by Business Debt Insider,
-            which lists its own program first. Every other firm is reviewed using
-            its public records, which we cite on each page. We are not a lender
-            and not a law firm. For a second independent perspective on this
-            category, see the rankings at{" "}
-            <a
-              href="https://www.mcasettlementreviews.com/"
-              className="underline hover:text-pine transition"
-              target="_blank"
-              rel="noopener"
-            >
-              MCA Settlement Reviews
-            </a>
-            .
+            which lists its own program first and has a commercial interest in
+            this category. Listing order is not a quality ranking. We do not assign
+            numeric scores. We are not a lender or law firm. Read our{" "}
+            <Link href="/editorial-policy" className="underline">editorial policy</Link>.
+
           </p>
+        </div>
+      </section>
+
+      <section className="bg-paper-mute border-b border-hairline">
+        <div className="mx-auto max-w-content px-6 py-8">
+          <h2 className="text-xl font-bold text-ink">Source-checked company comparisons</h2>
+          <p className="mt-3 text-ink">Updated October 2, 2026: published services, fee questions, company relationships, and what remains unverified.</p>
+          <div className="mt-4 flex flex-wrap gap-6 text-pine underline">
+            <Link href="/reviews/rise-alliance">Rise Alliance reviews and fees</Link>
+            <Link href="/reviews/second-wind-consultants">Second Wind Consultants reviews and Article 9</Link>
+          </div>
         </div>
       </section>
 
@@ -64,7 +67,7 @@ export default function ReviewsIndex() {
               >
                 <div className="md:col-span-1 flex md:block items-baseline gap-3">
                   <span className="font-mono text-2xl md:text-3xl font-bold tracking-tight text-ink tabular-nums">
-                    {f.rank}
+                    {f.isBDI ? "BDI" : f.numeral}
                   </span>
                 </div>
                 <div className="md:col-span-7">
@@ -94,14 +97,6 @@ export default function ReviewsIndex() {
                   </div>
                 </div>
                 <div className="md:col-span-4 flex items-start justify-between md:justify-end gap-6">
-                  <div className="text-right">
-                    <div className="text-3xl font-bold tracking-tight text-ink tabular-nums leading-none">
-                      {f.score.toFixed(1)}
-                    </div>
-                    <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
-                      Score / 5
-                    </div>
-                  </div>
                   <Link
                     href={`/reviews/${f.slug}`}
                     className="self-center font-mono text-[11px] uppercase tracking-[0.18em] text-pine border-b border-pine pb-1 no-underline hover:text-ink hover:border-ink transition whitespace-nowrap"
