@@ -29,9 +29,10 @@ export default function ReviewsIndex() {
           </h1>
           <p className="mt-6 max-w-3xl text-base md:text-lg text-ink leading-relaxed">
             We review the firms a business owner actually runs into when they
-            search for MCA settlement or business debt relief, and compare their services, fee information, and fit. Start with the
-            source-checked Rise Alliance and Second Wind profiles below. Other
-            profiles are awaiting the same source review; verify their claims directly.
+            search for MCA settlement or business debt relief. Each profile identifies
+            its sources, review date, service scope, fee questions, and limits of
+            verification. Company statements and customer allegations are not treated
+            as independently verified outcomes.
           </p>
           <p className="mt-4 max-w-3xl text-sm text-muted leading-relaxed">
             Disclosure: this comparison is published by Business Debt Insider,
@@ -47,7 +48,7 @@ export default function ReviewsIndex() {
       <section className="bg-paper-mute border-b border-hairline">
         <div className="mx-auto max-w-content px-6 py-8">
           <h2 className="text-xl font-bold text-ink">Source-checked company comparisons</h2>
-          <p className="mt-3 text-ink">Updated October 2, 2026: published services, fee questions, company relationships, and what remains unverified.</p>
+          <p className="mt-3 text-ink">Updated October 3, 2026: published services, fee questions, company relationships, and what remains unverified.</p>
           <div className="mt-4 flex flex-wrap gap-6 text-pine underline">
             <Link href="/reviews/rise-alliance">Rise Alliance reviews and fees</Link>
             <Link href="/reviews/second-wind-consultants">Second Wind Consultants reviews and Article 9</Link>
@@ -67,7 +68,7 @@ export default function ReviewsIndex() {
               >
                 <div className="md:col-span-1 flex md:block items-baseline gap-3">
                   <span className="font-mono text-2xl md:text-3xl font-bold tracking-tight text-ink tabular-nums">
-                    {f.isBDI ? "BDI" : f.numeral}
+                    {f.isBDI ? "BDI" : "—"}
                   </span>
                 </div>
                 <div className="md:col-span-7">
@@ -90,10 +91,8 @@ export default function ReviewsIndex() {
                     {f.oneLiner}
                   </p>
                   <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
-                    <span>{f.hq}</span>
-                    <span className="truncate max-w-xs normal-case tracking-normal">
-                      {f.bbb}
-                    </span>
+                    <span>{f.checkedAt ? `Sources checked ${f.checkedAt}` : f.hq}</span>
+
                   </div>
                 </div>
                 <div className="md:col-span-4 flex items-start justify-between md:justify-end gap-6">

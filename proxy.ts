@@ -26,6 +26,13 @@ const SERVICE_REDIRECTS: Record<string, string> = {
   "/article/personal-guarantee-defenses": "/mca-defense",
   "/article/sba-loan-default": "/insights",
   "/article/statute-of-limitations-business-debt": "/insights",
+  // Additional exact replacements found in the GSC export (2026-10-03).
+  "/articles": "/insights",
+  "/industries/healthcare-practices": "/industries/healthcare",
+  "/article/understanding-ucc-liens": "/insights/ucc-liens-and-account-freezes",
+  "/articles/understanding-ucc-liens": "/insights/ucc-liens-and-account-freezes",
+  "/insights/understanding-ucc-liens": "/insights/ucc-liens-and-account-freezes",
+  "/opengraph-image": "/social-image",
   // GSC legacy URLs with a matching published article (checked 2026-10-02).
   "/article/negotiating-with-irs": "/insights/irs-business-tax-debt-options",
   "/articles/negotiating-with-irs": "/insights/irs-business-tax-debt-options",
