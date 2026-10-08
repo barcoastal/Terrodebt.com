@@ -1,0 +1,40 @@
+{
+  "observedAt": "2026-10-08",
+  "property": "https://businessdebtinsider.com/",
+  "source": "Authenticated Google Search Console UI",
+  "performance": {
+    "start": "2026-09-08",
+    "end": "2026-10-05",
+    "clicks": 29,
+    "impressions": 2486,
+    "ctrPercent": 1.2,
+    "averagePosition": 41.1,
+    "pages": [
+      { "path": "/reviews/second-wind-consultants", "clicks": 2, "impressions": 210, "position": 8.2 },
+      { "path": "/reviews/rise-alliance", "clicks": 2, "impressions": 124, "position": 10.5 }
+    ]
+  },
+  "indexing": {
+    "reportUpdatedAt": "2026-10-04",
+    "indexed": 130,
+    "notIndexed": 54,
+    "notFound": 16,
+    "redirect": 10,
+    "noindex": 1,
+    "crawledNotIndexed": 9,
+    "discoveredNotIndexed": 18
+  },
+  "liveAudit": {
+    "note": "live-exclusions.json rechecks 63 URLs from the earlier audit; its group labels are historical, not current GSC counts. Status is the final HTTP status after redirects.",
+    "additionalChecks": {
+      "/insights/mca-reconciliation-request-template": "200, self canonical, no meta noindex",
+      "/cdn-cgi/l/email-protection": "404; no reference found in app, components, or lib source"
+    },
+    "remainingRetiredArticle404s": [
+      "/article/merchant-cash-advances-explained",
+      "/article/best-bankruptcy-attorneys-california",
+      "/article/personal-guarantees-bankruptcy"
+    ],
+    "decision": "Retain retired article 404s until an equivalent replacement is established; do not redirect unrelated pages solely to clear GSC reports."
+  }
+}

@@ -23,7 +23,7 @@ export async function generateMetadata({
   const f = findReviewFirm(slug);
   if (!f) return {};
   return {
-    title: f.metaTitle,
+    title: f.searchTitle ? { absolute: f.searchTitle } : f.metaTitle,
     description: f.metaDescription,
     alternates: { canonical: `/reviews/${f.slug}` },
     openGraph: {
@@ -197,6 +197,22 @@ export default async function ReviewDetailPage({
           <p className="text-base md:text-lg text-ink leading-relaxed max-w-3xl">{section.body}</p>
         </Section>
       ))}
+
+      {f.reviewChecklist && (
+        <Section eyebrow="Customer feedback" title={`How to read ${f.name} reviews`} alt>
+          <p className="mb-5 text-base text-ink leading-relaxed">
+            This page assesses public company information. It does not collect customer
+            ratings or establish a complaint count. Use this checklist when comparing feedback:
+          </p>
+          <ul className="list-disc pl-5 space-y-3 text-base text-ink leading-relaxed">
+            {f.reviewChecklist.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+          <p className="mt-6 text-base text-ink leading-relaxed">
+            Compare the service itself using our <Link className="underline text-pine" href="/insights/choosing-an-mca-relief-partner">MCA provider-selection guide</Link>
+            {relatedFirm && <> and our <Link className="underline text-pine" href={`/reviews/${relatedFirm.slug}`}>{relatedFirm.name} review</Link></>}.
+          </p>
+        </Section>
+      )}
 
       {f.sources && (
         <Section eyebrow="Evidence" title="Sources and review method" alt>

@@ -27,11 +27,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const verticalUrls = VERTICAL_CONTENT.map((v) => ({ url: `${BASE}/industries/${v.slug}` }));
   const stateUrls = STATES.filter((s) => hasStateGuide(s.code)).map((s) => ({ url: `${BASE}/mca-defense/${s.code.toLowerCase()}` }));
 
-  let articleUrls: MetadataRoute.Sitemap = [];
-  try {
-    const articles = await db.article.findMany({ where: { published: true }, select: { slug: true, updatedAt: true } });
-    articleUrls = articles.map((a) => ({ url: `${BASE}/insights/${a.slug}`, lastModified: a.updatedAt, changeFrequency: "monthly" as const, priority: 0.6 }));
-  } catch {}
+  // Let a database failure produce a server error so crawlers can retry.
+  // A successful but partial sitemap would incorrectly omit every article.
+  const articles = await db.article.findMany({ where: { published: true }, select: { slug: true, updatedAt: true } });
+  const articleUrls: MetadataRoute.Sitemap = articles.map((a) => ({ url: `${BASE}/insights/${a.slug}`, lastModified: a.updatedAt, changeFrequency: "monthly" as const, priority: 0.6 }));
 
   return [...staticUrls, ...serviceUrls, ...reviewUrls, ...verticalUrls, ...stateUrls, ...articleUrls];
 }

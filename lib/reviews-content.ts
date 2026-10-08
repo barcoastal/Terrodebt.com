@@ -13,6 +13,8 @@ export type ReviewFirm = {
   sections?: { title: string; body: string }[];
   relatedSlug?: string;
   reviewMethod?: string;
+  searchTitle?: string;
+  reviewChecklist?: string[];
   isBDI?: boolean;
   metaTitle: string;
   metaDescription: string;
@@ -147,11 +149,18 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
   },
   {
     "slug": "second-wind-consultants",
+    "searchTitle": "Second Wind Consultants Reviews: Fees & Article 9 | BDI",
+    "reviewChecklist": [
+      "Match the review to the business name and service in your proposal. A financing review may not describe an Article 9 engagement.",
+      "Look for details about the written fee, communication, milestones, and what was delivered. A star score alone cannot answer those questions.",
+      "Read recent critical feedback alongside the company’s response. Distinguish an unresolved allegation from a documented outcome.",
+      "Ask the provider to explain concerns in writing, including what happens if the proposed work cannot be completed."
+    ],
     "name": "Second Wind Consultants",
     "shortName": "Second Wind",
     "numeral": "03",
     "metaTitle": "Second Wind Consultants Reviews: Fees, Article 9 & Fit",
-    "metaDescription": "Compare Second Wind Consultants’ published fee approach, Article 9 services, and relationship with Rise Alliance. Sourced facts and questions before signing.",
+    "metaDescription": "Considering Second Wind Consultants? Review its published fees, Article 9 approach, Rise Alliance relationship, and how to assess customer feedback.",
     "oneLiner": "Second Wind Consultants describes an Article 9 restructuring approach and a fixed scope-of-work fee. Compare the proposed transaction, creditor treatment, and total cost before deciding whether it fits your business.",
     "founded": "Not independently verified for this review",
     "hq": "Confirm the contracting entity and address in your proposal",
@@ -208,7 +217,7 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
       }
     ],
     "relatedSlug": "rise-alliance",
-    "checkedAt": "2026-10-02"
+    "checkedAt": "2026-10-08"
   },
   {
     "slug": "national-credit-partners",
@@ -309,11 +318,18 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
   },
   {
     "slug": "rise-alliance",
+    "searchTitle": "Rise Alliance Reviews: Fees & Second Wind Connection | BDI",
+    "reviewChecklist": [
+      "Check the legal entity and service named in the feedback. The company’s Polaris rebranding means older reviews may use a different name.",
+      "Separate testimonials selected for the company’s website from reviews on other platforms; neither establishes a typical result for your business.",
+      "Read the concern, response, and any follow-up together. Check whether the reviewer describes fees, creditor payments, or a different service.",
+      "Ask for a written explanation of how the proposed agreement handles communication, missed milestones, cancellation, and refunds."
+    ],
     "name": "Rise Alliance",
     "shortName": "Rise Alliance",
     "numeral": "06",
     "metaTitle": "Rise Alliance Reviews: Fees, Services & Second Wind Connection",
-    "metaDescription": "What Rise Alliance publishes about its services, fees, and Second Wind connection. Compare the contract, customer reviews, and unanswered questions before signing.",
+    "metaDescription": "Considering Rise Alliance? Review its published services, fee questions, Second Wind connection, former Polaris name, and how to assess customer feedback.",
     "oneLiner": "Rise Alliance describes itself as the business debt resolution arm of Second Wind Consultants. Its published offering includes MCA and broader business debt restructuring; the right comparison is the specific contract and scope offered to your business.",
     "founded": "Formerly Polaris Business Advisors, according to its rebranding announcement",
     "hq": "Confirm the contracting entity and address in your proposal",
@@ -374,7 +390,7 @@ export const REVIEW_FIRMS: ReviewFirm[] = [
       }
     ],
     "relatedSlug": "second-wind-consultants",
-    "checkedAt": "2026-10-02"
+    "checkedAt": "2026-10-08"
   },
   {
     "slug": "regroup-partners",

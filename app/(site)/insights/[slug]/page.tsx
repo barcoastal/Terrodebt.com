@@ -162,6 +162,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           >
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{a.contentMd}</ReactMarkdown>
             <References items={articleReferences(a.slug)} furtherReading />
+            {a.slug === "choosing-an-mca-relief-partner" && (
+              <aside aria-label="Company reviews" className="mt-10 border-t border-hairline pt-6">
+                <h2>Put the provider checklist to work</h2>
+                <p>Use these company profiles to compare published services, fee information, and the questions to ask before signing:</p>
+                <ul>
+                  <li><Link href="/reviews/second-wind-consultants">Second Wind Consultants reviews: fees and Article 9</Link></li>
+                  <li><Link href="/reviews/rise-alliance">Rise Alliance reviews: fees and the Second Wind relationship</Link></li>
+                </ul>
+                <p>BDI publishes these profiles and offers services in the same category. They assess public information, not independently verified customer outcomes.</p>
+              </aside>
+            )}
           </div>
         </div>
       </section>
