@@ -16,7 +16,7 @@ const NEXT_STEPS = [
   },
   {
     step: "2",
-    title: "We or one of our affiliates will call you within one business hour",
+    title: "Our team or a trusted partner calls you within one business hour",
     body: "A real conversation, not a pitch. We walk your numbers and tell you plainly whether a program makes sense.",
   },
   {
@@ -66,11 +66,11 @@ export default function ThankYouPage() {
                 Your request is in.
               </h1>
               <p className="mt-5 text-xl md:text-2xl text-electric max-w-xl mx-auto">
-                <strong className="font-bold">We or one of our affiliates will call you.</strong>
+                <strong className="font-bold">We’ll be in touch soon.</strong>
               </p>
               <p className="mt-3 text-base text-muted max-w-xl mx-auto">
-                Please keep your phone nearby. Expect a call within one business
-                hour to discuss your business debt and next steps.
+                A member of our team or one of our trusted partners will call you
+                within one business hour.
               </p>
             </div>
           </Reveal>
