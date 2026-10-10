@@ -1,17 +1,15 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
+import automation from "@/scripts/ugc/automation.json";
 
 export const dynamic = "force-dynamic";
 
 const DAY_MS = 86400000;
 const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-// Planned cadence, shown for future days: daily image post, reels Tue + Thu.
-function plannedFor(date: Date): string[] {
-  const planned = ["Image post 10:00"];
-  const dow = date.getDay(); // 2 = Tue, 4 = Thu
-  if (dow === 2 || dow === 4) planned.push("Reel 13:00");
-  return planned;
+function plannedFor(): string[] {
+  if (!automation.enabled) return [];
+  return automation.hours.map((hour, i) => `${i === 0 ? "Business-owner reel" : "Presenter tip"} ${String(hour).padStart(2, "0")}:00 ET`);
 }
 
 export default async function SocialCalendarPage({
@@ -73,8 +71,12 @@ export default async function SocialCalendarPage({
         </div>
       </div>
       <p className="text-sm text-muted mt-1">
-        Published Facebook + Instagram posts, plus the planned auto-post schedule (daily image at
-        10:00, reels Tue and Thu at 13:00). {total} posts published so far, {reels} reels.
+        Published Facebook + Instagram posts. {automation.enabled
+          ? "Alex's UGC reels are planned daily at 10:00 and 16:00 New York time, rotating business-owner scenes and MCA tips."
+          : "The Higgsfield UGC schedule is being configured."} {total} posts published so far, {reels} reels.
+      </p>
+      <p className="text-xs text-muted mt-2">
+        Planned slots are targets, not confirmed posts. Publishing requires the scheduler Mac to be online and the generated reel to pass review.
       </p>
 
       <div className="mt-6 grid grid-cols-7 gap-px bg-border border border-border rounded-lg overflow-hidden text-xs">
@@ -114,7 +116,7 @@ export default async function SocialCalendarPage({
                 ))}
                 {dayPosts.length === 0 &&
                   isFuture &&
-                  plannedFor(date).map((label) => (
+                  plannedFor().map((label) => (
                     <div key={label} className="px-1.5 py-1 rounded border border-dashed border-border text-muted truncate">
                       {label}
                     </div>

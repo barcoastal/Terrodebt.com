@@ -1,0 +1,193 @@
+{
+  "status": "active_two_daily_website_pending",
+  "generationConnection": "higgsfield_cli_plan_credits",
+  "workspaceId": "748f7f6d-5dfb-4a7c-939d-cdda041e4a80",
+  "presenter": {
+    "name": "Alex",
+    "description": "User-selected brown-suit man from Higgsfield AI Influencer history",
+    "referenceFile": "brand-social/ugc/alex-reference.png",
+    "referenceUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3KTTtM25qc0r6b6dXF39I5uuO1A/hf_20261009_213457_996bd299-4850-4852-a019-e06305d658f3.png",
+    "disclosure": "AI presenter. Business-owner scenes are dramatizations, not customer testimonials."
+  },
+  "reelsPerDay": 2,
+  "dailyBudgetUsd": 20,
+  "durationSeconds": 15,
+  "channels": [
+    "instagram",
+    "facebook"
+  ],
+  "formats": [
+    "presenter_tip",
+    "business_owner_scene",
+    "website_walkthrough"
+  ],
+  "productionRules": [
+    "Keep Alex's face and brown-suit identity consistent across all reels.",
+    "Focus every script and caption on MCA debt or merchant cash advances.",
+    "Rotate industries, locations, opening questions and camera framing.",
+    "Use real captured BDI website screens in walkthroughs; composite them without regenerating UI text.",
+    "Business owners are fictional characters. No invented customer results, testimonials, savings figures, or guaranteed outcomes.",
+    "Do not present Alex as a real BDI employee, lawyer or client.",
+    "No em dashes. Use a clear BDI call to action and MCA hashtags.",
+    "Verify substantive financial or legal claims against the source article before generation.",
+    "Preview and verify the first outputs before activating the replacement schedule."
+  ],
+  "days": [
+    {
+      "day": 1,
+      "industry": "restaurant",
+      "setting": "restaurant before opening",
+      "reels": [
+        {
+          "format": "presenter_tip",
+          "topic": "MCA payments versus daily cash flow",
+          "hook": "Busy restaurant, but your MCA payments still feel heavy?"
+        },
+        {
+          "format": "business_owner_scene",
+          "topic": "Gathering the complete MCA payment picture",
+          "hook": "Owner asks Alex: Which MCA numbers should I collect first?"
+        },
+        {
+          "format": "website_walkthrough",
+          "topic": "Find BDI's MCA educational guides",
+          "hook": "Start here if MCA terms are getting confusing."
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "industry": "auto repair",
+      "setting": "repair shop reception",
+      "reels": [
+        {
+          "format": "presenter_tip",
+          "topic": "Recognizing stacked MCAs",
+          "hook": "More than one MCA? Start with one payment list."
+        },
+        {
+          "format": "business_owner_scene",
+          "topic": "Questions to ask before another MCA",
+          "hook": "Owner asks Alex: What should I review before another advance?"
+        },
+        {
+          "format": "website_walkthrough",
+          "topic": "Read BDI's stacked MCA guide",
+          "hook": "Here is where to learn about stacked MCAs."
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "industry": "construction",
+      "setting": "contractor's office beside a job site",
+      "reels": [
+        {
+          "format": "presenter_tip",
+          "topic": "Organize MCA agreements",
+          "hook": "Can you find every agreement behind your MCA payments?"
+        },
+        {
+          "format": "business_owner_scene",
+          "topic": "Preparing questions about an MCA agreement",
+          "hook": "Owner asks Alex: What should I bring to an MCA review?"
+        },
+        {
+          "format": "website_walkthrough",
+          "topic": "Find the BDI MCA contract guide",
+          "hook": "Use this guide to prepare better MCA questions."
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "industry": "salon",
+      "setting": "salon between appointments",
+      "reels": [
+        {
+          "format": "presenter_tip",
+          "topic": "Separate MCA facts from assumptions",
+          "hook": "An MCA question you should answer from your agreement."
+        },
+        {
+          "format": "business_owner_scene",
+          "topic": "Review an MCA payment calendar",
+          "hook": "Owner asks Alex: How do I organize my MCA payment dates?"
+        },
+        {
+          "format": "website_walkthrough",
+          "topic": "Find BDI's explanation of MCA debt relief",
+          "hook": "Understand the MCA process before choosing a provider."
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "industry": "retail",
+      "setting": "independent shop before customers arrive",
+      "reels": [
+        {
+          "format": "presenter_tip",
+          "topic": "Questions for MCA relief providers",
+          "hook": "Write your MCA questions down before the first call."
+        },
+        {
+          "format": "business_owner_scene",
+          "topic": "Discuss fees and services clearly",
+          "hook": "Owner asks Alex: What should an MCA provider explain upfront?"
+        },
+        {
+          "format": "website_walkthrough",
+          "topic": "Find the guide to choosing an MCA relief partner",
+          "hook": "Compare MCA providers with better questions."
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "industry": "trucking",
+      "setting": "small fleet dispatch office",
+      "reels": [
+        {
+          "format": "presenter_tip",
+          "topic": "Keep an MCA document folder",
+          "hook": "Your MCA paperwork should not be scattered across inboxes."
+        },
+        {
+          "format": "business_owner_scene",
+          "topic": "Review MCA concerns before making decisions",
+          "hook": "Owner asks Alex: Where can I start learning about MCA options?"
+        },
+        {
+          "format": "website_walkthrough",
+          "topic": "Navigate BDI's MCA resources",
+          "hook": "A quick tour of BDI's MCA information."
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "industry": "ecommerce",
+      "setting": "small packing and fulfillment workspace",
+      "reels": [
+        {
+          "format": "presenter_tip",
+          "topic": "Weekly MCA payment review",
+          "hook": "Make your MCA payment picture easier to understand this week."
+        },
+        {
+          "format": "business_owner_scene",
+          "topic": "Prepare for an MCA conversation",
+          "hook": "Owner asks Alex: What questions should I have ready?"
+        },
+        {
+          "format": "website_walkthrough",
+          "topic": "Show BDI's current contact journey",
+          "hook": "Here is how to take the next step on BDI."
+        }
+      ]
+    }
+  ],
+  "dailyPlanCreditLimit": 210,
+  "plannedWebsiteReels": "pending_real_screen_capture"
+}

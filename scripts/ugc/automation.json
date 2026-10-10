@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "timeZone": "America/New_York",
+  "hours": [
+    10,
+    16
+  ],
+  "dailyCreditLimit": 210,
+  "perReelCreditLimit": 105,
+  "automaticTopUps": false,
+  "websiteReels": "pending_real_screen_capture",
+  "workspaceId": "748f7f6d-5dfb-4a7c-939d-cdda041e4a80"
+}
