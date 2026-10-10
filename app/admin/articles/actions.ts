@@ -1,16 +1,19 @@
 "use server";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { notifyIndexNow } from "@/lib/indexnow";
 import { db } from "@/lib/db";
 import { ARTICLE_SEEDS } from "@/lib/seed-data/articles";
 
 export async function publishAllArticles() {
+  const pending = await db.article.findMany({ where: { published: false }, select: { slug: true } });
   const res = await db.article.updateMany({
     where: { published: false },
     data: { published: true, publishedAt: new Date() },
   });
   revalidatePath("/admin/articles");
   revalidatePath("/insights");
+  await notifyIndexNow(pending.map(a => `/insights/${a.slug}`));
   redirect(`/admin/articles?published=${res.count}`);
 }
 
@@ -34,12 +37,14 @@ export async function importSeedArticles() {
   }
   revalidatePath("/admin/articles");
   revalidatePath("/insights");
+  await notifyIndexNow(ARTICLE_SEEDS.map(a => `/insights/${a.slug}`));
   redirect(`/admin/articles?imported=${inserted}&updated=${updated}`);
 }
 
 export async function createArticle(fd: FormData) {
   const data = parse(fd);
   const created = await db.article.create({ data: { ...data, publishedAt: data.published ? new Date() : null } });
+  if (created.published) await notifyIndexNow([`/insights/${created.slug}`, "/insights"]);
   redirect(`/admin/articles/${created.id}`);
 }
 
@@ -55,6 +60,9 @@ export async function updateArticle(id: string, fd: FormData) {
   revalidatePath("/insights");
   revalidatePath("/api/search-index");
   revalidatePath("/sitemap.xml");
+  if (data.published || existing?.published) {
+    await notifyIndexNow([`/insights/${data.slug}`, ...(existing?.slug && existing.slug !== data.slug ? [`/insights/${existing.slug}`] : []), "/insights"]);
+  }
 }
 
 export async function deleteArticle(id: string) {

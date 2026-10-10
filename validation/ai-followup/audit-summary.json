@@ -1,0 +1,556 @@
+{
+  "date": "2026-10-11",
+  "scope": "First-pass screening of all 53 live articles and detailed revision of three priority articles. Not a full legal or factual certification of the library.",
+  "articlesScreened": 53,
+  "articlesWithAutomatedReviewFlags": 50,
+  "flagCaveat": "Patterns also match hypothetical examples and appropriate cautions. A flag alone does not establish an error.",
+  "publishedCorrections": [
+    "effective-apr-explained",
+    "stop-mca-daily-ach-debits",
+    "how-mca-debt-relief-actually-works"
+  ],
+  "priorityReviewQueue": [
+    {
+      "slug": "when-to-pause-mca-debits",
+      "reason": "Review any implication that a request automatically pauses payment or avoids default; distinguish the request from written approval."
+    },
+    {
+      "slug": "how-to-read-your-mca-contract",
+      "reason": "Check universal reconciliation and personal-guarantee enforcement claims against the agreement and applicable law."
+    },
+    {
+      "slug": "irs-business-tax-debt-options",
+      "reason": "Verify IRS program eligibility, offer-in-compromise ranges, lien thresholds, and Form 4180 descriptions against current IRS sources."
+    },
+    {
+      "slug": "what-is-reverse-consolidation",
+      "reason": "Substantiate or remove the one-in-fifty outcome claim; separate documented product structures from generalized descriptions."
+    },
+    {
+      "slug": "rebuild-business-credit-after-settlement",
+      "reason": "Verify universal UCC filing/termination statements and credit recovery timelines. This article has materially more recorded views than other articles in the admin."
+    },
+    {
+      "slug": "business-debt-vs-bankruptcy",
+      "reason": "Substantiate or remove market-wide settlement ranges and review insolvency descriptions."
+    },
+    {
+      "slug": "business-debt-resolution-timeline",
+      "reason": "Replace asserted typical timelines with sourced evidence or explicitly hypothetical schedules."
+    },
+    {
+      "slug": "reverse-consolidation-unwind",
+      "reason": "Review claims that contracts can almost always be challenged and generalized legal conclusions."
+    },
+    {
+      "slug": "coj-defense-basics",
+      "reason": "Review jurisdiction-specific enforceability and court-response instructions with qualified counsel."
+    },
+    {
+      "slug": "mca-settlement-letter-template",
+      "reason": "Review legal effect of release and default language; avoid implying a generic template is sufficient."
+    }
+  ],
+  "inventory": [
+    {
+      "url": "https://businessdebtinsider.com/insights/mca-settlement-vs-restructure",
+      "wordCount": 1239,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/how-to-read-your-mca-contract",
+      "wordCount": 1338,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/effective-apr-explained",
+      "wordCount": 1395,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "corrected in this batch"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/coj-defense-basics",
+      "wordCount": 1502,
+      "reviewCategories": [
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/when-to-pause-mca-debits",
+      "wordCount": 1491,
+      "reviewCategories": [
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/how-mca-debt-relief-actually-works",
+      "wordCount": 1444,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "corrected in this batch"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/signs-your-mca-relief-firm-is-a-scam",
+      "wordCount": 1542,
+      "reviewCategories": [
+        "unqualified_outcome",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/how-to-handle-stacked-mcas",
+      "wordCount": 1279,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/should-you-consolidate-mcas",
+      "wordCount": 1292,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/mca-restructure-timeline",
+      "wordCount": 1343,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/can-i-keep-operating-during-an-mca-program",
+      "wordCount": 1257,
+      "reviewCategories": [],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/how-attorneys-help-with-mca-debt",
+      "wordCount": 1469,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/negotiating-with-mca-lenders",
+      "wordCount": 1538,
+      "reviewCategories": [
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/preserving-business-credit-while-resolving-mca-debt",
+      "wordCount": 1508,
+      "reviewCategories": [
+        "outcome_or_market_percentage"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/mca-pre-default-options",
+      "wordCount": 1429,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/what-happens-if-you-stop-paying-an-mca",
+      "wordCount": 1410,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/choosing-an-mca-relief-partner",
+      "wordCount": 1727,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/life-after-mca-debt",
+      "wordCount": 1615,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/ucc-liens-and-account-freezes",
+      "wordCount": 1341,
+      "reviewCategories": [
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/equipment-finance-when-to-restructure",
+      "wordCount": 1149,
+      "reviewCategories": [
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/vendor-debt-negotiation-strategies",
+      "wordCount": 1339,
+      "reviewCategories": [
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/bank-loan-covenant-violations",
+      "wordCount": 1184,
+      "reviewCategories": [
+        "unqualified_outcome",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/irs-business-tax-debt-options",
+      "wordCount": 1477,
+      "reviewCategories": [],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/settle-mca-debt-without-bankruptcy",
+      "wordCount": 1889,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/loan-during-debt-workout",
+      "wordCount": 1747,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/mca-reconciliation-request-template",
+      "wordCount": 1810,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/how-many-mcas-too-many",
+      "wordCount": 1722,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/mca-settlement-letter-template",
+      "wordCount": 1699,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/what-is-reverse-consolidation",
+      "wordCount": 1189,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/coj-filed-against-me",
+      "wordCount": 1849,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/stop-mca-daily-ach-debits",
+      "wordCount": 1861,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "legal_or_payment_action"
+      ],
+      "status": "corrected in this batch"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/stacked-mca-complete-guide",
+      "wordCount": 4168,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/reverse-consolidation-unwind",
+      "wordCount": 1691,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action"
+      ],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/mca-settlement-lender-order",
+      "wordCount": 1701,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-vs-bankruptcy",
+      "wordCount": 1851,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action"
+      ],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-resolution-timeline",
+      "wordCount": 1740,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-vs-personal-credit",
+      "wordCount": 1738,
+      "reviewCategories": [
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/rebuild-business-credit-after-settlement",
+      "wordCount": 1824,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action"
+      ],
+      "status": "priority review"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-restructuring-guide",
+      "wordCount": 1470,
+      "reviewCategories": [
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/alternatives-to-business-bankruptcy",
+      "wordCount": 1118,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-consultant-what-they-do",
+      "wordCount": 1080,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-management-plan",
+      "wordCount": 1093,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-restructuring-liens",
+      "wordCount": 1170,
+      "reviewCategories": [],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-adjusters",
+      "wordCount": 1208,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-recovery-services",
+      "wordCount": 1241,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-loan-restructuring",
+      "wordCount": 1316,
+      "reviewCategories": [
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-help",
+      "wordCount": 1022,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-negotiation",
+      "wordCount": 1087,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/what-is-business-debt-resolution",
+      "wordCount": 993,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/loans-to-restructure-business-debt",
+      "wordCount": 1061,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "apr_math"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/business-debt-restructuring-florida",
+      "wordCount": 1060,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome",
+        "legal_or_payment_action"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/mca-debt-relief-construction-contractors",
+      "wordCount": 1114,
+      "reviewCategories": [
+        "outcome_or_market_percentage",
+        "unqualified_outcome"
+      ],
+      "status": "screened; not individually fact-checked"
+    },
+    {
+      "url": "https://businessdebtinsider.com/insights/mca-settlement-success-rates",
+      "wordCount": 1086,
+      "reviewCategories": [
+        "outcome_or_market_percentage"
+      ],
+      "status": "screened; not individually fact-checked"
+    }
+  ]
+}

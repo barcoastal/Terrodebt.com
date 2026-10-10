@@ -20,6 +20,13 @@ export function editorialAuthor(author?: string | null): string {
 // References are further reading for a topic, not an assertion that every
 // historical article claim has been independently checked or legally reviewed.
 export function articleReferences(slug: string): Reference[] {
+  if (slug === "effective-apr-explained") return [
+    { label: "CFPB: APR calculation background", url: "https://www.consumerfinance.gov/rules-policy/regulations/1026/interp-22/" }, REFERENCES.disclosure,
+  ];
+  if (slug === "stop-mca-daily-ach-debits") return [
+    { label: "Nacha: Unauthorized ACH return timing", url: "https://www.nacha.org/rules/limitation-warranty-claims" },
+    { label: "CFPB: Electronic fund transfer coverage", url: "https://www.consumerfinance.gov/compliance/compliance-resources/deposit-accounts-resources/electronic-fund-transfers/electronic-fund-transfers-faqs/" },
+  ];
   if (slug === "mca-settlement-success-rates") return [
     { label: "IRS: Canceled debt and tax treatment", url: "https://www.irs.gov/taxtopics/tc431" },
     { label: "Forward Financing: Revenue-based contract and reconciliation explanation", url: "https://www.forwardfinancing.com/resources/forward-revenue-based-financing-contract-highlights/" },

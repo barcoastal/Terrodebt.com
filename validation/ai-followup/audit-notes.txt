@@ -1,0 +1,24 @@
+BDI article audit — 11 October 2026
+
+53 live articles screened; 3 priority articles corrected and published.
+Automated flags appeared in 50 articles, but flags are not confirmed errors.
+The remaining library has not been individually fact-checked.
+
+Published corrections:
+- effective-apr-explained
+- stop-mca-daily-ach-debits
+- how-mca-debt-relief-actually-works
+
+Next review priorities:
+1. when-to-pause-mca-debits: Review any implication that a request automatically pauses payment or avoids default; distinguish the request from written approval.
+2. how-to-read-your-mca-contract: Check universal reconciliation and personal-guarantee enforcement claims against the agreement and applicable law.
+3. irs-business-tax-debt-options: Verify IRS program eligibility, offer-in-compromise ranges, lien thresholds, and Form 4180 descriptions against current IRS sources.
+4. what-is-reverse-consolidation: Substantiate or remove the one-in-fifty outcome claim; separate documented product structures from generalized descriptions.
+5. rebuild-business-credit-after-settlement: Verify universal UCC filing/termination statements and credit recovery timelines. This article has materially more recorded views than other articles in the admin.
+6. business-debt-vs-bankruptcy: Substantiate or remove market-wide settlement ranges and review insolvency descriptions.
+7. business-debt-resolution-timeline: Replace asserted typical timelines with sourced evidence or explicitly hypothetical schedules.
+8. reverse-consolidation-unwind: Review claims that contracts can almost always be challenged and generalized legal conclusions.
+9. coj-defense-basics: Review jurisdiction-specific enforceability and court-response instructions with qualified counsel.
+10. mca-settlement-letter-template: Review legal effect of release and default language; avoid implying a generic template is sufficient.
+
+Measurement: AI referrals use known referrer hosts or source tags; stored visitor IDs connect submissions. Missing referrers, cookie resets, later attribution changes, and unlinked leads limit completeness. Citation counts are separate.

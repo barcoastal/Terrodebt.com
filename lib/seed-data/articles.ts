@@ -1,3 +1,5 @@
+import revision2 from "./how-mca-debt-relief-actually-works-revision.json";
+import revision0 from "./effective-apr-explained-revision.json";
 import { ARTICLE_SEEDS_BATCH_1 } from "./articles-batch-1";
 import { ARTICLE_SEEDS_BATCH_2 } from "./articles-batch-2";
 import { ARTICLE_SEEDS_BATCH_3 } from "./articles-batch-3";
@@ -201,69 +203,8 @@ Stacking covenants are particularly important if you are considering taking anot
 Read your contracts in this order: definitions, purchase price and purchased amount, specified percentage, reconciliation, COJ, personal guarantee, events of default. Mark every clause you find. If a clause is missing or unclear, that is itself useful information. Then run our free calculators to translate your numbers into an effective APR and a stack health score. The math is on the table before any consultation.`,
   },
   {
-    slug: "effective-apr-explained",
-    title: "Effective APR on MCAs explained (and why it is not what they tell you)",
-    excerpt:
-      "MCAs are sold on factor rate, not APR. Effective APRs of 80 to 200 percent are common. Calculating yours changes the negotiation.",
+    ...revision0,
     heroImage: "/images/articles/effective-apr-explained.png",
-    contentMd: `Factor rate is the most successful piece of financial product framing in the last 20 years. It takes a borrowing cost that would be illegal in most consumer contexts and presents it as a small multiplier that sounds reasonable. A 1.45 factor sounds like 45 percent. The real annualized cost is usually 90 to 200 percent depending on the term, and the gap between the two is where the MCA industry makes its money. This article shows you how to calculate the real number on your own contracts and why doing so changes every conversation you have with a lender.
-
-## TL;DR
-
-- Factor rate and APR are not the same thing. A 1.45 factor over 6 months has an effective APR around 132 percent.
-- The shorter the term, the higher the effective APR for the same factor rate. Daily repayment compounds the cost.
-- A 1.30 factor over 12 months on $50K produces an effective APR around 50 percent. Still high.
-- A 1.45 factor over 6 months on $100K produces an effective APR around 132 percent.
-- Calculating effective APR matters because lenders settle more aggressively when unconscionability is in play.
-- Owners who calculate the real number once almost never sign another MCA.
-
-## Why factor rate hides the real cost
-
-MCAs are sold on factor rate because factor rate is a simple multiplier that does not account for the time value of money. APR is a standardized borrowing cost that does. The two answer different questions, and only APR answers the question that matters: how much is this capital actually costing me on an annualized basis.
-
-A factor rate of 1.45 looks like 45 percent. The salesperson presents it that way. They will sometimes say "45 percent over the term" and compare it to a credit card. Both framings are misleading. The factor rate does not account for the daily repayment cadence. As you pay back the principal, the lender is not earning the factor rate on the full balance for the full term. They are earning it on a declining balance over a short term. To replicate the actual yield in APR terms, you have to amortize the daily payment stream against the original funded amount.
-
-The result is almost always materially higher than the factor rate suggests. The shorter the term, the bigger the gap. The faster the daily debit, the bigger the gap.
-
-## How to convert factor rate to effective APR
-
-The basic math takes four inputs. Funded amount (purchase price). Total payback (purchased amount). Term in days. Daily debit amount. With those four numbers, you can amortize the daily payment stream against the funded amount and back out the implied annual rate.
-
-The formula is iterative because it is solving for the rate that makes the present value of the daily payments equal the funded amount. In practice, most owners use a calculator or spreadsheet rather than doing the math by hand. The output is the effective APR.
-
-A useful rule of thumb: for a typical MCA with daily debits over a 6 to 12 month term, the effective APR is roughly the factor rate cost (factor minus 1) divided by the average term in years, multiplied by 1.5 to 2x. So a 1.45 factor over 6 months has a factor cost of 45 percent on a 0.5 year term. That is 90 percent annualized linearly, and the daily repayment compounds it to roughly 130 percent. The shorter the term, the more the rule-of-thumb adjustment goes up.
-
-## Worked example one: 1.45 factor on a 6 month MCA
-
-A merchant takes a $100,000 MCA at a 1.45 factor over a 6 month estimated term. Total payback is $145,000. Daily debits are roughly $1,200 over 22 business days a month for 6 months.
-
-Amortize that daily payment stream against the original $100,000 funded amount. The implied APR comes in around 130 to 135 percent depending on the exact daily cadence and weekend handling. The 45 percent factor cost translates to roughly 132 percent annualized once the daily repayment is amortized.
-
-That is the real number. If a bank quoted you a loan at 132 percent APR, you would walk out of the office. The MCA equivalent is sold daily because the factor rate framing makes the same number look reasonable.
-
-## Worked example two: 1.30 factor on a 12 month MCA
-
-A merchant takes a $50,000 MCA at a 1.30 factor over a 12 month estimated term. Total payback is $65,000. Daily debits are roughly $250 over 22 business days a month for 12 months.
-
-Amortize that against the original $50,000. The implied APR comes in around 50 percent. The 30 percent factor cost translates to roughly 50 percent annualized because the term is twice as long and the daily repayment is concentrated less aggressively.
-
-50 percent APR is still high, well above what a bank line would charge, but it is in a different category than the 132 percent example. The factor rate of 1.30 is in a band where some MCAs are at least defensible as bridge financing for short cash flow gaps. The factor rate of 1.45 over 6 months is in a band where the contract is very expensive money under any framing.
-
-## Why daily debits compound the cost
-
-The reason effective APR runs above the linear annualized factor cost is that the daily repayment cadence concentrates the payback against the early portion of the funded period. By month two of a 6 month MCA, you have already returned a third of the principal. The lender is not earning the factor rate on the full $100,000 for 6 months. They are earning it on a balance that drops to zero over the period. To produce the same total dollar profit on a smaller average outstanding balance, the implied yield has to be higher.
-
-The same dynamic does not happen with traditional loans because traditional loans amortize on a monthly schedule and the calculation is built into the disclosed APR. The MCA industry uses factor rate because the daily cadence makes the equivalent APR look bad, and the factor rate framing avoids that disclosure.
-
-## Why this changes the negotiation
-
-Calculating the effective APR matters in two ways. First, it changes how lenders respond to settlement negotiations. Effective APRs above 100 percent in jurisdictions where usury is even loosely enforced create real legal exposure for the lender. A merchant who can recite the effective APR on each contract is signaling that the firm representing them knows what it is doing. Lenders that recognize that signal settle faster and at better numbers.
-
-Second, it changes the merchant's own decision-making for future financing. Owners who have calculated the conversion once on their own contracts almost never sign another MCA. The number is too uncomfortable to pretend it does not exist. That clarity is half the battle in breaking the stacking cycle.
-
-## What to do next
-
-Pull your active MCA contracts. Find the purchase price (funded amount) and the purchased amount (total payback) on each. Note the term and the daily debit. Run them through our free APR calculator or upload the contracts to our review tool. The number that comes out is what your capital is actually costing you, and seeing it on each contract changes how the rest of the conversation goes. Most merchants are surprised, and a few are upset. Both responses are appropriate.`,
   },
   {
     slug: "coj-defense-basics",
@@ -424,87 +365,8 @@ The right way to pause MCA debits is technical, documented, and coordinated. The
 If you are considering pausing MCA debits, do not block the bank yet. Pull your contracts, document 60 to 90 days of bank statements, and have a credible firm draft the reconciliation requests with you. Run our free calculators to quantify your stack burden first. The first week of a properly designed pause sets up the entire program. Doing it correctly the first time is materially cheaper than fixing a self-induced default later.`,
   },
   {
-    slug: "how-mca-debt-relief-actually-works",
-    title: "How MCA debt relief actually works, step by step",
-    excerpt:
-      "The work is part negotiation, part legal coordination, and part cash flow engineering. Here is the order of operations from intake to closeout.",
+    ...revision2,
     heroImage: "/images/articles/how-mca-debt-relief-actually-works.png",
-    contentMd: `MCA debt relief looks like negotiation from the outside. Inside, it is mostly project management, forensic contract review, and coordinated legal pressure. The negotiation calls are the visible 10 percent. The other 90 percent is the work that makes the calls produce a result. This article walks the entire program end to end so you can see what a credible firm actually does and what to expect month by month.
-
-## TL;DR
-
-- The work breaks into seven phases: discovery, audit, pause, parallel negotiation, documentation, escrow disbursement, closeout.
-- Discovery and audit take the first 2 to 4 weeks. This is where most of the leverage gets identified.
-- Pause via reconciliation buys 2 to 4 weeks of breathing room.
-- Parallel negotiation runs across all lenders simultaneously. Sequential negotiation costs months and produces worse outcomes.
-- Total program timeline runs 6 to 18 months end to end depending on lender mix and starting point.
-- Pre-default engagements run shorter and cheaper than post-default. Post-COJ engagements run longest.
-
-## Step 1: Discovery and document collection
-
-The first step is always intake. Pulling every contract, every bank statement, every UCC filing, and every prior funding document. Without that, no negotiation is grounded. Most owners show up to a relief firm with three of their five contracts, two months of bank statements, and a vague memory of which lenders are which.
-
-A complete discovery package includes the original MCA contract for every active and recently retired advance, 90 to 180 days of bank statements for the primary operating account, a UCC search for the merchant's state of formation, any active legal filings or COJ filings, any correspondence with lenders, and the daily debit amounts and dates for each contract.
-
-Discovery typically takes the first week. Owners sometimes find that they signed contracts they do not have copies of (lenders are required to provide them on request). Owners frequently find that a UCC search reveals filings they did not know existed, including from lenders they thought had been paid off years earlier.
-
-## Step 2: Audit
-
-The audit is where most of the leverage gets identified. The relief firm reads every contract clause by clause, calculates the effective APR on each, identifies procedural defects, finds missing reconciliation language, flags COJ provisions in jurisdictions where they are restricted, and notes any clauses that may be unconscionable in the merchant's state.
-
-The audit also identifies pre-default options. A merchant who is current on all contracts has a different toolkit than one who is already past due. Restructure is on the table for a current merchant. Settlement leverage looks different. The audit sets the strategy for the rest of the program.
-
-The audit usually surfaces information the merchant did not know. Effective APRs that are higher than the salesperson presented. Reconciliation language the merchant did not know existed. COJ jurisdictions that are unenforceable against the merchant. Stacking covenants that have already been violated, which can be either a risk or a leverage point depending on which lender invoked it. The audit takes 3 to 7 business days for a stack of 4 to 6 contracts.
-
-## Step 3: Pause via reconciliation
-
-With the audit complete, the firm drafts reconciliation requests for each lender. The requests are sent in coordinated sequence, typically the same day or within a 2 to 3 day window so no lender gets advance notice and time to retaliate.
-
-Lender response runs 5 to 10 business days. The pattern of responses (which lenders cooperate, which refuse, which retaliate) shapes the rest of the program. The pause itself buys 2 to 4 weeks of breathing room before any next escalation.
-
-During the pause, the merchant typically begins contributing to a managed escrow account. Monthly contributions are sized to fit actual cash flow, not the original daily debit. The escrow funds the settlements and program fees in subsequent phases.
-
-## Step 4: Parallel negotiation
-
-Negotiation runs in parallel across all lenders. Each lender gets a separate workstream with its own timeline, lender contact, and target outcome. Settlement disbursements are timed against escrow accumulation and against the sequencing decisions made during the audit.
-
-Sequential negotiation (one lender at a time) takes longer and produces worse outcomes. Lenders compare notes through industry networks, and a sequential approach signals that the merchant has limited options and limited firm support. Parallel negotiation creates the impression of a coordinated workout, which is itself worth percentage points off the typical settlement number.
-
-The negotiation typically runs 2 to 4 months for a stack of 4 to 6 contracts. Aggressive lenders settle fastest because their contracts have the most legal exposure. Institutional lenders move more slowly but settle predictably. Some lenders restructure rather than settle. The mix is determined contract by contract.
-
-## Step 5: Documentation and execution
-
-Once a settlement or restructure is agreed in principle, the documentation phase begins. The firm and counsel review the proposed settlement agreement or amendment from the lender, redline as needed, and execute the final document. UCC release filings are scheduled to be recorded after the settlement clears.
-
-The execution phase is the longest and least dramatic part of the program. Settlements get disbursed on schedule. UCC releases get filed. Restructured contracts begin running on the new monthly cadence. The merchant's job during this phase is to make the monthly escrow contribution and continue operating.
-
-## Step 6: Managed escrow disbursement
-
-Escrow disbursement is sequenced against the settlement schedule. The first lender's settlement might be funded at month 3 of the program, the second at month 5, the third at month 7, and so on. The sequencing balances escrow accumulation against lender pressure on each contract.
-
-Holdout lenders sometimes require additional rounds of negotiation after the initial settlement is in place. The escrow structure is flexible enough to absorb that without disrupting the rest of the program.
-
-## Step 7: Closeout and credit rebuild
-
-The program closes when the last balance is resolved. Final UCC releases are filed. Lender release letters are documented and stored. The merchant transitions to a clean post-program operating posture.
-
-Credit rebuild begins during the program but accelerates after closeout. Business credit profile cleanup involves filing UCC terminations where the lender has not done so, addressing any reporting errors, and rebuilding through clean vendor and banking relationships. The 12 months following program closeout are the highest-leverage period for credit rebuild.
-
-## Pre-default vs post-default approaches
-
-Pre-default and post-default programs use the same toolkit but with different leverage points. Pre-default merchants have access to restructure programs, reconciliation requests, and refinance options that disappear once default occurs. Post-default merchants rely more heavily on settlement and legal pressure.
-
-The earliest engagement always produces the best outcomes. Owners who wait until the lender has already pulled the trigger pay more, recover less, and spend more time defending against escalations that could have been prevented.
-
-## Typical timeline: 6 to 18 months
-
-A typical program runs 6 to 12 months for a settlement-heavy program, 12 to 18 months for a restructure-heavy program. Programs with active legal exposure (COJs, account freezes, civil suits) run on the longer end because legal defense and negotiation have to happen in parallel.
-
-Total program cost is the settlement amounts plus the program fee. Compared against the face balance the merchant started with, total reductions of 35 to 50 percent off face are common across a full stack.
-
-## What to do next
-
-If you have stacked MCAs and have not started a relief program, the first step is the audit. Pull every contract, document 90 days of bank statements, and have a credible firm review the stack before you take any action. The audit costs nothing in our case and tells you which path fits before you sign. Run our free calculators first to get your numbers in one view, then book the assessment.`,
   },
   {
     slug: "signs-your-mca-relief-firm-is-a-scam",

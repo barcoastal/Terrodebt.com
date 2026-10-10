@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "liquidity engineering",
     "Fort Lauderdale debt consulting",
   ],
+  verification: { other: { "msvalidate.01": "1CCFCFAFA470051F914A9B592A1765A5" } },
   metadataBase: new URL("https://businessdebtinsider.com"),
   openGraph: {
     siteName: "Business Debt Insider",

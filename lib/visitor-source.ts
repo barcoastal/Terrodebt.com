@@ -1,3 +1,5 @@
+import { aiReferral } from "./ai-referrals";
+
 export type SourceInput = {
   utmSource?: string | null;
   utmMedium?: string | null;
@@ -10,7 +12,7 @@ export type SourceInput = {
 
 export type VisitorSource = {
   label: string;
-  category: "google-ads" | "facebook-ads" | "affiliate" | "utm" | "organic" | "referral" | "direct";
+  category: "google-ads" | "facebook-ads" | "affiliate" | "utm" | "organic" | "referral" | "ai" | "direct";
   detail?: string;
 };
 
@@ -36,6 +38,8 @@ export function visitorSource(v: SourceInput): VisitorSource {
       detail: v.affiliateClickid.slice(0, 16),
     };
   }
+  const ai = aiReferral(v);
+  if (ai) return { label: ai.provider, category: "ai", detail: `Identified by ${ai.evidence}` };
   if (v.utmSource) {
     const med = v.utmMedium ? ` · ${v.utmMedium}` : "";
     return { label: `${v.utmSource}${med}`, category: "utm" };

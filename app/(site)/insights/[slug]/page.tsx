@@ -125,7 +125,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               By <Link href="/editorial-policy" className="underline underline-offset-2">{editorialAuthor(a.author)}</Link>
               <span className="text-hairline"> · </span>
               Published <time dateTime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
-              {a.slug === "mca-settlement-success-rates" && <><span className="text-hairline"> · </span>Updated <time dateTime={a.updatedAt.toISOString()}>{a.updatedAt.toISOString().slice(0, 10)}</time></>}
+              {["mca-settlement-success-rates", "effective-apr-explained", "stop-mca-daily-ach-debits", "how-mca-debt-relief-actually-works"].includes(a.slug) && <><span className="text-hairline"> · </span>Updated <time dateTime={a.updatedAt.toISOString()}>{a.updatedAt.toISOString().slice(0, 10)}</time></>}
               <span className="text-hairline"> · </span>
               {minutes} min read
             </p>
