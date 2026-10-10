@@ -12,6 +12,9 @@ export async function reviewVideo({ videoFile, referenceFile, spoken, outputFile
   }
   const env = readEnv();
   if (!env.GEMINI_API_KEY) throw new Error("Missing video QA credential");
+  const attemptFile = outputFile + ".attempt.json";
+  if (fs.existsSync(attemptFile)) throw new Error("Video QA has an unresolved prior attempt; inspect before retrying");
+  fs.writeFileSync(attemptFile, JSON.stringify({ sha256: hash, startedAt: new Date().toISOString() }), { flag: "wx", mode: 0o600 });
   // A single bounded QA request; never generates new media or retries a failed take.
   const r = await fetchImpl("https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent", {
     method: "POST", redirect: "error", signal: AbortSignal.timeout(120000),
