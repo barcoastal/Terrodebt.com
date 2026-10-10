@@ -4,22 +4,21 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   alternates: { canonical: "/tools" },
   title: "Free Business Debt Calculators",
-  description: "Free calculators for stacked business debt: effective APR, total stack burden, debt risk score. No email required, runs in your browser.",
+  description: "Free calculators for stacked business debt: estimated APR, total stack burden, debt risk score. No email required, runs in your browser.",
 };
 
 const TOOLS = [
   {
     href: "/tools/apr-calculator",
     eyebrow: "Calculator",
-    title: "Effective APR Calculator",
-    body: "Convert factor rate and term to a real annualized rate. See what your MCA actually costs.",
-    accent: "Most popular",
+    title: "MCA APR Calculator",
+    body: "Estimate financing cost using upfront fees and an equal daily or weekly payment schedule.",
   },
   {
     href: "/tools/stack-calculator",
     eyebrow: "Calculator",
     title: "Stacked MCA Calculator",
-    body: "Add every active advance and see total daily burden, weighted APR, and projected payoff.",
+    body: "Add every active advance and see total daily burden, estimated remaining payments, and payment days left.",
   },
   {
     href: "/tools/health-check",
@@ -46,7 +45,6 @@ export default function ToolsIndex() {
           <Link key={t.href} href={t.href} className="group surface-card p-8 no-underline transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-elevated)] flex flex-col">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs uppercase tracking-wider text-muted">{t.eyebrow}</span>
-              {t.accent && <span className="bg-electric/10 text-electric text-xs font-medium px-2 py-0.5 rounded-full">{t.accent}</span>}
             </div>
             <h2 className="mt-4 text-xl font-semibold tracking-tight text-slate">{t.title}</h2>
             <p className="mt-2 text-muted leading-relaxed flex-1">{t.body}</p>

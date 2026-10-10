@@ -88,7 +88,7 @@ export function ArticleEditor({ initial, mode, articleSlug, articlePublished, on
           {dirty && <span className="text-amber-600 font-semibold">Unsaved changes</span>}
           {!dirty && mode === "edit" && <span className="text-muted">Saved</span>}
           {showPreviewLink && (
-            <a href={`/articles/${previewSlug}`} target="_blank" rel="noreferrer" className="px-3 py-1 border border-border rounded-md no-underline">Open public preview</a>
+            <a href={`/insights/${previewSlug}`} target="_blank" rel="noreferrer" className="px-3 py-1 border border-border rounded-md no-underline">Open public preview</a>
           )}
         </div>
       </div>

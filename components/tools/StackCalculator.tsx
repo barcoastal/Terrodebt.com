@@ -24,17 +24,8 @@ export function StackCalculator() {
     const totalFunded = rows.reduce((sum, r) => sum + r.funded, 0);
     const totalPayback = rows.reduce((sum, r) => sum + r.payback, 0);
     const totalCost = totalPayback - totalFunded;
-    const weightedApr = totalFunded > 0
-      ? rows.reduce((sum, r) => {
-          if (r.funded <= 0 || r.daysLeft <= 0) return sum;
-          const term = r.payback / Math.max(1, r.daily);
-          const periods = 365 / Math.max(1, term);
-          const apr = ((r.payback / r.funded) - 1) * periods * 100;
-          return sum + apr * (r.funded / totalFunded);
-        }, 0)
-      : 0;
     const longestDaysLeft = rows.reduce((max, r) => Math.max(max, r.daysLeft), 0);
-    return { totalBalance, totalDaily, totalCost, totalFunded, totalPayback, weightedApr, longestDaysLeft };
+    return { totalBalance, totalDaily, totalCost, totalFunded, totalPayback, longestDaysLeft };
   }, [rows]);
 
   return (
@@ -47,7 +38,7 @@ export function StackCalculator() {
               <th className="pb-3 font-mono text-xs uppercase tracking-wider">Funded</th>
               <th className="pb-3 font-mono text-xs uppercase tracking-wider">Payback</th>
               <th className="pb-3 font-mono text-xs uppercase tracking-wider">Daily</th>
-              <th className="pb-3 font-mono text-xs uppercase tracking-wider">Days left</th>
+              <th className="pb-3 font-mono text-xs uppercase tracking-wider">Payment days left</th>
               <th className="pb-3"></th>
             </tr>
           </thead>
@@ -72,7 +63,7 @@ export function StackCalculator() {
       <div className="grid md:grid-cols-3 gap-4">
         <Big label="Total daily debit" value={`$${Math.round(totals.totalDaily).toLocaleString()}`} sub="per business day" highlight />
         <Big label="Remaining balance" value={`$${Math.round(totals.totalBalance).toLocaleString()}`} sub="at current pace" />
-        <Big label="Weighted APR" value={`${totals.weightedApr.toFixed(1)}%`} sub="across the stack" />
+        <Big label="Longest remaining schedule" value={`${totals.longestDaysLeft.toLocaleString()} days`} sub="payment days, not calendar days" />
       </div>
 
       <div className="grid md:grid-cols-3 gap-4">
@@ -82,7 +73,7 @@ export function StackCalculator() {
       </div>
 
       <div className="text-xs text-muted leading-relaxed">
-        Estimates only. Real numbers depend on lender reconciliation rules, prepayment penalties, and stacking covenants. The weighted APR is funded-amount weighted across all advances. Use this as a starting point for a conversation with us, not a definitive figure.
+        Remaining balance is daily debit multiplied by remaining payment days; it is not a lender payoff quote. Count only days when a debit is due. This tool does not calculate APR, fees withheld at funding, reconciliation changes, or holiday timing. Verify every balance and schedule against your agreement.
       </div>
     </div>
   );

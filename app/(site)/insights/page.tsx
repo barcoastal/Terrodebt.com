@@ -57,8 +57,9 @@ export default async function ArticlesIndex() {
             All guides on business debt restructure
           </h1>
           <p className="mt-4 text-base md:text-lg text-muted max-w-3xl leading-relaxed">
-            Plain-spoken guides on MCA, equipment, vendor, bank, and tax debt. Written by operators who have run the workouts.
+            Plain-language guides on MCA, equipment, vendor, bank, and tax debt. See our editorial policy for sourcing and review standards.
           </p>
+          <p className="mt-5 text-base leading-relaxed"><Link href="/lenders" className="underline text-pine">Research your lender or MCA funder</Link> · <Link href="/reviews" className="underline text-pine">Compare debt-relief companies</Link> · <Link href="/tools/apr-calculator" className="underline text-pine">Estimate financing cost</Link></p>
         </div>
       </section>
 

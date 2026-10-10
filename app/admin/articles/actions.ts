@@ -51,6 +51,10 @@ export async function updateArticle(id: string, fd: FormData) {
   revalidatePath(`/admin/articles/${id}`);
   revalidatePath("/admin/articles");
   revalidatePath(`/articles/${data.slug}`);
+  revalidatePath(`/insights/${data.slug}`);
+  revalidatePath("/insights");
+  revalidatePath("/api/search-index");
+  revalidatePath("/sitemap.xml");
 }
 
 export async function deleteArticle(id: string) {

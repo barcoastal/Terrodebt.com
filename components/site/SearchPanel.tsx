@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 type SearchItem = {
-  type: "article" | "topic" | "industry" | "glossary" | "tool";
+  type: "article" | "topic" | "industry" | "glossary" | "tool" | "lender" | "review";
   title: string;
   slug: string;
   excerpt?: string;

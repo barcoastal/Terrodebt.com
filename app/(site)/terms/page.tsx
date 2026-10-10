@@ -9,10 +9,6 @@ export default function TermsPage() {
     <article className="mx-auto max-w-content px-6 py-16 prose max-w-none">
       <h1>Terms of Service</h1>
       <p>
-        <em>Last updated: this is starter copy that will be reviewed by counsel before any substantive update.</em>
-      </p>
-
-      <p>
         Business Debt Insider is a trade name of <strong>GRL Recovery LLC</strong>, a Florida limited liability company located at 6301 NW 5th Way 5100, Fort Lauderdale, FL 33309. References to &quot;Business Debt Insider,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot; in these terms refer to GRL Recovery LLC.
       </p>
 

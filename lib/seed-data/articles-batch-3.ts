@@ -1,3 +1,4 @@
+import settlementEvidenceRevision from "./settlement-evidence-revision.json";
 export type SeedArticle = {
   slug: string;
   title: string;
@@ -226,135 +227,9 @@ If you are above three MCAs or above 12 percent debit burden, the framework abov
   },
   {
     slug: "mca-settlement-success-rates",
-    title: "MCA Settlement Success Rates: What Actually Closes",
-    excerpt:
-      "Settlement programs close 75 to 90 percent of contracts at 40 to 55 percent of face. The rest get restructured, litigated, or escalated to counsel.",
+    ...settlementEvidenceRevision,
     heroImage: "/images/articles/mca-settlement-success-rates.png",
     author: "Business Debt Insider",
-    contentMd: `Owners considering a settlement program want one number: will this actually work. The honest answer is that settlement closes the majority of contracts at meaningful discounts, but the distribution matters. Some contracts settle in 60 days at 35 percent of face. Others take 14 months and close at 65 percent. Some do not settle at all and end up in restructure or litigation. Understanding the distribution is more useful than chasing a single average.
-
-## TL;DR
-
-- Across a typical stack, 75 to 90 percent of contracts close through settlement.
-- Average settlement lands between 40 and 55 percent of face balance.
-- Total stack reduction (face balance vs settled cost) typically falls in the 35 to 50 percent range after program fees.
-- Timelines run 6 to 18 months from intake to closeout for most programs.
-- The 10 to 25 percent of contracts that do not settle either restructure, escalate to counsel, or sit unresolved if they are small enough.
-- Lender posture, contract age, and the quality of the documentation package drive variance more than the size of the balance.
-
-## What "success" means in a settlement program
-
-The word success carries weight. In a settlement program, success has three layers that often get conflated.
-
-The first layer is closure: did the contract get resolved with a release. The second layer is discount: how much off the face balance was the resolution. The third layer is timeline: how long did it take from intake to release.
-
-A successful settlement is all three: closed, discounted, within a reasonable timeline. A contract that "settled" at 95 percent of face after 18 months of negotiation is technically closed but did not achieve the discount that justifies the program. A contract that got a 35 percent offer in month two but never closed because the merchant could not fund the settlement is not a success either.
-
-The aggregated numbers below reflect contracts that closed with a release, at a documented discount, within the program timeline.
-
-## Closure rates by contract characteristics
-
-### Contracts in active default: 85 to 95 percent close
-
-Contracts where the merchant has stopped paying and the lender is past initial collections close at the highest rate. The lender has acknowledged the default, the relationship is already adversarial, and both sides are looking for a number that resolves the matter.
-
-Average settlement on defaulted contracts: 35 to 50 percent of face. Timeline: 60 to 180 days from settlement offer to release. This is the cleanest category in a settlement program.
-
-### Contracts pre-default but distressed: 75 to 85 percent close
-
-Contracts where the merchant is still paying but the relationship is strained (reconciliation requests pending, payment changes recent, NSF activity present) close at high rates with somewhat lower discounts. Lenders in this zone are weighing the probability of full collection against the probability of default, and a discounted lump sum often resolves the question.
-
-Average settlement: 45 to 60 percent of face. Timeline: 90 to 240 days.
-
-### Performing contracts: 50 to 70 percent close
-
-Contracts that are still performing on schedule are the hardest to settle. The lender has no immediate incentive to discount. Settlement of these contracts typically requires a credible distress narrative: revenue decline, other lender pressure, or a documented event that changes the picture.
-
-Average settlement when performing contracts close: 55 to 70 percent of face. Timeline: 6 to 14 months. Many performing contracts do not settle and instead get restructured or paid through closeout.
-
-### Contracts with weak underlying paper: 90+ percent close
-
-Some MCA contracts have legal weaknesses that surface during [forensic audit](/services/debt-relief-planning). Missing reconciliation language, unconscionable factor rates, improper UCC filings, or signature defects. Contracts with these characteristics close at the highest rates and the deepest discounts because the lender's legal exposure outweighs the collection value.
-
-Average settlement on weak-paper contracts: 25 to 40 percent of face. Timeline: 60 to 150 days.
-
-## Why averages mislead
-
-Owners ask for "the average" and the average across a typical program is 47 percent of face. The number is real but it conceals the distribution.
-
-A stack of five contracts might settle at: 32 percent, 41 percent, 48 percent, 55 percent, and 68 percent. The average is 49 percent. Each contract had its own posture, its own lender, its own contract weaknesses. Treating the program as if every contract settles at 49 percent leads to bad cash planning.
-
-The right way to model a settlement program is contract by contract, with a range. The forensic audit at intake produces those ranges. The actual settlements come in within or near those ranges for the contracts that close. The contracts that do not close get reclassified into restructure, escalation, or hold.
-
-## What does not close, and why
-
-Across a typical program, 10 to 25 percent of contracts do not settle. Understanding the pattern helps.
-
-### Contracts that move to restructure
-
-Some lenders flatly refuse settlement and only offer restructure. This is more common with bank-product MCAs (term advances issued by funders affiliated with chartered institutions) and with some of the larger funders who have institutional policies against discounted resolution. These contracts get restructured into monthly payment plans, often at the original balance but with extended terms.
-
-A contract that restructures is not a settlement failure. It is a different resolution path. The merchant pays more in total dollars but preserves the lender relationship and avoids the default reporting.
-
-### Contracts that escalate to counsel
-
-Some contracts go to litigation. This happens in two directions. Either the lender sues the merchant (confession of judgment, breach of contract action) before settlement is reached, or counsel for the merchant raises defenses that move the matter to court. Our practice does not litigate, but we coordinate with [licensed counsel in all 50 states](/services/debt-relief-planning) when escalation becomes necessary.
-
-Litigation tends to resolve at meaningful discounts when the underlying paper has weaknesses, but the timeline extends to 12 to 24 months and counsel fees become a factor in the math.
-
-### Contracts that sit
-
-Small balances on contracts where the lender has not actively pursued collection sometimes sit unresolved. The merchant stops paying, the lender does not escalate, and the balance ages. Eventually these either get charged off, sold to a debt buyer (who often settles deeply discounted), or pursued years later when collection economics change.
-
-Sitting is not a strategy. It is a residual category for contracts that did not fit settlement or restructure cleanly and where the cost of further work exceeded the expected recovery.
-
-## Timeline distribution
-
-Settlement programs close most contracts in clusters rather than evenly across the program.
-
-### Months 1 to 3: Setup phase
-
-No settlements close. Forensic audit completes. Initial creditor outreach. Escrow funding begins. Reconciliation requests on contracts with applicable language. The pace feels slow to the merchant but the foundation work is what determines outcomes in months 4 through 12.
-
-### Months 3 to 6: First wave
-
-The contracts in active default and the weak-paper contracts start closing. This is typically 25 to 40 percent of the stack closing in this window at the deepest discounts of the program (32 to 42 percent of face on average).
-
-### Months 6 to 12: Bulk of closures
-
-The middle band of contracts (pre-default but distressed, lenders with moderate posture) closes through this window. Another 40 to 55 percent of the stack resolves. Settlements in this window typically land at 45 to 55 percent of face.
-
-### Months 12 to 18: Final closures and reclassifications
-
-The last 10 to 25 percent of contracts either close at higher percentages (55 to 70 percent of face) or get reclassified to restructure, escalation, or hold. The program enters closeout with documentation of every release.
-
-## Total stack reduction
-
-The headline number most merchants want is total cost vs face balance.
-
-A typical stack of $400K face balance closes a settlement program at approximately $200K to $260K of total cost (settlements paid plus program fees). That is a 35 to 50 percent reduction off face.
-
-The reduction is larger if the stack includes weak-paper contracts. It is smaller if the stack includes a high proportion of bank-affiliated lenders who will only restructure.
-
-The actual number for a specific stack is knowable at intake within a tight range. The forensic audit produces a contract-by-contract estimate. The program performance over 12 to 18 months tracks against that estimate, usually landing within 5 to 8 percentage points of the intake projection.
-
-## Settlement vs restructure trade-offs
-
-The choice between settlement and restructure on a specific contract comes down to four factors.
-
-Lender posture: aggressive funders settle, conservative funders restructure.
-
-Contract weaknesses: weak paper favors settlement.
-
-Merchant credit considerations: settlement reports as settled-after-default, restructure reports as performing.
-
-Cash flow capacity: settlement requires escrow buildup, restructure requires steady monthly payments.
-
-Most workouts end up hybrid: 60 to 75 percent of contracts settle, 25 to 40 percent restructure. The right mix depends on the specific stack, not on a preference for one path over the other.
-
-## What to do next
-
-If you are weighing a settlement program, the right question is not "what is the average discount." The right question is "what does my specific stack look like contract by contract." The answer comes from a forensic audit at intake, which produces ranges for each contract and a total stack projection. [Reach out](/contact) and we will run the numbers on your stack and show you the realistic settlement, restructure, and escalation projections before you commit to a program.`,
   },
   {
     slug: "mca-reconciliation-request-template",

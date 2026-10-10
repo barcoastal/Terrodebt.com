@@ -20,6 +20,10 @@ export function editorialAuthor(author?: string | null): string {
 // References are further reading for a topic, not an assertion that every
 // historical article claim has been independently checked or legally reviewed.
 export function articleReferences(slug: string): Reference[] {
+  if (slug === "mca-settlement-success-rates") return [
+    { label: "IRS: Canceled debt and tax treatment", url: "https://www.irs.gov/taxtopics/tc431" },
+    { label: "Forward Financing: Revenue-based contract and reconciliation explanation", url: "https://www.forwardfinancing.com/resources/forward-revenue-based-financing-contract-highlights/" },
+  ];
   if (/irs|tax/.test(slug)) return [REFERENCES.irsPlan, REFERENCES.irsOffer];
   if (/florida/.test(slug)) return [REFERENCES.fl, REFERENCES.ny];
   if (/coj|attorney/.test(slug)) return [REFERENCES.ny, REFERENCES.ca, REFERENCES.fl];

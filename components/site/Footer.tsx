@@ -11,6 +11,8 @@ const SERVICES = [
 const SECONDARY = [
   { href: "/industries", label: "Industries" },
   { href: "/insights", label: "Insights" },
+  { href: "/lenders", label: "Lender research" },
+  { href: "/reviews", label: "Debt-relief company reviews" },
   { href: "/tools", label: "Tools" },
   { href: "/programs", label: "Programs" },
   { href: "/mca-defense", label: "MCA defense by state" },
